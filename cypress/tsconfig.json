@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",  // ou "es5", dependendo das suas necessidadess
+    "target": "es6",  // ou "es5", dependendo das suas necessidades
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
