@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",  // ou "es5", dependendo das suas necessidades
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["cypress", "@testing-library/cypress"]
+  },
+  "include": ["**/*.spec.ts"]
+}
