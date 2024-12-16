@@ -478,19 +478,21 @@ export function finalizandoPedido (selector) {
 export function tirarEntrega (selector) {
 
     //Botão Retirada / Entrega parte esquerda
-    cy.get('[ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-container')
+    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-container')
+        .scrollIntoView()
+        .wait(500)
         .should('exist')
         .and('be.visible')
         .and('not.be.disabled')
 
     //Botão Retirada / Entrega parte direita
-    cy.get('[ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-container > .md-thumb-container > .md-thumb')
+    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-container > .md-thumb-container > .md-thumb')
         .should('exist')
         .and('be.visible')
         .and('not.be.disabled')
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get('[ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
         .should('exist')
         .and('be.visible')
         .and('not.be.disabled')
@@ -1007,17 +1009,28 @@ export function escolherProdutoPesquisa (selector) {
         .should('exist')
         .and('be.visible')
         .click({force:true})
-
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProduto (selector) {
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
-    cy.get('md-list.md-default-theme > .md-no-sticky > .md-subheader-inner > .md-subheader-content')
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
         .should('exist')
         .and('be.visible')
-        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo ')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('exist')
+        .and('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('exist')
+        .and('be.visible')
+        .and('not.be.disabled')
 
     //Card de voltagem - Cifrão
     cy.get('.md-secondary-container > div > .ng-binding > sup')
@@ -1091,14 +1104,14 @@ export function trocarFilialFaturamento (selector) {
 export function clicarAdicionarProduto (selector) {
 
     //Botão adicionar produto após selecionar voltagem do produto
-    cy.get('button.md-primary.btn-rounded')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .should('exist')
         .and('be.visible')
         .and('not.be.disabled')
         .and('contain','Adicionar')
 
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
 }
 

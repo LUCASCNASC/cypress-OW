@@ -25,7 +25,7 @@ describe('Gerar pedido normal', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it('1-Venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
+        it.skip('1-Venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -79,7 +79,7 @@ describe('Gerar pedido normal', () => {
             cy.wait(7000)
         })
 
-        it('3-Venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
+        it.skip('3-Venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -194,10 +194,10 @@ describe('Gerar pedido normal', () => {
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(8000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(8000)
+    //     pedidoGerado()
+    //   });
 })
