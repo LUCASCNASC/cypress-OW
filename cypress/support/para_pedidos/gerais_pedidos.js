@@ -3,8 +3,13 @@ export function escolherTransportadora (selector) {
 
     const transportadora_id = '1'
 
+    cy.get('.carrinho > .layout-wrap > .md-primary')
+        .wait(200)
+        .scrollIntoView()
+        .wait(200)
+
     //Campo Transportadora - clicar para abrir as opções
-    cy.get('input[name="transportadora"]')
+    cy.get('#input-202')
         .click({force:true})
 
     cy.wait(300)
