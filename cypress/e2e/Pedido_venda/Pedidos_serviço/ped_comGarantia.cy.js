@@ -130,9 +130,10 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParaTransportadora()
             cy.wait(14000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
-            avancarParcelasEntrega(); cy.wait(7500)
+            escolherTransportadora()
+            avancarParcelasEntrega() 
+            cy.wait(7500)
         })
 
         it('8-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -154,9 +155,10 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParaTransportadora()
             cy.wait(14000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
-            avancarParcelasEntrega(); cy.wait(9000)
+            escolherTransportadora()
+            avancarParcelasEntrega() 
+            cy.wait(9000)
         })
 
         it('9-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
@@ -167,9 +169,10 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParaTransportadora()
             cy.wait(14000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
-            avancarParcelasEntrega(); cy.wait(9000)
+            escolherTransportadora()
+            avancarParcelasEntrega() 
+            cy.wait(9000)
         })
 
         it('10-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
@@ -191,9 +194,10 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParaTransportadora()
             cy.wait(14000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
-            avancarParcelasEntrega(); cy.wait(10000)
+            escolherTransportadora()
+            avancarParcelasEntrega() 
+            cy.wait(10000)
         })
 
         it('11-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
@@ -204,9 +208,10 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParaTransportadora()
             cy.wait(14000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
-            avancarParcelasEntrega(); cy.wait(10000)
+            escolherTransportadora()
+            avancarParcelasEntrega() 
+            cy.wait(10000)
         })
 
         it('12-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
@@ -227,9 +232,10 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParaTransportadora()
             cy.wait(16000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
-            avancarParcelasEntrega(); cy.wait(10000)
+            escolherTransportadora()
+            avancarParcelasEntrega() 
+            cy.wait(10000)
         })
     })
 
@@ -240,7 +246,7 @@ describe('Gerar pedidos com Garantia', () => {
         escolherFormaPagamentoPrincipal()
         escolherDuasParcelaPagamento()
         cy.wait(400)
-        avancarFinal(); cy.wait(9000)
+        avancarFinal()
         botaoFinalizarPedido() //RESUMO
         finalizandoPedido(); cy.wait(9000)
         pedidoGerado()
