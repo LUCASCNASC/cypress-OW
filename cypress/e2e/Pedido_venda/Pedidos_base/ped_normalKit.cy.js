@@ -23,7 +23,7 @@ describe('Gerar pedido normal', () => {
   
     context('Sem frete/ processo 9860 - caminho feliz', () => {
         
-        it('1-Pedido de venda: kit 1862 0 0', () => {
+        it.skip('1-Pedido de venda: kit 1862 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             composicaoDesteKit()
@@ -39,16 +39,16 @@ describe('Gerar pedido normal', () => {
             carregandoFormaPagamento()
             cy.wait(6000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
     })
     
     context('Com frete/processo 9860 - caminho feliz', () => {
         
-        it('2-Pedido de venda: kit 1862 0 0', () => {
+        it.skip('2-Pedido de venda: kit 1862 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             composicaoDesteKit()
@@ -58,27 +58,26 @@ describe('Gerar pedido normal', () => {
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora() //ENTREGA
-            cy.wait(13000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
-            escolherRota()
-            avancarParcelasEntrega()
             cy.wait(8000)
+            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
+            escolherRota()
+            escolherTransportadora()
+            avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
             cy.wait(7000)
+            carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(8000)
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

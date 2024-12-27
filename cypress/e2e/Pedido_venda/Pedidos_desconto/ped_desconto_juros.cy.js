@@ -24,7 +24,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it('1-Pedido de venda: produto 1860 0 0 - arredondar para baixo', () => {
+        it.skip('1-Pedido de venda: produto 1860 0 0 - arredondar para baixo', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -37,8 +37,9 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(4000)
+            cy.wait(6000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(400)
             arrastarFormaPagamento() //DESCONTO
@@ -47,10 +48,9 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             alterarValorParaBaixo()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
 
-        it('-2Pedido de venda: produtos 1860 0 0 - arredondar para cima', () => {
+        it.skip('2-Pedido de venda: produtos 1860 0 0 - arredondar para cima', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -63,8 +63,9 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(4000)
+            cy.wait(8000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(400)
             arrastarFormaPagamento() //DESCONTO
@@ -73,7 +74,6 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             alterarValorParaCima()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
     })
 

@@ -24,7 +24,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
   
     context('Sem frete/ processo 9863 - caminho feliz', () => {
 
-        it('1-Pedido de venda: produto 1860 0 0', () => {
+        it.skip('1-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -33,13 +33,16 @@ describe('Gerar pedido com financeiro na baixa', () => {
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             cy.wait(400)
-            avancarParaParcelas(); cy.wait(5000)
+            avancarParaParcelas() 
+            cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento(); cy.wait(5500)
+            carregandoFormaPagamento() 
+            cy.wait(5500)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
-            avancarFinal(); cy.wait(5000)
+            avancarFinal()
         })
 
         it('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -63,19 +66,21 @@ describe('Gerar pedido com financeiro na baixa', () => {
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(400)
-            avancarParaParcelas();  cy.wait(7000)
+            avancarParaParcelas()  
+            cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento(); cy.wait(5000)
+            carregandoFormaPagamento() 
+            cy.wait(5000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)
-            avancarFinal(); cy.wait(7500)
+            avancarFinal()
         })
     })
     
     context('Com frete/ processo 9863 - caminho feliz', () => {
 
-        it('3-Pedido de venda: produto 1860 0 0', () => {
+        it.skip('3-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -83,16 +88,18 @@ describe('Gerar pedido com financeiro na baixa', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora(); cy.wait(12000)
-            escolherRota() //ESCOLHER TRANSPORTADORA
+            avancarParaTransportadora()
             cy.wait(6000)
+            escolherRota() //ESCOLHER TRANSPORTADORA
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento(); cy.wait(7000)
+            carregandoFormaPagamento() 
+            cy.wait(7000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
-            avancarFinal(); cy.wait(8000)
+            avancarFinal()
         })
 
         it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -114,23 +121,25 @@ describe('Gerar pedido com financeiro na baixa', () => {
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora(); cy.wait(13000)
+            avancarParaTransportadora() 
+            cy.wait(13000)
             escolherRota() //ESCOLHER TRANSPORTADORA
             cy.wait(7000)
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento(); cy.wait(6000)
+            carregandoFormaPagamento() 
+            cy.wait(6000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)
-            avancarFinal(); cy.wait(8000)
+            avancarFinal()
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

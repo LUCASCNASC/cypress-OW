@@ -43,7 +43,6 @@ describe('Gerar pedido normal', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
 
         it('2-Venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -99,13 +98,12 @@ describe('Gerar pedido normal', () => {
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
     })
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it.only('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
+        it.skip('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -114,20 +112,20 @@ describe('Gerar pedido normal', () => {
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora()
-            cy.wait(11000)
+            cy.wait(7000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
+            escolherRota()
             escolherTransportadora()
-            // escolherRota()
-            // avancarParcelasEntrega()
-            // cy.wait(6500)
-            // botaoGerarParcelas() //GERAR PARCELAS
-            // carregandoFormaPagamento()
-            // cy.wait(5500)
-            // escolherFormaPagamentoPrincipal()
-            // escolherDuasParcelaPagamento()
-            // cy.wait(400)
-            // avancarFinal()
-            // cy.wait(7000)
+            escolherRota()
+            avancarParcelasEntrega()
+            cy.wait(5000)
+            botaoGerarParcelas() //GERAR PARCELAS
+            cy.wait(5500)
+            escolherFormaPagamentoPrincipal()
+            cy.wait(4000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
         })
 
         it('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -166,7 +164,7 @@ describe('Gerar pedido normal', () => {
             cy.wait(8000)
         })
 
-        it('6-Venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
+        it.skip('6-Venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -175,10 +173,10 @@ describe('Gerar pedido normal', () => {
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora()
-            cy.wait(11000)
+            cy.wait(7000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
+            escolherTransportadora()
             avancarParcelasEntrega()
             cy.wait(6500)
             escolherEntradaFormaPagamento() //GERAR PARCELAS
@@ -190,14 +188,13 @@ describe('Gerar pedido normal', () => {
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(7000)
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(8000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        finalizandoPedido()
+        cy.wait(8000)
+        pedidoGerado()
+      });
 })

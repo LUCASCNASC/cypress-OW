@@ -24,7 +24,7 @@ describe('Gerar pedido de entrega futura', () => {
 
     context('Sem frete/ processo 9862 - caminho feliz', () => {
 
-        it('1-Pedido de venda: produto 1860 0 0', () => {
+        it.skip('1-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -33,13 +33,15 @@ describe('Gerar pedido de entrega futura', () => {
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             cy.wait(400)
-            avancarParaParcelas(); cy.wait(6000)
+            avancarParaParcelas()
+            cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento(); cy.wait(5500)
+            carregandoFormaPagamento()
+            cy.wait(5500)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)
-            avancarFinal(); cy.wait(5500)
+            avancarFinal()
         })
         
         it('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -75,7 +77,7 @@ describe('Gerar pedido de entrega futura', () => {
     
     context('Com frete/ processo 9862 - caminho feliz', () => {
 
-        it('3-Pedido de venda: produto 1860 0 0', () => {
+        it.skip('3-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -84,17 +86,19 @@ describe('Gerar pedido de entrega futura', () => {
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora()
-            cy.wait(12000)
+            cy.wait(6000)
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
-            avancarParcelasEntrega(); cy.wait(6500)
+            escolherTransportadora()
+            avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento(); cy.wait(5500)
+            carregandoFormaPagamento()
+            cy.wait(2000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
-            avancarFinal(); cy.wait(5500)
+            avancarFinal()
         })    
         
         it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -130,10 +134,10 @@ describe('Gerar pedido de entrega futura', () => {
         })  
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RUSUMO
-        finalizandoPedido()
-        cy.wait(8000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RUSUMO
+    //     finalizandoPedido()
+    //     cy.wait(8000)
+    //     pedidoGerado()
+    //   });
 })

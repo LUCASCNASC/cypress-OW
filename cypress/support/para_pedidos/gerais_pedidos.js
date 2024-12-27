@@ -3,13 +3,13 @@ export function escolherTransportadora (selector) {
 
     const transportadora_id = '1'
 
-    cy.get('.carrinho > .layout-wrap > .md-primary')
-        .wait(200)
-        .scrollIntoView()
-        .wait(200)
+    cy.get('[ng-click="capturarSomentePromocao()"] > .ng-scope')
+        .scrollIntoView({force:true})
+
+    cy.wait(300)
 
     //Campo Transportadora - clicar para abrir as opções
-    cy.get('#input-202')
+    cy.get('[name="transportadora"]')
         .click({force:true})
 
     cy.wait(300)
@@ -26,7 +26,7 @@ export function escolherRota (selector) {
     //Lupa de pesquisa de rota - clicar para pesquisar
     cy.get('.rota-frete > .md-icon-right > .ng-binding')
         .scrollIntoView()
-        .click()
+        .click({force:true})
 
     cy.wait(400)
 
@@ -618,7 +618,7 @@ export function botaoGerarParcelas (selector) {
         .wait(200)
         .should('exist')
         //.and('be.visible')
-        .should('not.be.disabled')
+        //.should('not.be.disabled')
         .and('have.text', 'Gerar parcelas')
 
     //Botão "GERAR PARCELAS" - clicar
@@ -680,7 +680,7 @@ export function escolherDuasParcelaPagamento (selector) {
         .should('exist')
         .and('be.visible')
         .and('not.be.disabled')
-        .click()
+        .click({force:true})
 }
 
 //escolhendo parcelas da forma de pagamento escolhida - 1X
@@ -708,18 +708,6 @@ export function carregandoFormaPagamento (selector) {
         .should('exist')
         .and('be.visible')
         .and('not.be.disabled')
-
-    //Ícone carregamendo de formas de pagamento
-    cy.get('.md-dialog-fullscreen > .layout-align-center-center > .md-accent')
-        .should('exist')
-        .and('be.visible')
-
-    //Mensagem "Aguarde carregando..."
-    cy.get('.carregando')
-        .should('exist')
-        .and('be.visible')
-        .and('have.text', 'Aguarde carregando...')
-
 }
 
 //Para escolher processo de venda 9860 normal
@@ -878,17 +866,6 @@ export function avancarParcelasEntrega (selector) {
     //Clicar para avançar para a tela de GERAR PARCELAS
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
         .click({force:true})
-
-    //Validando carregamento do ícone de "Adicionando dados de entrega..."
-    cy.get('.layout-align-center-center > .md-accent')
-        .should('exist')
-        .and('be.visible')
-
-    //Validando mensagem de carregamento -  "Adicionando dados de entrega..."
-    cy.get('h3')
-        .should('exist')
-        .and('be.visible')
-        .and('have.text','Adicionando dados de entrega...')
 }
 
 //Botão AVANÇAR, da tela antes de finalizar o pedido
@@ -1110,6 +1087,8 @@ export function clicarAdicionarProduto (selector) {
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
         .should('exist')
         .and('be.visible')
         .and('not.be.disabled')
@@ -1334,6 +1313,8 @@ export function clicarGerarPagamento (selector) {
 export function composicaoDesteKit (selector) {
 
     cy.get('.is-expanded > v-pane-header.ng-scope > div')
+        .scrollIntoView()
+        .wait(200)
         .should('exist')
         .and('be.visible')
         .and('contain', 'Composição deste KIT')

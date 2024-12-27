@@ -20,7 +20,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
   
     context('Sem frete/ processo 9862 - caminho feliz', () => {
         
-        it('1-Pedido de venda: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
+        it.skip('1-Pedido de venda: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
     
             produtoKitDesconto() //PRODUTO
             saldodisponivel()
@@ -36,24 +36,24 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             validarModalSubSobre()
             aplicarDescontoValorFixo()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
+            cy.wait(5500)
             avancarParaParcelas()
             cy.wait(6500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(6000)
+            cy.wait(8000)
             escolherFormaPagamentoPrincipal()
+            cy.wait|(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

@@ -126,7 +126,7 @@ export function aplicarDescontoPorcentagem (selector) {
 //aplicar desconto Sub(-) com VALOR FIXO
 export function aplicarDescontoValorFixo (selector) {
 
-    const valor_desconto_valorFixo = '5000'
+    const valor_desconto_valorFixo = '280000'
 
     //clicar no botão VALOR FIXO    
     cy.contains('button', 'VALOR FIXO')

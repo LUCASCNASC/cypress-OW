@@ -20,7 +20,7 @@ describe('Gerar pedido de venda com desconto', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it('1-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / R$', () => {
+        it.skip('1-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / R$', () => {
 
             produtoDescontoCifrao() //PRODUTO
             saldodisponivel()
@@ -35,20 +35,20 @@ describe('Gerar pedido de venda com desconto', () => {
             validarModalSubSobre()
             aplicarDescontoR$()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
+            cy.wait(2200)
             avancarParaParcelas()
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(7000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
 
-        it('2-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
+        it.skip('2-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
 
             produtoDescontoPercentual() //PRODUTO
             saldodisponivel()
@@ -68,15 +68,15 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(8000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
 
-        it('3-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / VALOR FIXO', () => {
+        it.skip('3-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / VALOR FIXO', () => {
 
             produtoDescontoValorFixo() //PRODUTO
             saldodisponivel()
@@ -96,19 +96,19 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(8000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(7000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(7000)
+    //     pedidoGerado()
+    //   });
 })

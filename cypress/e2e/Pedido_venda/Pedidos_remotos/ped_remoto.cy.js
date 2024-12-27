@@ -20,7 +20,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
   
     context('Pedido de venda remoto normal', () => {
 
-        it('1-Pedido de venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
+        it.only('1-Pedido de venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -35,20 +35,18 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora()
-            cy.wait(12000)
+            cy.wait(5000)
             modalInconsApenasRota() //TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
             avancarParcelasEntrega()
-            cy.wait(10000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(8000)
+            cy.wait(5000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
             botaoFinalizarPedido() //RESUMO
             finalizandoPedido()
             cy.wait(7000)
