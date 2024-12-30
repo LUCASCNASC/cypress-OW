@@ -24,7 +24,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
+        it.only('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -43,12 +43,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(6000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(2000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
             botaoFinalizarPedido() //RESUMO
             finalizandoPedido()
             cy.wait(6000)
@@ -197,7 +197,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it.only('Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()

@@ -1,4 +1,4 @@
-//clicae no botão OK do mocal de Pedido Concuído
+//clicaR no botão OK do mocal de Pedido Concuído
 export function okPedidoGerado (selector) {
 
     cy.get('md-dialog-actions.layout-align-center-center > .md-primary')
@@ -41,8 +41,8 @@ export function pedidosPendentesOpcaoMenuPed (selector) {
     //validando se entrou no Pedidos pendentes
     cy.get('.header')
         .should('exist')
-        //.and('be.visible')
-        .and('contain', 'PEDIDOS PENDENTES')
+        .and('be.visible')
+        .and('contain', 'CONSULTA DE PEDIDOS')
 }
 
 //validando card com informações do pedido a ser alterado
@@ -79,7 +79,7 @@ export function escolherPedidoPendente (selector) {
     cy.get(':nth-child(1) > .md-whiteframe-2dp > .flex-70 > :nth-child(7)')
         .should('exist')
         .and('be.visible')
-        .and('have.text', ' Situação: Pendente')
+        .and('contain', 'Situação: Pendente')
 
     //R$ no valor do pedido
     cy.get(':nth-child(1) > .md-whiteframe-2dp > .layout-align-center-end > .ng-binding > sup')

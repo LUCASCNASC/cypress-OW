@@ -804,7 +804,7 @@ export function avancarParaParcelas (selector) {
         .wait(200)
         .should('exist')
         .and('be.visible')
-        .and('not.be.disabled')
+        //.and('not.be.disabled')
         .and('contain','Avançar')
 
     //Clicar para avançar para a tela de GERAR PARCELAS

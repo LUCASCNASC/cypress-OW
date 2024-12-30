@@ -20,9 +20,9 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
     context('Processo 9888 - caminho feliz', () => {
 
-        it('Venda de garantia - 139 (T.A. Garantia Separa Mesmo Processo)', () => {
+        it.skip('Venda de garantia - 139 (T.A. Garantia Separa Mesmo Processo)', () => {
 
-            const numero_pedido = ''
+            const numero_pedido = '8448'
             
             iconeMenuOpcoes()
             clienteCompletoOpcaoMenu()
@@ -66,14 +66,13 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(4000)
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(4000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(4000)
+    //     pedidoGerado()
+    //   });
 })

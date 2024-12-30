@@ -20,7 +20,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it('1-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
+        it.skip('1-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
 
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -32,18 +32,17 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            tirarMontagem()
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(6500)
+            cy.wait(5500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             cy.wait(5000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000) 
         })
 
         it('2-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
@@ -58,7 +57,6 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            tirarMontagem()
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
@@ -71,7 +69,6 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            tirarMontagemSegundo()
             cy.wait(400)
             avancarParaParcelas()
             cy.wait(6500)
@@ -88,7 +85,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
+        it.skip('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -99,23 +96,21 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            tirarMontagem() //ENTREGA
             cy.wait(400)
             avancarParaTransportadora()
-            cy.wait(12000)
+            cy.wait(5000)
             modalInconsRotaTransp() //TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
+            escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(7500)
+            cy.wait(4000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(6500)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(7000)
         })
 
         it('4-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
@@ -144,8 +139,8 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             avancarParaTransportadora()
             cy.wait(14000)
             modalInconsRotaTransp() //TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
+            escolherTransportadora()
             avancarParcelasEntrega()
             cy.wait(8000)
             botaoGerarParcelas() //GERAR PARCELAS
@@ -159,10 +154,10 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

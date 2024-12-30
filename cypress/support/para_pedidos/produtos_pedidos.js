@@ -5,9 +5,7 @@ export function produtoNormalPrimeiro (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
-        //.and('have.value', '')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
@@ -34,8 +32,7 @@ export function produtoNormalSegundo (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
         .and('not.be.disabled')
 
@@ -57,8 +54,7 @@ export function produtoKitPrimeiro (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .clear()
         .should('have.value', '')
         .and('not.be.disabled')
@@ -81,8 +77,7 @@ export function produtoSemSaldo (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
         .and('not.be.disabled')
 
@@ -104,8 +99,7 @@ export function produtoCDPrimeiro (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
         .and('not.be.disabled')
 
@@ -133,8 +127,7 @@ export function produtoCDSegundo (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
         .and('not.be.disabled')
 
@@ -156,8 +149,7 @@ export function produtoRemotoComCD (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
         .and('not.be.disabled')
 
@@ -179,8 +171,7 @@ export function produtoRemotoSemCD (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
         .and('not.be.disabled')
 
@@ -202,9 +193,7 @@ export function produtoArredondarCimaBaixo (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
-        //.and('have.value', '')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
@@ -225,9 +214,7 @@ export function produtoDescontoCifrao (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
-        //.and('have.value', '')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
@@ -248,9 +235,7 @@ export function produtoDescontoPercentual (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
-        //.and('have.value', '')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
@@ -271,9 +256,7 @@ export function produtoDescontoValorFixo (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
-        //.and('have.value', '')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
@@ -294,8 +277,7 @@ export function produtoKitDesconto (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
         .and('not.be.disabled')
 
@@ -317,9 +299,8 @@ export function produtoKitRemoto (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
         .and('be.visible')
-        .and('have.value', '')
+        .should('have.value', '')
         .and('not.be.disabled')
 
     //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher

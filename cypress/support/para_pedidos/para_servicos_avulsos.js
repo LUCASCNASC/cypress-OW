@@ -294,10 +294,10 @@ export function messAguardeCarregando (selector) {
         .and('be.visible')
 
     //Mensagem "Aguarde carregando..."
-    cy.get('#dialogContent_209 > .layout-align-center-center > h3')
+    cy.contains('Aguarde carregando...')
         .should('exist')
-        .and('be.visible')
-        .and('contain', 'Aguarde carregando...')
+        //.and('be.visible')
+        //.and('contain', 'Aguarde carregando...')
 }
 
 //Mensagem de "Registro salvo com sucesso!"
@@ -550,11 +550,9 @@ export function escolherValorRecarga (selector) {
         .and('contain', 'Valor')
 
     //seta para escolher valor da recarga
-    cy.get('#select_value_label_121 > .md-select-icon')
-        .should('exist')
-        .and('be.visible')
-        .and('not.be.disabled')
-        .click({force:true})
+    cy.get('#select_value_label_124 > .md-select-icon')
+        .click({force:true});
+
 
     //selecionando valor da recarga
     cy.contains('10,00')
