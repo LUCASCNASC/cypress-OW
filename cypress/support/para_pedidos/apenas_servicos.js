@@ -2,8 +2,7 @@
 export function garantiaSeparaMesmoProcesso (selector) {
     
     cy.get('#checkbox-139-0 > .md-container')
-        .should('exist')
-        .and('not.be.disabled')
+        .should('not.be.disabled')
 
     cy.get('#checkbox-139-0 > .md-container').click()
 }
@@ -52,8 +51,7 @@ export function maoObraNaoDestacaSeparaMesmoProcesso (selector) {
 export function maoObraNaoDestacaSeparaProcessoDiferente (selector) {
 
     cy.get('#checkbox-144-2 > .md-container')
-        .should('exist')
-        .and('not.be.disabled')
+        .should('not.be.disabled')
 
     cy.get('#checkbox-144-2 > .md-container').click()
 }

@@ -18,7 +18,7 @@ describe('Validações de layout - menu opções', () => {
 
     context('Menu opções - validar as opções que o menu traz, mas sem entrar nas telas', () => {
 
-        //VERIFICAR ERRO
+        //VERIFICAR ERRO - ocorre erro pois agora as funções clicam, e não apenas validam como antes
         it('Menu opções - validar as opções que o menu traz, mas sem entrar nas telas', () => {
 
             cy.login('sabium.automacao', '123.automacao'); //Comando personalizado para login
@@ -28,71 +28,46 @@ describe('Validações de layout - menu opções', () => {
 
             //Topo da página - parte colorida
             cy.get('.topo > .md-toolbar-tools')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
 
             iconeMenuOpcoes()
 
             //Validando imagem no início do modal menu
             cy.get('.md-primary > .logo > .md-default-theme > img')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('not.have.attr', 'disabled')
 
             inicioOpcaoMenu()
-
             cy.wait(200)
-
             departamentoOpcaoMenu()
-
             cy.wait(200)
-
             servicosOpcaoMenu()
-
             cy.wait(200)
-
             pedidosPendentesOpcaoMenu()
-
             cy.wait(200)
-
             clienteOpcaoMenu()
-
             cy.wait(200)
-
             clienteCompletoOpcaoMenu()
-
             cy.wait(200)
-
             posVendaOpcaoMenu()
-
             cy.wait(200)
-
             intencaoCompraOpcaoMenu()
-
             cy.wait(200)
-
             propostaCreditoOpcaoMenu()
-
             cy.wait(200)
-
             configuracoesOpcaoMenu()
-
             cy.wait(200)
-
             minhaPerformanceOpcaoMenu()
-
             cy.wait(200)
 
             //Validando descrição do usuário logado
             cy.get('.usuario > :nth-child(1)')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.text', descricaoUsuario)
 
             //Validando filial
             cy.get('.usuario > div > .ng-binding')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.text', filial)
 
             //Validando botão Sair
@@ -101,27 +76,23 @@ describe('Validações de layout - menu opções', () => {
 
             //Validando botão Sair
             cy.get('button[aria-label="Sair"]')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('not.have.attr', 'disabled')
 
             //Validando mensagem de Pedido de Venda - final do modal
             cy.get('p.ng-binding')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('contain', 'Pedido de Venda')
                 .and('contain', '- ERP')
 
             //Validando mensagem de Pedido de Venda - final do modal - versão Pedido Web
             cy.get('#pvProjeto')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.text', versaoPW)
 
             //Validando mensagem de Pedido de Venda - final do modal - versão REST
             cy.get('#pvERP')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.text', versaoREST)
 
             //Clicaer na mensagem de Pedido de Venda - final do modal - versão Pedido Web
@@ -142,8 +113,7 @@ describe('Validações de layout - menu opções', () => {
 
             //Primeiro alerta - botão X
             cy.get(':nth-child(1) > .toast-close-button')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('not.have.attr', 'disabled')
 
             //Segundo alerta - card
@@ -160,8 +130,7 @@ describe('Validações de layout - menu opções', () => {
 
             //Segundo alerta - botão X
             cy.get(':nth-child(2) > .toast-close-button')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('not.have.attr', 'disabled')
 
             //Terceiro alerta - card
@@ -177,8 +146,7 @@ describe('Validações de layout - menu opções', () => {
 
             //Terceiro alerta - botão X
             cy.get(':nth-child(3) > .toast-close-button')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('not.have.attr', 'disabled')
         })
     })  

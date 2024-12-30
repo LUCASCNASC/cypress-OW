@@ -9,8 +9,7 @@ export function iconeMenuOpcoes (selector) {
 
     //Ícone do menu de opções
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
             
     //Clicar ni ícone do menu de opções
@@ -23,8 +22,7 @@ export function opcaoClienteSimples (selector) {
 
     //Opção Cliente no menu de opções
     cy.get('a[aria-label="Cliente"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Opção Cliente no menu de opções
@@ -43,11 +41,8 @@ export function salvarClienteSimples (selector) {
     //Botão SALVAR
     cy.get('.layout-align-end-center > .md-raised')
         .scrollIntoView()
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
-        //.and('have.text', 'Salvar')
-        //.and('have.css', 'background-color', 'rgb(26, 70, 203)')
 
     //Clica no botão SALVAR
     cy.get('.layout-align-end-center > .md-raised')
@@ -65,8 +60,7 @@ export function prencherCPFcliente (selector) {
 
     //Campo CPF 
     cy.get('#txtCpf')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(cpf, {force: true})
 }
@@ -82,8 +76,7 @@ export function preencherCNPJcliente (selector) {
 
     //Campo CNPJ
     cy.get('#txtCNPJ')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(cnpj, { force: true })
 }
@@ -99,8 +92,7 @@ export function preencherNomeCompletoCPF (selector) {
 
     //Campo Nome Completo
     cy.get('#txtNomeCompleto')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(nomeClienteCPF, {force: true})
 }
@@ -116,8 +108,7 @@ export function preencherNomeCompletoCNPJ (selector) {
 
     //Campo CNPJ
     cy.get('#txtNomeCompleto')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .wait(200)
         .type(nomeClienteCNPJ, { force: true })
@@ -136,15 +127,13 @@ export function inserirPesquisarCEP (selector) {
     cy.get('#txtCep')
         .scrollIntoView()
         .wait(200)
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(CEPcadastro, {force:true})
 
     //Lupa de pesquisa do CEP
     cy.get('.md-icon-float > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Clicar na lupa de pesquisa do CEP
@@ -163,8 +152,7 @@ export function inserirNumeroEndereco (selector) {
 
     //Campo Número, do endereço
     cy.get('#txtNumero')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(numero_rendereco, {force:true})
 }
@@ -174,8 +162,7 @@ export function preencherDataNascimento (selector) {
 
     //Ícone de data de nascimento
     cy.get('.date-picker.flex-md-100 > .validaData > .md-datepicker-button')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Campo Data de nascimento - validando mensagem dentro do campo antes de preencher
@@ -184,8 +171,7 @@ export function preencherDataNascimento (selector) {
 
     //Campo data de nascimento
     cy.get('#input_132')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .wait(200)
         .type("30/09/1998", {force:true})
@@ -196,8 +182,7 @@ export function arrastarPessoaJuridica (selector) {
 
     //Arrastar para Pessoa jurídica
     cy.get('.flex-md-100 > .md-auto-horizontal-margin > .md-label')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain',' Pessoa Física/Pessoa Júridica ')
 
     //Arrastar para Pessoa jurídica
@@ -211,8 +196,7 @@ export function sexoPessoaFisica (selector) {
     //Campo Sexo
     cy.get('.md-default-theme[ng-model="cliente.idtiposexo"]')
         .scrollIntoView()
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
 
     //Campo Sexo - clicar
@@ -234,15 +218,13 @@ export function cadastroRotaCliente (selector) {
 
     //Preencher campo rota 1
     cy.get('.rota-frete > .md-icon-right > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type('1', {force:true})
 
     //Lupa do campo Rota 1
     cy.get('.rota-frete > .md-icon-right > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Campo rota 2 - validando mensagem dentro do campo antes de preencher
@@ -251,15 +233,13 @@ export function cadastroRotaCliente (selector) {
 
     //Preencher campo rota 2
     cy.get('#txtBuscaRotaModal')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type('1', {force:true}, '{downarrow}')
 
     //Lupa do campo Rota 2
     cy.get('md-icon[aria-label="Pesquisar"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Clicar na lupa do campo Rota 2
@@ -276,19 +256,16 @@ export function mensagemPrimeiroRegistSalvoSucesso (selector) {
 
     //Card de mensagem de Registro salvo com sucesso!
     cy.get('.toast')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Card de mensagem de Registro salvo com sucesso! - Aviso
     cy.get('.toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aviso')
 
     //Card de mensagem de Registro salvo com sucesso! - Registro salvo com sucesso!
     cy.get('.toast-message')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Registro salvo com sucesso!')
 }
 

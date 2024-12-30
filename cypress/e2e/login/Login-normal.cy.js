@@ -25,8 +25,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
 
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type((usuSabiumAutomacao))
                 .invoke('attr', 'placeholder')
@@ -36,8 +35,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type((senhaautomacao))
                 .invoke('attr', 'placeholder')
@@ -56,8 +54,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type('sabium.123')
                 .invoke('attr', 'placeholder')
@@ -67,8 +64,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type((senhaautomacao))
                 .invoke('attr', 'placeholder')
@@ -87,8 +83,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type(usuSabiumAutomacao)
                 .invoke('attr', 'placeholder')
@@ -98,8 +93,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type('123.teste')
                 .invoke('attr', 'placeholder')
@@ -118,8 +112,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
@@ -128,8 +121,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type('123.automacao')
                 .invoke('attr', 'placeholder')
@@ -146,8 +138,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type('sabium.automacao')
                 .invoke('attr', 'placeholder')
@@ -157,8 +148,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
@@ -174,8 +164,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
@@ -184,8 +173,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
@@ -205,8 +193,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type((usuarioSbx))
                 .invoke('attr', 'placeholder')
@@ -216,8 +203,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type((senhaSbx))
                 .invoke('attr', 'placeholder')
@@ -236,8 +222,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type('sabium.123')
                 .invoke('attr', 'placeholder')
@@ -247,8 +232,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type((senhaSbx))
                 .invoke('attr', 'placeholder')
@@ -267,8 +251,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type(usuarioSbx)
                 .invoke('attr', 'placeholder')
@@ -278,8 +261,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type('123.teste')
                 .invoke('attr', 'placeholder')
@@ -298,8 +280,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
@@ -308,8 +289,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type('123.automacao')
                 .invoke('attr', 'placeholder')
@@ -326,8 +306,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .type('sabium.automacao')
                 .invoke('attr', 'placeholder')
@@ -337,8 +316,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
@@ -354,8 +332,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
@@ -364,8 +341,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')

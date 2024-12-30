@@ -13,8 +13,7 @@ export function preencherCPFcliente (selector) {
 
     //Campo CPF 
     cy.get('#txtCpfCnpj')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(cpf, {force: true})
 }
@@ -30,8 +29,7 @@ export function preencherCNPJcliente (selector) {
 
     //Campo CNPJ
     cy.get('#txtCpfCnpj')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(cnpj, {force: true})
 }
@@ -41,8 +39,7 @@ export function iconeMenuOpcoes (selector) {
 
     //Ícone do menu de opções
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
             
     //Clicar ni ícone do menu de opções
@@ -55,8 +52,7 @@ export function opcaoClienteCompleto (selector) {
 
     //Opção Cliente completo no menu de opções
     cy.get('a[aria-label="Cliente completo"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Opção Cliente completo no menu de opções
@@ -74,8 +70,7 @@ export function preecherDataNascimento (selector) {
 
     //Ícone de data de nascimento
     cy.get('#txtDataNasc > .md-datepicker-button')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Campo Data Nascimento - validando mensagem dentro do campo antes de preencher
@@ -98,9 +93,7 @@ export function selecionarSexoCliente (selector) {
 
     //Campo Tipo de Sexo
     cy.get('#txtSexo')
-        .should('exist')
-        .and('be.visible')
-        //.and('have.value','')
+        .should('be.visible')
 
     //Clicar no campo Tipo de sexo
     cy.get('#txtSexo')
@@ -123,8 +116,7 @@ export function preencherNomeCompleto (selector) {
 
     //Campo Nome Completo
     cy.get('#txtRazaoSocial')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(nomeClienteCPF, {force: true})
 }
@@ -140,8 +132,7 @@ export function preencherNomeCNPJ (selector) {
 
     //Campo Nome Completo
     cy.get('#txtRazaoSocial')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(nomeClienteCNPJ, {force: true})
 }
@@ -153,11 +144,10 @@ export function preencherNomeFantasiaCNPJ (selector) {
 
     //Campo Nome Fantasia - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="txtNomeFantasia"]')
-    .should('have.text', 'Nome Social') 
+        .should('have.text', 'Nome Social') 
 
     cy.get('#txtNomeFantasia')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(nomeClienteCNPJ, { force: true })
 }
@@ -169,10 +159,8 @@ export function clicarSalvarCliente (selector) {
     cy.get('.btn')
         .scrollIntoView()
         .wait(200)
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
-        //.and('have.text', 'Salvar')
     
     //Clicar no botão SALVAR
     cy.get('.btn')
@@ -184,19 +172,16 @@ export function messEnderecoIncluidoSucesso (selector) {
 
     //Card Endereço incluído com sucesso.
     cy.get('.toast-success')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Card Endereço incluído com sucesso. - Aviso
     cy.get(':nth-child(1) > .toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aviso')
 
     //Card Endereço incluído com sucesso. - Endereço incluído com sucesso.
     cy.get('.toast-success > .toast-message')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Telefone incluído com sucesso.')
 }
 
@@ -205,8 +190,7 @@ export function clicarAdicionarNovoEndereço (selector) {
 
     //Botão +, para adicionar um novo endereço
     cy.get('.layout-align-end-end > .md-fab')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Clicar no botão +, para adicionar um novo endereço
@@ -219,20 +203,17 @@ export function cardEnderecoVazioValidar (selector) {
 
     //Card Endereço - validando título Endereço
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Endereço')
 
     //Validando botão X
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Tentar adicionar endereço sem passar as informações necessárias - não deve deixar
     cy.get('#btnModalAddEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'not.disabled')
 
     //Campo Tipo de Endereço - validando mensagem dentro do campo antes de preencher
@@ -241,8 +222,7 @@ export function cardEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - Tipo de Endereço
     cy.get('#txtTpEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 }
 
@@ -268,10 +248,8 @@ export function botaoSalvarDesabilitado (selector) {
 
     //Validando botão SALVAR, antes de preencher os campos obrigatórios
     cy.get('#btnModalAddEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'not.disabled')
-        //.and('have.text', 'Salvar') - aparecendo como undefined
 }
 
 // validando mensagem Endereço Incluído com sucesso, após incluírmos o endereço no cadastro
@@ -279,19 +257,16 @@ export function messEnderecoIncluidoSucesso (selector) {
 
     //Card Endereço incluído com sucesso.
     cy.get('.toast-success')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Card Endereço incluído com sucesso. - Aviso
     cy.get('.toast-success > .toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aviso')
 
     //Card Endereço incluído com sucesso. - Endereço incluído com sucesso.
     cy.get('.toast-success > .toast-message')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Endereço incluído com sucesso.')
 }
 
@@ -300,8 +275,7 @@ export function infosEnderecoAdicionado (selector) {
 
     //Card de endereço adicionado
     cy.get('.md-whiteframe-2dp')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Padrão')
         .and('contain', 'RUA PETÚNIA - 66 - PARQUE INDUSTRIAL')
         .and('contain', '87065-300')
@@ -319,8 +293,7 @@ export function clicarAbaEndereco (selector) {
 
     //Aba Endereço
     cy.get('#menu_items_pri > :nth-child(2)')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Endereço')
 
     //Clicar na aba Endereço
@@ -334,8 +307,7 @@ export function clicarAbaRota (selector) {
 
     //Validando aba Rota
     cy.get('#menu_items_pri > :nth-child(3)')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Rotas')
 
     //Clicar na aba Rota
@@ -348,8 +320,7 @@ export function clicarAdicionarNovaRota (selector) {
 
     //Botão +, para adicionar Rota
     cy.get('.layout-align-end-end > .md-fab')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Botão +, para adicionar Rota
@@ -362,14 +333,12 @@ export function modalRotaVazioValidar (selector) {
 
     //Card Rotas - título Rotas
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Rotas')
 
     //Card Rotas - botão X
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Campo Tipo de endereço - validando mensagem dentro do campo antes de preencher
@@ -378,20 +347,17 @@ export function modalRotaVazioValidar (selector) {
 
     //Card Rotas - Campo Tipo de endereço
     cy.get('#txtTpEnderecoRota')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
 
     //Card Rotas - Campo Rota
     cy.get('#txtRota')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
 
     //Card Rotas - Lupa de rota
     cy.get('.layout-gt-sm-column > .md-block > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 }
 
 //validar informações do modal Endereço enquanto ainda está vazio
@@ -403,8 +369,7 @@ export function modalEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - CEP
     cy.get('#txtCepEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Endereço - validando mensagem dentro do campo antes de preencher
@@ -413,8 +378,7 @@ export function modalEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - Endereço
     cy.get('#txtRuaEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Número - validando mensagem dentro do campo antes de preencher
@@ -423,8 +387,7 @@ export function modalEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - Número
     cy.get('#txtNumEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Complemento - validando mensagem dentro do campo antes de preencher
@@ -433,8 +396,7 @@ export function modalEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - Complemento
     cy.get('#txtComplEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Bairro - validando mensagem dentro do campo antes de preencher
@@ -443,8 +405,7 @@ export function modalEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - Bairro
     cy.get('#txtBairroEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Caixa Postal - validando mensagem dentro do campo antes de preencher
@@ -453,8 +414,7 @@ export function modalEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - Caixa Postal
     cy.get('#txtCxPostEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Estado - validando mensagem dentro do campo antes de preencher
@@ -463,8 +423,7 @@ export function modalEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - Estado
     cy.get('#txtUfEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Cidade - validando mensagem dentro do campo antes de preencher
@@ -473,8 +432,7 @@ export function modalEnderecoVazioValidar (selector) {
 
     //Validando campo vazio - Cidade
     cy.get('#txtCidEndereco')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 }
 
@@ -504,19 +462,16 @@ export function messAlertaEnderecoObrigatorio (selector) {
 
     //Card Um endereço do tipo padrão é obrigatório
     cy.get('.toast')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Card Um endereço do tipo padrão é obrigatório - Alerta
     cy.get('.toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Alerta')
 
     //Card Um endereço do tipo padrão é obrigatório - Um endereço do tipo padrão é obrigatório.
     cy.get('.toast-message')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Um endereço do tipo padrão é obrigatório.')
 }
 
@@ -531,8 +486,7 @@ export function preencherCampoCEPEndereco (selector) {
 
     //Lupa de pesquisa de CEP
     cy.get('.md-icon-float > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Clicar na lupa de pesquisa de CEP
     cy.get('.md-icon-float > .ng-binding')
@@ -586,19 +540,16 @@ export function messRotaIncluidaSucesso (selector) {
 
     //Card Rota incluída com sucesso.
     cy.get('#toast-container > :nth-child(1)')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Card Rota incluída com sucesso. - Aviso
     cy.get(':nth-child(1) > .toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aviso')
 
     //Card Rota incluída com sucesso. - Rota incluída com sucesso.
     cy.get(':nth-child(1) > .toast-message')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Rota incluída com sucesso.')
 }
 
@@ -607,8 +558,7 @@ export function infosRotaAdicionada (selector) {
 
     //Card de rota adicionad1
     cy.get('.md-whiteframe-2dp')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Grupo: 5')
         .and('contain', 'Rota: 1')
         .and('contain', 'Cidade: 1')
@@ -620,8 +570,7 @@ export function clicarAbaTelefone (selector) {
 
     //Validando aba Telefones
     cy.get('#menu_items_pri > :nth-child(4)')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Telefones')
 
     //Clicar na aba Telefones
@@ -634,8 +583,7 @@ export function clicarAdicionarNovoTelefone (selector) {
 
     //Botão +, para adicionar Rota
     cy.get('.layout-align-end-end > .md-fab')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Botão +, para adicionar Rota
@@ -648,14 +596,12 @@ export function modalTelefoneVazioValidar (selector) {
 
     //Card Telefone
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Telefone')
 
     //Card Telefone - botão X
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Campo Tipo de telefone - validando mensagem dentro do campo antes de preencher
@@ -664,8 +610,7 @@ export function modalTelefoneVazioValidar (selector) {
 
     //Card Telefone - campo tipo de telefone
     cy.get('#txtTpTel')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Número - validando mensagem dentro do campo antes de preencher
@@ -674,8 +619,7 @@ export function modalTelefoneVazioValidar (selector) {
 
     //Card Telefone - campo número
     cy.get('#txtNumTel')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Campo Ramal - validando mensagem dentro do campo antes de preencher
@@ -684,14 +628,12 @@ export function modalTelefoneVazioValidar (selector) {
 
     //Card Telefone - campo ramal
     cy.get('#txtRamalTel')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value', '')
 
     //Card Telefone - botão SALVAR
     cy.get('#btnModalAddTel')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'not.disabled')
 }
 
@@ -733,8 +675,7 @@ export function clicarSalvarTelefone (selector) {
 
     //Card Telefone - botão SALVAR - depois de preencher os campo obrigatório
     cy.get('#btnModalAddTel')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Card Telefone - clicar botão SALVAR - depois de preencher os campo obrigatório
@@ -747,8 +688,7 @@ export function infosTelefoneAdicionado (selector) {
 
     //Card de endereço adicionado
     cy.get('.md-whiteframe-2dp')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Padrão')
         .and('contain', '(44) 9578-7847')
         .and('contain', '435')
@@ -759,8 +699,7 @@ export function modalAguardeCarregando (selector) {
 
     //Modal Aguarde carregando...
     cy.get('.layout-align-center-center > h3')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aguarde carregando...')
 }
 
@@ -769,18 +708,15 @@ export function messRegistroSalvoSucesso (selector) {
 
     //Mensagem Registro salvo com sucesso!
     cy.get('.toast-success')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Mensagem Registro salvo com sucesso! - Aviso
     cy.get(':nth-child(1) > .toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aviso')
 
     //Mensagem Registro salvo com sucesso! - Registro salvo com sucesso!
     cy.get('.toast-success > .toast-message')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Registro salvo com sucesso!')
 }

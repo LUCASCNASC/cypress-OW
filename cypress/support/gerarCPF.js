@@ -1,6 +1,5 @@
-// cypress/support/gerarCpf.js
-
 //Função para gerar CPF
+
 function gerarCpf() {
     const randomDigits = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10));
     const d1 = calcularDigito(randomDigits);
@@ -15,4 +14,3 @@ function gerarCpf() {
 }
 
 export default gerarCpf;
-

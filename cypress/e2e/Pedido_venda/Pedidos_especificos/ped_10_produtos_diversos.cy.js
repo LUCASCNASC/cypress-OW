@@ -3,7 +3,7 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
          finalizandoPedido, tirarEntrega, tirarMontagem, tirarEntregaSegundo, tirarMontagemSegundo, botaoGerarParcelas, processoVendaPrincipal, 
          avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados, escolherProdutoPesquisa,
          avancarFinal, modalInconsRotaTransp, carregandoFormaPagamento, trocarFilialFaturamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoPrincipal, botãoAdicionarProduto, primeiroProdutoEscolher, segundoProdutoEscolher, terceiroProdutoEscolher,
+import { produtoPrincipal, clicarAdicionarProduto, primeiroProdutoEscolher, segundoProdutoEscolher, terceiroProdutoEscolher,
          quartoProdutoEscolher, quintoProdutoEscolher, sextoProdutoEscolher, setimoProdutoEscolher, oitavoProdutoEscolher,
          nonoProdutoEscolher, decimoProdutoEscolher} from '../../../support/para_pedidos/para_pedidos_10_produtos.js';
 
@@ -29,7 +29,7 @@ describe('Gerar pedido normal', () => {
             escolherProdutoPesquisa() //primeira vez escolher produto - 1889 0 0 - sem serviço / sem entrega
             cy.wait(700)
             primeiroProdutoEscolher() // primeira escolha de voltagem - 1889 0 0 - sem serviço / sem entrega
-            botãoAdicionarProduto() //primeira adicionando produto - 1889 0 0 - sem serviço / sem entrega
+            clicarAdicionarProduto() //primeira adicionando produto - 1889 0 0 - sem serviço / sem entrega
             cy.wait(700)
             modalServicosVinculados()
             okServicosVinculados()
@@ -44,7 +44,7 @@ describe('Gerar pedido normal', () => {
             escolherProdutoPesquisa() //segunda vez escolher produto - 1889 1 1 - sem serviço / sem entrega
             cy.wait(700)
             segundoProdutoEscolher() // segunda escolha de voltagem - 1889 1 1 - sem serviço / sem entrega
-            botãoAdicionarProduto() //segunda adicionando produto - 1889 1 1 - sem serviço / sem entrega
+            clicarAdicionarProduto() //segunda adicionando produto - 1889 1 1 - sem serviço / sem entrega
             cy.wait(700)
             modalServicosVinculados()
             okServicosVinculados()
@@ -59,7 +59,7 @@ describe('Gerar pedido normal', () => {
             escolherProdutoPesquisa() //terceira vez escolher produto - 1889 2 2 - com garantia / com entrega
             cy.wait(700)
             terceiroProdutoEscolher() // terceira escolha de voltagem - 1889 2 2 - com garantia / com entrega
-            botãoAdicionarProduto() //terceira adicionando produto - 1889 2 2 - com garantia / com entrega
+            clicarAdicionarProduto() //terceira adicionando produto - 1889 2 2 - com garantia / com entrega
             cy.wait(700)
             modalServicosVinculados()
             cy.get('#checkbox-139-0 > .md-container') //terceira - adicionando garantia - 1889 2 2 - com garantia / com entrega
@@ -74,7 +74,7 @@ describe('Gerar pedido normal', () => {
             escolherProdutoPesquisa() //quarta vez escolher produto - 1889 3 3 - com garantia / com entrega
             cy.wait(700)
             quartoProdutoEscolher() // quarta escolha de voltagem - 1889 3 3 - com garantia / com entrega
-            botãoAdicionarProduto() //quarta adicionando produto - 1889 3 3 - com garantia / com entrega
+            clicarAdicionarProduto() //quarta adicionando produto - 1889 3 3 - com garantia / com entrega
             cy.wait(700)
             modalServicosVinculados()
             cy.get('#checkbox-139-0 > .md-container') //quarta - adicionando garantia - 1889 3 3 - com garantia / com entrega
@@ -89,7 +89,7 @@ describe('Gerar pedido normal', () => {
             escolherProdutoPesquisa() //quinta vez escolher produto - 1889 4 4 - sem serviço / com entrega
             cy.wait(700)
             quintoProdutoEscolher() // quinta escolha de voltagem - 1889 4 4 - sem serviço / com entrega
-            botãoAdicionarProduto() //quinta adicionando produto - 1889 4 4 - sem serviço / com entrega
+            clicarAdicionarProduto() //quinta adicionando produto - 1889 4 4 - sem serviço / com entrega
             cy.wait(700)
             modalServicosVinculados()
             okServicosVinculados()
@@ -102,7 +102,7 @@ describe('Gerar pedido normal', () => {
             escolherProdutoPesquisa() //sexto vez escolher produto - 1889 5 5 - sem serviço / com entrega
             cy.wait(700)
             sextoProdutoEscolher() // sexto escolha de voltagem - 1889 5 5 - sem serviço / com entrega
-            botãoAdicionarProduto() //sexto adicionando produto - 1889 5 5 - sem serviço / com entrega
+            clicarAdicionarProduto() //sexto adicionando produto - 1889 5 5 - sem serviço / com entrega
             cy.wait(700)
             modalServicosVinculados()
             okServicosVinculados()
@@ -115,7 +115,7 @@ describe('Gerar pedido normal', () => {
             escolherProdutoPesquisa() //sétima vez escolher produto - 1889 6 6 - sem serviço / com entrega
             cy.wait(3000)
             setimoProdutoEscolher() // sétima escolha de voltagem - 1889 6 6 - sem serviço / com entrega
-            botãoAdicionarProduto() //sétima adicionando produto - 1889 6 6 - sem serviço / com entrega
+            clicarAdicionarProduto() //sétima adicionando produto - 1889 6 6 - sem serviço / com entrega
             cy.wait(700)
             modalServicosVinculados()
             okServicosVinculados()
@@ -128,7 +128,7 @@ describe('Gerar pedido normal', () => {
             escolherProdutoPesquisa() //oitava vez escolher produto - 1889 7 7 - sem serviço / com entrega
             cy.wait(3000)
             oitavoProdutoEscolher() // oitava escolha de voltagem - 1889 7 7 - sem serviço / com entrega
-            botãoAdicionarProduto() //oitava adicionando produto - 1889 7 7 - sem serviço / com entrega
+            clicarAdicionarProduto() //oitava adicionando produto - 1889 7 7 - sem serviço / com entrega
             cy.wait(700)
             modalServicosVinculados()
             okServicosVinculados()
@@ -143,7 +143,7 @@ describe('Gerar pedido normal', () => {
             nonoProdutoEscolher() // nona escolha de voltagem remoto - 1889 8 8 - sem serviço / com entrega
             cy.wait(1000) 
             trocarFilialFaturamento()
-            botãoAdicionarProduto() //nona adicionando produto remoto - 1889 8 8 - sem serviço / com entrega
+            clicarAdicionarProduto() //nona adicionando produto remoto - 1889 8 8 - sem serviço / com entrega
             cy.wait(700)
             modalServicosVinculados()
             okServicosVinculados()
@@ -158,7 +158,7 @@ describe('Gerar pedido normal', () => {
             decimoProdutoEscolher() // décima escolha de voltagem remoto - 1889 9 9 - sem serviço / com entrega
             cy.wait(1000) 
             trocarFilialFaturamento()
-            botãoAdicionarProduto() //décima adicionando produto remoto - 1889 9 9 - sem serviço / com entrega
+            clicarAdicionarProduto() //décima adicionando produto remoto - 1889 9 9 - sem serviço / com entrega
             cy.wait(1000)
 
             avancarParaTransportadora()

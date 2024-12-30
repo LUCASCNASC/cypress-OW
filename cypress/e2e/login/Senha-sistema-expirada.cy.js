@@ -10,7 +10,7 @@ describe('Senha do sistema expirada', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.clearAllSessionStorage();
-        titulopagina()//Vai variar de acordo com SBX e SABIUM, modificar no arquivo uiUtils.js, na função.
+        titulopagina() //Vai variar de acordo com SBX e SABIUM, modificar no arquivo uiUtils.js, na função.
         logoEmpresaLogin()
         iconeComputadorLogin()
         usuarioTextoIcone()
@@ -20,8 +20,7 @@ describe('Senha do sistema expirada', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')
-            .should('exist')
-            .and('be.visible')
+            .should('be.visible')
             .and('have.value','')
             .type((usuSabiumAutomacao))
             .invoke('attr', 'placeholder')
@@ -31,8 +30,7 @@ describe('Senha do sistema expirada', () => {
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
-            .should('exist')
-            .and('be.visible')
+            .should('be.visible')
             .and('have.value','')
             .type((senhaautomacao))
             .invoke('attr', 'placeholder')
@@ -47,14 +45,12 @@ describe('Senha do sistema expirada', () => {
 
         //Mensagem "Seu acesso ao sistema expirou."
         cy.get('.md-dialog-content-body')
-            .should('exist')
-            .and('be.visible')
+            .should('be.visible')
             .and('have.text','Seu acesso ao sistema expirou.')
 
         //Botão OK da mensagem "Seu acesso ao sistema expirou."
         cy.get('md-dialog-actions > .md-primary')
-            .should('exist')
-            .and('be.visible')
+            .should('be.visible')
             .and('have.text','Ok')
             .and('not.have.attr', 'disabled')
 
