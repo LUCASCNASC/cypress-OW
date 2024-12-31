@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos.js';
 import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, processoVendaPrincipal, finalizandoPedido,
          modalServicosVinculados, okServicosVinculados, escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal,
          clicarAdicionarProduto, botaoGerarParcelas, carregandoFormaPagamento, tirarEntrega, escolherFormaPagamentoPrincipal,
@@ -12,7 +11,8 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login(); 
-        titulopagina()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)

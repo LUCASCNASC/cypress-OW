@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido,
          processoVendaPrincipal, avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados,
          okServicosVinculados, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo,
@@ -10,10 +9,11 @@ import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloPro
 describe('Gerar pedidos com Garantia', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login(); 
-        titulopagina() 
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina() 
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)

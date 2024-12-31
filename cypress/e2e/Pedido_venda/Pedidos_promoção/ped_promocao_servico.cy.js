@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido, clicarAdicionarProduto,
          tirarEntrega, processoVendaPrincipal, avancarParaParcelas, modalServicosVinculados, okServicosVinculados,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal } from '../../../support/para_pedidos/gerais_pedidos'
@@ -9,10 +8,11 @@ import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apena
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login(); 
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)

@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, processoVendaPrincipal,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, finalizandoPedido, modalServicosVinculados, okServicosVinculados,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, clicarAdicionarProduto, botaoGerarParcelas, modalInconsRotaTransp,
@@ -8,10 +7,11 @@ import { produtoKitPrimeiro } from '../../../support/para_pedidos/produtos_pedid
 describe('Gerar pedido normal', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)

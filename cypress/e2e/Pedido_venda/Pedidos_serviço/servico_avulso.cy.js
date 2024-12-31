@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { processoVendaServicoAvulso, escolherClientePedido, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso,
          saldoDisponivelServico, escolherServicoPesquisa } from '../../../support/para_pedidos/para_servicos_avulsos';
 import { botaoGerarParcelas, avancarFinal, botaoFinalizarPedido, finalizandoPedido, pedidoGerado, carregandoFormaPagamento, 
@@ -7,10 +6,11 @@ import { botaoGerarParcelas, avancarFinal, botaoFinalizarPedido, finalizandoPedi
 describe('Venda de serviço avulso', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login(); 
-        titulopagina() 
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina() 
         processoVendaServicoAvulso()
         escolherClientePedido()
         cy.wait(500)

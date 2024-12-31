@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos.js';
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido,
          finalizandoPedido, tirarEntrega, tirarMontagem, tirarEntregaSegundo, tirarMontagemSegundo, botaoGerarParcelas, processoVendaPrincipal, 
          avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados, escolherProdutoPesquisa,
@@ -10,9 +9,11 @@ import { produtoPrincipal, clicarAdicionarProduto, primeiroProdutoEscolher, segu
 describe('Gerar pedido normal', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         titulopagina()
         processoVendaPrincipal()
         escolherClientePedido()

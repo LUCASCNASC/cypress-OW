@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido,
          clicarAdicionarProduto, botaoGerarParcelas, processoVendaPrincipal, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados,
          okServicosVinculados, escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, trocarFilialFaturamento, modalInconsApenasRota,
@@ -9,10 +8,11 @@ import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produt
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login(); 
-        titulopagina() 
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina() 
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)

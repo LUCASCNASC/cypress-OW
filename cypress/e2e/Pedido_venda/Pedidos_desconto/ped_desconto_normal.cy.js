@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido, clicarAdicionarProduto,
          tirarEntrega, botaoGerarParcelas, processoVendaPrincipal, avancarParaParcelas, modalServicosVinculados,
          okServicosVinculados, escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, carregandoFormaPagamento,
@@ -9,10 +8,11 @@ import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDe
 describe('Gerar pedido de venda com desconto', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)

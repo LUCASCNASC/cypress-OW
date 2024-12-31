@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { processoVendaServicoAvulso, escolherClientePedido, iconeMenuOpcoes, clienteCompletoOpcaoMenu, clicarMenuClienteCompleto,
          clicarOpcaoServicos, aguardeCarregandoServico, botaoAddMaoObra, botaoAddGarantias, clicarAddGarantias,
          modalGarantiasServicosVinculados, okServicosVinculados, messServicoAdicionadoSucesso, botaoSalvarServico, messAguardeCarregando,
@@ -10,10 +9,11 @@ import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apena
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login(); 
-        titulopagina() 
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina() 
         processoVendaServicoAvulso()
         escolherClientePedido()
     })

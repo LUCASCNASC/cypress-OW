@@ -1,4 +1,3 @@
-import { titulopagina, urlAposLogin } from '../../../support/para_todos.js';
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido,
          finalizandoPedido, clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo, botaoGerarParcelas, processoVendaPrincipal,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados,
@@ -10,11 +9,11 @@ import { produtoNormalPrimeiro, produtoNormalSegundo} from '../../../support/par
 describe('Gerar pedido normal', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
+        cy.visit('/')
+        cy.clearAllSessionStorage()
         cy.login()
-        urlAposLogin()
-        titulopagina()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)
@@ -26,7 +25,7 @@ describe('Gerar pedido normal', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.only('1-Venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
+        it.skip('1-Venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()

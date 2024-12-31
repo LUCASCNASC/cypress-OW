@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido,
          clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo, botaoGerarParcelas, processoEntregaFutura,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados,
@@ -9,10 +8,11 @@ import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/pa
 describe('Gerar pedido de entrega futura', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoEntregaFutura()
         escolherClientePedido()
         cy.wait(500)

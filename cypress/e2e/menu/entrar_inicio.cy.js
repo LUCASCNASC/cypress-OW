@@ -1,5 +1,3 @@
-//Importando funções 
-import { titulopagina } from '../../support/para_todos';
 import { iconeMenuOpcoes, topoPagina, imageMenu, inicioOpcaoMenu, departamentoOpcaoMenu, servicosOpcaoMenu, pedidosPendentesOpcaoMenu,
          clienteOpcaoMenu, clienteCompletoOpcaoMenu, posVendaOpcaoMenu, intencaoCompraOpcaoMenu, propostaCreditoOpcaoMenu, 
          configuracoesOpcaoMenu, minhaPerformanceOpcaoMenu, botaoSair, iconeComputadorLogin } from '../../support/para_menus/para_menu_opcoes';
@@ -12,10 +10,11 @@ const versaoREST = "16.45.1.11"
 describe('Validações de menu - menu opções', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage(); 
-        cy.login('sabium.automacao', '123.automacao');
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login('sabium.automacao', '123.automacao')
+        cy.urlAposLogin()
+        cy.tituloPagina()
     })
 
     context('Menu opções - validar as opções que o menu traz, entrando nas telas', () => {

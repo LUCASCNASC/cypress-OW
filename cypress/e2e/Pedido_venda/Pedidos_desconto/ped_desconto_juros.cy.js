@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido, clicarAdicionarProduto,
          tirarEntrega, botaoGerarParcelas, processoVendaPrincipal, modalServicosVinculados, okServicosVinculados,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, carregandoFormaPagamento, escolherFormaPagamentoPrincipal,
@@ -9,10 +8,11 @@ import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarV
 describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)

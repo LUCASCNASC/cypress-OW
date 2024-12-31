@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido,
          clicarAdicionarProduto, tirarEntrega, botaoGerarParcelas, processoVendaPrincipal,
          avancarParaParcelas, modalServicosVinculados, okServicosVinculados,
@@ -10,10 +9,11 @@ import { produtoNormalPrimeiro } from '../../../support/para_pedidos/produtos_pe
 describe('Gerar pedido com proposta de crédito', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaPrincipal()
         escolherClientePedido()
         cy.wait(500)

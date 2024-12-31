@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido,
          clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo, botaoGerarParcelas, processoFinanceiroBaixa,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados,
@@ -12,7 +11,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        titulopagina() 
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoFinanceiroBaixa()
         escolherClientePedido()
         cy.wait(500)

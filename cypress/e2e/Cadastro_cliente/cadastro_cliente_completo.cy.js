@@ -1,5 +1,3 @@
-//Importando funções 
-import { titulopagina } from '../../support/para_todos';
 import { iconeMenuOpcoes, opcaoClienteCompleto, preecherDataNascimento, selecionarSexoCliente, preencherNomeCompleto, preencherNomeCNPJ,
          clicarSalvarCliente, clicarAbaEndereco, preencherCPFcliente, preencherCNPJcliente, messEnderecoIncluidoSucesso, 
          preencherNomeFantasiaCNPJ, clicarAdicionarNovoEndereço, modalEnderecoVazioValidar, clicarAbrirTipoEndereco, botaoSalvarDesabilitado,
@@ -13,10 +11,11 @@ import { iconeMenuOpcoes, opcaoClienteCompleto, preecherDataNascimento, selecion
 describe('Cadastrar cliente completo', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login(); 
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
     })
 
     context('Cadastro de cliente completo', () => {

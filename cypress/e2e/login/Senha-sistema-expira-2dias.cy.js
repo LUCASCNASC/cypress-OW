@@ -1,5 +1,4 @@
 //Importando funções 
-import { titulopagina } from '../../support/para_todos';
 import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado,
          clicarBotaoEntrar, mensagemEntrandoSistema, expiraAcessoCardValidar, clicarSIMExpira, regrasNovaSenhaAntes, regrasNovaSenhaDepois } from '../../support/para_logins/para_login';
 
@@ -10,9 +9,10 @@ const novasenha = "123.automacao";
 describe('Login com usuário que senha expira em 2 dias', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        titulopagina() //Vai variar de acordo com SBX e SABIUM, modificar no arquivo uiUtils.js, na função.
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         logoEmpresaLogin()
         iconeComputadorLogin()
         usuarioTextoIcone()

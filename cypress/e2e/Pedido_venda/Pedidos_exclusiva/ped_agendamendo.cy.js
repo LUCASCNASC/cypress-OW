@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { escolherClientePedido, saldodisponivel, escolherProdutoPesquisa, escolherVoltagemProduto, 
          clicarAdicionarProduto, modalServicosVinculados, okServicosVinculados, tirarEntrega, semSaldodisponivel, 
          avancarParaTransportadora, modalInconsRotaTransp, escolherTransportadora, escolherRota, avancarParcelasEntrega, botaoGerarParcelas, 
@@ -11,10 +10,11 @@ import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produto
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaExclusiva()
         escolherClientePedido()
         cy.wait(500)

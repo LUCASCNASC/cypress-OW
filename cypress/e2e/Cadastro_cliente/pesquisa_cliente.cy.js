@@ -1,4 +1,3 @@
-import { titulopagina } from '../../support/para_todos';
 import { mensagemAguardeCarregando, clicarLupaPesquisaCliente, botaoXCardCliente, tituloCardClientes, textoInformativoClienteBusca, 
          botaoCadastrarNovoCliente, botaoComandoVoz, campoDigitarCliente, numeroDescricaoCPFpesquisado, numeroDescricaoCNPJpesquisado,
          clicarCPFPesquisado, clicarCNPJPesquisado, inserirCPF, digitarNovamenteCPF, inserirCNPJ, digitarNovamenteCNPJ,
@@ -7,10 +6,11 @@ import { mensagemAguardeCarregando, clicarLupaPesquisaCliente, botaoXCardCliente
 describe('Cadastrar cliente', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
     })
 
     context('Pesquisa cliente por número', () => {

@@ -1,16 +1,13 @@
-//Importando funções 
-import { titulopagina } from '../../support/para_todos';
-
 const filial = "050"
 const descricaoUsuario = "T.A. USUÁRIO AUTOMAÇÃO"
 
 describe('Validações de layout - tela inicial', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage(); 
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.urlAposLogin()
+        cy.tituloPagina()
     })
 
     context('Tela inicial ao logar no sistema', () => {

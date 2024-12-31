@@ -1,5 +1,4 @@
 //Importando funções 
-import { titulopagina } from '../../support/para_todos';
 import { iconeMenuOpcoes, inicioOpcaoMenu, departamentoOpcaoMenu, servicosOpcaoMenu, pedidosPendentesOpcaoMenu, servicosOpcaoMenu, 
          clienteCompletoOpcaoMenu, posVendaOpcaoMenu, intencaoCompraOpcaoMenu, propostaCreditoOpcaoMenu, configuracoesOpcaoMenu
          } from '../../support/para_layout/para_menu_opcoes.js';
@@ -12,8 +11,10 @@ const versaoREST = "16.45.1.11"
 describe('Validações de layout - menu opções', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage(); 
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.urlAposLogin()
+        cy.tituloPagina()
     })
 
     context('Menu opções - validar as opções que o menu traz, mas sem entrar nas telas', () => {

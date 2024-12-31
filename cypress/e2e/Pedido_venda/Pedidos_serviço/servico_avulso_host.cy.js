@@ -1,4 +1,3 @@
-import { titulopagina } from '../../../support/para_todos';
 import { processoVendaServicoAvulso, escolherClientePedido, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancarPedido,
          produtoServicoHost, saldoDisponivelServico, escolherServicoPesquisa, escolherValorRecarga } from '../../../support/para_pedidos/para_servicos_avulsos';
 import { botaoGerarParcelas, avancarFinal, botaoFinalizarPedido, finalizandoPedido, pedidoGerado, carregandoFormaPagamento, 
@@ -9,10 +8,11 @@ import { iconeMenuOpcoes } from '../../../support/para_menus/para_menu_opcoes';
 describe('Venda de serviço avulso Host - 104', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina() 
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         processoVendaServicoAvulso()
         escolherClientePedido()
         cy.wait(500)

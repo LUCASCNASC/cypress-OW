@@ -1,5 +1,3 @@
-//Importando funções 
-import { titulopagina } from '../../support/para_todos';
 import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado, 
          botaoEntrarDesabilitado, clicarBotaoEntrar, mensagemEntrandoSistema, botaoIniciarAtendimento, messLoginSenhaIncorreto } from '../../support/para_logins/para_login';
 
@@ -11,9 +9,10 @@ const senhaSbx = "1234.sbx" //senha usuário SBX Sabium (contexto 3)
 describe('Login caminho feliz - usuário normal senha liberada', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        titulopagina() //Vai variar de acordo com SBX e SABIUM, modificar no arquivo uiUtils.js, na função.
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.urlAposLogin()
+        cy.tituloPagina()
         logoEmpresaLogin()
         iconeComputadorLogin()
         usuarioTextoIcone()

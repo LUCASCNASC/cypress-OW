@@ -54,3 +54,10 @@ Cypress.Commands.add('urlAposLogin', (username, password) => {
     .should('include', '/#!/principal/')
 
 });
+
+Cypress.Commands.add('tituloPagina', (username, password) => {
+  
+  cy.title()
+    .should('eq', 'Sabium Mobile') //Validando título da página
+
+});
