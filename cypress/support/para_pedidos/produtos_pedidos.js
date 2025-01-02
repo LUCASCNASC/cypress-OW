@@ -3,6 +3,12 @@ export function produtoNormalPrimeiro (selector) {
 
     const primeiro_produto_normal = '1860'
 
+    //Limpando campo com o produto anterior
+    cy.get('#searchText')
+        .clear()
+        .wait(100)
+        .should('have.value', '')
+
     //Validando campo Buscar produto
     cy.get('#searchText')
         .should('be.visible')

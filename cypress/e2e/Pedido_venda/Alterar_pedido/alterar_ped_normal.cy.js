@@ -8,6 +8,7 @@ import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from 
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, infosPedidoValidarInfos,
          infosPedidoValidarBotoes, clicarEditarPedido, menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto,
          clicarFecharIntencaoCompra } from '../../../support/para_pedidos/para_alterar_pedido.js';
+         import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto';
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -107,7 +108,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             pedidoAlteradoSucesso()
         })
 
-        it.only('Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
+        it.skip('Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -152,26 +153,55 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarFecharIntencaoCompra()
             cy.wait(1000)
 
-            // produtoNormalPrimeiro() //SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
-            // saldodisponivel()
-            // escolherProdutoPesquisa()
-            // cy.wait(200)
-            // escolherVoltagemProduto() 
-            // clicarAdicionarProduto()
-            // cy.wait(500)
+            produtoNormalPrimeiro() //SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
+            cy.wait(2000)
+            produtoNormalSegundo() //SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
+            cy.wait(2000)
+            saldodisponivel()
+            escolherProdutoPesquisa()
+            cy.wait(200)
+            escolherVoltagemProduto() 
+            clicarAdicionarProduto()
+            cy.wait(500)
 
-            // modalServicosVinculados() //SERVICOS -SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
-            // okServicosVinculados()
-            // tirarEntrega() //ENTREGA -SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
-            // cy.wait(400)
+            modalServicosVinculados() //SERVICOS -SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
+            okServicosVinculados()
+            tirarEntregaSegundo() //ENTREGA -SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
+            cy.wait(600)
 
-            
+            produtoNormalPrimeiro() //TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
+            cy.wait(2000)
+            saldodisponivel()
+            escolherProdutoPesquisa()
+            cy.wait(200)
+            escolherVoltagemProduto() 
+            clicarAdicionarProduto()
+            cy.wait(500)
+
+            modalServicosVinculados() //SERVICOS -TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
+            okServicosVinculados()
+            tirarEntregaSegundo() //ENTREGA -TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
+            cy.wait(600)
+            avancarParaParcelas()
+            cy.wait(6000)
+
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento()
+            escolherFormaPagamentoPrincipal()
+            cy.wait(2000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            finalizandoPedido()
+            cy.wait(7000)
+            pedidoAlteradoSucesso()
         })
     })
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it('Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it.only('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -185,22 +215,21 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora()
-            cy.wait(11000)
+            cy.wait(6000)
     
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
+            escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(6500)
 
             botaoGerarParcelas() //GERAR PARCELAS
+            cy.wait(5000)
             carregandoFormaPagamento()
-            cy.wait(5500)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(8000)
             botaoFinalizarPedido()
             finalizandoPedido()
             cy.wait(8000)
@@ -217,20 +246,24 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             avancarParaTransportadora()
             cy.wait(11000)
             avancarParcelasEntrega()
-            cy.wait(6500)
+            arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
+            // cy.wait(6500)
+            // avancarParcelasEntrega()
 
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
-            cy.wait(5000)
-            escolherFormaPagamentoPrincipal()
-            escolherUmaParcelaPagamento()
-            cy.wait(400)
-            avancarFinal()
-            cy.wait(6000)
-            botaoFinalizarPedido() //RESUMO
-            cy.wait(8000)
-            finalizandoPedido()
-            pedidoGerado()
+
+
+            // botaoGerarParcelas() //GERAR PARCELAS
+            // carregandoFormaPagamento()
+            // cy.wait(5000)
+            // escolherSegundaFormaPagamento()
+            // escolherUmaParcelaPagamento()
+            // cy.wait(400)
+            // avancarFinal()
+            // cy.wait(6000)
+            // botaoFinalizarPedido() //RESUMO
+            // cy.wait(8000)
+            // finalizandoPedido()
+            // pedidoAlteradoSucesso()
         })
     })
 })

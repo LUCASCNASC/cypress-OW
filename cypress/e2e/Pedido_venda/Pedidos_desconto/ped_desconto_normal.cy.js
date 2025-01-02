@@ -105,10 +105,10 @@ describe('Gerar pedido de venda com desconto', () => {
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(7000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        finalizandoPedido()
+        cy.wait(7000)
+        pedidoGerado()
+      });
 })

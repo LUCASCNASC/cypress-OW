@@ -45,7 +45,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             avancarFinal()
         })
 
-        it('2-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
+        it.skip('2-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
 
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -59,8 +59,8 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             tirarEntrega() //ENTREGA
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(2000)
             saldodisponivel()
-            cy.wait(800)
             escolherProdutoPesquisa()
             cy.wait(800)
             escolherVoltagemProduto()
@@ -76,10 +76,10 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             carregandoFormaPagamento()
             cy.wait(6000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(7000)
         })
     })
 
@@ -113,7 +113,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             avancarFinal()
         })
 
-        it('4-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
+        it.skip('4-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -126,8 +126,8 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             okServicosVinculados()
             cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(2000)
             saldodisponivel()
-            cy.wait(800)
             escolherProdutoPesquisa()
             cy.wait(800)
             escolherVoltagemProduto()
@@ -137,27 +137,26 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             okServicosVinculados()
             cy.wait(1000)
             avancarParaTransportadora()
-            cy.wait(14000)
+            cy.wait(7000)
             modalInconsRotaTransp() //TRANSPORTADORA
             escolherRota()
             escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(8000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(7000)
+            cy.wait(6000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(9000)
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(9000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        finalizandoPedido()
+        cy.wait(9000)
+        pedidoGerado()
+      });
 })

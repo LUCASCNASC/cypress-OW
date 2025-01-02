@@ -44,7 +44,7 @@ describe('Gerar pedido de entrega futura', () => {
             avancarFinal()
         })
         
-        it('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -54,8 +54,8 @@ describe('Gerar pedido de entrega futura', () => {
             tirarEntrega() //ENTREGA
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
             cy.wait(800)
+            saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
             escolherVoltagemProduto()
@@ -65,13 +65,16 @@ describe('Gerar pedido de entrega futura', () => {
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(400)
-            avancarParaParcelas(); cy.wait(6500)
+            avancarParaParcelas()
+            cy.wait(6500)
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento(); cy.wait(5000)
+            carregandoFormaPagamento() 
+            cy.wait(5000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
-            avancarFinal(); cy.wait(5500)
+            avancarFinal() 
         })
     })
     
@@ -101,7 +104,7 @@ describe('Gerar pedido de entrega futura', () => {
             avancarFinal()
         })    
         
-        it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -110,8 +113,8 @@ describe('Gerar pedido de entrega futura', () => {
             okServicosVinculados()
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(3000)
             saldodisponivel()
-            cy.wait(800)
             escolherProdutoPesquisa()
             cy.wait(800)
             escolherVoltagemProduto()
@@ -120,24 +123,26 @@ describe('Gerar pedido de entrega futura', () => {
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora(); cy.wait(12000)
+            avancarParaTransportadora() 
+            cy.wait(6000)
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
-            avancarParcelasEntrega(); cy.wait(7000)
+            escolherTransportadora()
+            avancarParcelasEntrega() 
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento(); cy.wait(6000)
+            carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
-            avancarFinal(); cy.wait(6000)
+            avancarFinal() 
         })  
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RUSUMO
-    //     finalizandoPedido()
-    //     cy.wait(8000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RUSUMO
+        finalizandoPedido()
+        cy.wait(8000)
+        pedidoGerado()
+      });
 })

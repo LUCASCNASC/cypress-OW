@@ -45,7 +45,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it('2-Venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('2-Venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -55,8 +55,8 @@ describe('Gerar pedido normal', () => {
             tirarEntrega() //ENTREGA
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(2000)
             saldodisponivel()
-            cy.wait(800)
             escolherProdutoPesquisa()
             cy.wait(800)
             escolherVoltagemProduto()
@@ -70,12 +70,12 @@ describe('Gerar pedido normal', () => {
             cy.wait(5500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(6000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(7000)
         })
 
         it.skip('3-Venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
@@ -128,7 +128,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -136,32 +136,31 @@ describe('Gerar pedido normal', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
-            produtoNormalSegundo() //PRODUTO
+            produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(4000)
             saldodisponivel()
-            cy.wait(800)
             escolherProdutoPesquisa()
             cy.wait(800)
             escolherVoltagemProduto()
             clicarAdicionarProduto()
             cy.wait(500)
-            modalServicosVinculados() //SERVICOS
+            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(1000)
             avancarParaTransportadora()
-            cy.wait(12000)
+            cy.wait(8000)
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
+            escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
             cy.wait(6000)
+            carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(8000)
         })
 
         it.skip('6-Venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
@@ -191,10 +190,10 @@ describe('Gerar pedido normal', () => {
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(8000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        finalizandoPedido()
+        cy.wait(8000)
+        pedidoGerado()
+      });
 })

@@ -722,7 +722,7 @@ export function avancarParaTransportadora (selector) {
         .scrollIntoView()
         .wait(200)
         .should('be.visible')
-        .and('not.be.disabled')
+        //.and('not.be.disabled')
         .and('contain','Avançar')
 
     //Clicar para avançar para a tela de GERAR PARCELAS

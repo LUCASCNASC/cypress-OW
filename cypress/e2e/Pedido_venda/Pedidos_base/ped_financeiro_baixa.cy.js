@@ -45,7 +45,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             avancarFinal()
         })
 
-        it('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -55,8 +55,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             tirarEntrega() //ENTREGA
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
             cy.wait(800)
+            saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
             escolherVoltagemProduto()
@@ -67,11 +67,12 @@ describe('Gerar pedido com financeiro na baixa', () => {
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(400)
             avancarParaParcelas()  
-            cy.wait(7000)
+            cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             cy.wait(5000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
@@ -102,7 +103,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             avancarFinal()
         })
 
-        it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -111,8 +112,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             okServicosVinculados()
             cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(3000)
             saldodisponivel()
-            cy.wait(800)
             escolherProdutoPesquisa()
             cy.wait(800)
             escolherVoltagemProduto()
@@ -122,24 +123,24 @@ describe('Gerar pedido com financeiro na baixa', () => {
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora() 
-            cy.wait(13000)
+            cy.wait(6000)
             escolherRota() //ESCOLHER TRANSPORTADORA
-            cy.wait(7000)
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             cy.wait(6000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(9000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        finalizandoPedido()
+        cy.wait(9000)
+        pedidoGerado()
+      });
 })

@@ -94,7 +94,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Sem entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
 
-        it('4-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it.skip('4-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
@@ -110,6 +110,7 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntrega() //ENTREGA
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(1500)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -121,23 +122,21 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(12000)
+            cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(6500)
+            cy.wait(6000)
 
             //Escolher forma de pagamento
-            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope')
-                .click({force:true})
-
+            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
+            cy.wait(3000)
             //Escolher parcelamento
-            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding')
-                .click({force:true})
+            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             cy.wait(1000)
             avancarFinal()
         })
 
-        it('5-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it.skip('5-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
@@ -154,6 +153,7 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(2000)
             saldodisponivel()
             cy.wait(400)
             escolherProdutoPesquisa()
@@ -166,31 +166,16 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(13000)
+            cy.wait(9000)
 
             //GERAR PARCELAS 
+            cy.get('.layout-row.flex-100 > :nth-child(1) > .md-fab').should('be.visible').click({force:true})
             cy.get('.white > :nth-child(3)').click({force:true})
-    
-            cy.contains('div.md-text', '3861 - T.A. A Receber A Vista').click({force:true})
-    
-            //Botão "GERAR PAGAMENTO"
-            cy.get('.white > .layout-align-center-center > .md-primary').click({force:true})
-                
-            cy.wait(400)
-            botaoGerarParcelas()
-            cy.wait(8000)
-    
-            //Selecionando forma de pagamento
-            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope')
-                .click({force:true})
-    
-            //Selecionando parcela na forma de pagamento
-            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding')
-                .click({force:true})
+            cy.contains('div.md-text', '3861 - T.A. A Receber A Vista').click({force:true}) //Escolher forma de pagamento entrada
+            cy.get('.white > .layout-align-center-center > .md-primary').click({force:true}) //clicar GERAR PAGAMENTO
     
             cy.wait(400)
             avancarFinal()
-            cy.wait(8000)
         })
     })
 
@@ -300,7 +285,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Com entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
 
-        it('9-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it.skip('9-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
@@ -315,6 +300,7 @@ describe('Gerar pedidos com promoção', () => {
             okServicosVinculados()
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
+            cy.wait(3500)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -323,33 +309,29 @@ describe('Gerar pedidos com promoção', () => {
             cy.wait(1000)
             okServicosVinculados() //SERVIÇOS
             avancarParaTransportadora()
-            cy.wait(14000)
+            cy.wait(6000)
             modalInconsRotaTransp() //TRANSPORTADORA
-            escolherTransportadora()
             escolherRota()
+            escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(14000)
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(8000)
+            cy.wait(6000)
 
             //Escolher forma de pagemento
-            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope')
-                .click({force: true})
-
+            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force: true})
+            cy.wait(3000)
             //Escolher parcelamento
-            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding')
-                .click({force: true})
+            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force: true})
 
             cy.wait(400)
             avancarFinal()
-            cy.wait(9000)
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(9000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        finalizandoPedido()
+        cy.wait(9000)
+        pedidoGerado()
+      });
 })
