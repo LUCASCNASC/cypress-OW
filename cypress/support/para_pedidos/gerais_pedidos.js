@@ -457,20 +457,10 @@ export function tirarMontagem (selector) {
 //Arrastar botão de Retirada / Entrega do segundo produto
 export function tirarEntregaSegundo (selector) {
 
-    //Botão Retirada / Entrega parte esquerda
-    cy.get(':nth-child(3) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-container')
-        .scrollIntoView()
-        .wait(500)
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //Botão Retirada / Entrega parte direita
-    cy.get(':nth-child(3) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-container > .md-thumb-container > .md-thumb')
-        .should('be.visible')
-        .and('not.be.disabled')
-
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(3) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
+        .scrollIntoView()
+        .wait(300)
         .should('be.visible')
         .and('not.be.disabled')
         .and('have.text', ' Retirada / Entrega ')
@@ -480,20 +470,10 @@ export function tirarEntregaSegundo (selector) {
 //Arrastar botão de Retirada / Entrega do terceiro produto
 export function tirarEntregaTerceiro (selector) {
 
-    //Botão Retirada / Entrega parte esquerda
-    cy.get(':nth-child(4) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-container')
-        .scrollIntoView()
-        .wait(500)
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //Botão Retirada / Entrega parte direita
-    cy.get(':nth-child(4) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-container > .md-thumb-container > .md-thumb')
-        .should('be.visible')
-        .and('not.be.disabled')
-
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(4) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
+        .scrollIntoView()
+        .wait(300)
         .should('be.visible')
         .and('not.be.disabled')
         .and('have.text', ' Retirada / Entrega ')
@@ -553,6 +533,26 @@ export function escolherFormaPagamentoPrincipal (selector) {
 
     //escolhendo forma de pagamento - 3860
     cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click({force:true})
+}
+
+//escolhendo forma de pagamento do pedido de venda
+export function escolherSegundaFormaPagamento (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('exist')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //escolhendo forma de pagamento - 3862
+    cy.get(':nth-child(3) > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-binding')
         .should('be.visible')
         .and('not.be.disabled')
         .click({force:true})

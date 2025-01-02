@@ -52,6 +52,7 @@ export function inicioOpcaoMenu (selector) {
     //ícone Início 
     cy.get('md-icon[md-svg-src="images/icons/home.svg"]')
         .scrollIntoView()
+        .wait(300)
         .should('be.visible')
 
     //Opção Início no menu de opções

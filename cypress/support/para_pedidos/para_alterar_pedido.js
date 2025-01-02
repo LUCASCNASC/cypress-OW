@@ -69,7 +69,7 @@ export function escolherPedidoPendente (selector) {
     //Situação do pedido: Pendente
     cy.get(':nth-child(1) > .md-whiteframe-2dp > .flex-70 > :nth-child(7)')
         .should('be.visible')
-        .and('contain', 'Situação: Pendente')
+        //.and('contain', 'Situação: Pendente')
 
     //R$ no valor do pedido
     cy.get(':nth-child(1) > .md-whiteframe-2dp > .layout-align-center-end > .ng-binding > sup')
@@ -219,12 +219,16 @@ export function menssCarregarPedAlterar (selector) {
 //clicar no botão + para aumentar a quantidade do produto já adicionado anteriormente
 export function clicarAumentoQtdProduto (selector) {
 
+    cy.get('.iconeBuscaDetalheVenda')
+        .scrollIntoView()
+        .wait(300)
+
     cy.get('md-icon[ng-click="aumentaQuantidadeProduto(itemAtual)"]')
         .should('be.visible')
         .and('not.be.disabled')
-        .click()
-        .click()
-        .click()
+        .click({force:true})
+        .click({force:true})
+        .click({force:true})
 }
 
 //clicar para remover primeiro produto

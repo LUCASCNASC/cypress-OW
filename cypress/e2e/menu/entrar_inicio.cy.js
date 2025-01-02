@@ -1,6 +1,6 @@
 import { iconeMenuOpcoes, topoPagina, imageMenu, inicioOpcaoMenu, departamentoOpcaoMenu, servicosOpcaoMenu, pedidosPendentesOpcaoMenu,
          clienteOpcaoMenu, clienteCompletoOpcaoMenu, posVendaOpcaoMenu, intencaoCompraOpcaoMenu, propostaCreditoOpcaoMenu, 
-         configuracoesOpcaoMenu, minhaPerformanceOpcaoMenu, botaoSair, iconeComputadorLogin } from '../../support/para_menus/para_menu_opcoes';
+         configuracoesOpcaoMenu, minhaPerformanceOpcaoMenu, botaoSair, iconeComputadorLogin } from '../../support/para_menus/para_menu_opcoes.js';
 
 const filial = " 050 - PR - EMISSÃO NFe/NFCe "
 const descricaoUsuario = "T.A. USUÁRIO AUTOMAÇÃO"
@@ -18,7 +18,7 @@ describe('Validações de menu - menu opções', () => {
     })
 
     context('Menu opções - validar as opções que o menu traz, entrando nas telas', () => {
-        it('Início - validar as opção Início, entrando na tela', () => {
+        it.only('Início - validar as opção Início, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
