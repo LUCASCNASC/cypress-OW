@@ -1,10 +1,9 @@
 import { saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido,
          clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo, botaoGerarParcelas, processoFinanceiroBaixa,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega,
-         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, carregandoFormaPagamento, 
-         escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
+         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/produtos_pedidos';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 
 describe('Gerar pedido com financeiro na baixa', () => {

@@ -1,11 +1,10 @@
 import { escolherClientePedido, saldodisponivel, escolherProdutoPesquisa, escolherVoltagemProduto, 
          clicarAdicionarProduto, tirarEntrega, semSaldodisponivel, 
          avancarParaTransportadora, modalInconsRotaTransp, escolherTransportadora, escolherRota, avancarParcelasEntrega, botaoGerarParcelas, 
-         carregandoFormaPagamento, avancarFinal, trocarFilialFaturamento, botaoFinalizarPedido, finalizandoPedido, pedidoGerado, avancarParaParcelas, 
-         escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
+         avancarFinal, trocarFilialFaturamento, botaoFinalizarPedido, finalizandoPedido, pedidoGerado, avancarParaParcelas } from '../../../support/para_pedidos/gerais_pedidos';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas, aumentarQuantVendaCinco, 
          saldoRemotoAReceber, aumentarQuantVendaDez, processoVendaExclusiva } from '../../../support/para_pedidos/para_pedidos_exclusiva';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada

@@ -1,9 +1,9 @@
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, processoVendaPrincipal,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, finalizandoPedido,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, clicarAdicionarProduto, botaoGerarParcelas, modalInconsRotaTransp,
-         carregandoFormaPagamento, tirarEntrega, escolherDuasParcelaPagamento, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos';
+         tirarEntrega, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoKitPrimeiro } from '../../../support/para_pedidos/produtos_pedidos';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 
 describe('Gerar pedido normal', () => {

@@ -217,3 +217,37 @@ export function escolherRecebCheque (selector) {
         .and('not.be.disabled')
         .click({force:true})
 }
+
+//escolhendo parcelas da forma de pagamento escolhida - 2X
+export function escolherDuasParcelaPagamento (selector) {
+
+    //selecionando parcelas - 2X
+    cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(2) > div.ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click({force:true})
+}
+
+//escolhendo parcelas da forma de pagamento escolhida - 1X
+export function escolherUmaParcelaPagamento (selector) {
+
+    //selecionando parcelas - 1X
+    cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click({force:true})
+}
+
+//Carregamento de forma de pagamento, quando clicamos no botão Gerar parcelas
+export function carregandoFormaPagamento (selector) {
+
+    //Modal Forma de pagamento - título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Forma de pagamento')
+
+    //botão x do modal Serviços Vinculados
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+}
