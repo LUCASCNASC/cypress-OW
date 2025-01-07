@@ -2,7 +2,7 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, finalizandoPedido,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, clicarAdicionarProduto, botaoGerarParcelas, modalInconsRotaTransp,
          tirarEntrega, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos';
-import { produtoKitPrimeiro } from '../../../support/para_pedidos/produtos_pedidos';
+import { produtoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos';
 import { escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 

@@ -3,7 +3,7 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, modalInconsRotaTransp, carregandoFormaPagamento, escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento,
          escolherUmaParcelaPagamento, composicaoDesteKit, tirarEntregaTerceiro, pedidoAlteradoSucesso }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/para_pedidos/produtos_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, infosPedidoValidarInfos,
          infosPedidoValidarBotoes, clicarEditarPedido, menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto,
          clicarFecharIntencaoCompra, removerFormaPagamento, adicionarEntrega, adicionarServico } from '../../../support/para_pedidos/para_alterar_pedido.js';

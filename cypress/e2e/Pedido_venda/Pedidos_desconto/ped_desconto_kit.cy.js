@@ -2,7 +2,7 @@ import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPed
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal,
          clicarAdicionarProduto, botaoGerarParcelas, tirarEntrega,
          avancarParaParcelas, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoKitDesconto } from '../../../support/para_pedidos/produtos_pedidos.js';
+import { produtoKitDesconto } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
