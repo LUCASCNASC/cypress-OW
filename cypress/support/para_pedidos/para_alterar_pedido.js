@@ -265,3 +265,25 @@ export function clicarFecharIntencaoCompra (selector) {
         .and('not.be.disabled')
         .click()
 }
+
+//remover forma de pagamento na edição de um pedido
+export function removerFormaPagamento (selector) {
+
+    cy.get('.btn-remove-item-list > :nth-child(4) > .md-raised')
+        .should('exist')
+        .click({force:true})
+}
+
+//Arrastar botão de Retirada / Entrega, para colocar entrega
+export function colocarEntrega (selector) {
+
+    //Botão Retirada / Entrega parte esquerda
+    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-container')
+        .scrollIntoView()
+        .wait(500)
+
+    //Botão Retirada / Entrega - texto Retirada / Entrega
+    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
+        .should('have.text', ' Retirada / Entrega ')
+        .click({force:true})
+}

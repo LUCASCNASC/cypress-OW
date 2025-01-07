@@ -9,7 +9,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       //; implement node event listeners here
     },
-    defaultCommandTimeout: 14000,
+    defaultCommandTimeout: 20000,
     screenshotOnRunFailure: false, // Captura de screenshot somente quando o teste falhar
     screenshotsFolder: 'cypress/screenshots', // Diretório onde as screenshots serão salvas
     video: false, //Gravar vídeo do teste

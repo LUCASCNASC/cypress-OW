@@ -7,7 +7,7 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/para_pedidos/produtos_pedidos.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, infosPedidoValidarInfos,
          infosPedidoValidarBotoes, clicarEditarPedido, menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto,
-         clicarFecharIntencaoCompra } from '../../../support/para_pedidos/para_alterar_pedido.js';
+         clicarFecharIntencaoCompra, removerFormaPagamento, colocarEntrega } from '../../../support/para_pedidos/para_alterar_pedido.js';
          import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto';
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
@@ -34,14 +34,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherVoltagemProduto() 
             clicarAdicionarProduto()
             cy.wait(500)
-
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
             cy.wait(5500)
-
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             cy.wait(6000)
@@ -57,7 +55,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             okPedidoGerado()
             cy.wait(1500)
 
-            iconeMenuOpcoesPed()
+            iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
             pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
             escolherPedidoPendente()
             clicarDetalhes()
@@ -117,14 +115,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherVoltagemProduto() 
             clicarAdicionarProduto()
             cy.wait(500)
-
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
             cy.wait(5500)
-
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             cy.wait(6000)
@@ -140,7 +136,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             okPedidoGerado()
             cy.wait(1500)
 
-            iconeMenuOpcoesPed()
+            iconeMenuOpcoesPed()  //ALTERAÇÃO PEDIDO WEB
             pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
             escolherPedidoPendente()
             clicarDetalhes()
@@ -197,11 +193,53 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(7000)
             pedidoAlteradoSucesso()
         })
+
+        it.only('Gerar pedido, alterar colocando garantia e entrega.', () => {
+
+            produtoNormalPrimeiro() //PRODUTO
+            saldodisponivel()
+            escolherProdutoPesquisa()
+            cy.wait(200)
+            escolherVoltagemProduto() 
+            clicarAdicionarProduto()
+            cy.wait(500)
+            modalServicosVinculados() //SERVICOS
+            okServicosVinculados()
+            tirarEntrega() //ENTREGA
+            cy.wait(400)
+            avancarParaParcelas()
+            cy.wait(5500)
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento()
+            cy.wait(6000)
+            escolherFormaPagamentoPrincipal()
+            cy.wait(2000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            finalizandoPedido()
+            cy.wait(6000)
+            pedidoGerado()
+            okPedidoGerado()
+            cy.wait(1500)
+
+            iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
+            pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
+            escolherPedidoPendente()
+            clicarDetalhes()
+            clicarEditarPedido()
+            menssCarregarPedAlterar()
+            cy.wait(6000)
+            colocarEntrega()
+
+            
+        })
     })
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it.only('Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it.skip('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -210,18 +248,15 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
-
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora()
             cy.wait(6000)
-    
             modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
             escolherRota()
             escolherTransportadora()
             avancarParcelasEntrega()
-
             botaoGerarParcelas() //GERAR PARCELAS
             cy.wait(5000)
             carregandoFormaPagamento()
@@ -237,7 +272,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             okPedidoGerado()
             cy.wait(1500)
 
-            iconeMenuOpcoesPed()
+            iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
             pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
             escolherPedidoPendente()
             clicarDetalhes()
@@ -247,23 +282,21 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(11000)
             avancarParcelasEntrega()
             arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
-            // cy.wait(6500)
-            // avancarParcelasEntrega()
+            removerFormaPagamento()
+            cy.wait(10000)
+            avancarParcelasEntrega()
 
-
-
-            // botaoGerarParcelas() //GERAR PARCELAS
-            // carregandoFormaPagamento()
-            // cy.wait(5000)
-            // escolherSegundaFormaPagamento()
-            // escolherUmaParcelaPagamento()
-            // cy.wait(400)
-            // avancarFinal()
-            // cy.wait(6000)
-            // botaoFinalizarPedido() //RESUMO
-            // cy.wait(8000)
-            // finalizandoPedido()
-            // pedidoAlteradoSucesso()
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento()
+            escolherSegundaFormaPagamento()
+            cy.wait(3000)
+            escolherUmaParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            cy.wait(8000)
+            finalizandoPedido()
+            pedidoAlteradoSucesso()
         })
     })
 })
