@@ -1,10 +1,11 @@
-import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido, clicarAdicionarProduto,
+import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto,
          tirarEntrega, processoVendaPrincipal, avancarParaParcelas,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal } from '../../../support/para_pedidos/gerais_pedidos'
 import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela, messAdicionandoProdutosServicos, adicionarPrestamista, 
          tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos'
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
+import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
