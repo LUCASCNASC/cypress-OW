@@ -1,9 +1,10 @@
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido,
-         clicarAdicionarProduto, botaoGerarParcelas, processoVendaPrincipal, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados,
-         okServicosVinculados, escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, trocarFilialFaturamento, modalInconsApenasRota,
+         clicarAdicionarProduto, botaoGerarParcelas, processoVendaPrincipal, avancarParaTransportadora, avancarParcelasEntrega,
+         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, trocarFilialFaturamento, modalInconsApenasRota,
          carregandoFormaPagamento, semSaldodisponivel, escolherDuasParcelaPagamento, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/para_pedidos/produtos_pedidos';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 

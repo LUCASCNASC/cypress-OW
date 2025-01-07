@@ -1,4 +1,4 @@
-//escolhendo forma de pagamento 3860 ( 3860 - T.A. A Receber Futuro ) do pedido de venda
+//escolhendo forma de pagamento 3860 (3860 - T.A. A Receber Futuro) do pedido de venda
 export function escolherFormaPagamentoPrincipal (selector) {
 
     //validando título Forma de pagamento
@@ -18,7 +18,7 @@ export function escolherFormaPagamentoPrincipal (selector) {
         .click({force:true})
 }
 
-//escolhendo forma de pagamento 3862 ( 3862 - T.A.A Receber CDCI ) do pedido de venda
+//escolhendo forma de pagamento 3862 (3862 - T.A.A Receber CDCI) do pedido de venda
 export function escolherSegundaFormaPagamento (selector) {
 
     //validando título Forma de pagamento
@@ -38,7 +38,7 @@ export function escolherSegundaFormaPagamento (selector) {
         .click({force:true})
 }
 
-//escolhendo forma de pagamento 3861 ( 3861 - T.A. A Receber A Vista ) do pedido de venda
+//escolhendo forma de pagamento 3861 (3861 - T.A. A Receber A Vista ) do pedido de venda
 export function escolherRecebAVista (selector) {
 
     //validando título Forma de pagamento
@@ -58,7 +58,7 @@ export function escolherRecebAVista (selector) {
         .click({force:true})
 }
 
-//escolhendo forma de pagamento 3865 ( 3865 - T.A. A Receber Futuro - Proposta ) com proposta de crédito
+//escolhendo forma de pagamento 3865 (3865 - T.A. A Receber Futuro - Proposta) com proposta de crédito
 export function escolherFormaPagaPropCredito (selector) {
 
     //validando título Forma de pagamento
@@ -78,7 +78,7 @@ export function escolherFormaPagaPropCredito (selector) {
         .click({force:true})
 }
 
-//escolhendo forma de pagamento 3866 ( 3866 - T.A. A Receber Prestamista ) com proposta de crédito
+//escolhendo forma de pagamento 3866 (3866 - T.A. A Receber Prestamista) com proposta de crédito
 export function escolherRecebComPrestamista (selector) {
 
     //validando título Forma de pagamento
