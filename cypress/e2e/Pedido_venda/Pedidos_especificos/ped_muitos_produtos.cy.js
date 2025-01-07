@@ -5,6 +5,7 @@ import { escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoP
          addproduto16, addproduto17, addproduto18, addproduto19, addproduto20, addproduto21, addproduto22, addproduto23, addproduto24, 
          addproduto25, addproduto26, addproduto27,addproduto28, addproduto29, addproduto30, addproduto31, addproduto32, addproduto33, addproduto34, 
          addproduto35, addproduto36, addproduto37, addproduto38, addproduto39, addproduto40 } from '../../../support/para_pedidos/para_pedidos_muitos_produtos.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () => {
 

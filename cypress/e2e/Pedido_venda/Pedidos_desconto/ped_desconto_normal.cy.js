@@ -1,9 +1,9 @@
 import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido, clicarAdicionarProduto,
          tirarEntrega, botaoGerarParcelas, processoVendaPrincipal, avancarParaParcelas, modalServicosVinculados,
-         okServicosVinculados, escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, carregandoFormaPagamento,
-         escolherFormaPagamentoPrincipal, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
+         okServicosVinculados, escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoDescontoCifrao, produtoDescontoPercentual, produtoDescontoValorFixo } from '../../../support/para_pedidos/produtos_pedidos';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDescontoPorcentagem, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Gerar pedido de venda com desconto', () => {
 

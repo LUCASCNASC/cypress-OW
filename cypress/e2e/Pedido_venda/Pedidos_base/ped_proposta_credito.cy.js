@@ -1,10 +1,10 @@
 import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido,
          clicarAdicionarProduto, tirarEntrega, botaoGerarParcelas, processoVendaPrincipal,
          avancarParaParcelas, modalServicosVinculados, okServicosVinculados,
-         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, carregandoFormaPagamento,
-         escolherFormaPagamentoPrincipal, escolherDuasParcelaPagamento, escolherFormaPagaPropCredito, 
+         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, carregandoFormaPagamento, 
          escolherUmaParcelaPagamento, propostaCreditoGerada} from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoNormalPrimeiro } from '../../../support/para_pedidos/produtos_pedidos';
+import { escolherFormaPagaPropCredito } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Gerar pedido com proposta de crédito', () => {
 

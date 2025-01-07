@@ -5,7 +5,7 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
          escolherFormaPagamentoPrincipal, escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento,
          escolherUmaParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/produtos_pedidos.js';
-import {  } from '../../../support/para_pedidos/para_ped_formas_pagamento.js';
+import {  } from '../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 
 describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
@@ -26,7 +26,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.only('1-Venda: produto 1860 0 0 - duas formas de pagamento 3860 e 3862', () => {
+        it.only('1-Venda: produto 1860 0 0 - duas formas de pagamento 3861 e 3860', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -36,7 +36,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(5500)
+            cy.wait(6000)
             // botaoGerarParcelas() //GERAR PARCELAS
             // carregandoFormaPagamento()
             // cy.wait(5000)

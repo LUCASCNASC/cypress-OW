@@ -1,7 +1,8 @@
 import { processoVendaServicoAvulso, escolherClientePedido, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso,
          saldoDisponivelServico, escolherServicoPesquisa } from '../../../support/para_pedidos/para_servicos_avulsos';
 import { botaoGerarParcelas, avancarFinal, botaoFinalizarPedido, finalizandoPedido, pedidoGerado, carregandoFormaPagamento, 
-         escolherFormaPagamentoPrincipal, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
+         escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Venda de serviço avulso', () => {
 

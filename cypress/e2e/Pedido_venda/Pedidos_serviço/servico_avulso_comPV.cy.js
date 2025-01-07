@@ -3,8 +3,9 @@ import { processoVendaServicoAvulso, escolherClientePedido, iconeMenuOpcoes, cli
          modalGarantiasServicosVinculados, okServicosVinculados, messServicoAdicionadoSucesso, botaoSalvarServico, messAguardeCarregando,
          messRegistroSalvoSucesso, messGarantiaJaAdicionada, clicarCarrinhoCompras, botaoAvancarPedido } from '../../../support/para_pedidos/para_servicos_avulsos';
 import { botaoGerarParcelas, avancarFinal, botaoFinalizarPedido, finalizandoPedido, pedidoGerado, carregandoFormaPagamento, 
-         escolherFormaPagamentoPrincipal, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
+         escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 

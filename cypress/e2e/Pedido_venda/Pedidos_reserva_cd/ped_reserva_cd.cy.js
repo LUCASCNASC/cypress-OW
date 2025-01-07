@@ -2,8 +2,9 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
          clicarAdicionarProduto, tirarEntrega, tirarMontagem, tirarEntregaSegundo, tirarMontagemSegundo, botaoGerarParcelas, processoVendaPrincipal,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, modalInconsRotaTransp, carregandoFormaPagamento, 
-         saldoCDDisponivel, escolherFormaPagamentoPrincipal, escolherDuasParcelaPagamento} from '../../../support/para_pedidos/gerais_pedidos';
+         saldoCDDisponivel, escolherDuasParcelaPagamento} from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoCDPrimeiro, produtoNormalSegundo} from '../../../support/para_pedidos/produtos_pedidos';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 

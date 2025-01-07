@@ -5,6 +5,7 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
 import { produtoPrincipal, clicarAdicionarProduto, primeiroProdutoEscolher, segundoProdutoEscolher, terceiroProdutoEscolher,
          quartoProdutoEscolher, quintoProdutoEscolher, sextoProdutoEscolher, setimoProdutoEscolher, oitavoProdutoEscolher,
          nonoProdutoEscolher, decimoProdutoEscolher} from '../../../support/para_pedidos/para_pedidos_10_produtos.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Gerar pedido normal', () => {
 

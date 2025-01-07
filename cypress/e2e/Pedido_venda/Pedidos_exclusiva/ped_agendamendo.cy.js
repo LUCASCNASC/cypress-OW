@@ -2,9 +2,10 @@ import { escolherClientePedido, saldodisponivel, escolherProdutoPesquisa, escolh
          clicarAdicionarProduto, modalServicosVinculados, okServicosVinculados, tirarEntrega, semSaldodisponivel, 
          avancarParaTransportadora, modalInconsRotaTransp, escolherTransportadora, escolherRota, avancarParcelasEntrega, botaoGerarParcelas, 
          carregandoFormaPagamento, avancarFinal, trocarFilialFaturamento, botaoFinalizarPedido, finalizandoPedido, pedidoGerado, avancarParaParcelas, 
-         escolherFormaPagamentoPrincipal, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
+         escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas, aumentarQuantVendaCinco, 
          saldoRemotoAReceber, aumentarQuantVendaDez, processoVendaExclusiva } from '../../../support/para_pedidos/para_pedidos_exclusiva';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {

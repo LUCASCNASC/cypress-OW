@@ -2,9 +2,10 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
          clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo, tirarMontagemSegundo, botaoGerarParcelas, processoVendaPrincipal,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, modalInconsRotaTransp, carregandoFormaPagamento,
-         escolherFormaPagamentoPrincipal, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos'
+         escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos'
 import { produtoNormalSegundo } from '../../../support/para_pedidos/produtos_pedidos';
 import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Gerar pedidos com promoção', () => {
 

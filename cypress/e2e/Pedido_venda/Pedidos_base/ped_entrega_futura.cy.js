@@ -1,9 +1,10 @@
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, finalizandoPedido,
          clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo, botaoGerarParcelas, processoEntregaFutura,
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados,
-         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, modalInconsApenasTransp, carregandoFormaPagamento, escolherFormaPagamentoPrincipal, 
+         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, modalInconsApenasTransp, carregandoFormaPagamento, 
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/produtos_pedidos';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 describe('Gerar pedido de entrega futura', () => {
 

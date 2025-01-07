@@ -518,66 +518,6 @@ export function botaoGerarParcelas (selector) {
         .click({force:true})
 }
 
-//escolhendo forma de pagamento do pedido de venda
-export function escolherFormaPagamentoPrincipal (selector) {
-
-    //validando título Forma de pagamento
-    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('exist')
-        .and('have.text','Forma de pagamento')
-
-    //validando botão X
-    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //escolhendo forma de pagamento - 3860
-    cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .click({force:true})
-}
-
-//escolhendo forma de pagamento do pedido de venda
-export function escolherSegundaFormaPagamento (selector) {
-
-    //validando título Forma de pagamento
-    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('exist')
-        .and('have.text','Forma de pagamento')
-
-    //validando botão X
-    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //escolhendo forma de pagamento - 3862
-    cy.get(':nth-child(3) > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .click({force:true})
-}
-
-//escolhendo forma de pagamento com proposta de crédito
-export function escolherFormaPagaPropCredito (selector) {
-
-    //validando título Forma de pagamento
-    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('have.text','Forma de pagamento')
-
-    //validando botão X
-    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //escolhendo forma de pagamento - 3860
-    cy.contains('3865 - T.A. A Receber Futuro - Proposta')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .click({force:true})
-}
-
 //escolhendo parcelas da forma de pagamento escolhida - 2X
 export function escolherDuasParcelaPagamento (selector) {
 
