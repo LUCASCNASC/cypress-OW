@@ -1,10 +1,10 @@
 import { saldodisponivel, escolherClientePedido, pedidoGerado, botaoFinalizarPedido, processoVendaPrincipal, finalizandoPedido,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal,
-         clicarAdicionarProduto, botaoGerarParcelas, tirarEntrega,
+         clicarAdicionarProduto, tirarEntrega,
          avancarParaParcelas, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoKitDesconto } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
-import { escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 
 describe('Gerar pedido de venda Kit com desconto', () => {

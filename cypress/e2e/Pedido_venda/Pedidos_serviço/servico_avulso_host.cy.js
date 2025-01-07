@@ -1,8 +1,8 @@
 import { processoVendaServicoAvulso, escolherClientePedido, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancarPedido,
          produtoServicoHost, saldoDisponivelServico, escolherServicoPesquisa, escolherValorRecarga } from '../../../support/para_pedidos/para_servicos_avulsos';
-import { botaoGerarParcelas, avancarFinal, botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/gerais_pedidos';
+import { avancarFinal, botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/gerais_pedidos';
 import { iconeMenuOpcoes } from '../../../support/para_menus/para_menu_opcoes';
-import { escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 
 //Para este cenário, é necessário fazer update na coluna dataultimaatualizacao, da tabela glb.servicofaixavalorfixo
 describe('Venda de serviço avulso Host - 104', () => {

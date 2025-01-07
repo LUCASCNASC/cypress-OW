@@ -503,21 +503,6 @@ export function tirarMontagemSegundo (selector) {
         .click({force:true})
 }
 
-//Botão "GERAR PARCELAS"
-export function botaoGerarParcelas (selector) {
-
-    //Botão "GERAR PARCELAS" - validações
-    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
-        .scrollIntoView()
-        .wait(200)
-        .should('exist')
-        .and('have.text', 'Gerar parcelas')
-
-    //Botão "GERAR PARCELAS" - clicar
-    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
-        .click({force:true})
-}
-
 //Para escolher processo de venda 9860 normal
 export function processoVendaPrincipal (selector) {
 

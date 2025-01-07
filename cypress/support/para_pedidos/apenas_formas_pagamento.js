@@ -251,3 +251,18 @@ export function carregandoFormaPagamento (selector) {
         .should('be.visible')
         .and('not.be.disabled')
 }
+
+//Botão "GERAR PARCELAS"
+export function botaoGerarParcelas (selector) {
+
+    //Botão "GERAR PARCELAS" - validações
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .scrollIntoView()
+        .wait(200)
+        .should('exist')
+        .and('have.text', 'Gerar parcelas')
+
+    //Botão "GERAR PARCELAS" - clicar
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .click({force:true})
+}
