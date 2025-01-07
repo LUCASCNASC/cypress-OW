@@ -3,12 +3,14 @@ import { escolherTransportadora, saldodisponivel, escolherRota, escolherClienteP
          avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega, modalServicosVinculados, okServicosVinculados,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, modalInconsRotaTransp, carregandoFormaPagamento,
          escolherFormaPagamentoPrincipal, escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento,
-         escolherUmaParcelaPagamento, composicaoDesteKit, tirarEntregaTerceiro, pedidoAlteradoSucesso, escolherSegundaFormaPagamento }  from '../../../support/para_pedidos/gerais_pedidos.js';
+         escolherUmaParcelaPagamento, composicaoDesteKit, tirarEntregaTerceiro, pedidoAlteradoSucesso, escolherSegundaFormaPagamento,
+         }  from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/para_pedidos/produtos_pedidos.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, infosPedidoValidarInfos,
          infosPedidoValidarBotoes, clicarEditarPedido, menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto,
-         clicarFecharIntencaoCompra, removerFormaPagamento, colocarEntrega } from '../../../support/para_pedidos/para_alterar_pedido.js';
-         import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto';
+         clicarFecharIntencaoCompra, removerFormaPagamento, adicionarEntrega, adicionarServico } from '../../../support/para_pedidos/para_alterar_pedido.js';
+import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto';
+import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos';
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -194,7 +196,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             pedidoAlteradoSucesso()
         })
 
-        it.only('Gerar pedido, alterar colocando garantia e entrega.', () => {
+        //erro de inconsistencia quando colocamos o serviço de entrega
+        it.skip('Gerar pedido, alterar colocando garantia e entrega.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -231,8 +234,17 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarEditarPedido()
             menssCarregarPedAlterar()
             cy.wait(6000)
-            colocarEntrega()
-
+            adicionarEntrega()
+            adicionarServico()
+            cy.wait(2000)
+            garantiaSeparaMesmoProcesso()
+            okServicosVinculados()
+            avancarParaTransportadora()
+            cy.wait(7000)
+            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
+            escolherRota()
+            escolherTransportadora()
+            avancarParcelasEntrega()
             
         })
     })

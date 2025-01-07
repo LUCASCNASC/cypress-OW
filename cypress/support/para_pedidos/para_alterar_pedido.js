@@ -275,15 +275,30 @@ export function removerFormaPagamento (selector) {
 }
 
 //Arrastar botão de Retirada / Entrega, para colocar entrega
-export function colocarEntrega (selector) {
+export function adicionarEntrega (selector) {
 
     //Botão Retirada / Entrega parte esquerda
-    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-container')
+    cy.get('.valor.flex-gt-sm-50 > .flex-gt-sm-30 > .md-label')
         .scrollIntoView()
         .wait(500)
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
+    cy.get('.valor.flex-gt-sm-50 > .flex-gt-sm-30 > .md-label')
         .should('have.text', ' Retirada / Entrega ')
         .click({force:true})
+}
+
+//Adicionar serviço a um produto já adicionado ao pedido
+export function adicionarServico (selector) {
+    
+    cy.contains('button', 'Serviços Vinculados')
+        .should('exist')
+
+    //botão SERVICOS VINCULADOS
+    cy.get(':nth-child(4) > :nth-child(1) > .md-default')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    cy.get(':nth-child(4) > :nth-child(1) > .md-default')
+        .click()
 }
