@@ -1,5 +1,5 @@
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido,
-         processoVendaPrincipal, avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega,
+         avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega,
          escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo,
          avancarFinal, modalInconsRotaTransp } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos';
@@ -7,6 +7,7 @@ import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloPro
  } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
 
 describe('Gerar pedidos com Garantia', () => {
 

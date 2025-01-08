@@ -1,5 +1,5 @@
 import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto,
-         tirarEntrega, processoVendaPrincipal,
+         tirarEntrega,
          escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, 
          avancarParaParcelas} from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoArredondarCimaBaixo } from '../../../support/para_pedidos/apenas_produtos_pedidos';
@@ -7,6 +7,7 @@ import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarV
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
 
 describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
 

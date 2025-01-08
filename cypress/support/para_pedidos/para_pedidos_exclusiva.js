@@ -213,29 +213,3 @@ export function saldoRemotoAReceber (selector) {
     cy.get('.expandeIcone')
         .should('be.visible')
 }
-
-//Para escolher processo de venda 9869 para exclusiva
-export function processoVendaExclusiva (selector) {
-
-    //clicar para aparecer as opções de processo
-    cy.get('#select_value_label_4 > .md-select-icon')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .click()
-
-    //rolar para o meio das opções de processo
-    cy.get('#select_listbox_12')
-        .should('be.visible')
-        .scrollTo('center')
-
-    //selecionar processo de venda "9869"
-    cy.get('.md-text.ng-binding')
-        .contains('9869 - T.A. Pedido Negociável Exclusiva')
-        .click({force:true})
-
-    //fechar modal de processos
-    cy.get('.md-select-backdrop')
-        .wait(200)
-        .dblclick()
-        .wait(200)
-}

@@ -1,30 +1,3 @@
-//Para escolher processo de venda 9888 - serviços avulsos - quando já temos uma nota de venda de produto e quando vamos vender igual produto
-export function processoVendaServicoAvulso (selector) {
-
-    //clicar para aparecer as opções de processo
-    cy.get('#select_value_label_4 > .md-select-icon')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .click()
-
-    //rolar para o meio das opções de processo
-    cy.get('#select_listbox_12')
-        .should('be.visible')
-        .scrollTo('bottom')
-        .wait(200)
-
-    //escolher processo 9888
-    cy.get('.md-text.ng-binding')
-        .contains('9888 - T.A. Venda de serviço avulso')
-        .click({force:true})
-
-    //fechar modal de processos
-    cy.get('.md-select-backdrop')
-        .wait(200)
-        .dblclick()
-        .wait(200)
-}
-
 //Função para escolher cliente CPF para gerar pedido de venda - pesquisa por cliente
 export function escolherClientePedido (selector) {
 
