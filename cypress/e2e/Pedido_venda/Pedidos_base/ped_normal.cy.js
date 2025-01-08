@@ -1,13 +1,13 @@
 import { escolherTransportadora, saldodisponivel, escolherRota,
          finalizandoPedido, clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo,
-         avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega,
-         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, modalInconsRotaTransp, escolherEntradaFormaPagamento, clicarGerarPagamento,
+         escolherProdutoPesquisa, escolherVoltagemProduto, modalInconsRotaTransp, escolherEntradaFormaPagamento, clicarGerarPagamento,
          } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
 describe('Gerar pedido normal', () => {
 

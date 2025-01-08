@@ -1,5 +1,4 @@
 import { escolherClientePedido, 
-         avancarParcelasEntrega, avancarFinal,
          produtoPrincipal, escolherProdutoPesquisa, botãoAdicionarProduto, addproduto1, addproduto2, addproduto3, addproduto4, addproduto5, 
          addproduto6, addproduto7, addproduto8, addproduto9, addproduto10, addproduto11, addproduto12, addproduto13, addproduto14, addproduto15, 
          addproduto16, addproduto17, addproduto18, addproduto19, addproduto20, addproduto21, addproduto22, addproduto23, addproduto24, 
@@ -9,6 +8,7 @@ import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPag
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
 describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () => {
 

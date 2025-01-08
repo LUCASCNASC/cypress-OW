@@ -1,7 +1,6 @@
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, 
          clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo,
-         avancarParaParcelas, avancarParaTransportadora, avancarParcelasEntrega,
-         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, modalInconsRotaTransp, escolherEntradaFormaPagamento, clicarGerarPagamento,
+         escolherProdutoPesquisa, escolherVoltagemProduto, modalInconsRotaTransp, escolherEntradaFormaPagamento, clicarGerarPagamento,
          } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
@@ -9,6 +8,7 @@ import { botaoGerarParcelas, escolherFormaPagaPropCredito, carregandoFormaPagame
 import {  } from '../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
 describe('Gerar pedido com mais de uma forma de pagamento', () => {
 

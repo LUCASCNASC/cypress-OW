@@ -1,13 +1,12 @@
-import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto,
-         tirarEntrega,
-         escolherProdutoPesquisa, escolherVoltagemProduto, avancarFinal, 
-         avancarParaParcelas} from '../../../support/para_pedidos/gerais_pedidos';
+import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, tirarEntrega,
+         escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoArredondarCimaBaixo } from '../../../support/para_pedidos/apenas_produtos_pedidos';
 import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarValorParaBaixo, alterarValorParaCima } from '../../../support/para_pedidos/para_pedido_desconto';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
 describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
 
