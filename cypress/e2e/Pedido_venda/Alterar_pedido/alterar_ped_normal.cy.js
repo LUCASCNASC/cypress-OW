@@ -1,11 +1,10 @@
 import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, clicarAdicionarProduto, tirarEntrega, 
-         tirarEntregaSegundo, escolherProdutoPesquisa,
-         escolherVoltagemProduto, modalInconsRotaTransp, escolherEntradaFormaPagamento, clicarGerarPagamento,
-         composicaoDesteKit, tirarEntregaTerceiro }  from '../../../support/para_pedidos/gerais_pedidos.js';
+         tirarEntregaSegundo, escolherProdutoPesquisa, escolherVoltagemProduto, modalInconsRotaTransp, escolherEntradaFormaPagamento,
+         clicarGerarPagamento, composicaoDesteKit, tirarEntregaTerceiro }  from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
-import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes,
-         clicarEditarPedido, menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto,
-         clicarFecharIntencaoCompra, removerFormaPagamento, adicionarEntrega, adicionarServico } from '../../../support/para_pedidos/para_alterar_pedido.js';
+import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
+         menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
+         adicionarEntrega, adicionarServico } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto';
 import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, carregandoFormaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';

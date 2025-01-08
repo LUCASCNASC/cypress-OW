@@ -1,6 +1,6 @@
-import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido,
-         clicarAdicionarProduto, tirarEntrega, tirarMontagem, tirarEntregaSegundo, tirarMontagemSegundo,
-         escolherProdutoPesquisa, escolherVoltagemProduto, modalInconsRotaTransp, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos';
+import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, clicarAdicionarProduto, tirarEntrega,
+         tirarMontagem, tirarEntregaSegundo, tirarMontagemSegundo,  escolherProdutoPesquisa, escolherVoltagemProduto,
+         modalInconsRotaTransp, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoCDPrimeiro, produtoNormalSegundo} from '../../../support/para_pedidos/apenas_produtos_pedidos';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';

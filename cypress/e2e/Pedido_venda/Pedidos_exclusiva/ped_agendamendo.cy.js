@@ -1,6 +1,5 @@
-import { escolherClientePedido, saldodisponivel, escolherProdutoPesquisa, escolherVoltagemProduto, 
-         clicarAdicionarProduto, tirarEntrega, semSaldodisponivel, 
-         modalInconsRotaTransp, escolherTransportadora, escolherRota, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos';
+import { escolherClientePedido, saldodisponivel, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto, tirarEntrega,
+         semSaldodisponivel, modalInconsRotaTransp, escolherTransportadora, escolherRota, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas, aumentarQuantVendaCinco, 
          saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';

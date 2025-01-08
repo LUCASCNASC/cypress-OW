@@ -1,10 +1,10 @@
-import { escolherClientePedido, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancarPedido,
-         produtoServicoHost, saldoDisponivelServico, escolherServicoPesquisa, escolherValorRecarga } from '../../../support/para_pedidos/para_servicos_avulsos';
+import { escolherClientePedido, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoHost,
+         saldoDisponivelServico, escolherServicoPesquisa, escolherValorRecarga } from '../../../support/para_pedidos/para_servicos_avulsos';
 import { iconeMenuOpcoes } from '../../../support/para_menus/para_menu_opcoes';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaServicoAvulso } from '../../../support/para_pedidos/apenas_processos_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
 //Para este cenário, é necessário fazer update na coluna dataultimaatualizacao, da tabela glb.servicofaixavalorfixo
 describe('Venda de serviço avulso Host - 104', () => {

@@ -1,5 +1,4 @@
-import { saldodisponivel, escolherRota, escolherClientePedido,
-         clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo,
+import { saldodisponivel, escolherRota, escolherClientePedido, clicarAdicionarProduto, tirarEntrega, tirarEntregaSegundo,
          escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';

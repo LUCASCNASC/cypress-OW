@@ -1,6 +1,5 @@
-import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido,
-         escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto, modalInconsRotaTransp,
-         tirarEntrega, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos';
+import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, escolherProdutoPesquisa, escolherVoltagemProduto,
+         clicarAdicionarProduto, modalInconsRotaTransp, tirarEntrega, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
