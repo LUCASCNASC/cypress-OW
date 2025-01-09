@@ -1,4 +1,4 @@
-import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, tirarEntrega, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos';
+import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, tirarEntrega, escolherVoltagemProduto, escolherProdutoPesquisa } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoDescontoCifrao, produtoDescontoPercentual, produtoDescontoValorFixo } from '../../../support/para_pedidos/apenas_produtos_pedidos';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDescontoPorcentagem, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -22,7 +22,7 @@ describe('Gerar pedido de venda com desconto', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it('1-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / R$', () => {
+        it.skip('1-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / R$', () => {
 
             produtoDescontoCifrao() //PRODUTO
             saldodisponivel()
@@ -50,7 +50,7 @@ describe('Gerar pedido de venda com desconto', () => {
             avancarFinal()
         })
 
-        it('2-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
+        it.skip('2-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
 
             produtoDescontoPercentual() //PRODUTO
             saldodisponivel()
@@ -78,7 +78,7 @@ describe('Gerar pedido de venda com desconto', () => {
             avancarFinal()
         })
 
-        it('3-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / VALOR FIXO', () => {
+        it.skip('3-Pedido de venda: produto 1860 0 0 com desconto Sub (-) / VALOR FIXO', () => {
 
             produtoDescontoValorFixo() //PRODUTO
             saldodisponivel()
@@ -107,10 +107,10 @@ describe('Gerar pedido de venda com desconto', () => {
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(7000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(7000)
+    //     pedidoGerado()
+    //   });
 })

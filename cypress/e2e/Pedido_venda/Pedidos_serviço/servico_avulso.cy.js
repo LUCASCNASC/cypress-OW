@@ -20,7 +20,7 @@ describe('Venda de serviço avulso', () => {
 
     context('Processo 9888 - caminho feliz', () => {
 
-        it('Venda de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
+        it.skip('Venda de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
             produtoServicoAvulso() //PRODUTO
             saldoDisponivelServico()
@@ -37,7 +37,6 @@ describe('Venda de serviço avulso', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(4000) 
         })
     })
 

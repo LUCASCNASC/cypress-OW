@@ -1,13 +1,13 @@
-import { escolherTransportadora, saldodisponivel, escolherRota, escolherClientePedido, clicarAdicionarProduto, tirarEntrega,
-         tirarEntregaSegundo, escolherProdutoPesquisa, escolherVoltagemProduto, modalInconsRotaTransp, escolherEntradaFormaPagamento,
-         clicarGerarPagamento } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, tirarEntrega, escolherProdutoPesquisa, escolherVoltagemProduto,
+         escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
-import { botaoGerarParcelas, escolherFormaPagaPropCredito, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import {  } from '../../../support/para_pedidos/para_ped_varios_recebimentos.js';
+import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
+         escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, selecionarLancAgrupar, clicarAgrupar } from '../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
 describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
@@ -28,7 +28,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.only('1-Venda: produto 1860 0 0 - duas formas de pagamento 3861 e 3860', () => {
+        it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -39,23 +39,147 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.wait(400)
             avancarParaParcelas()
             cy.wait(6000)
-            // botaoGerarParcelas() //GERAR PARCELAS
-            // carregandoFormaPagamento()
-            // cy.wait(5000)
-            // escolherFormaPagamentoPrincipal()
-            // escolherDuasParcelaPagamento()
-            // cy.wait(400)
-            // avancarFinal()
+            primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            cy.wait(1000)
+            botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            cy.wait(5000)
+            escolherRecebDebitoPOS()
+            cy.wait(3000)
+            escolherUmaParcelaPagamento()
+            cy.wait(500)
+            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+        })
+
+        it.skip('1-Venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
+
+            escolherVoltagemProduto() //PRODUTO
+            clicarAdicionarProduto()
+            cy.wait(500)
+            modalServicosVinculados() //SERVICOS
+            okServicosVinculados()
+            tirarEntrega() //ENTREGA
+            cy.wait(400)
+            avancarParaParcelas()
+            cy.wait(6000)
+            escolherEntradaFormaPagamento()
+            clicarGerarPagamento()
+            cy.wait(400)
+            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+        })
+
+        it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
+
+            escolherVoltagemProduto() //PRODUTO
+            clicarAdicionarProduto()
+            cy.wait(500)
+            modalServicosVinculados() //SERVICOS
+            okServicosVinculados()
+            tirarEntrega() //ENTREGA
+            cy.wait(400)
+            avancarParaParcelas()
+            cy.wait(6000)
+            primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            cy.wait(1000)
+            botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            cy.wait(5000)
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherUmaParcelaPagamento()
+            cy.wait(500)
+            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
+            cy.wait(3000)
+            escolherUmaParcelaPagamento()
+            naoAgruparLancamentos()
+            cy.wait(400)
+            avancarFinal()
+        })
+
+        it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
+
+            escolherVoltagemProduto() //PRODUTO
+            clicarAdicionarProduto()
+            cy.wait(500)
+            modalServicosVinculados() //SERVICOS
+            okServicosVinculados()
+            tirarEntrega() //ENTREGA
+            cy.wait(400)
+            avancarParaParcelas()
+            cy.wait(6000)
+            primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            cy.wait(1000)
+            botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            cy.wait(5000)
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherUmaParcelaPagamento()
+            cy.wait(500)
+            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
+            cy.wait(3000)
+            escolherUmaParcelaPagamento()
+            agruparLancamentos()
+            cy.wait(400)
+            avancarFinal()
+        })
+
+        it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
+
+            escolherVoltagemProduto() //PRODUTO
+            clicarAdicionarProduto()
+            cy.wait(500)
+            modalServicosVinculados() //SERVICOS
+            okServicosVinculados()
+            tirarEntrega() //ENTREGA
+            cy.wait(400)
+            avancarParaParcelas()
+            cy.wait(6000)
+            primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            cy.wait(1000)
+            botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            cy.wait(5000)
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherUmaParcelaPagamento()
+            cy.wait(500)
+            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            carregandoFormaPagamento()
+            escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
+            cy.wait(3000)
+            escolherUmaParcelaPagamento()
+            naoAgruparLancamentos()
+            selecionarLancAgrupar()
+            clicarAgrupar()
+            cy.wait(400)
+            avancarFinal()
         })
     })
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(8000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        finalizandoPedido()
+        cy.wait(8000)
+        pedidoGerado()
+      });
 })

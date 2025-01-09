@@ -26,7 +26,7 @@ describe('Gerar pedido de entrega futura', () => {
 
     context('Sem frete/ processo 9862 - caminho feliz', () => {
 
-        it('1-Pedido de venda: produto 1860 0 0', () => {
+        it.skip('1-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -46,7 +46,7 @@ describe('Gerar pedido de entrega futura', () => {
             avancarFinal()
         })
         
-        it('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()

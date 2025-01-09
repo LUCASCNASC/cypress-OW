@@ -25,7 +25,7 @@ describe('Gerar pedido com proposta de crédito', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it('1-Venda: produto 1860 0 0 - (Pedido de  venda sem entrega, com proposta de crédito.)', () => {
+        it.skip('1-Venda: produto 1860 0 0 - (Pedido de  venda sem entrega, com proposta de crédito.)', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()

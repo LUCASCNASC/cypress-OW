@@ -425,7 +425,7 @@ export function clicarServicosMenu (selector) {
         .should('have.attr', 'aria-label', 'Serviços')
 
     //ícone Serviços 
-    cy.get('md-icon[md-svg-src="images/icons/services.svg"]')
+    cy.get('[role="listitem"][href="#!/servicos"] > div.md-button > .md-no-style')
         .scrollIntoView()
         .should('be.visible')
         .click({force:true})
@@ -463,9 +463,10 @@ export function escolherValorRecarga (selector) {
         .should('be.visible')
         .and('contain', 'Valor')
 
-    //seta para escolher valor da recarga
-    cy.get('#select_value_label_124 > .md-select-icon')
-        .click({force:true});
+    //clicar na caixinha para escolher o valor da recarga
+    cy.contains('.md-text.ng-binding', '2,00')  // Encontra o texto "2,00" dentro do <div>
+        .parents('md-select-value')  // Sobe para o <md-select-value> pai
+        .click();  // Clica no <md-select-value>
 
     //selecionando valor da recarga
     cy.contains('10,00')

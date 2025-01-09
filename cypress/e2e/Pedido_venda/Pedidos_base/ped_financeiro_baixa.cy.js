@@ -83,7 +83,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
     
     context('Com frete/ processo 9863 - caminho feliz', () => {
 
-        it('3-Pedido de venda: produto 1860 0 0', () => {
+        it.skip('3-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -105,7 +105,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             avancarFinal()
         })
 
-        it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()

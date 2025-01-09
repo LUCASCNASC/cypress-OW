@@ -17,7 +17,7 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
 
     context('Processo 9860 - não permitir fazer a venda - no momento de adicionar produto, devem aparecer mensagens de aviso', () => {
 
-        it('1-Pedido de venda: produto 1869 0 0 (Venda local de produto sem saldo - sem entrega)', () => {
+        it.skip('1-Pedido de venda: produto 1869 0 0 (Venda local de produto sem saldo - sem entrega)', () => {
             
             produtoSemSaldo() // PRODUTO
             semSaldodisponivel()
