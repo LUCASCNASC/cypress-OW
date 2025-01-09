@@ -23,7 +23,7 @@ describe('Gerar pedidos com promoção', () => {
   
     context('Sem entrega/ com promoção/ processo 9860 - caminho feliz', () => {
 
-        it.skip('1-Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it('1-Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
@@ -43,7 +43,7 @@ describe('Gerar pedidos com promoção', () => {
             avancarFinal() 
         })
     
-        it.skip('2-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it('2-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
@@ -73,7 +73,7 @@ describe('Gerar pedidos com promoção', () => {
             avancarFinal() 
         })
     
-        it.skip('3-Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it('3-Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
@@ -96,7 +96,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Sem entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
 
-        it.skip('4-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('4-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
@@ -138,7 +138,7 @@ describe('Gerar pedidos com promoção', () => {
             avancarFinal()
         })
 
-        it.skip('5-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('5-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
@@ -183,7 +183,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Com entrega /com promoção/ processo 9860 - caminho feliz', () => {
 
-        it.skip('6-Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it('6-Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
@@ -215,7 +215,7 @@ describe('Gerar pedidos com promoção', () => {
             avancarFinal()
         })
     
-        it.skip('7-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it('7-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
@@ -251,7 +251,7 @@ describe('Gerar pedidos com promoção', () => {
             avancarFinal()
         })
 
-        it.skip('8-Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it('8-Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
@@ -287,7 +287,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Com entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
 
-        it.skip('9-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('9-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()

@@ -1,23 +1,28 @@
 //Função criada para clicar no campo transportadora e escolher a trasportadora
 export function escolherTransportadora (selector) {
 
-    const transportadora_id = '1'
+    cy.wait(5000)
 
-    cy.get('[ng-click="capturarSomentePromocao()"] > .ng-scope')
-        .scrollIntoView({force:true})
-
-    cy.wait(300)
-
-    //Campo Transportadora - clicar para abrir as opções
     cy.get('[name="transportadora"]')
+        .scrollIntoView()
+        .wait(300)
         .click({force:true})
 
-    cy.wait(300)
+    // cy.contains('1')
+    //     .click({force:true})
 
-    //Selecionar a transportadora que queremos
-    cy.get('span[md-highlight-text]')
-        .contains('1')
-        .click({force:true})
+    // cy.wait(300)
+
+    // //Campo Transportadora - clicar para abrir as opções
+    // cy.get('[name="transportadora"]')
+    //     .click({force:true})
+
+    // cy.wait(300)
+
+    // //Selecionar a transportadora que queremos
+    // cy.get('span[md-highlight-text]')
+    //     .contains('1')
+    //     .click({force:true})
 }
 
 //Escolher rota completa, rota maringá
@@ -167,18 +172,7 @@ export function escolherClientePedido2 (selector) {
         .wait(500)
         .type('    48976249089{enter}')
 
-    cy.wait(300)
-
-    //Carregando cliente, ícone carregamento
-    cy.get('svg path')
-        .should('be.visible')
-
-    //Validando mensagem de carregamento do cliente
-    cy.get('#dialogContent_90 > .layout-align-center-center > h3')
-        .should('be.visible')
-        .and('have.text', 'Aguarde carregando...')
-
-    cy.wait(2200)
+    cy.wait(2000)
 
     //Card Intenções de Compra - título "Intenções de Compra"
     cy.get('.md-title')

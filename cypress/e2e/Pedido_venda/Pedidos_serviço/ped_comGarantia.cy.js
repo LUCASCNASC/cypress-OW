@@ -31,7 +31,7 @@ describe('Gerar pedidos com Garantia', () => {
 
     context('Sem entrega/processo 9860 - caminho feliz', () => {
 
-        it.skip('1-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it('1-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
@@ -41,7 +41,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.wait(7000)
         })
 
-        it.skip('2-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('2-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
@@ -63,7 +63,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.wait(7000)
         })
     
-        it.skip('3-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
+        it('3-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
@@ -73,7 +73,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.wait(7000)
         })
 
-        it.skip('4-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('4-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
@@ -95,7 +95,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.wait(7000)
         })
     
-        it.skip('5-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
+        it('5-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
@@ -105,7 +105,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.wait(7000)
         })
 
-        it.skip('6-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('6-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
@@ -130,7 +130,7 @@ describe('Gerar pedidos com Garantia', () => {
 
     context('Com entrega/processo 9860 - caminho feliz', () => {
 
-        it.skip('7-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it('7-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
@@ -143,7 +143,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega()
         })
 
-        it.skip('8-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('8-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
@@ -167,7 +167,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega() 
         })
 
-        it.skip('9-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
+        it('9-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
@@ -180,7 +180,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega() 
         })
 
-        it.skip('10-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('10-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
@@ -204,7 +204,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega() 
         })
 
-        it.skip('11-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
+        it('11-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
@@ -217,7 +217,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega() 
         })
 
-        it.skip('12-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('12-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS

@@ -1,6 +1,6 @@
-import { escolherTransportadora, saldodisponivel, escolherRota, finalizandoPedido, clicarAdicionarProduto, tirarEntrega,
+import { escolherTransportadora, saldodisponivel, escolherRota, clicarAdicionarProduto, tirarEntrega,
          tirarEntregaSegundo, escolherProdutoPesquisa, escolherVoltagemProduto, modalInconsRotaTransp, escolherEntradaFormaPagamento,
-         clicarGerarPagamento } from '../../../support/para_pedidos/gerais_pedidos.js';
+         clicarGerarPagamento, modalInconsApenasTransp, escolherClientePedido} from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
@@ -27,7 +27,7 @@ describe('Gerar pedido normal', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('1-Venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
+        it('1-Venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -47,7 +47,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it.skip('2-Venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2-Venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -80,7 +80,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it.skip('3-Venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
+        it('3-Venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -105,7 +105,7 @@ describe('Gerar pedido normal', () => {
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
+        it('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -114,23 +114,21 @@ describe('Gerar pedido normal', () => {
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora()
-            cy.wait(7000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            escolherRota()
-            avancarParcelasEntrega()
             cy.wait(5000)
-            botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(5500)
-            escolherFormaPagamentoPrincipal()
-            cy.wait(4000)
-            escolherDuasParcelaPagamento()
-            cy.wait(400)
-            avancarFinal()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            escolherTransportadora()
+            avancarParcelasEntrega()
+            // cy.wait(5000)
+            // botaoGerarParcelas() //GERAR PARCELAS
+            // cy.wait(5500)
+            // escolherFormaPagamentoPrincipal()
+            // cy.wait(4000)
+            // escolherDuasParcelaPagamento()
+            // cy.wait(400)
+            // avancarFinal()
         })
 
-        it.skip('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -165,7 +163,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it.skip('6-Venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
+        it('6-Venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -192,10 +190,10 @@ describe('Gerar pedido normal', () => {
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(8000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(8000)
+    //     pedidoGerado()
+    //   });
 })

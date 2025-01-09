@@ -27,7 +27,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
+        it('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -108,7 +108,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             pedidoAlteradoSucesso()
         })
 
-        it.skip('Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
+        it('Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -197,7 +197,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         })
 
         //erro de inconsistencia quando colocamos o serviço de entrega
-        it.skip('Gerar pedido, alterar colocando garantia e entrega.', () => {
+        it('Gerar pedido, alterar colocando garantia e entrega.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -251,7 +251,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()

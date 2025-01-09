@@ -23,7 +23,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('1-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
+        it('1-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
 
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -48,7 +48,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             avancarFinal()
         })
 
-        it.skip('2-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
+        it('2-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
 
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -88,7 +88,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
+        it('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -116,7 +116,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             avancarFinal()
         })
 
-        it.skip('4-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
+        it('4-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()

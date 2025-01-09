@@ -52,6 +52,8 @@ export function avancarParaTransportadora (selector) {
 //Botão para avançar para a tela de Gerar parcelas
 export function avancarParcelasEntrega (selector) {
 
+    cy.wait(1000)
+
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
         .scrollIntoView()
         .wait(200)
