@@ -7,8 +7,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaExclusiva } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp, modalInconsApenasRota, tirarEntrega,
-         tirarEntregaSegundo, tirarEntregaTerceiro, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {

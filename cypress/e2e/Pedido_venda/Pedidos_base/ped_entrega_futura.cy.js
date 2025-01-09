@@ -5,8 +5,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoEntregaFutura } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp, modalInconsApenasRota, tirarEntrega,
-         tirarEntregaSegundo, tirarEntregaTerceiro, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, escolherRota, modalInconsApenasTransp, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido de entrega futura', () => {
 
