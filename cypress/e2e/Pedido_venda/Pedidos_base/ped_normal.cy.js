@@ -1,8 +1,9 @@
 import { escolherTransportadora, saldodisponivel, escolherRota, clicarAdicionarProduto, tirarEntrega,
-         tirarEntregaSegundo, escolherProdutoPesquisa, escolherVoltagemProduto, modalInconsRotaTransp, escolherEntradaFormaPagamento,
-         clicarGerarPagamento, modalInconsApenasTransp, escolherClientePedido} from '../../../support/para_pedidos/gerais_pedidos.js';
+         tirarEntregaSegundo, escolherProdutoPesquisa, escolherVoltagemProduto, modalInconsRotaTransp, modalInconsApenasTransp,
+         escolherClientePedido} from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
-import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento,
+         escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';

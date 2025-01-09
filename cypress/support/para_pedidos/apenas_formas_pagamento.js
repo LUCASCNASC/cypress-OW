@@ -266,3 +266,61 @@ export function botaoGerarParcelas (selector) {
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
         .click({force:true})
 }
+
+//preencher pagamento entrada
+export function escolherEntradaFormaPagamento (selector) {
+
+    //texto "Valor máximo da entrada"
+    cy.get('[ng-show="carrinho.getValorParcelamento() > 0"] > .btn-rounded > .layout-wrap > :nth-child(1) > md-list.md-default-theme > .padding-0 > .md-list-item-text > p')
+        .should('exist')
+        .and('be.visible')
+
+    //R$ do Valor máximo da entrada
+    cy.get('[ng-show="carrinho.getValorParcelamento() > 0"] > .btn-rounded > .layout-wrap > :nth-child(1) > md-list.md-default-theme > .padding-0 > .md-secondary-container > div > .ng-binding > sup')
+        .should('exist')
+        .and('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do Valor máximo da entrada
+    cy.get('[ng-show="carrinho.getValorParcelamento() > 0"] > .btn-rounded > .layout-wrap > :nth-child(1) > md-list.md-default-theme > .padding-0 > .md-secondary-container > div > .ng-binding')
+        .should('exist')
+        .and('be.visible')
+
+    //botão $
+    cy.get('.layout-row.flex-100 > :nth-child(1) > .md-fab')
+        .should('exist')
+        .and('be.visible')
+        .and('not.be.disabled')
+
+    //botão X
+    cy.get(':nth-child(3) > .md-fab')
+        .should('exist')
+        .and('be.visible')
+        .and('not.be.disabled')
+
+    //Campo máximo da parcela
+    cy.get('input.campoMoeda_totalEntrada')
+        .should('exist')
+        .and('be.visible')
+        .type('30000')
+
+    //clicando em "Formas de pagamento na Entrada" para abrir forma de pagamento de entrada
+    cy.get('[flex="100"][ng-show="(exibeBoxFormasPgtoEntrada)"] > .md-primary > .md-toolbar-tools > .flex')
+        .click({force:true})
+
+    //clicando para abrir formas de pagamento disponíveis
+    cy.get('div.md-text.ng-binding')
+        .contains('3861 - T.A. A Receber A Vista')
+        .click({force:true})
+}
+
+//validando e clicando no botão GERAR PAGAMENTO
+export function clicarGerarPagamento (selector) {
+
+    //botão
+    cy.get('.white > .layout-align-center-center > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('have.text', 'Gerar pagamento')
+        .click({force:true})
+}
