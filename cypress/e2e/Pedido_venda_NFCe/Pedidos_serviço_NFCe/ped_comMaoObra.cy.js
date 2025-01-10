@@ -6,7 +6,7 @@ import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPag
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedidos com Mão de obra', () => {
 
@@ -34,12 +34,13 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('7-Pedido de venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título)', () => {
     
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            okServicosVinculados() //SERVIÇOS
+            okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() 
+            pegarAPICidade()
+            avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
             avancarParcelasEntrega() 
         })
@@ -60,23 +61,25 @@ describe('Gerar pedidos com Mão de obra', () => {
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() 
+            pegarAPICidade()
+            avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
-            avancarParcelasEntrega() 
+            avancarParcelasEntrega()
         })
 
         it('9-Pedido de venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            okServicosVinculados() //SERVIÇOS
+            okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() 
+            pegarAPICidade()
+            avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
             avancarParcelasEntrega() 
         })
@@ -97,23 +100,25 @@ describe('Gerar pedidos com Mão de obra', () => {
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTP
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() 
+            pegarAPICidade()
+            avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
-            avancarParcelasEntrega() 
+            avancarParcelasEntrega()
         })
 
         it('11-Pedido de venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
     
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
-            okServicosVinculados() //SERVIÇOS
+            okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() 
-            cy.wait(6000) 
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            pegarAPICidade()
+            avancarParaTransportadora()
+            cy.wait(6000)
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
             avancarParcelasEntrega() 
         })   
@@ -134,10 +139,11 @@ describe('Gerar pedidos com Mão de obra', () => {
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() 
+            pegarAPICidade()
+            avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
             avancarParcelasEntrega()  
         })

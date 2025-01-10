@@ -1,8 +1,6 @@
 //Função criada para clicar no campo transportadora e escolher a trasportadora
 export function escolherTransportadora (selector) {
 
-    cy.wait(6000) //esperando as APIs do endereço executarem
-
     //rolando até um elemento da parte de cima da página
     cy.get('.progressbar') 
         .scrollIntoView()
@@ -14,21 +12,9 @@ export function escolherTransportadora (selector) {
         .wait(300)
 
     //clicando para selecionar a transportadora
-    cy.contains('span', '1')
+    cy.get('span[md-highlight-text="transpAutoCompleteSearchText"]')
+        .contains('1')  // Filtra pelo texto "1"
         .click()
-
-    // cy.wait(300)
-
-    // //Campo Transportadora - clicar para abrir as opções
-    // cy.get('[name="transportadora"]')
-    //     .click({force:true})
-
-    // cy.wait(300)
-
-    // //Selecionar a transportadora que queremos
-    // cy.get('span[md-highlight-text]')
-    //     .contains('1')
-    //     .click({force:true})
 }
 
 //Escolher rota completa, rota maringá

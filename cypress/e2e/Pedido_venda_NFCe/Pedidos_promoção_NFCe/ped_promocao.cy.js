@@ -36,12 +36,14 @@ describe('Gerar pedidos com promoção', () => {
             cy.wait(500)
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
+            cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(7000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherRota()
+            cy.wait(6000)
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
-            avancarParcelasEntrega() //ENTREGA
+            avancarParcelasEntrega()
             cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
 
@@ -69,12 +71,12 @@ describe('Gerar pedidos com promoção', () => {
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
-            cy.wait(3000)
             avancarParcelasEntrega()
             cy.wait(6000)
 
@@ -105,10 +107,11 @@ describe('Gerar pedidos com promoção', () => {
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(7000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherRota()
+            cy.wait(6000)
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
             avancarParcelasEntrega()
             cy.wait(7000)
@@ -149,11 +152,13 @@ describe('Gerar pedidos com promoção', () => {
             escolherVoltagemProduto() 
             clicarAdicionarProduto()
             cy.wait(1000)
-            okServicosVinculados() //SERVIÇOS
+            okServicosVinculados()
+            cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

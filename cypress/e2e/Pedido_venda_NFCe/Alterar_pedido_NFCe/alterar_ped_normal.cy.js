@@ -10,7 +10,7 @@ import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, escolherSegundaFor
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -39,10 +39,11 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            esperarAPICidade()
             escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
