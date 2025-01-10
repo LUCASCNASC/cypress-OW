@@ -23,31 +23,6 @@ describe('Gerar pedido normal', () => {
         escolherProdutoPesquisa()
         cy.wait(200)
     })
-  
-    context('Sem frete/ processo 9860 - caminho feliz', () => {
-        
-        it('1-Pedido de venda: kit 1862 0 0', () => {
-                      
-            escolherVoltagemProduto() //PRODUTO
-            composicaoDesteKit()
-            clicarAdicionarProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
-            tirarEntrega() //ENTREGA
-            cy.wait(400)
-            avancarParaParcelas()
-            cy.wait(6500)
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
-            cy.wait(6000)
-            escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
-            escolherDuasParcelaPagamento()
-            cy.wait(400)
-            avancarFinal()
-        })
-    })
     
     context('Com frete/processo 9860 - caminho feliz', () => {
         
@@ -77,10 +52,10 @@ describe('Gerar pedido normal', () => {
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

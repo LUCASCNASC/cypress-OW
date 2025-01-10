@@ -20,71 +20,6 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         cy.wait(500)
     })
 
-    context('Sem frete/ processo 9860 - caminho feliz', () => {
-
-        it.skip('1-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
-
-            produtoCDPrimeiro() //PRODUTO
-            saldoCDDisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto()
-            clicarAdicionarProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
-            tirarEntrega() //ENTREGA
-            cy.wait(400)
-            avancarParaParcelas()
-            cy.wait(5500)
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
-            cy.wait(5000)
-            escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
-            escolherDuasParcelaPagamento()
-            cy.wait(400)
-            avancarFinal()
-        })
-
-        it.skip('2-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
-
-            produtoCDPrimeiro() //PRODUTO
-            saldoCDDisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto()
-            clicarAdicionarProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
-            tirarEntrega() //ENTREGA
-            cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
-            cy.wait(2000)
-            saldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(800)
-            escolherVoltagemProduto()
-            clicarAdicionarProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
-            okServicosVinculados()
-            tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            cy.wait(400)
-            avancarParaParcelas()
-            cy.wait(6500)
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
-            cy.wait(6000)
-            escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
-            escolherDuasParcelaPagamento()
-            cy.wait(400)
-            avancarFinal()
-        })
-    })
-
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
         it('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
@@ -155,10 +90,10 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

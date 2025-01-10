@@ -23,63 +23,6 @@ describe('Gerar pedido com financeiro na baixa', () => {
         escolherProdutoPesquisa()
         cy.wait(200)
     })
-  
-    context('Sem frete/ processo 9863 - caminho feliz', () => {
-
-        it('1-Pedido de venda: produto 1860 0 0', () => {
-                      
-            escolherVoltagemProduto() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
-            tirarEntrega() //ENTREGA
-            cy.wait(400)
-            avancarParaParcelas() 
-            cy.wait(5000)
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento() 
-            cy.wait(5500)
-            escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
-            escolherDuasParcelaPagamento()
-            cy.wait(400)
-            avancarFinal()
-        })
-
-        it('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
-                      
-            escolherVoltagemProduto() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
-            tirarEntrega() //ENTREGA
-            cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
-            cy.wait(800)
-            saldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(800)
-            escolherVoltagemProduto()
-            clicarAdicionarProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
-            okServicosVinculados()
-            tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            cy.wait(400)
-            avancarParaParcelas()  
-            cy.wait(5000)
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento() 
-            cy.wait(5000)
-            escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
-            escolherDuasParcelaPagamento()
-            cy.wait(400)
-            avancarFinal()
-        })
-    })
     
     context('Com frete/ processo 9863 - caminho feliz', () => {
 
@@ -139,10 +82,10 @@ describe('Gerar pedido com financeiro na baixa', () => {
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

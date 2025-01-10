@@ -8,7 +8,7 @@ import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_pro
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsApenasRota } from '../../../support/para_pedidos/apenas_entrega.js';
 
-describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
+describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
     beforeEach(() => {
         cy.visit('/')
