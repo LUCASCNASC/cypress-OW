@@ -1,7 +1,7 @@
-import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos';
-import { produtoCDPrimeiro, produtoNormalSegundo} from '../../../support/para_pedidos/apenas_produtos_pedidos';
+import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoCDPrimeiro, produtoNormalSegundo} from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
+import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
