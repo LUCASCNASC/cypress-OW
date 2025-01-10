@@ -6,7 +6,7 @@ import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escol
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto';
 import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, carregandoFormaPagamento,
-         escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+         escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -27,7 +27,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
+        it.only('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()

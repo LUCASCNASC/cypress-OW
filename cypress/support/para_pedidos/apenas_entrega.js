@@ -1,15 +1,21 @@
 //Função criada para clicar no campo transportadora e escolher a trasportadora
 export function escolherTransportadora (selector) {
 
-    cy.wait(5000)
+    cy.wait(6000) //esperando as APIs do endereço executarem
 
-    cy.get('[name="transportadora"]')
+    //rolando até um elemento da parte de cima da página
+    cy.get('.progressbar') 
         .scrollIntoView()
-        .wait(300)
-        .click({force:true})
+        .wait(200)
 
-    // cy.contains('1')
-    //     .click({force:true})
+    //clicando para aparecerem as opçoes de transportadora
+    cy.get('[name="transportadora"]')
+        .click({force:true})
+        .wait(300)
+
+    //clicando para selecionar a transportadora
+    cy.contains('span', '1')
+        .click()
 
     // cy.wait(300)
 
