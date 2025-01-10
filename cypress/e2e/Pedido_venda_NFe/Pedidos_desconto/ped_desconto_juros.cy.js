@@ -1,4 +1,4 @@
-import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoArredondarCimaBaixo } from '../../../support/para_pedidos/apenas_produtos_pedidos';
 import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarValorParaBaixo, alterarValorParaCima } from '../../../support/para_pedidos/para_pedido_desconto';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -17,7 +17,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.urlAposLogin()
         cy.tituloPagina()
         processoVendaPrincipal()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(500)
         produtoArredondarCimaBaixo()
         saldodisponivel()

@@ -1,4 +1,4 @@
-import { escolherClientePedido, iconeMenuOpcoes, clienteCompletoOpcaoMenu, clicarMenuClienteCompleto, clicarOpcaoServicos,
+import { clienteComRota, iconeMenuOpcoes, clienteCompletoOpcaoMenu, clicarMenuClienteCompleto, clicarOpcaoServicos,
          aguardeCarregandoServico, botaoAddMaoObra, botaoAddGarantias, clicarAddGarantias, modalGarantiasServicosVinculados,
          messServicoAdicionadoSucesso, botaoSalvarServico, messAguardeCarregando, messRegistroSalvoSucesso, messGarantiaJaAdicionada,
          clicarCarrinhoCompras, botaoAvancarPedido } from '../../../support/para_pedidos/para_servicos_avulsos';
@@ -17,7 +17,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
         cy.urlAposLogin()
         cy.tituloPagina() 
         processoVendaServicoAvulso()
-        escolherClientePedido()
+        clienteComRota()
     })
 
     context('Processo 9888 - caminho feliz', () => {

@@ -1,4 +1,4 @@
-import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, composicaoDesteKit }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, composicaoDesteKit }  from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
@@ -21,7 +21,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         processoVendaPrincipal()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(500)
     })
 

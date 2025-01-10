@@ -1,4 +1,4 @@
-import { saldodisponivel, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, escolherClientePedido } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -17,7 +17,7 @@ describe('Gerar pedido normal', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         processoVendaPrincipal()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
@@ -116,8 +116,8 @@ describe('Gerar pedido normal', () => {
             cy.wait(400)
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
+            // modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            // escolherTransportadora()
             avancarParcelasEntrega()
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS

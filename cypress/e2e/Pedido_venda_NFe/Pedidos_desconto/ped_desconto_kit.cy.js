@@ -1,4 +1,4 @@
-import { saldodisponivel, escolherClientePedido, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoKitDesconto } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -17,7 +17,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         processoVendaPrincipal()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(500)
     })
   

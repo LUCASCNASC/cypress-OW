@@ -1,4 +1,4 @@
-import { saldodisponivel, escolherClientePedido, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -16,7 +16,7 @@ describe('Gerar pedidos com Garantia', () => {
         cy.urlAposLogin()
         cy.tituloPagina() 
         processoVendaPrincipal()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()

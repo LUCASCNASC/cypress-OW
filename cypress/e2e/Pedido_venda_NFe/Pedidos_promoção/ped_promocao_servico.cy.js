@@ -1,4 +1,4 @@
-import { saldodisponivel, escolherClientePedido, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos'
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos'
 import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela, messAdicionandoProdutosServicos, adicionarPrestamista, 
          tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos'
@@ -17,7 +17,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         cy.urlAposLogin()
         cy.tituloPagina()
         processoVendaPrincipal()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(500)
     })
   

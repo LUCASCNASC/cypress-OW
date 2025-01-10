@@ -1,4 +1,4 @@
-import { saldodisponivel, escolherClientePedido, escolherProdutoPesquisa, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoPrincipal, clicarAdicionarProduto, primeiroProdutoEscolher, segundoProdutoEscolher, terceiroProdutoEscolher,
          quartoProdutoEscolher, quintoProdutoEscolher, sextoProdutoEscolher, setimoProdutoEscolher, oitavoProdutoEscolher,
          nonoProdutoEscolher, decimoProdutoEscolher} from '../../../support/para_pedidos/para_pedidos_10_produtos.js';
@@ -19,7 +19,7 @@ describe('Gerar pedido normal', () => {
         cy.tituloPagina()
         titulopagina()
         processoVendaPrincipal()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(700)
     })
 

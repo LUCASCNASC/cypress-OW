@@ -1,4 +1,4 @@
-import { escolherClientePedido, saldodisponivel, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto,
+import { clienteComRota, saldodisponivel, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto,
          semSaldodisponivel, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas, aumentarQuantVendaCinco, 
          saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva';
@@ -19,7 +19,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         processoVendaExclusiva()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(500)
     })
 

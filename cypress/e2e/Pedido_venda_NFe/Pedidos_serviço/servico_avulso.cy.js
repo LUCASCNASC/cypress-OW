@@ -1,4 +1,4 @@
-import { escolherClientePedido, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso, saldoDisponivelServico,
+import { clienteComRota, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso, saldoDisponivelServico,
          escolherServicoPesquisa } from '../../../support/para_pedidos/para_servicos_avulsos';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -14,7 +14,7 @@ describe('Venda de serviço avulso', () => {
         cy.urlAposLogin()
         cy.tituloPagina() 
         processoVendaServicoAvulso()
-        escolherClientePedido()
+        clienteComRota()
         cy.wait(500)
     })
 

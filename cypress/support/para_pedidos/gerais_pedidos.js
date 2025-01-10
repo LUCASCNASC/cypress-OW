@@ -141,7 +141,7 @@ export function escolherClientePedido2 (selector) {
 }
 
 //Função para escolher cliente CPF para gerar pedido de venda - pesquisa por cliente
-export function escolherClientePedido (selector) {
+export function clienteComRota (selector) {
 
     //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
     cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
@@ -155,7 +155,7 @@ export function escolherClientePedido (selector) {
         .should('be.visible')
         .click()
 
-    cy.wait(1500)
+    cy.wait(1000)
 
     //após a pesquisa encontrar o cliente, vamos selecionar ele
     cy.get('.md-3-line > div.md-button > .md-no-style')
