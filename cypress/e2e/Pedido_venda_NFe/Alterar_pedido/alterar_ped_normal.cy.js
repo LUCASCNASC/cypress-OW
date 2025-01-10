@@ -8,7 +8,7 @@ import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVincula
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, carregandoFormaPagamento,
          escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
 
@@ -20,7 +20,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaPrincipal()
+        processoVendaNFe()
         clienteComRota()
         cy.wait(500)
     })

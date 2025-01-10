@@ -5,7 +5,7 @@ import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamen
          escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, selecionarLancAgrupar, clicarAgrupar } from '../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 
@@ -17,7 +17,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaPrincipal()
+        processoVendaNFe()
         clienteComRota()
         cy.wait(500)
         produtoNormalPrimeiro()

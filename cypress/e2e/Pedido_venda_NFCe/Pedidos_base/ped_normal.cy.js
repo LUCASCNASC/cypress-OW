@@ -4,7 +4,7 @@ import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPag
          escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 
@@ -16,27 +16,27 @@ describe('Gerar pedido normal', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaPrincipal()
-        clienteComRota()
-        cy.wait(500)
-        produtoNormalPrimeiro()
-        saldodisponivel()
-        escolherProdutoPesquisa()
-        cy.wait(200)
+        processoVendaNFCe()
+        // clienteComRota()
+        // cy.wait(500)
+        // produtoNormalPrimeiro()
+        // saldodisponivel()
+        // escolherProdutoPesquisa()
+        // cy.wait(200)
     })
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
         it.only('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
-            cy.wait(400)
-            avancarParaTransportadora()
-            cy.wait(6000)
+            // escolherVoltagemProduto() //PRODUTO
+            // clicarAdicionarProduto()
+            // cy.wait(500)
+            // modalServicosVinculados() //SERVICOS
+            // okServicosVinculados()
+            // cy.wait(400)
+            // avancarParaTransportadora()
+            // cy.wait(6000)
             // modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             // escolherTransportadora()
             // avancarParcelasEntrega()

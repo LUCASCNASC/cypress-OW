@@ -1,5 +1,5 @@
-//Para escolher processo de venda 9860 normal
-export function processoVendaPrincipal (selector) {
+//Para escolher processo de venda 9860 NFe
+export function processoVendaNFe (selector) {
 
     //clicar para aparecer as opções de processo
     cy.get('#select_value_label_4 > .md-select-icon')
@@ -14,7 +14,32 @@ export function processoVendaPrincipal (selector) {
 
     //selecionar processo de venda "9860"
     cy.get('.md-text.ng-binding')
-        .contains('9860 - T.A. Pedido Negociável')
+        .contains('9860 - T.A. Pedido Negociável - NFe')
+        .click({force:true})
+
+    //fechar modal de processos
+    cy.get('.md-select-backdrop')
+        .wait(200)
+        .dblclick()
+        .wait(200) 
+}
+//Para escolher processo de venda 9860 NFCe
+export function processoVendaNFCe (selector) {
+
+    //clicar para aparecer as opções de processo
+    cy.get('#select_value_label_4 > .md-select-icon')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click()
+
+    //rolar para o meio das opções de processo
+    cy.get('#select_listbox_12')
+        .should('be.visible')
+        .scrollTo('bottom')
+
+    //selecionar processo de venda "9860"
+    cy.get('.md-text.ng-binding')
+        .contains('9890 - T.A. Pedido Negociável - NFCe')
         .click({force:true})
 
     //fechar modal de processos
