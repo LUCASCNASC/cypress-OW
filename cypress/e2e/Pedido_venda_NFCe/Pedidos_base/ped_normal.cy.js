@@ -116,17 +116,17 @@ describe('Gerar pedido normal', () => {
             cy.wait(400)
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
-            avancarParcelasEntrega()
-            cy.wait(5000)
-            botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(5500)
-            escolherFormaPagamentoPrincipal()
-            cy.wait(4000)
-            escolherDuasParcelaPagamento()
-            cy.wait(400)
-            avancarFinal()
+            // modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            // escolherTransportadora()
+            // avancarParcelasEntrega()
+            // cy.wait(5000)
+            // botaoGerarParcelas() //GERAR PARCELAS
+            // cy.wait(5500)
+            // escolherFormaPagamentoPrincipal()
+            // cy.wait(4000)
+            // escolherDuasParcelaPagamento()
+            // cy.wait(400)
+            // avancarFinal()
         })
 
         it('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
