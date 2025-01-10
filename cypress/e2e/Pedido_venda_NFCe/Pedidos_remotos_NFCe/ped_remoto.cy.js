@@ -1,8 +1,8 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa,  escolherVoltagemProduto,
-         trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos';
+         trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
+import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
