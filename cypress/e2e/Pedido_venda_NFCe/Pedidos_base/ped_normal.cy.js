@@ -25,7 +25,7 @@ describe('Gerar pedido normal', () => {
         // cy.wait(200)
     })
 
-    context('Com frete/ processo 9860 - caminho feliz', () => {
+    context('Com frete/ processo 9890 - caminho feliz', () => {
 
         it.only('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       

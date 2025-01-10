@@ -24,7 +24,7 @@ describe('Gerar pedido normal', () => {
         cy.wait(200)
     })
     
-    context('Com frete/processo 9860 - caminho feliz', () => {
+    context('Com frete/processo 9890 - caminho feliz', () => {
         
         it.skip('2-Pedido de venda: kit 1862 0 0', () => {
                       

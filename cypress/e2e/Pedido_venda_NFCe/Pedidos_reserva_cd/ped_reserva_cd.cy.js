@@ -20,7 +20,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         cy.wait(500)
     })
 
-    context('Com frete/ processo 9860 - caminho feliz', () => {
+    context('Com frete/ processo 9890 - caminho feliz', () => {
 
         it('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             

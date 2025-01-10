@@ -25,7 +25,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         cy.wait(500)
     })
 
-    context('Com frete/ processo 9860 - caminho feliz', () => {
+    context('Com frete/ processo 9890 - caminho feliz', () => {
 
         it('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       

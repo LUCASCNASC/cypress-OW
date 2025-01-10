@@ -26,7 +26,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.wait(200)
     })
 
-    context('Com frete/ processo 9860 - caminho feliz', () => {
+    context('Com frete/ processo 9890 - caminho feliz', () => {
     })
 
     // afterEach(() => {

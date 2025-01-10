@@ -21,7 +21,7 @@ describe('Gerar pedidos com promoção', () => {
         cy.wait(500)
     })
 
-    context('Com entrega /com promoção/ processo 9860 - caminho feliz', () => {
+    context('Com entrega /com promoção/ processo 9890 - caminho feliz', () => {
 
         it('6-Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
     
@@ -125,7 +125,7 @@ describe('Gerar pedidos com promoção', () => {
         })  
     }) 
 
-    context('Com entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
+    context('Com entrega/ com promoção e sem promoção/ processo 9890 - caminho feliz', () => {
 
         it('9-Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     

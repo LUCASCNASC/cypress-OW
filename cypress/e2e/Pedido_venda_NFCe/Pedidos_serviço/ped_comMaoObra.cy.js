@@ -29,7 +29,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         modalServicosVinculados()
     })
 
-    context('Com entrega/processo 9860 - caminho feliz', () => {
+    context('Com entrega/processo 9890 - caminho feliz', () => {
 
         it('7-Pedido de venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título)', () => {
     

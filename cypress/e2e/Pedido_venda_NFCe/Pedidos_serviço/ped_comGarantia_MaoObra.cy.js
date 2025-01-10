@@ -29,7 +29,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         modalServicosVinculados()
     })
 
-    context('Com entrega/processo 9860 - caminho feliz', () => {
+    context('Com entrega/processo 9890 - caminho feliz', () => {
 
         it('19-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa)', () => {
 
