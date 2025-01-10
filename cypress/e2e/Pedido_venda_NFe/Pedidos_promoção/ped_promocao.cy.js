@@ -6,7 +6,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, tirarEntrega, tirarEntregaSegundo, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -196,10 +196,10 @@ describe('Gerar pedidos com promoção', () => {
             cy.wait(500)
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(7000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherRota()
+            esperarAPICidade()
             escolherTransportadora()
             avancarParcelasEntrega() //ENTREGA
             cy.wait(6000)
@@ -229,12 +229,10 @@ describe('Gerar pedidos com promoção', () => {
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            cy.wait(3000)
+            esperarAPICidade()
             avancarParcelasEntrega()
             cy.wait(6000)
 
@@ -265,11 +263,10 @@ describe('Gerar pedidos com promoção', () => {
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(7000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega()
             cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
@@ -310,11 +307,11 @@ describe('Gerar pedidos com promoção', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             okServicosVinculados() //SERVIÇOS
+            cy.wait(300)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             cy.wait(6000)

@@ -7,7 +7,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaExclusiva } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
+import { tirarEntrega, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
@@ -47,11 +47,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             trocarFilialFaturamento()
             clicarAdicionarProduto()
             cy.wait(500)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(12000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherTransportadora()
-            escolherRota()
+            esperarAPICidade()
             avancarParcelasEntrega()
             cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
@@ -85,11 +84,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.wait(400)
             clicarAdicionarProduto()
             cy.wait(500)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(12000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherTransportadora()
-            escolherRota()
+            esperarAPICidade()
             avancarParcelasEntrega()
             cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
@@ -117,11 +115,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(12000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherTransportadora()
-            escolherRota()
+            esperarAPICidade()
             avancarParcelasEntrega()
             cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS

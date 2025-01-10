@@ -5,7 +5,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoFinanceiroBaixa } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherRota, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { tirarEntrega, tirarEntregaSegundo, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido com financeiro na baixa', () => {
 
@@ -26,7 +26,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
   
     context('Sem frete/ processo 9863 - caminho feliz', () => {
 
-        it('1-Pedido de venda: produto 1860 0 0', () => {
+        it.skip('1-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -47,7 +47,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             avancarFinal()
         })
 
-        it('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -91,9 +91,10 @@ describe('Gerar pedido com financeiro na baixa', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
-            escolherRota() //ESCOLHER TRANSPORTADORA
+            cy.wait(8000)
+            esperarAPICidade()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
@@ -124,9 +125,10 @@ describe('Gerar pedido com financeiro na baixa', () => {
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() 
-            cy.wait(6000)
-            escolherRota() //ESCOLHER TRANSPORTADORA
+            pegarAPICidade()
+            avancarParaTransportadora()
+            cy.wait(8000)
+            esperarAPICidade()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 

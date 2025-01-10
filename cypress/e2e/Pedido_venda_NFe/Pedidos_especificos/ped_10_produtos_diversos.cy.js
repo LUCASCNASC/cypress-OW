@@ -7,7 +7,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { tirarEntrega, tirarEntregaSegundo, tirarMontagem, tirarMontagemSegundo, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido normal', () => {
 
@@ -165,11 +165,10 @@ describe('Gerar pedido normal', () => {
             clicarAdicionarProduto() //décima adicionando produto remoto - 1889 9 9 - sem serviço / com entrega
             cy.wait(1000)
 
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(12000)
-            modalInconsRotaTransp() //TRANSPORTADORA
-            escolherTransportadora()
-            escolherRota()
+            esperarAPICidade()
             avancarParcelasEntrega()
             cy.wait(10000)
             botaoGerarParcelas() //GERAR PARCELAS

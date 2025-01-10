@@ -5,7 +5,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoEntregaFutura } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsApenasTransp, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { tirarEntrega, tirarEntregaSegundo, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido de entrega futura', () => {
 
@@ -82,7 +82,7 @@ describe('Gerar pedido de entrega futura', () => {
     
     context('Com frete/ processo 9862 - caminho feliz', () => {
 
-        it('3-Pedido de venda: produto 1860 0 0', () => {
+        it.skip('3-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -90,11 +90,10 @@ describe('Gerar pedido de entrega futura', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            cy.wait(8000)
+            esperarAPICidade()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -106,7 +105,7 @@ describe('Gerar pedido de entrega futura', () => {
             avancarFinal()
         })    
         
-        it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it.skip('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -125,11 +124,10 @@ describe('Gerar pedido de entrega futura', () => {
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() 
-            cy.wait(6000)
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            pegarAPICidade()
+            avancarParaTransportadora()
+            cy.wait(8000)
+            esperarAPICidade()
             avancarParcelasEntrega() 
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 

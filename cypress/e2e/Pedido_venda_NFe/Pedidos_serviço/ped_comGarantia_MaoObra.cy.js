@@ -6,7 +6,7 @@ import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPag
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { tirarEntrega, tirarEntregaSegundo, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
@@ -345,11 +345,10 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega()  
         })
 
@@ -369,13 +368,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega()
         })
 
@@ -386,11 +384,10 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega()
         })
 
@@ -410,14 +407,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('23-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo)', () => {
@@ -427,12 +423,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('24-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -451,14 +446,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('25-Pedido de venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa)', () => {
@@ -468,12 +462,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('26-Pedido de venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
@@ -492,13 +485,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega()
         })
 
@@ -509,12 +501,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('28-Pedido de venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -533,14 +524,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega()  
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('29-Pedido de venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo)', () => {
@@ -550,12 +540,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('30-Pedido de venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -574,14 +563,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('31-Pedido de venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa)', () => {
@@ -591,12 +579,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('32-Pedido de venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
@@ -614,14 +601,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             escolherVoltagemProduto()
             clicarAdicionarProduto()
             cy.wait(1000)
-            okServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
 
         it('33-Pedido de venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo)', () => {
@@ -631,11 +617,10 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega() 
         })
 
@@ -655,13 +640,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega() 
         })
 
@@ -671,13 +655,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(300)
             maoObraNaoDestacaSeparaProcessoDiferente()
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
+            cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })  
 
         it('36-Pedido de venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -696,14 +679,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(6000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
-            avancarParcelasEntrega() 
+            esperarAPICidade()
+            avancarParcelasEntrega()
         })
     })
 

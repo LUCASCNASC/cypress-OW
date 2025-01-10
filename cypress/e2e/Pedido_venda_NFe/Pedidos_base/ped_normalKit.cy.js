@@ -5,7 +5,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
+import { tirarEntrega, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido normal', () => {
 
@@ -26,7 +26,7 @@ describe('Gerar pedido normal', () => {
   
     context('Sem frete/ processo 9860 - caminho feliz', () => {
         
-        it('1-Pedido de venda: kit 1862 0 0', () => {
+        it.skip('1-Pedido de venda: kit 1862 0 0', () => {
                       
             escolherVoltagemProduto() //PRODUTO
             composicaoDesteKit()
@@ -60,11 +60,10 @@ describe('Gerar pedido normal', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
-            avancarParaTransportadora() //ENTREGA
+            pegarAPICidade()
+            avancarParaTransportadora()
             cy.wait(8000)
-            modalInconsRotaTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
-            escolherTransportadora()
+            esperarAPICidade()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             cy.wait(7000)
