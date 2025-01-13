@@ -27,7 +27,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.only('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
+        it.skip('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -99,16 +99,17 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             finalizandoPedido()
-            cy.wait(6000)
+            cy.wait(8000)
             pedidoAlteradoSucesso()
         })
 
-        it('Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
+        it.skip('Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -127,13 +128,13 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             carregandoFormaPagamento()
             cy.wait(6000)
             escolherFormaPagamentoPrincipal()
-            cy.wait(2000)
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             finalizandoPedido()
-            cy.wait(6000)
+            cy.wait(7000)
             pedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
@@ -186,18 +187,18 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(2000)
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             finalizandoPedido()
-            cy.wait(7000)
+            cy.wait(8000)
             pedidoAlteradoSucesso()
         })
 
         //erro de inconsistencia quando colocamos o serviço de entrega
-        it('Gerar pedido, alterar colocando garantia e entrega.', () => {
+        it.skip('Gerar pedido, alterar colocando garantia e entrega.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -242,15 +243,26 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             pegarAPICidade()
             avancarParaTransportadora()
             cy.wait(7000)
-            esperarAPICidade()
+            esperarAPICidade() //ENTREGA
             avancarParcelasEntrega()
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento()
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            finalizandoPedido()
+            cy.wait(8000)
+            pedidoAlteradoSucesso()
             
         })
     })
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it('Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it.skip('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()

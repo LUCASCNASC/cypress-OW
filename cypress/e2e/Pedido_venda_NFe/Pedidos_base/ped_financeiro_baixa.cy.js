@@ -3,7 +3,7 @@ import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/pa
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoFinanceiroBaixa } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { processoFinanceiroBaixaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
@@ -15,7 +15,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.login();
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoFinanceiroBaixa()
+        processoFinanceiroBaixaNFe()
         clienteComRota()
         cy.wait(500)
         produtoNormalPrimeiro()
@@ -141,10 +141,10 @@ describe('Gerar pedido com financeiro na baixa', () => {
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

@@ -50,7 +50,7 @@ export function processoVendaNFCe (selector) {
 }
 
 //Para escolher processo de venda entrega futura 9862 normal
-export function processoEntregaFutura (selector) {
+export function processoEntregaFuturaNFe (selector) {
 
     //clicar para aparecer as opções de processo
     cy.get('#select_value_label_4 > .md-select-icon')
@@ -65,7 +65,7 @@ export function processoEntregaFutura (selector) {
 
     //selecionar processo de venda "9862"
     cy.get('.md-text.ng-binding')
-        .contains('9862 - T.A. Pedido Entrega Futura')
+        .contains('9862 - T.A. Pedido Entrega Futura NFe')
         .click({force:true})
 
     //fechar modal de processos
@@ -76,7 +76,7 @@ export function processoEntregaFutura (selector) {
 }
 
 //Para escolher processo de venda financeiro baixa 9863 normal
-export function processoFinanceiroBaixa (selector) {
+export function processoFinanceiroBaixaNFe (selector) {
 
     //clicar para aparecer as opções de processo
     cy.get('#select_value_label_4 > .md-select-icon')
@@ -91,7 +91,7 @@ export function processoFinanceiroBaixa (selector) {
 
     //selecionar processo de venda "9863"
     cy.get('.md-text.ng-binding')
-        .contains('9863 - T.A.Pedido Financeiro Baixa')
+        .contains('9863 - T.A.Pedido Financeiro Baixa NFe')
         .click({force:true})
 
     //fechar modal de processos

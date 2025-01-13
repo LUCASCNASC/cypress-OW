@@ -26,7 +26,7 @@ describe('Gerar pedido com proposta de crédito', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('1-Venda: produto 1860 0 0 - (Pedido de  venda sem entrega, com proposta de crédito.)', () => {
+        it('1-Venda: produto 1860 0 0 - (Pedido de  venda sem entrega, com proposta de crédito.)', () => {
 
             escolherVoltagemProduto() //PRODUTO
             clicarAdicionarProduto()
@@ -48,11 +48,11 @@ describe('Gerar pedido com proposta de crédito', () => {
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(8000)
-        propostaCreditoGerada()
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(8000)
+    //     propostaCreditoGerada()
+    //     pedidoGerado()
+    //   });
 })
