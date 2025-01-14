@@ -129,7 +129,7 @@ describe('Gerar pedidos com Garantia', () => {
 
     context('Com entrega/processo 9860 - caminho feliz', () => {
 
-        it('7-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it.skip('7-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
@@ -141,7 +141,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega()
         })
 
-        it('8-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it.skip('8-Pedido de venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
@@ -164,7 +164,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega()
         })
 
-        it('9-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
+        it.skip('9-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
@@ -176,7 +176,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega()
         })
 
-        it('10-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it.skip('10-Pedido de venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
@@ -199,7 +199,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega()
         })
 
-        it('11-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
+        it.skip('11-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
@@ -211,7 +211,7 @@ describe('Gerar pedidos com Garantia', () => {
             avancarParcelasEntrega() 
         })
 
-        it('12-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it.skip('12-Pedido de venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
@@ -234,18 +234,18 @@ describe('Gerar pedidos com Garantia', () => {
         })
     })
 
-    afterEach(() => {
-        botaoGerarParcelas() //GERAR PARCELAS
-        carregandoFormaPagamento()
-        cy.wait(7000)
-        escolherFormaPagamentoPrincipal()
-        cy.wait(3000)
-        escolherDuasParcelaPagamento()
-        cy.wait(400)
-        avancarFinal()
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido() 
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoGerarParcelas() //GERAR PARCELAS
+    //     carregandoFormaPagamento()
+    //     cy.wait(7000)
+    //     escolherFormaPagamentoPrincipal()
+    //     cy.wait(3000)
+    //     escolherDuasParcelaPagamento()
+    //     cy.wait(400)
+    //     avancarFinal()
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido() 
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })

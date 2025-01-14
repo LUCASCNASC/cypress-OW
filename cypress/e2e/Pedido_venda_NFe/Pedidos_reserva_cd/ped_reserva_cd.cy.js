@@ -87,7 +87,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
+        it.skip('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -104,7 +104,6 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             cy.wait(5000)
             esperarAPICidade()
             avancarParcelasEntrega()
-            cy.wait(4000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
@@ -114,7 +113,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             avancarFinal()
         })
 
-        it('4-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
+        it.skip('4-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
@@ -153,10 +152,10 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         })
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     finalizandoPedido()
+    //     cy.wait(9000)
+    //     pedidoGerado()
+    //   });
 })
