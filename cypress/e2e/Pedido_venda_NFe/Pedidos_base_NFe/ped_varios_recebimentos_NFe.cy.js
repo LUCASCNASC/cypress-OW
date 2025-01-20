@@ -44,7 +44,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.wait(1000)
             botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(3000)
             escolherRecebDebitoPOS()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -74,6 +74,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.wait(400)
             botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -96,7 +97,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.wait(1000)
             botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -126,7 +127,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.wait(1000)
             botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -156,7 +157,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.wait(1000)
             botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()

@@ -153,7 +153,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     afterEach(() => {
         botaoGerarParcelas() //GERAR PARCELAS
         carregandoFormaPagamento()
-        cy.wait(8000)
+        cy.wait(3000)
         escolherFormaPagamentoPrincipal()
         cy.wait(3000)
         escolherDuasParcelaPagamento()

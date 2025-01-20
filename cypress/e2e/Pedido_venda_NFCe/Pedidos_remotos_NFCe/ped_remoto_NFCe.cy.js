@@ -47,7 +47,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -94,7 +94,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(12000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)
@@ -131,7 +131,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(8000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)
@@ -170,7 +170,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)

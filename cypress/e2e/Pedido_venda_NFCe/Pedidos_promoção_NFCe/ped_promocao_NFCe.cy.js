@@ -88,6 +88,7 @@ describe('Gerar pedidos com promoção', () => {
 
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)

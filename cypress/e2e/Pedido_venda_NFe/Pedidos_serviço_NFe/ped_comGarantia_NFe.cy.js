@@ -238,7 +238,7 @@ describe('Gerar pedidos com Garantia', () => {
     // afterEach(() => {
     //     botaoGerarParcelas() //GERAR PARCELAS
     //     carregandoFormaPagamento()
-    //     cy.wait(7000)
+    //     cy.wait(3000)
     //     escolherFormaPagamentoPrincipal()
     //     cy.wait(3000)
     //     escolherDuasParcelaPagamento()

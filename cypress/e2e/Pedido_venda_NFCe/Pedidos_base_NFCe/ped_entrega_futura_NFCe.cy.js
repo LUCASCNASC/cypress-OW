@@ -81,8 +81,8 @@ describe('Gerar pedido de entrega futura', () => {
             escolherTransportadora()
             avancarParcelasEntrega() 
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(6000)
-            carregandoFormaPagamento() 
+            carregandoFormaPagamento()
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()

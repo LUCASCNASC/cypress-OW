@@ -43,7 +43,7 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(7000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -71,7 +71,7 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(8000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -99,7 +99,7 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(8000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()

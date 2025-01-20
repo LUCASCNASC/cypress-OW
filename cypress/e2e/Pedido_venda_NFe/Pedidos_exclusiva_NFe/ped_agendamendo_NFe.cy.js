@@ -56,7 +56,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(7000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)
@@ -93,7 +93,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(7000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)
@@ -124,7 +124,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(7000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)
@@ -170,7 +170,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.wait(5500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(5000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             cy.wait(400)

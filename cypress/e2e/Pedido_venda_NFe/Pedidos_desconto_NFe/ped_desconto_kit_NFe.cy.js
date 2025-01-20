@@ -43,7 +43,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             cy.wait(6500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(8000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait|(3000)
             escolherDuasParcelaPagamento()

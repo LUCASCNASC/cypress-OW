@@ -45,7 +45,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(5500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(6000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(2000)
             escolherDuasParcelaPagamento()
@@ -127,7 +127,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(5500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(6000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -216,7 +216,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(5500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(6000)
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(2000)
             escolherDuasParcelaPagamento()
@@ -281,8 +281,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             esperarAPICidade()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(5000)
             carregandoFormaPagamento()
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()

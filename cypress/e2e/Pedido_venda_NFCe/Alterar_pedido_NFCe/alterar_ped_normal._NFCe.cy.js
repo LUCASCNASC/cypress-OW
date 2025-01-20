@@ -47,8 +47,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(7000)
             carregandoFormaPagamento()
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()

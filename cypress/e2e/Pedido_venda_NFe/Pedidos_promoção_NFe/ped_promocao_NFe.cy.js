@@ -315,7 +315,7 @@ describe('Gerar pedidos com promoção', () => {
             esperarAPICidade()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(6000)
+            cy.wait(3000)
 
             //Escolher forma de pagemento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force: true})
