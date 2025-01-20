@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoNormalPrimeiroNCFe, produtoNormalSegundoNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, maoObraDestacaNãoSepara, 
          maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -20,7 +20,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         processoVendaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoNormalPrimeiro() //PRODUTO
+        produtoNormalPrimeiroNCFe() //PRODUTO
         saldodisponivel()
         escolherProdutoPesquisa()
         cy.wait(200)
@@ -55,7 +55,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -98,7 +98,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -141,7 +141,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -184,7 +184,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -227,7 +227,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -270,7 +270,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -313,7 +313,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //PRODUTO
+            produtoNormalSegundoNCFe() //PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -355,7 +355,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //PRODUTO
+            produtoNormalSegundoNCFe() //PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -398,7 +398,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente()
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundo() //PRODUTO
+            produtoNormalSegundoNCFe() //PRODUTO
             cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()

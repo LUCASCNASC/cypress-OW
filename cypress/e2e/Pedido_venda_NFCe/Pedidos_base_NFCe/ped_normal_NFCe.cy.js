@@ -1,5 +1,5 @@
 import { saldodisponivel, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoNormalPrimeiroNCFe, produtoNormalSegundoNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -20,7 +20,7 @@ describe('Gerar pedido normal', () => {
         processoVendaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoNormalPrimeiro()
+        produtoNormalPrimeiroNCFe()
         saldodisponivel()
         escolherProdutoPesquisa()
         cy.wait(200)
@@ -60,7 +60,7 @@ describe('Gerar pedido normal', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             cy.wait(4000)
             saldodisponivel()
             escolherProdutoPesquisa()

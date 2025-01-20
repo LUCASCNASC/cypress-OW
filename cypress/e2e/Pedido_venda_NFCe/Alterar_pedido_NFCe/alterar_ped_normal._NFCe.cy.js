@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoNormalPrimeiroNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          removerFormaPagamento } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
@@ -29,7 +29,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
-            produtoNormalPrimeiro() //PRODUTO
+            produtoNormalPrimeiroNCFe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(200)

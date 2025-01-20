@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoKitPrimeiroNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -19,7 +19,7 @@ describe('Gerar pedido normal', () => {
         processoVendaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoKitPrimeiro()
+        produtoKitPrimeiroNCFe()
         saldodisponivel()
         escolherProdutoPesquisa()
         cy.wait(200)

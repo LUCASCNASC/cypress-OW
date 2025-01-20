@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoNormalPrimeiroNCFe, produtoNormalSegundoNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -19,7 +19,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         processoFinanceiroBaixaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoNormalPrimeiro()
+        produtoNormalPrimeiroNCFe()
         saldodisponivel()
         escolherProdutoPesquisa()
         cy.wait(200)
@@ -61,7 +61,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             cy.wait(4000)
             saldodisponivel()
             escolherProdutoPesquisa()

@@ -1,12 +1,12 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa,  escolherVoltagemProduto,
          trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoNormalPrimeiroNCFe, produtoNormalSegundoNCFe, produtoRemotoComCDNCFe, produtoRemotoSemCDNCFe, produtoKitRemotoNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsApenasRota } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, escolherRota, modalInconsApenasRota, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_APIs.js';
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -26,7 +26,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
         it('1-Pedido de venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
-            produtoNormalPrimeiro() //PRODUTO
+            produtoNormalPrimeiroNCFe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(200)
@@ -61,7 +61,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
         it('2-Pedido de venda remota: produtos 1860 0 0 e 1870 0 0', () => {
 
-            produtoNormalPrimeiro() //PRODUTO
+            produtoNormalPrimeiroNCFe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(200) 
@@ -73,7 +73,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             cy.wait(800)
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             escolherVoltagemProduto()
@@ -108,7 +108,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         
         it('3-Pedido de venda remota: kit 1877 0 0', () => {
 
-            produtoKitRemoto() //PRODUTO
+            produtoKitRemotoNCFe() //PRODUTO
             saldoCDDisponivel()
             escolherProdutoPesquisa()
             cy.wait(200)
@@ -148,7 +148,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
         it('4-Pedido de venda remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
 
-            produtoRemotoComCD() //PRODUTO
+            produtoRemotoComCDNCFe() //PRODUTO
             semSaldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(200)
@@ -184,7 +184,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         
         it('5-Pedido de venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
-            produtoRemotoSemCD() //PRODUTO
+            produtoRemotoSemCDNCFe() //PRODUTO
             semSaldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(200)

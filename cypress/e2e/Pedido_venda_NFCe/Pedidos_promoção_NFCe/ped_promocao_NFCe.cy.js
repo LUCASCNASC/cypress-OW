@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoPromoPartidaNCFe, produtoPromoPrazoEntradaNCFe, produtoPromoPrazoParceladoNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -26,7 +26,7 @@ describe('Gerar pedidos com promoção', () => {
 
         it.skip('6-Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            produtoPromoPartida() //PRODUTO
+            produtoPromoPartidaNCFe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(200)    
@@ -60,7 +60,7 @@ describe('Gerar pedidos com promoção', () => {
     
         it.skip('7-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            produtoPromoPrazoEntrada() //PRODUTO
+            produtoPromoPrazoEntradaNCFe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(200)       
@@ -96,7 +96,7 @@ describe('Gerar pedidos com promoção', () => {
 
         it.skip('8-Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            produtoPromoPrazoParcelado() //PRODUTO
+            produtoPromoPrazoParceladoNCFe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(200)
