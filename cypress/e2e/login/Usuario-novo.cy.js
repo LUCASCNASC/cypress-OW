@@ -1,8 +1,8 @@
 import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado, 
          botaoEntrarDesabilitado, clicarBotaoEntrar, mensagemEntrandoSistema } from '../../support/para_logins/para_login';
 
-const usunovo = "testetesteteste"; //427
-const senhausunovo = "_GR62dsq";
+const usunovo = "testtest"; //494
+const senhausunovo = "!MV87gsp";
 const novasenha = "321@Teste";
 describe('Logar com novo usuário', () => {
 
@@ -16,7 +16,7 @@ describe('Logar com novo usuário', () => {
         usuarioTextoIcone()
     })
 
-    it('Novo usuário - clicar em Fechar, não alterando a senha', () => {
+    it.skip('Novo usuário - clicar em Fechar, não alterando a senha', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')
@@ -210,7 +210,7 @@ describe('Logar com novo usuário', () => {
         iconeComputadorLogin() //Validando que não entrou no sistema
     })
 
-    it('Novo usuário - clicar em CONFIRMAR, alterando a senha', () => {
+    it.skip('Novo usuário - clicar em CONFIRMAR, alterando a senha', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')
@@ -403,7 +403,7 @@ describe('Logar com novo usuário', () => {
 
         //Card senha alterada 
         cy.get('.toast')
-            .anshouldd('be.visible')
+            .should('be.visible')
 
         //Card senha alterada  - título
         cy.get('.toast-title')

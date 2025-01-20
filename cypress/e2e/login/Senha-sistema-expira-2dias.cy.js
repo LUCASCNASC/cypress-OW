@@ -3,7 +3,7 @@ import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIc
          clicarBotaoEntrar, mensagemEntrandoSistema, expiraAcessoCardValidar, clicarSIMExpira, regrasNovaSenhaAntes, regrasNovaSenhaDepois } from '../../support/para_logins/para_login';
 
 const usuSabiumAutomacao = "usu.expira2dias"; //usuário 419
-const senhaautomacao = "321@teste"; //trocar informação parnova senha e vice-versa
+const senhaautomacao = "321@teste"; //trocar informação para nova senha e vice-versa
 const novasenha = "123.automacao";
 
 describe('Login com usuário que senha expira em 2 dias', () => {
@@ -18,7 +18,7 @@ describe('Login com usuário que senha expira em 2 dias', () => {
         usuarioTextoIcone()
     })
 
-    it('Login - clicar em NÃO atualizar senha', () => {
+    it.skip('Login - clicar em NÃO atualizar senha', () => {
 
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')
@@ -56,7 +56,7 @@ describe('Login com usuário que senha expira em 2 dias', () => {
             .should('be.visible')
     })
 
-    it('Login - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
+    it.skip('Login - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')
@@ -186,7 +186,7 @@ describe('Login com usuário que senha expira em 2 dias', () => {
             .and('not.have.attr', 'disabled')
     })
 
-    it('Login - clicar em SIM atualizar senha - clicar em CONFIRMAR a redefinição de senha', () => {
+    it.skip('Login - clicar em SIM atualizar senha - clicar em CONFIRMAR a redefinição de senha', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')

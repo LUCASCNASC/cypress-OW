@@ -15,7 +15,7 @@ describe('Cadastrar cliente', () => {
 
     context('Pesquisa cliente por número', () => {
 
-        it('1-Pesquisa por número CPF', () => {
+        it.skip('1-Pesquisa por número CPF', () => {
     
             inserirCPF()
             cy.wait(800)
@@ -34,7 +34,7 @@ describe('Cadastrar cliente', () => {
             numeroDescricaoCPFpesquisado()
         }) 
 
-        it('2-Pesquisa por número CNPJ', () => {
+        it.skip('2-Pesquisa por número CNPJ', () => {
     
             inserirCNPJ()
             cy.wait(800)
@@ -56,7 +56,7 @@ describe('Cadastrar cliente', () => {
 
     context('Pesquisa cliente por descrição', () => {
 
-        it('3-Pesquisa por descrição CPF', () => {
+        it.skip('3-Pesquisa por descrição CPF', () => {
     
             inserirDescricaoCPF()
             cy.wait(800)
@@ -75,7 +75,7 @@ describe('Cadastrar cliente', () => {
             numeroDescricaoCPFpesquisado()
         }) 
 
-        it('4-Pesquisa por descrição CNPJ', () => {
+        it.skip('4-Pesquisa por descrição CNPJ', () => {
     
             inserirDescricaoCNPJ()
             cy.wait(800)

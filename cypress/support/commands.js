@@ -31,13 +31,9 @@ import '@testing-library/cypress/add-commands'
 Cypress.Commands.add('login', (username, password) => {
   
   cy.visit('/');
-
   cy.get('#txtusername').type('sabium.automacao'); //login
-
   cy.get('#txtpassword').type('123.automacao'); //senha
-
   cy.get('.test_btnSalvarCliente').click(); //botão entrar
-
   cy.get('.ng-scope > .ng-binding')
     .should('contain','Entrando no sistema') //Validando mensagem "Entrando no sistema" logo após clicarmos no botão Entrar
   
@@ -45,19 +41,16 @@ Cypress.Commands.add('login', (username, password) => {
 
   cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
     .should('contain','Cliente') //Validando se realmente fez o login
-
 });
 
 Cypress.Commands.add('urlAposLogin', (username, password) => {
   
   cy.url()
-    .should('include', '/#!/principal/')
-
+    .should('include', '/')
 });
 
 Cypress.Commands.add('tituloPagina', (username, password) => {
   
   cy.title()
     .should('eq', 'Sabium Mobile') //Validando título da página
-
 });

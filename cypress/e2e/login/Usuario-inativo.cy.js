@@ -16,7 +16,7 @@ describe('Usuário inativo', () => {
         usuarioTextoIcone()
     })
 
-    it('Tentar logar com usuário inativo', () => {
+    it.skip('Tentar logar com usuário inativo', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')

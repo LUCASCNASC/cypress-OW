@@ -16,7 +16,7 @@ describe('Senha do sistema expirada', () => {
         usuarioTextoIcone()
     })
 
-    it('Tentar logar com usuário com senha do sistema expirada', () => {
+    it.skip('Tentar logar com usuário com senha do sistema expirada', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')

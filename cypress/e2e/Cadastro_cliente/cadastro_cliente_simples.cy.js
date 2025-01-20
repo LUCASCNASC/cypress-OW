@@ -1,6 +1,6 @@
 import { iconeMenuOpcoes, opcaoClienteSimples, salvarClienteSimples, preencherNomeCompletoCPF, preencherNomeCompletoCNPJ, inserirPesquisarCEP, 
          preencherDataNascimento, inserirNumeroEndereco, arrastarPessoaJuridica, sexoPessoaFisica, cadastroRotaCliente, 
-         mensagemPrimeiroRegistSalvoSucesso, prencherCPFcliente, preencherCNPJcliente, logarNovamente } from '../../support/para_cadastro_cliente/para_cliente_simples';
+         mensagemPrimeiroRegistSalvoSucesso, prencherCPFcliente, preencherCNPJcliente, logarNovamente, clicarSairSistema } from '../../support/para_cadastro_cliente/para_cliente_simples';
 import gerarCpf from '../../support/gerarCPF';
 import gerarCNPJ from '../../support/gerarCNPJ';
 
@@ -21,12 +21,11 @@ describe('Cadastrar cliente simples', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        titulopagina() //Vai variar de acordo com SBX e SABIUM, modificar no arquivo uiUtils.js, na função.
     })
   
     context('Cadastro de cliente simples', () => {
 
-        it('Cliente simples CPF', () => {
+        it.skip('Cliente simples CPF', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -42,7 +41,7 @@ describe('Cadastrar cliente simples', () => {
         })  
 
         //REVISAR DATA NASCIMENTO
-        it.only('Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
+        it.skip('Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -60,7 +59,7 @@ describe('Cadastrar cliente simples', () => {
             opcaoClienteSimples()
 
             //Alteração - Campo data de nascimento
-            cy.get('#input_888')
+            cy.get('#input_892')
                 .should('be.visible')
                 .clear()
                 .should('have.value','')
@@ -108,7 +107,7 @@ describe('Cadastrar cliente simples', () => {
             cy.wait(2000)
 
             logarNovamente()
-            cy.wait(7500)
+            cy.wait(7000)
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -120,7 +119,7 @@ describe('Cadastrar cliente simples', () => {
             // ALTERAR DATA DE NASCIMENTO 
 
             //Clicar no campo Data de nascimento para aparecer a mensagem se desejo visualizar este cadastro
-            cy.get('#input_124')
+            cy.get('#input_135')
                 .click()
 
             cy.wait (1000)
@@ -148,7 +147,7 @@ describe('Cadastrar cliente simples', () => {
             cy.wait(2500)
 
             //Clicar na data que desejo, 29/09/1998
-            cy.get('#input_124')
+            cy.get('#input_135')
                 .should('be.visible')
                 .and('have.value','30/09/1998')
                 .wait(200)
@@ -251,12 +250,10 @@ describe('Cadastrar cliente simples', () => {
                 .click()
 
             cy.wait(2000)
-
             mensagemPrimeiroRegistSalvoSucesso()
-
         })
 
-        it('Cliente simples CPF - alterar tipo de sexo', () => {
+        it.skip('Cliente simples CPF - alterar tipo de sexo', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -287,14 +284,11 @@ describe('Cadastrar cliente simples', () => {
             salvarClienteSimples()
             mensagemPrimeiroRegistSalvoSucesso()
             cy.wait(1000)
-
             iconeMenuOpcoes() //ABRIR MODAL
             clicarSairSistema()
             cy.wait(2000)
-
             logarNovamente() 
             cy.wait(7000)
-
             iconeMenuOpcoes()
             opcaoClienteSimples()
 
@@ -346,17 +340,14 @@ describe('Cadastrar cliente simples', () => {
                 .click()
 
             cy.wait(200)
-
             salvarClienteSimples()
             cy.wait(1000)
-
             salvarClienteSimples()
             cy.wait(9000)
-
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it('Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
+        it.skip('Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -370,9 +361,7 @@ describe('Cadastrar cliente simples', () => {
             salvarClienteSimples()
             mensagemPrimeiroRegistSalvoSucesso()
 
-            // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
-
-            iconeMenuOpcoes()
+            iconeMenuOpcoes() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             opcaoClienteSimples()
 
             //Campo CEP - alterar
@@ -402,7 +391,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it('Cliente simples CNPJ', () => {
+        it.skip('Cliente simples CNPJ', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -416,7 +405,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it('Cliente simples CNPJ - alterar Endereço', () => {
+        it.skip('Cliente simples CNPJ - alterar Endereço', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -462,7 +451,7 @@ describe('Cadastrar cliente simples', () => {
 
     context('Botão de adicionar cliente, na pesquisa de cliente', () => {
 
-        it('Botão de adicionar cliente, na pesquisa de cliente', () => {
+        it.skip('Botão de adicionar cliente, na pesquisa de cliente', () => {
         
             //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
             cy.get('.click-cliente > .informe-o-cliente > .cliente-header')

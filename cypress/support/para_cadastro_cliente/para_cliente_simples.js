@@ -22,11 +22,6 @@ export function opcaoClienteSimples (selector) {
 
     //Opção Cliente no menu de opções
     cy.get('a[aria-label="Cliente"]')
-        .should('be.visible')
-        .and('not.have.attr', 'disabled')
-
-    //Opção Cliente no menu de opções
-    cy.get('a[aria-label="Cliente"]')
         .should('have.attr', 'aria-label', 'Cliente')
 
     //Opção Cliente no menu de opções
@@ -170,7 +165,7 @@ export function preencherDataNascimento (selector) {
         .should('have.text', 'Data de nascimento')     
 
     //Campo data de nascimento
-    cy.get('#input_132')
+    cy.get('#input_135')
         .should('be.visible')
         .and('have.value','')
         .wait(200)

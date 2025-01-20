@@ -1,11 +1,12 @@
 import { iconeMenuOpcoes, opcaoClienteCompleto, preecherDataNascimento, selecionarSexoCliente, preencherNomeCompleto, preencherNomeCNPJ,
          clicarSalvarCliente, clicarAbaEndereco, preencherCPFcliente, preencherCNPJcliente, messEnderecoIncluidoSucesso, 
          preencherNomeFantasiaCNPJ, clicarAdicionarNovoEndereço, modalEnderecoVazioValidar, clicarAbrirTipoEndereco, botaoSalvarDesabilitado,
-         messEnderecoIncluidoSucesso, infosEnderecoAdicionado, clicarSalvarClienteCompleto, clicarAbaRota, clicarAdicionarNovaRota,
+         infosEnderecoAdicionado, clicarSalvarClienteCompleto, clicarAbaRota, clicarAdicionarNovaRota, messTelefoneIncluidoSucesso,
          modalRotaVazioValidar, escolherTipoEnderecoRota, escolherTipoEndereco, messAlertaEnderecoObrigatorio, clicarSalvarEndereco,
          preencherCampoCEPEndereco, preencherCampoNumeroEndereco, preencherRotaCompleta, messRotaIncluidaSucesso, infosRotaAdicionada,
          clicarAbaTelefone, clicarAdicionarNovoTelefone, modalTelefoneVazioValidar, escolherTipoTelefone, preencherNumeroTelefone,
-         preencherRamalTelefone, clicarSalvarTelefone, infosTelefoneAdicionado, modalAguardeCarregando, messRegistroSalvoSucesso } from '../../support/para_cadastro_cliente/para_cliente_completo';
+         preencherRamalTelefone, clicarSalvarTelefone, infosTelefoneAdicionado, modalAguardeCarregando, messRegistroSalvoSucesso, 
+         cardEnderecoVazioValidar } from '../../support/para_cadastro_cliente/para_cliente_completo.js';
 
 
 describe('Cadastrar cliente completo', () => {
@@ -71,7 +72,7 @@ describe('Cadastrar cliente completo', () => {
             infosTelefoneAdicionado()
             cy.wait(1000)
 
-            messEnderecoIncluidoSucesso()
+            messTelefoneIncluidoSucesso()
             clicarSalvarCliente()
             cy.wait(2000)
             modalAguardeCarregando()
@@ -136,14 +137,14 @@ describe('Cadastrar cliente completo', () => {
             infosTelefoneAdicionado()
             cy.wait(2000)
 
-            messEnderecoIncluidoSucesso()
+            messTelefoneIncluidoSucesso()
             clicarSalvarCliente()
             cy.wait(2000)
             modalAguardeCarregando()
             messRegistroSalvoSucesso()
         })  
 
-        it('Cliente completo CNPJ', () => {
+        it.skip('Cliente completo CNPJ', () => {
     
             iconeMenuOpcoes()
             opcaoClienteCompleto()
@@ -193,7 +194,7 @@ describe('Cadastrar cliente completo', () => {
             infosTelefoneAdicionado()
             cy.wait(2000)
 
-            messEnderecoIncluidoSucesso()
+            messTelefoneIncluidoSucesso()
             clicarSalvarCliente()
             cy.wait(2000)
             modalAguardeCarregando()

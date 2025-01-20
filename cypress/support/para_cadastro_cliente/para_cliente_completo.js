@@ -79,9 +79,8 @@ export function preecherDataNascimento (selector) {
 
     cy.wait(200)
 
-    //Campo data de nascimento
-    cy.get('#input_104')  // Seleciona o campo com o placeholder
-        .type('30/09/1998')
+    cy.get('#input_109').type('30/09/1998');
+
 }
 
 //Validar e escolher sexo da pessoa
@@ -168,7 +167,7 @@ export function clicarSalvarCliente (selector) {
 }
 
 //Validar mensagem de endereço incluído com sucesso
-export function messEnderecoIncluidoSucesso (selector) {
+export function messTelefoneIncluidoSucesso (selector) {
 
     //Card Endereço incluído com sucesso.
     cy.get('.toast-success')
@@ -496,7 +495,7 @@ export function preencherCampoCEPEndereco (selector) {
 //preencher campo Numero no cadastro de endereço
 export function preencherCampoNumeroEndereco (selector) {
 
-    const numero_endereco = "1"
+    const numero_endereco = "66"
 
     //Preenchendo campo Número
     cy.get('#txtNumEndereco')
@@ -663,7 +662,7 @@ export function preencherNumeroTelefone (selector) {
 //preencher campo Ramal, no cadastro de telefone
 export function preencherRamalTelefone (selector) {
 
-    const ramal_telefone = "4495787847"
+    const ramal_telefone = "435"
 
     //Card Telefone - preencher campo ramal
     cy.get('#txtRamalTel')
