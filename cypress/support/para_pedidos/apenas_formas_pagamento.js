@@ -256,6 +256,7 @@ export function carregandoFormaPagamento (selector) {
 export function botaoGerarParcelas (selector) {
 
     cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
+    cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento')
 
     //Botão "GERAR PARCELAS" - validações
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
@@ -267,8 +268,9 @@ export function botaoGerarParcelas (selector) {
     //Botão "GERAR PARCELAS" - clicar
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
         .click({force:true})
-
+        
     cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
+    cy.wait('@api_modal_forma_pagamento', { timeout: 40000 })
 }
 
 //preencher pagamento entrada

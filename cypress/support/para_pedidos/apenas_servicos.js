@@ -99,6 +99,8 @@ export function modalServicosVinculados (selector) {
 //botão OK modal Serviços Vinculados
 export function okServicosVinculados (selector) {
 
+    cy.intercept('POST', '/services/v3/pedido_calcular_frete').as('api_pedido_calcular_frete')
+
     //validando botão
     cy.get('button[ng-click="salvar()"]')
         .should('be.visible')
@@ -108,4 +110,6 @@ export function okServicosVinculados (selector) {
     //clicar no botão
     cy.get('button[ng-click="salvar()"]')
         .click({force:true})
+
+    cy.wait('@api_pedido_calcular_frete', { timeout: 40000 })
 }

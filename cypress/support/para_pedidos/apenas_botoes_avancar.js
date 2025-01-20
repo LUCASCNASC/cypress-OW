@@ -26,6 +26,9 @@ export function avancarParaParcelas (selector) {
 //Botão para avançar para a tela de escolher transportadora e rota
 export function avancarParaTransportadora (selector) {
 
+    cy.intercept('GET', '/views/carrinho/endereco.html').as('apiEndereco')
+    cy.intercept('GET', '/services/v3/cidade?uf=PR').as('apiCidade')
+
     cy.get('.flex-gt-sm-50 > .md-primary')
         .scrollIntoView()
         .wait(200)
@@ -47,6 +50,9 @@ export function avancarParaTransportadora (selector) {
     cy.get('h3')
         .should('be.visible')
         .and('have.text','Adicionando produtos/serviços...')
+
+    cy.wait('@apiEndereco', { timeout: 40000 })
+    cy.wait('@apiCidade', { timeout: 40000 })
 }
 
 //Botão para avançar para a tela de Gerar parcelas

@@ -8,4 +8,4 @@ export function pegarAPICidade (selector) {
 export function esperarAPICidade (select) {
 
     cy.wait('@apiRequest', { timeout: 40000 })
-}
+} 

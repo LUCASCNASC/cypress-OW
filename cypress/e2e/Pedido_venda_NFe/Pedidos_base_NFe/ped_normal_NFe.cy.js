@@ -114,16 +114,13 @@ describe('Gerar pedido normal', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(8000)
-            esperarAPICidade()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
+            //cy.wait(3000)
             escolherFormaPagamentoPrincipal()
-            cy.wait(4000)
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
