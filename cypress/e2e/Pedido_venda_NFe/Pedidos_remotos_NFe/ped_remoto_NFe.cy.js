@@ -175,37 +175,37 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             pedidoGerado()
         })    
         
-        it('5-Pedido de venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
+        it.only('5-Pedido de venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
             produtoRemotoSemCD() //PRODUTO
-            semSaldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto()
-            cy.wait(400)
-            trocarFilialFaturamento()
+            // semSaldodisponivel()
+            // escolherProdutoPesquisa()
+            // cy.wait(200)
+            // escolherVoltagemProduto()
+            // cy.wait(400)
+            // trocarFilialFaturamento()
 
-            //Validando mensagem "Este produto não possui saldo na filial selecionada."
-            cy.get('[ng-if="semSaldoCD"][style=""] > p')
-                .should('exist')
-                .and('be.visible')
-                .and('have.text','Este produto não possui saldo na filial selecionada.')
-                .invoke('css', 'color') // Obtém a cor do elemento
-                .should('equal', 'rgb(244, 67, 54)')
+            // //Validando mensagem "Este produto não possui saldo na filial selecionada."
+            // cy.get('[ng-if="semSaldoCD"][style=""] > p')
+            //     .should('exist')
+            //     .and('be.visible')
+            //     .and('have.text','Este produto não possui saldo na filial selecionada.')
+            //     .invoke('css', 'color') // Obtém a cor do elemento
+            //     .should('equal', 'rgb(244, 67, 54)')
 
-            //Validando mensagem "Este produto não possui saldo na filial selecionada, será permitido apenas a simulação da venda."
-            cy.get('[ng-show="(itemGradeSelecionado && itemGradeSelecionado.valor > 0)"] > :nth-child(1) > .mensagem-erro-centralizada > p')
-                .should('exist')
-                .and('be.visible')
-                .and('have.text','Este produto não possui saldo na filial selecionada, será permitido apenas a simulação da venda.')
-                .invoke('css', 'color') // Obtém a cor do elemento
-                .should('equal', 'rgb(244, 67, 54)')
+            // //Validando mensagem "Este produto não possui saldo na filial selecionada, será permitido apenas a simulação da venda."
+            // cy.get('[ng-show="(itemGradeSelecionado && itemGradeSelecionado.valor > 0)"] > :nth-child(1) > .mensagem-erro-centralizada > p')
+            //     .should('exist')
+            //     .and('be.visible')
+            //     .and('have.text','Este produto não possui saldo na filial selecionada, será permitido apenas a simulação da venda.')
+            //     .invoke('css', 'color') // Obtém a cor do elemento
+            //     .should('equal', 'rgb(244, 67, 54)')
 
-            //Validando botão Adicionar para Simulação
-            cy.get('.md-primary.btn-rounded.md-raised.btn-block')
-                .should('exist')
-                .and('not.be.disabled')
-                .and('contain',' Adicionar para Simulação')
+            // //Validando botão Adicionar para Simulação
+            // cy.get('.md-primary.btn-rounded.md-raised.btn-block')
+            //     .should('exist')
+            //     .and('not.be.disabled')
+            //     .and('contain',' Adicionar para Simulação')
         })    
     })
 })

@@ -59,7 +59,6 @@ describe('Gerar pedido normal', () => {
             tirarEntrega() //ENTREGA
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            cy.wait(2000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
