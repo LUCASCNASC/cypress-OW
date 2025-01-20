@@ -1,5 +1,5 @@
-//Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoNormalPrimeiro (selector) {
+//Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoNormalPrimeiroNCFe (selector) {
 
     const primeiro_produto_normal = '1860'
 
@@ -29,8 +29,8 @@ export function produtoNormalPrimeiro (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoNormalSegundo (selector) {
+//Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoNormalSegundoNCFe (selector) {
 
     const segundo_produto_normal = '1870'
 
@@ -61,8 +61,8 @@ export function produtoNormalSegundo (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto normal - 1862 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoKitPrimeiro (selector) {
+//Escolher primeiro produto normal - 1862 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoKitPrimeiroNCFe (selector) {
 
     const primeiro_kit_normal = '1862'
 
@@ -88,8 +88,8 @@ export function produtoKitPrimeiro (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto normal - 1869 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoSemSaldo (selector) {
+//Escolher primeiro produto normal - 1869 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoSemSaldoNCFe (selector) {
 
     const produto_sem_saldo = '1869'
 
@@ -114,8 +114,8 @@ export function produtoSemSaldo (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto normal - 1880 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoCDPrimeiro (selector) {
+//Escolher primeiro produto normal - 1880 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoCDPrimeiroNCFe (selector) {
 
     const primeiro_produto_CD = '1880'
 
@@ -141,7 +141,7 @@ export function produtoCDPrimeiro (selector) {
 }
 
 //Escolher segundo produto normal - 1881 0 0
-export function produtoCDSegundo (selector) {
+export function produtoCDSegundoNCFe (selector) {
 
     const segundo_produto_CD = '1881'
 
@@ -168,8 +168,8 @@ export function produtoCDSegundo (selector) {
         .should('have.value', segundo_produto_CD)
 }
 
-//Escolher produto remoto com saldo em seu CD (filial 1) - 1883 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoRemotoComCD (selector) {
+//Escolher produto remoto com saldo em seu CD (filial 1) - 1883 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoRemotoComCDNCFe (selector) {
 
     const remoto_saldo_CD = '1883'
 
@@ -194,8 +194,8 @@ export function produtoRemotoComCD (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto remoto com saldo em seu CD (filial 1) - com Intercept - processo venda 9860 (NFe)
-export function produtoRemotoSemCD (selector) {
+//Escolher produto remoto com saldo em seu CD (filial 1) - com Intercept - processo venda 9860 (NCFe)
+export function produtoRemotoSemCDNCFe (selector) {
 
     const remoto__sem_saldo_CD = '1882'
 
@@ -220,8 +220,8 @@ export function produtoRemotoSemCD (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto arredondar primeiro - 1908 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoArredondarCimaBaixo (selector) {
+//Escolher produto arredondar primeiro - 1908 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoArredondarCimaBaixoNCFe (selector) {
 
     const produto_arredondar = '1908'
 
@@ -245,8 +245,8 @@ export function produtoArredondarCimaBaixo (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto com desconto R$ - 1912 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoDescontoCifrao (selector) {
+//Escolher produto com desconto R$ - 1912 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoDescontoCifraoNCFe (selector) {
 
     const produto_desconto_cifrao = '1912'
 
@@ -270,8 +270,8 @@ export function produtoDescontoCifrao (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto com desconto percentual - 1913 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoDescontoPercentual (selector) {
+//Escolher produto com desconto percentual - 1913 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoDescontoPercentualNCFe (selector) {
 
     const produto_desconto_percentual = '1913'
 
@@ -295,8 +295,8 @@ export function produtoDescontoPercentual (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto com desconto valor fixo - 1914 0 0  - com Intercept - processo venda 9860 (NFe)
-export function produtoDescontoValorFixo (selector) {
+//Escolher produto com desconto valor fixo - 1914 0 0  - com Intercept - processo venda 9860 (NCFe)
+export function produtoDescontoValorFixoNCFe (selector) {
 
     const produto_desconto_valorfixo = '1914'
 
@@ -320,8 +320,8 @@ export function produtoDescontoValorFixo (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher Kit desconto - 1909 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoKitDesconto (selector) {
+//Escolher Kit desconto - 1909 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoKitDescontoNCFe (selector) {
 
     const primeiro_kit_desconto = '1909'
 
@@ -346,8 +346,8 @@ export function produtoKitDesconto (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto kit remoto - 1915 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoKitRemoto (selector) {
+//Escolher produto kit remoto - 1915 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoKitRemotoNCFe (selector) {
 
     const primeiro_kit_remoto = '1915'
 
@@ -372,8 +372,8 @@ export function produtoKitRemoto (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto com promoção partida - 1868 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoPromoPartida (selector) {
+//Escolher primeiro produto com promoção partida - 1868 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoPromoPartidaNCFe (selector) {
 
     const produto_promocao_partida = '1868'
 
@@ -398,8 +398,8 @@ export function produtoPromoPartida (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto com promoção a prazo com entrada - 1866 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoPromoPrazoEntrada (selector) {
+//Escolher primeiro produto com promoção a prazo com entrada - 1866 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoPromoPrazoEntradaNCFe (selector) {
 
     const produto_promocao_prazo_entrada = '1866'
 
@@ -424,8 +424,8 @@ export function produtoPromoPrazoEntrada (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto com promoção a prazo parcelado - 1867 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoPromoPrazoParcelado (selector) {
+//Escolher primeiro produto com promoção a prazo parcelado - 1867 0 0 - com Intercept - processo venda 9860 (NCFe)
+export function produtoPromoPrazoParceladoNCFe (selector) {
 
     const produto_promocao_prazo_parcelado = '1867'
 
@@ -450,8 +450,8 @@ export function produtoPromoPrazoParcelado (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)
-export function prd1PrazoParcela (selector) {
+//Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros) - com Intercept - processo venda 9860 (NCFe)
+export function prd1PrazoParcelaNCFe (selector) {
 
     const produto_codigo = '1891'
 
@@ -476,8 +476,8 @@ export function prd1PrazoParcela (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)
-export function prd2PrazoParcela (selector) {
+//Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros) - com Intercept - processo venda 9860 (NCFe)
+export function prd2PrazoParcelaNCFe (selector) {
 
     const produto_codigo = '1895'
 
@@ -502,8 +502,8 @@ export function prd2PrazoParcela (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Pedido com promoção a prazo/parcelas (promoção 160): produto 1893 0 0 com prestamista (isento de juros)
-export function prd3PrazoParcela (selector) {
+//Pedido com promoção a prazo/parcelas (promoção 160): produto 1893 0 0 com prestamista (isento de juros) - com Intercept - processo venda 9860 (NCFe)
+export function prd3PrazoParcelaNCFe (selector) {
 
     const produto_codigo = '1893'
 
@@ -528,8 +528,8 @@ export function prd3PrazoParcela (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Pedido com promoção a prazo/parcelas (promoção 161): produto 1893 0 0 com garantia (isenta de juros) e prestamista (com juros)
-export function prd4PrazoParcela (selector) {
+//Pedido com promoção a prazo/parcelas (promoção 161): produto 1893 0 0 com garantia (isenta de juros) e prestamista (com juros) - com Intercept - processo venda 9860 (NCFe)
+export function prd4PrazoParcelaNCFe (selector) {
 
     const produto_codigo = '1894'
 
