@@ -4,8 +4,8 @@ import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPag
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoFinanceiroBaixaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherRota, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { escolherRota, modalInconsApenasTransp, escolherTransportadora, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido com financeiro na baixa', () => {
 
@@ -36,7 +36,11 @@ describe('Gerar pedido com financeiro na baixa', () => {
             cy.wait(400)
             avancarParaTransportadora()
             cy.wait(6000)
+            pegarAPICidade()
+            modalInconsApenasTransp()
+            esperarAPICidade()
             escolherRota() //ESCOLHER TRANSPORTADORA
+            escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
@@ -57,7 +61,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             okServicosVinculados()
             cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            cy.wait(3000)
+            cy.wait(4000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -67,9 +71,13 @@ describe('Gerar pedido com financeiro na baixa', () => {
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(400)
+            pegarAPICidade()
             avancarParaTransportadora() 
             cy.wait(6000)
+            modalInconsApenasTransp()
+            esperarAPICidade()
             escolherRota() //ESCOLHER TRANSPORTADORA
+            escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
