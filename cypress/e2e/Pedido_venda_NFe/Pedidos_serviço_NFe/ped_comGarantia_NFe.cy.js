@@ -6,7 +6,6 @@ import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
-import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_APIs.js';
 
 describe('Gerar pedidos com Garantia', () => {
 
@@ -135,10 +134,7 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
-            esperarAPICidade()
             avancarParcelasEntrega()
         })
 
@@ -158,10 +154,7 @@ describe('Gerar pedidos com Garantia', () => {
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
-            esperarAPICidade()
             avancarParcelasEntrega()
         })
 
@@ -170,10 +163,7 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
-            esperarAPICidade()
             avancarParcelasEntrega()
         })
 
@@ -193,10 +183,7 @@ describe('Gerar pedidos com Garantia', () => {
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
-            esperarAPICidade()
             avancarParcelasEntrega()
         })
 
@@ -205,10 +192,7 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
-            esperarAPICidade()
             avancarParcelasEntrega() 
         })
 
@@ -227,10 +211,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.wait(1000)
             okServicosVinculados() //SERVIÇOS
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
-            esperarAPICidade()
             avancarParcelasEntrega()
         })
     })

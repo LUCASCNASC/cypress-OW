@@ -6,7 +6,6 @@ import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../
 import { processoFinanceiroBaixaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherRota, modalInconsApenasTransp, escolherTransportadora } from '../../../support/para_pedidos/apenas_entrega.js';
-import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_APIs.js';
 
 describe('Gerar pedido com financeiro na baixa', () => {
 
@@ -36,10 +35,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             okServicosVinculados()
             cy.wait(400)
             avancarParaTransportadora()
-            cy.wait(6000)
-            pegarAPICidade()
             modalInconsApenasTransp()
-            esperarAPICidade()
             escolherRota() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
@@ -74,7 +70,6 @@ describe('Gerar pedido com financeiro na baixa', () => {
             cy.wait(400)
             pegarAPICidade()
             avancarParaTransportadora() 
-            cy.wait(6000)
             modalInconsApenasTransp()
             esperarAPICidade()
             escolherRota() //ESCOLHER TRANSPORTADORA

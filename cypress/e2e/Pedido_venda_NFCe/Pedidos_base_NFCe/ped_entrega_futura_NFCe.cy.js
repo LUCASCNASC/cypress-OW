@@ -6,7 +6,6 @@ import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../
 import { processoEntregaFuturaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
-import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_APIs.js';
 
 describe('Gerar pedido de entrega futura', () => {
 
@@ -35,11 +34,8 @@ describe('Gerar pedido de entrega futura', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(6000)
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            esperarAPICidade()
             escolherRota()
             escolherTransportadora()
             avancarParcelasEntrega()
@@ -72,11 +68,8 @@ describe('Gerar pedido de entrega futura', () => {
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora() 
-            cy.wait(6000)
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            esperarAPICidade()
             escolherRota()
             escolherTransportadora()
             avancarParcelasEntrega() 

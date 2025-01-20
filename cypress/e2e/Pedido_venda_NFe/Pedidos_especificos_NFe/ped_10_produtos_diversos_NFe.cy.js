@@ -8,7 +8,6 @@ import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
-import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_APIs.js';
 
 describe('Gerar pedido normal', () => {
 
@@ -166,10 +165,7 @@ describe('Gerar pedido normal', () => {
             clicarAdicionarProduto() //décima adicionando produto remoto - 1889 9 9 - sem serviço / com entrega
             cy.wait(1000)
 
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(12000)
-            esperarAPICidade()
             avancarParcelasEntrega()
             cy.wait(10000)
             botaoGerarParcelas() //GERAR PARCELAS
