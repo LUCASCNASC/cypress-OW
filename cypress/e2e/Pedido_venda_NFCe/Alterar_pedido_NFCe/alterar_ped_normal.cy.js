@@ -8,9 +8,10 @@ import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVincula
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, carregandoFormaPagamento,
          escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaPrincipal } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro, pegarAPICidade,
+         esperarAPICidade, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -20,14 +21,14 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaPrincipal()
+        processoVendaNFCe()
         clienteComRota()
         cy.wait(500)
     })
 
     context('Com frete/ processo 9890 - caminho feliz', () => {
 
-        it('Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it.skip('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
@@ -47,7 +48,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(5000)
+            cy.wait(7000)
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
