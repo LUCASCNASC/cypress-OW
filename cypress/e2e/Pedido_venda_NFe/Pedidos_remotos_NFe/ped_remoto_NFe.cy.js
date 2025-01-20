@@ -6,7 +6,7 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js'; 
+import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_APIs.js';
 
 
 //verificar todos

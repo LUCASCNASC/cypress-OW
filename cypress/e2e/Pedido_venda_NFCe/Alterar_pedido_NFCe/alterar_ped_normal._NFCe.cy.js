@@ -9,7 +9,8 @@ import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, escolherSegundaFor
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, pegarAPICidade, esperarAPICidade, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_APIs.js';
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 

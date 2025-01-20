@@ -9,7 +9,8 @@ import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp, modalInconsApenasRota, tirarEntrega,
-         tirarEntregaSegundo, tirarEntregaTerceiro, tirarMontagem, tirarMontagemSegundo, pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_entrega.js';
+         tirarEntregaSegundo, tirarEntregaTerceiro, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { pegarAPICidade, esperarAPICidade } from '../../../support/para_pedidos/apenas_APIs.js';
 
 describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () => {
 
