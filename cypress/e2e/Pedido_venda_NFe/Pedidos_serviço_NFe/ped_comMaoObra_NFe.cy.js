@@ -206,17 +206,15 @@ describe('Gerar pedidos com Mão de obra', () => {
         })
     })
 
-    // afterEach(() => {
-    //     botaoGerarParcelas() //GERAR PARCELAS
-    //     carregandoFormaPagamento()
-    //     escolherFormaPagamentoPrincipal()
-    //     cy.wait(3000)
-    //     escolherDuasParcelaPagamento()
-    //     cy.wait(400)
-    //     avancarFinal()
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(9000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoGerarParcelas() //GERAR PARCELAS
+        carregandoFormaPagamento()
+        escolherFormaPagamentoPrincipal()
+        cy.wait(3000)
+        escolherDuasParcelaPagamento()
+        cy.wait(400)
+        avancarFinal()
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
+      });
 })

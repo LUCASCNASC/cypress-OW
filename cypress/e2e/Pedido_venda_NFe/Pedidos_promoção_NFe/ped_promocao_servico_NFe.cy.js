@@ -155,10 +155,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(9000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
+      });
  })

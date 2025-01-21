@@ -49,8 +49,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(6000)
             pedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
@@ -102,8 +100,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(8000)
             pedidoAlteradoSucesso()
         })
 
@@ -129,8 +125,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(7000)
             pedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
@@ -188,8 +182,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(8000)
             pedidoAlteradoSucesso()
         })
 
@@ -216,8 +208,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(6000)
             pedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
@@ -247,8 +237,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(8000)
             pedidoAlteradoSucesso()
             
         })
@@ -277,9 +265,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            botaoFinalizarPedido()
-            finalizandoPedido()
-            cy.wait(8000)
+            botaoFinalizarPedido() //RESUMO
             pedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
@@ -306,8 +292,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
-            cy.wait(8000)
-            finalizandoPedido()
             pedidoAlteradoSucesso()
         })
     })

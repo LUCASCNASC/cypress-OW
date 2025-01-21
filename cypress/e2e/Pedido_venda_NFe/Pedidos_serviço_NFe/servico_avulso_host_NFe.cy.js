@@ -47,8 +47,6 @@ describe('Venda de serviço avulso Host - 104', () => {
 
     afterEach(() => {
         botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(4000)
         pedidoGerado()
       });
 })

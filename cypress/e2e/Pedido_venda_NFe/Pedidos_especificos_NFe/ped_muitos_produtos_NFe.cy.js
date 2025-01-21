@@ -315,11 +315,8 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
         })
     })
 
-//     afterEach(() => {
-//         // RESUMO DO PEDIDO - ANTES DE FINALIZAR
-//         botaoFinalizarPedido()
-//         finalizandoPedido()
-//         cy.wait(10000)
-//         pedidoGerado()
-//       });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
+      });
 })

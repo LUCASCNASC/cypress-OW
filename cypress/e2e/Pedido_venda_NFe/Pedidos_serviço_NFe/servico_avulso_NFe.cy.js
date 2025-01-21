@@ -41,8 +41,6 @@ describe('Venda de serviço avulso', () => {
 
     afterEach(() => {
         botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(4000)
         pedidoGerado()
       });
 })

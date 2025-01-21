@@ -1,4 +1,4 @@
-//Botão para avançar para a tela de Gerar parcelas
+//Botão para avançar para a tela de Gerar parcelas - com intercept
 export function avancarParaParcelas (selector) {
 
     cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento')
@@ -27,7 +27,7 @@ export function avancarParaParcelas (selector) {
     cy.wait('@api_tela_pagamento', { timeout: 40000 })
 }
 
-//Botão para avançar para a tela de escolher transportadora e rota
+//Botão para avançar para a tela de escolher transportadora e rota - com intercept
 export function avancarParaTransportadora (selector) {
 
     cy.intercept('GET', '/views/carrinho/endereco.html').as('apiEndereco')
@@ -59,10 +59,9 @@ export function avancarParaTransportadora (selector) {
     cy.wait('@apiCidade', { timeout: 40000 })
 }
 
-//Botão para avançar para a tela de Gerar parcelas
+//Botão para avançar para a tela de Gerar parcelas - com intercept
 export function avancarParcelasEntrega (selector) {
 
-    //cy.wait(1000)
     cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento')
 
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
@@ -79,8 +78,10 @@ export function avancarParcelasEntrega (selector) {
     cy.wait('@api_tela_pagamento', { timeout: 40000 })
 }
 
-//Botão AVANÇAR, da tela antes de finalizar o pedido
+//Botão AVANÇAR, da tela antes de finalizar o pedido - com intercept
 export function avancarFinal (selector) {
+
+    cy.intercept('GET', '/views/carrinho/confirmacao.html').as('api_carinho_confirmacao')
 
     //Botão "AVANÇAR"
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
@@ -93,4 +94,6 @@ export function avancarFinal (selector) {
     //Botão "AVANÇAR" - clicar
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
         .click({force:true})
+
+    cy.wait('@api_carinho_confirmacao', { timeout: 40000 })
 }

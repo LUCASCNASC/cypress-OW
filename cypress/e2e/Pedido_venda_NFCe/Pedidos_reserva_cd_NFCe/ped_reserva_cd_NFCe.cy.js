@@ -83,10 +83,8 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(9000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
+      });
 })

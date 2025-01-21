@@ -135,8 +135,6 @@ describe('Gerar pedidos com Garantia', () => {
         cy.wait(400)
         avancarFinal()
         botaoFinalizarPedido() //RESUMO
-        finalizandoPedido() 
-        cy.wait(9000)
         pedidoGerado()
       });
 })

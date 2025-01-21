@@ -186,8 +186,6 @@ describe('Gerar pedido normal', () => {
 
     afterEach(() => {
         botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(10000)
         pedidoGerado()
       });
 })

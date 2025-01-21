@@ -137,8 +137,6 @@ describe('Gerar pedidos com Mão de obra', () => {
         cy.wait(400)
         avancarFinal()
         botaoFinalizarPedido() //RESUMO
-        finalizandoPedido()
-        cy.wait(9000)
         pedidoGerado()
       });
 })

@@ -305,10 +305,8 @@ describe('Gerar pedidos com promoção', () => {
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(9000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
+      });
 })

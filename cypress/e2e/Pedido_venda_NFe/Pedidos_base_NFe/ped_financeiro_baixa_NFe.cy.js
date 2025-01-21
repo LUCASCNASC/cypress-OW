@@ -129,10 +129,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
         })
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(9000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
+      });
 })

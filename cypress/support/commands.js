@@ -33,14 +33,11 @@ Cypress.Commands.add('login', (username, password) => {
   cy.visit('/');
   cy.get('#txtusername').type('sabium.automacao'); //login
   cy.get('#txtpassword').type('123.automacao'); //senha
+  cy.intercept('GET', '/images/icons/discount.svg').as('api_discount')
   cy.get('.test_btnSalvarCliente').click(); //botão entrar
-  cy.get('.ng-scope > .ng-binding')
-    .should('contain','Entrando no sistema') //Validando mensagem "Entrando no sistema" logo após clicarmos no botão Entrar
-  
-  cy.wait(6500)
-
-  cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
-    .should('contain','Cliente') //Validando se realmente fez o login
+  cy.get('.ng-scope > .ng-binding').should('contain','Entrando no sistema') //Validando mensagem "Entrando no sistema" 
+  cy.wait('@api_discount', { timeout: 40000 })
+  cy.get('.click-cliente > .informe-o-cliente > .cliente-header').should('contain','Cliente') //Validando se realmente fez o login
 });
 
 Cypress.Commands.add('urlAposLogin', (username, password) => {

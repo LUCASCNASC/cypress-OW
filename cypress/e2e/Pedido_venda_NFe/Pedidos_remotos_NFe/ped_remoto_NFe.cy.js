@@ -48,8 +48,6 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(7000)
             pedidoGerado()
         })
 
@@ -86,10 +84,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(18000)
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(7000)
             pedidoGerado()
         })
         
@@ -116,10 +111,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(9000)
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(7000)
             pedidoGerado()
         })
     })
@@ -148,10 +140,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
             botaoFinalizarPedido() //RESUMO
-            finalizandoPedido()
-            cy.wait(7000)
             pedidoGerado()
         })    
         

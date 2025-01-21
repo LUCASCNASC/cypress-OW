@@ -128,10 +128,8 @@ describe('Gerar pedido de entrega futura', () => {
         })  
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RUSUMO
-    //     finalizandoPedido()
-    //     cy.wait(8000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
+      });
 })

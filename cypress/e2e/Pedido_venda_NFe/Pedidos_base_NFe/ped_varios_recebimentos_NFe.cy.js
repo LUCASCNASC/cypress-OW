@@ -167,10 +167,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
     context('Com frete/ processo 9860 - caminho feliz', () => {
     })
 
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     finalizandoPedido()
-    //     cy.wait(8000)
-    //     pedidoGerado()
-    //   });
+    afterEach(() => {
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
+      });
 })
