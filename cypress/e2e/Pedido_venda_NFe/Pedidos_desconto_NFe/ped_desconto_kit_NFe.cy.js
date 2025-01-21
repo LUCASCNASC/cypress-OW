@@ -40,12 +40,10 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             aplicarDescontoValorFixo()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
-            cy.wait(6500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
-            cy.wait|(3000)
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()

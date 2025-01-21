@@ -41,7 +41,6 @@ describe('Gerar pedidos com promoção', () => {
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
 
             //Escolher "Forma de pagamento"

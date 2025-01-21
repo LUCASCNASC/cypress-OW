@@ -41,7 +41,6 @@ describe('Gerar pedido com financeiro na baixa', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -58,7 +57,6 @@ describe('Gerar pedido com financeiro na baixa', () => {
             okServicosVinculados()
             cy.wait(400)
             produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
-            cy.wait(4000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -77,7 +75,6 @@ describe('Gerar pedido com financeiro na baixa', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()

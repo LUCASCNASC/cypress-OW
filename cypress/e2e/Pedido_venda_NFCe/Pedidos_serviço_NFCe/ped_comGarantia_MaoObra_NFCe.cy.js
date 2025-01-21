@@ -52,7 +52,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -89,7 +88,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -126,7 +124,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -163,7 +160,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -200,7 +196,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -237,7 +232,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -274,7 +268,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -310,7 +303,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -347,7 +339,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
             produtoNormalSegundoNCFe() //PRODUTO
-            cy.wait(3000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -367,7 +358,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
     afterEach(() => {
         botaoGerarParcelas() //GERAR PARCELAS
         carregandoFormaPagamento() 
-        cy.wait(3000)
         escolherFormaPagamentoPrincipal()
         cy.wait(3000)
         escolherDuasParcelaPagamento()

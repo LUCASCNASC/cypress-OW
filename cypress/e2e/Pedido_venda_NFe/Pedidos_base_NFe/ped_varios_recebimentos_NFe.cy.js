@@ -38,12 +38,10 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(6000)
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
             botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherRecebDebitoPOS()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -67,13 +65,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(6000)
             escolherEntradaFormaPagamento()
             clicarGerarPagamento()
             cy.wait(400)
             botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -91,12 +87,10 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(6000)
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
             botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -121,12 +115,10 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(6000)
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
             botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -151,12 +143,10 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(6000)
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
             botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()

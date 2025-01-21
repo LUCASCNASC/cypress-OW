@@ -37,10 +37,8 @@ describe('Gerar pedido normal', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(5500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -69,10 +67,8 @@ describe('Gerar pedido normal', () => {
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(5500)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -90,12 +86,10 @@ describe('Gerar pedido normal', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(5500)
             escolherEntradaFormaPagamento() //GERAR PARCELAS
             clicarGerarPagamento()
             botaoGerarParcelas()
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             cy.wait(400)
@@ -117,7 +111,6 @@ describe('Gerar pedido normal', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -148,7 +141,6 @@ describe('Gerar pedido normal', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -166,12 +158,10 @@ describe('Gerar pedido normal', () => {
             cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            cy.wait(6500)
             escolherEntradaFormaPagamento() //GERAR PARCELAS
             clicarGerarPagamento()
             botaoGerarParcelas()
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             cy.wait(400)

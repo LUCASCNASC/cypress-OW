@@ -167,10 +167,8 @@ describe('Gerar pedido normal', () => {
 
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            cy.wait(10000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(10000)
 
             //Selecionando forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope')

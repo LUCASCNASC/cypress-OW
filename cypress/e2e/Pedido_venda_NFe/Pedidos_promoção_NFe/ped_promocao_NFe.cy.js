@@ -39,7 +39,6 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(12000)
             avancarFinal() 
         })
     
@@ -60,7 +59,6 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(11000)
     
             //GERAR PARCELAS
             cy.get('.white > :nth-child(3)').click()
@@ -89,7 +87,6 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(12500)
             avancarFinal()
         })
     })
@@ -124,9 +121,7 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(6000)
 
             //Escolher forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
@@ -168,7 +163,6 @@ describe('Gerar pedidos com promoção', () => {
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(9000)
 
             //GERAR PARCELAS 
             cy.get('.layout-row.flex-100 > :nth-child(1) > .md-fab').should('be.visible').click({force:true})
@@ -197,10 +191,8 @@ describe('Gerar pedidos com promoção', () => {
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
-            cy.wait(7000)
             escolherTransportadora()
             avancarParcelasEntrega() //ENTREGA
-            cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
 
             //Escolher "Forma de pagamento"
@@ -229,7 +221,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            cy.wait(5000)
 
             //"GERAR PAGAMENTO"
             cy.get('.white > :nth-child(3)').click({force:true})
@@ -260,7 +251,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
 
             //Escolher a forma de pagamento
@@ -303,7 +293,6 @@ describe('Gerar pedidos com promoção', () => {
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
-            cy.wait(3000)
 
             //Escolher forma de pagemento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force: true})

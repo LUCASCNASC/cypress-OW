@@ -37,10 +37,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
@@ -63,10 +61,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             tirarEntrega() //ENTREGA
             cy.wait(400)
             avancarParaParcelas()
-            cy.wait(5000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()

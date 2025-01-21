@@ -47,7 +47,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.wait(400)
             avancarParaParcelas()
             messAdicionandoProdutosServicos()
-            cy.wait(15000)
             avancarFinal() //PAGAMENTO
         })
     
@@ -76,7 +75,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.wait(400)
             avancarParaParcelas()
             messAdicionandoProdutosServicos()
-            cy.wait(16000)
 
             // tela de PAGAMENTO
             //Selecionando opções de pagamento de entrada
@@ -124,7 +122,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.wait(400)
             avancarParaParcelas()
             messAdicionandoProdutosServicos()
-            cy.wait(8000)
             adicionarPrestamista()
             avancarFinal() //PAGAMENTO
         })
@@ -153,7 +150,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.wait(400)
             avancarParaParcelas()
             messAdicionandoProdutosServicos()
-            cy.wait(10000)
             adicionarPrestamista()
             avancarFinal() //PAGAMENTO
         })

@@ -41,7 +41,6 @@ describe('Gerar pedido normal', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(4000)
             escolherDuasParcelaPagamento()
@@ -58,7 +57,6 @@ describe('Gerar pedido normal', () => {
             okServicosVinculados()
             cy.wait(400)
             produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
-            cy.wait(4000)
             saldodisponivel()
             escolherProdutoPesquisa()
             cy.wait(800)
@@ -74,7 +72,6 @@ describe('Gerar pedido normal', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -94,12 +91,10 @@ describe('Gerar pedido normal', () => {
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(6500)
             escolherEntradaFormaPagamento() //GERAR PARCELAS
             clicarGerarPagamento()
             botaoGerarParcelas()
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             cy.wait(400)

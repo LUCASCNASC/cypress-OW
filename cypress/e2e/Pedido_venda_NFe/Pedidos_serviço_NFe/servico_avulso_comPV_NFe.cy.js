@@ -63,7 +63,6 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             cy.wait(3000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(2000)
             escolherDuasParcelaPagamento()

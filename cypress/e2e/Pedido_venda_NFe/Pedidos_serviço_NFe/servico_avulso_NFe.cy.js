@@ -31,7 +31,6 @@ describe('Venda de serviço avulso', () => {
             cy.wait(3000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(2000)
             escolherFormaPagamentoPrincipal()
             cy.wait(2000)
             escolherDuasParcelaPagamento()
