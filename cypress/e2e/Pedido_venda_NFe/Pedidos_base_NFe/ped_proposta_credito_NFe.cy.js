@@ -1,10 +1,10 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagaPropCredito, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, propostaCreditoGerada } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado, propostaCreditoGerada } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido com proposta de crédito', () => {
@@ -20,7 +20,7 @@ describe('Gerar pedido com proposta de crédito', () => {
         cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoPesquisaNormalPrimeiro()
         cy.wait(200)
     })
 
@@ -28,7 +28,7 @@ describe('Gerar pedido com proposta de crédito', () => {
 
         it('1-Venda: produto 1860 0 0 - (Pedido de  venda sem entrega, com proposta de crédito.)', () => {
 
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS

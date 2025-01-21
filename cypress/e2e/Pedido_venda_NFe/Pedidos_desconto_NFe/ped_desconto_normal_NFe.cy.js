@@ -1,9 +1,11 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherVoltagemProduto, escolherProdutoPesquisa } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoDescontoCifrao, produtoDescontoPercentual, produtoDescontoValorFixo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoDescontoCifrao, produtoDescontoPercentual, produtoDescontoValorFixo, escolherProdutoDescontoCifrao, 
+         escolherVoltagemProdutoDescontoCifrao, escolherProdutoDescontoPercentual, escolherVoltagemProdutoDescontoPercentual, 
+         escolherProdutoDescontoValorFixo, escolherVoltagemProdutoDescontoValorFixo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDescontoPorcentagem, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal} from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -27,9 +29,9 @@ describe('Gerar pedido de venda com desconto', () => {
 
             produtoDescontoCifrao() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoDescontoCifrao()
             cy.wait(200)
-            escolherVoltagemProduto() 
+            escolherVoltagemProdutoDescontoCifrao() 
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -53,9 +55,9 @@ describe('Gerar pedido de venda com desconto', () => {
 
             produtoDescontoPercentual() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoDescontoPercentual()
             cy.wait(200)
-            escolherVoltagemProduto() 
+            escolherVoltagemProdutoDescontoPercentual() 
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -79,9 +81,9 @@ describe('Gerar pedido de venda com desconto', () => {
 
             produtoDescontoValorFixo() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoDescontoValorFixo()
             cy.wait(200)
-            escolherVoltagemProduto() 
+            escolherVoltagemProdutoDescontoValorFixo() 
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS

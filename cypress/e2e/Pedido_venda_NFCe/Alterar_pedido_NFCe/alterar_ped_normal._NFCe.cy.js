@@ -1,12 +1,12 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiroNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          removerFormaPagamento } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, carregandoFormaPagamento,
          escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -28,11 +28,11 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
-            produtoNormalPrimeiroNCFe() //PRODUTO
+            produtoNormalPrimeiroNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalPrimeiroNFCe()
             cy.wait(200)
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS

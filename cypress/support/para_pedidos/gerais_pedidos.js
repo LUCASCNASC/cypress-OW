@@ -166,7 +166,7 @@ export function clienteComRota (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPesquisa (selector) {
 
-    cy.intercept('GET', '/images/icons/tap.svg').as('api_imagem_produto')
+    //cy.intercept('GET', '/images/icons/tap.svg').as('api_imagem_produto')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -202,13 +202,13 @@ export function escolherProdutoPesquisa (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_imagem_produto', { timeout: 40000 })
+    //cy.wait('@api_imagem_produto', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProduto (selector) {
 
-    cy.intercept('GET', '/images/icons/expand_content.svg').as('api_imagem_expandida_produto')
+    //cy.intercept('GET', '/images/icons/expand_content.svg').as('api_imagem_expandida_produto')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -242,7 +242,7 @@ export function escolherVoltagemProduto (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_imagem_expandida_produto', { timeout: 40000 })
+    //cy.wait('@api_imagem_expandida_produto', { timeout: 40000 })
 }
 
 //Trocar filial de faturamento - faturamento remoto da filial 50 para 6
@@ -290,7 +290,7 @@ export function trocarFilialFaturamento (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAdicionarProduto (selector) {
 
-    cy.intercept('GET', '/views/busca/modalServicosVinculados.html').as('api_modal_servicos')
+    //cy.intercept('GET', '/views/busca/modalServicosVinculados.html').as('api_modal_servicos')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -304,7 +304,7 @@ export function clicarAdicionarProduto (selector) {
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
 
-    cy.wait('@api_modal_servicos', { timeout: 40000 })
+    //cy.wait('@api_modal_servicos', { timeout: 40000 })
 }
 
 //validando composição deste KIT

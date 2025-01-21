@@ -1,12 +1,14 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartidaNCFe, produtoPromoPrazoEntradaNCFe, produtoPromoPrazoParceladoNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { produtoPromoPartidaNFCe, produtoPromoPrazoEntradaNFCe, produtoPromoPrazoParceladoNFCe, escolherProdutoPromoPartidaNFCe, 
+         escolherVoltagemProdutoPromoPartidaNFCe, escolherProdutoPromoPrazoEntradaNFCe, escolherVoltagemProdutoPromoPrazoEntradaNFCe, 
+         escolherProdutoPromoPrazoParceladoNFCe, escolherVoltagemProdutoPromoPrazoParceladoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -25,11 +27,11 @@ describe('Gerar pedidos com promoção', () => {
 
         it.skip('6-Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            produtoPromoPartidaNCFe() //PRODUTO
+            produtoPromoPartidaNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPartidaNFCe()
             cy.wait(200)    
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPartidaNFCe()
             clicarUsarPromocao()
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -55,11 +57,11 @@ describe('Gerar pedidos com promoção', () => {
     
         it.skip('7-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            produtoPromoPrazoEntradaNCFe() //PRODUTO
+            produtoPromoPrazoEntradaNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPrazoEntradaNFCe()
             cy.wait(200)       
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPrazoEntradaNFCe()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -89,11 +91,11 @@ describe('Gerar pedidos com promoção', () => {
 
         it.skip('8-Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            produtoPromoPrazoParceladoNCFe() //PRODUTO
+            produtoPromoPrazoParceladoNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPrazoParceladoNFCe()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPrazoParceladoNFCe()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             clicarAdicionarProduto()

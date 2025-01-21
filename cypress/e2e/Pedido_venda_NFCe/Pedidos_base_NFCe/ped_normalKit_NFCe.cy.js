@@ -1,10 +1,10 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoKitPrimeiroNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoKitPrimeiroNFCe, escolherProdutoKitPrimeiroNFCe, escolherVoltagemProdutoKitPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedido normal', () => {
@@ -18,9 +18,9 @@ describe('Gerar pedido normal', () => {
         processoVendaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoKitPrimeiroNCFe()
+        produtoKitPrimeiroNFCe()
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoKitPrimeiroNFCe()
         cy.wait(200)
     })
     
@@ -28,7 +28,7 @@ describe('Gerar pedido normal', () => {
         
         it('2-Pedido de venda: kit 1862 0 0', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoKitPrimeiroNFCe() //PRODUTO
             composicaoDesteKit()
             clicarAdicionarProduto()
             cy.wait(500)

@@ -1,9 +1,9 @@
-//Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoNormalPrimeiroNCFe (selector) {
+//Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoNormalPrimeiroNFCe (selector) {
 
     const primeiro_produto_normal = '1860'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1860*%20codigo:1860%20OR%20nome:*1860*%20OR%20codigo:*1860*%20OR%20nomeecommerce:*1860*%20OR%20marca_descricao:*1860*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1860*%20codigo:1860%20OR%20nome:*1860*%20OR%20codigo:*1860*%20OR%20nomeecommerce:*1860*%20OR%20marca_descricao:*1860*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -29,12 +29,96 @@ export function produtoNormalPrimeiroNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoNormalSegundoNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoPesquisaNormalPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1860').as('api_produto_tambem_compraram_1860')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1860', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoNormalPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1860').as('api_produto_relacionado_lista_1860')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1860', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoNormalSegundoNFCe (selector) {
 
     const segundo_produto_normal = '1870'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1870*%20codigo:1870%20OR%20nome:*1870*%20OR%20codigo:*1870*%20OR%20nomeecommerce:*1870*%20OR%20marca_descricao:*1870*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1870*%20codigo:1870%20OR%20nome:*1870*%20OR%20codigo:*1870*%20OR%20nomeecommerce:*1870*%20OR%20marca_descricao:*1870*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -61,12 +145,96 @@ export function produtoNormalSegundoNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto normal - 1862 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoKitPrimeiroNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoPesquisaNormalSegundoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1870').as('api_produto_tambem_compraram_1870')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1870', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoNormalSegundoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1870').as('api_produto_relacionado_lista_1870')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1870', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher primeiro produto normal - 1862 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoKitPrimeiroNFCe (selector) {
 
     const primeiro_kit_normal = '1862'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1862*%20codigo:1862%20OR%20nome:*1862*%20OR%20codigo:*1862*%20OR%20nomeecommerce:*1862*%20OR%20marca_descricao:*1862*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1862*%20codigo:1862%20OR%20nome:*1862*%20OR%20codigo:*1862*%20OR%20nomeecommerce:*1862*%20OR%20marca_descricao:*1862*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -88,12 +256,96 @@ export function produtoKitPrimeiroNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto normal - 1869 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoSemSaldoNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoKitPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1862').as('api_produto_tambem_compraram_1862')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1862', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoKitPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1862').as('api_produto_relacionado_lista_1862')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1862', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher primeiro produto normal - 1869 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoSemSaldoNFCe (selector) {
 
     const produto_sem_saldo = '1869'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1869*%20codigo:1869%20OR%20nome:*1869*%20OR%20codigo:*1869*%20OR%20nomeecommerce:*1869*%20OR%20marca_descricao:*1869*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1869*%20codigo:1869%20OR%20nome:*1869*%20OR%20codigo:*1869*%20OR%20nomeecommerce:*1869*%20OR%20marca_descricao:*1869*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -114,12 +366,96 @@ export function produtoSemSaldoNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto normal - 1880 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoCDPrimeiroNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoSemSaldoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1869').as('api_produto_tambem_compraram_1869')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1869', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoSemSaldoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1869').as('api_produto_relacionado_lista_1869')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1869', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher primeiro produto normal - 1880 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoCDPrimeiroNFCe (selector) {
 
     const primeiro_produto_CD = '1880'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1880*%20codigo:1880%20OR%20nome:*1880*%20OR%20codigo:*1880*%20OR%20nomeecommerce:*1880*%20OR%20marca_descricao:*1880*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1880*%20codigo:1880%20OR%20nome:*1880*%20OR%20codigo:*1880*%20OR%20nomeecommerce:*1880*%20OR%20marca_descricao:*1880*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -140,8 +476,92 @@ export function produtoCDPrimeiroNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoCDPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1880').as('api_produto_tambem_compraram_1880')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1880', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoCDPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1880').as('api_produto_relacionado_lista_1880')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1880', { timeout: 40000 })
+}
+
+//-----
+
 //Escolher segundo produto normal - 1881 0 0
-export function produtoCDSegundoNCFe (selector) {
+export function produtoCDSegundoNFCe (selector) {
 
     const segundo_produto_CD = '1881'
 
@@ -168,12 +588,12 @@ export function produtoCDSegundoNCFe (selector) {
         .should('have.value', segundo_produto_CD)
 }
 
-//Escolher produto remoto com saldo em seu CD (filial 1) - 1883 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoRemotoComCDNCFe (selector) {
+//Escolher produto remoto com saldo em seu CD (filial 1) - 1883 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoRemotoComCDNFCe (selector) {
 
     const remoto_saldo_CD = '1883'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1883*%20codigo:1883%20OR%20nome:*1883*%20OR%20codigo:*1883*%20OR%20nomeecommerce:*1883*%20OR%20marca_descricao:*1883*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1883*%20codigo:1883%20OR%20nome:*1883*%20OR%20codigo:*1883*%20OR%20nomeecommerce:*1883*%20OR%20marca_descricao:*1883*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -194,12 +614,96 @@ export function produtoRemotoComCDNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto remoto com saldo em seu CD (filial 1) - com Intercept - processo venda 9860 (NCFe)
-export function produtoRemotoSemCDNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoRemotoComCDNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1883').as('api_produto_tambem_compraram_1883')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1883', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoRemotoComCDNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1883').as('api_produto_relacionado_lista_1883')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1883', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher produto remoto com saldo em seu CD (filial 1) - com Intercept - processo venda 9860 (NFe)
+export function produtoRemotoSemCDNFCe (selector) {
 
     const remoto__sem_saldo_CD = '1882'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1882*%20codigo:1882%20OR%20nome:*1882*%20OR%20codigo:*1882*%20OR%20nomeecommerce:*1882*%20OR%20marca_descricao:*1882*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1882*%20codigo:1882%20OR%20nome:*1882*%20OR%20codigo:*1882*%20OR%20nomeecommerce:*1882*%20OR%20marca_descricao:*1882*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -220,12 +724,96 @@ export function produtoRemotoSemCDNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto arredondar primeiro - 1908 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoArredondarCimaBaixoNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoRemotoSemCDNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1882').as('api_produto_tambem_compraram_1882')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1882', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoRemotoSemCDNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1882').as('api_produto_relacionado_lista_1882')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1882', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher produto arredondar primeiro - 1908 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoArredondarCimaBaixoNFCe (selector) {
 
     const produto_arredondar = '1908'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1908*%20codigo:1908%20OR%20nome:*1908*%20OR%20codigo:*1908*%20OR%20nomeecommerce:*1908*%20OR%20marca_descricao:*1908*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1908*%20codigo:1908%20OR%20nome:*1908*%20OR%20codigo:*1908*%20OR%20nomeecommerce:*1908*%20OR%20marca_descricao:*1908*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -245,12 +833,96 @@ export function produtoArredondarCimaBaixoNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto com desconto R$ - 1912 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoDescontoCifraoNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoArredondarCimaBaixoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1908').as('api_produto_tambem_compraram_1908')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1908', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoArredondarCimaBaixoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1908').as('api_produto_relacionado_lista_1908')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1908', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher produto com desconto R$ - 1912 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoDescontoCifraoNFCe (selector) {
 
     const produto_desconto_cifrao = '1912'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1912*%20codigo:1912%20OR%20nome:*1912*%20OR%20codigo:*1912*%20OR%20nomeecommerce:*1912*%20OR%20marca_descricao:*1912*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1912*%20codigo:1912%20OR%20nome:*1912*%20OR%20codigo:*1912*%20OR%20nomeecommerce:*1912*%20OR%20marca_descricao:*1912*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -270,12 +942,96 @@ export function produtoDescontoCifraoNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto com desconto percentual - 1913 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoDescontoPercentualNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoDescontoCifraoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1912').as('api_produto_tambem_compraram_1912')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1912', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoDescontoCifraoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1912').as('api_produto_relacionado_lista_1912')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1912', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher produto com desconto percentual - 1913 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoDescontoPercentualNFCe (selector) {
 
     const produto_desconto_percentual = '1913'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1913*%20codigo:1913%20OR%20nome:*1913*%20OR%20codigo:*1913*%20OR%20nomeecommerce:*1913*%20OR%20marca_descricao:*1913*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1913*%20codigo:1913%20OR%20nome:*1913*%20OR%20codigo:*1913*%20OR%20nomeecommerce:*1913*%20OR%20marca_descricao:*1913*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -295,12 +1051,96 @@ export function produtoDescontoPercentualNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto com desconto valor fixo - 1914 0 0  - com Intercept - processo venda 9860 (NCFe)
-export function produtoDescontoValorFixoNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoDescontoPercentualNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1913').as('api_produto_tambem_compraram_1913')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1913', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoDescontoPercentualNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1913').as('api_produto_relacionado_lista_1913')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1913', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher produto com desconto valor fixo - 1914 0 0  - com Intercept - processo venda 9860 (NFe)
+export function produtoDescontoValorFixoNFCe (selector) {
 
     const produto_desconto_valorfixo = '1914'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1914*%20codigo:1914%20OR%20nome:*1914*%20OR%20codigo:*1914*%20OR%20nomeecommerce:*1914*%20OR%20marca_descricao:*1914*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1914*%20codigo:1914%20OR%20nome:*1914*%20OR%20codigo:*1914*%20OR%20nomeecommerce:*1914*%20OR%20marca_descricao:*1914*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -320,12 +1160,96 @@ export function produtoDescontoValorFixoNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher Kit desconto - 1909 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoKitDescontoNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoDescontoValorFixoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1914').as('api_produto_tambem_compraram_1914')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1914', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoDescontoValorFixoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1914').as('api_produto_relacionado_lista_1914')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1914', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher Kit desconto - 1909 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoKitDescontoNFCe (selector) {
 
     const primeiro_kit_desconto = '1909'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1909*%20codigo:1909%20OR%20nome:*1909*%20OR%20codigo:*1909*%20OR%20nomeecommerce:*1909*%20OR%20marca_descricao:*1909*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1909*%20codigo:1909%20OR%20nome:*1909*%20OR%20codigo:*1909*%20OR%20nomeecommerce:*1909*%20OR%20marca_descricao:*1909*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -346,12 +1270,96 @@ export function produtoKitDescontoNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher produto kit remoto - 1915 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoKitRemotoNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoKitDescontoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1909').as('api_produto_tambem_compraram_1909')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1909', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoKitDescontoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1909').as('api_produto_relacionado_lista_1909')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1909', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher produto kit remoto - 1915 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoKitRemotoNFCe (selector) {
 
     const primeiro_kit_remoto = '1915'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1915*%20codigo:1915%20OR%20nome:*1915*%20OR%20codigo:*1915*%20OR%20nomeecommerce:*1915*%20OR%20marca_descricao:*1915*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1915*%20codigo:1915%20OR%20nome:*1915*%20OR%20codigo:*1915*%20OR%20nomeecommerce:*1915*%20OR%20marca_descricao:*1915*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -372,12 +1380,96 @@ export function produtoKitRemotoNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto com promoção partida - 1868 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoPromoPartidaNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoKitRemotoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1915').as('api_produto_tambem_compraram_1915')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1915', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoKitRemotoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1915').as('api_produto_relacionado_lista_1915')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1915', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher primeiro produto com promoção partida - 1868 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoPromoPartidaNFCe (selector) {
 
     const produto_promocao_partida = '1868'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1868*%20codigo:1868%20OR%20nome:*1868*%20OR%20codigo:*1868*%20OR%20nomeecommerce:*1868*%20OR%20marca_descricao:*1868*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1868*%20codigo:1868%20OR%20nome:*1868*%20OR%20codigo:*1868*%20OR%20nomeecommerce:*1868*%20OR%20marca_descricao:*1868*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -398,12 +1490,96 @@ export function produtoPromoPartidaNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto com promoção a prazo com entrada - 1866 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoPromoPrazoEntradaNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoPromoPartidaNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1968').as('api_produto_tambem_compraram_1968')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1968', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoPromoPartidaNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1968').as('api_produto_relacionado_lista_1968')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1968', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher primeiro produto com promoção a prazo com entrada - 1866 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoPromoPrazoEntradaNFCe (selector) {
 
     const produto_promocao_prazo_entrada = '1866'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1866*%20codigo:1866%20OR%20nome:*1866*%20OR%20codigo:*1866*%20OR%20nomeecommerce:*1866*%20OR%20marca_descricao:*1866*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1866*%20codigo:1866%20OR%20nome:*1866*%20OR%20codigo:*1866*%20OR%20nomeecommerce:*1866*%20OR%20marca_descricao:*1866*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -424,12 +1600,96 @@ export function produtoPromoPrazoEntradaNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Escolher primeiro produto com promoção a prazo parcelado - 1867 0 0 - com Intercept - processo venda 9860 (NCFe)
-export function produtoPromoPrazoParceladoNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoPromoPrazoEntradaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1966').as('api_produto_tambem_compraram_1966')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1966', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoPromoPrazoEntradaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1966').as('api_produto_relacionado_lista_1966')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1966', { timeout: 40000 })
+}
+
+//-----
+
+//Escolher primeiro produto com promoção a prazo parcelado - 1867 0 0 - com Intercept - processo venda 9860 (NFe)
+export function produtoPromoPrazoParceladoNFCe (selector) {
 
     const produto_promocao_prazo_parcelado = '1867'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1867*%20codigo:1867%20OR%20nome:*1867*%20OR%20codigo:*1867*%20OR%20nomeecommerce:*1867*%20OR%20marca_descricao:*1867*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1867*%20codigo:1867%20OR%20nome:*1867*%20OR%20codigo:*1867*%20OR%20nomeecommerce:*1867*%20OR%20marca_descricao:*1867*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -450,12 +1710,96 @@ export function produtoPromoPrazoParceladoNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros) - com Intercept - processo venda 9860 (NCFe)
-export function prd1PrazoParcelaNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoPromoPrazoParceladoNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1967').as('api_produto_tambem_compraram_1967')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1967', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoPromoPrazoParceladoNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1967').as('api_produto_relacionado_lista_1967')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1967', { timeout: 40000 })
+}
+
+//-----
+
+//Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)
+export function prd1PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1891'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1891*%20codigo:1891%20OR%20nome:*1891*%20OR%20codigo:*1891*%20OR%20nomeecommerce:*1891*%20OR%20marca_descricao:*1891*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1891*%20codigo:1891%20OR%20nome:*1891*%20OR%20codigo:*1891*%20OR%20nomeecommerce:*1891*%20OR%20marca_descricao:*1891*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -476,12 +1820,96 @@ export function prd1PrazoParcelaNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros) - com Intercept - processo venda 9860 (NCFe)
-export function prd2PrazoParcelaNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoPrazoParcelaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1891').as('api_produto_tambem_compraram_1891')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1891', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProdutoPrazoParcelaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1891').as('api_produto_relacionado_lista_1891')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1891', { timeout: 40000 })
+}
+
+//-----
+
+//Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)
+export function prd2PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1895'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1895*%20codigo:1895%20OR%20nome:*1895*%20OR%20codigo:*1895*%20OR%20nomeecommerce:*1895*%20OR%20marca_descricao:*1895*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1895*%20codigo:1895%20OR%20nome:*1895*%20OR%20codigo:*1895*%20OR%20nomeecommerce:*1895*%20OR%20marca_descricao:*1895*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -502,12 +1930,96 @@ export function prd2PrazoParcelaNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Pedido com promoção a prazo/parcelas (promoção 160): produto 1893 0 0 com prestamista (isento de juros) - com Intercept - processo venda 9860 (NCFe)
-export function prd3PrazoParcelaNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProduto2PrazoParcelaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1895').as('api_produto_tambem_compraram_1895')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1895', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProduto2PrazoParcelaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1895').as('api_produto_relacionado_lista_1895')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1895', { timeout: 40000 })
+}
+
+//-----
+
+//Pedido com promoção a prazo/parcelas (promoção 160): produto 1893 0 0 com prestamista (isento de juros)
+export function prd3PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1893'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1893*%20codigo:1893%20OR%20nome:*1893*%20OR%20codigo:*1893*%20OR%20nomeecommerce:*1893*%20OR%20marca_descricao:*1893*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1893*%20codigo:1893%20OR%20nome:*1893*%20OR%20codigo:*1893*%20OR%20nomeecommerce:*1893*%20OR%20marca_descricao:*1893*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -528,12 +2040,96 @@ export function prd3PrazoParcelaNCFe (selector) {
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
-//Pedido com promoção a prazo/parcelas (promoção 161): produto 1893 0 0 com garantia (isenta de juros) e prestamista (com juros) - com Intercept - processo venda 9860 (NCFe)
-export function prd4PrazoParcelaNCFe (selector) {
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProduto3PrazoParcelaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1893').as('api_produto_tambem_compraram_1893')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1893', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProduto3PrazoParcelaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1893').as('api_produto_relacionado_lista_1893')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1893', { timeout: 40000 })
+}
+
+//-----
+
+//Pedido com promoção a prazo/parcelas (promoção 161): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)
+export function prd4PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1894'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1894*%20codigo:1894%20OR%20nome:*1894*%20OR%20codigo:*1894*%20OR%20nomeecommerce:*1894*%20OR%20marca_descricao:*1894*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1894*%20codigo:1894%20OR%20nome:*1894*%20OR%20codigo:*1894*%20OR%20nomeecommerce:*1894*%20OR%20marca_descricao:*1894*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -553,3 +2149,87 @@ export function prd4PrazoParcelaNCFe (selector) {
 
     cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
+
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProduto4PrazoParcelaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1894').as('api_produto_tambem_compraram_1894')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    //Check box do produto
+    cy.get('.expandeIcone')
+        .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram_1894', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function escolherVoltagemProduto4PrazoParcelaNFCe  (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1894').as('api_produto_relacionado_lista_1894')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista_1894', { timeout: 40000 })
+}
+
+//-----

@@ -1,8 +1,8 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoEntregaFuturaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -20,7 +20,7 @@ describe('Gerar pedido de entrega futura', () => {
         cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoPesquisaNormalPrimeiro()
         cy.wait(200)
     })
 
@@ -28,7 +28,7 @@ describe('Gerar pedido de entrega futura', () => {
 
         it.skip('1-Pedido de venda: produto 1860 0 0', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -46,7 +46,7 @@ describe('Gerar pedido de entrega futura', () => {
         
         it.skip('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -56,9 +56,9 @@ describe('Gerar pedido de entrega futura', () => {
             produtoNormalSegundo() //SEGUNDO PRODUTO
             cy.wait(800)
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
@@ -80,7 +80,7 @@ describe('Gerar pedido de entrega futura', () => {
 
         it.skip('3-Pedido de venda: produto 1860 0 0', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -99,7 +99,7 @@ describe('Gerar pedido de entrega futura', () => {
         
         it.skip('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -108,9 +108,9 @@ describe('Gerar pedido de entrega futura', () => {
             produtoNormalSegundo() //SEGUNDO PRODUTO
             cy.wait(3000)
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO

@@ -1,9 +1,11 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { messAdicionandoProdutosServicos, adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
-import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela, escolherProdutoPrazoParcela, escolherVoltagemProdutoPrazoParcela, 
+         escolherProduto2PrazoParcela, escolherVoltagemProduto2PrazoParcela, escolherProduto3PrazoParcela, escolherVoltagemProduto3PrazoParcela, 
+         escolherProduto4PrazoParcela, escolherVoltagemProduto4PrazoParcela } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -27,9 +29,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd1PrazoParcela() //PRODUTO PROMOÇÃO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPrazoParcela()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPrazoParcela()
             tipoServicoIsentoValidar()
                 
             // //Usar promoção, no card "Promoções"
@@ -54,9 +56,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd2PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProduto2PrazoParcela()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProduto2PrazoParcela()
             cy.wait(400)
             tipoServicoIsentoValidar()
                 
@@ -103,9 +105,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd3PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProduto3PrazoParcela()
             cy.wait(200)    
-            escolherVoltagemProduto()
+            escolherVoltagemProduto3PrazoParcela()
             cy.wait(400)
                 
             //Usar promoção, no card "Promoções"
@@ -130,9 +132,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd4PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProduto4PrazoParcela()
             cy.wait(200)  
-            escolherVoltagemProduto()
+            escolherVoltagemProduto4PrazoParcela()
             tipoServicoIsentoValidar()
                 
             ///Usar promoção, no card "Promoções"

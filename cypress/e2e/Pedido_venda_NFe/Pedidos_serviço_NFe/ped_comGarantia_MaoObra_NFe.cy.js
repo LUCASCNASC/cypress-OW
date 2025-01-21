@@ -1,9 +1,10 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, 
+         escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, maoObraDestacaNãoSepara, 
          maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -21,9 +22,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         cy.wait(500)
         produtoNormalPrimeiro() //PRODUTO
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoPesquisaNormalPrimeiro()
         cy.wait(200)
-        escolherVoltagemProduto()
+        escolherVoltagemProdutoNormalPrimeiro()
         clicarAdicionarProduto()
         cy.wait(500)
         modalServicosVinculados()
@@ -52,9 +53,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -85,9 +86,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             okServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -117,9 +118,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             okServicosVinculados() //SERVIÇOS
@@ -149,9 +150,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS
@@ -182,9 +183,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -215,9 +216,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -248,9 +249,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -281,9 +282,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -315,8 +316,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             cy.wait(800)
-            escolherProdutoPesquisa()
-            escolherVoltagemProduto()
+            escolherProdutoPesquisaNormalSegundo()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -349,9 +350,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -381,9 +382,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -413,9 +414,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -445,9 +446,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -477,9 +478,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -509,9 +510,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -541,9 +542,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             okServicosVinculados() //SERVIÇOS
@@ -572,9 +573,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -604,9 +605,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             cy.wait(800)
             produtoNormalSegundo() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO

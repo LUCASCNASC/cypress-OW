@@ -1,9 +1,12 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa,  escolherVoltagemProduto,
          trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto, escolherProdutoPesquisaNormalPrimeiro, 
+         escolherVoltagemProdutoNormalPrimeiro, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
+         escolherProdutoKitRemoto, escolherVoltagemProdutoKitRemoto, escolherProdutoRemotoComCD, escolherVoltagemProdutoRemotoComCD, 
+         escolherProdutoRemotoSemCD, escolherVoltagemProdutoRemotoSemCD } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
@@ -28,9 +31,9 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalPrimeiro()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalPrimeiro()
             cy.wait(400)
             trocarFilialFaturamento()
             clicarAdicionarProduto()
@@ -55,9 +58,9 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalPrimeiro()
             cy.wait(200) 
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalPrimeiro()
             cy.wait(400)
             trocarFilialFaturamento()
             clicarAdicionarProduto()
@@ -67,8 +70,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            escolherVoltagemProduto()
+            escolherProdutoPesquisaNormalSegundo()
+            escolherVoltagemProdutoNormalSegundo()
             cy.wait(800)
             trocarFilialFaturamento()
             clicarAdicionarProduto()
@@ -92,9 +95,9 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoKitRemoto() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoKitRemoto()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoKitRemoto()
             cy.wait(400)
             trocarFilialFaturamento()
             composicaoDesteKit()
@@ -122,9 +125,9 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoRemotoComCD() //PRODUTO
             semSaldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoRemotoComCD()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoRemotoComCD()
             cy.wait(400)
             trocarFilialFaturamento()
             clicarAdicionarProduto()
@@ -148,9 +151,9 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoRemotoSemCD() //PRODUTO
             semSaldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoRemotoSemCD()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoRemotoSemCD()
             cy.wait(400)
             trocarFilialFaturamento()
 

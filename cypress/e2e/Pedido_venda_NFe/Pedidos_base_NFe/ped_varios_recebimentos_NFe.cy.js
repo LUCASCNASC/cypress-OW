@@ -1,10 +1,10 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
          escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, selecionarLancAgrupar, clicarAgrupar } from '../../../support/para_pedidos/para_ped_varios_recebimentos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -22,7 +22,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoPesquisaNormalPrimeiro()
         cy.wait(200)
     })
 
@@ -30,7 +30,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
 
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -57,7 +57,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it.skip('1-Venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
 
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -79,7 +79,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
 
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -107,7 +107,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
 
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -135,7 +135,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
 
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS

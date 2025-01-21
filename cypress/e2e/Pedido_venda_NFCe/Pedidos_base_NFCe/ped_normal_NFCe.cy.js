@@ -1,5 +1,6 @@
 import { saldodisponivel, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNCFe, produtoNormalSegundoNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
+         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -19,9 +20,9 @@ describe('Gerar pedido normal', () => {
         processoVendaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoNormalPrimeiroNCFe()
+        produtoNormalPrimeiroNFCe()
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoPesquisaNormalPrimeiroNFCe()
         cy.wait(200)
     })
 
@@ -29,7 +30,7 @@ describe('Gerar pedido normal', () => {
 
         it('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -50,17 +51,17 @@ describe('Gerar pedido normal', () => {
 
         it('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             cy.wait(400)
-            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
+            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundoNFCe()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundoNFCe()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
@@ -81,7 +82,7 @@ describe('Gerar pedido normal', () => {
 
         it('6-Venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS

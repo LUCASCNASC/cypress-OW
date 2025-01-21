@@ -1,5 +1,6 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNCFe, produtoNormalSegundoNCFe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
+         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -18,11 +19,11 @@ describe('Gerar pedidos com Garantia', () => {
         processoVendaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoNormalPrimeiroNCFe()
+        produtoNormalPrimeiroNFCe()
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoPesquisaNormalPrimeiroNFCe()
         cy.wait(200)
-        escolherVoltagemProduto() //PRODUTO
+        escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
         clicarAdicionarProduto()
         cy.wait(500)
         modalServicosVinculados()
@@ -46,11 +47,11 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
+            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundoNFCe()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundoNFCe()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -78,11 +79,11 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
+            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundoNFCe()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundoNFCe()
             clicarAdicionarProduto()
             cy.wait(1000)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -110,11 +111,11 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
             cy.wait(800)
-            produtoNormalSegundoNCFe() //SEGUNDO PRODUTO
+            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundoNFCe()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundoNFCe()
             clicarAdicionarProduto()
             cy.wait(1000)
             okServicosVinculados()

@@ -1,9 +1,12 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo, escolherProdutoPromoPartida, 
+         escolherVoltagemProdutoPromoPartida, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
+         escolherProdutoPromoPrazoEntrada, escolherVoltagemProdutoPromoPrazoEntrada, escolherProdutoPromoPrazoParcelado, 
+         escolherVoltagemProdutoPromoPrazoParcelado } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -27,9 +30,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPartida()
             cy.wait(200)   
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPartida()
             clicarUsarPromocao() //PROMOCAO
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -46,9 +49,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPrazoEntrada()
             cy.wait(200)        
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPrazoEntrada()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             cy.wait(400)
@@ -75,9 +78,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPrazoParcelado()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPrazoParcelado()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -97,9 +100,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPartida()
             cy.wait(200)    
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPartida()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -111,9 +114,9 @@ describe('Gerar pedidos com promoção', () => {
             produtoNormalSegundo() //SEGUNDO PRODUTO
             cy.wait(1500)
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -137,9 +140,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPrazoEntrada()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPrazoEntrada()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             cy.wait(400)
@@ -153,9 +156,9 @@ describe('Gerar pedidos com promoção', () => {
             cy.wait(2000)
             saldodisponivel()
             cy.wait(400)
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
@@ -181,9 +184,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPartida()
             cy.wait(200)    
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPartida()
             clicarUsarPromocao()
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -209,9 +212,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPrazoEntrada()
             cy.wait(200)       
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPrazoEntrada()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -239,9 +242,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPrazoParcelado()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPrazoParcelado()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -270,9 +273,9 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPromoPartida()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoPromoPartida()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             clicarAdicionarProduto()
@@ -283,9 +286,9 @@ describe('Gerar pedidos com promoção', () => {
             produtoNormalSegundo() //SEGUNDO PRODUTO
             cy.wait(3500)
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto() 
+            escolherVoltagemProdutoNormalSegundo() 
             clicarAdicionarProduto()
             cy.wait(1000)
             okServicosVinculados() //SERVIÇOS

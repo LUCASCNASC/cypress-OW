@@ -1,9 +1,9 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoArredondarCimaBaixo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoArredondarCimaBaixo, escolherProdutoArredondarCimaBaixo, escolherVoltagemProdutoArredondarCimaBaixo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarValorParaBaixo, alterarValorParaCima } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -21,7 +21,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.wait(500)
         produtoArredondarCimaBaixo()
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoArredondarCimaBaixo()
         cy.wait(200)
     })
 
@@ -29,7 +29,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
         it.skip('1-Pedido de venda: produto 1860 0 0 - arredondar para baixo', () => {
 
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoArredondarCimaBaixo() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -53,7 +53,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
         it.skip('2-Pedido de venda: produtos 1860 0 0 - arredondar para cima', () => {
 
-            escolherVoltagemProduto() //PRODUTO
+            escolherVoltagemProdutoArredondarCimaBaixo() //PRODUTO
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS

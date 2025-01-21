@@ -1,10 +1,13 @@
 import { clienteComRota, saldodisponivel, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto,
          semSaldodisponivel, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas, aumentarQuantVendaCinco, 
-         saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
+import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
+import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas, 
+         escolherPesquisaPrimeiroPrdNormalExclusiva, escolherVoltagemPrimeiroPrdNormalExclusiva, escolherPesquisakitSemSaldoAgendamento,
+         escolherVoltagemkitSemSaldoAgendamento, escolherPesquisakitVolumes, escolherVoltagemkitVolumes, escolherPesquisaSaldoReceber, 
+         escolherVoltagemSaldoReceber, escolherPesquisaSaldoReceberDuasLinhas, escolherVoltagemSaldoReceberDuasLinhas } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaExclusiva } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -29,9 +32,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherPesquisaPrimeiroPrdNormalExclusiva()
             cy.wait(200)
-            escolherVoltagemProduto() 
+            escolherVoltagemPrimeiroPrdNormalExclusiva() 
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -40,9 +43,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             kitSemSaldoAgendamento() //PRODUTO KIT
             semSaldodisponivel()
             cy.wait(800)
-            escolherProdutoPesquisa()
+            escolherPesquisakitSemSaldoAgendamento()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemkitSemSaldoAgendamento()
             cy.wait(400)
             trocarFilialFaturamento()
             clicarAdicionarProduto()
@@ -62,9 +65,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             primeiroPrdNormalExclusiva() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherPesquisaPrimeiroPrdNormalExclusiva()
             cy.wait(200)      
-            escolherVoltagemProduto() 
+            escolherVoltagemPrimeiroPrdNormalExclusiva() 
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -73,9 +76,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             kitVolumes() //PRODUTO KIT
             saldodisponivel()
             cy.wait(800)
-            escolherProdutoPesquisa()
+            escolherPesquisakitVolumes()
             cy.wait(200)    
-            escolherVoltagemProduto()
+            escolherVoltagemkitVolumes()
             cy.wait(400)
             clicarAdicionarProduto()
             cy.wait(500)
@@ -97,9 +100,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             produtoSaldoReceber() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherPesquisaSaldoReceber()
             cy.wait(200)
-            escolherVoltagemProduto() 
+            escolherVoltagemSaldoReceber() 
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -121,9 +124,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             prdSaldoReceberDuasLinhas() //PRODUTO
             saldoRemotoAReceber()
-            escolherProdutoPesquisa()
+            escolherPesquisaSaldoReceberDuasLinhas()
             cy.wait(200)
-            escolherVoltagemProduto() 
+            escolherVoltagemSaldoReceberDuasLinhas() 
             trocarFilialFaturamento()
             aumentarQuantVendaCinco()
             clicarAdicionarProduto()
@@ -141,9 +144,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
     
             primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherPesquisaPrimeiroPrdNormalExclusiva()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemPrimeiroPrdNormalExclusiva()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS

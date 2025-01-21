@@ -1,8 +1,9 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoCDPrimeiro, produtoNormalSegundo} from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, clicarAdicionarProduto, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoCDPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
+         escolherProdutoCDPrimeiro, escolherVoltagemProdutoCDPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -26,9 +27,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoCDPrimeiro()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoCDPrimeiro()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -49,9 +50,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoCDPrimeiro()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoCDPrimeiro()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -61,9 +62,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             produtoNormalSegundo() //SEGUNDO PRODUTO
             cy.wait(2000)
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
@@ -87,9 +88,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoCDPrimeiro()
             cy.wait(200)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoCDPrimeiro()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -110,9 +111,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoCDPrimeiro()
             cy.wait(200)
-            escolherVoltagemProduto() 
+            escolherVoltagemProdutoCDPrimeiro() 
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS
@@ -121,9 +122,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             produtoNormalSegundo() //SEGUNDO PRODUTO
             cy.wait(2000)
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisaNormalSegundo()
             cy.wait(800)
-            escolherVoltagemProduto()
+            escolherVoltagemProdutoNormalSegundo()
             clicarAdicionarProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
