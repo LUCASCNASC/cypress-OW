@@ -2643,6 +2643,26 @@ export function escolherVoltagemPrimeiroPrdNormalExclusiva (selector) {
     cy.wait('@api_produto_relacionado_lista_1896', { timeout: 40000 })
 }
 
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoPrimeiroPrdNormalExclusiva (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1896.0.0&valor=1300&quantidade=1&processo=9869').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
+
 //-----
 
 //produto kit normal sem saldo, para exclusiva e sem saldo a receber - 1900 0 0 - com intercept
@@ -2982,6 +3002,26 @@ export function escolherVoltagemSaldoReceber (selector) {
         .click({force:true})
 
     cy.wait('@api_produto_relacionado_lista_1905', { timeout: 40000 })
+}
+
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoSaldoReceber (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1905.0.0&valor=1300&quantidade=1&processo=9869').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
 }
 
 //-----
