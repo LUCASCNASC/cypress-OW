@@ -25,9 +25,9 @@ describe('Gerar pedido de entrega futura', () => {
         escolherProdutoPesquisaNormalPrimeiro()
     })
 
-    context('Sem frete/ processo 9862 - caminho feliz', () => {
+    context('Sem entrega/ processo 9862 - caminho feliz', () => {
 
-        it('1-Pedido de venda: produto 1860 0 0', () => {
+        it('Ped venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -44,7 +44,7 @@ describe('Gerar pedido de entrega futura', () => {
             avancarFinal()
         })
         
-        it('2-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -70,9 +70,9 @@ describe('Gerar pedido de entrega futura', () => {
         })
     })
     
-    context('Com frete/ processo 9862 - caminho feliz', () => {
+    context('Com entrega/ processo 9862 - caminho feliz', () => {
 
-        it('3-Pedido de venda: produto 1860 0 0', () => {
+        it('Ped venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -89,7 +89,7 @@ describe('Gerar pedido de entrega futura', () => {
             avancarFinal()
         })    
         
-        it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()

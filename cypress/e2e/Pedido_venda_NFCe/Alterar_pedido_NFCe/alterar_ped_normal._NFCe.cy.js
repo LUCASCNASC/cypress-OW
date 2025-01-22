@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota }  from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiroNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          removerFormaPagamento } from '../../../support/para_pedidos/para_alterar_pedido.js';
@@ -11,7 +11,7 @@ import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processo
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
-describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
+describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -24,7 +24,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         cy.wait(500)
     })
 
-    context('Com frete/ processo 9890 - caminho feliz', () => {
+    context('Com entrega/ processo 9890 - caminho feliz', () => {
 
         it('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       

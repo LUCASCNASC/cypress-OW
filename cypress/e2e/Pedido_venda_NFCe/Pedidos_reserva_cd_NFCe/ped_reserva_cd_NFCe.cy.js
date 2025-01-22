@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoCDPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoCDPrimeiroNFCe, escolherVoltagemProdutoCDPrimeiroNFCe,
          escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoCDPrimeiroNFCe, 
          clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
@@ -7,9 +7,9 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
-describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
+describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -22,9 +22,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         cy.wait(500)
     })
 
-    context('Com frete/ processo 9890 - caminho feliz', () => {
+    context('Com entrega/ processo 9890 - caminho feliz', () => {
 
-        it('3-Venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
+        it('Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
             produtoCDPrimeiroNFCe() //PRODUTO
             saldoCDDisponivel()
@@ -46,7 +46,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             avancarFinal()
         })
 
-        it('4-Venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
+        it('Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
             
             produtoCDPrimeiroNFCe() //PRODUTO
             saldoCDDisponivel()

@@ -5,12 +5,12 @@ import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPes
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
-describe('Gerar pedido normal', () => {
+describe('Gerar pedido normal com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -26,9 +26,9 @@ describe('Gerar pedido normal', () => {
         escolherProdutoPesquisaNormalPrimeiroNFCe()
     })
 
-    context('Com frete/ processo 9890 - caminho feliz', () => {
+    context('Com entrega/ processo 9890 - caminho feliz', () => {
 
-        it('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
+        it('Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()
@@ -47,7 +47,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()
@@ -73,7 +73,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it('6-Venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
+        it('Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()

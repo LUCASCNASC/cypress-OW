@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { produtoPromoPartidaNFCe, produtoPromoPrazoEntradaNFCe, produtoPromoPrazoParceladoNFCe, escolherProdutoPromoPartidaNFCe, 
          escolherVoltagemProdutoPromoPartidaNFCe, escolherProdutoPromoPrazoEntradaNFCe, escolherVoltagemProdutoPromoPrazoEntradaNFCe, 
          escolherProdutoPromoPrazoParceladoNFCe, escolherVoltagemProdutoPromoPrazoParceladoNFCe, clicarAddProdutoPromoPartidaNFCe, 
@@ -9,9 +9,9 @@ import { modalServicosVinculados, okServicosVinculados } from '../../../support/
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
-describe('Gerar pedidos com promoção', () => {
+describe('Gerar pedidos com promoção com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -26,7 +26,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Com entrega /com promoção/ processo 9890 - caminho feliz', () => {
 
-        it('6-Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it('Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             produtoPromoPartidaNFCe() //PRODUTO
             saldodisponivel()
@@ -52,7 +52,7 @@ describe('Gerar pedidos com promoção', () => {
             avancarFinal()
         })
     
-        it('7-Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it('Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntradaNFCe() //PRODUTO
             saldodisponivel()
@@ -82,7 +82,7 @@ describe('Gerar pedidos com promoção', () => {
             avancarFinal()
         })
 
-        it('8-Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it('Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParceladoNFCe() //PRODUTO
             saldodisponivel()

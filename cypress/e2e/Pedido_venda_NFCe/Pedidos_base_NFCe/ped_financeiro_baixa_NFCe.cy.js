@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
          escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoNormalPrimeiroNFCe,
          clicarAddProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
@@ -9,7 +9,7 @@ import { processoFinanceiroBaixaNFCe } from '../../../support/para_pedidos/apena
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherRota, modalInconsApenasTransp, escolherTransportadora } from '../../../support/para_pedidos/apenas_entrega.js';
 
-describe('Gerar pedido com financeiro na baixa', () => {
+describe('Gerar pedido com financeiro na baixa com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -25,9 +25,9 @@ describe('Gerar pedido com financeiro na baixa', () => {
         escolherProdutoPesquisaNormalPrimeiroNFCe()
     })
     
-    context('Com frete/ processo 9863 - caminho feliz', () => {
+    context('Com entrega/ processo 9892 - caminho feliz', () => {
 
-        it('3-Pedido de venda: produto 1860 0 0', () => {
+        it('Ped venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()
@@ -47,7 +47,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             avancarFinal()
         })
 
-        it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()

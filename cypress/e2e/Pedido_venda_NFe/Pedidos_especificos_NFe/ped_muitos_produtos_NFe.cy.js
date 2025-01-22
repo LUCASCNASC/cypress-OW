@@ -1,4 +1,4 @@
-import { clienteComRota, produtoPrincipal, escolherProdutoPesquisa, botãoAdicionarProduto, addproduto1, addproduto2, addproduto3, addproduto4, addproduto5, 
+import { clienteComRota, produtoPrincipal, escolherProdutoPesquisa, addproduto1, addproduto2, addproduto3, addproduto4, addproduto5, 
          addproduto6, addproduto7, addproduto8, addproduto9, addproduto10, addproduto11, addproduto12, addproduto13, addproduto14, addproduto15, 
          addproduto16, addproduto17, addproduto18, addproduto19, addproduto20, addproduto21, addproduto22, addproduto23, addproduto24, 
          addproduto25, addproduto26, addproduto27,addproduto28, addproduto29, addproduto30, addproduto31, addproduto32, addproduto33, addproduto34, 
@@ -24,9 +24,9 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
         cy.wait(500)
     })
 
-    context('Sem frete/ processo 9860 - caminho feliz - produtos sem serviço', () => {
+    context('Sem enterga/ processo 9860 - caminho feliz - produtos sem serviço', () => {
 
-        it('Pedido de venda: produto 1860 0 0', () => {
+        it('Ped venda: produto 1860 0 0', () => {
 
             produtoPrincipal() //primeira pesquisa de produto - 1907 1 1
             escolherProdutoPesquisa() //primeira vez escolher produto - 1907 1 1

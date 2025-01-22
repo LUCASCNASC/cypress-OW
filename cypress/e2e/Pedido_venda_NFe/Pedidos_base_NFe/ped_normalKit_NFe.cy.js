@@ -23,9 +23,9 @@ describe('Gerar pedido normal', () => {
         escolherProdutoKitPrimeiro()
     })
   
-    context('Sem frete/ processo 9860 - caminho feliz', () => {
+    context('Sem entrega/ processo 9860 - caminho feliz', () => {
         
-        it('1-Pedido de venda: kit 1862 0 0', () => {
+        it('Ped venda: kit 1862 0 0', () => {
                       
             escolherVoltagemProdutoKitPrimeiro() //PRODUTO
             composicaoDesteKit()
@@ -44,9 +44,9 @@ describe('Gerar pedido normal', () => {
         })
     })
     
-    context('Com frete/processo 9860 - caminho feliz', () => {
+    context('Com entrega/processo 9860 - caminho feliz', () => {
         
-        it('2-Pedido de venda: kit 1862 0 0', () => {
+        it('Ped venda: kit 1862 0 0', () => {
                       
             escolherVoltagemProdutoKitPrimeiro() //PRODUTO
             composicaoDesteKit()

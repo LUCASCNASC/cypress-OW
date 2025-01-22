@@ -23,9 +23,9 @@ describe('Gerar pedido com proposta de crédito', () => {
         escolherProdutoPesquisaNormalPrimeiro()
     })
 
-    context('Sem frete/ processo 9860 - caminho feliz', () => {
+    context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('1-Venda: produto 1860 0 0 - (Pedido de  venda sem entrega, com proposta de crédito.)', () => {
+        it('Ped venda: produto 1860 0 0 - (Pedido de venda sem entrega, com proposta de crédito.)', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()

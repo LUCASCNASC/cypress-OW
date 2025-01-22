@@ -7,7 +7,7 @@ import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processo
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
-describe('Gerar pedido normal', () => {
+describe('Gerar pedido normal com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -23,9 +23,9 @@ describe('Gerar pedido normal', () => {
         escolherProdutoKitPrimeiroNFCe()
     })
     
-    context('Com frete/processo 9890 - caminho feliz', () => {
+    context('Com entrega/processo 9890 - caminho feliz', () => {
         
-        it('2-Pedido de venda: kit 1862 0 0', () => {
+        it('Ped venda: kit 1862 0 0', () => {
                       
             escolherVoltagemProdutoKitPrimeiroNFCe() //PRODUTO
             composicaoDesteKit()

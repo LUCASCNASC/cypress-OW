@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, clicarAddProdutoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
@@ -25,9 +25,9 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         escolherProdutoPesquisaNormalPrimeiro()
     })
 
-    context('Sem frete/ processo 9860 - caminho feliz', () => {
+    context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('1-Venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
+        it('Ped venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -52,7 +52,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it('1-Venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
+        it('Ped venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -72,7 +72,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
+        it('Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -98,7 +98,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
+        it('Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -124,7 +124,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
+        it('Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -153,7 +153,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         })
     })
 
-    context('Com frete/ processo 9860 - caminho feliz', () => {
+    context('Com entrega/ processo 9860 - caminho feliz', () => {
     })
 
     afterEach(() => {

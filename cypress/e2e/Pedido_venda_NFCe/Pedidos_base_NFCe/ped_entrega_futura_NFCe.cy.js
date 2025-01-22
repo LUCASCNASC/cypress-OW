@@ -9,7 +9,7 @@ import { processoEntregaFuturaNFCe } from '../../../support/para_pedidos/apenas_
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
-describe('Gerar pedido de entrega futura', () => {
+describe('Gerar pedido de entrega futura com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -25,9 +25,9 @@ describe('Gerar pedido de entrega futura', () => {
         escolherProdutoPesquisaNormalPrimeiroNFCe()
     })
     
-    context('Com frete/ processo 9862 - caminho feliz', () => {
+    context('Com entrega/ processo 9891 - caminho feliz', () => {
 
-        it('3-Pedido de venda: produto 1860 0 0', () => {
+        it('Ped venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()
@@ -47,7 +47,7 @@ describe('Gerar pedido de entrega futura', () => {
             avancarFinal()
         })    
         
-        it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()
