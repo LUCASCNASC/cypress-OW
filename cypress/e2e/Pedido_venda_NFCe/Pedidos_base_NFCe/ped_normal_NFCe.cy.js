@@ -1,6 +1,7 @@
-import { saldodisponivel, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
-         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoNormalPrimeiroNFCe, 
+         clicarAddProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -23,7 +24,6 @@ describe('Gerar pedido normal', () => {
         produtoNormalPrimeiroNFCe()
         saldodisponivel()
         escolherProdutoPesquisaNormalPrimeiroNFCe()
-        cy.wait(200)
     })
 
     context('Com frete/ processo 9890 - caminho feliz', () => {
@@ -31,11 +31,9 @@ describe('Gerar pedido normal', () => {
         it('4-Venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiroNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -43,7 +41,7 @@ describe('Gerar pedido normal', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(4000)
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
@@ -52,21 +50,16 @@ describe('Gerar pedido normal', () => {
         it('5-Venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiroNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalSegundoNFCe()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -83,11 +76,9 @@ describe('Gerar pedido normal', () => {
         it('6-Venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiroNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -96,6 +87,7 @@ describe('Gerar pedido normal', () => {
             clicarGerarPagamento()
             botaoGerarParcelas()
             carregandoFormaPagamento()
+            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             cy.wait(400)

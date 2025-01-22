@@ -148,19 +148,21 @@ export function clienteComRota (selector) {
         .wait(500)
         .type('48976249089 {downArrow}')
 
-    cy.wait(200)
-
+    cy.intercept('/views/cliente/modalClientes.html').as('api_modalclientes');
     //clicar na lupa de pesquisa de clientes
     cy.get('.md-block > .ng-binding')
         .should('be.visible')
         .click()
+    cy.wait('@api_modalclientes', { timeout: 40000 })
 
-    cy.wait(1000)
+    // cy.wait(1000)
 
+    cy.intercept('/services/v3/pedido_validar_cliente').as('api_pedido_validar_cliente');
     //após a pesquisa encontrar o cliente, vamos selecionar ele
     cy.get('.md-3-line > div.md-button > .md-no-style')
         .should('be.visible')
         .click()
+    cy.wait('@api_pedido_validar_cliente', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -290,7 +292,7 @@ export function trocarFilialFaturamento (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAdicionarProduto (selector) {
 
-    //cy.intercept('GET', '/views/busca/modalServicosVinculados.html').as('api_modal_servicos')
+    //cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1860.0.0&valor=1313&quantidade=1&processo=9860').as('api_modal_servicos')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')

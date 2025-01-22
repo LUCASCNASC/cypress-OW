@@ -1,5 +1,5 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoKitPrimeiro, escolherProdutoKitPrimeiro, escolherVoltagemProdutoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoKitPrimeiro, escolherProdutoKitPrimeiro, escolherVoltagemProdutoKitPrimeiro, clicarAddProdutoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -21,21 +21,18 @@ describe('Gerar pedido normal', () => {
         produtoKitPrimeiro()
         saldodisponivel()
         escolherProdutoKitPrimeiro()
-        cy.wait(200)
     })
   
     context('Sem frete/ processo 9860 - caminho feliz', () => {
         
-        it.skip('1-Pedido de venda: kit 1862 0 0', () => {
+        it('1-Pedido de venda: kit 1862 0 0', () => {
                       
             escolherVoltagemProdutoKitPrimeiro() //PRODUTO
             composicaoDesteKit()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoKitPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -49,15 +46,13 @@ describe('Gerar pedido normal', () => {
     
     context('Com frete/processo 9860 - caminho feliz', () => {
         
-        it.skip('2-Pedido de venda: kit 1862 0 0', () => {
+        it('2-Pedido de venda: kit 1862 0 0', () => {
                       
             escolherVoltagemProdutoKitPrimeiro() //PRODUTO
             composicaoDesteKit()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoKitPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

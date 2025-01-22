@@ -1,7 +1,8 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoCDPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoCDPrimeiroNFCe, escolherVoltagemProdutoCDPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
-import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento, 
-         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { saldodisponivel, clienteComRota, saldoCDDisponivel} from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoCDPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoCDPrimeiroNFCe, escolherVoltagemProdutoCDPrimeiroNFCe,
+         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoCDPrimeiroNFCe, 
+         clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
@@ -28,13 +29,10 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             produtoCDPrimeiroNFCe() //PRODUTO
             saldoCDDisponivel()
             escolherProdutoCDPrimeiroNFCe()
-            cy.wait(200)
             escolherVoltagemProdutoCDPrimeiroNFCe()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoCDPrimeiroNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -53,23 +51,17 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             produtoCDPrimeiroNFCe() //PRODUTO
             saldoCDDisponivel()
             escolherProdutoCDPrimeiroNFCe()
-            cy.wait(200)
             escolherVoltagemProdutoCDPrimeiroNFCe() 
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoCDPrimeiroNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalSegundo()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()

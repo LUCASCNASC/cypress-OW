@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, clicarAddProdutoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
          escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -23,20 +23,17 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         produtoNormalPrimeiro()
         saldodisponivel()
         escolherProdutoPesquisaNormalPrimeiro()
-        cy.wait(200)
     })
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
+        it('1-Venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
@@ -55,15 +52,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it.skip('1-Venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
+        it('1-Venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             escolherEntradaFormaPagamento()
             clicarGerarPagamento()
@@ -77,15 +72,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
+        it('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
@@ -105,15 +98,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
+        it('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
@@ -133,15 +124,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it.skip('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
+        it('1-Venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)

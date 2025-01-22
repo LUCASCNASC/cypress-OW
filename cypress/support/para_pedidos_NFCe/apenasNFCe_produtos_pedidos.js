@@ -3,7 +3,7 @@ export function produtoNormalPrimeiroNFCe (selector) {
 
     const primeiro_produto_normal = '1860'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1860*%20codigo:1860%20OR%20nome:*1860*%20OR%20codigo:*1860*%20OR%20nomeecommerce:*1860*%20OR%20marca_descricao:*1860*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1860*%20codigo:1860%20OR%20nome:*1860*%20OR%20codigo:*1860*%20OR%20nomeecommerce:*1860*%20OR%20marca_descricao:*1860*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -111,6 +111,26 @@ export function escolherVoltagemProdutoNormalPrimeiroNFCe (selector) {
     cy.wait('@api_produto_relacionado_lista_1860', { timeout: 40000 })
 }
 
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoNormalPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1860.0.0&valor=1313&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
+
 //-----
 
 //Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9860 (NFe)
@@ -118,7 +138,7 @@ export function produtoNormalSegundoNFCe (selector) {
 
     const segundo_produto_normal = '1870'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1870*%20codigo:1870%20OR%20nome:*1870*%20OR%20codigo:*1870*%20OR%20nomeecommerce:*1870*%20OR%20marca_descricao:*1870*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1870*%20codigo:1870%20OR%20nome:*1870*%20OR%20codigo:*1870*%20OR%20nomeecommerce:*1870*%20OR%20marca_descricao:*1870*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -227,6 +247,26 @@ export function escolherVoltagemProdutoNormalSegundoNFCe (selector) {
     cy.wait('@api_produto_relacionado_lista_1870', { timeout: 40000 })
 }
 
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoNormalSegundoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1870.0.0&valor=1300&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
+
 //-----
 
 //Escolher primeiro produto normal - 1862 0 0 - com Intercept - processo venda 9860 (NFe)
@@ -234,7 +274,7 @@ export function produtoKitPrimeiroNFCe (selector) {
 
     const primeiro_kit_normal = '1862'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1862*%20codigo:1862%20OR%20nome:*1862*%20OR%20codigo:*1862*%20OR%20nomeecommerce:*1862*%20OR%20marca_descricao:*1862*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1862*%20codigo:1862%20OR%20nome:*1862*%20OR%20codigo:*1862*%20OR%20nomeecommerce:*1862*%20OR%20marca_descricao:*1862*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -337,6 +377,25 @@ export function escolherVoltagemProdutoKitPrimeiroNFCe (selector) {
 
     cy.wait('@api_produto_relacionado_lista_1862', { timeout: 40000 })
 }
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoKitPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1862.0.0&valor=1058.48&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
 
 //-----
 
@@ -345,7 +404,7 @@ export function produtoSemSaldoNFCe (selector) {
 
     const produto_sem_saldo = '1869'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1869*%20codigo:1869%20OR%20nome:*1869*%20OR%20codigo:*1869*%20OR%20nomeecommerce:*1869*%20OR%20marca_descricao:*1869*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1869*%20codigo:1869%20OR%20nome:*1869*%20OR%20codigo:*1869*%20OR%20nomeecommerce:*1869*%20OR%20marca_descricao:*1869*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -455,7 +514,7 @@ export function produtoCDPrimeiroNFCe (selector) {
 
     const primeiro_produto_CD = '1880'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1880*%20codigo:1880%20OR%20nome:*1880*%20OR%20codigo:*1880*%20OR%20nomeecommerce:*1880*%20OR%20marca_descricao:*1880*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1880*%20codigo:1880%20OR%20nome:*1880*%20OR%20codigo:*1880*%20OR%20nomeecommerce:*1880*%20OR%20marca_descricao:*1880*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -558,6 +617,26 @@ export function escolherVoltagemProdutoCDPrimeiroNFCe (selector) {
     cy.wait('@api_produto_relacionado_lista_1880', { timeout: 40000 })
 }
 
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoCDPrimeiroNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1880.0.0&valor=1300&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
+
 //-----
 
 //Escolher segundo produto normal - 1881 0 0
@@ -587,6 +666,8 @@ export function produtoCDSegundoNFCe (selector) {
         .wait(100)
         .should('have.value', segundo_produto_CD)
 }
+
+//----
 
 //Escolher produto remoto com saldo em seu CD (filial 1) - 1883 0 0 - com Intercept - processo venda 9860 (NFe)
 export function produtoRemotoComCDNFCe (selector) {
@@ -696,6 +777,26 @@ export function escolherVoltagemProdutoRemotoComCDNFCe (selector) {
     cy.wait('@api_produto_relacionado_lista_1883', { timeout: 40000 })
 }
 
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoRemotoComCDNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1883.0.0&valor=1625&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
+
 //-----
 
 //Escolher produto remoto com saldo em seu CD (filial 1) - com Intercept - processo venda 9860 (NFe)
@@ -703,7 +804,7 @@ export function produtoRemotoSemCDNFCe (selector) {
 
     const remoto__sem_saldo_CD = '1882'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1882*%20codigo:1882%20OR%20nome:*1882*%20OR%20codigo:*1882*%20OR%20nomeecommerce:*1882*%20OR%20marca_descricao:*1882*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1882*%20codigo:1882%20OR%20nome:*1882*%20OR%20codigo:*1882*%20OR%20nomeecommerce:*1882*%20OR%20marca_descricao:*1882*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -813,7 +914,7 @@ export function produtoArredondarCimaBaixoNFCe (selector) {
 
     const produto_arredondar = '1908'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1908*%20codigo:1908%20OR%20nome:*1908*%20OR%20codigo:*1908*%20OR%20nomeecommerce:*1908*%20OR%20marca_descricao:*1908*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1908*%20codigo:1908%20OR%20nome:*1908*%20OR%20codigo:*1908*%20OR%20nomeecommerce:*1908*%20OR%20marca_descricao:*1908*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -922,7 +1023,7 @@ export function produtoDescontoCifraoNFCe (selector) {
 
     const produto_desconto_cifrao = '1912'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1912*%20codigo:1912%20OR%20nome:*1912*%20OR%20codigo:*1912*%20OR%20nomeecommerce:*1912*%20OR%20marca_descricao:*1912*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1912*%20codigo:1912%20OR%20nome:*1912*%20OR%20codigo:*1912*%20OR%20nomeecommerce:*1912*%20OR%20marca_descricao:*1912*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1031,7 +1132,7 @@ export function produtoDescontoPercentualNFCe (selector) {
 
     const produto_desconto_percentual = '1913'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1913*%20codigo:1913%20OR%20nome:*1913*%20OR%20codigo:*1913*%20OR%20nomeecommerce:*1913*%20OR%20marca_descricao:*1913*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1913*%20codigo:1913%20OR%20nome:*1913*%20OR%20codigo:*1913*%20OR%20nomeecommerce:*1913*%20OR%20marca_descricao:*1913*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1140,7 +1241,7 @@ export function produtoDescontoValorFixoNFCe (selector) {
 
     const produto_desconto_valorfixo = '1914'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1914*%20codigo:1914%20OR%20nome:*1914*%20OR%20codigo:*1914*%20OR%20nomeecommerce:*1914*%20OR%20marca_descricao:*1914*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1914*%20codigo:1914%20OR%20nome:*1914*%20OR%20codigo:*1914*%20OR%20nomeecommerce:*1914*%20OR%20marca_descricao:*1914*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1249,7 +1350,7 @@ export function produtoKitDescontoNFCe (selector) {
 
     const primeiro_kit_desconto = '1909'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1909*%20codigo:1909%20OR%20nome:*1909*%20OR%20codigo:*1909*%20OR%20nomeecommerce:*1909*%20OR%20marca_descricao:*1909*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1909*%20codigo:1909%20OR%20nome:*1909*%20OR%20codigo:*1909*%20OR%20nomeecommerce:*1909*%20OR%20marca_descricao:*1909*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1359,7 +1460,7 @@ export function produtoKitRemotoNFCe (selector) {
 
     const primeiro_kit_remoto = '1915'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1915*%20codigo:1915%20OR%20nome:*1915*%20OR%20codigo:*1915*%20OR%20nomeecommerce:*1915*%20OR%20marca_descricao:*1915*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1915*%20codigo:1915%20OR%20nome:*1915*%20OR%20codigo:*1915*%20OR%20nomeecommerce:*1915*%20OR%20marca_descricao:*1915*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1462,6 +1563,26 @@ export function escolherVoltagemProdutoKitRemotoNFCe (selector) {
     cy.wait('@api_produto_relacionado_lista_1915', { timeout: 40000 })
 }
 
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoKitRemotoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1915.0.0&valor=2600&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
+
 //-----
 
 //Escolher primeiro produto com promoção partida - 1868 0 0 - com Intercept - processo venda 9860 (NFe)
@@ -1469,7 +1590,7 @@ export function produtoPromoPartidaNFCe (selector) {
 
     const produto_promocao_partida = '1868'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1868*%20codigo:1868%20OR%20nome:*1868*%20OR%20codigo:*1868*%20OR%20nomeecommerce:*1868*%20OR%20marca_descricao:*1868*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1868*%20codigo:1868%20OR%20nome:*1868*%20OR%20codigo:*1868*%20OR%20nomeecommerce:*1868*%20OR%20marca_descricao:*1868*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1493,7 +1614,7 @@ export function produtoPromoPartidaNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPromoPartidaNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1968').as('api_produto_tambem_compraram_1968')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1868').as('api_produto_tambem_compraram_1868')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1529,13 +1650,13 @@ export function escolherProdutoPromoPartidaNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1968', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram_1868', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoPromoPartidaNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1968').as('api_produto_relacionado_lista_1968')
+    //cy.intercept('GET', '/services/v3/produto_relacionado?lista=1868').as('api_produto_relacionado_lista_1868')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1569,7 +1690,27 @@ export function escolherVoltagemProdutoPromoPartidaNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1968', { timeout: 40000 })
+    //cy.wait('@api_produto_relacionado_lista_1868', { timeout: 40000 })
+}
+
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoPromoPartidaNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1868.0.0&valor=1700&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
 }
 
 //-----
@@ -1579,7 +1720,7 @@ export function produtoPromoPrazoEntradaNFCe (selector) {
 
     const produto_promocao_prazo_entrada = '1866'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1866*%20codigo:1866%20OR%20nome:*1866*%20OR%20codigo:*1866*%20OR%20nomeecommerce:*1866*%20OR%20marca_descricao:*1866*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1866*%20codigo:1866%20OR%20nome:*1866*%20OR%20codigo:*1866*%20OR%20nomeecommerce:*1866*%20OR%20marca_descricao:*1866*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1603,7 +1744,7 @@ export function produtoPromoPrazoEntradaNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPromoPrazoEntradaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1966').as('api_produto_tambem_compraram_1966')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1866').as('api_produto_tambem_compraram_1866')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1639,13 +1780,13 @@ export function escolherProdutoPromoPrazoEntradaNFCe  (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1966', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram_1866', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoPromoPrazoEntradaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1966').as('api_produto_relacionado_lista_1966')
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1866').as('api_produto_relacionado_lista_1866')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1679,7 +1820,27 @@ export function escolherVoltagemProdutoPromoPrazoEntradaNFCe  (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1966', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista_1866', { timeout: 40000 })
+}
+
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoPromoPrazoEntradaNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1866.0.0&valor=1400&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
 }
 
 //-----
@@ -1689,7 +1850,7 @@ export function produtoPromoPrazoParceladoNFCe (selector) {
 
     const produto_promocao_prazo_parcelado = '1867'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1867*%20codigo:1867%20OR%20nome:*1867*%20OR%20codigo:*1867*%20OR%20nomeecommerce:*1867*%20OR%20marca_descricao:*1867*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1867*%20codigo:1867%20OR%20nome:*1867*%20OR%20codigo:*1867*%20OR%20nomeecommerce:*1867*%20OR%20marca_descricao:*1867*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1713,7 +1874,7 @@ export function produtoPromoPrazoParceladoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPromoPrazoParceladoNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1967').as('api_produto_tambem_compraram_1967')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1867').as('api_produto_tambem_compraram_1867')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1749,13 +1910,13 @@ export function escolherProdutoPromoPrazoParceladoNFCe  (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1967', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram_1867', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoPromoPrazoParceladoNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1967').as('api_produto_relacionado_lista_1967')
+    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1867').as('api_produto_relacionado_lista_1867')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1789,7 +1950,27 @@ export function escolherVoltagemProdutoPromoPrazoParceladoNFCe  (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1967', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista_1867', { timeout: 40000 })
+}
+
+//Botão adicionar produto após selecionar voltagem do produto
+export function clicarAddProdutoPromoPrazoParceladoNFCe (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1867.0.0&valor=1500&quantidade=1&processo=9890').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
 }
 
 //-----
@@ -1799,7 +1980,7 @@ export function prd1PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1891'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1891*%20codigo:1891%20OR%20nome:*1891*%20OR%20codigo:*1891*%20OR%20nomeecommerce:*1891*%20OR%20marca_descricao:*1891*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1891*%20codigo:1891%20OR%20nome:*1891*%20OR%20codigo:*1891*%20OR%20nomeecommerce:*1891*%20OR%20marca_descricao:*1891*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1904,12 +2085,13 @@ export function escolherVoltagemProdutoPrazoParcelaNFCe  (selector) {
 
 //-----
 
+
 //Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)
 export function prd2PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1895'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1895*%20codigo:1895%20OR%20nome:*1895*%20OR%20codigo:*1895*%20OR%20nomeecommerce:*1895*%20OR%20marca_descricao:*1895*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1895*%20codigo:1895%20OR%20nome:*1895*%20OR%20codigo:*1895*%20OR%20nomeecommerce:*1895*%20OR%20marca_descricao:*1895*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2014,12 +2196,13 @@ export function escolherVoltagemProduto2PrazoParcelaNFCe  (selector) {
 
 //-----
 
+
 //Pedido com promoção a prazo/parcelas (promoção 160): produto 1893 0 0 com prestamista (isento de juros)
 export function prd3PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1893'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1893*%20codigo:1893%20OR%20nome:*1893*%20OR%20codigo:*1893*%20OR%20nomeecommerce:*1893*%20OR%20marca_descricao:*1893*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1893*%20codigo:1893%20OR%20nome:*1893*%20OR%20codigo:*1893*%20OR%20nomeecommerce:*1893*%20OR%20marca_descricao:*1893*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2129,7 +2312,7 @@ export function prd4PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1894'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1894*%20codigo:1894%20OR%20nome:*1894*%20OR%20codigo:*1894*%20OR%20nomeecommerce:*1894*%20OR%20marca_descricao:*1894*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9890*))%20AND%20(codigo:*1894*%20codigo:1894%20OR%20nome:*1894*%20OR%20codigo:*1894*%20OR%20nomeecommerce:*1894*%20OR%20marca_descricao:*1894*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
 
     //Validando campo Buscar produto
     cy.get('#searchText')

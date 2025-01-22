@@ -1,5 +1,6 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoArredondarCimaBaixo, escolherProdutoArredondarCimaBaixo, escolherVoltagemProdutoArredondarCimaBaixo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoArredondarCimaBaixo, escolherProdutoArredondarCimaBaixo, escolherVoltagemProdutoArredondarCimaBaixo,
+         clicarAddProdutoArredondarCimaBaixo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarValorParaBaixo, alterarValorParaCima } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -22,20 +23,17 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         produtoArredondarCimaBaixo()
         saldodisponivel()
         escolherProdutoArredondarCimaBaixo()
-        cy.wait(200)
     })
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('1-Pedido de venda: produto 1860 0 0 - arredondar para baixo', () => {
+        it('1-Pedido de venda: produto 1860 0 0 - arredondar para baixo', () => {
 
             escolherVoltagemProdutoArredondarCimaBaixo() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoArredondarCimaBaixo()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -51,15 +49,13 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             avancarFinal()
         })
 
-        it.skip('2-Pedido de venda: produtos 1860 0 0 - arredondar para cima', () => {
+        it('2-Pedido de venda: produtos 1860 0 0 - arredondar para cima', () => {
 
             escolherVoltagemProdutoArredondarCimaBaixo() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoArredondarCimaBaixo()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()

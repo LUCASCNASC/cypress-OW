@@ -1,12 +1,12 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit,
-         saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota, trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, produtoRemotoComCDNFCe, produtoRemotoSemCDNFCe, produtoKitRemotoNFCe, 
          escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, escolherProdutoPesquisaNormalSegundoNFCe, 
          escolherVoltagemProdutoNormalSegundoNFCe, escolherProdutoKitRemotoNFCe, escolherVoltagemProdutoKitRemotoNFCe, 
          escolherProdutoRemotoComCDNFCe, escolherVoltagemProdutoRemotoComCDNFCe, escolherProdutoRemotoSemCDNFCe, 
-         escolherVoltagemProdutoRemotoSemCDNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+         escolherVoltagemProdutoRemotoSemCDNFCe, clicarAddProdutoNormalPrimeiroNFCe, clicarAddProdutoNormalSegundoNFCe, 
+         clicarAddProdutoKitRemotoNFCe, clicarAddProdutoRemotoComCDNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
+import { modalServicosVinculados, okServicosVinculadosRemotos } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -32,22 +32,16 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoNormalPrimeiroNFCe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalPrimeiroNFCe()
-            cy.wait(200)
             escolherVoltagemProdutoNormalPrimeiroNFCe()
-            cy.wait(400)
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiroNFCe()
             modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            cy.wait(400)
+            okServicosVinculadosRemotos()
             avancarParaTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
@@ -62,35 +56,26 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoNormalPrimeiroNFCe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalPrimeiroNFCe()
-            cy.wait(200) 
             escolherVoltagemProdutoNormalPrimeiroNFCe()
-            cy.wait(400)
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiroNFCe()
             modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            cy.wait(800)
+            okServicosVinculadosRemotos()
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
             escolherVoltagemProdutoNormalSegundoNFCe()
-            cy.wait(800)
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundoNFCe()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
-            cy.wait(400)
+            okServicosVinculadosRemotos()
             avancarParaTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
@@ -103,25 +88,19 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoKitRemotoNFCe() //PRODUTO
             saldoCDDisponivel()
             escolherProdutoKitRemotoNFCe()
-            cy.wait(200)
             escolherVoltagemProdutoKitRemotoNFCe()
-            cy.wait(400)
             trocarFilialFaturamento()
             composicaoDesteKit()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoKitRemotoNFCe()
             modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            cy.wait(400)
+            okServicosVinculadosRemotos()
             avancarParaTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(7000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
@@ -137,28 +116,21 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoRemotoComCDNFCe() //PRODUTO
             semSaldodisponivel()
             escolherProdutoRemotoComCDNFCe()
-            cy.wait(200)
             escolherVoltagemProdutoRemotoComCDNFCe()
-            cy.wait(400)
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoRemotoComCDNFCe()
             modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            cy.wait(400)
+            okServicosVinculadosRemotos()
             avancarParaTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
-            cy.wait(6000)
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            cy.wait(6000)
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })    
@@ -168,9 +140,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoRemotoSemCDNFCe() //PRODUTO
             semSaldodisponivel()
             escolherProdutoRemotoSemCDNFCe()
-            cy.wait(200)
             escolherVoltagemProdutoRemotoSemCDNFCe()
-            cy.wait(400)
             trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."

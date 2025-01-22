@@ -1,8 +1,9 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { messAdicionandoProdutosServicos, adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
-import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela, escolherProdutoPrazoParcela, escolherVoltagemProdutoPrazoParcela, 
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
+import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela, escolherProduto1PrazoParcela, escolherVoltagemProduto1PrazoParcela, 
          escolherProduto2PrazoParcela, escolherVoltagemProduto2PrazoParcela, escolherProduto3PrazoParcela, escolherVoltagemProduto3PrazoParcela, 
-         escolherProduto4PrazoParcela, escolherVoltagemProduto4PrazoParcela } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         escolherProduto4PrazoParcela, escolherVoltagemProduto4PrazoParcela, clicarAddProduto1PromoPrazoParcela, clicarAddProduto2PrazoParcela, 
+         clicarAddProduto3PrazoParcela, clicarAddProduto4PrazoParcela } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -25,13 +26,12 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
   
     context('Sem entrega/ com promoção/ com serviço processo 9860 - caminho feliz', () => {
 
-        it.skip('1-Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
+        it('1-Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
     
             prd1PrazoParcela() //PRODUTO PROMOÇÃO
             saldodisponivel()
-            escolherProdutoPrazoParcela()
-            cy.wait(200)
-            escolherVoltagemProdutoPrazoParcela()
+            escolherProduto1PrazoParcela()
+            escolherVoltagemProduto1PrazoParcela()
             tipoServicoIsentoValidar()
                 
             // //Usar promoção, no card "Promoções"
@@ -40,26 +40,23 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             // //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3860 - T.A. A Receber Futuro   Futuro"]').click({force:true})
                 
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProduto1PromoPrazoParcela()
             modalServicosVinculados() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
-            messAdicionandoProdutosServicos()
+            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
+            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             avancarFinal() //PAGAMENTO
         })
     
-        it.skip('2-Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
+        it('2-Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
     
             prd2PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
             escolherProduto2PrazoParcela()
-            cy.wait(200)
             escolherVoltagemProduto2PrazoParcela()
-            cy.wait(400)
             tipoServicoIsentoValidar()
                 
             //Usar promoção, no card "Promoções"
@@ -68,17 +65,15 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3860 - T.A. A Receber Futuro   Futuro"]').click({force:true})
     
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProduto2PrazoParcela()
             modalServicosVinculados() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
-            messAdicionandoProdutosServicos()
+            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
+            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
 
-            // tela de PAGAMENTO
             //Selecionando opções de pagamento de entrada
             cy.get('md-option .md-text')
                 .contains('3861 - T.A. A Receber A Vista')
@@ -101,14 +96,12 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             avancarFinal()
         })
     
-        it.skip('3-Pedido com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
+        it('3-Pedido com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
     
             prd3PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProduto3PrazoParcela()
-            cy.wait(200)    
+            escolherProduto3PrazoParcela()   
             escolherVoltagemProduto3PrazoParcela()
-            cy.wait(400)
                 
             //Usar promoção, no card "Promoções"
             cy.get('.md-3-line > div.md-button > .md-no-style').click({force:true})
@@ -116,24 +109,22 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3866 - T.A. A Receber Prestamista   Futuro"]').click({force:true})
                 
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProduto3PrazoParcela()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
-            messAdicionandoProdutosServicos()
+            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
+            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             adicionarPrestamista()
             avancarFinal() //PAGAMENTO
         })
 
-        it.skip('4-Pedido com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
+        it('4-Pedido com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
     
             prd4PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProduto4PrazoParcela()
-            cy.wait(200)  
+            escolherProduto4PrazoParcela() 
             escolherVoltagemProduto4PrazoParcela()
             tipoServicoIsentoValidar()
                 
@@ -143,15 +134,14 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3866 - T.A. A Receber Prestamista   Futuro"]').click({force:true})
     
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProduto4PrazoParcela()
             modalServicosVinculados() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
-            messAdicionandoProdutosServicos()
+            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
+            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             adicionarPrestamista()
             avancarFinal() //PAGAMENTO
         })

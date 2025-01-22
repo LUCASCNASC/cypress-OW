@@ -1,6 +1,7 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, 
-         escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, clicarAddProdutoNormalPrimeiro,
+         clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -22,10 +23,8 @@ describe('Gerar pedidos com Garantia', () => {
         produtoNormalPrimeiro()
         saldodisponivel()
         escolherProdutoPesquisaNormalPrimeiro()
-        cy.wait(200)
         escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-        clicarAdicionarProduto()
-        cy.wait(500)
+        clicarAddProdutoNormalPrimeiro()
         modalServicosVinculados()
     })   
 
@@ -36,7 +35,6 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas() 
         })
 
@@ -45,18 +43,14 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundo()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundo()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundo()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            cy.wait(400)
             avancarParaParcelas()
         })
     
@@ -65,7 +59,6 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
         })
 
@@ -74,18 +67,14 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
             tirarEntrega() //ENTREGA
-            cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundo()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundo()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundo()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            cy.wait(400)
             avancarParaParcelas() 
         })
     
@@ -94,7 +83,6 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas() 
         })
 
@@ -103,18 +91,14 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
             tirarEntrega() //ENTREGA
-            cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundo()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundo()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundo()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            cy.wait(400)
             avancarParaParcelas()
         })
     })
@@ -125,7 +109,6 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
-            cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
         })
@@ -134,17 +117,13 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundo()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundo()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundo()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados() //SERVIÇOS
-            cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
         })
@@ -153,7 +132,6 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
-            cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
         })
@@ -162,17 +140,13 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundo()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundo()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundo()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados() //SERVIÇOS
-            cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
         })
@@ -181,7 +155,6 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
-            cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega() 
         })
@@ -190,16 +163,12 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundo()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundo()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundo()
             okServicosVinculados() //SERVIÇOS
-            cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
         })

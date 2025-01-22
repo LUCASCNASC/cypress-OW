@@ -1,5 +1,5 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoKitDesconto, escolherProdutoKitDesconto, escolherVoltagemProdutoKitDesconto } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoKitDesconto, escolherProdutoKitDesconto, escolherVoltagemProdutoKitDesconto, clicarAddProdutoKitDesconto } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -23,16 +23,14 @@ describe('Gerar pedido de venda Kit com desconto', () => {
   
     context('Sem frete/ processo 9862 - caminho feliz', () => {
         
-        it.skip('1-Pedido de venda: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
+        it('1-Pedido de venda: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
     
             produtoKitDesconto() //PRODUTO
             saldodisponivel()
-            escolherProdutoKitDesconto()
-            cy.wait(200)  
+            escolherProdutoKitDesconto()  
             escolherVoltagemProdutoKitDesconto()
             composicaoDesteKit()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoKitDesconto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             clicarBotaoDesconto() //DESCONTO
@@ -45,7 +43,6 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
         })
     })

@@ -26,18 +26,15 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Com frete/ processo 9890 - caminho feliz', () => {
 
-        it.skip('Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiroNFCe() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalPrimeiroNFCe()
-            cy.wait(200)
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()

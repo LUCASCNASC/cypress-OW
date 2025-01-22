@@ -1,5 +1,8 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, escolherVoltagemProduto, composicaoDesteKit }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, composicaoDesteKit }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro, escolherProdutoPesquisaNormalPrimeiroNFCe, 
+         escolherVoltagemProdutoNormalPrimeiroNFCe, escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, 
+         escolherProdutoKitPrimeiroNFCe, escolherVoltagemProdutoKitPrimeiroNFCe, clicarAddProdutoNormalPrimeiro, clicarAddProdutoNormalSegundo, 
+         clicarAddProdutoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
          adicionarEntrega, adicionarServico } from '../../../support/para_pedidos/para_alterar_pedido.js';
@@ -7,7 +10,7 @@ import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedid
 import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, carregandoFormaPagamento,
          escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -27,24 +30,21 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Sem frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
+        it('Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto() 
-            clicarAdicionarProduto()
-            cy.wait(500)
+            escolherProdutoPesquisaNormalPrimeiroNFCe()
+            escolherVoltagemProdutoNormalPrimeiroNFCe() 
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(2000)
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
@@ -67,30 +67,21 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(5500)
 
             produtoNormalPrimeiro() //SEGUNDO PRODUTO
-            cy.wait(800)
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto() 
-            clicarAdicionarProduto()
-            cy.wait(500)
+            escolherProdutoPesquisaNormalPrimeiroNFCe()
+            escolherVoltagemProdutoNormalPrimeiroNFCe() 
+            clicarAddProdutoNormalPrimeiro()
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(500)
 
             produtoKitPrimeiro() //PRODUTO KIT
-            cy.wait(1300)
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto() 
+            escolherProdutoKitPrimeiroNFCe()
+            escolherVoltagemProdutoKitPrimeiroNFCe() 
             composicaoDesteKit()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoKitPrimeiro()
             okServicosVinculados()
-            cy.wait(500)
             tirarEntregaTerceiro()
-            cy.wait(400)
             avancarParaParcelas()
-            cy.wait(8000)
 
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -103,19 +94,16 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             pedidoAlteradoSucesso()
         })
 
-        it.skip('Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
+        it('Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto() 
-            clicarAdicionarProduto()
-            cy.wait(500)
+            escolherProdutoPesquisaNormalPrimeiroNFCe()
+            escolherVoltagemProdutoNormalPrimeiroNFCe() 
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -145,34 +133,23 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             produtoNormalPrimeiro() //SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
             cy.wait(2000)
             produtoNormalSegundo() //SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
-            cy.wait(2000)
             saldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto() 
-            clicarAdicionarProduto()
-            cy.wait(500)
-
+            escolherProdutoPesquisaNormalSegundoNFCe()
+            escolherVoltagemProdutoNormalSegundoNFCe() 
+            clicarAddProdutoNormalSegundo()
             modalServicosVinculados() //SERVICOS -SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA -SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
-            cy.wait(600)
 
             produtoNormalPrimeiro() //TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
-            cy.wait(2000)
             saldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto() 
-            clicarAdicionarProduto()
-            cy.wait(500)
-
+            escolherProdutoPesquisaNormalPrimeiroNFCe()
+            escolherVoltagemProdutoNormalPrimeiroNFCe() 
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS -TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA -TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
-            cy.wait(600)
             avancarParaParcelas()
-            cy.wait(6000)
 
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -186,26 +163,22 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         })
 
         //erro de inconsistencia quando colocamos o serviço de entrega
-        it.skip('Gerar pedido, alterar colocando garantia e entrega.', () => {
+        it('Gerar pedido, alterar colocando garantia e entrega.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto() 
-            clicarAdicionarProduto()
-            cy.wait(500)
+            escolherProdutoPesquisaNormalPrimeiroNFCe()
+            escolherVoltagemProdutoNormalPrimeiroNFCe() 
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(2000)
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -224,10 +197,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.wait(2000)
             garantiaSeparaMesmoProcesso()
             okServicosVinculados()
-            pegarAPICidade()
             avancarParaTransportadora()
-            cy.wait(7000)
-            esperarAPICidade() //ENTREGA
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -244,18 +214,15 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Com frete/ processo 9860 - caminho feliz', () => {
 
-        it.skip('Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it('Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            cy.wait(200)
-            escolherVoltagemProduto() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            escolherProdutoPesquisaNormalPrimeiroNFCe()
+            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -263,7 +230,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -277,7 +243,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarEditarPedido()
             cy.wait(8000)
             avancarParaTransportadora()
-            cy.wait(11000)
             avancarParcelasEntrega()
             arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
             removerFormaPagamento()
@@ -289,7 +254,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherSegundaFormaPagamento()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoAlteradoSucesso()

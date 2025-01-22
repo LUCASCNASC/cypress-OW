@@ -1,6 +1,7 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
-         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoNormalPrimeiroNFCe,
+         clicarAddProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, modalServicosVinculados, 
          okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -23,10 +24,8 @@ describe('Gerar pedidos com Mão de obra', () => {
         produtoNormalPrimeiroNFCe() //PRODUTO
         saldodisponivel()
         escolherProdutoPesquisaNormalPrimeiroNFCe()
-        cy.wait(200)
         escolherVoltagemProdutoNormalPrimeiroNFCe()
-        clicarAdicionarProduto()
-        cy.wait(500)
+        clicarAddProdutoNormalPrimeiroNFCe()
         modalServicosVinculados()
     })
 
@@ -36,7 +35,6 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -47,17 +45,13 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundoNFCe()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -68,7 +62,6 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -79,17 +72,13 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundoNFCe()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTP
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -100,7 +89,6 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -111,17 +99,13 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundoNFCe()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()

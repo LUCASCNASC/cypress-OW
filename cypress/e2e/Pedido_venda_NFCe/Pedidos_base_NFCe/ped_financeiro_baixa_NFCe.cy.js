@@ -1,6 +1,7 @@
 import { saldodisponivel, clienteComRota, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
-         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoNormalPrimeiroNFCe,
+         clicarAddProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -22,19 +23,16 @@ describe('Gerar pedido com financeiro na baixa', () => {
         produtoNormalPrimeiroNFCe()
         saldodisponivel()
         escolherProdutoPesquisaNormalPrimeiroNFCe()
-        cy.wait(200)
     })
     
     context('Com frete/ processo 9863 - caminho feliz', () => {
 
-        it.skip('3-Pedido de venda: produto 1860 0 0', () => {
+        it('3-Pedido de venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiroNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp()
             escolherRota() //ESCOLHER TRANSPORTADORA
@@ -49,28 +47,21 @@ describe('Gerar pedido com financeiro na baixa', () => {
             avancarFinal()
         })
 
-        it.skip('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('4-Pedido de venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiroNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalSegundoNFCe()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
-            cy.wait(400)
-            pegarAPICidade()
             avancarParaTransportadora() 
             modalInconsApenasTransp()
-            esperarAPICidade()
             escolherRota() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()

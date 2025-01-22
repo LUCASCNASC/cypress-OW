@@ -90,12 +90,12 @@ export function modalInconsRotaTransp (selector) {
         .and('not.be.disabled')
         .click({force:true})
 
-    cy.wait(5000)
+    // cy.wait(5000)
 
-    cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .click({force:true})
+    // cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
+    //     .should('be.visible')
+    //     .and('not.be.disabled')
+    //     .click({force:true})
 }
 
 //Card Inconsistências - apenas transportadora
@@ -131,11 +131,11 @@ export function modalInconsApenasTransp (selector) {
         .and('not.be.disabled')
         .click({force:true})
 
-    cy.wait(5000)
+    // cy.wait(5000)
 
-    //Botão X para fechar
-    cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .click({force:true})
+    // //Botão X para fechar
+    // cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
+    //     .click({force:true})
 }
 
 //Card Inconsistências - apenas transportadora
@@ -171,11 +171,11 @@ export function modalInconsApenasRota (selector) {
         .and('not.be.disabled')
         .click({force:true})
 
-    cy.wait(5000)
+    // cy.wait(5000)
 
-    //Botão X para fechar
-    cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .click({force:true})
+    // //Botão X para fechar
+    // cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
+    //     .click({force:true})
 }
 
 //Arrastar botão de Retirada / Entrega

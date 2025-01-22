@@ -1,12 +1,13 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
-         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoNormalPrimeiroNFCe,
+         clicarAddProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, escolherRota, modalInconsRotaTransp, tirarEntrega, tirarEntregaSegundo, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedidos com Garantia', () => {
 
@@ -22,10 +23,8 @@ describe('Gerar pedidos com Garantia', () => {
         produtoNormalPrimeiroNFCe()
         saldodisponivel()
         escolherProdutoPesquisaNormalPrimeiroNFCe()
-        cy.wait(200)
         escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-        clicarAdicionarProduto()
-        cy.wait(500)
+        clicarAddProdutoNormalPrimeiroNFCe()
         modalServicosVinculados()
     })   
 
@@ -35,7 +34,6 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -46,17 +44,13 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundoNFCe()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -67,7 +61,6 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -78,17 +71,13 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundoNFCe()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -99,7 +88,6 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -110,16 +98,12 @@ describe('Gerar pedidos com Garantia', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
-            cy.wait(800)
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundoNFCe()
-            cy.wait(800)
             escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundoNFCe()
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()

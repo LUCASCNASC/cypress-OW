@@ -1,23 +1,20 @@
 //Função criada para clicar no campo transportadora e escolher a trasportadora
 export function escolherTransportadora (selector) {
 
-    const transportadora_id = '1'
+    //rolando até um elemento da parte de cima da página
+    cy.get('.progressbar') 
+        .scrollIntoView()
+        .wait(200)
 
-    cy.get('[ng-click="capturarSomentePromocao()"] > .ng-scope')
-        .scrollIntoView({force:true})
-
-    cy.wait(300)
-
-    //Campo Transportadora - clicar para abrir as opções
+    //clicando para aparecerem as opçoes de transportadora
     cy.get('[name="transportadora"]')
         .click({force:true})
+        .wait(300)
 
-    cy.wait(300)
-
-    //Selecionar a transportadora que queremos
-    cy.get('span[md-highlight-text]')
-        .contains('1')
-        .click({force:true})
+    //clicando para selecionar a transportadora
+    cy.get('span[md-highlight-text="transpAutoCompleteSearchText"]')
+        .contains('1')  // Filtra pelo texto "1"
+        .click()
 }
 
 //Escolher rota completa, rota maringá
@@ -205,26 +202,79 @@ export function escolherClientePedido2 (selector) {
 }
 
 //Função para escolher cliente CPF para gerar pedido de venda - pesquisa por cliente
-export function escolherClientePedido (selector) {
+export function clienteComRota (selector) {
 
     //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
     cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
         .wait(500)
         .type('48976249089 {downArrow}')
 
-    cy.wait(200)
-
+    cy.intercept('/views/cliente/modalClientes.html').as('api_modalclientes');
     //clicar na lupa de pesquisa de clientes
     cy.get('.md-block > .ng-binding')
         .should('be.visible')
         .click()
+    cy.wait('@api_modalclientes', { timeout: 40000 })
 
-    cy.wait(1500)
+    // cy.wait(1000)
 
+    cy.intercept('/services/v3/pedido_validar_cliente').as('api_pedido_validar_cliente');
     //após a pesquisa encontrar o cliente, vamos selecionar ele
     cy.get('.md-3-line > div.md-button > .md-no-style')
         .should('be.visible')
         .click()
+    cy.wait('@api_pedido_validar_cliente', { timeout: 40000 })
+}
+
+//Botão para finalizar o pedido
+export function botaoFinalizarPedido (selector) {
+
+    cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar')
+
+    //Botão FINALIZAR PEDIDO
+    cy.get('button.md-primary.btn-rounded.md-raised.btn-block.md-default-theme.md-ink-ripple[type="button"][ng-click="confirmarPedido()"]')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .should('have.text', 'Finalizar pedido')
+
+    //Clicar para finalizar pedido
+    cy.get('button[ng-click="confirmarPedido()"]')
+        .click({force:true})
+
+    //Card pedido concluído (carregando finalização do pedido) - Título Pedido Concluído
+    cy.get('.md-toolbar-tools h2.flex')
+        .should('be.visible')
+        .and('contain','Pedido Concluído')
+
+    //Card pedido concluído (carregando finalização do pedido) - X para sair da aba
+    cy.get('.md-content-overflow > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //Card pedido concluído (carregando finalização do pedido) - girando carregar
+    cy.get('.layout-column > .md-accent')
+        .should('be.visible')
+
+    //Card pedido concluído (carregando finalização do pedido) - Mensagem Finalizando pedido...
+    cy.get('.layout-column > h4')
+        .should('be.visible')
+        .and('have.text','Finalizando pedido...')
+
+    //Card pedido concluído (carregando finalização do pedido) - ATENÇÃO
+    cy.get('.layout-column > p > span')
+        .should('be.visible')
+        .and('have.text','ATENÇÃO:')
+        .and('have.css', 'color', 'rgb(204, 0, 0)')
+
+    //Card pedido concluído (carregando finalização do pedido) -  Não atualize a página ...
+    cy.get('.layout-column > p')
+        .should('be.visible')
+        .and('contain','Não atualize a página enquanto o pedido estiver sendo finalizado.')
+        .and('have.css', 'color', 'rgb(204, 0, 0)')
+
+    cy.wait('@api_pedido_finalizar', { timeout: 40000 })
 }
 
 //Função para validar card de Pedido Concluído
@@ -232,14 +282,12 @@ export function pedidoGerado (selector) {
 
     //Card pedido gravado com sucesso - Título Pedido Concluído
     cy.get('.md-toolbar-tools h2.flex')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain','Pedido Concluído')
 
     //Card pedido gravado com sucesso - X para sair da aba
     cy.get('.md-content-overflow > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Card pedido gravado com sucesso - ícone check
@@ -250,97 +298,29 @@ export function pedidoGerado (selector) {
 
     //Card pedido gravado com sucesso - Pedido gerado
     cy.get('.padding-10 > .layout-wrap > .flex-sm-50 > :nth-child(1)')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain','Pedido gerado:')
         
     //Card pedido gravado com sucesso - Pedido gravado com sucesso
     cy.get('[ng-show="!editarPedido"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain','Pedido gravado com sucesso!')
 
     //Card pedido gravado com sucesso - Número do Pedido gravado com sucesso
     cy.get('#pedido-numero')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Card pedido gravado com sucesso - Botão IMPRIMIR
     cy.get('md-dialog-actions.layout-align-center-center > .md-accent')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Imprimir')
         .and('not.have.attr', 'disabled')
-        //.invoke('css', 'background-color') // Obtém a cor do elemento
-        //.should('equal', 'rgb(28, 202, 19)')
 
     //Card pedido gravado com sucesso - Botão OK
     cy.get('md-dialog-actions.layout-align-center-center > .md-primary')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Ok')
         .and('not.have.attr', 'disabled')
-        //.invoke('css', 'background-color') // Obtém a cor do elemento
-        //.should('equal', 'rgb(36, 13, 105)')
-}
-
-//Botão para finalizar o pedido
-export function botaoFinalizarPedido (selector) {
-
-    //Botão FINALIZAR PEDIDO
-    cy.get('button.md-primary.btn-rounded.md-raised.btn-block.md-default-theme.md-ink-ripple[type="button"][ng-click="confirmarPedido()"]')
-        .scrollIntoView()
-        .wait(200)
-        .should('exist')
-        .and('be.visible')
-        .and('not.be.disabled')
-        .should('have.text', 'Finalizar pedido')
-
-    //Clicar para finalizar pedido
-    cy.get('button[ng-click="confirmarPedido()"]')
-        .click({force:true})
-}
-
-//Validando card de carregamento da finalização do pedido
-export function finalizandoPedido (selector) {
-
-    //Card pedido concluído (carregando finalização do pedido) - Título Pedido Concluído
-    cy.get('.md-toolbar-tools h2.flex')
-        .should('exist')
-        .and('be.visible')
-        .and('contain','Pedido Concluído')
-
-    //Card pedido concluído (carregando finalização do pedido) - X para sair da aba
-    cy.get('.md-content-overflow > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
-        .and('not.have.attr', 'disabled')
-
-    //Card pedido concluído (carregando finalização do pedido) - girando carregar
-    cy.get('.layout-column > .md-accent')
-        .should('exist')
-        .and('exist')
-
-    //Card pedido concluído (carregando finalização do pedido) - Mensagem Finalizando pedido...
-    cy.get('.layout-column > h4')
-        .should('exist')
-        .and('be.visible')
-        .and('have.text','Finalizando pedido...')
-
-    //Card pedido concluído (carregando finalização do pedido) - ATENÇÃO
-    cy.get('.layout-column > p > span')
-        .should('exist')
-        .and('be.visible')
-        .and('have.text','ATENÇÃO:')
-        .and('have.css', 'color', 'rgb(204, 0, 0)')
-
-    //Card pedido concluído (carregando finalização do pedido) -  Não atualize a página ...
-    cy.get('.layout-column > p')
-        .should('exist')
-        .and('be.visible')
-        .and('contain','Não atualize a página enquanto o pedido estiver sendo finalizado.')
-        .and('have.css', 'color', 'rgb(204, 0, 0)')
-
 }
 
 //Arrastar botão de Retirada / Entrega
@@ -462,18 +442,22 @@ export function tirarMontagemSegundo (selector) {
 //Botão "GERAR PARCELAS"
 export function botaoGerarParcelas (selector) {
 
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
+    cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento')
+
     //Botão "GERAR PARCELAS" - validações
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
         .scrollIntoView()
         .wait(200)
         .should('exist')
-        //.and('be.visible')
-        //.should('not.be.disabled')
         .and('have.text', 'Gerar parcelas')
 
     //Botão "GERAR PARCELAS" - clicar
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
         .click({force:true})
+        
+    cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
+    cy.wait('@api_modal_forma_pagamento', { timeout: 40000 })
 }
 
 //escolhendo forma de pagamento do pedido de venda
@@ -609,8 +593,10 @@ export function processoFinanceiroBaixa (selector) {
         .wait(200)
 }
 
-//Botão para avançar para a tela de Gerar parcelas
+//Botão para avançar para a tela de Gerar parcelas - com intercept
 export function avancarParaParcelas (selector) {
+
+    cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento')
 
     cy.wait(500)
 
@@ -618,7 +604,6 @@ export function avancarParaParcelas (selector) {
         .scrollIntoView()
         .wait(200)
         .should('be.visible')
-        //.and('not.be.disabled')
         .and('contain','Avançar')
 
     //Clicar para avançar para a tela de GERAR PARCELAS
@@ -633,16 +618,21 @@ export function avancarParaParcelas (selector) {
     cy.get('h3')
         .should('be.visible')
         .and('have.text','Adicionando produtos/serviços...')
+
+    cy.wait('@api_tela_pagamento', { timeout: 40000 })
 }
 
-//Botão para avançar para a tela de escolher transportadora e rota
+//Botão para avançar para a tela de escolher transportadora e rota - com intercept
 export function avancarParaTransportadora (selector) {
+
+    cy.intercept('GET', '/views/carrinho/endereco.html').as('apiEndereco')
+    cy.intercept('GET', '/services/v3/cidade?uf=PR').as('apiCidade')
 
     cy.get('.flex-gt-sm-50 > .md-primary')
         .scrollIntoView()
         .wait(200)
         .should('be.visible')
-        .and('not.be.disabled')
+        //.and('not.be.disabled')
         .and('contain','Avançar')
 
     //Clicar para avançar para a tela de GERAR PARCELAS
@@ -659,10 +649,16 @@ export function avancarParaTransportadora (selector) {
     cy.get('h3')
         .should('be.visible')
         .and('have.text','Adicionando produtos/serviços...')
+
+    cy.wait('@apiEndereco', { timeout: 40000 })
+    cy.wait('@apiCidade', { timeout: 40000 })
 }
 
-//Botão para avançar para a tela de Gerar parcelas
+
+//Botão para avançar para a tela de Gerar parcelas - com intercept
 export function avancarParcelasEntrega (selector) {
+
+    cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento')
 
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
         .scrollIntoView()
@@ -674,10 +670,14 @@ export function avancarParcelasEntrega (selector) {
     //Clicar para avançar para a tela de GERAR PARCELAS
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
         .click({force:true})
+
+    cy.wait('@api_tela_pagamento', { timeout: 40000 })
 }
 
-//Botão AVANÇAR, da tela antes de finalizar o pedido
+//Botão AVANÇAR, da tela antes de finalizar o pedido - com intercept
 export function avancarFinal (selector) {
+
+    cy.intercept('GET', '/views/carrinho/confirmacao.html').as('api_carinho_confirmacao')
 
     //Botão "AVANÇAR"
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
@@ -690,6 +690,8 @@ export function avancarFinal (selector) {
     //Botão "AVANÇAR" - clicar
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
         .click({force:true})
+
+    cy.wait('@api_carinho_confirmacao', { timeout: 40000 })
 }
 
 //Validações card de serviços
@@ -732,8 +734,10 @@ export function modalServicosVinculados (selector) {
         .should('be.visible')
 }
 
-//botão OK modal Serviços Vinculados
+//botão OK modal Serviços Vinculados - com intercept
 export function okServicosVinculados (selector) {
+
+    cy.intercept('POST', '/services/v3/pedido_calcular_frete').as('api_pedido_calcular_frete')
 
     //validando botão
     cy.get('button[ng-click="salvar()"]')
@@ -744,44 +748,8 @@ export function okServicosVinculados (selector) {
     //clicar no botão
     cy.get('button[ng-click="salvar()"]')
         .click({force:true})
-}
 
-//Clicar para selecionar o produto que queremos adicionar ao pedido
-export function escolherProdutoPesquisa (selector) {
-
-    //Imagem do produto
-    cy.get('.resultado-imagem')
-        .should('be.visible')
-
-    //Nome do produto
-    cy.get('.md-resultado-titulo')
-        .should('be.visible')
-
-    //Saldo disponível
-    cy.get('.md-list-item-text > .ng-scope')
-        .should('be.visible')
-
-    //Código do produto
-    cy.get('.badge-saldo.ng-binding')
-        .should('be.visible')
-
-    //Cifrão do valor do produto
-    cy.get('sup')
-        .should('be.visible')
-        .and('have.text', 'R$')
-
-    //Valor do produto
-    cy.get('.valor-busca')
-        .should('be.visible')
-
-    //Check box do produto
-    cy.get('.expandeIcone')
-        .should('be.visible')
-
-    //Clicar para adicionar no carrinho
-    cy.get('.md-list-item-text')
-        .should('be.visible')
-        .click({force:true})
+    cy.wait('@api_pedido_calcular_frete', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1033,6 +1001,8 @@ export function produtoPrincipal (selector) {
 
     const produto_principal = '1907'
 
+    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9860*))%20AND%20(codigo:*1907*%20codigo:1907%20OR%20nome:*1907*%20OR%20codigo:*1907*%20OR%20nomeecommerce:*1907*%20OR%20marca_descricao:*1907*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+
     //Limpando campo com o produto anterior
     cy.get('#searchText')
         .clear()
@@ -1042,30 +1012,36 @@ export function produtoPrincipal (selector) {
     cy.get('#searchText')
         .type(produto_principal)
         .wait(100)
+
+    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido - sem validações
 export function escolherProdutoPesquisa (selector) {
 
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1907').as('api_produto_tambem_compraram')
+
     //Clicar para adicionar no carrinho
     cy.get('.md-list-item-text')
         .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 1 1
 export function addproduto1 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.1.1').as('api_local_saldo')
     //Card de voltagem - clicar
     cy.get(':nth-child(1) > md-list.md-default-theme > [style=""] > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(500)
+    cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
     cy.get('[ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
@@ -1075,80 +1051,80 @@ export function addproduto1 (selector) {
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 2 2
 export function addproduto2 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.2.2').as('api_local_saldo')
     //Card de voltagem - clicar
     cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(3) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(600)
+    cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(3) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 3 3
 export function addproduto3 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.3.3').as('api_local_saldo')
     //Card de voltagem - clicar
     cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(700)
+    cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(4) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 4 4
 export function addproduto4 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.4.4').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(5) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(800)
+    cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(5) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 5 5
 export function addproduto5 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.5.5').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(6) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(900)
+    cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(6) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 

@@ -1,5 +1,5 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoKitPrimeiroNFCe, escolherProdutoKitPrimeiroNFCe, escolherVoltagemProdutoKitPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoKitPrimeiroNFCe, escolherProdutoKitPrimeiroNFCe, escolherVoltagemProdutoKitPrimeiroNFCe, clicarAddProdutoKitPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -21,7 +21,6 @@ describe('Gerar pedido normal', () => {
         produtoKitPrimeiroNFCe()
         saldodisponivel()
         escolherProdutoKitPrimeiroNFCe()
-        cy.wait(200)
     })
     
     context('Com frete/processo 9890 - caminho feliz', () => {
@@ -30,11 +29,9 @@ describe('Gerar pedido normal', () => {
                       
             escolherVoltagemProdutoKitPrimeiroNFCe() //PRODUTO
             composicaoDesteKit()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoKitPrimeiroNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            cy.wait(400)
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()

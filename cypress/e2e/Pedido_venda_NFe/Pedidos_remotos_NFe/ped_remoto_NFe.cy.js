@@ -1,11 +1,11 @@
-import { saldodisponivel, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa,  escolherVoltagemProduto,
-         trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { saldodisponivel, clienteComRota, trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto, escolherProdutoPesquisaNormalPrimeiro, 
          escolherVoltagemProdutoNormalPrimeiro, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
          escolherProdutoKitRemoto, escolherVoltagemProdutoKitRemoto, escolherProdutoRemotoComCD, escolherVoltagemProdutoRemotoComCD, 
-         escolherProdutoRemotoSemCD, escolherVoltagemProdutoRemotoSemCD } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         escolherProdutoRemotoSemCD, escolherVoltagemProdutoRemotoSemCD, clicarAddProdutoNormalPrimeiro, clicarAddProdutoNormalSegundo, 
+         clicarAddProdutoKitRemoto, clicarAddProdutoRemotoComCD } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
+import { modalServicosVinculados, okServicosVinculadosRemotos } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -32,15 +32,11 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalPrimeiro()
-            cy.wait(200)
             escolherVoltagemProdutoNormalPrimeiro()
-            cy.wait(400)
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            cy.wait(400)
+            okServicosVinculadosRemotos()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -59,31 +55,25 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalPrimeiro()
-            cy.wait(200) 
             escolherVoltagemProdutoNormalPrimeiro()
-            cy.wait(400)
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoNormalPrimeiro()
             modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            cy.wait(800)
+            okServicosVinculadosRemotos()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisaNormalSegundo()
             escolherVoltagemProdutoNormalSegundo()
-            cy.wait(800)
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
-            cy.wait(1000)
+            clicarAddProdutoNormalSegundo()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
-            cy.wait(400)
+            okServicosVinculadosRemotos()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
@@ -96,21 +86,18 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoKitRemoto() //PRODUTO
             saldoCDDisponivel()
             escolherProdutoKitRemoto()
-            cy.wait(200)
             escolherVoltagemProdutoKitRemoto()
-            cy.wait(400)
             trocarFilialFaturamento()
             composicaoDesteKit()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoKitRemoto()
             modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            cy.wait(400)
+            okServicosVinculadosRemotos()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
@@ -126,20 +113,17 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoRemotoComCD() //PRODUTO
             semSaldodisponivel()
             escolherProdutoRemotoComCD()
-            cy.wait(200)
             escolherVoltagemProdutoRemotoComCD()
-            cy.wait(400)
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
-            cy.wait(500)
+            clicarAddProdutoRemotoComCD()
             modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            cy.wait(400)
+            okServicosVinculadosRemotos()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
@@ -152,9 +136,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             produtoRemotoSemCD() //PRODUTO
             semSaldodisponivel()
             escolherProdutoRemotoSemCD()
-            cy.wait(200)
             escolherVoltagemProdutoRemotoSemCD()
-            cy.wait(400)
             trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
