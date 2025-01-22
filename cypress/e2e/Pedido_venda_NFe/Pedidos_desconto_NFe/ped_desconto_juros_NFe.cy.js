@@ -25,9 +25,9 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         escolherProdutoArredondarCimaBaixo()
     })
 
-    context('Sem entrega/ processo 9860 - caminho feliz', () => {
+    context('Sem entrega/ processo 9860 - caminho feliz - processo de inclusão 3860', () => {
 
-        it('Ped venda: produto 1860 0 0 - arredondar para baixo', () => {
+        it('1. Ped venda: produto 1860 0 0 - arredondar para baixo', () => {
 
             escolherVoltagemProdutoArredondarCimaBaixo() //PRODUTO
             clicarAddProdutoArredondarCimaBaixo()
@@ -49,7 +49,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             avancarFinal()
         })
 
-        it('Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
+        it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
 
             escolherVoltagemProdutoArredondarCimaBaixo() //PRODUTO
             clicarAddProdutoArredondarCimaBaixo()

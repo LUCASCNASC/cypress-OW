@@ -2,9 +2,9 @@
 import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado, 
          clicarBotaoEntrar, mensagemEntrandoSistema } from '../../support/para_logins/para_login';
 
-const usuSabiumAutomacao = "usu.expirado";
+const usuSabiumAutomacao = "usu.expiradosistema"; //usuário 496
 const senhaautomacao = "123.automacao";
-describe('Senha do sistema expirada', () => {
+describe('Senha do usuário expirada', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -16,7 +16,7 @@ describe('Senha do sistema expirada', () => {
         usuarioTextoIcone()
     })
 
-    it.skip('Tentar logar com usuário com senha do sistema expirada', () => {
+    it('1. Tentar logar com usuário com senha do usuário expirada', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')

@@ -28,7 +28,7 @@ describe('Gerar pedido normal com entrega', () => {
 
     context('Com entrega/ processo 9890 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
+        it('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()
@@ -47,7 +47,7 @@ describe('Gerar pedido normal com entrega', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()
@@ -73,7 +73,7 @@ describe('Gerar pedido normal com entrega', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
+        it('3. Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()

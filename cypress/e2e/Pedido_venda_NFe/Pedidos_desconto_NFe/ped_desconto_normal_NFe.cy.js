@@ -25,7 +25,7 @@ describe('Gerar pedido de venda com desconto', () => {
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it.skip('Ped venda: produto 1912 0 0 com desconto Sub (-) / R$', () => {
+        it('1. Ped venda: produto 1912 0 0 com desconto Sub (-) / R$', () => {
 
             produtoDescontoCifrao() //PRODUTO
             saldodisponivel()
@@ -51,7 +51,7 @@ describe('Gerar pedido de venda com desconto', () => {
             avancarFinal()
         })
 
-        it.skip('Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
+        it('2. Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
 
             produtoDescontoPercentual() //PRODUTO
             saldodisponivel()
@@ -77,7 +77,7 @@ describe('Gerar pedido de venda com desconto', () => {
             avancarFinal()
         })
 
-        it.skip('Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
+        it('3. Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
 
             produtoDescontoValorFixo() //PRODUTO
             saldodisponivel()

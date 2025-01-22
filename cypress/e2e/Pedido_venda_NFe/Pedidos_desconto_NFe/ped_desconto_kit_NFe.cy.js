@@ -23,7 +23,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
   
     context('Sem entrega/ processo 9862 - caminho feliz', () => {
         
-        it('Ped venda: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
+        it('1. Ped venda: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
     
             produtoKitDesconto() //PRODUTO
             saldodisponivel()

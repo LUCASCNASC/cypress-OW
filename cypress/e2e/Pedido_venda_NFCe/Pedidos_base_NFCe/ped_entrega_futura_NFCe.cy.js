@@ -27,7 +27,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
     
     context('Com entrega/ processo 9891 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0', () => {
+        it('1. Ped venda: produto 1860 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()
@@ -47,7 +47,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             avancarFinal()
         })    
         
-        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
             clicarAddProdutoNormalPrimeiroNFCe()

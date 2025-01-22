@@ -30,7 +30,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
 
     context('Com entrega/processo 9890 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados()
@@ -40,7 +40,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             avancarParcelasEntrega()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
@@ -57,7 +57,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             avancarParcelasEntrega()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
+        it('3. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados()
@@ -67,7 +67,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             avancarParcelasEntrega() 
         })
 
-        it('Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('4. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
@@ -84,7 +84,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             avancarParcelasEntrega()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
+        it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados()
@@ -94,7 +94,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             avancarParcelasEntrega() 
         })
 
-        it('Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS

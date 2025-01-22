@@ -27,7 +27,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
+        it('1. Ped venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -52,7 +52,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
+        it('2. Ped venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -72,7 +72,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
+        it('3. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -98,7 +98,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
+        it('4. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -124,7 +124,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
+        it('5. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()

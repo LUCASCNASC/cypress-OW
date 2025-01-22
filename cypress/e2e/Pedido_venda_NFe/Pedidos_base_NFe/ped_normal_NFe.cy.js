@@ -28,7 +28,7 @@ describe('Gerar pedido normal', () => {
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
+        it('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -45,7 +45,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -70,7 +70,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
+        it('3. Ped venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -91,7 +91,7 @@ describe('Gerar pedido normal', () => {
 
     context('Com entrega/ processo 9860 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
+        it('4. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -108,7 +108,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('5. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -132,7 +132,7 @@ describe('Gerar pedido normal', () => {
             avancarFinal()
         })
 
-        it('Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
+        it('6. Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()

@@ -22,7 +22,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
     context('Processo 9888 - caminho feliz', () => {
 
-        it.skip('Venda de garantia - 139 (T.A. Garantia Separa Mesmo Processo)', () => {
+        it.skip('1. Venda de garantia - 139 (T.A. Garantia Separa Mesmo Processo)', () => {
 
             const numero_pedido = '8605'
             

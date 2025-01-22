@@ -230,3 +230,22 @@ export function regrasNovaSenhaDepois (selector) {
         .should('be.visible')
         .and('have.css', 'color', 'rgb(204, 0, 0)')
 }
+
+//validar card "Sua Senha expirou" quando a senha do usuário está expirada
+export function messSenhaUsuarioExpirada (selector) {
+
+    //Mensagem "Seu acesso ao sistema expirou."
+    cy.get('.md-dialog-content-body')
+        .should('be.visible')
+        .and('have.text','Sua Senha expirou...')
+
+    //Botão OK da mensagem "Seu acesso ao sistema expirou."
+    cy.get('md-dialog-actions > .md-primary')
+        .should('be.visible')
+        .and('have.text','Ok')
+        .and('not.have.attr', 'disabled')
+
+    //Clicar no botão OK da mensagem "Seu acesso ao sistema expirou."
+    cy.get('md-dialog-actions > .md-primary')
+        .click()
+}

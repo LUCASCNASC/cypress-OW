@@ -2,7 +2,7 @@
 import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado, 
          botaoEntrarDesabilitado, clicarBotaoEntrar, mensagemEntrandoSistema } from '../../support/para_logins/para_login';
 
-const usuSabiumAutomacao = "usu.inativo";
+const usuSabiumAutomacao = "usu.inativo"; //usuário 416
 const senhaautomacao = "123.automacao";
 describe('Usuário inativo', () => {
 
@@ -16,7 +16,7 @@ describe('Usuário inativo', () => {
         usuarioTextoIcone()
     })
 
-    it.skip('Tentar logar com usuário inativo', () => {
+    it('1. Tentar logar com usuário inativo', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')
