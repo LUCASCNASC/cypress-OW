@@ -165,10 +165,13 @@ export function preencherDataNascimento (selector) {
         .should('have.text', 'Data de nascimento')     
 
     //Campo data de nascimento
-    cy.get('#input_135')
+    cy.get('input[ng-focus="ctrl.setFocused(true)"]')
         .should('be.visible')
         .and('have.value','')
         .wait(200)
+        //.type("30/09/1998", {force:true})
+
+    cy.contains('Data de nascimento').parent().find('input')
         .type("30/09/1998", {force:true})
 }
 
@@ -211,11 +214,13 @@ export function cadastroRotaCliente (selector) {
     cy.get('label[for="codigo_rota"]')
         .should('have.text', 'Código da rota') 
 
+    cy.intercept('GET', '/views/carrinho/modalRotas.html').as('api_carrinho_modalRotas')
     //Preencher campo rota 1
     cy.get('.rota-frete > .md-icon-right > .ng-binding')
         .should('be.visible')
         .and('have.value','')
         .type('1', {force:true})
+    cy.wait('@api_carrinho_modalRotas', { timeout: 40000 })
 
     //Lupa do campo Rota 1
     cy.get('.rota-frete > .md-icon-right > .ng-binding')
@@ -240,7 +245,7 @@ export function cadastroRotaCliente (selector) {
     //Clicar na lupa do campo Rota 2
     cy.get('md-icon[ng-click="pesquisar()"]')
         .click({force:true})
-
+    
     //Escolher última informação da rota
     cy.get('v-pane-header.ng-scope > div')
         .click({force:true})
@@ -285,5 +290,29 @@ export function clicarSairSistema (selector) {
 
     //Clicar no botão Sair
     cy.get('.rodape > ._md-button-wrap > div.md-button > .md-no-style')
+        .click({force:true})
+}
+
+//validar e clicar em SIM na mensagem "Deseja visualizar este cadastro?", quando quero alterar data de nascimento de um cadastro de cliente simples
+export function desejoVisualizarCadastro (selector) {
+
+    //Mensagem se desejo visualizar o cadastro
+    cy.get('.md-title')
+        .should('be.visible')
+        .and('contain', 'Este CPF / CNPJ já está cadastrado para')
+        .and('contain', ', deseja visualizar este cadastro?')
+
+    //Validar Não para se desejo visualizar este cadastro
+    cy.get('.md-cancel-button')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled') 
+
+    //Validar Sim para se desejo visualizar este cadastro
+    cy.get('.md-confirm-button')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //Clicar em Sim para se desejo visualizar este cadastro
+    cy.get('.md-confirm-button')
         .click({force:true})
 }

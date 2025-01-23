@@ -21,8 +21,7 @@ describe('Cadastrar cliente completo', () => {
 
     context('Cadastro de cliente completo', () => {
 
-        //REVISAR DATA NASCIMENTO 
-        it.skip('Cliente completo CPF', () => {
+        it('Cliente completo CPF', () => {
 
             iconeMenuOpcoes()
             opcaoClienteCompleto()
@@ -79,8 +78,7 @@ describe('Cadastrar cliente completo', () => {
             messRegistroSalvoSucesso()
         })  
 
-        //REVISAR DATA NASCIMENTO
-        it.skip('Cliente completo CPF - mensagem de campos obrigatórios', () => {
+        it('Cliente completo CPF - mensagem de campos obrigatórios', () => {
     
             iconeMenuOpcoes()
             opcaoClienteCompleto()
@@ -144,7 +142,7 @@ describe('Cadastrar cliente completo', () => {
             messRegistroSalvoSucesso()
         })  
 
-        it.skip('Cliente completo CNPJ', () => {
+        it('Cliente completo CNPJ', () => {
     
             iconeMenuOpcoes()
             opcaoClienteCompleto()

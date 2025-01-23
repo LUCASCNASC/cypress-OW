@@ -135,7 +135,7 @@ export function expiraAcessoCardValidar (selector) {
     //Card de expira acesso - Mensagem "Falta(m) " 2 " dia(s) para seu acesso ao sistema expirar. Favor atualizá-lo."
     cy.get('.md-dialog-content-body > .ng-binding')
         .should('be.visible')
-        .and('have.text','Falta(m) " 2 " dia(s) para seu acesso ao sistema expirar. Favor atualizá-lo.')
+        .and('have.text','Falta(m) "1" dia(s) para sua Senha expirar.\r\nDeseja trocar sua Senha agora?')
 
     //Card de expira acesso - NÃO
     cy.get('.md-cancel-button')

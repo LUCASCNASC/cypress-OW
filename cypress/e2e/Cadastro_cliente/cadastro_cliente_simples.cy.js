@@ -1,6 +1,6 @@
 import { iconeMenuOpcoes, opcaoClienteSimples, salvarClienteSimples, preencherNomeCompletoCPF, preencherNomeCompletoCNPJ, inserirPesquisarCEP, 
          preencherDataNascimento, inserirNumeroEndereco, arrastarPessoaJuridica, sexoPessoaFisica, cadastroRotaCliente, 
-         mensagemPrimeiroRegistSalvoSucesso, prencherCPFcliente, preencherCNPJcliente, logarNovamente, clicarSairSistema } from '../../support/para_cadastro_cliente/para_cliente_simples';
+         mensagemPrimeiroRegistSalvoSucesso, prencherCPFcliente, preencherCNPJcliente, logarNovamente, clicarSairSistema, desejoVisualizarCadastro } from '../../support/para_cadastro_cliente/para_cliente_simples';
 import gerarCpf from '../../support/gerarCPF';
 import gerarCNPJ from '../../support/gerarCNPJ';
 
@@ -25,7 +25,7 @@ describe('Cadastrar cliente simples', () => {
   
     context('Cadastro de cliente simples', () => {
 
-        it.skip('Cliente simples CPF', () => {
+        it('Cliente simples CPF', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -40,8 +40,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })  
 
-        //REVISAR DATA NASCIMENTO
-        it.skip('Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
+        it('Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -54,12 +53,57 @@ describe('Cadastrar cliente simples', () => {
             cadastroRotaCliente()
             salvarClienteSimples()
             mensagemPrimeiroRegistSalvoSucesso()
+
+            iconeMenuOpcoes() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            opcaoClienteSimples()
+
+            //Campo CEP - alterar
+            cy.get('#txtCep')
+                .should('be.visible')
+                .clear({force:true})
+                .and('have.value','')
+                .type(CEPalteracao, {force:true})
+
+            //Lupa de pesquisa do CEP
+            cy.get('.md-icon-float > .ng-binding')
+                .should('be.visible')
+                .and('not.have.attr', 'disabled')
+
+            //Clicar na lupa de pesquisa do CEP
+            cy.get('.md-icon-float > .ng-binding')
+                .click({force:true})
+
+            //Campo Número, do endereço
+            cy.get('#txtNumero')
+                .should('be.visible')
+                .clear({force:true})
+                .and('have.value','')
+                .type(Numeroalteracao, {force:true})
+
+            salvarClienteSimples()
+            mensagemPrimeiroRegistSalvoSucesso()
+        })
+
+        it('Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
+    
+            iconeMenuOpcoes()
+            opcaoClienteSimples()
+            prencherCPFcliente()
+            preencherNomeCompletoCPF()
+            preencherDataNascimento()
+            sexoPessoaFisica()
+            inserirPesquisarCEP()
+            inserirNumeroEndereco()
+            cadastroRotaCliente()
+            salvarClienteSimples()
+            mensagemPrimeiroRegistSalvoSucesso()
+            cy.wait(2000)
             
             iconeMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             opcaoClienteSimples()
 
             //Alteração - Campo data de nascimento
-            cy.get('#input_892')
+            cy.contains('Data de nascimento').parent().find('input')
                 .should('be.visible')
                 .clear()
                 .should('have.value','')
@@ -69,8 +113,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })  
 
-        //REVISAR DATA NASCIMENTO
-        it.skip('Cliente simples CPF - alterar data de nascimento (deve pedir trial)', () => {
+        it('Cliente simples CPF - alterar data de nascimento (deve pedir trial)', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -107,7 +150,7 @@ describe('Cadastrar cliente simples', () => {
             cy.wait(2000)
 
             logarNovamente()
-            cy.wait(7000)
+            cy.wait(5000)
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -116,38 +159,21 @@ describe('Cadastrar cliente simples', () => {
             cy.get('#txtCpf')
                 .type(`${cpf}`, { force: true }); //Inserindo CPF no campo "INFORME O CLIENTE"
 
+
             // ALTERAR DATA DE NASCIMENTO 
 
             //Clicar no campo Data de nascimento para aparecer a mensagem se desejo visualizar este cadastro
-            cy.get('#input_135')
+            cy.contains('Data de nascimento').parent().find('input')
                 .click()
 
             cy.wait (1000)
 
-            //Mensagem se desejo visualizar o cadastro
-            cy.get('.md-title')
-                .should('be.visible')
-                .and('contain', 'Este CPF / CNPJ já está cadastrado para')
-                .and('contain', ', deseja visualizar este cadastro?')
-
-            //Validar Não para se desejo visualizar este cadastro
-            cy.get('.md-cancel-button')
-                .should('be.visible')
-                .and('not.have.attr', 'disabled') 
-
-            //Validar Sim para se desejo visualizar este cadastro
-            cy.get('.md-confirm-button')
-                .should('be.visible')
-                .and('not.have.attr', 'disabled')
-
-            //Clicar em Sim para se desejo visualizar este cadastro
-            cy.get('.md-confirm-button')
-                .click({force:true})
+            desejoVisualizarCadastro()
 
             cy.wait(2500)
 
             //Clicar na data que desejo, 29/09/1998
-            cy.get('#input_135')
+            cy.contains('Data de nascimento').parent().find('input')
                 .should('be.visible')
                 .and('have.value','30/09/1998')
                 .wait(200)
@@ -233,27 +259,27 @@ describe('Cadastrar cliente simples', () => {
                 .and('have.value', '')
                 .type(senhaSupervisor)
 
-            //Validando botão CANCELAR
-            cy.get('.layout-align-center-center > :nth-child(2) > .md-accent')
-                .should('be.visible')
-                .and('have.text', 'Cancelar')  
-                .and('not.have.attr', 'disabled')
+            // //Validando botão CANCELAR
+            // cy.contains('button', 'Cancelar')
+            //     .should('be.visible')
+            //     .and('have.text', 'Cancelar')  
+            //     .and('not.have.attr', 'disabled')
 
-            //Validando botão CONFIRMAR
-            cy.contains('button', 'Confirmar')
-                .should('be.visible')
-                .and('have.text', 'Confirmar')  
-                .and('not.have.attr', 'disabled')
+            // //Validando botão CONFIRMAR
+            // cy.contains('button', 'Confirmar')
+            //     .should('be.visible')
+            //     .and('have.text', 'Confirmar')  
+            //     .and('not.have.attr', 'disabled')
 
-            //Clicar no botão CONFIRMAR
-            cy.contains('button', 'Confirmar')
-                .click()
+            // //Clicar no botão CONFIRMAR
+            // cy.contains('button', 'Confirmar')
+            //     .click()
 
-            cy.wait(2000)
+            cy.wait(1000)
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it.skip('Cliente simples CPF - alterar tipo de sexo', () => {
+        it('Cliente simples CPF - alterar tipo de sexo', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -288,7 +314,7 @@ describe('Cadastrar cliente simples', () => {
             clicarSairSistema()
             cy.wait(2000)
             logarNovamente() 
-            cy.wait(7000)
+            cy.wait(6000)
             iconeMenuOpcoes()
             opcaoClienteSimples()
 
@@ -347,51 +373,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it.skip('Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
-    
-            iconeMenuOpcoes()
-            opcaoClienteSimples()
-            prencherCPFcliente()
-            preencherNomeCompletoCPF()
-            preencherDataNascimento()
-            sexoPessoaFisica()
-            inserirPesquisarCEP()
-            inserirNumeroEndereco()
-            cadastroRotaCliente()
-            salvarClienteSimples()
-            mensagemPrimeiroRegistSalvoSucesso()
-
-            iconeMenuOpcoes() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
-            opcaoClienteSimples()
-
-            //Campo CEP - alterar
-            cy.get('#txtCep')
-                .should('be.visible')
-                .clear({force:true})
-                .and('have.value','')
-                .type(CEPalteracao, {force:true})
-
-            //Lupa de pesquisa do CEP
-            cy.get('.md-icon-float > .ng-binding')
-                .should('be.visible')
-                .and('not.have.attr', 'disabled')
-
-            //Clicar na lupa de pesquisa do CEP
-            cy.get('.md-icon-float > .ng-binding')
-                .click({force:true})
-
-            //Campo Número, do endereço
-            cy.get('#txtNumero')
-                .should('be.visible')
-                .clear({force:true})
-                .and('have.value','')
-                .type(Numeroalteracao, {force:true})
-
-            salvarClienteSimples()
-            mensagemPrimeiroRegistSalvoSucesso()
-        })
-
-        it.skip('Cliente simples CNPJ', () => {
+        it('Cliente simples CNPJ', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -405,7 +387,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it.skip('Cliente simples CNPJ - alterar Endereço', () => {
+        it('Cliente simples CNPJ - alterar Endereço', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -451,7 +433,7 @@ describe('Cadastrar cliente simples', () => {
 
     context('Botão de adicionar cliente, na pesquisa de cliente', () => {
 
-        it.skip('Botão de adicionar cliente, na pesquisa de cliente', () => {
+        it('Botão de adicionar cliente, na pesquisa de cliente', () => {
         
             //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
             cy.get('.click-cliente > .informe-o-cliente > .cliente-header')

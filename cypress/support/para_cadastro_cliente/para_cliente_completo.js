@@ -79,7 +79,7 @@ export function preecherDataNascimento (selector) {
 
     cy.wait(200)
 
-    cy.get('#input_109').type('30/09/1998');
+    cy.contains('Data Nascimento').parent().find('input').type('30/09/1998');
 
 }
 

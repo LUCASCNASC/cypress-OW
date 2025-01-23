@@ -10,23 +10,21 @@ export function mensagemAguardeCarregando (selector) {
 //clicando na lupa pesquisa de cliente
 export function clicarLupaPesquisaCliente (selector) {
 
+    cy.intercept('GET', '/views/cliente/modalClientes.html').as('api_cliente_modalClientes')
     //clicar na lupa de pesquisa de clientes
     cy.get('.md-block > .ng-binding')
         .should('be.visible')
         .click({force:true})
+    cy.wait('@api_cliente_modalClientes', { timeout: 40000 })
 }
 
 //validando botão X do card cliente
-export function botaoXCardCliente (selector) {
+export function cardClienteValidar (selector) {
 
     //Card de clientes - Botão X
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
         .should('be.visible')
         .and('not.have.attr', 'disabled')
-}
-
-//validando título card clientes 
-export function tituloCardClientes (selector) {
 
     //Card inteiro de Clientes
     cy.get('.md-dialog-fullscreen')
@@ -36,37 +34,21 @@ export function tituloCardClientes (selector) {
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
         .should('be.visible')
         .and('have.text', 'Clientes')
-}
-
-//validando ard de clientes - Texto Digite o nome ou o CPF do cliente para busca
-export function textoInformativoClienteBusca (selector) {
 
     //Card de clientes - Texto Digite o nome ou o CPF do cliente para busca
     cy.get('label[for="txtBuscaClienteModal"]')
         .should('have.text', 'Digite o nome ou o CPF do cliente para busca')
         .and('be.visible')
-}
-
-//validando Card de clientes - Botão de cadastrar novo cliente
-export function botaoCadastrarNovoCliente (selector) {
 
     //Card de clientes - Botão de cadastrar novo cliente
     cy.get('[ng-click="novoCliente()"] > .ng-binding')
         .should('be.visible')
         .and('not.have.attr', 'disabled')
-}
-
-//validando Card de clientes - Botão comando de voz
-export function botaoComandoVoz (selector) {
 
     //Card de clientes - Botão comando de voz
     cy.get('[ng-click="capturarVozCliente()"] > .ng-binding')
         .should('be.visible')
         .and('not.have.attr', 'disabled')
-}
-
-//validando Card de clientes - campo para digitar cliente
-export function campoDigitarCliente (selector) {
 
     //Card de clientes - campo para digitar cliente
     cy.get('#txtBuscaClienteModal')
@@ -132,7 +114,7 @@ export function inserirCPF (selector) {
 
     //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
     cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
-        .wait(800)
+        .wait(500)
         .type(numeroCPF,'{downArrow}')
 }
 
@@ -157,7 +139,7 @@ export function inserirCNPJ (selector) {
 
     //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
     cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
-        .wait(800)
+        .wait(500)
         .type(numeroCNPJ,'{downArrow}')
 }
 
