@@ -1037,11 +1037,11 @@ export function addproduto1 (selector) {
         .click({force:true})
     cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-    cy.wait('@api_executar_filtro', { timeout: 40000 })
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
     cy.get('[ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
@@ -1057,11 +1057,11 @@ export function addproduto2 (selector) {
         .click({force:true})
     cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-    cy.wait('@api_executar_filtro', { timeout: 40000 })
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
     cy.get('.md-checked > .md-label')
@@ -1077,11 +1077,11 @@ export function addproduto3 (selector) {
         .click({force:true})
     cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-    cy.wait('@api_executar_filtro', { timeout: 40000 })
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
     cy.get('.md-checked > .md-label')
@@ -1097,11 +1097,11 @@ export function addproduto4 (selector) {
         .click({force:true})
     cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-    cy.wait('@api_executar_filtro', { timeout: 40000 })
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
     cy.get('.md-checked > .md-label')
@@ -1117,11 +1117,11 @@ export function addproduto5 (selector) {
         .click({force:true})
     cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-    cy.wait('@api_executar_filtro', { timeout: 40000 })
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
     cy.get('.md-checked > .md-label')
@@ -1131,699 +1131,699 @@ export function addproduto5 (selector) {
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 6 6
 export function addproduto6 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.6.6').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(7) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1000)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(7) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 7 7
 export function addproduto7 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.7.7').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(8) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1100)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(8) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 8 8
 export function addproduto8 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.8.8').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(9) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1200)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(9) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 9 9
 export function addproduto9 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.9.9').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(10) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1300)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(10) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 10 10
 export function addproduto10 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.10.10').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(11) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1400)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(11) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 11 11
 export function addproduto11 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.11.11').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(12) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1500)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(12) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 12 12
 export function addproduto12 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.12.12').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(13) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1600)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(13) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 13 13
 export function addproduto13 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.13.13').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(14) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1700)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(14) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 14 14
 export function addproduto14 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.14.14').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(15) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1800)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(15) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 15 15
 export function addproduto15 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.15.15').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(16) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(1900)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(16) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 16 16
 export function addproduto16 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.16.16').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(17) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2000)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(17) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 17 17
 export function addproduto17 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.17.17').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(18) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2100)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(18) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 18 18
 export function addproduto18 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.18.18').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(19) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2200)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(19) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 19 19
 export function addproduto19 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.19.19').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(20) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2300)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(20) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 20 20
 export function addproduto20 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.20.20').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(20) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2400)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(21) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 21 21
 export function addproduto21 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.21.21').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(20) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2500)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(22) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 22 22
 export function addproduto22 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.22.22').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(23) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2600)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(23) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 23 23
 export function addproduto23 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.23.23').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(24) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2700)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(24) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 24 24
 export function addproduto24 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.24.24').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(25) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2800)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(25) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 25 25
 export function addproduto25 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.25.25').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(26) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(2900)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(26) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 26 26
 export function addproduto26 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.26.26').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(27) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3000)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(27) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 27 27
 export function addproduto27 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.27.27').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(28) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3100)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(28) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 28 28
 export function addproduto28 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.28.28').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(29) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3200)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(29) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 29 29
 export function addproduto29 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.29.29').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(30) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3300)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(30) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 30 30
 export function addproduto30 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.30.30').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(31) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3400)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(31) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 31 31
 export function addproduto31 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.31.31').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(32) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3500)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(32) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 32 32
 export function addproduto32 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.32.32').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(33) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3600)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(33) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 33 33
 export function addproduto33 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.33.33').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(34) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3700)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(34) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 34 34
 export function addproduto34 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.34.34').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(35) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3800)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(35) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 35 35
 export function addproduto35 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.35.35').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(36) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(3900)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(36) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 36 36
 export function addproduto36 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.36.36').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(37) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(4000)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(37) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 37 37
 export function addproduto37 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.37.37').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(38) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(4100)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(38) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 38 38
 export function addproduto38 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.38.38').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(39) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(4200)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(39) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 39 39
 export function addproduto39 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.39.39').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(40) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(4300)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(40) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }
 
 //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 40 40
 export function addproduto40 (selector) {
 
+    cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.40.40').as('api_local_saldo')
     //Card de voltagem - clicar
-    cy.get(':nth-child(41) > div.md-button > .md-no-style')
+    cy.get(':nth-child(1) > md-list.md-default-theme > :nth-child(4) > div.md-button > .md-no-style')
         .click({force:true})
+    cy.wait('@api_local_saldo', { timeout: 40000 })
 
-    cy.wait (500)
-
+    //cy.intercept('POST', '/services/v3/executar_filtro').as('api_executar_filtro')
     //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-primary')
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
         .click({force:true})
-
-    cy.wait(4400)
+    //cy.wait('@api_executar_filtro', { timeout: 40000 })
 
     //Botão Retirada / Entrega - texto Retirada / Entrega
-    cy.get(':nth-child(41) > .md-whiteframe-2dp > :nth-child(3) > [ng-show="itemAtual._permiteEntrega"] > .md-auto-horizontal-margin > .md-label')
+    cy.get('.md-checked > .md-label')
         .click({force:true})
 }

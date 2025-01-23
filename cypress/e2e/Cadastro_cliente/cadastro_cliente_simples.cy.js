@@ -314,13 +314,22 @@ describe('Cadastrar cliente simples', () => {
             clicarSairSistema()
             cy.wait(2000)
             logarNovamente() 
-            cy.wait(6000)
+            cy.wait(5000)
             iconeMenuOpcoes()
             opcaoClienteSimples()
 
             //Preencher campo CPF - para alterar o cadastro que acabamos de gerar
             cy.get('#txtCpf')
-                .type(`${cpf}`, { force: true }); //Inserindo CPF no campo "INFORME O CLIENTE"
+                .type(`${cpf}`, {force: true}) //Inserindo CPF no campo "INFORME O CLIENTE"
+                .wait(200)
+
+            //clicando em qualquer elemento para ver o cadastro
+            cy.get('.cliente-endereco > .padding-5 > :nth-child(1)')
+                .click({force: true})
+                .wait(1000)
+
+            desejoVisualizarCadastro()
+            cy.wait(3000)
 
             // ALTERAR SEXO 
 
@@ -328,38 +337,12 @@ describe('Cadastrar cliente simples', () => {
             cy.get('.md-default-theme[ng-model="cliente.idtiposexo"]')
                 .click({force:true})
 
-            cy.wait (2500)
-
-            //Mensagem se desejo visualizar o cadastro
-            cy.get('.md-title')
-                .should('be.visible')
-                .and('contain', 'Este CPF / CNPJ já está cadastrado para')
-                .and('contain', ', deseja visualizar este cadastro?')
-
-            //Validar Não para se desejo visualizar este cadastro
-            cy.get('.md-cancel-button')
-                .should('be.visible')
-                .and('not.have.attr', 'disabled') 
-
-            //Validar Sim para se desejo visualizar este cadastro
-            cy.get('.md-confirm-button')
-                .should('be.visible')
-                .and('not.have.attr', 'disabled')
-
-            cy.wait(200)
-
-            //Clicar em Sim para se desejo visualizar este cadastro
-            cy.get('.md-confirm-button')
-                .click({force:true})
-
-            cy.wait(2000)
-
             //Selecionar feminino
             cy.get('.md-text.ng-binding')
                 .contains('Feminino')
-                .click({force:true})
+                .click()
 
-            cy.wait(2500)
+            cy.wait(1000)
 
             //Clicar para abrir a modificação
             cy.get('.date-picker.flex-md-100 > .validaData > .md-datepicker-input-container > .md-datepicker-triangle-button')
@@ -367,9 +350,6 @@ describe('Cadastrar cliente simples', () => {
 
             cy.wait(200)
             salvarClienteSimples()
-            cy.wait(1000)
-            salvarClienteSimples()
-            cy.wait(9000)
             mensagemPrimeiroRegistSalvoSucesso()
         })
 

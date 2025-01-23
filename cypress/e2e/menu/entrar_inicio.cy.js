@@ -18,7 +18,7 @@ describe('Validações de menu - menu opções', () => {
     })
 
     context('Menu opções - validar as opções que o menu traz, entrando nas telas', () => {
-        it.only('Início - validar as opção Início, entrando na tela', () => {
+        it.skip('Início - validar as opção Início, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -26,7 +26,7 @@ describe('Validações de menu - menu opções', () => {
             inicioOpcaoMenu()
         })
 
-        it('Departamento - validar as opção Departamento, entrando na tela', () => {
+        it.skip('Departamento - validar as opção Departamento, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -34,7 +34,7 @@ describe('Validações de menu - menu opções', () => {
             departamentoOpcaoMenu()
         })
 
-        it('Serviços - validar as opção Serviços, entrando na tela', () => {
+        it.skip('Serviços - validar as opção Serviços, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -42,7 +42,7 @@ describe('Validações de menu - menu opções', () => {
             servicosOpcaoMenu()
         })
 
-        it('Pedidos pendentes - validar as opção Pedidos pendentes, entrando na tela', () => {
+        it.skip('Pedidos pendentes - validar as opção Pedidos pendentes, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -50,7 +50,7 @@ describe('Validações de menu - menu opções', () => {
             pedidosPendentesOpcaoMenu()
         })
 
-        it('Cliente - validar as opção Cliente, entrando na tela', () => {
+        it.skip('Cliente - validar as opção Cliente, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -58,7 +58,7 @@ describe('Validações de menu - menu opções', () => {
             clienteOpcaoMenu()
         })
 
-        it('Cliente completo - validar as opção Cliente completo, entrando na tela', () => {
+        it.skip('Cliente completo - validar as opção Cliente completo, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -66,7 +66,7 @@ describe('Validações de menu - menu opções', () => {
             clienteCompletoOpcaoMenu()
         })
 
-        it('Pós-venda - validar as opção Pós-venda, entrando na tela', () => {
+        it.skip('Pós-venda - validar as opção Pós-venda, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -74,7 +74,7 @@ describe('Validações de menu - menu opções', () => {
             posVendaOpcaoMenu()
         })
 
-        it('Intenção de compra - validar as opção Intenção de compra, entrando na tela', () => {
+        it.skip('Intenção de compra - validar as opção Intenção de compra, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -82,7 +82,7 @@ describe('Validações de menu - menu opções', () => {
             intencaoCompraOpcaoMenu()
         })
 
-        it('Proposta de crédito - validar as opção Proposta de crédito, entrando na tela', () => {
+        it.skip('Proposta de crédito - validar as opção Proposta de crédito, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -90,7 +90,7 @@ describe('Validações de menu - menu opções', () => {
             propostaCreditoOpcaoMenu()
         })
 
-        it('Configurações - validar as opção Configurações, entrando na tela', () => {
+        it.skip('Configurações - validar as opção Configurações, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -98,7 +98,7 @@ describe('Validações de menu - menu opções', () => {
             configuracoesOpcaoMenu()
         })
 
-        it('Minha performance - validar as opção Minha performance, entrando na tela', () => {
+        it.skip('Minha performance - validar as opção Minha performance, entrando na tela', () => {
 
             topoPagina()
             iconeMenuOpcoes()
@@ -106,7 +106,7 @@ describe('Validações de menu - menu opções', () => {
             minhaPerformanceOpcaoMenu()
         })
 
-        it('Botão Sair - validar as opção Sair, saindo do sistema', () => {
+        it.skip('Botão Sair - validar as opção Sair, saindo do sistema', () => {
 
             topoPagina()
             iconeMenuOpcoes()

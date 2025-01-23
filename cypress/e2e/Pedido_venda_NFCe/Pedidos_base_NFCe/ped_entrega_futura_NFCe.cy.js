@@ -1,7 +1,6 @@
 import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
-         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoNormalPrimeiroNFCe,
-         clicarAddProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { prdPrimeiroEntregaFutNFCe, prdSegundoEntregaFutNFCe, escolherPesqPrdPrimeiroEntregaFutNFCe, clicarVoltPrdPrimeiroEntregaFutNFCe, 
+         escolherPesqPrdSegundoEntregaFutNFCe, clicarVoltPrdSegundoEntregaFutNFCe, addPrdPrimeiroEntregaFutNFCe, addPrdSegundoEntregaFutNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_entrega_futura.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -20,17 +19,17 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         processoEntregaFuturaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoNormalPrimeiroNFCe()
+        prdPrimeiroEntregaFutNFCe()
         saldodisponivel()
-        escolherProdutoPesquisaNormalPrimeiroNFCe()
+        escolherPesqPrdPrimeiroEntregaFutNFCe()
     })
     
     context('Com entrega/ processo 9891 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAddProdutoNormalPrimeiroNFCe()
+            clicarVoltPrdPrimeiroEntregaFutNFCe() //PRODUTO
+            addPrdPrimeiroEntregaFutNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -49,15 +48,15 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAddProdutoNormalPrimeiroNFCe()
+            clicarVoltPrdPrimeiroEntregaFutNFCe() //PRODUTO
+            addPrdPrimeiroEntregaFutNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            prdSegundoEntregaFutNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundoNFCe()
-            escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAddProdutoNormalSegundoNFCe()
+            escolherPesqPrdSegundoEntregaFutNFCe()
+            clicarVoltPrdSegundoEntregaFutNFCe()
+            addPrdSegundoEntregaFutNFCe()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora() 

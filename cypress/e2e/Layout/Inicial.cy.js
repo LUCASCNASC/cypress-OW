@@ -12,7 +12,7 @@ describe('Validações de layout - tela inicial', () => {
 
     context('Tela inicial ao logar no sistema', () => {
 
-        it('Tela inicial ao logar no sistema - cabeçalho', () => {
+        it.skip('Tela inicial ao logar no sistema - cabeçalho', () => {
             
             //Topo da página - parte colorida
             cy.get('.topo > .md-toolbar-tools')

@@ -1,7 +1,6 @@
 import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
-         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoNormalPrimeiroNFCe,
-         clicarAddProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { prdPrimeiroFinanBaixaNFCe, prdSegundoFinanBaixaNFCe, escolherPesqPrdPrimeiroFinanBaixaNFCe, escolherPesqPrdSegundoFinanBaixaNFCe, 
+         clicarVoltPrdPrimeiroFinanBaixaNFCe, clicarVoltPrdSegundoFinanBaixaNFCe, addPrdPrimeiroFinanBaixaNFCe, addPrdSegundoFinanBaixaNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_financeiro_baixa.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -20,17 +19,17 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
         processoFinanceiroBaixaNFCe()
         clienteComRota()
         cy.wait(500)
-        produtoNormalPrimeiroNFCe()
+        prdPrimeiroFinanBaixaNFCe()
         saldodisponivel()
-        escolherProdutoPesquisaNormalPrimeiroNFCe()
+        escolherPesqPrdPrimeiroFinanBaixaNFCe()
     })
     
     context('Com entrega/ processo 9892 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAddProdutoNormalPrimeiroNFCe()
+            clicarVoltPrdPrimeiroFinanBaixaNFCe() //PRODUTO
+            addPrdPrimeiroFinanBaixaNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -49,15 +48,15 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-            clicarAddProdutoNormalPrimeiroNFCe()
+            clicarVoltPrdPrimeiroFinanBaixaNFCe() //PRODUTO
+            addPrdPrimeiroFinanBaixaNFCe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            prdSegundoFinanBaixaNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundoNFCe()
-            escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAddProdutoNormalSegundoNFCe()
+            escolherPesqPrdSegundoFinanBaixaNFCe()
+            clicarVoltPrdSegundoFinanBaixaNFCe()
+            addPrdSegundoFinanBaixaNFCe()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora() 

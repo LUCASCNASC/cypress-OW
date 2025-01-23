@@ -1,7 +1,6 @@
 import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo,
-         escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, clicarAddProdutoNormalPrimeiro,
-         clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { prdPrimeiroFinanBaixaNFe, prdSegundoFinanBaixaNFe, escolherPesqPrdPrimeiroFinanBaixaNFe, escolherPesqPrdSegundoFinanBaixaNFe,
+         clicarVoltPrdPrimeiroFinanBaixaNFe, clicarVoltPrdSegundoFinanBaixaNFe, addPrdPrimeiroFinanBaixaNFe, addPrdSegundoFinanBaixaNFe } from '../../../support/para_pedidos_NFe/NFe_prd_financeiro_baixa.js'
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -20,17 +19,17 @@ describe('Gerar pedido com financeiro na baixa', () => {
         processoFinanceiroBaixaNFe()
         clienteComRota()
         cy.wait(500)
-        produtoNormalPrimeiro()
+        prdPrimeiroFinanBaixaNFe()
         saldodisponivel()
-        escolherProdutoPesquisaNormalPrimeiro()
+        escolherPesqPrdPrimeiroFinanBaixaNFe()
     })
   
     context('Sem entrega/ processo 9863 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltPrdPrimeiroFinanBaixaNFe() //PRODUTO
+            addPrdPrimeiroFinanBaixaNFe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -46,16 +45,16 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltPrdPrimeiroFinanBaixaNFe() //PRODUTO
+            addPrdPrimeiroFinanBaixaNFe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundoFinanBaixaNFe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherPesqPrdSegundoFinanBaixaNFe()
+            clicarVoltPrdSegundoFinanBaixaNFe()
+            addPrdSegundoFinanBaixaNFe()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -74,8 +73,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('3. Ped venda: produto 1860 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltPrdPrimeiroFinanBaixaNFe() //PRODUTO
+            addPrdPrimeiroFinanBaixaNFe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -91,15 +90,15 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltPrdPrimeiroFinanBaixaNFe() //PRODUTO
+            addPrdPrimeiroFinanBaixaNFe()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundoFinanBaixaNFe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherPesqPrdSegundoFinanBaixaNFe()
+            clicarVoltPrdSegundoFinanBaixaNFe()
+            addPrdSegundoFinanBaixaNFe()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()

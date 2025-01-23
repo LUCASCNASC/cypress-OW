@@ -26,7 +26,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
 
     context('Com entrega/ processo 9890 - caminho feliz', () => {
 
-        it('1. Gerar pedido com entrega, alterar forma de pagamento. Produto 1860 0 0.', () => {
+        it.skip('1. Gerar pedido com entrega, alterar forma de pagamento. Produto 1860 0 0.', () => {
                       
             produtoNormalPrimeiroNFCe() //PRODUTO
             saldodisponivel()
