@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, clicarAddProdutoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, clicarAddProdutoNormalPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagaPropCredito, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado, propostaCreditoGerada } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';

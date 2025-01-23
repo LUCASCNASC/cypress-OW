@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+import { produtoNormalPrimeiroNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          removerFormaPagamento } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';

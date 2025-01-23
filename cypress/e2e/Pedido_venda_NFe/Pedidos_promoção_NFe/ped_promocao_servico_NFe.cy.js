@@ -3,7 +3,7 @@ import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support
 import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela, escolherProduto1PrazoParcela, escolherVoltagemProduto1PrazoParcela, 
          escolherProduto2PrazoParcela, escolherVoltagemProduto2PrazoParcela, escolherProduto3PrazoParcela, escolherVoltagemProduto3PrazoParcela, 
          escolherProduto4PrazoParcela, escolherVoltagemProduto4PrazoParcela, clicarAddProduto1PromoPrazoParcela, clicarAddProduto2PrazoParcela, 
-         clicarAddProduto3PrazoParcela, clicarAddProduto4PrazoParcela } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         clicarAddProduto3PrazoParcela, clicarAddProduto4PrazoParcela } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';

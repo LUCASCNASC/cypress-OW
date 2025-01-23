@@ -3,7 +3,7 @@ import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcela
          escolherVoltagemProdutoPromoPartida, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
          escolherProdutoPromoPrazoEntrada, escolherVoltagemProdutoPromoPrazoEntrada, escolherProdutoPromoPrazoParcelado, 
          escolherVoltagemProdutoPromoPrazoParcelado, clicarAddProdutoPromoPartida, clicarAddProdutoPromoPrazoEntrada,
-         clicarAddProdutoPromoPrazoParcelado, clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         clicarAddProdutoPromoPrazoParcelado, clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';

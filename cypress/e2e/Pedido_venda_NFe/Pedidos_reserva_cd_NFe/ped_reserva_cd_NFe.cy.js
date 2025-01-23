@@ -1,6 +1,6 @@
 import { saldodisponivel, clienteComRota, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoCDPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
-         escolherProdutoCDPrimeiro, escolherVoltagemProdutoCDPrimeiro, clicarAddProdutoNormalSegundo, clicarAddProdutoCDPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         escolherProdutoCDPrimeiro, escolherVoltagemProdutoCDPrimeiro, clicarAddProdutoNormalSegundo, clicarAddProdutoCDPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';

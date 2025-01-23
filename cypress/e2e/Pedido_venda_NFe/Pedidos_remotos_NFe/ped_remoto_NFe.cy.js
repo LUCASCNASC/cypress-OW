@@ -3,7 +3,7 @@ import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produt
          escolherVoltagemProdutoNormalPrimeiro, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
          escolherProdutoKitRemoto, escolherVoltagemProdutoKitRemoto, escolherProdutoRemotoComCD, escolherVoltagemProdutoRemotoComCD, 
          escolherProdutoRemotoSemCD, escolherVoltagemProdutoRemotoSemCD, clicarAddProdutoNormalPrimeiro, clicarAddProdutoNormalSegundo, 
-         clicarAddProdutoKitRemoto, clicarAddProdutoRemotoComCD } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         clicarAddProdutoKitRemoto, clicarAddProdutoRemotoComCD } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculadosRemotos } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';

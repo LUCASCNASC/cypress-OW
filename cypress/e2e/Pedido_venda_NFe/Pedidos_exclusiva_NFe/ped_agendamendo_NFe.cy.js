@@ -5,7 +5,7 @@ import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produto
          escolherPesquisaPrimeiroPrdNormalExclusiva, escolherVoltagemPrimeiroPrdNormalExclusiva, escolherPesquisakitSemSaldoAgendamento,
          escolherVoltagemkitSemSaldoAgendamento, escolherPesquisakitVolumes, escolherVoltagemkitVolumes, escolherPesquisaSaldoReceber, 
          escolherVoltagemSaldoReceber, escolherPesquisaSaldoReceberDuasLinhas, escolherVoltagemSaldoReceberDuasLinhas, 
-         clicarAddProdutoPrimeiroPrdNormalExclusiva, clicarAddProdutoSaldoReceber } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         clicarAddProdutoPrimeiroPrdNormalExclusiva, clicarAddProdutoSaldoReceber } from '../../../support/para_pedidos_NFe/NFe_prd_exclusiva.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';

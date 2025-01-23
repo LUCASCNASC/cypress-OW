@@ -2,7 +2,7 @@ import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/g
 import { produtoPromoPartidaNFCe, produtoPromoPrazoEntradaNFCe, produtoPromoPrazoParceladoNFCe, escolherProdutoPromoPartidaNFCe, 
          escolherVoltagemProdutoPromoPartidaNFCe, escolherProdutoPromoPrazoEntradaNFCe, escolherVoltagemProdutoPromoPrazoEntradaNFCe, 
          escolherProdutoPromoPrazoParceladoNFCe, escolherVoltagemProdutoPromoPrazoParceladoNFCe, clicarAddProdutoPromoPartidaNFCe, 
-         clicarAddProdutoPromoPrazoEntradaNFCe, clicarAddProdutoPromoPrazoParceladoNFCe } from '../../../support/para_pedidos_NFCe/apenasNFCe_produtos_pedidos.js';
+         clicarAddProdutoPromoPrazoEntradaNFCe, clicarAddProdutoPromoPrazoParceladoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
 import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';

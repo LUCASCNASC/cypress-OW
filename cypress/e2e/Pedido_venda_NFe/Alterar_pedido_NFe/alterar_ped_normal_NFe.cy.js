@@ -2,7 +2,7 @@ import { saldodisponivel, clienteComRota, composicaoDesteKit }  from '../../../s
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro, escolherProdutoPesquisaNormalPrimeiroNFCe, 
          escolherVoltagemProdutoNormalPrimeiroNFCe, escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, 
          escolherProdutoKitPrimeiroNFCe, escolherVoltagemProdutoKitPrimeiroNFCe, clicarAddProdutoNormalPrimeiro, clicarAddProdutoNormalSegundo, 
-         clicarAddProdutoKitPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+         clicarAddProdutoKitPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
          adicionarEntrega, adicionarServico } from '../../../support/para_pedidos/para_alterar_pedido.js';

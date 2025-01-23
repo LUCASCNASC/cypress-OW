@@ -1,5 +1,5 @@
 import { clienteComRota, semSaldodisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoSemSaldo, escolherProdutoSemSaldo, escolherVoltagemProdutoSemSaldo } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { produtoSemSaldo, escolherProdutoSemSaldo, escolherVoltagemProdutoSemSaldo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {

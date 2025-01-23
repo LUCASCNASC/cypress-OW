@@ -23,6 +23,7 @@ export function processoVendaNFe (selector) {
         .dblclick()
         .wait(200) 
 }
+
 //Para escolher processo de venda 9860 NFCe
 export function processoVendaNFCe (selector) {
 
