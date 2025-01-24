@@ -93,7 +93,7 @@ export function avancarFinal (selector) {
 
     //Botão "AVANÇAR" - clicar
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
-        .click({force:true})
+        .dblclick({force:true})
 
     cy.wait('@api_carinho_confirmacao', { timeout: 40000 })
 }

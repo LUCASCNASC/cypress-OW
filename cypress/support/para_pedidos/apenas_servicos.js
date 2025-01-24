@@ -127,3 +127,66 @@ export function okServicosVinculadosRemotos (selector) {
     cy.get('button[ng-click="salvar()"]')
         .click({force:true})
 }
+
+//validar modal e clicar em OK
+export function okSeguroPrestamista (selector) {
+
+    //título modal "Seguro prestamista"
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        //.and('include.text',' Seguro prestamista')
+
+    //botão X
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //informação de dentro do modal
+    cy.get('.white > .md-no-sticky > .md-subheader-inner')
+        .should('be.visible')
+        //.and('include.text',' Seguro Prestamista')
+
+    //checkbox Seguro Prestamista
+    cy.get('.md-container')
+        //.should('be.checked')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //validando cor verde da checkbox, provando que o prestamista está marcado 
+    cy.get('.md-container.md-ink-ripple')
+        .should('have.css', 'color', 'rgba(28, 202, 19, 0.87)')
+
+    //nome do seguro prestamista cadastrado
+    cy.get('.md-no-style > .md-list-item-text > :nth-child(1)')
+        .should('be.visible')
+
+    //quantidade
+    cy.get('.md-list-item-text > :nth-child(2)')
+        .should('be.visible')
+        .and('include.text', 'Quantidade')
+
+    //valor unitário
+    cy.get('.md-list-item-text > :nth-child(3)')
+        .should('be.visible')
+        .and('include.text', 'Valor unitário')
+
+    //cifrão do valor
+    cy.get('.md-no-style > .md-secondary-container > :nth-child(1) > .ng-binding > sup')
+        .should('be.visible')
+        .and('contain', 'R$')
+
+    //valor em si
+    cy.get('.md-no-style > .md-secondary-container > :nth-child(1) > .ng-binding')
+        .should('be.visible')
+        .and('include.text', 'R$')
+
+    //botão OK
+    cy.get('md-dialog-actions.layout-row > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('have.text',' Ok ')
+
+    //clicar no botão OK
+    cy.get('md-dialog-actions.layout-row > .md-primary')
+        .click()
+}

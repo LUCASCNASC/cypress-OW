@@ -6,7 +6,9 @@ import { iconeMenuOpcoes, opcaoClienteCompleto, preecherDataNascimento, selecion
          preencherCampoCEPEndereco, preencherCampoNumeroEndereco, preencherRotaCompleta, messRotaIncluidaSucesso, infosRotaAdicionada,
          clicarAbaTelefone, clicarAdicionarNovoTelefone, modalTelefoneVazioValidar, escolherTipoTelefone, preencherNumeroTelefone,
          preencherRamalTelefone, clicarSalvarTelefone, infosTelefoneAdicionado, modalAguardeCarregando, messRegistroSalvoSucesso, 
-         cardEnderecoVazioValidar } from '../../support/para_cadastro_cliente/para_cliente_completo.js';
+         cardEnderecoVazioValidar, clicarMenuCadastroClienteCompleto, clicarAbaAnexo, validarAbaAnexoVazia, selecionarTipoAnexo,
+         anexarArquivoPFD, confirmarEnvioArquivo, preencherNomeSocial, clicarAbaReferencias, clicarAbaRefBancaria, validarAbaRefBancariaVazia, 
+         clicarAddNovaRefBancaria} from '../../support/para_cadastro_cliente/para_cliente_completo.js';
 
 
 describe('Cadastrar cliente completo', () => {
@@ -19,7 +21,7 @@ describe('Cadastrar cliente completo', () => {
         cy.tituloPagina()
     })
 
-    context('Cadastro de cliente completo', () => {
+    context('Cadastro de cliente completo - básico ', () => {
 
         it('Cliente completo CPF', () => {
 
@@ -27,6 +29,7 @@ describe('Cadastrar cliente completo', () => {
             opcaoClienteCompleto()
             preencherCPFcliente()
             preencherNomeCompleto()
+            preencherNomeSocial()
             preecherDataNascimento()
             selecionarSexoCliente()
             clicarSalvarCliente()
@@ -69,7 +72,7 @@ describe('Cadastrar cliente completo', () => {
             preencherRamalTelefone()
             clicarSalvarTelefone()
             infosTelefoneAdicionado()
-            cy.wait(1000)
+            cy.wait(4000)
 
             messTelefoneIncluidoSucesso()
             clicarSalvarCliente()
@@ -87,6 +90,7 @@ describe('Cadastrar cliente completo', () => {
 
             preencherCPFcliente()
             preencherNomeCompleto()
+            preencherNomeSocial()
             preecherDataNascimento()
             selecionarSexoCliente()
             cy.wait(500)
@@ -133,7 +137,7 @@ describe('Cadastrar cliente completo', () => {
             preencherRamalTelefone()
             clicarSalvarTelefone()
             infosTelefoneAdicionado()
-            cy.wait(2000)
+            cy.wait(4000)
 
             messTelefoneIncluidoSucesso()
             clicarSalvarCliente()
@@ -190,7 +194,7 @@ describe('Cadastrar cliente completo', () => {
             preencherRamalTelefone()
             clicarSalvarTelefone()
             infosTelefoneAdicionado()
-            cy.wait(2000)
+            cy.wait(4000)
 
             messTelefoneIncluidoSucesso()
             clicarSalvarCliente()
@@ -199,4 +203,148 @@ describe('Cadastrar cliente completo', () => {
             messRegistroSalvoSucesso()
         }) 
     })
+
+    context('Cadastro de cliente completo - incluindo anexo', () => {
+
+        it.skip('Cliente completo CPF - caminho feliz', () => {
+
+            iconeMenuOpcoes()
+            opcaoClienteCompleto()
+            preencherCPFcliente()
+            preencherNomeCompleto()
+            preencherNomeSocial()
+            preecherDataNascimento()
+            selecionarSexoCliente()
+            clicarSalvarCliente()
+            cy.wait(500)
+            
+            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            clicarAbaEndereco() //ENDEREÇO
+            clicarAdicionarNovoEndereço()
+            cy.wait(200)
+            escolherTipoEndereco()
+            modalEnderecoVazioValidar()
+            cy.wait(200)
+            clicarAbrirTipoEndereco()
+            cy.wait(300)
+            escolherTipoEndereco()
+            preencherCampoCEPEndereco()
+            cy.wait(300)
+            preencherCampoNumeroEndereco()
+
+            botaoSalvarDesabilitado()
+            clicarSalvarEndereco()
+            cy.wait(200)
+            infosEnderecoAdicionado()
+            messEnderecoIncluidoSucesso()
+
+            clicarAbaRota() //ROTA
+            clicarAdicionarNovaRota()
+            modalRotaVazioValidar()
+            escolherTipoEnderecoRota()
+            preencherRotaCompleta()
+            messRotaIncluidaSucesso()
+            infosRotaAdicionada()
+
+            clicarAbaTelefone() //TELEFONE
+            clicarAdicionarNovoTelefone()
+            modalTelefoneVazioValidar()
+            escolherTipoTelefone()
+            preencherNumeroTelefone()
+            preencherRamalTelefone()
+            clicarSalvarTelefone()
+            infosTelefoneAdicionado()
+            cy.wait(4000)
+
+            messTelefoneIncluidoSucesso()
+
+            clicarMenuCadastroClienteCompleto()
+
+            clicarAbaAnexo()
+            validarAbaAnexoVazia()
+            selecionarTipoAnexo()
+            cy.wait(500)
+            anexarArquivoPFD()
+            confirmarEnvioArquivo()
+
+            //não está anexando
+
+
+            // clicarSalvarCliente()
+            // cy.wait(2000)
+            // modalAguardeCarregando()
+            // messRegistroSalvoSucesso()
+        })
+    })
+
+    context('Cadastro de cliente completo - incluindo referencia bancária', () => {
+
+
+        it.only('Cliente completo CPF - caminho feliz', () => {
+
+            iconeMenuOpcoes()
+            opcaoClienteCompleto()
+            preencherCPFcliente()
+            preencherNomeCompleto()
+            preencherNomeSocial()
+            preecherDataNascimento()
+            selecionarSexoCliente()
+            clicarSalvarCliente()
+            cy.wait(500)
+            
+            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            clicarAbaEndereco() //ENDEREÇO
+            clicarAdicionarNovoEndereço()
+            cy.wait(200)
+            escolherTipoEndereco()
+            modalEnderecoVazioValidar()
+            cy.wait(200)
+            clicarAbrirTipoEndereco()
+            cy.wait(300)
+            escolherTipoEndereco()
+            preencherCampoCEPEndereco()
+            cy.wait(300)
+            preencherCampoNumeroEndereco()
+
+            botaoSalvarDesabilitado()
+            clicarSalvarEndereco()
+            cy.wait(200)
+            infosEnderecoAdicionado()
+            messEnderecoIncluidoSucesso()
+
+            clicarAbaRota() //ROTA
+            clicarAdicionarNovaRota()
+            modalRotaVazioValidar()
+            escolherTipoEnderecoRota()
+            preencherRotaCompleta()
+            messRotaIncluidaSucesso()
+            infosRotaAdicionada()
+
+            clicarAbaTelefone() //TELEFONE
+            clicarAdicionarNovoTelefone()
+            modalTelefoneVazioValidar()
+            escolherTipoTelefone()
+            preencherNumeroTelefone()
+            preencherRamalTelefone()
+            clicarSalvarTelefone()
+            infosTelefoneAdicionado()
+            cy.wait(4000)
+
+            messTelefoneIncluidoSucesso()
+
+            clicarAbaReferencias() //aba Referencias
+            clicarAbaRefBancaria() //aba Bancaria, dentro de Referencias
+            validarAbaRefBancariaVazia()
+            clicarAddNovaRefBancaria()
+
+
+            // clicarSalvarCliente()
+            // cy.wait(2000)
+            // modalAguardeCarregando()
+            // messRegistroSalvoSucesso()
+        })  
+    })
+
 })

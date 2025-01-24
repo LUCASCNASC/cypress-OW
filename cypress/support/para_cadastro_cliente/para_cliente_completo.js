@@ -1,6 +1,5 @@
 import gerarCpf from '../../support/gerarCPF';
 import gerarCNPJ from '../../support/gerarCNPJ';
-import { isFunctionExpression } from 'typescript';
 
 //Validar e preencher campo CPF
 export function preencherCPFcliente (selector) {
@@ -111,10 +110,26 @@ export function preencherNomeCompleto (selector) {
 
     //Campo Nome - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="txtRazaoSocial"]')
-        .should('have.text', 'Nome') 
+        .should('have.text', 'Nome Completo') 
 
     //Campo Nome Completo
     cy.get('#txtRazaoSocial')
+        .should('be.visible')
+        .and('have.value','')
+        .type(nomeClienteCPF, {force: true})
+}
+
+//Validar e prencher campo Nome Social - CPF
+export function preencherNomeSocial (selector) {
+
+    const nomeClienteCPF = "Novo cadastro CPF"
+
+    //Campo Nome - validando mensagem dentro do campo antes de preencher
+    cy.get('label[for="txtNomeFantasia"]')
+        .should('have.text', 'Nome Social') 
+
+    //Campo Nome Completo
+    cy.get('#txtNomeFantasia')
         .should('be.visible')
         .and('have.value','')
         .type(nomeClienteCPF, {force: true})
@@ -295,10 +310,12 @@ export function clicarAbaEndereco (selector) {
         .should('be.visible')
         .and('have.text', 'Endereço')
 
+    cy.intercept('GET', '/services/v3/dados_tabela/tipoendereco').as('api_cliente_completo_endereco')
     //Clicar na aba Endereço
     cy.get('#menu_items_pri > :nth-child(2)')
         .scrollIntoView()
         .click({force:true})
+    cy.wait('@api_cliente_completo_endereco', { timeout: 40000 })
 }
 
 //Validar e clicar na aba ROTA
@@ -309,9 +326,11 @@ export function clicarAbaRota (selector) {
         .should('be.visible')
         .and('have.text', 'Rotas')
 
+    cy.intercept('GET', '/views/cliente/clienteRotasLista.html').as('api_cliente_completo_rota')
     //Clicar na aba Rota
     cy.get('#menu_items_pri > :nth-child(3)')
         .click()
+    cy.wait('@api_cliente_completo_rota', { timeout: 40000 })
 }
 
 //botão + para adicionar um nova Rota
@@ -572,9 +591,11 @@ export function clicarAbaTelefone (selector) {
         .should('be.visible')
         .and('have.text', 'Telefones')
 
+    cy.intercept('GET', '/services/v3/dados_tabela/tipotelefone').as('api_cliente_completo_telefones')
     //Clicar na aba Telefones
     cy.get('#menu_items_pri > :nth-child(4)')
         .click()
+    cy.wait('@api_cliente_completo_telefones', { timeout: 40000 })
 }
 
 //botão + para adicionar um novo Telefone
@@ -718,4 +739,252 @@ export function messRegistroSalvoSucesso (selector) {
     cy.get('.toast-success > .toast-message')
         .should('be.visible')
         .and('have.text', 'Registro salvo com sucesso!')
+}
+
+//--------
+
+
+//dentro do cadastro de cliente completo, clicar no menu para aparecer as opções dentro do cadastro
+export function clicarMenuCadastroClienteCompleto (selector) {
+
+    cy.get('#menu_click_pri')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    cy.get('#menu_click_pri')
+        .click()
+}
+
+//--------
+
+//Validar e clicar na aba Telefone
+export function clicarAbaAnexo (selector) {
+
+    //Validando aba Telefones
+    cy.get('#menu_mais_pri > :nth-child(4)')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+        //.and('have.text', 'Anexos')
+
+    cy.intercept('GET', '/services/v3/dados_tabela/tipoanexo').as('api_tipoanexo')
+    //Clicar na aba Telefones
+    cy.get('#menu_mais_pri > :nth-child(4)')
+        .click()
+    cy.wait('@api_tipoanexo', { timeout: 40000 })
+}
+
+//validando informações da tela antes de fazer upload do arquivo anexo
+export function validarAbaAnexoVazia (selector) {
+
+    //título "Anexos" quando entramos na aba
+    cy.get('[ng-controller="ListaDeAnexosController"] > :nth-child(1)')
+        .should('be.visible')
+        .and('have.text', 'Anexos')
+
+    //campo Tipo anexo
+    cy.get('#ComboTipoAnexo')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //mensagem "Tipo de anexo" dentro do campo tipo de anexo
+    cy.get('label[for="ComboTipoAnexo"]')
+        .should('have.text', 'Tipo de anexo')    
+
+    //validando botão de anaxar arquivo, desabilitado
+    cy.get('.area-botoes > .md-primary')
+        .should('be.visible')
+        .and('have.attr', 'disabled')   
+
+    //mensagem "Não foi encontrado nenhum registro" quando ainda não há nada
+    cy.get('.text-align-center')
+        .should('be.visible')
+        .and('have.text', 'Não foi encontrado nenhum registro')
+
+    cy.get('.btn')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+        //.and('contain', 'SALVAR')
+}
+
+//selecionando o tipo de anexo que quero colocar
+export function selecionarTipoAnexo (selector) {
+
+    //clicar no campo Tipo de Anexo para abrir as opções
+    cy.get('#ComboTipoAnexo')
+        .click()
+
+    //selecionar a opção de tipo de anexo
+    cy.contains('div.md-text.ng-binding', 'Assinatura do Termo de Adesão do Titular')
+        .click()
+}
+
+//função para anexar arquivo dentro do cadastro de cliente completo
+export function anexarArquivoPFD (selector) {
+
+    const caminhoDoArquivo = 'cypress\fixtures\anexo_cadastro_cliente_completo.pdf';
+
+    //cy.get('#clienteBotaoUploadDeArquivo').selectFile('anexo_cadastro_cliente_completo.pdf')
+    cy.get("[type='file']").selectFile('anexo_cadastro_cliente_completo.pdf', {force:true})
+}
+
+//clicando em SIM na mensagem "Deseja enviar o arquivo selecionado?"
+export function confirmarEnvioArquivo (selector) {
+
+    //mensagem "Deseja enviar o arquivo selecionado?" do modal
+    cy.get('.md-title')
+        .should('be.visible')
+        .and('have.text', 'Deseja enviar o arquivo selecionado?')
+
+    //validando botão NÃO
+    cy.get('.md-cancel-button')
+        .should('be.visible')
+        .and('have.text','Não')
+        .invoke('css', 'Color') // Obtém a cor do elemento
+        .should('equal', 'rgb(65, 12, 224)')
+
+    //validando botão SIM
+    cy.get('.md-confirm-button')
+        .should('be.visible')
+        .and('have.text','Sim')
+        .invoke('css', 'color') // Obtém a cor do elemento
+        .should('equal', 'rgb(65, 12, 224)')
+
+    //clicar no botão SIM
+    cy.get('.md-confirm-button')
+        .click()
+}
+
+//--------
+
+//validar e clicar na aba Referencias
+export function clicarAbaReferencias (selector) {
+
+    //validando nome da aba
+    cy.get('#menu_items_pri > :nth-child(5)')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+        //.and('have.text', 'Referências')
+
+    cy.intercept('GET', '/views/cliente/refEtapaPessoalLista.html').as('api_referencias')
+    //clicar para entrar na aba referencias
+    cy.get('#menu_items_pri > :nth-child(5)')
+        .click()
+    cy.wait('@api_referencias', { timeout: 40000 })
+}
+
+//validar e clicar na aba Bancária, dentro de Referencias
+export function clicarAbaRefBancaria (selector) {
+
+    //validando botão Bancária
+    cy.get('#menu_items_sec > :nth-child(3)')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+        //.and('have.text', 'Bancária')
+
+    cy.intercept('GET', '/views/cliente/refEtapaBancariaLista.html').as('api_ref_bancaria')
+    //clicando botão Bancária
+    cy.get('#menu_items_sec > :nth-child(3)')
+        .click()
+    cy.wait('@api_ref_bancaria', { timeout: 40000 })
+}
+
+//validando informações da tela antes de adicionar qualquer coisa
+export function validarAbaRefBancariaVazia (selector) {
+
+    //validando título quando entramos na aba
+    cy.get('h3')
+        .should('be.visible')
+        .and('have.text', 'Referências / Bancária')
+
+    //validando botão +
+    cy.get('.layout-align-end-end > .md-fab')
+        .should('be.visible')  
+        .and('not.have.attr', 'disabled')
+
+    //mensagem quando não tem nada adicionado na aba
+    cy.get('.text-align-center')
+        .should('be.visible')
+        .and('have.text', 'Não foi encontrado nenhum registro')
+
+    cy.get('.btn')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+        //.and('contain', 'SALVAR')
+}
+
+//clicar no botão + para adicionar uma nova referencia bancária
+export function clicarAddNovaRefBancaria (selector) {
+
+    cy.intercept('GET', '/views/cliente/modalClienteRefBancaria.html').as('api_modal_referencia_bancaria')
+    cy.get('.layout-align-end-end > .md-fab')
+        .click()
+    cy.wait('@api_modal_referencia_bancaria', { timeout: 40000 })
+}
+
+//validar informações do modal Referencia Bancária antes de preencher as informações
+export function modalRefBancariaVazio (selector) {
+
+    //título modal 
+
+    //botão X
+
+    //campo Banco
+
+    //informação campo Banco
+
+    //campo Agencia
+
+    //informação campo Agencia
+
+    //campo Conta
+
+    //informação campo Conta
+
+    //ícone calendário
+
+    //campo Data Abertura
+
+    //informação Data Abertura
+
+    //campo Boleto
+
+    //informação campo Boleto
+
+    //campo Telefone
+
+    //informação campo Telefone
+
+    //campo Gerente
+
+    //informação campo Gerente
+
+    //campo Email
+
+    //informação campo Gerente
+
+    //campo CPF/CNPJ correntista
+
+    //informação campo CPF/CNPJ correntista
+
+    //campo Nome do correntista
+
+    //campo Tipo de conta
+
+    //informação campo Tipo de conta
+
+    //campo Operação
+
+    //nformação Operação
+
+    //campo Forma de pagamento
+
+    //informação Forma de pagamento
+
+    //campo Tipo chave PIX
+
+    //informação campo Tipo chave PIX
+
+    //campo Chave PIX
+
+    //informação campo Chave PIZ
 }

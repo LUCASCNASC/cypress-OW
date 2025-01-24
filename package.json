@@ -19,6 +19,7 @@
     "@types/testing-library__cypress": "^5.0.13",
     "cpf": "^2.0.1",
     "cypress": "^13.16.1",
+    "cypress-file-upload": "^5.0.8",
     "cypress-fill-command": "^1.0.2",
     "cypress-plugin-tab": "^1.0.5",
     "eslint": "^9.9.1",

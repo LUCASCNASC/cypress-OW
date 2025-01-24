@@ -318,3 +318,21 @@ export function composicaoDesteKit (selector) {
         .should('be.visible')
         .and('contain', 'Composição deste KIT')
 }
+
+//escolhendo promoção do produto - uma promoção
+export function selecionarPromoProduto (selector) {
+
+    //botão voltar
+    cy.get('[ng-click="modalSaldo()"] > .ng-binding')
+
+    //título modal promoções
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
+
+    //botão X
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+
+    //botão "NÃO USAR PROMOÇÃO"
+    cy.get('#dialogContent_137 > [style="padding: 0 5px"] > .md-primary')
+
+    
+}

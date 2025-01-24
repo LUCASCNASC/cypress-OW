@@ -218,6 +218,77 @@ export function escolherRecebCheque (selector) {
         .click({force:true})
 }
 
+//escolhendo forma de pagamento 3874 (3874 - T.A. A Receber Futuro - para Prestamista com juros) para aparecer seguro prestamista
+export function escolherRecebFuturoPrestamistaComJuros (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    cy.contains('3874 - T.A. A Receber Futuro - para Prestamista com juros')
+        .scrollIntoView()
+
+    //escolhendo forma de pagamento - 3874
+    cy.contains('3874 - T.A. A Receber Futuro - para Prestamista com juros')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click({force:true})
+}
+
+//escolhendo forma de pagamento 3875 (3875 - T.A.A Receber Presente CDCI - para Prestamista) para aparecer seguro prestamista
+export function escolherRecebPresentePrestamista (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    cy.contains('3875 - T.A.A Receber Presente CDCI - para Prestamista')
+        .scrollIntoView()
+
+    //escolhendo forma de pagamento - 3875
+    cy.contains('3875 - T.A.A Receber Presente CDCI - para Prestamista')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click({force:true})
+}
+
+//escolhendo forma de pagamento 3876 (3876 - T.A. A Receber Futuro - para Prestamista sem juros) para aparecer seguro prestamista
+export function escolherRecebFuturoPrestamistaSemJuros (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    cy.contains('3876 - T.A. A Receber Futuro - para Prestamista sem juros')
+        .scrollIntoView()
+
+    //escolhendo forma de pagamento - 3876
+    cy.contains('3876 - T.A. A Receber Futuro - para Prestamista sem juros')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click({force:true})
+}
+
+//-------------------
+
 //escolhendo parcelas da forma de pagamento escolhida - 2X
 export function escolherDuasParcelaPagamento (selector) {
 
@@ -233,6 +304,20 @@ export function escolherUmaParcelaPagamento (selector) {
 
     //selecionando parcelas - 1X
     cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click({force:true})
+}
+
+//escolhendo parcelas da forma de pagamento escolhida - 4X
+export function escolherQuatroParcelaPagamento (selector) {
+
+    cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding') 
+        .scrollIntoView()
+        .wait(200)
+
+    //selecionando parcelas - 4X
+    cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding')
         .should('be.visible')
         .and('not.be.disabled')
         .click({force:true})
