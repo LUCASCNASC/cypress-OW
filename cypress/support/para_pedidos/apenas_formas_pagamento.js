@@ -218,7 +218,7 @@ export function escolherRecebCheque (selector) {
         .click({force:true})
 }
 
-//escolhendo forma de pagamento 3874 (3874 - T.A. A Receber Futuro - para Prestamista com juros) para aparecer seguro prestamista
+//escolhendo forma de pagamento 3874 (3874 - T.A. A Receber Futuro - para Prestamista) para aparecer seguro prestamista
 export function escolherRecebFuturoPrestamistaComJuros (selector) {
 
     //validando título Forma de pagamento
@@ -231,11 +231,11 @@ export function escolherRecebFuturoPrestamistaComJuros (selector) {
         .should('be.visible')
         .and('not.be.disabled')
 
-    cy.contains('3874 - T.A. A Receber Futuro - para Prestamista com juros')
+    cy.contains('3874 - T.A. A Receber Futuro - para Prestamista')
         .scrollIntoView()
 
     //escolhendo forma de pagamento - 3874
-    cy.contains('3874 - T.A. A Receber Futuro - para Prestamista com juros')
+    cy.contains('3874 - T.A. A Receber Futuro - para Prestamista')
         .should('be.visible')
         .and('not.be.disabled')
         .click({force:true})

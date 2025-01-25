@@ -2,8 +2,8 @@ import { saldodisponivel, clienteComRota, selecionarPromoProduto } from '../../.
 import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, 
          escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, clicarAddProdutoNormalPrimeiro,
          clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
-import  { prdPromoPrazoParcelaPrest, escolherPesquisaProdutoPromoPrazoParcelaPrest, escolherVoltagemProdutoPromoPrazoParcelaPrest, 
-         clicarAddProdutoPromoPrazoParcelaPrest } from '../../../support/para_pedidos_NFe/NFe_prd_promo_prestamista.js';
+import { prdPromoPrazoParcelaPrest, escolherPesquisaProdutoPromoPrazoParcelaPrest, escolherVoltagemProdutoPromoPrazoParcelaPrest, 
+         clicarAddProdutoPromoPrazoParcelaPrest, escolherRecebPromoPrazoFuturoPrest } from '../../../support/para_pedidos_NFe/NFe_prd_promo_prestamista.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados, 
          okSeguroPrestamista } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento,
@@ -190,26 +190,19 @@ describe('Gerar pedidos com serviço Prestamista', () => {
 
     context('Sem entrga / Produtos com promoção - Prestamista com abatimento %', () => {
 
-        it.only('1. Ped venda: produtos 1860 0 0 e 1870 0 0, processo de inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
+        it('7. Ped venda: produto 1918 0 0, processo de inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
             escolherPesquisaProdutoPromoPrazoParcelaPrest()
             escolherVoltagemProdutoPromoPrazoParcelaPrest() //PRODUTO
             selecionarPromoProduto()
-            // clicarAddProdutoPromoPrazoParcelaPrest()
-            // modalServicosVinculados()
-            // okServicosVinculados() //SERVIÇOS
-            // tirarEntrega()
-            // produtoNormalSegundo() //SEGUNDO PRODUTO
-            // saldodisponivel()
-            // escolherProdutoPesquisaNormalSegundo()
-            // escolherVoltagemProdutoNormalSegundo()
-            // clicarAddProdutoNormalSegundo()
-            // modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
-            // okServicosVinculados()
-            // tirarEntregaSegundo()
-            // avancarParaParcelas()
+            escolherRecebPromoPrazoFuturoPrest()
+            clicarAddProdutoPromoPrazoParcelaPrest()
+            modalServicosVinculados()
+            okServicosVinculados() //SERVIÇOS
+            tirarEntrega()
+            avancarParaParcelas()
             // botaoGerarParcelas() //GERAR PARCELAS
             // carregandoFormaPagamento()
             // escolherRecebFuturoPrestamistaComJuros()

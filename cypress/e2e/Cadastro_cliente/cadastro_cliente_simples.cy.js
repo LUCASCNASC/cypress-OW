@@ -1,8 +1,7 @@
 import { iconeMenuOpcoes, opcaoClienteSimples, salvarClienteSimples, preencherNomeCompletoCPF, preencherNomeCompletoCNPJ, inserirPesquisarCEP, 
          preencherDataNascimento, inserirNumeroEndereco, arrastarPessoaJuridica, sexoPessoaFisica, cadastroRotaCliente, 
          mensagemPrimeiroRegistSalvoSucesso, prencherCPFcliente, preencherCNPJcliente, logarNovamente, clicarSairSistema, desejoVisualizarCadastro } from '../../support/para_cadastro_cliente/para_cliente_simples';
-import gerarCpf from '../../support/gerarCPF';
-import gerarCNPJ from '../../support/gerarCNPJ';
+import { gerarCpf, gerarCNPJ } from '../../support/gerarDados';
 
 const cpf = gerarCpf(); // Gera um CPF válido
 const cnpj = gerarCNPJ(); // Gera um CNPJ válido
@@ -25,7 +24,7 @@ describe('Cadastrar cliente simples', () => {
   
     context('Cadastro de cliente simples', () => {
 
-        it('Cliente simples CPF', () => {
+        it.only('Cliente simples CPF', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()

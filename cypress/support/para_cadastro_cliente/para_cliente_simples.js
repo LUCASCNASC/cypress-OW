@@ -1,5 +1,4 @@
-import gerarCpf from '../../support/gerarCPF';
-import gerarCNPJ from '../../support/gerarCNPJ';
+import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa }  from '../gerarDados';
 
 const cpf = gerarCpf(); // Gera um CPF válido
 const cnpj = gerarCNPJ(); // Gera um CNPJ válido
@@ -79,7 +78,7 @@ export function preencherCNPJcliente (selector) {
 //Campo Nome completo - cliente CPF
 export function preencherNomeCompletoCPF (selector) {
 
-    const nomeClienteCPF = "Novo cadastro cliente CPF"
+    const nomeCompleto = gerarNomeAleatorio();
 
     //Campo Nome Completo - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="txtNomeCompleto"]')
@@ -89,13 +88,13 @@ export function preencherNomeCompletoCPF (selector) {
     cy.get('#txtNomeCompleto')
         .should('be.visible')
         .and('have.value','')
-        .type(nomeClienteCPF, {force: true})
+        .type(nomeCompleto, {force: true})
 }
 
 //Campo Nome completo - cliente CNPJ
 export function preencherNomeCompletoCNPJ (selector) {
 
-    const nomeClienteCNPJ = "Novo cadastro cliente CNPJ"
+    const nomeCompletoEmpresa = gerarNomeEmpresa();
 
     //Campo CNPJ - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="txtNomeCompleto"]')
@@ -106,7 +105,7 @@ export function preencherNomeCompletoCNPJ (selector) {
         .should('be.visible')
         .and('have.value','')
         .wait(200)
-        .type(nomeClienteCNPJ, { force: true })
+        .type(nomeCompletoEmpresa, { force: true })
 }
 
 //Campo CEP - inserir e pesquisar

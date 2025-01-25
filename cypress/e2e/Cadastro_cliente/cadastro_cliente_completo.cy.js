@@ -8,7 +8,11 @@ import { iconeMenuOpcoes, opcaoClienteCompleto, preecherDataNascimento, selecion
          preencherRamalTelefone, clicarSalvarTelefone, infosTelefoneAdicionado, modalAguardeCarregando, messRegistroSalvoSucesso, 
          cardEnderecoVazioValidar, clicarMenuCadastroClienteCompleto, clicarAbaAnexo, validarAbaAnexoVazia, selecionarTipoAnexo,
          anexarArquivoPFD, confirmarEnvioArquivo, preencherNomeSocial, clicarAbaReferencias, clicarAbaRefBancaria, validarAbaRefBancariaVazia, 
-         clicarAddNovaRefBancaria} from '../../support/para_cadastro_cliente/para_cliente_completo.js';
+         clicarAddNovaRefBancaria, modalRefBancariaVazio, selectBancoRefBancaria, selectAgenciaRefBancaria, selectContaRefBancaria, 
+         selectDataAberturaRefBancaria, selectBoletoRefBancaria, selectTelefoneRefBancaria,selectGerenteRefBancaria, selectEmailRefBancaria, 
+         selectCPFCorrentistaRefBancaria, selectNomeCorrentistaRefBancaria, selectTipoContaRefBancaria, selectOperacaoRefBancaria, 
+         selectFormaPagamentoRefBancaria, selectTipoChavePixTelefoneRefBancaria, selectChavePixTefefoneRefBancaria, clicarSalvarRefBancaria,
+         messReferenciaBancariaIncluidaSucesso, infosReferenciaBancariaAdicionada } from '../../support/para_cadastro_cliente/para_cliente_completo.js';
 
 
 describe('Cadastrar cliente completo', () => {
@@ -206,7 +210,7 @@ describe('Cadastrar cliente completo', () => {
 
     context('Cadastro de cliente completo - incluindo anexo', () => {
 
-        it.skip('Cliente completo CPF - caminho feliz', () => {
+        it('Cliente completo CPF - caminho feliz', () => {
 
             iconeMenuOpcoes()
             opcaoClienteCompleto()
@@ -281,7 +285,7 @@ describe('Cadastrar cliente completo', () => {
     context('Cadastro de cliente completo - incluindo referencia bancária', () => {
 
 
-        it.only('Cliente completo CPF - caminho feliz', () => {
+        it('Cliente completo CPF - caminho feliz', () => {
 
             iconeMenuOpcoes()
             opcaoClienteCompleto()
@@ -338,12 +342,31 @@ describe('Cadastrar cliente completo', () => {
             clicarAbaRefBancaria() //aba Bancaria, dentro de Referencias
             validarAbaRefBancariaVazia()
             clicarAddNovaRefBancaria()
-
-
-            // clicarSalvarCliente()
-            // cy.wait(2000)
-            // modalAguardeCarregando()
-            // messRegistroSalvoSucesso()
+            cy.wait(2000)
+            modalRefBancariaVazio()
+            selectBancoRefBancaria() //preencher campo BANCO
+            selectAgenciaRefBancaria()
+            selectContaRefBancaria()
+            selectDataAberturaRefBancaria()
+            //selectBoletoRefBancaria()
+            selectTelefoneRefBancaria()
+            selectGerenteRefBancaria()
+            selectEmailRefBancaria()
+            selectCPFCorrentistaRefBancaria()
+            selectNomeCorrentistaRefBancaria()
+            selectTipoContaRefBancaria()
+            selectOperacaoRefBancaria()
+            selectFormaPagamentoRefBancaria()
+            selectTipoChavePixTelefoneRefBancaria()
+            selectChavePixTefefoneRefBancaria()
+            clicarSalvarRefBancaria()
+            messReferenciaBancariaIncluidaSucesso()
+            infosReferenciaBancariaAdicionada()
+            clicarSalvarCliente()
+            cy.wait(2000)
+            modalAguardeCarregando()
+            cy.wait(2000)
+            messRegistroSalvoSucesso()
         })  
     })
 

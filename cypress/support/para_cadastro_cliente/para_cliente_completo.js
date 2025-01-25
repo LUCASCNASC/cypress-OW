@@ -1,5 +1,6 @@
-import gerarCpf from '../../support/gerarCPF';
-import gerarCNPJ from '../../support/gerarCNPJ';
+import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../gerarDados';
+import { gerarChavePixTelefone } from '../gerarDadosPIX'
+
 
 //Validar e preencher campo CPF
 export function preencherCPFcliente (selector) {
@@ -106,7 +107,7 @@ export function selecionarSexoCliente (selector) {
 //Validar e prencher campo Nome Completo - CPF
 export function preencherNomeCompleto (selector) {
 
-    const nomeClienteCPF = "Novo cadastro cliente CPF"
+    const NomeCompleto = gerarNomeAleatorio();
 
     //Campo Nome - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="txtRazaoSocial"]')
@@ -116,13 +117,13 @@ export function preencherNomeCompleto (selector) {
     cy.get('#txtRazaoSocial')
         .should('be.visible')
         .and('have.value','')
-        .type(nomeClienteCPF, {force: true})
+        .type(NomeCompleto)
 }
 
 //Validar e prencher campo Nome Social - CPF
 export function preencherNomeSocial (selector) {
 
-    const nomeClienteCPF = "Novo cadastro CPF"
+    const NomeSocial = gerarNomeAleatorio();
 
     //Campo Nome - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="txtNomeFantasia"]')
@@ -132,23 +133,27 @@ export function preencherNomeSocial (selector) {
     cy.get('#txtNomeFantasia')
         .should('be.visible')
         .and('have.value','')
-        .type(nomeClienteCPF, {force: true})
+        .type(NomeSocial)
 }
 
 //Validar e prencher campo Nome CNPJ - CPF
 export function preencherNomeCNPJ (selector) {
 
-    const nomeClienteCNPJ = "Novo cadastro cliente CNPJ"
+    const razaoSocial = gerarNomeEmpresa();
+
+    //clicar em algo aleatorio para carregar campo razao social
+    cy.get('#txtRazaoSocial')
+        .click()
 
     //Campo Nome - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="txtRazaoSocial"]')
-        .should('have.text', 'Nome') 
+        .should('have.text', 'Razão Social') 
 
     //Campo Nome Completo
     cy.get('#txtRazaoSocial')
         .should('be.visible')
         .and('have.value','')
-        .type(nomeClienteCNPJ, {force: true})
+        .type(razaoSocial, {force: true})
 }
 
 //Validar e prencher campo Nome Fantasia - CPF
@@ -673,7 +678,7 @@ export function escolherTipoTelefone (selector) {
 //preencher campo Numero, no cadastro de telefone
 export function preencherNumeroTelefone (selector) {
 
-    const numero_telefone = "4495787847"
+    const numero_telefone = gerarTelefoneAleatorio();
 
     //Card Telefone - preencher campo número
     cy.get('#txtNumTel')
@@ -710,7 +715,7 @@ export function infosTelefoneAdicionado (selector) {
     cy.get('.md-whiteframe-2dp')
         .should('be.visible')
         .and('contain', 'Padrão')
-        .and('contain', '(44) 9578-7847')
+        .and('contain', '(44)')
         .and('contain', '435')
 }
 
@@ -921,70 +926,376 @@ export function clicarAddNovaRefBancaria (selector) {
     cy.wait('@api_modal_referencia_bancaria', { timeout: 40000 })
 }
 
+//--------------- REFERENCIAS - REFERENCIA BANCÁRIA -------
+
 //validar informações do modal Referencia Bancária antes de preencher as informações
 export function modalRefBancariaVazio (selector) {
 
     //título modal 
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Referência bancária')
 
     //botão X
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
 
     //campo Banco
+    cy.get('#txtBancoRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo Banco
+    cy.get('label[for="txtBancoRefBanc"]')
+        .should('have.text', 'Banco')
 
     //campo Agencia
+    cy.get('#txtAgenciaRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo Agencia
+    cy.get('label[for="txtAgenciaRefBanc"]')
+        .should('have.text', 'Agência')
 
     //campo Conta
+    cy.get('#txtContaRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo Conta
+    cy.get('label[for="txtContaRefBanc"]')
+        .should('have.text', 'Conta')
 
     //ícone calendário
+    cy.get('.md-datepicker-button')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
 
     //campo Data Abertura
+    cy.get('input.md-datepicker-input.md-input')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação Data Abertura
+    // cy.get('div[class="md-datepicker-input-container"]')
+    //     .should('have.text', 'Data Abertura')
 
     //campo Boleto
-
+    cy.get('#txtBoletoRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
+        
     //informação campo Boleto
+    cy.get('label[for="txtBoletoRefBanc"]')
+        .should('have.text', 'Boleto')
 
     //campo Telefone
+    cy.get('#txtTelefoneRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo Telefone
+    cy.get('label[for="txtTelefoneRefBanc"]')
+        .should('have.text', 'Telefone')
 
     //campo Gerente
+    cy.get('#txtGerente')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo Gerente
+    cy.get('label[for="txtGerente"]')
+        .should('have.text', 'Gerente')
 
     //campo Email
+    cy.get('#txtEmailRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo Gerente
+    cy.get('label[for="txtEmailRefBanc"]')
+        .should('have.text', 'Email')
 
     //campo CPF/CNPJ correntista
+    cy.get('#txtCpfCnpjRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo CPF/CNPJ correntista
+    cy.get('label[for="txtCpfCnpjRefBanc"]')
+        .should('have.text', 'CPF/CNPJ correntista')
 
     //campo Nome do correntista
+    cy.get('#txtNmCorrentRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
+
+    //informação do campo Nome do correntista
+    cy.get('label[for="txtNmCorrentRefBanc"]')
+        .should('have.text', 'Nome do correntista')
 
     //campo Tipo de conta
+    cy.get('#txtTpContaRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo Tipo de conta
+    cy.get('label[for="txtTpContaRefBanc"]')
+        .should('have.text', 'Tipo de conta')
 
     //campo Operação
+    cy.get('#txtOperacaoRefBanc')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //nformação Operação
+    cy.get('label[for="txtOperacaoRefBanc"]')
+        .should('have.text', 'Operação')
 
     //campo Forma de pagamento
+    cy.get('#txtFrmPag')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação Forma de pagamento
+    cy.get('label[for="txtFrmPag"]')
+        .should('have.text', 'Forma de pagamento')
 
     //campo Tipo chave PIX
+    cy.get('#txtIdTipoChavePix')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
     //informação campo Tipo chave PIX
+    cy.get('label[for="txtIdTipoChavePix"]')
+        .should('have.text', 'Tipo chave PIX')
 
     //campo Chave PIX
+    cy.get('#txtChavePix')
+        .should('be.visible')
+        .and('have.value', '')
+        .and('not.have.attr', 'disabled')
 
-    //informação campo Chave PIZ
+    //informação campo Chave PIX
+    cy.get('label[for="txtChavePix"]')
+        .should('have.text', 'Chave PIX')
+
+    //validar botão SALVAR, desabilitado
+    cy.get('#btnModalAddRefPessoal')
+        //.should('be.visible')
+        .should('have.attr', 'disabled')
+}
+
+//referencia bancaria - escolher banco
+export function selectBancoRefBancaria (selector) {
+
+    //clicar para abrir as opções
+    cy.get('#txtBancoRefBanc')
+        .click()
+    
+    //selecionar a primeira opção 
+    cy.contains('aaa')
+        .click()
+}
+
+//referencia bancaria - escolher Agencia
+export function selectAgenciaRefBancaria (selector) {
+
+    //clicar para abrir as opções
+    cy.get('#txtAgenciaRefBanc')
+        .type('341')
+}
+
+//referencia bancaria - escolher Conta
+export function selectContaRefBancaria (selector) {
+
+    //clicar para abrir as opções
+    cy.get('#txtContaRefBanc')
+        .type('12345-1')
+}
+
+//referencia bancaria - escolher Data Abertura
+export function selectDataAberturaRefBancaria (selector) {
+
+    //clicar para abrir as opções
+    cy.get('input.md-datepicker-input.md-input')
+        .type('30/09/2024')
+}
+
+//referencia bancaria - escolher Boleto
+export function selectBoletoRefBancaria (selector) {
+
+    //clicar para abrir as opções
+    cy.get('#txtBoletoRefBanc')
+        .click()
+
+    //selecionar "Sim"
+    cy.contains('Sim')
+        .click({force:true})
+}
+
+//referencia bancaria - escolher Telefone
+export function selectTelefoneRefBancaria (selector) {
+
+    const numero_telefone = gerarTelefoneAleatorio();
+
+    //clicar para abrir as opções
+    cy.get('#txtTelefoneRefBanc')
+        .type(numero_telefone)
+}
+
+//referencia bancaria - escolher Gerente
+export function selectGerenteRefBancaria (selector) {
+
+    const NomeGerente = gerarNomeAleatorio(); // Gera um CPF válido
+
+    //clicar para abrir as opções
+    cy.get('#txtGerente')
+        .type(NomeGerente)
+}
+
+//referencia bancaria - escolher Email
+export function selectEmailRefBancaria (selector) {
+
+    const emailAleatorio = gerarEmailAleatorio();
+
+    //clicar para abrir as opções
+    cy.get('#txtEmailRefBanc')
+        .type(emailAleatorio)
+}
+
+//referencia bancaria - escolher CPF/CNPJ correntista
+export function selectCPFCorrentistaRefBancaria (select) {
+
+    const cpf = gerarCpf(); // Gera um CPF válido
+
+    //Campo CPF 
+    cy.get('#txtCpfCnpjRefBanc')
+        .should('be.visible')
+        .type(cpf, {force: true})
+}
+
+//referencia bancaria - escolher Nome do correntista
+export function selectNomeCorrentistaRefBancaria (selector) {
+
+    const NomeCorrentista = gerarNomeAleatorio(); 
+
+    //clicar para abrir as opções
+    cy.get('#txtNmCorrentRefBanc')
+        .type(NomeCorrentista)
+}
+
+//referencia bancaria - escolher Tipo de conta
+export function selectTipoContaRefBancaria (selector) {
+
+    //abrir opções de tipo de conta
+    cy.get('#txtTpContaRefBanc')
+        .click()
+
+    //clicar para selecionar uma conta corrente
+    cy.contains('div.md-text.ng-binding', 'Conta Corrente').click()
+        .click({force:true})
+}
+
+//referencia bancaria - escolher Operação
+export function selectOperacaoRefBancaria (selector) {
+
+    //inserir Operação
+    cy.get('#txtOperacaoRefBanc')
+        .type('1')
+}
+
+//referencia bancaria - escolher Forma de pagamento
+export function selectFormaPagamentoRefBancaria (selector) {
+
+    //clicar para abrir opções de forma de pagamento
+    cy.get('#txtFrmPag')
+        .click()
+
+    //clicar na opção PIX
+    cy.contains('div.md-text.ng-binding', 'PIX')
+        .click()
+}
+
+//referencia bancaria - escolher Tipo chave PIX
+export function selectTipoChavePixTelefoneRefBancaria (selector) {
+
+    //clicar para abrir opções de Tipo chave PIX
+    cy.get('#txtIdTipoChavePix')
+        .click()
+
+    //clicar na opção Telefone
+    cy.contains('div.md-text.ng-binding', 'Telefone')
+        .click()
+}
+
+//referencia bancaria - escolher Chave PIX
+export function selectChavePixTefefoneRefBancaria (selector) {
+
+    const chave_pix_telefone = gerarChavePixTelefone();
+
+    //inserir chave PIX
+    cy.get('#txtChavePix')
+        .type(chave_pix_telefone)
+}
+
+//clicar para salvar Referencia Bancaria
+export function clicarSalvarRefBancaria (selector) {
+
+    cy.contains('button', 'Salvar')
+        .should('be.visible')
+
+    //validando botão salvar habilitado
+    cy.get('#btnModalAddRefPessoal')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled') 
+
+    //clicar no botão SALVAR
+    cy.get('#btnModalAddRefPessoal')   
+        .click()
+}
+
+// validando mensagem Referencia Bancária incluída com sucesso Incluído com sucesso, após incluírmos a Referencia Bancária
+export function messReferenciaBancariaIncluidaSucesso (selector) {
+
+    //Card Endereço incluído com sucesso.
+    cy.get('.toast-success')
+        .should('be.visible')
+
+    //Card Endereço incluído com sucesso. - Aviso
+    cy.get('.toast-success > .toast-title')
+        .should('be.visible')
+        .and('have.text', 'Aviso')
+
+    //Card Endereço incluído com sucesso. - Endereço incluído com sucesso.
+    cy.get('.toast-success > .toast-message')
+        .should('be.visible')
+        .and('have.text', 'Referência Bancária incluída com sucesso.')
+}
+
+//validando informações que foram adicionadas no cadastro de referencia bancária
+export function infosReferenciaBancariaAdicionada (selector) {
+
+    //Card de endereço adicionado
+    cy.get('.md-whiteframe-2dp')
+        .should('be.visible')
+        .and('contain', 'aaa')
+        .and('contain', 'Agencia:')
+        .and('contain', 'Conta:')
 }

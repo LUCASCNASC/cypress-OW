@@ -104,6 +104,13 @@ export function escolherVoltagemProdutoPromoPrazoParcelaPrest (selector) {
         .and('contain', 'Saldo Local:')
         .and('contain', 'Saldo Depósito:')
 
+    //selo de promoção, dentro do card de voltagem
+    cy.get('.md-secondary-container > div > .ng-scope')
+        .should('be.visible')
+        .and('include.text', 'PROMOÇÃO')
+        .should('have.css', 'background-color', 'rgb(255, 0, 0)')
+        .should('have.css', 'color', 'rgb(255, 255, 255)')
+
     //Card de voltagem - clicar
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
@@ -129,4 +136,29 @@ export function clicarAddProdutoPromoPrazoParcelaPrest (selector) {
         .click({force:true})
 
     cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
+
+//---------------
+
+//selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
+export function escolherRecebPromoPrazoFuturoPrest (selector) {
+
+    //botão voltar
+    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //título modal formas de pagamento
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('contain', 'Formas de pagamento')
+
+    //botão X
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //forma de pagamento da promoção
+    cy.get('button[aria-label="3874 - T.A. A Receber Futuro - para Prestamista   Futuro"]')
+        .click()
 }
