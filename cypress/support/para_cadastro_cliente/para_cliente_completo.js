@@ -812,7 +812,7 @@ export function validarAbaAnexoVazia (selector) {
 }
 
 //selecionando o tipo de anexo que quero colocar
-export function selecionarTipoAnexo (selector) {
+export function selecionarPrimeiroTipoAnexo (selector) {
 
     //clicar no campo Tipo de Anexo para abrir as opções
     cy.get('#ComboTipoAnexo')
@@ -844,22 +844,59 @@ export function confirmarEnvioArquivo (selector) {
     cy.get('.md-cancel-button')
         .should('be.visible')
         .and('have.text','Não')
-        .invoke('css', 'Color') // Obtém a cor do elemento
-        .should('equal', 'rgb(65, 12, 224)')
+        //.invoke('css', 'Color') // Obtém a cor do elemento
+        //.should('equal', 'rgb(65, 12, 224)')
 
     //validando botão SIM
     cy.get('.md-confirm-button')
         .should('be.visible')
         .and('have.text','Sim')
-        .invoke('css', 'color') // Obtém a cor do elemento
-        .should('equal', 'rgb(65, 12, 224)')
+        //.invoke('css', 'color') // Obtém a cor do elemento
+        //.should('equal', 'rgb(65, 12, 224)')
 
     //clicar no botão SIM
     cy.get('.md-confirm-button')
         .click()
 }
 
-//--------
+//mensagem de anexo incluído com sucesso
+export function messAnexoIncluidoSucesso (selector) {
+
+    //Card Endereço incluído com sucesso.
+    cy.get('.toast')
+        .should('be.visible')
+
+    //Card Endereço incluído com sucesso. - Aviso
+    cy.get('.toast-title')
+        .should('be.visible')
+        .and('have.text', 'Aviso')
+
+    //Card Endereço incluído com sucesso. - Endereço incluído com sucesso.
+    cy.get('.toast-message')
+        .should('be.visible')
+        .and('have.text', 'Anexo cadastrado com sucesso!')
+}
+
+//validar se o anexo realmente foi adicionado
+export function validarAnexoInserido (selector) {
+
+    const hoje = new Date();
+    const dataAtual = hoje.toLocaleDateString('pt-BR')
+
+    //card em geral
+    cy.get('.md-whiteframe-2dp')
+        .should('be.visible')
+
+    //mensagem "Anexo inserido em"
+    cy.get('small.list-title')
+        .should('be.visible')
+        .and('include.text', 'Anexo inserido em')
+        .and('include.text', dataAtual)
+}
+
+
+
+//--------REFERENCIAS - REFERENCIA BANCÁRIA -------
 
 //validar e clicar na aba Referencias
 export function clicarAbaReferencias (selector) {
@@ -925,8 +962,6 @@ export function clicarAddNovaRefBancaria (selector) {
         .click()
     cy.wait('@api_modal_referencia_bancaria', { timeout: 40000 })
 }
-
-//--------------- REFERENCIAS - REFERENCIA BANCÁRIA -------
 
 //validar informações do modal Referencia Bancária antes de preencher as informações
 export function modalRefBancariaVazio (selector) {

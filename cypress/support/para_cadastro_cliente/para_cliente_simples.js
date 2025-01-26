@@ -1,7 +1,7 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa }  from '../gerarDados';
+import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa }  from '../gerarDados';
 
-const cpf = gerarCpf(); // Gera um CPF válido
-const cnpj = gerarCNPJ(); // Gera um CNPJ válido
+//const cpf = gerarCpf(); // Gera um CPF válido
+//const cnpj = gerarCNPJ(); // Gera um CNPJ válido
 
 //Menu de opções
 export function iconeMenuOpcoes (selector) {
@@ -155,7 +155,7 @@ export function inserirNumeroEndereco (selector) {
 export function preencherDataNascimento (selector) {
 
     //Ícone de data de nascimento
-    cy.get('.date-picker.flex-md-100 > .validaData > .md-datepicker-button')
+    cy.get(':nth-child(3) > .layout-xs-column > .md-block > .validaData > .md-datepicker-button')
         .should('be.visible')
         .and('not.have.attr', 'disabled')
 

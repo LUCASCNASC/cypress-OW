@@ -6,7 +6,8 @@ import { iconeMenuOpcoes, opcaoClienteCompleto, preecherDataNascimento, selecion
          preencherCampoCEPEndereco, preencherCampoNumeroEndereco, preencherRotaCompleta, messRotaIncluidaSucesso, infosRotaAdicionada,
          clicarAbaTelefone, clicarAdicionarNovoTelefone, modalTelefoneVazioValidar, escolherTipoTelefone, preencherNumeroTelefone,
          preencherRamalTelefone, clicarSalvarTelefone, infosTelefoneAdicionado, modalAguardeCarregando, messRegistroSalvoSucesso, 
-         cardEnderecoVazioValidar, clicarMenuCadastroClienteCompleto, clicarAbaAnexo, validarAbaAnexoVazia, selecionarTipoAnexo,
+         cardEnderecoVazioValidar, clicarMenuCadastroClienteCompleto, clicarAbaAnexo, validarAbaAnexoVazia, selecionarPrimeiroTipoAnexo,
+         messAnexoIncluidoSucesso, validarAnexoInserido, 
          anexarArquivoPFD, confirmarEnvioArquivo, preencherNomeSocial, clicarAbaReferencias, clicarAbaRefBancaria, validarAbaRefBancariaVazia, 
          clicarAddNovaRefBancaria, modalRefBancariaVazio, selectBancoRefBancaria, selectAgenciaRefBancaria, selectContaRefBancaria, 
          selectDataAberturaRefBancaria, selectBoletoRefBancaria, selectTelefoneRefBancaria,selectGerenteRefBancaria, selectEmailRefBancaria, 
@@ -208,7 +209,7 @@ describe('Cadastrar cliente completo', () => {
         }) 
     })
 
-    context('Cadastro de cliente completo - incluindo anexo', () => {
+    context('Cadastro de cliente completo - incluindo anexo após salvar o cadastro de cliente', () => {
 
         it('Cliente completo CPF - caminho feliz', () => {
 
@@ -262,23 +263,25 @@ describe('Cadastrar cliente completo', () => {
             cy.wait(4000)
 
             messTelefoneIncluidoSucesso()
+            clicarSalvarCliente()
+            cy.wait(2000)
+            modalAguardeCarregando()
+            messRegistroSalvoSucesso()
+            cy.wait(2000)
 
             clicarMenuCadastroClienteCompleto()
-
             clicarAbaAnexo()
             validarAbaAnexoVazia()
-            selecionarTipoAnexo()
+            selecionarPrimeiroTipoAnexo()
             cy.wait(500)
             anexarArquivoPFD()
             confirmarEnvioArquivo()
-
-            //não está anexando
-
-
-            // clicarSalvarCliente()
-            // cy.wait(2000)
-            // modalAguardeCarregando()
-            // messRegistroSalvoSucesso()
+            cy.wait(1000)
+            messAnexoIncluidoSucesso()
+            validarAnexoInserido()
+            clicarSalvarClienteCompleto()
+            cy.wait(3000)
+            messRegistroSalvoSucesso()
         })
     })
 
@@ -368,6 +371,8 @@ describe('Cadastrar cliente completo', () => {
             cy.wait(2000)
             messRegistroSalvoSucesso()
         })  
+
+        
     })
 
 })
