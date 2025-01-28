@@ -3,7 +3,7 @@ export function avancarParaParcelas (selector) {
 
     cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento')
 
-    cy.wait(500)
+    //cy.wait(500)
 
     cy.get('.flex-gt-sm-50 > .md-primary')
         .scrollIntoView()

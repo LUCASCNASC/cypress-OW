@@ -320,7 +320,12 @@ export function escolherQuatroParcelaPagamento (selector) {
     cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding')
         .should('be.visible')
         .and('not.be.disabled')
+
+    cy.intercept('GET', '/views/carrinho/modalSeguroPrestamista.html').as('api_modal_seguro_prestamista')
+    //selecionando parcelas - 4X
+    cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding')
         .click({force:true})
+    cy.wait('@api_modal_seguro_prestamista', { timeout: 40000 })
 }
 
 //Carregamento de forma de pagamento, quando clicamos no botão Gerar parcelas

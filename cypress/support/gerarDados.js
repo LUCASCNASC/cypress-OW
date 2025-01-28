@@ -94,6 +94,38 @@ function gerarTelefoneAleatorio() {
   // Formatar o número no formato (44) 9XXXX-XXXX
   return `(${ddd}) ${celular.slice(0, 5)}-${celular.slice(5)}`;
 }
+
+function gerarRelacionamento(pessoa1, pessoa2) {
+  
+  const tiposRelacionamento = [
+    "amigo", "namorada", "namorado", "esposa", "esposo", "mãe","pai", 
+    "irmão",  "irmã", "tia", "tio","avó",  "parente", "colega de trabalho", 
+    "ex-namorado(a)", "mentor(a)", "inimigos"
+  ];
+
+  // Seleciona um tipo de relacionamento aleatório
+  return tiposRelacionamento[Math.floor(Math.random() * tiposRelacionamento.length)];
+}
+
+function gerarObservação() {
+  const palavras = [
+    "amor", "vida", "felicidade", "sucesso", "trabalho", "amizade", "vontade", 
+    "carinho", "força", "esperança", "paz", "sabedoria", "confiança", "saúde", 
+    "alegria", "crescimento", "desafio", "sonhos", "coragem", "motivação", "Corinthians",
+    "Futebol"
+  ];
+
+  let frase = "";
+  
+  // Gera a frase até atingir 30 caracteres
+  while (frase.length < 30) {
+    const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)];
+    frase += palavraAleatoria + " ";
+  }
+  
+  // Ajusta o comprimento para 30 caracteres exatos
+  return frase.trim().slice(0, 30);
+}
   
   
-export { gerarCpf, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa }; 
+export { gerarCpf, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa, gerarRelacionamento, gerarObservação }; 

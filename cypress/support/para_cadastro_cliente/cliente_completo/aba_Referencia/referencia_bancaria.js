@@ -1,24 +1,10 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../../gerarDados';
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../gerarDadosPIX'
+import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../../../gerarDados';
+import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../gerarDadosPIX'
 
 
 //--------REFERENCIAS - REFERENCIA BANCÁRIA -------
 
-//validar e clicar na aba Referencias
-export function clicarAbaReferencias (selector) {
 
-    //validando nome da aba
-    cy.get('#menu_items_pri > :nth-child(5)')
-        .should('be.visible')
-        .and('not.have.attr', 'disabled')
-        //.and('have.text', 'Referências')
-
-    cy.intercept('GET', '/views/cliente/refEtapaPessoalLista.html').as('api_referencias')
-    //clicar para entrar na aba referencias
-    cy.get('#menu_items_pri > :nth-child(5)')
-        .click()
-    cy.wait('@api_referencias', { timeout: 40000 })
-}
 
 //validar e clicar na aba Bancária, dentro de Referencias
 export function clicarAbaRefBancaria (selector) {
@@ -589,8 +575,120 @@ export function messRefBancariaChavePixAletoriaInvalida (selector) {
 }
 
 
+//--------REFERENCIAS - REFERENCIA PESSOAL -------
 
+//validar e clicar na aba Bancária, dentro de Referencias
+export function clicarAbaRefPessoal (selector) {
 
+    //validando botão Pessoal
+    cy.get('#menu_items_sec > .on')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+        //.and('have.text', 'Bancária')
+
+    cy.intercept('GET', '/views/cliente/refEtapaPessoalLista.html').as('api_ref_pessoal')
+    //clicando botão Pessoal
+    cy.get('#menu_items_sec > :nth-child(3)')
+        .click()
+    cy.wait('@api_ref_pessoal', { timeout: 40000 })
+}
+
+//validando informações da tela antes de adicionar qualquer coisa - aba referencia Pessoal
+export function validarAbaRefPessoalVazia (selector) {
+
+    //validando título quando entramos na aba Pessoal
+    cy.get('h3')
+        .should('be.visible')
+        .and('have.text', 'Referências / Pessoal')
+
+    //validando botão + 
+    cy.get('.layout-align-end-end > .md-fab')
+        .should('be.visible')  
+        .and('not.have.attr', 'disabled')
+
+    //mensagem quando não tem nada adicionado na aba Pessoal
+    cy.get('.text-align-center')
+        .should('be.visible')
+        .and('have.text', 'Não foi encontrado nenhum registro')
+
+    cy.get('.btn')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+        //.and('contain', 'SALVAR')
+}
+
+//clicar no botão + para adicionar uma nova referencia pessoal
+export function clicarAddNovaRefPessoal (selector) {
+
+    cy.intercept('GET', '/views/cliente/modalClienteRefPessoal.html').as('api_modal_referencia_pessoal')
+    cy.get('.layout-align-end-end > .md-fab')
+        .click()
+    cy.wait('@api_modal_referencia_pessoal', { timeout: 40000 })
+}
+
+//validar informações do modal Referencia Pessoal antes de preencher as informações
+export function modalRefPessoalVazio (selector) {
+
+    //título modal 
+    cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Referência bancária')
+
+    //botão X
+    cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //campo Nome
+    cy.get('#txtNomeRefPes')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //informação campo Nome
+    cy.get('label[for="txtNomeRefPes"]')
+        .should('have.text', 'Nome')
+
+    //campo Email
+    cy.get('#txtEmailRefPes')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //informação campo Email
+    cy.get('label[for="txtEmailRefPes"]')
+        .should('have.text', 'Email')
+
+    //campo Telefone
+    cy.get('#txtTelefoneRefPes')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //informação campo Telefone
+    cy.get('label[for="txtTelefoneRefPes"]')
+        .should('have.text', 'Telefone')
+
+    //campo Relacionamento
+    cy.get('#txtRelacionamentoRefPes')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //informação campo Relacionamento
+    cy.get('label[for="txtRelacionamentoRefPes"]')
+        .should('have.text', 'Relacionamento')
+
+    //campo Data inclusão
+    cy.get('#txtDtInclusaoRefPes')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //informação Data inclusão
+    cy.get('label[for="txtDtInclusaoRefPes"]')
+        .should('have.text', 'Data inclusão')
+    
+    //validar botão SALVAR, desabilitado
+    cy.get('#btnModalAddRefPessoal')
+        //.should('be.visible')
+        .should('have.attr', 'disabled')
+}
 
 
 

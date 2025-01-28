@@ -319,8 +319,8 @@ export function composicaoDesteKit (selector) {
         .and('contain', 'Composição deste KIT')
 }
 
-//escolhendo promoção do produto - uma promoção
-export function selecionarPromoProduto (selector) {
+//escolhendo a primeira promoção do produto - uma promoção
+export function selecionarPrimeiraPromoProduto (selector) {
 
     //botão voltar
     cy.get('[ng-click="modalSaldo()"] > .ng-binding')
@@ -352,3 +352,41 @@ export function selecionarPromoProduto (selector) {
         .click()
 }
 
+//clicar no botão editar parcelas da forma de pagamento - quando já temos uma forma de pagamento escolhida
+export function clicarEditarParcelas (selector) {
+
+    //ícone lápis para edição de parcelas da forma de pagamento
+    cy.get('.btn-remove-item-list > :nth-child(3) > .md-raised')
+        .click({force:true})
+}
+
+//validar adição do serviço prestamista, após clicarmos para adicionar
+export function ticketPrestamistaAdicionado (selector) {
+
+    //ticket inteiro
+    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul')
+        .should('be.visible')
+
+    //nome do serviço prestamista
+    cy.get('ul > :nth-child(1) > .ng-binding')
+        .should('be.visible')
+
+    //cifrão do valor do prestamista
+    cy.get('ul > :nth-child(1) > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //"Vendedor"
+    cy.get(':nth-child(2) > b') 
+        .should('be.visible')
+        .and('have.text', 'Vendedor:')
+
+    //Nome do vendedor
+    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul > :nth-child(2)')
+        .should('be.visible')
+
+    //Ícone lápis - para edição do vendedor
+    cy.get('ul > :nth-child(2) > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+}

@@ -154,7 +154,7 @@ export function okSeguroPrestamista (selector) {
 
     //validando cor verde da checkbox, provando que o prestamista está marcado 
     cy.get('.md-container.md-ink-ripple')
-        .should('have.css', 'color', 'rgba(28, 202, 19, 0.87)')
+        .should('have.css', 'color', 'rgba(37, 202, 19, 0.87)')
 
     //nome do seguro prestamista cadastrado
     cy.get('.md-no-style > .md-list-item-text > :nth-child(1)')
