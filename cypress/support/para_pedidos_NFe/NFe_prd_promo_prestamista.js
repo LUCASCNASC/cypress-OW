@@ -32,7 +32,7 @@ export function prdPromoPrazoParcelaPrest (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesquisaProdutoPromoPrazoParcelaPrest (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1918').as('api_produto_tambem_compraram_1918')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -68,7 +68,7 @@ export function escolherPesquisaProdutoPromoPrazoParcelaPrest (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1918', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -174,7 +174,7 @@ export function prdSegPromoPrazoParcelaPrest (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesqSegPrdPromoPrazoParcelaPrest (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1919').as('api_produto_tambem_compraram_1919')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -210,7 +210,7 @@ export function escolherPesqSegPrdPromoPrazoParcelaPrest (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1919', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido

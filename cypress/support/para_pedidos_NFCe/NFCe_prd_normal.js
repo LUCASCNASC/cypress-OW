@@ -32,7 +32,7 @@ export function produtoNormalPrimeiroNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPesquisaNormalPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1860').as('api_produto_tambem_compraram_1860')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -68,7 +68,7 @@ export function escolherProdutoPesquisaNormalPrimeiroNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1860', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -168,7 +168,7 @@ export function produtoNormalSegundoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPesquisaNormalSegundoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1870').as('api_produto_tambem_compraram_1870')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -204,7 +204,7 @@ export function escolherProdutoPesquisaNormalSegundoNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1870', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -299,7 +299,7 @@ export function produtoKitPrimeiroNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoKitPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1862').as('api_produto_tambem_compraram_1862')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -335,7 +335,7 @@ export function escolherProdutoKitPrimeiroNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1862', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -428,7 +428,7 @@ export function produtoSemSaldoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoSemSaldoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1869').as('api_produto_tambem_compraram_1869')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -464,7 +464,7 @@ export function escolherProdutoSemSaldoNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1869', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -538,7 +538,7 @@ export function produtoCDPrimeiroNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoCDPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1880').as('api_produto_tambem_compraram_1880')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -574,7 +574,7 @@ export function escolherProdutoCDPrimeiroNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1880', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -698,7 +698,7 @@ export function produtoRemotoComCDNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoRemotoComCDNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1883').as('api_produto_tambem_compraram_1883')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -734,7 +734,7 @@ export function escolherProdutoRemotoComCDNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1883', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -828,7 +828,7 @@ export function produtoRemotoSemCDNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoRemotoSemCDNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1882').as('api_produto_tambem_compraram_1882')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -864,7 +864,7 @@ export function escolherProdutoRemotoSemCDNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1882', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -937,7 +937,7 @@ export function produtoArredondarCimaBaixoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoArredondarCimaBaixoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1908').as('api_produto_tambem_compraram_1908')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -973,7 +973,7 @@ export function escolherProdutoArredondarCimaBaixoNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1908', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1046,7 +1046,7 @@ export function produtoDescontoCifraoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoDescontoCifraoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1912').as('api_produto_tambem_compraram_1912')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1082,7 +1082,7 @@ export function escolherProdutoDescontoCifraoNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1912', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1155,7 +1155,7 @@ export function produtoDescontoPercentualNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoDescontoPercentualNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1913').as('api_produto_tambem_compraram_1913')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1191,7 +1191,7 @@ export function escolherProdutoDescontoPercentualNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1913', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1264,7 +1264,7 @@ export function produtoDescontoValorFixoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoDescontoValorFixoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1914').as('api_produto_tambem_compraram_1914')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1300,7 +1300,7 @@ export function escolherProdutoDescontoValorFixoNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1914', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1374,7 +1374,7 @@ export function produtoKitDescontoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoKitDescontoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1909').as('api_produto_tambem_compraram_1909')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1410,7 +1410,7 @@ export function escolherProdutoKitDescontoNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1909', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1484,7 +1484,7 @@ export function produtoKitRemotoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoKitRemotoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1915').as('api_produto_tambem_compraram_1915')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1520,7 +1520,7 @@ export function escolherProdutoKitRemotoNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1915', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1614,7 +1614,7 @@ export function produtoPromoPartidaNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPromoPartidaNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1868').as('api_produto_tambem_compraram_1868')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1650,7 +1650,7 @@ export function escolherProdutoPromoPartidaNFCe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1868', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1744,7 +1744,7 @@ export function produtoPromoPrazoEntradaNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPromoPrazoEntradaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1866').as('api_produto_tambem_compraram_1866')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1780,7 +1780,7 @@ export function escolherProdutoPromoPrazoEntradaNFCe  (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1866', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -1874,7 +1874,7 @@ export function produtoPromoPrazoParceladoNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPromoPrazoParceladoNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1867').as('api_produto_tambem_compraram_1867')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -1910,7 +1910,7 @@ export function escolherProdutoPromoPrazoParceladoNFCe  (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1867', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -2004,7 +2004,7 @@ export function prd1PrazoParcelaNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPrazoParcelaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1891').as('api_produto_tambem_compraram_1891')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -2040,7 +2040,7 @@ export function escolherProdutoPrazoParcelaNFCe  (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1891', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -2115,7 +2115,7 @@ export function prd2PrazoParcelaNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProduto2PrazoParcelaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1895').as('api_produto_tambem_compraram_1895')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -2151,7 +2151,7 @@ export function escolherProduto2PrazoParcelaNFCe  (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1895', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -2226,7 +2226,7 @@ export function prd3PrazoParcelaNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProduto3PrazoParcelaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1893').as('api_produto_tambem_compraram_1893')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -2262,7 +2262,7 @@ export function escolherProduto3PrazoParcelaNFCe  (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1893', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -2336,7 +2336,7 @@ export function prd4PrazoParcelaNFCe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProduto4PrazoParcelaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1894').as('api_produto_tambem_compraram_1894')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -2372,7 +2372,7 @@ export function escolherProduto4PrazoParcelaNFCe  (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1894', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido

@@ -26,7 +26,7 @@ export function primeiroPrdNormalExclusiva (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesquisaPrimeiroPrdNormalExclusiva (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1896').as('api_produto_tambem_compraram_1896')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -62,7 +62,7 @@ export function escolherPesquisaPrimeiroPrdNormalExclusiva (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1896', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -162,7 +162,7 @@ export function kitSemSaldoAgendamento (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesquisakitSemSaldoAgendamento (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1900').as('api_produto_tambem_compraram_1900')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -198,7 +198,7 @@ export function escolherPesquisakitSemSaldoAgendamento (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1900', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -278,7 +278,7 @@ export function kitVolumes (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesquisakitVolumes (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1903').as('api_produto_tambem_compraram_1903')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -314,7 +314,7 @@ export function escolherPesquisakitVolumes (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1903', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -387,7 +387,7 @@ export function produtoSaldoReceber (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesquisaSaldoReceber (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1905').as('api_produto_tambem_compraram_1905')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -423,7 +423,7 @@ export function escolherPesquisaSaldoReceber (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1905', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -516,7 +516,7 @@ export function prdSaldoReceberDuasLinhas (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesquisaSaldoReceberDuasLinhas (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1906').as('api_produto_tambem_compraram_1906')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -552,7 +552,7 @@ export function escolherPesquisaSaldoReceberDuasLinhas (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1906', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido

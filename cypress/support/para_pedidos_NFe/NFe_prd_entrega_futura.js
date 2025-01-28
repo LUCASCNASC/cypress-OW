@@ -32,7 +32,7 @@ export function prdPrimeiroEntregaFutNFe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesqPrdPrimeiroEntregaFutNFe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1860').as('api_produto_tambem_compraram_1860')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -68,7 +68,7 @@ export function escolherPesqPrdPrimeiroEntregaFutNFe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1860', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
@@ -168,7 +168,7 @@ export function prdSegundoEntregaFutNFe (selector) {
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherPesqPrdSegundoEntregaFutNFe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1870').as('api_produto_tambem_compraram_1870')
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
     //Imagem do produto
     cy.get('.resultado-imagem')
@@ -204,7 +204,7 @@ export function escolherPesqPrdSegundoEntregaFutNFe (selector) {
         .should('be.visible')
         .click({force:true})
 
-    cy.wait('@api_produto_tambem_compraram_1870', { timeout: 40000 })
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
 }
 
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
