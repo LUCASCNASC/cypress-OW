@@ -44,6 +44,8 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })    
         
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -71,11 +73,13 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal() 
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })  
     })
 
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
+    // afterEach(() => {
+    //     botaoFinalizarPedido() //RESUMO
+    //     pedidoGerado()
+    //   });
 })

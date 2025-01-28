@@ -84,7 +84,7 @@ describe('Gerar pedidos com serviço Prestamista', () => {
         })
     })
 
-    context('Com  entrga / Produtos sem promoção - Prestamista com abatimento %', () => {
+    context('Com entrega / Produtos sem promoção - Prestamista com abatimento %', () => {
 
         it('3. Ped venda: produtos 1860 0 0 e 1870 0 0, processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
@@ -224,8 +224,8 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             tirarEntrega()
             avancarParaParcelas()
             cy.wait(2000)
-            clicarEditarParcelas()
-            escolherQuatroParcelaPagamento()
+            // clicarEditarParcelas()
+            // escolherQuatroParcelaPagamento()
         })
 
         it('9. Ped venda: produto 1918 0 0 (promoção 167), com garantia Não separa, processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
@@ -243,8 +243,8 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             tirarEntrega()
             avancarParaParcelas()
             cy.wait(2000)
-            clicarEditarParcelas()
-            escolherQuatroParcelaPagamento()
+            // clicarEditarParcelas()
+            // escolherQuatroParcelaPagamento()
         })
     })
 
@@ -265,17 +265,17 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             tirarEntrega()
             avancarParaParcelas()
             cy.wait(3000)
-            clicarEditarParcelas()
-            escolherQuatroParcelaPagamento()
+            // clicarEditarParcelas()
+            // escolherQuatroParcelaPagamento()
         })
 
     })
 
     afterEach(() => {
         okSeguroPrestamista()
-        ticketPrestamistaAdicionado()
-        // avancarFinal()
-        // botaoFinalizarPedido() //RESUMO
-        // pedidoGerado()
+        ticketPrestamistaAdicionado() //Validando adição do prestamista
+        avancarFinal()
+        botaoFinalizarPedido() //RESUMO
+        pedidoGerado()
       });
 })

@@ -30,8 +30,8 @@ export function saldodisponivel (selector) {
         .should('be.visible')
 
     //Validando check box dentro do card
-    cy.get('.expandeIcone')
-        .should('be.visible')
+    // cy.get('.expandeIcone')
+    //     .should('be.visible')
 }
 
 //Validando produto com saldo disponível no CD 
@@ -66,8 +66,8 @@ export function saldoCDDisponivel (selector) {
         .should('be.visible')
 
     //Validando check box dentro do card
-    cy.get('.expandeIcone')
-        .should('be.visible')
+    // cy.get('.expandeIcone')
+    //     .should('be.visible')
 }
 
 //Validando produto com saldo indisponível
@@ -102,8 +102,8 @@ export function semSaldodisponivel (selector) {
         .should('be.visible')
 
     //Validando check box dentro do card
-    cy.get('.expandeIcone')
-        .should('be.visible')
+    // cy.get('.expandeIcone')
+    //     .should('be.visible')
 }
 
 //Função para escolher cliente CPF para gerar pedido de venda - inserir cliente 

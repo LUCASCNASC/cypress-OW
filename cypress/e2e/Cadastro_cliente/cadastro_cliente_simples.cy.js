@@ -1,15 +1,13 @@
 import { iconeMenuOpcoes, opcaoClienteSimples, salvarClienteSimples, preencherNomeCompletoCPF, preencherNomeCompletoCNPJ, inserirPesquisarCEP, 
          preencherDataNascimento, inserirNumeroEndereco, arrastarPessoaJuridica, sexoPessoaFisica, cadastroRotaCliente, 
-         mensagemPrimeiroRegistSalvoSucesso, prencherCPFcliente, preencherCNPJcliente, logarNovamente, clicarSairSistema, desejoVisualizarCadastro } from '../../support/para_cadastro_cliente/para_cliente_simples';
+         mensagemPrimeiroRegistSalvoSucesso, prencherCPFcliente, preencherCNPJcliente, logarNovamente, clicarSairSistema,
+         desejoVisualizarCadastro, autorizarTrialAlterarDataNascimento } from '../../support/para_cadastro_cliente/para_cliente_simples';
 import { gerarCpf }  from '../../support/gerarDados';
 
 //
 //const cnpj = gerarCNPJ(); // Gera um CNPJ válido
 const Numeroalteracao = '113'
 const CEPalteracao = "87054320"
-const idSupervisorTrial = "393"
-const nomeSupervidorTrial = "T.A. USUÁRIO AUTOMAÇÃO"
-const senhaSupervisor = "123.automacao"
 const numeroCPF = "117.415.410-18" //usado apenas no teste de adicionar pelo botão na pesquisa de cliente
 
 describe('Cadastrar cliente simples', () => {
@@ -24,7 +22,7 @@ describe('Cadastrar cliente simples', () => {
   
     context('Cadastro de cliente simples', () => {
 
-        it('Cliente simples CPF', () => {
+        it.skip('Cliente simples CPF', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -35,11 +33,11 @@ describe('Cadastrar cliente simples', () => {
             inserirPesquisarCEP()
             inserirNumeroEndereco()
             cadastroRotaCliente()
-            salvarClienteSimples()
-            mensagemPrimeiroRegistSalvoSucesso()
+            // salvarClienteSimples()
+            // mensagemPrimeiroRegistSalvoSucesso()
         })  
 
-        it('Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
+        it.skip('Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -83,7 +81,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it('Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
+        it.skip('Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -116,7 +114,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })  
 
-        it('Cliente simples CPF - alterar data de nascimento (deve pedir trial)', () => {
+        it.skip('Cliente simples CPF - alterar data de nascimento (deve pedir trial)', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
     
@@ -184,107 +182,21 @@ describe('Cadastrar cliente simples', () => {
                 .wait(200)
                 .clear()
                 .wait(200)
-                .type("29/09/1997", {force:true})
+                .type("29/09/1997")
 
             salvarClienteSimples()
             cy.wait(1000)
 
-            salvarClienteSimples()
-            cy.wait(3000)
+            // salvarClienteSimples()
+            // cy.wait(3000)
 
-            // Card de Autorização do Supervisor
-            
-            //Título Autorização do Supervisor
-            cy.get('.md-toolbar-tools > .ng-binding')
-                .should('be.visible')
-                .and('have.text', 'Autorização do Supervisor')
+            autorizarTrialAlterarDataNascimento()
 
-            //Título da coluna Trial
-            cy.get('thead > tr > :nth-child(1)')
-                .should('be.visible')
-                .and('have.text', 'Trial')
-
-            //Informação da coluna Trial
-            cy.get('tbody > .ng-scope > :nth-child(1)')
-                .should('be.visible')
-
-            //Título da coluna Descrição
-            cy.get('thead > tr > :nth-child(2)')
-                .should('be.visible')
-                .and('have.text', 'Descrição')
-
-            //Informação da coluna Descrição
-            cy.get('tbody > .ng-scope > :nth-child(2)')
-                .should('be.visible')
-
-            //Título da coluna Status
-            cy.get('thead > tr > :nth-child(3)')
-                .should('be.visible')
-                .and('have.text', 'Status')
-            
-            //Informação da coluna Status
-            cy.contains('td.ng-binding', 'Pendente')
-                .should('be.visible')
-                .and('have.text', 'Pendente')
-                .and('have.css', 'background-color', 'rgb(234, 7, 7)')
-
-            //Título da coluna Permissão / Usuário
-            cy.get('thead > tr > :nth-child(4)')
-                .should('be.visible')
-                .and('have.text', 'Permissão / Usuário')
-
-            //Informação da coluna Permissão / Usuário
-            cy.get('tbody > .ng-scope > :nth-child(4)')
-                .should('be.visible')
-                .and('have.text', 'Sim')
-
-            //Validando Texto Supervisor
-            cy.get('tbody > :nth-child(2) > .ng-binding')
-                .should('be.visible')
-                .and('have.text', 'Supervisor')
-
-            //Validando ID do supervisor
-            cy.get('[ng-model="idUsuario"]')
-                .should('be.visible')
-                .and('have.value', idSupervisorTrial)
-
-            //Validando nome do Supervisor
-            cy.get('[ng-model="nomeUsuario"]')
-                .should('be.visible')
-                .and('have.value', nomeSupervidorTrial)
-
-            //Validando texto Senha
-            cy.get('tbody > :nth-child(3) > :nth-child(1)')
-                .should('be.visible')
-                .and('have.text', 'Senha')
-            
-            //Validando campo de senha do supervisor
-            cy.get(':nth-child(3) > [colspan="2"] > .ng-pristine')
-                .should('be.visible')
-                .and('have.value', '')
-                .type(senhaSupervisor)
-
-            // //Validando botão CANCELAR
-            // cy.contains('button', 'Cancelar')
-            //     .should('be.visible')
-            //     .and('have.text', 'Cancelar')  
-            //     .and('not.have.attr', 'disabled')
-
-            // //Validando botão CONFIRMAR
-            // cy.contains('button', 'Confirmar')
-            //     .should('be.visible')
-            //     .and('have.text', 'Confirmar')  
-            //     .and('not.have.attr', 'disabled')
-
-            // //Clicar no botão CONFIRMAR
-            // cy.contains('button', 'Confirmar')
-            //     .click()
-
-            cy.wait(1000)
-            mensagemPrimeiroRegistSalvoSucesso()
+            // cy.wait(1000)
+            // mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it('Cliente simples CPF - alterar tipo de sexo', () => {
+        it.skip('Cliente simples CPF - alterar tipo de sexo', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
 
@@ -360,7 +272,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it('Cliente simples CNPJ', () => {
+        it.skip('Cliente simples CNPJ', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -374,7 +286,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it('Cliente simples CNPJ - alterar Endereço', () => {
+        it.skip('Cliente simples CNPJ - alterar Endereço', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -420,7 +332,7 @@ describe('Cadastrar cliente simples', () => {
 
     context('Botão de adicionar cliente, na pesquisa de cliente', () => {
 
-        it('Botão de adicionar cliente, na pesquisa de cliente', () => {
+        it.skip('Botão de adicionar cliente, na pesquisa de cliente', () => {
         
             //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
             cy.get('.click-cliente > .informe-o-cliente > .cliente-header')

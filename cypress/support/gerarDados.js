@@ -126,6 +126,7 @@ function gerarObservação() {
   // Ajusta o comprimento para 30 caracteres exatos
   return frase.trim().slice(0, 30);
 }
+
   
-  
-export { gerarCpf, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa, gerarRelacionamento, gerarObservação }; 
+export { gerarCpf, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa,
+         gerarRelacionamento, gerarObservação }; 

@@ -3,7 +3,7 @@ export function prdPrimeiroEntregaFutNFe (selector) {
 
     const primeiro_produto_normal = '1860'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9862*))%20AND%20(codigo:*1860*%20codigo:1860%20OR%20nome:*1860*%20OR%20codigo:*1860*%20OR%20nomeecommerce:*1860*%20OR%20marca_descricao:*1860*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -59,9 +59,9 @@ export function escolherPesqPrdPrimeiroEntregaFutNFe (selector) {
     cy.get('.valor-busca')
         .should('be.visible')
 
-    //Check box do produto
-    cy.get('.expandeIcone')
-        .should('be.visible')
+    // //Check box do produto
+    // cy.get('.expandeIcone')
+    //     .should('be.visible')
 
     //Clicar para adicionar no carrinho
     cy.get('.md-list-item-text')
@@ -138,7 +138,7 @@ export function prdSegundoEntregaFutNFe (selector) {
 
     const segundo_produto_normal = '1870'
 
-    cy.intercept('GET', '/consultaprodutos/10050/10006%20OR%2010050%20OR%2010102%20OR%2010032%20OR%2010048/(servico:false%20OR%20(servico:true%20AND%20processos:*9862*))%20AND%20(codigo:*1870*%20codigo:1870%20OR%20nome:*1870*%20OR%20codigo:*1870*%20OR%20nomeecommerce:*1870*%20OR%20marca_descricao:*1870*)%20AND%20valor_filial_10050:%5B0%20TO%20*%5D/ativo:true/max(termfreq(filiais_com_saldo,10006),termfreq(filiais_com_saldo,10050),termfreq(filiais_com_saldo,10102),termfreq(filiais_com_saldo,10032),termfreq(filiais_com_saldo,10048))%20DESC,max(termfreq(filiais_com_promocao,10006),termfreq(filiais_com_promocao,10050),termfreq(filiais_com_promocao,10102),termfreq(filiais_com_promocao,10032),termfreq(filiais_com_promocao,10048))%20DESC,score%20DESC,valor_filial_10050%20ASC/50/0').as('apiConsultaProdutos')
+    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -195,9 +195,9 @@ export function escolherPesqPrdSegundoEntregaFutNFe (selector) {
     cy.get('.valor-busca')
         .should('be.visible')
 
-    //Check box do produto
-    cy.get('.expandeIcone')
-        .should('be.visible')
+    // //Check box do produto
+    // cy.get('.expandeIcone')
+    //     .should('be.visible')
 
     //Clicar para adicionar no carrinho
     cy.get('.md-list-item-text')

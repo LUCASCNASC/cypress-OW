@@ -1,6 +1,45 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa,
-    gerarRelacionamento, gerarObservação }  from '../../../gerarDados';
+         gerarRelacionamento, gerarObservação }  from '../../../gerarDados';
 import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../gerarDadosPIX'
+
+
+//------referencia financeira - funções de geração de dados
+
+//Início exp. crédito
+function gerarDataReferenciaFinanceira() {
+    // Data inicial: 01/01/2000
+    const dataInicio = new Date('2000-01-01');
+  
+    // Data atual
+    const dataAtual = new Date();
+  
+    // Gerar um valor aleatório entre as duas datas (em milissegundos)
+    const dataAleatoria = new Date(dataInicio.getTime() + Math.random() * (dataAtual.getTime() - dataInicio.getTime()));
+  
+    // Extrair o dia, mês e ano
+    const dia = String(dataAleatoria.getDate()).padStart(2, '0');
+    const mes = String(dataAleatoria.getMonth() + 1).padStart(2, '0'); // Meses começam do zero
+    const ano = dataAleatoria.getFullYear();
+  
+    // Retornar no formato dd/mm/aaaa
+    return `${dia}/${mes}/${ano}`;
+}
+
+//Valor prestação
+function gerarValorDuasCasasAposVirgula() {
+    // Gerar um número aleatório entre 100 e 999 (3 dígitos)
+    const valorInteiro = Math.floor(Math.random() * 900) + 100;
+
+    // Gerar uma parte decimal aleatória com duas casas decimais
+    const valorDecimal = (Math.random()).toFixed(2).substring(2); // Gera as duas casas decimais após a vírgula
+
+    // Concatenar a parte inteira com a parte decimal
+    const valorFinal = `${valorInteiro}.${valorDecimal}`;
+
+    return valorFinal;
+}
+
+
 
 //--------REFERENCIAS - REFERENCIA FINANCEIRA -------
 
@@ -97,7 +136,7 @@ export function modalRefFinanceiraVazio (selector) {
 
     //informativo campo Plano experiência
     cy.get('label[for="txtPlExp"]')
-        .should('have.text', 'Local Experiência')
+        .should('have.text', 'Plano experiência')
 
     //informativo campo possui cartão
     cy.get('label[for="txtPossuiCartao"]')
@@ -116,5 +155,105 @@ export function modalRefFinanceiraVazio (selector) {
     //validar botão SALVAR, desabilitado
     cy.get('#btnModalAddRefPessoal')
         .should('be.visible')
-        .should('have.attr', 'disabled')
+        .and('have.attr', 'disabled')
+}
+
+//referencia financeira - escolher Início exp. crédito
+export function selectDataInicioRefFinanceira (selector) {
+
+    const data_inicio = gerarDataReferenciaFinanceira();
+
+    //clicar para abrir as opções
+    cy.contains('Início exp. crédito')
+        .parent()
+        .find('input')
+        .type(data_inicio)
+}
+
+//referencia financeira - escolher Local Experiencia
+export function selectLocalExpRefFinanceira (selector) {
+
+    const local_experiencia = gerarNomeEmpresa();
+
+    //clicar para abrir as opções
+    cy.get('#txtLocExp')
+        .type(local_experiencia)
+}
+
+//referencia financeira - escolher Plano experiencia
+export function selectPlanoExpRefFinanceira (selector) {
+
+    const plano_experiencia = '444';
+
+    //clicar para abrir as opções
+    cy.get('#txtPlExp')
+        .type(plano_experiencia)
+}
+
+//referencia financeira - escolher Valor prestação
+export function selectValorPrestRefFinanceira (selector) {
+
+    const valor_prestacao = gerarValorDuasCasasAposVirgula();
+
+    //clicar para abrir as opções
+    cy.get('#txtVlrPrest')
+        .type(valor_prestacao)
+}
+
+//clicar para salvar Referencia Financeira
+export function clicarSalvarRefFinanceira (selector) {
+
+    cy.contains('button', 'Salvar')
+        .should('be.visible')
+
+    //validando botão salvar habilitado
+    cy.get('#btnModalAddRefPessoal')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled') 
+
+    //clicar no botão SALVAR
+    cy.get('#btnModalAddRefPessoal')   
+        .click()
+}
+
+// validando mensagem Referencia Financeira incluída com sucesso Incluído com sucesso, após incluírmos a Referencia Financeira
+export function messRefFinanceiraIncluidaSucesso (selector) {
+
+    //Card Endereço incluído com sucesso.
+    cy.get('.toast-success')
+        .should('be.visible')
+
+    //Card Endereço incluído com sucesso. - Aviso
+    cy.get('.toast-success > .toast-title')
+        .should('be.visible')
+        .and('have.text', 'Aviso')
+
+    //Card Endereço incluído com sucesso. - Referencia Comercial incluído com sucesso.
+    cy.get('.toast-success > .toast-message')
+        .should('be.visible')
+        .and('have.text', 'Referência Financeira incluída com sucesso.')
+}
+
+//validando informações que foram adicionadas no cadastro de referencia Financeira
+export function infosRefFinanceiraAdicionada (selector) {
+
+    //data
+    cy.get('.flex-gt-sm-70 > :nth-child(1) > .ng-binding')
+        .should('be.visible')
+    
+    //plano de experiencia
+    cy.get('[ng-show="(item.planoexperiencia)"]')
+        .should('be.visible')
+
+    //local de experiencia
+    cy.get('[ng-show="(item.localexperiencia)"]')
+        .should('be.visible')
+
+    //valor prestação
+    cy.get('.layout-align-gt-sm-center-end > .list-title > b')
+        .should('be.visible')
+
+    //quantidade do valor prestação 
+    cy.get('.layout-align-gt-sm-center-end > .list-title')
+        .should('be.visible')
 }

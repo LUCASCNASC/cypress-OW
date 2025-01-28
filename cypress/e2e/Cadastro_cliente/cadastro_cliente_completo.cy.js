@@ -4,11 +4,13 @@ import { clicarAbaRefBancaria, validarAbaRefBancariaVazia, clicarAddNovaRefBanca
          selectBancoRefBancaria, selectAgenciaRefBancaria, selectContaRefBancaria, selectDataAberturaRefBancaria, selectBoletoRefBancaria,
          selectTelefoneRefBancaria,selectGerenteRefBancaria, selectEmailRefBancaria, selectCPFCorrentistaRefBancaria,
          selectNomeCorrentistaRefBancaria, selectTipoContaRefBancaria, selectOperacaoRefBancaria, selectFormaPagamentoRefBancaria,
-         selectTipoChavePixTelefoneRefBancaria, selectChavePixTefefoneRefBancaria, clicarSalvarRefBancaria, infosRefPessoalAdicionada,
+         selectTipoChavePixTelefoneRefBancaria, selectChavePixTefefoneRefBancaria, clicarSalvarRefBancaria,
          messRefBancariaIncluidaSucesso, infosRefBancariaAdicionada, selectChavePixTelefoneErrada, messRefBancariaChavePixTelefoneInvalida, 
-         messRefBancariaChavePixEmailInvalida, selectChavePixEmailErrada, selectTipoChavePixEmailRefBancaria, selectTipoChavePixCpfCnpjRefBancaria } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_bancaria.js';
+         messRefBancariaChavePixEmailInvalida, selectChavePixEmailErrada, selectTipoChavePixEmailRefBancaria, selectTipoChavePixCpfCnpjRefBancaria, 
+         selectChavePixCpfCnpjErrada, messRefBancariaChavePixCpfCnpjInvalida, selectTipoChavePixAletoriaRefBancaria } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_bancaria.js';
 import { clicarAbaRefPessoal, validarAbaRefPessoalVazia, clicarAddNovaRefPessoal, modalRefPessoalVazio, selectNomeRefPessoal, 
-         selectEmailRefPessoal, selectTelefoneRefPessoal, selectRlacionamentoRefPessoal, clicarSalvarRefPessoal, messRefPessoalIncluidaSucesso } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_pessoal.js'
+         selectEmailRefPessoal, selectTelefoneRefPessoal, selectRlacionamentoRefPessoal, clicarSalvarRefPessoal, messRefPessoalIncluidaSucesso,
+         infosRefPessoalAdicionada } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_pessoal.js'
 import { clicarAbaRota, clicarAdicionarNovaRota, modalRotaVazioValidar, escolherTipoEnderecoRota, preencherRotaCompleta, infosRotaAdicionada,
          messRotaIncluidaSucesso } from '../../support/para_cadastro_cliente/cliente_completo/aba_rota.js'
 import { preecherDataNascimento, selecionarSexoCliente, preencherNomeCompleto, preencherNomeCNPJ, preencherCPFcliente, preencherNomeSocial,
@@ -23,7 +25,9 @@ import { clicarAbaTelefone, clicarAdicionarNovoTelefone, modalTelefoneVazioValid
 import { clicarAbaRefComercial, validarAbaRefComercialVazia, clicarAddNovaRefComercial, modalRefComercialVazio, selectEmpresaRefComercial,
          selectContatoRefComercial, selectTelefoneRefComercial, selectEmailRefComercial, selectObservacaoRefComercial, clicarSalvarRefComercial,
          messRefComercialIncluidaSucesso, infosRefComercialAdicionada } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_comercial.js'
-import { clicarAbaRefFinanceira, validarAbaRefFinanceiraVazia, clicarAddNovaRefFinanceira, modalRefFinanceiraVazio } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_financeira.js'
+import { clicarAbaRefFinanceira, validarAbaRefFinanceiraVazia, clicarAddNovaRefFinanceira, modalRefFinanceiraVazio, selectDataInicioRefFinanceira, 
+         selectLocalExpRefFinanceira, selectPlanoExpRefFinanceira, selectValorPrestRefFinanceira, clicarSalvarRefFinanceira, 
+         messRefFinanceiraIncluidaSucesso, infosRefFinanceiraAdicionada } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_financeira.js'
 
 describe('Cadastrar cliente completo', () => {
 
@@ -851,7 +855,7 @@ describe('Cadastrar cliente completo', () => {
 
     context('Cadastro de cliente completo - incluindo referencia financeira', () => {
 
-        it.only('11. Cliente completo CPF - caminho feliz', () => {
+        it('12. Cliente completo CPF - caminho feliz', () => {
 
             iconeMenuOpcoes()
             opcaoClienteCompleto()
@@ -904,25 +908,20 @@ describe('Cadastrar cliente completo', () => {
             messTelefoneIncluidoSucesso()
 
             clicarAbaReferencias() //aba REFERENCIA
-
-
             clicarAbaRefFinanceira() //REFERENCIA FINANCEIRA
             validarAbaRefFinanceiraVazia()
             clicarAddNovaRefFinanceira()
             modalRefFinanceiraVazio()
-            // selectEmpresaRefComercial()
-            // selectContatoRefComercial()
-            // selectTelefoneRefComercial()
-            // selectEmailRefComercial()
-            // selectObservacaoRefComercial()
-            // clicarSalvarRefComercial()
-            // infosRefComercialAdicionada()
-            // messRefComercialIncluidaSucesso()
-            // clicarSalvarCliente()
-            // cy.wait(3000)
-            // messRegistroSalvoSucesso()
+            selectDataInicioRefFinanceira()
+            selectLocalExpRefFinanceira()
+            selectPlanoExpRefFinanceira()
+            selectValorPrestRefFinanceira()
+            clicarSalvarRefFinanceira()
+            messRefFinanceiraIncluidaSucesso()
+            infosRefFinanceiraAdicionada()
+            clicarSalvarCliente()
+            cy.wait(4000)
+            messRegistroSalvoSucesso()
         }) 
     })
-    
-
 })

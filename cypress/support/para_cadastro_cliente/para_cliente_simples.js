@@ -23,10 +23,12 @@ export function opcaoClienteSimples (selector) {
     cy.get('a[aria-label="Cliente"]')
         .should('have.attr', 'aria-label', 'Cliente')
 
+    cy.intercept('GET', '/services/v3/dados_tabela/tipocontribuinte').as('api_cadastro_cliente_simples')
     //Opção Cliente no menu de opções
     cy.get('a[aria-label="Cliente"]')
         .scrollIntoView()
         .click({force:true})
+    cy.wait('@api_cadastro_cliente_simples', { timeout: 40000 })
 }
 
 //Botão SALVAR, do cliente simples
@@ -130,9 +132,11 @@ export function inserirPesquisarCEP (selector) {
         .should('be.visible')
         .and('not.have.attr', 'disabled')
 
+    cy.intercept('GET', '/services/v3/cidade?uf=PR').as('api_cidade_rota')
     //Clicar na lupa de pesquisa do CEP
     cy.get('.md-icon-float > .ng-binding')
         .click({force:true})
+    cy.wait('@api_cidade_rota', { timeout: 40000 })
 }
 
 //Campo Número - validar e preencher
@@ -241,12 +245,17 @@ export function cadastroRotaCliente (selector) {
         .should('be.visible')
         .and('not.have.attr', 'disabled')
 
+    cy.intercept('GET', '/services/v3/rota?idrota=1').as('api_id_rota_1')
     //Clicar na lupa do campo Rota 2
     cy.get('md-icon[ng-click="pesquisar()"]')
         .click({force:true})
+    cy.wait('@api_id_rota_1', { timeout: 40000 })
     
     //Escolher última informação da rota
     cy.get('v-pane-header.ng-scope > div')
+        .click({force:true})
+
+    cy.contains('1-Centro')
         .click({force:true})
 }
 
@@ -314,4 +323,100 @@ export function desejoVisualizarCadastro (selector) {
     //Clicar em Sim para se desejo visualizar este cadastro
     cy.get('.md-confirm-button')
         .click({force:true})
+}
+
+//validar trial quando alteramos a data de nascimento do cliente simples
+export function autorizarTrialAlterarDataNascimento (selector) {
+
+    const idSupervisorTrial = "393"
+    const nomeSupervidorTrial = "T.A. USUÁRIO AUTOMAÇÃO"
+    const senhaSupervisor = "123.automacao"
+
+    // Card de Autorização do Supervisor
+            
+            //Título Autorização do Supervisor
+            cy.get('.md-toolbar-tools > .ng-binding')
+                .should('be.visible')
+                .and('have.text', 'Autorização do Supervisor')
+
+            //Título da coluna Trial
+            cy.get('thead > tr > :nth-child(1)')
+                .should('be.visible')
+                .and('have.text', 'Trial')
+
+            //Informação da coluna Trial
+            cy.get('tbody > .ng-scope > :nth-child(1)')
+                .should('be.visible')
+
+            //Título da coluna Descrição
+            cy.get('thead > tr > :nth-child(2)')
+                .should('be.visible')
+                .and('have.text', 'Descrição')
+
+            //Informação da coluna Descrição
+            cy.get('tbody > .ng-scope > :nth-child(2)')
+                .should('be.visible')
+
+            //Título da coluna Status
+            cy.get('thead > tr > :nth-child(3)')
+                .should('be.visible')
+                .and('have.text', 'Status')
+            
+            //Informação da coluna Status
+            cy.contains('td.ng-binding', 'Pendente')
+                .should('be.visible')
+                .and('have.text', 'Pendente')
+                .and('have.css', 'background-color', 'rgb(234, 7, 7)')
+
+            //Título da coluna Permissão / Usuário
+            cy.get('thead > tr > :nth-child(4)')
+                .should('be.visible')
+                .and('have.text', 'Permissão / Usuário')
+
+            //Informação da coluna Permissão / Usuário
+            cy.get('tbody > .ng-scope > :nth-child(4)')
+                .should('be.visible')
+                .and('have.text', 'Sim')
+
+            //Validando Texto Supervisor
+            cy.get('tbody > :nth-child(2) > .ng-binding')
+                .should('be.visible')
+                .and('have.text', 'Supervisor')
+
+            //Validando ID do supervisor
+            cy.get('[ng-model="idUsuario"]')
+                .should('be.visible')
+                .and('have.value', idSupervisorTrial)
+
+            //Validando nome do Supervisor
+            cy.get('[ng-model="nomeUsuario"]')
+                .should('be.visible')
+                .and('have.value', nomeSupervidorTrial)
+
+            //Validando texto Senha
+            cy.get('tbody > :nth-child(3) > :nth-child(1)')
+                .should('be.visible')
+                .and('have.text', 'Senha')
+            
+            //Validando campo de senha do supervisor
+            cy.get(':nth-child(3) > [colspan="2"] > .ng-pristine')
+                .should('be.visible')
+                .and('have.value', '')
+                //.type(senhaSupervisor)
+
+            // //Validando botão CANCELAR
+            // cy.contains('button', 'Cancelar')
+            //     .should('be.visible')
+            //     .and('have.text', 'Cancelar')  
+            //     .and('not.have.attr', 'disabled')
+
+            // //Validando botão CONFIRMAR
+            // cy.contains('button', 'Confirmar')
+            //     .should('be.visible')
+            //     .and('have.text', 'Confirmar')  
+            //     .and('not.have.attr', 'disabled')
+
+            // //Clicar no botão CONFIRMAR
+            // cy.contains('button', 'Confirmar')
+            //     .click()
 }
