@@ -23,12 +23,10 @@ export function opcaoClienteSimples (selector) {
     cy.get('a[aria-label="Cliente"]')
         .should('have.attr', 'aria-label', 'Cliente')
 
-    cy.intercept('GET', '/services/v3/dados_tabela/tipocontribuinte').as('api_cadastro_cliente_simples')
     //Opção Cliente no menu de opções
     cy.get('a[aria-label="Cliente"]')
         .scrollIntoView()
         .click({force:true})
-    cy.wait('@api_cadastro_cliente_simples', { timeout: 40000 })
 }
 
 //Botão SALVAR, do cliente simples
@@ -255,7 +253,7 @@ export function cadastroRotaCliente (selector) {
     cy.get('v-pane-header.ng-scope > div')
         .click({force:true})
 
-    cy.contains('1-Centro')
+    cy.contains('div', '1 - Centro')
         .click({force:true})
 }
 
@@ -288,9 +286,11 @@ export function logarNovamente (selector) {
     cy.get('#txtpassword')
         .type('123.automacao')
 
+    cy.intercept('GET', '/images/icons/discount.svg').as('api_entrar_sistema')
     //Clicar no botão Entrar, para logar novamente
     cy.get('.test_btnSalvarCliente')
         .click({force:true})
+    cy.wait('@api_entrar_sistema', { timeout: 40000 })
 }
 
 //clicar para sair do sistema
@@ -402,7 +402,7 @@ export function autorizarTrialAlterarDataNascimento (selector) {
             cy.get(':nth-child(3) > [colspan="2"] > .ng-pristine')
                 .should('be.visible')
                 .and('have.value', '')
-                //.type(senhaSupervisor)
+                .type(senhaSupervisor)
 
             // //Validando botão CANCELAR
             // cy.contains('button', 'Cancelar')
@@ -416,7 +416,7 @@ export function autorizarTrialAlterarDataNascimento (selector) {
             //     .and('have.text', 'Confirmar')  
             //     .and('not.have.attr', 'disabled')
 
-            // //Clicar no botão CONFIRMAR
-            // cy.contains('button', 'Confirmar')
-            //     .click()
+            //Clicar no botão CONFIRMAR
+            cy.contains('button', 'Confirmar')
+                .click()
 }

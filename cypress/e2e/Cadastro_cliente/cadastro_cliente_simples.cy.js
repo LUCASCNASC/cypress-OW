@@ -22,7 +22,7 @@ describe('Cadastrar cliente simples', () => {
   
     context('Cadastro de cliente simples', () => {
 
-        it.skip('Cliente simples CPF', () => {
+        it('1. Cliente simples CPF', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -37,7 +37,7 @@ describe('Cadastrar cliente simples', () => {
             // mensagemPrimeiroRegistSalvoSucesso()
         })  
 
-        it.skip('Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
+        it('2. Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -81,7 +81,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it.skip('Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
+        it('3. Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -114,7 +114,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })  
 
-        it.skip('Cliente simples CPF - alterar data de nascimento (deve pedir trial)', () => {
+        it('4. Cliente simples CPF - alterar data de nascimento (deve pedir trial)', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
     
@@ -153,8 +153,6 @@ describe('Cadastrar cliente simples', () => {
             cy.wait(2000)
 
             logarNovamente()
-            cy.wait(5000)
-
             iconeMenuOpcoes()
             opcaoClienteSimples()
 
@@ -170,9 +168,7 @@ describe('Cadastrar cliente simples', () => {
                 .click()
 
             cy.wait (1000)
-
             desejoVisualizarCadastro()
-
             cy.wait(2500)
 
             //Clicar na data que desejo, 29/09/1998
@@ -183,20 +179,18 @@ describe('Cadastrar cliente simples', () => {
                 .clear()
                 .wait(200)
                 .type("29/09/1997")
+                .wait(4000)
 
+            cy.intercept('/views/cliente/modalClienteAutorizacao**').as('api_modalClienteAutorizacao')
             salvarClienteSimples()
-            cy.wait(1000)
-
-            // salvarClienteSimples()
-            // cy.wait(3000)
+            cy.wait('@api_modalClienteAutorizacao', { timeout: 40000 })
 
             autorizarTrialAlterarDataNascimento()
-
-            // cy.wait(1000)
-            // mensagemPrimeiroRegistSalvoSucesso()
+            cy.wait(1000)
+            mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it.skip('Cliente simples CPF - alterar tipo de sexo', () => {
+        it('5. Cliente simples CPF - alterar tipo de sexo', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
 
@@ -233,7 +227,6 @@ describe('Cadastrar cliente simples', () => {
             clicarSairSistema()
             cy.wait(2000)
             logarNovamente() 
-            cy.wait(5000)
             iconeMenuOpcoes()
             opcaoClienteSimples()
 
@@ -272,7 +265,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it.skip('Cliente simples CNPJ', () => {
+        it('6. Cliente simples CNPJ', () => {
     
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -286,7 +279,7 @@ describe('Cadastrar cliente simples', () => {
             mensagemPrimeiroRegistSalvoSucesso()
         })
 
-        it.skip('Cliente simples CNPJ - alterar Endereço', () => {
+        it('7. Cliente simples CNPJ - alterar Endereço', () => {
 
             iconeMenuOpcoes()
             opcaoClienteSimples()
@@ -332,7 +325,7 @@ describe('Cadastrar cliente simples', () => {
 
     context('Botão de adicionar cliente, na pesquisa de cliente', () => {
 
-        it.skip('Botão de adicionar cliente, na pesquisa de cliente', () => {
+        it('8. Botão de adicionar cliente, na pesquisa de cliente', () => {
         
             //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
             cy.get('.click-cliente > .informe-o-cliente > .cliente-header')

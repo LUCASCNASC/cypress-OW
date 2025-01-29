@@ -30,10 +30,12 @@ export function pedidosPendentesOpcaoMenuPed (selector) {
         .should('be.visible')
         .and('not.have.attr', 'disabled')
 
+    cy.intercept('/pedido_pendencia/listapedidovenda**').as('api_pedido_pendencia')
     //Opção Pedidos pendentes no menu de opções
     cy.get('a[aria-label="Pedidos pendentes"]')
         .should('have.attr', 'aria-label', 'Pedidos pendentes')
         .click({force:true})
+    cy.wait('@api_pedido_pendencia', { timeout: 40000 })
 
     //validando se entrou no Pedidos pendentes
     cy.get('.header')
@@ -90,8 +92,10 @@ export function escolherPedidoPendente (selector) {
 //clicar em Detalhes
 export function clicarDetalhes (selector) {
 
+    cy.intercept('/views/vendedor/pedidoDetalhes.html').as('api_pedido_detalhes')
     cy.get(':nth-child(1) > .btn-remove-item-list > :nth-child(2) > .md-raised')
         .click({force:true})
+    cy.wait('@api_pedido_detalhes', { timeout: 40000 })
 }
 
 //validando informações tela de informações do pedido
@@ -196,10 +200,12 @@ export function infosPedidoValidarBotoes (selector) {
 //clicar no botão lápis, para editar
 export function clicarEditarPedido (selector) {
 
+    cy.intercept('/services/v3/executar_filtro').as('api_executar_filtro')
     cy.get('.row-fluid > .md-primary > .ng-binding')
         .should('be.visible')
         .and('not.be.disabled')
         .click()
+    cy.wait('@api_executar_filtro', { timeout: 40000 })
 }
 
 //mensagem de carregamento de pedido para alterá-lo
@@ -234,18 +240,16 @@ export function clicarAumentoQtdProduto (selector) {
 //clicar para remover primeiro produto
 export function clicarRemoverProduto (selector) {
 
-    //ícone dentro do botão
-    cy.get('#item-index-0 > .flex-gt-sm-80 > :nth-child(2) > .flex-20 > .md-warn > .ng-binding')
-        .should('exist')
-        //.and('be.visible')
-        .and('not.be.disabled')
-
     //botão completo
-    cy.get('#item-index-0 > .flex-gt-sm-80 > :nth-child(2) > .flex-20 > .md-warn')
+    cy.get('.flex-20 > .md-warn')
         .should('exist')
-        //.and('be.visible')
-        .and('not.be.disabled')
-        .click({force:true})        
+        .and('be.visible')
+        .and('not.be.disabled')  
+        
+    cy.intercept('GET', '/services/v3/intencao_compra_motivo').as('api_intencao_compra_motivo')
+    cy.get('.flex-20 > .md-warn')
+        .click({force:true}) 
+    cy.wait('@api_intencao_compra_motivo', { timeout: 40000 })
 }
 
 //fechar modal de intenção de compra
@@ -263,7 +267,12 @@ export function clicarFecharIntencaoCompra (selector) {
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
         .should('be.visible')
         .and('not.be.disabled')
+
+    //botão X
+    cy.intercept('GET', '/services/v3/produto_destaque**').as('api_fechar_modal_intencao_compra')
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
         .click()
+    cy.wait('@api_fechar_modal_intencao_compra', { timeout: 40000 })
 }
 
 //remover forma de pagamento na edição de um pedido
@@ -299,6 +308,47 @@ export function adicionarServico (selector) {
         .should('be.visible')
         .and('not.have.attr', 'disabled')
 
+    cy.intercept('/services/v3/produto_servico_vinculado**').as('api_produto_servico_vinculado_alterarPedido')
     cy.get(':nth-child(4) > :nth-child(1) > .md-default')
         .click()
+    cy.wait('@api_produto_servico_vinculado_alterarPedido', { timeout: 40000 })
+}
+
+//botão GERAR PARCELAS quando vamos alterar um pedido
+export function botaoGerarParcelasAlterar (selector) {
+
+    //Botão "GERAR PARCELAS" - validações
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .scrollIntoView()
+        .wait(200)
+        .should('exist')
+        .and('have.text', 'Gerar parcelas')
+
+    //Botão "GERAR PARCELAS" - clicar
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .click({force:true})
+}
+
+//escolhendo forma de pagamento 3860 (3860 - T.A. A Receber Futuro) do pedido de venda -ALTERAÇÃO
+export function escolherFormaPagamentoPrincipalAlterar (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('exist')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //escolhendo forma de pagamento - 3860
+    cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
+    cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope')
+        .click({force:true})
+    cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
 }

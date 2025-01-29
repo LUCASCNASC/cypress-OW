@@ -3,7 +3,7 @@ export function produtoNormalPrimeiroNFCe (selector) {
 
     const primeiro_produto_normal = '1860'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1860.*/).as('apiConsultaProdutos_produtoNormalPrimeiroNFCe')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -26,7 +26,7 @@ export function produtoNormalPrimeiroNFCe (selector) {
         .wait(100)
         .should('have.value', primeiro_produto_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoNormalPrimeiroNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -138,7 +138,7 @@ export function produtoNormalSegundoNFCe (selector) {
 
     const segundo_produto_normal = '1870'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1870.*/).as('apiConsultaProdutos_produtoNormalSegundoNFCe')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -162,7 +162,7 @@ export function produtoNormalSegundoNFCe (selector) {
         .wait(100)
         .should('have.value', segundo_produto_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoNormalSegundoNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -274,7 +274,7 @@ export function produtoKitPrimeiroNFCe (selector) {
 
     const primeiro_kit_normal = '1862'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1862.*/).as('apiConsultaProdutos_produtoKitPrimeiroNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -293,7 +293,7 @@ export function produtoKitPrimeiroNFCe (selector) {
         .wait(100)
         .should('have.value', primeiro_kit_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoKitPrimeiroNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -404,7 +404,7 @@ export function produtoSemSaldoNFCe (selector) {
 
     const produto_sem_saldo = '1869'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1869.*/).as('apiConsultaProdutos_produtoSemSaldoNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -422,7 +422,7 @@ export function produtoSemSaldoNFCe (selector) {
         .wait(100)
         .should('have.value', produto_sem_saldo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoSemSaldoNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -514,7 +514,7 @@ export function produtoCDPrimeiroNFCe (selector) {
 
     const primeiro_produto_CD = '1880'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1880.*/).as('apiConsultaProdutos_produtoCDPrimeiroNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -532,7 +532,7 @@ export function produtoCDPrimeiroNFCe (selector) {
         .wait(100)
         .should('have.value', primeiro_produto_CD)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoCDPrimeiroNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -674,7 +674,7 @@ export function produtoRemotoComCDNFCe (selector) {
 
     const remoto_saldo_CD = '1883'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1883.*/).as('apiConsultaProdutos_produtoRemotoComCDNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -692,7 +692,7 @@ export function produtoRemotoComCDNFCe (selector) {
         .wait(100)
         .should('have.value', remoto_saldo_CD)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoRemotoComCDNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -804,7 +804,7 @@ export function produtoRemotoSemCDNFCe (selector) {
 
     const remoto__sem_saldo_CD = '1882'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1882.*/).as('apiConsultaProdutos_produtoRemotoSemCDNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -822,7 +822,7 @@ export function produtoRemotoSemCDNFCe (selector) {
         .wait(100)
         .should('have.value', remoto__sem_saldo_CD)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoRemotoSemCDNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -914,7 +914,7 @@ export function produtoArredondarCimaBaixoNFCe (selector) {
 
     const produto_arredondar = '1908'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1908.*/).as('apiConsultaProdutos_produtoArredondarCimaBaixoNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -931,7 +931,7 @@ export function produtoArredondarCimaBaixoNFCe (selector) {
         .wait(100)
         .should('have.value', produto_arredondar)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoArredondarCimaBaixoNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1023,7 +1023,7 @@ export function produtoDescontoCifraoNFCe (selector) {
 
     const produto_desconto_cifrao = '1912'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1912.*/).as('apiConsultaProdutos_produtoDescontoCifraoNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1040,7 +1040,7 @@ export function produtoDescontoCifraoNFCe (selector) {
         .wait(100)
         .should('have.value', produto_desconto_cifrao)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoDescontoCifraoNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1132,7 +1132,7 @@ export function produtoDescontoPercentualNFCe (selector) {
 
     const produto_desconto_percentual = '1913'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1913.*/).as('apiConsultaProdutos_produtoDescontoPercentualNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1149,7 +1149,7 @@ export function produtoDescontoPercentualNFCe (selector) {
         .wait(100)
         .should('have.value', produto_desconto_percentual)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoDescontoPercentualNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1241,7 +1241,7 @@ export function produtoDescontoValorFixoNFCe (selector) {
 
     const produto_desconto_valorfixo = '1914'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1914.*/).as('apiConsultaProdutos_produtoDescontoValorFixoNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1258,7 +1258,7 @@ export function produtoDescontoValorFixoNFCe (selector) {
         .wait(100)
         .should('have.value', produto_desconto_valorfixo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoDescontoValorFixoNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1350,7 +1350,7 @@ export function produtoKitDescontoNFCe (selector) {
 
     const primeiro_kit_desconto = '1909'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1909.*/).as('apiConsultaProdutos_produtoKitDescontoNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1368,7 +1368,7 @@ export function produtoKitDescontoNFCe (selector) {
         .wait(100)
         .should('have.value', primeiro_kit_desconto)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoKitDescontoNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1460,7 +1460,7 @@ export function produtoKitRemotoNFCe (selector) {
 
     const primeiro_kit_remoto = '1915'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1915.*/).as('apiConsultaProdutos_produtoKitRemotoNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1478,7 +1478,7 @@ export function produtoKitRemotoNFCe (selector) {
         .wait(100)
         .should('have.value', primeiro_kit_remoto)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoKitRemotoNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1590,7 +1590,7 @@ export function produtoPromoPartidaNFCe (selector) {
 
     const produto_promocao_partida = '1868'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1968.*/).as('apiConsultaProdutos_produtoPromoPartidaNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1608,7 +1608,7 @@ export function produtoPromoPartidaNFCe (selector) {
         .wait(100)
         .should('have.value', produto_promocao_partida)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoPromoPartidaNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1720,7 +1720,7 @@ export function produtoPromoPrazoEntradaNFCe (selector) {
 
     const produto_promocao_prazo_entrada = '1866'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1866.*/).as('apiConsultaProdutos_produtoPromoPrazoEntradaNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1738,7 +1738,7 @@ export function produtoPromoPrazoEntradaNFCe (selector) {
         .wait(100)
         .should('have.value', produto_promocao_prazo_entrada)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoPromoPrazoEntradaNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1850,7 +1850,7 @@ export function produtoPromoPrazoParceladoNFCe (selector) {
 
     const produto_promocao_prazo_parcelado = '1867'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1867.*/).as('apiConsultaProdutos_produtoPromoPrazoParceladoNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1868,7 +1868,7 @@ export function produtoPromoPrazoParceladoNFCe (selector) {
         .wait(100)
         .should('have.value', produto_promocao_prazo_parcelado)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_produtoPromoPrazoParceladoNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1980,7 +1980,7 @@ export function prd1PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1891'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1891.*/).as('apiConsultaProdutos_prd1PrazoParcelaNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1998,7 +1998,7 @@ export function prd1PrazoParcelaNFCe (selector) {
         .wait(100)
         .should('have.value', produto_codigo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_prd1PrazoParcelaNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -2091,7 +2091,7 @@ export function prd2PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1895'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1895.*/).as('apiConsultaProdutos_prd2PrazoParcelaNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2109,7 +2109,7 @@ export function prd2PrazoParcelaNFCe (selector) {
         .wait(100)
         .should('have.value', produto_codigo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_prd2PrazoParcelaNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -2202,7 +2202,7 @@ export function prd3PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1893'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1893.*/).as('apiConsultaProdutos_prd3PrazoParcelaNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2220,7 +2220,7 @@ export function prd3PrazoParcelaNFCe (selector) {
         .wait(100)
         .should('have.value', produto_codigo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_prd3PrazoParcelaNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -2312,7 +2312,7 @@ export function prd4PrazoParcelaNFCe (selector) {
 
     const produto_codigo = '1894'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1894.*/).as('apiConsultaProdutos_prd4PrazoParcelaNFCe')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2330,7 +2330,7 @@ export function prd4PrazoParcelaNFCe (selector) {
         .wait(100)
         .should('have.value', produto_codigo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_prd4PrazoParcelaNFCe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido

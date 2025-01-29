@@ -3,7 +3,7 @@ export function prdPrimeiroFinanBaixaNFe (selector) {
 
     const primeiro_produto_normal = '1860'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1860.*/).as('apiConsultaProdutos_FinanBaixaNFe')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -26,7 +26,7 @@ export function prdPrimeiroFinanBaixaNFe (selector) {
         .wait(100)
         .should('have.value', primeiro_produto_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_FinanBaixaNFe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -138,7 +138,7 @@ export function prdSegundoFinanBaixaNFe (selector) {
 
     const segundo_produto_normal = '1870'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1870.*/).as('apiConsultaProdutos_SegundoFinanBaixaNFe')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -162,7 +162,7 @@ export function prdSegundoFinanBaixaNFe (selector) {
         .wait(100)
         .should('have.value', segundo_produto_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_SegundoFinanBaixaNFe', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido

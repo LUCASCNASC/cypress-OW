@@ -3,7 +3,7 @@ export function prdPromoPrazoParcelaPrest (selector) {
 
     const primeiro_produto_normal = '1918'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1918.*/).as('apiConsultaProdutos_PromoPrazoParcelaPrest')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -26,7 +26,7 @@ export function prdPromoPrazoParcelaPrest (selector) {
         .wait(100)
         .should('have.value', primeiro_produto_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_PromoPrazoParcelaPrest', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -145,7 +145,7 @@ export function prdSegPromoPrazoParcelaPrest (selector) {
 
     const primeiro_produto_normal = '1919'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1919.*/).as('apiConsultaProdutos_SegPromoPrazoParcelaPrest')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -168,7 +168,7 @@ export function prdSegPromoPrazoParcelaPrest (selector) {
         .wait(100)
         .should('have.value', primeiro_produto_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_SegPromoPrazoParcelaPrest', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido

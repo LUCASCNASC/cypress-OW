@@ -3,8 +3,8 @@ import { produtoPromoPartidaNFCe, produtoPromoPrazoEntradaNFCe, produtoPromoPraz
          escolherVoltagemProdutoPromoPartidaNFCe, escolherProdutoPromoPrazoEntradaNFCe, escolherVoltagemProdutoPromoPrazoEntradaNFCe, 
          escolherProdutoPromoPrazoParceladoNFCe, escolherVoltagemProdutoPromoPrazoParceladoNFCe, clicarAddProdutoPromoPartidaNFCe, 
          clicarAddProdutoPromoPrazoEntradaNFCe, clicarAddProdutoPromoPrazoParceladoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
-import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
-import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { clicarUsarPromocao, selecionarFormaPagPromo, incluirDataAmanha } from '../../../support/para_pedidos/para_pedidos_promocao.js';
+import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/apenas_processos_venda.js';
@@ -54,7 +54,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             pedidoGerado()
         })
     
-        it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it.only('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntradaNFCe() //PRODUTO
             saldodisponivel()
@@ -71,22 +71,25 @@ describe('Gerar pedidos com promoção com entrega', () => {
             avancarParcelasEntrega()
             cy.wait(6000)
 
-            "GERAR PAGAMENTO"
-            cy.get('.white > :nth-child(3)').click({force:true})
-            cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
-            cy.get('.white > .layout-align-center-center > .md-primary').click({force:true})
+            //"GERAR PAGAMENTO"
+            cy.get('.layout-wrap > .md-primary').scrollTo('top').wait(200)
+            cy.contains('.md-select-value', 'Forma de pagamento').click()
+            // cy.get('.white > :nth-child(3)').click({force:true})
+            // cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
+            // clicarGerarPagamento()
+            // incluirDataAmanha()
 
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
-            cy.wait(3000)
-            escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
-            avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            // botaoGerarParcelas() //GERAR PARCELAS
+            // carregandoFormaPagamento()
+            // cy.wait(3000)
+            // escolherFormaPagamentoPrincipal()
+            // escolherDuasParcelaPagamento()
+            // avancarFinal()
+            // botaoFinalizarPedido() //RESUMO
+            // pedidoGerado()
         })
 
-        it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParceladoNFCe() //PRODUTO
             saldodisponivel()

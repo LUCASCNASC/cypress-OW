@@ -1,3 +1,6 @@
+import { umDiaAposHoje } from '../gerarDados'
+
+
 //Validando modal de carregamento "Adicionando produtos/serviços..."
 export function messAdicionandoProdutosServicos (selector) {
 
@@ -148,4 +151,21 @@ export function tipoServicoIsentoValidar (selector) {
     //Validando "Garantias" dentro do modal Promoções
     cy.contains('Garantias')
         .should('be.visible')
+}
+
+//no campo 1 vencimento, modificar a data para um dia após hoje, ou seja, data de amanhã
+export function incluirDataAmanha (selector) {
+
+    const data_amanha = umDiaAposHoje()
+
+    cy.get('[ng-show="parcelamentoAutomaticoDisponivel"] > .md-subheader-inner > .md-subheader-content').click()
+
+    cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
+        .scrollIntoView()
+        .wait(200)
+
+    cy.get('.md-datepicker-input[inputmode="numeric"]').clear()
+
+    // cy.contains('1º Vencimento').parent().find('input')
+    //     .clear()
 }

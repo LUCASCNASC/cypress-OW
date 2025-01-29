@@ -3,7 +3,7 @@ export function produtoNormalPrimeiro (selector) {
 
     const primeiro_produto_normal = '1860'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1860.*/).as('apiConsultaProdutos_primeiroNormal')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -26,7 +26,7 @@ export function produtoNormalPrimeiro (selector) {
         .wait(100)
         .should('have.value', primeiro_produto_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_primeiroNormal', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -138,7 +138,7 @@ export function produtoNormalSegundo (selector) {
 
     const segundo_produto_normal = '1870'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1870.*/).as('apiConsultaProdutos_segundoNormal')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -162,7 +162,7 @@ export function produtoNormalSegundo (selector) {
         .wait(100)
         .should('have.value', segundo_produto_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_segundoNormal', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -274,7 +274,7 @@ export function produtoKitPrimeiro (selector) {
 
     const primeiro_kit_normal = '1862'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1862.*/).as('apiConsultaProduto_primeiroKit')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -293,7 +293,7 @@ export function produtoKitPrimeiro (selector) {
         .wait(100)
         .should('have.value', primeiro_kit_normal)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProduto_primeiroKit', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -405,7 +405,7 @@ export function produtoSemSaldo (selector) {
 
     const produto_sem_saldo = '1869'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1869.*/).as('apiConsultaProdutos_semSaldo')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -423,7 +423,7 @@ export function produtoSemSaldo (selector) {
         .wait(100)
         .should('have.value', produto_sem_saldo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_semSaldo', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -515,7 +515,7 @@ export function produtoCDPrimeiro (selector) {
 
     const primeiro_produto_CD = '1880'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1880.*/).as('apiConsultaProdutos_CDPrimeiro')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -533,7 +533,7 @@ export function produtoCDPrimeiro (selector) {
         .wait(100)
         .should('have.value', primeiro_produto_CD)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_CDPrimeiro', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -675,7 +675,7 @@ export function produtoRemotoComCD (selector) {
 
     const remoto_saldo_CD = '1883'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1883.*/).as('apiConsultaProdutos_remotoComCD')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -693,7 +693,7 @@ export function produtoRemotoComCD (selector) {
         .wait(100)
         .should('have.value', remoto_saldo_CD)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_remotoComCD', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -805,7 +805,7 @@ export function produtoRemotoSemCD (selector) {
 
     const remoto__sem_saldo_CD = '1882'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1882.*/).as('apiConsultaProdutos_remotoSemCD')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -823,7 +823,7 @@ export function produtoRemotoSemCD (selector) {
         .wait(100)
         .should('have.value', remoto__sem_saldo_CD)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_remotoSemCD', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -915,7 +915,7 @@ export function produtoArredondarCimaBaixo (selector) {
 
     const produto_arredondar = '1908'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1908.*/).as('apiConsultaProdutos_arredondar')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -932,7 +932,7 @@ export function produtoArredondarCimaBaixo (selector) {
         .wait(100)
         .should('have.value', produto_arredondar)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_arredondar', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1044,7 +1044,7 @@ export function produtoDescontoCifrao (selector) {
 
     const produto_desconto_cifrao = '1912'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1912.*/).as('apiConsultaProdutos_descontoCifrao')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1061,7 +1061,7 @@ export function produtoDescontoCifrao (selector) {
         .wait(100)
         .should('have.value', produto_desconto_cifrao)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_descontoCifrao', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1153,7 +1153,7 @@ export function produtoDescontoPercentual (selector) {
 
     const produto_desconto_percentual = '1913'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1913.*/).as('apiConsultaProdutos_descontoPercentual')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1170,7 +1170,7 @@ export function produtoDescontoPercentual (selector) {
         .wait(100)
         .should('have.value', produto_desconto_percentual)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_descontoPercentual', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1262,7 +1262,7 @@ export function produtoDescontoValorFixo (selector) {
 
     const produto_desconto_valorfixo = '1914'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1914.*/).as('apiConsultaProdutos_descontoValorFixo')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1279,7 +1279,7 @@ export function produtoDescontoValorFixo (selector) {
         .wait(100)
         .should('have.value', produto_desconto_valorfixo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_descontoValorFixo', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1371,7 +1371,7 @@ export function produtoKitDesconto (selector) {
 
     const primeiro_kit_desconto = '1909'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1909.*/).as('apiConsultaProdutos_kitDesconto')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1389,7 +1389,7 @@ export function produtoKitDesconto (selector) {
         .wait(100)
         .should('have.value', primeiro_kit_desconto)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_kitDesconto', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1501,7 +1501,7 @@ export function produtoKitRemoto (selector) {
 
     const primeiro_kit_remoto = '1915'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1915.*/).as('apiConsultaProdutos_kitRemoto')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1519,7 +1519,7 @@ export function produtoKitRemoto (selector) {
         .wait(100)
         .should('have.value', primeiro_kit_remoto)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_kitRemoto', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1631,7 +1631,7 @@ export function produtoPromoPartida (selector) {
 
     const produto_promocao_partida = '1868'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1868.*/).as('apiConsultaProdutos_promoPartida')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1649,7 +1649,7 @@ export function produtoPromoPartida (selector) {
         .wait(100)
         .should('have.value', produto_promocao_partida)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_promoPartida', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1761,7 +1761,7 @@ export function produtoPromoPrazoEntrada (selector) {
 
     const produto_promocao_prazo_entrada = '1866'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1866.*/).as('apiConsultaProdutos_PromoPrazoEntrada')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1779,7 +1779,7 @@ export function produtoPromoPrazoEntrada (selector) {
         .wait(100)
         .should('have.value', produto_promocao_prazo_entrada)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_PromoPrazoEntrada', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -1891,7 +1891,7 @@ export function produtoPromoPrazoParcelado (selector) {
 
     const produto_promocao_prazo_parcelado = '1867'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1867.*/).as('apiConsultaProdutos_PromoPrazoParcelado')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -1909,7 +1909,7 @@ export function produtoPromoPrazoParcelado (selector) {
         .wait(100)
         .should('have.value', produto_promocao_prazo_parcelado)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_PromoPrazoParcelado', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -2021,7 +2021,7 @@ export function prd1PrazoParcela (selector) {
 
     const produto_codigo = '1891'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1891.*/).as('apiConsultaProdutos_prd1PrazoParcela')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2039,7 +2039,7 @@ export function prd1PrazoParcela (selector) {
         .wait(100)
         .should('have.value', produto_codigo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_prd1PrazoParcela', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -2151,7 +2151,7 @@ export function prd2PrazoParcela (selector) {
 
     const produto_codigo = '1895'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1895.*/).as('apiConsultaProdutos_prd2PrazoParcela')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2169,7 +2169,7 @@ export function prd2PrazoParcela (selector) {
         .wait(100)
         .should('have.value', produto_codigo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_prd2PrazoParcela', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -2281,7 +2281,7 @@ export function prd3PrazoParcela (selector) {
 
     const produto_codigo = '1893'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1893.*/).as('apiConsultaProdutos_prd3PrazoParcela')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2299,7 +2299,7 @@ export function prd3PrazoParcela (selector) {
         .wait(100)
         .should('have.value', produto_codigo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_prd3PrazoParcela', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -2411,7 +2411,7 @@ export function prd4PrazoParcela (selector) {
 
     const produto_codigo = '1894'
 
-    cy.intercept('/consultaprodutos/**').as('apiConsultaProdutos')
+    cy.intercept('GET', /\/consultaprodutos\/.*1894.*/).as('apiConsultaProdutos_prd4PrazoParcela')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -2429,7 +2429,7 @@ export function prd4PrazoParcela (selector) {
         .wait(100)
         .should('have.value', produto_codigo)
 
-    cy.wait('@apiConsultaProdutos', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_prd4PrazoParcela', { timeout: 40000 })
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
