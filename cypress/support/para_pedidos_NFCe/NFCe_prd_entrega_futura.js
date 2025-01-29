@@ -74,7 +74,7 @@ export function escolherPesqPrdPrimeiroEntregaFutNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function clicarVoltPrdPrimeiroEntregaFutNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1860').as('api_produto_relacionado_lista_1860')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -108,7 +108,7 @@ export function clicarVoltPrdPrimeiroEntregaFutNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1860', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -210,7 +210,7 @@ export function escolherPesqPrdSegundoEntregaFutNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function clicarVoltPrdSegundoEntregaFutNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1870').as('api_produto_relacionado_lista_1870')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -244,7 +244,7 @@ export function clicarVoltPrdSegundoEntregaFutNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1870', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto

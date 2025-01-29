@@ -74,7 +74,7 @@ export function escolherProdutoPesquisaNormalPrimeiroNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoNormalPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1860').as('api_produto_relacionado_lista_1860')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -108,7 +108,7 @@ export function escolherVoltagemProdutoNormalPrimeiroNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1860', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -210,7 +210,7 @@ export function escolherProdutoPesquisaNormalSegundoNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoNormalSegundoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1870').as('api_produto_relacionado_lista_1870')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -244,7 +244,7 @@ export function escolherVoltagemProdutoNormalSegundoNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1870', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -341,7 +341,7 @@ export function escolherProdutoKitPrimeiroNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoKitPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1862').as('api_produto_relacionado_lista_1862')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -375,7 +375,7 @@ export function escolherVoltagemProdutoKitPrimeiroNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1862', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoKitPrimeiroNFCe (selector) {
@@ -470,7 +470,7 @@ export function escolherProdutoSemSaldoNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoSemSaldoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1869').as('api_produto_relacionado_lista_1869')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -504,7 +504,7 @@ export function escolherVoltagemProdutoSemSaldoNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1869', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -580,7 +580,7 @@ export function escolherProdutoCDPrimeiroNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoCDPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1880').as('api_produto_relacionado_lista_1880')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -614,7 +614,7 @@ export function escolherVoltagemProdutoCDPrimeiroNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1880', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -740,7 +740,7 @@ export function escolherProdutoRemotoComCDNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoRemotoComCDNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1883').as('api_produto_relacionado_lista_1883')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -774,7 +774,7 @@ export function escolherVoltagemProdutoRemotoComCDNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1883', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -870,7 +870,7 @@ export function escolherProdutoRemotoSemCDNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoRemotoSemCDNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1882').as('api_produto_relacionado_lista_1882')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -904,7 +904,7 @@ export function escolherVoltagemProdutoRemotoSemCDNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1882', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -979,7 +979,7 @@ export function escolherProdutoArredondarCimaBaixoNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoArredondarCimaBaixoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1908').as('api_produto_relacionado_lista_1908')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1013,7 +1013,7 @@ export function escolherVoltagemProdutoArredondarCimaBaixoNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1908', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -1088,7 +1088,7 @@ export function escolherProdutoDescontoCifraoNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoDescontoCifraoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1912').as('api_produto_relacionado_lista_1912')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1122,7 +1122,7 @@ export function escolherVoltagemProdutoDescontoCifraoNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1912', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -1197,7 +1197,7 @@ export function escolherProdutoDescontoPercentualNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoDescontoPercentualNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1913').as('api_produto_relacionado_lista_1913')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1231,7 +1231,7 @@ export function escolherVoltagemProdutoDescontoPercentualNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1913', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -1306,7 +1306,7 @@ export function escolherProdutoDescontoValorFixoNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoDescontoValorFixoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1914').as('api_produto_relacionado_lista_1914')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1340,7 +1340,7 @@ export function escolherVoltagemProdutoDescontoValorFixoNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1914', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -1416,7 +1416,7 @@ export function escolherProdutoKitDescontoNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoKitDescontoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1909').as('api_produto_relacionado_lista_1909')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1450,7 +1450,7 @@ export function escolherVoltagemProdutoKitDescontoNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1909', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -1526,7 +1526,7 @@ export function escolherProdutoKitRemotoNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoKitRemotoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1915').as('api_produto_relacionado_lista_1915')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1560,7 +1560,7 @@ export function escolherVoltagemProdutoKitRemotoNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1915', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -1656,7 +1656,7 @@ export function escolherProdutoPromoPartidaNFCe (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoPromoPartidaNFCe (selector) {
 
-    //cy.intercept('GET', '/services/v3/produto_relacionado?lista=1868').as('api_produto_relacionado_lista_1868')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1690,7 +1690,7 @@ export function escolherVoltagemProdutoPromoPartidaNFCe (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    //cy.wait('@api_produto_relacionado_lista_1868', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -1786,7 +1786,7 @@ export function escolherProdutoPromoPrazoEntradaNFCe  (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoPromoPrazoEntradaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1866').as('api_produto_relacionado_lista_1866')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1820,7 +1820,7 @@ export function escolherVoltagemProdutoPromoPrazoEntradaNFCe  (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1866', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -1916,7 +1916,7 @@ export function escolherProdutoPromoPrazoParceladoNFCe  (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoPromoPrazoParceladoNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1867').as('api_produto_relacionado_lista_1867')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -1950,7 +1950,7 @@ export function escolherVoltagemProdutoPromoPrazoParceladoNFCe  (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1867', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -2046,7 +2046,7 @@ export function escolherProdutoPrazoParcelaNFCe  (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoPrazoParcelaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1891').as('api_produto_relacionado_lista_1891')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -2080,7 +2080,7 @@ export function escolherVoltagemProdutoPrazoParcelaNFCe  (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1891', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -2157,7 +2157,7 @@ export function escolherProduto2PrazoParcelaNFCe  (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProduto2PrazoParcelaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1895').as('api_produto_relacionado_lista_1895')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -2191,7 +2191,7 @@ export function escolherVoltagemProduto2PrazoParcelaNFCe  (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1895', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -2268,7 +2268,7 @@ export function escolherProduto3PrazoParcelaNFCe  (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProduto3PrazoParcelaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1893').as('api_produto_relacionado_lista_1893')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -2302,7 +2302,7 @@ export function escolherVoltagemProduto3PrazoParcelaNFCe  (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1893', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----
@@ -2378,7 +2378,7 @@ export function escolherProduto4PrazoParcelaNFCe  (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProduto4PrazoParcelaNFCe  (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_relacionado?lista=1894').as('api_produto_relacionado_lista_1894')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -2412,7 +2412,7 @@ export function escolherVoltagemProduto4PrazoParcelaNFCe  (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1894', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //-----

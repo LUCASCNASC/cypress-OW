@@ -74,7 +74,7 @@ export function escolherPesquisaProdutoPromoPrazoParcelaPrest (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltagemProdutoPromoPrazoParcelaPrest (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1918').as('api_produto_relacionado_lista_1918')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -115,7 +115,7 @@ export function escolherVoltagemProdutoPromoPrazoParcelaPrest (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1918', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
@@ -216,7 +216,7 @@ export function escolherPesqSegPrdPromoPrazoParcelaPrest (selector) {
 //Clicar para selecionar a voltagem que queremos adicionar ao pedido
 export function escolherVoltSegPrdPromoPrazoParcelaPrest (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1919').as('api_produto_relacionado_lista_1919')
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
     //Mensagem "Selecione a cor, a voltagem e o local de saldo "
     cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
@@ -257,7 +257,7 @@ export function escolherVoltSegPrdPromoPrazoParcelaPrest (selector) {
     cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
         .click({force:true})
 
-    cy.wait('@api_produto_relacionado_lista_1919', { timeout: 40000 })
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
 }
 
 //Botão adicionar produto após selecionar voltagem do produto

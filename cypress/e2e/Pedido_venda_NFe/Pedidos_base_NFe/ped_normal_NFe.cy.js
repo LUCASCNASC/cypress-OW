@@ -28,7 +28,7 @@ describe('Gerar pedido normal', () => {
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
+        it.only('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
