@@ -44,11 +44,8 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             cy.wait(3000)
             escolherDuasParcelaPagamento()
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

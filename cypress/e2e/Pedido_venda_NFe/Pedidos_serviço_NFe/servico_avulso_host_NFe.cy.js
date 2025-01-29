@@ -42,11 +42,8 @@ describe('Venda de serviço avulso Host - 104', () => {
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

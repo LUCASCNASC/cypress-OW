@@ -40,12 +40,9 @@ describe('Gerar pedido com proposta de crédito', () => {
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            propostaCreditoGerada()
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        propostaCreditoGerada()
-        pedidoGerado()
-      });
 })

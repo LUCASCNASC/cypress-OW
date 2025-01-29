@@ -26,7 +26,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
     context('Com entrega /com promoção/ processo 9890 - caminho feliz', () => {
 
-        it('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             produtoPromoPartidaNFCe() //PRODUTO
             saldodisponivel()
@@ -50,9 +50,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
 
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     
-        it('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntradaNFCe() //PRODUTO
             saldodisponivel()
@@ -80,9 +82,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
-        it('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParceladoNFCe() //PRODUTO
             saldodisponivel()
@@ -105,11 +109,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })  
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

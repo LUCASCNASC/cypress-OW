@@ -121,7 +121,7 @@ export function escolherVoltagemProdutoPromoPrazoParcelaPrest (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddPrdPromoPrazoParcelaPrest (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1919.0.0&valor=950&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -263,7 +263,7 @@ export function escolherVoltSegPrdPromoPrazoParcelaPrest (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddSegPrdPromoPrazoParcelaPrest (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1919.0.0&valor=950&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')

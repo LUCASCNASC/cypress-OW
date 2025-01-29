@@ -68,11 +68,8 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

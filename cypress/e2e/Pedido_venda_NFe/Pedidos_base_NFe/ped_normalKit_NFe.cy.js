@@ -41,6 +41,8 @@ describe('Gerar pedido normal', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
     
@@ -62,11 +64,8 @@ describe('Gerar pedido normal', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

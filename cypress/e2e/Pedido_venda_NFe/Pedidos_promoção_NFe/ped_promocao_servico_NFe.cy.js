@@ -48,7 +48,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             avancarParaParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            avancarFinal() //PAGAMENTO
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     
         it('2. Ped venda com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
@@ -94,6 +96,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 .click({force:true})
 
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     
         it('3. Ped venda com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
@@ -117,7 +121,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             adicionarPrestamista()
-            avancarFinal() //PAGAMENTO
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('4. Ped venda com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
@@ -143,12 +149,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             adicionarPrestamista()
-            avancarFinal() //PAGAMENTO
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
  })

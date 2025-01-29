@@ -54,6 +54,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.wait(3000)
             escolherDuasParcelaPagamento()
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it.skip('2. Vender um produto normal (com saldo e com entrega) e um kit com composição 6 volumes (data atual + parametro 552/ 5 dias).', () => {
@@ -79,8 +81,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
 
@@ -104,8 +107,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         //necessário esperar tarefa PVW-220
@@ -144,11 +148,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

@@ -30,25 +30,23 @@ describe('Gerar pedido de venda com desconto', () => {
             produtoDescontoCifrao() //PRODUTO
             saldodisponivel()
             escolherProdutoDescontoCifrao()
-            cy.wait(200)
             escolherVoltagemProdutoDescontoCifrao() 
             clicarAdicionarProduto()
-            cy.wait(500)
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             clicarBotaoDesconto() //DESCONTO
             validarModalSubSobre()
             aplicarDescontoR$()
             tirarEntrega() //ENTREGA
-            cy.wait(2200)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('2. Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
@@ -56,25 +54,23 @@ describe('Gerar pedido de venda com desconto', () => {
             produtoDescontoPercentual() //PRODUTO
             saldodisponivel()
             escolherProdutoDescontoPercentual()
-            cy.wait(200)
             escolherVoltagemProdutoDescontoPercentual() 
             clicarAdicionarProduto()
-            cy.wait(500)
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             clicarBotaoDesconto() //DESCONTO
             validarModalSubSobre()
             aplicarDescontoPorcentagem()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('3. Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
@@ -82,30 +78,23 @@ describe('Gerar pedido de venda com desconto', () => {
             produtoDescontoValorFixo() //PRODUTO
             saldodisponivel()
             escolherProdutoDescontoValorFixo()
-            cy.wait(200)
             escolherVoltagemProdutoDescontoValorFixo() 
             clicarAdicionarProduto()
-            cy.wait(500)
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             clicarBotaoDesconto() //DESCONTO
             validarModalSubSobre()
             aplicarDescontoValorFixo()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

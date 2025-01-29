@@ -114,7 +114,7 @@ export function escolherVoltagemProdutoNormalPrimeiro (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoNormalPrimeiro (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1860.0.0&valor=1313&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -250,7 +250,7 @@ export function escolherVoltagemProdutoNormalSegundo (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoNormalSegundo (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1870.0.0&valor=1300&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -381,7 +381,7 @@ export function escolherVoltagemProdutoKitPrimeiro (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoKitPrimeiro (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1862.0.0&valor=1058.48&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -621,7 +621,7 @@ export function escolherVoltagemProdutoCDPrimeiro (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoCDPrimeiro (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1880.0.0&valor=1300&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -781,7 +781,7 @@ export function escolherVoltagemProdutoRemotoComCD (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoRemotoComCD (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1883.0.0&valor=1625&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1020,7 +1020,7 @@ export function escolherVoltagemProdutoArredondarCimaBaixo (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoArredondarCimaBaixo (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1908.0.0&valor=1300&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1477,7 +1477,7 @@ export function escolherVoltagemProdutoKitDesconto (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoKitDesconto (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1909.0.0&valor=2860&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1607,7 +1607,7 @@ export function escolherVoltagemProdutoKitRemoto (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoKitRemoto (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1915.0.0&valor=2600&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1737,7 +1737,7 @@ export function escolherVoltagemProdutoPromoPartida (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoPromoPartida (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1868.0.0&valor=1700&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1867,7 +1867,7 @@ export function escolherVoltagemProdutoPromoPrazoEntrada  (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoPromoPrazoEntrada (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1866.0.0&valor=1400&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1997,7 +1997,7 @@ export function escolherVoltagemProdutoPromoPrazoParcelado  (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoPromoPrazoParcelado (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1867.0.0&valor=1500&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -2127,7 +2127,7 @@ export function escolherVoltagemProduto1PrazoParcela  (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProduto1PromoPrazoParcela (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1891.0.0&valor=1200&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -2257,7 +2257,7 @@ export function escolherVoltagemProduto2PrazoParcela  (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProduto2PrazoParcela (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1895.0.0&valor=1200&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -2387,7 +2387,7 @@ export function escolherVoltagemProduto3PrazoParcela  (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProduto3PrazoParcela (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1893.0.0&valor=1200&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -2517,7 +2517,7 @@ export function escolherVoltagemProduto4PrazoParcela  (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProduto4PrazoParcela (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1894.0.0&valor=1200&quantidade=1&processo=9860').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')

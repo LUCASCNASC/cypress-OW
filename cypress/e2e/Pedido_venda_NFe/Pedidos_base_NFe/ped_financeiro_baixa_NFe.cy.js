@@ -41,6 +41,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -66,6 +68,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
     
@@ -86,6 +90,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -110,11 +116,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

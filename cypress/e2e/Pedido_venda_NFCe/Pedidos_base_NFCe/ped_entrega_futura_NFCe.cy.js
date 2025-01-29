@@ -77,9 +77,4 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             pedidoGerado()
         })  
     })
-
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     pedidoGerado()
-    //   });
 })

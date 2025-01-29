@@ -38,6 +38,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento() 
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -55,6 +64,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento() 
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('3. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
@@ -65,6 +83,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega() 
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento() 
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('4. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
@@ -82,6 +109,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento() 
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
@@ -92,6 +128,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega() 
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento() 
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
@@ -108,18 +153,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
+            botaoGerarParcelas() //GERAR PARCELAS
+            carregandoFormaPagamento() 
+            escolherFormaPagamentoPrincipal()
+            cy.wait(3000)
+            escolherDuasParcelaPagamento()
+            cy.wait(400)
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoGerarParcelas() //GERAR PARCELAS
-        carregandoFormaPagamento()
-        escolherFormaPagamentoPrincipal()
-        cy.wait(3000)
-        escolherDuasParcelaPagamento()
-        cy.wait(400)
-        avancarFinal()
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })

@@ -114,7 +114,7 @@ export function escolherVoltagemProdutoNormalPrimeiroNFCe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoNormalPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1860.0.0&valor=1313&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -250,7 +250,7 @@ export function escolherVoltagemProdutoNormalSegundoNFCe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoNormalSegundoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1870.0.0&valor=1300&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -380,7 +380,7 @@ export function escolherVoltagemProdutoKitPrimeiroNFCe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoKitPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1862.0.0&valor=1058.48&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -620,7 +620,7 @@ export function escolherVoltagemProdutoCDPrimeiroNFCe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoCDPrimeiroNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1880.0.0&valor=1300&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -780,7 +780,7 @@ export function escolherVoltagemProdutoRemotoComCDNFCe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoRemotoComCDNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1883.0.0&valor=1625&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1566,7 +1566,7 @@ export function escolherVoltagemProdutoKitRemotoNFCe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoKitRemotoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1915.0.0&valor=2600&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1696,7 +1696,7 @@ export function escolherVoltagemProdutoPromoPartidaNFCe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoPromoPartidaNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1868.0.0&valor=1700&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1826,7 +1826,7 @@ export function escolherVoltagemProdutoPromoPrazoEntradaNFCe  (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoPromoPrazoEntradaNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1866.0.0&valor=1400&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -1956,7 +1956,7 @@ export function escolherVoltagemProdutoPromoPrazoParceladoNFCe  (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoPromoPrazoParceladoNFCe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1867.0.0&valor=1500&quantidade=1&processo=9890').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')

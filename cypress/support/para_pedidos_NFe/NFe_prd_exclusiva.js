@@ -108,7 +108,7 @@ export function escolherVoltagemPrimeiroPrdNormalExclusiva (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoPrimeiroPrdNormalExclusiva (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1896.0.0&valor=1300&quantidade=1&processo=9869').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -469,7 +469,7 @@ export function escolherVoltagemSaldoReceber (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function clicarAddProdutoSaldoReceber (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1905.0.0&valor=1300&quantidade=1&processo=9869').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')

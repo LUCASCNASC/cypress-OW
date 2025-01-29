@@ -28,7 +28,7 @@ describe('Gerar pedido normal', () => {
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it.only('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
+        it('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
             escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
             clicarAddProdutoNormalPrimeiro()
@@ -43,6 +43,8 @@ describe('Gerar pedido normal', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -68,6 +70,8 @@ describe('Gerar pedido normal', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('3. Ped venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
@@ -86,6 +90,8 @@ describe('Gerar pedido normal', () => {
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
 
@@ -106,6 +112,8 @@ describe('Gerar pedido normal', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('5. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -130,6 +138,8 @@ describe('Gerar pedido normal', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('6. Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
@@ -149,11 +159,8 @@ describe('Gerar pedido normal', () => {
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     pedidoGerado()
-    //   });
 })

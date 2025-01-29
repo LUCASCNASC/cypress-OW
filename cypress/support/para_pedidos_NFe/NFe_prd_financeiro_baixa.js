@@ -114,7 +114,7 @@ export function clicarVoltPrdPrimeiroFinanBaixaNFe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function addPrdPrimeiroFinanBaixaNFe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1860.0.0&valor=1313&quantidade=1&processo=9863').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')
@@ -250,7 +250,7 @@ export function clicarVoltPrdSegundoFinanBaixaNFe (selector) {
 //Botão adicionar produto após selecionar voltagem do produto
 export function addPrdSegundoFinanBaixaNFe (selector) {
 
-    cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1870.0.0&valor=1300&quantidade=1&processo=9863').as('api_servicos_vinculados')
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 
     //Botão adicionar produto após selecionar voltagem do produto
     cy.get('[style="padding: 0px 5px;"] > .md-accent')

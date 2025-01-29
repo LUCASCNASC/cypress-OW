@@ -47,6 +47,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             alterarValorParaBaixo()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
@@ -69,11 +71,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             alterarValorParaCima()
             cy.wait(400)
             avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
-
-    afterEach(() => {
-        botaoFinalizarPedido() //RESUMO
-        pedidoGerado()
-      });
 })
