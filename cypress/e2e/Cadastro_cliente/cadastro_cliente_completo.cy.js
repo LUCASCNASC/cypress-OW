@@ -385,7 +385,7 @@ describe('Cadastrar cliente completo', () => {
             messRegistroSalvoSucesso()
         })  
 
-        it('6. Cliente completo CPF - validar tipo de chave PIX Telefone ', () => {
+        it.only('6. Cliente completo CPF - validar tipo de chave PIX Telefone ', () => {
 
             iconeMenuOpcoes()
             opcaoClienteCompleto()

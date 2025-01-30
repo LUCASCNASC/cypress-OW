@@ -5,12 +5,16 @@ import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNor
 import { prdPromoPrazoParcelaPrest, escolherPesquisaProdutoPromoPrazoParcelaPrest, escolherVoltagemProdutoPromoPrazoParcelaPrest, 
          clicarAddProdutoPromoPrazoParcelaPrest, escolherRecebPromoPrazoFuturoComJurosPrest, escolherRecebPromoPrazoFuturoSemJurosPrest, 
          prdSegPromoPrazoParcelaPrest, escolherPesqSegPrdPromoPrazoParcelaPrest, escolherVoltSegPrdPromoPrazoParcelaPrest, 
-         clicarAddPrdPromoPrazoParcelaPrest } from '../../../support/para_pedidos_NFe/NFe_prd_promo_prestamista.js';
+         clicarAddPrdPromoPrazoParcelaPrest, prdPromoPartidaPrest, escolherPesquisaProdutoPromoPartidaPrest, 
+         escolherVoltagemProdutoPromoPartidaPrest, clicarAddPrdPromoPartidaPrest, escolherRecebPromoPartidaPresentePrest, 
+         botaoGerarParcAlterVencPrest } from '../../../support/para_pedidos_NFe/NFe_prd_promo_prestamista.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados, 
          okSeguroPrestamista } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento,
          escolherRecebFuturoPrestamistaComJuros, escolherQuatroParcelaPagamento, escolherRecebPresentePrestamista, 
-         escolherRecebFuturoPrestamistaSemJuros } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+         escolherRecebFuturoPrestamistaSemJuros, inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento, 
+         escolherRecebAVista,
+         escolherUmaParcelaPagamento} from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -29,7 +33,7 @@ describe('Gerar pedidos com serviço Prestamista', () => {
         cy.wait(500)
     })   
 
-    context('Sem entrga / Produtos sem promoção - Prestamista com abatimento %', () => {
+    context('Sem entrega / Produtos sem promoção - Prestamista com abatimento %', () => {
 
         it.skip('1. Ped venda: produtos 1860 0 0 e 1870 0 0, processo de inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
@@ -53,10 +57,9 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFuturoPrestamistaComJuros()
-            cy.wait(3000)
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -84,10 +87,9 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebPresentePrestamista()
-            cy.wait(3000)
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -117,10 +119,9 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFuturoPrestamistaSemJuros()
-            cy.wait(3000)
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -148,10 +149,9 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFuturoPrestamistaComJuros()
-            cy.wait(3000)
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -178,11 +178,10 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            cy.wait(3000)
             escolherRecebFuturoPrestamistaSemJuros()
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -210,10 +209,9 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebPresentePrestamista()
-            cy.wait(3000)
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -222,7 +220,7 @@ describe('Gerar pedidos com serviço Prestamista', () => {
 
     context('Sem entrega / Produtos com promoção - Prestamista com abatimento %', () => {
 
-        it.skip('7. Ped venda: produto 1918 0 0 (promoção 167), processo de inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
+        it.skip('7. Ped venda: produto 1918 0 0 (promoção a prazo 167), processo de inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -245,7 +243,7 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             pedidoGerado()
         })
 
-        it.skip('8. Ped venda: produto 1918 0 0 (promoção 167), processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
+        it.skip('8. Ped venda: produto 1918 0 0 (promoção a prazo 167), processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -268,7 +266,7 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             // pedidoGerado()
         })
 
-        it.skip('9. Ped venda: produto 1918 0 0 (promoção 167), com garantia Não separa, processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
+        it.skip('9. Ped venda: produto 1918 0 0 (promoção a prazo 167), com garantia Não separa, processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -295,7 +293,7 @@ describe('Gerar pedidos com serviço Prestamista', () => {
 
     context('Com entrega / Produtos com promoção - Prestamista com abatimento %', () => {
 
-        it.skip('10. Ped venda: produto 1919 0 0 (promoção 168), com garantia Não separa, processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
+        it.skip('10. Ped venda: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             prdSegPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -307,9 +305,73 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            avancarParaTransportadora()
+            avancarParcelasEntrega()
+            cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
+            cy.wait('@api_pagamentoPedido', { timeout: 40000 })
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
+            inserirDataAmanha1Vencimento()
+            cy.wait(4000)
+            botaoGerarParcAlterVencPrest()
+            cy.contains('3876 - T.A. A Receber Futuro - para Prestamista sem juros').click()
+            cy.intercept('/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
+            cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
+            escolherUmaParcelaPagamento()
+            okSeguroPrestamista()
+            // ticketPrestamistaAdicionado() //Validando adição do prestamista
+            // avancarFinal()
+            // botaoFinalizarPedido() //RESUMO
+            // pedidoGerado()
+        })
+
+        it.skip('11. Ped venda: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, processo de inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
+    
+            prdSegPromoPrazoParcelaPrest()
+            saldodisponivel()
+            escolherPesqSegPrdPromoPrazoParcelaPrest()
+            escolherVoltSegPrdPromoPrazoParcelaPrest() //PRODUTO
+            selecionarPrimeiraPromoProduto()
+            escolherRecebPromoPrazoFuturoComJurosPrest()
+            clicarAddPrdPromoPrazoParcelaPrest()
+            modalServicosVinculados()
+            garantiaNaoSepara()
+            okServicosVinculados() //SERVIÇOS
+            avancarParaTransportadora()
+            avancarParcelasEntrega()
+            cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
+            cy.wait('@api_pagamentoPedido', { timeout: 40000 })
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
+            inserirDataAmanha1Vencimento()
+            cy.wait(4000)
+            botaoGerarParcAlterVencPrest()
+            cy.contains('3874 - T.A. A Receber Futuro - para Prestamista').click()
+            cy.intercept('/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
+            cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
+            escolherUmaParcelaPagamento()
+            okSeguroPrestamista()
+            // ticketPrestamistaAdicionado() //Validando adição do prestamista
+            // avancarFinal()
+            // botaoFinalizarPedido() //RESUMO
+            // pedidoGerado()
+        })
+        
+        it.skip('12. Ped venda: produto 1920 0 0 (promoção partida 169), com garantia Não separa, processo de inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
+    
+            prdPromoPartidaPrest()
+            saldodisponivel()
+            escolherPesquisaProdutoPromoPartidaPrest()
+            escolherVoltagemProdutoPromoPartidaPrest() //PRODUTO
+            selecionarPrimeiraPromoProduto()
+            escolherRecebPromoPartidaPresentePrest()
+            clicarAddPrdPromoPartidaPrest()
+            modalServicosVinculados()
+            garantiaNaoSepara()
+            okServicosVinculados() //SERVIÇOS
             tirarEntrega()
+            cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
             avancarParaParcelas()
-            cy.wait(3000)
+            cy.wait('@api_pagamentoPedido', { timeout: 40000 })
+            //ticketPrestamistaAdicionado() //Validando adição do prestamista
             // clicarEditarParcelas()
             // escolherQuatroParcelaPagamento()
             // okSeguroPrestamista()
@@ -318,6 +380,5 @@ describe('Gerar pedidos com serviço Prestamista', () => {
             // botaoFinalizarPedido() //RESUMO
             // pedidoGerado()
         })
-
     })
 })

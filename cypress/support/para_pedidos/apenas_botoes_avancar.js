@@ -3,8 +3,6 @@ export function avancarParaParcelas (selector) {
 
     cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento')
 
-    //cy.wait(500)
-
     cy.get('.flex-gt-sm-50 > .md-primary')
         .scrollIntoView()
         .wait(200)
@@ -80,6 +78,8 @@ export function avancarParcelasEntrega (selector) {
 
 //Botão AVANÇAR, da tela antes de finalizar o pedido - com intercept
 export function avancarFinal (selector) {
+
+    cy.wait(300)
 
     cy.intercept('GET', '/views/carrinho/confirmacao.html').as('api_carinho_confirmacao')
 

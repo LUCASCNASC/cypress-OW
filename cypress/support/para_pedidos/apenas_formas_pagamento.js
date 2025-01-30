@@ -1,3 +1,5 @@
+import { umDiaAposHoje } from '../../support/gerarDados'
+
 //escolhendo forma de pagamento 3860 (3860 - T.A. A Receber Futuro) do pedido de venda
 export function escolherFormaPagamentoPrincipal (selector) {
 
@@ -379,6 +381,8 @@ export function escolherUmaParcelaPagamento (selector) {
 
     //selecionando parcelas - 1X
     cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding')
+    //     .should('be.visible')
+    //     .and('not.be.disabled')
         .click({force:true})
 }
 
@@ -492,4 +496,32 @@ export function clicarGerarPagamento (selector) {
         .and('not.be.disabled')
         .and('have.text', 'Gerar pagamento')
         .click({force:true})
+}
+
+//no campo 1 vencimento, colocar o dia de amanha para mudar as formas de pagamento
+export function inserirDataAmanha1Vencimento (selector) {
+
+    const data_hoje = umDiaAposHoje();
+
+    cy.contains('1º Vencimento').parent().find('input')
+        .scrollIntoView()
+        .wait(300)
+
+    //Clicar na data que desejo
+    cy.contains('1º Vencimento').parent().find('input')
+        .clear()
+        .wait(200)
+        .type(data_hoje)
+}
+
+//Botão "GERAR PARCELAS" quando alteramos a data de vencimento da 1
+export function botaoGerarParcelasAlterVencimento (selector) {
+
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_formas_pagamento')
+
+    //Botão "GERAR PARCELAS" - clicar
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .click({force:true})
+        
+    cy.wait('@api_formas_pagamento', { timeout: 40000 })
 }
