@@ -1,9 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo, escolherProdutoPromoPartida, 
-         escolherVoltagemProdutoPromoPartida, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
-         escolherProdutoPromoPrazoEntrada, escolherVoltagemProdutoPromoPrazoEntrada, escolherProdutoPromoPrazoParcelado, 
-         escolherVoltagemProdutoPromoPrazoParcelado, clicarAddProdutoPromoPartida, clicarAddProdutoPromoPrazoEntrada,
-         clicarAddProdutoPromoPrazoParcelado, clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento, 
          inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento, 
@@ -33,11 +29,11 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPartida()
-            escolherVoltagemProdutoPromoPartida()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOCAO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPartida()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -53,11 +49,11 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPrazoEntrada()      
-            escolherVoltagemProdutoPromoPrazoEntrada()
+            escolherProdutoPesquisa()      
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPrazoEntrada()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -79,11 +75,11 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPrazoParcelado()
-            escolherVoltagemProdutoPromoPrazoParcelado()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPrazoParcelado()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -102,19 +98,19 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPartida() 
-            escolherVoltagemProdutoPromoPartida()
+            escolherProdutoPesquisa() 
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPartida()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados() 
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -138,21 +134,21 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPrazoEntrada()
-            escolherVoltagemProdutoPromoPrazoEntrada()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
             cy.wait(400)
-            clicarAddProdutoPromoPrazoEntrada()
+            addProduto()
             cy.wait(500)
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -176,11 +172,11 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPartida() 
-            escolherVoltagemProdutoPromoPartida()
+            escolherProdutoPesquisa() 
+            clicarVoltagemProduto()
             clicarUsarPromocao()
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPartida()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -201,11 +197,11 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPrazoEntrada()    
-            escolherVoltagemProdutoPromoPrazoEntrada()
+            escolherProdutoPesquisa()    
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPrazoEntrada()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -242,11 +238,11 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPrazoParcelado()
-            escolherVoltagemProdutoPromoPrazoParcelado()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPrazoParcelado()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -271,18 +267,18 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPartida()
-            escolherVoltagemProdutoPromoPartida()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPartida()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo() 
-            clicarAddProdutoPromoPartida()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             okServicosVinculados() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()

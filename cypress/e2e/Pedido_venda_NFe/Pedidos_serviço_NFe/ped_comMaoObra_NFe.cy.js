@@ -1,7 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, 
-         escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, clicarAddProdutoNormalPrimeiro,
-         clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, modalServicosVinculados, 
          okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -23,9 +21,9 @@ describe('Gerar pedidos com Mão de obra', () => {
         cy.wait(500)
         produtoNormalPrimeiro() //PRODUTO
         saldodisponivel()
-        escolherProdutoPesquisaNormalPrimeiro()
-        escolherVoltagemProdutoNormalPrimeiro()
-        clicarAddProdutoNormalPrimeiro()
+        escolherProdutoPesquisa()
+        clicarVoltagemProduto()
+        addProduto()
         modalServicosVinculados()
     })
   
@@ -55,9 +53,9 @@ describe('Gerar pedidos com Mão de obra', () => {
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //PRODUTO - SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -97,9 +95,9 @@ describe('Gerar pedidos com Mão de obra', () => {
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //PRODUTO NORMAL
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA- SEGUNDO PRODUTO
@@ -139,9 +137,9 @@ describe('Gerar pedidos com Mão de obra', () => {
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -183,9 +181,9 @@ describe('Gerar pedidos com Mão de obra', () => {
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados() //SERVIÇOS
             avancarParaTransportadora()
@@ -224,9 +222,9 @@ describe('Gerar pedidos com Mão de obra', () => {
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTP
             okServicosVinculados() //SERVIÇOS
             avancarParaTransportadora()
@@ -265,9 +263,9 @@ describe('Gerar pedidos com Mão de obra', () => {
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados() //SERVIÇOS
             avancarParaTransportadora()

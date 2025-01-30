@@ -1,6 +1,5 @@
-import { saldodisponivel, clienteComRota, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoCDPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
-         escolherProdutoCDPrimeiro, escolherVoltagemProdutoCDPrimeiro, clicarAddProdutoNormalSegundo, clicarAddProdutoCDPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, saldoCDDisponivel, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoCDPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -27,9 +26,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoCDPrimeiro()
-            escolherVoltagemProdutoCDPrimeiro()
-            clicarAddProdutoCDPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -48,17 +47,17 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoCDPrimeiro()
-            escolherVoltagemProdutoCDPrimeiro()
-            clicarAddProdutoCDPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -80,9 +79,9 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoCDPrimeiro()
-            escolherVoltagemProdutoCDPrimeiro()
-            clicarAddProdutoCDPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -101,16 +100,16 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             
             produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoCDPrimeiro()
-            escolherVoltagemProdutoCDPrimeiro() 
-            clicarAddProdutoCDPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()

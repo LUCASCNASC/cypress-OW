@@ -1,6 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiroEntregaFutNFCe, prdSegundoEntregaFutNFCe, escolherPesqPrdPrimeiroEntregaFutNFCe, clicarVoltPrdPrimeiroEntregaFutNFCe, 
-         escolherPesqPrdSegundoEntregaFutNFCe, clicarVoltPrdSegundoEntregaFutNFCe, addPrdPrimeiroEntregaFutNFCe, addPrdSegundoEntregaFutNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_entrega_futura.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { prdPrimeiroEntregaFutNFCe, prdSegundoEntregaFutNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_entrega_futura.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -21,15 +20,15 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         cy.wait(500)
         prdPrimeiroEntregaFutNFCe()
         saldodisponivel()
-        escolherPesqPrdPrimeiroEntregaFutNFCe()
+        escolherProdutoPesquisa()
     })
     
     context('Com entrega/ processo 9891 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltPrdPrimeiroEntregaFutNFCe() //PRODUTO
-            addPrdPrimeiroEntregaFutNFCe()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -50,15 +49,15 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltPrdPrimeiroEntregaFutNFCe() //PRODUTO
-            addPrdPrimeiroEntregaFutNFCe()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             prdSegundoEntregaFutNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherPesqPrdSegundoEntregaFutNFCe()
-            clicarVoltPrdSegundoEntregaFutNFCe()
-            addPrdSegundoEntregaFutNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora() 

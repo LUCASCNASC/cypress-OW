@@ -1,13 +1,8 @@
-import { saldodisponivel, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, 
-         escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, clicarAddProdutoNormalPrimeiro,
-         clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
-import { prdPromoPrazoParcelaPrest, escolherPesquisaProdutoPromoPrazoParcelaPrest, escolherVoltagemProdutoPromoPrazoParcelaPrest, 
-         clicarAddProdutoPromoPrazoParcelaPrest, escolherRecebPromoPrazoFuturoComJurosPrest, escolherRecebPromoPrazoFuturoSemJurosPrest, 
-         prdSegPromoPrazoParcelaPrest, escolherPesqSegPrdPromoPrazoParcelaPrest, escolherVoltSegPrdPromoPrazoParcelaPrest, 
-         clicarAddPrdPromoPrazoParcelaPrest, prdPromoPartidaPrest, escolherPesquisaProdutoPromoPartidaPrest, 
-         escolherVoltagemProdutoPromoPartidaPrest, clicarAddPrdPromoPartidaPrest, escolherRecebPromoPartidaPresentePrest, 
-         botaoGerarParcAlterVencPrest } from '../../../support/para_pedidos_NFe/NFe_prd_promo_prestamista.js';
+import { saldodisponivel, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
+         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { prdPromoPrazoParcelaPrest, escolherRecebPromoPrazoFuturoComJurosPrest, escolherRecebPromoPrazoFuturoSemJurosPrest, 
+         prdSegPromoPrazoParcelaPrest, prdPromoPartidaPrest, escolherRecebPromoPartidaPresentePrest, botaoGerarParcAlterVencPrest } from '../../../support/para_pedidos_NFe/NFe_prd_promo_prestamista.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados, 
          okSeguroPrestamista } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento,
@@ -39,17 +34,17 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados()
             okServicosVinculados() //SERVIÇOS
             tirarEntrega()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo()
@@ -69,17 +64,17 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados()
             okServicosVinculados() //SERVIÇOS
             tirarEntrega()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo()
@@ -102,16 +97,16 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados()
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()
@@ -131,17 +126,17 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()
@@ -161,17 +156,17 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()
@@ -191,17 +186,17 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()
@@ -224,11 +219,11 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherPesquisaProdutoPromoPrazoParcelaPrest()
-            escolherVoltagemProdutoPromoPrazoParcelaPrest() //PRODUTO
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
-            clicarAddProdutoPromoPrazoParcelaPrest()
+            addProduto()
             modalServicosVinculados()
             okServicosVinculados() //SERVIÇOS
             tirarEntrega()
@@ -247,11 +242,11 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherPesquisaProdutoPromoPrazoParcelaPrest()
-            escolherVoltagemProdutoPromoPrazoParcelaPrest() //PRODUTO
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
-            clicarAddProdutoPromoPrazoParcelaPrest()
+            addProduto()
             modalServicosVinculados()
             okServicosVinculados() //SERVIÇOS
             tirarEntrega()
@@ -270,11 +265,11 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherPesquisaProdutoPromoPrazoParcelaPrest()
-            escolherVoltagemProdutoPromoPrazoParcelaPrest() //PRODUTO
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
-            clicarAddProdutoPromoPrazoParcelaPrest()
+            addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
@@ -297,11 +292,11 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             prdSegPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherPesqSegPrdPromoPrazoParcelaPrest()
-            escolherVoltSegPrdPromoPrazoParcelaPrest() //PRODUTO
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
-            clicarAddPrdPromoPrazoParcelaPrest()
+            addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
@@ -328,11 +323,11 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             prdSegPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherPesqSegPrdPromoPrazoParcelaPrest()
-            escolherVoltSegPrdPromoPrazoParcelaPrest() //PRODUTO
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
-            clicarAddPrdPromoPrazoParcelaPrest()
+            addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
@@ -359,11 +354,11 @@ describe('Gerar pedidos com serviço Prestamista', () => {
     
             prdPromoPartidaPrest()
             saldodisponivel()
-            escolherPesquisaProdutoPromoPartidaPrest()
-            escolherVoltagemProdutoPromoPartidaPrest() //PRODUTO
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPartidaPresentePrest()
-            clicarAddPrdPromoPartidaPrest()
+            addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS

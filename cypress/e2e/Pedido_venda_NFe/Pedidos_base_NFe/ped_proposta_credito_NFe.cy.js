@@ -1,5 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, clicarAddProdutoNormalPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagaPropCredito, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado, propostaCreditoGerada } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -20,15 +20,15 @@ describe('Gerar pedido com proposta de crédito', () => {
         cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
-        escolherProdutoPesquisaNormalPrimeiro()
+        escolherProdutoPesquisa()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0 - (Pedido de venda sem entrega, com proposta de crédito.)', () => {
 
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA

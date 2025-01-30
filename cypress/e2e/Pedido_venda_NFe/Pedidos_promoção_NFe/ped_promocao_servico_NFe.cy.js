@@ -1,9 +1,6 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
-import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela, escolherProduto1PrazoParcela, escolherVoltagemProduto1PrazoParcela, 
-         escolherProduto2PrazoParcela, escolherVoltagemProduto2PrazoParcela, escolherProduto3PrazoParcela, escolherVoltagemProduto3PrazoParcela, 
-         escolherProduto4PrazoParcela, escolherVoltagemProduto4PrazoParcela, clicarAddProduto1PromoPrazoParcela, clicarAddProduto2PrazoParcela, 
-         clicarAddProduto3PrazoParcela, clicarAddProduto4PrazoParcela } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -30,8 +27,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd1PrazoParcela() //PRODUTO PROMOÇÃO
             saldodisponivel()
-            escolherProduto1PrazoParcela()
-            escolherVoltagemProduto1PrazoParcela()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             tipoServicoIsentoValidar()
                 
             // //Usar promoção, no card "Promoções"
@@ -40,7 +37,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             // //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3860 - T.A. A Receber Futuro   Futuro"]').click({force:true})
                 
-            clicarAddProduto1PromoPrazoParcela()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados()
@@ -57,8 +54,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd2PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProduto2PrazoParcela()
-            escolherVoltagemProduto2PrazoParcela()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             tipoServicoIsentoValidar()
                 
             //Usar promoção, no card "Promoções"
@@ -67,7 +64,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3860 - T.A. A Receber Futuro   Futuro"]').click({force:true})
     
-            clicarAddProduto2PrazoParcela()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados()
@@ -104,8 +101,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd3PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProduto3PrazoParcela()   
-            escolherVoltagemProduto3PrazoParcela()
+            escolherProdutoPesquisa()   
+            clicarVoltagemProduto()
                 
             //Usar promoção, no card "Promoções"
             cy.get('.md-3-line > div.md-button > .md-no-style').click({force:true})
@@ -113,7 +110,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3866 - T.A. A Receber Prestamista   Futuro"]').click({force:true})
                 
-            clicarAddProduto3PrazoParcela()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -130,8 +127,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd4PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProduto4PrazoParcela() 
-            escolherVoltagemProduto4PrazoParcela()
+            escolherProdutoPesquisa() 
+            clicarVoltagemProduto()
             tipoServicoIsentoValidar()
                 
             ///Usar promoção, no card "Promoções"
@@ -140,7 +137,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3866 - T.A. A Receber Prestamista   Futuro"]').click({force:true})
     
-            clicarAddProduto4PrazoParcela()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados()

@@ -1,9 +1,6 @@
-import { saldodisponivel, clienteComRota, trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto, escolherProdutoPesquisaNormalPrimeiro, 
-         escolherVoltagemProdutoNormalPrimeiro, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
-         escolherProdutoKitRemoto, escolherVoltagemProdutoKitRemoto, escolherProdutoRemotoComCD, escolherVoltagemProdutoRemotoComCD, 
-         escolherProdutoRemotoSemCD, escolherVoltagemProdutoRemotoSemCD, clicarAddProdutoNormalPrimeiro, clicarAddProdutoNormalSegundo, 
-         clicarAddProdutoKitRemoto, clicarAddProdutoRemotoComCD } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel, 
+         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculadosRemotos } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -31,10 +28,10 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAddProdutoNormalPrimeiro()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculadosRemotos()
             avancarParaTransportadora()
@@ -54,18 +51,18 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAddProdutoNormalPrimeiro()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculadosRemotos()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAddProdutoNormalSegundo()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculadosRemotos()
             avancarParaTransportadora()
@@ -85,11 +82,11 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoKitRemoto() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoKitRemoto()
-            escolherVoltagemProdutoKitRemoto()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
             composicaoDesteKit()
-            clicarAddProdutoKitRemoto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculadosRemotos()
             avancarParaTransportadora()
@@ -112,10 +109,10 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoRemotoComCD() //PRODUTO
             semSaldodisponivel()
-            escolherProdutoRemotoComCD()
-            escolherVoltagemProdutoRemotoComCD()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAddProdutoRemotoComCD()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculadosRemotos()
             avancarParaTransportadora()
@@ -135,8 +132,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoRemotoSemCD() //PRODUTO
             semSaldodisponivel()
-            escolherProdutoRemotoSemCD()
-            escolherVoltagemProdutoRemotoSemCD()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."

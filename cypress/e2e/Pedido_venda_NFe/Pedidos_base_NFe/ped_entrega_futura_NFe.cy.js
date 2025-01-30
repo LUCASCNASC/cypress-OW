@@ -1,6 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiroEntregaFutNFe, prdSegundoEntregaFutNFe, escolherPesqPrdPrimeiroEntregaFutNFe, clicarVoltPrdPrimeiroEntregaFutNFe, 
-         escolherPesqPrdSegundoEntregaFutNFe, clicarVoltPrdSegundoEntregaFutNFe, addPrdPrimeiroEntregaFutNFe, addPrdSegundoEntregaFutNFe } from '../../../support/para_pedidos_NFe/NFe_prd_entrega_futura.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { prdPrimeiroEntregaFutNFe, prdSegundoEntregaFutNFe } from '../../../support/para_pedidos_NFe/NFe_prd_entrega_futura.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -21,15 +20,15 @@ describe('Gerar pedido de entrega futura', () => {
         cy.wait(500)
         prdPrimeiroEntregaFutNFe()
         saldodisponivel()
-        escolherPesqPrdPrimeiroEntregaFutNFe()
+        escolherProdutoPesquisa()
     })
 
     context('Sem entrega/ processo 9862 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltPrdPrimeiroEntregaFutNFe() //PRODUTO
-            addPrdPrimeiroEntregaFutNFe()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -47,16 +46,16 @@ describe('Gerar pedido de entrega futura', () => {
         
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltPrdPrimeiroEntregaFutNFe() //PRODUTO
-            addPrdPrimeiroEntregaFutNFe()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             prdSegundoEntregaFutNFe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherPesqPrdSegundoEntregaFutNFe()
-            clicarVoltPrdSegundoEntregaFutNFe()
-            addPrdSegundoEntregaFutNFe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -77,8 +76,8 @@ describe('Gerar pedido de entrega futura', () => {
 
         it('3. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltPrdPrimeiroEntregaFutNFe() //PRODUTO
-            addPrdPrimeiroEntregaFutNFe()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -96,15 +95,15 @@ describe('Gerar pedido de entrega futura', () => {
         
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltPrdPrimeiroEntregaFutNFe() //PRODUTO
-            addPrdPrimeiroEntregaFutNFe()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             prdSegundoEntregaFutNFe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherPesqPrdSegundoEntregaFutNFe()
-            clicarVoltPrdSegundoEntregaFutNFe()
-            addPrdSegundoEntregaFutNFe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()

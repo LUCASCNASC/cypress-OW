@@ -1,11 +1,7 @@
-import { clienteComRota, saldodisponivel, escolherProdutoPesquisa, escolherVoltagemProduto, clicarAdicionarProduto,
+import { clienteComRota, saldodisponivel, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto,
          semSaldodisponivel, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
-import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas, 
-         escolherPesquisaPrimeiroPrdNormalExclusiva, escolherVoltagemPrimeiroPrdNormalExclusiva, escolherPesquisakitSemSaldoAgendamento,
-         escolherVoltagemkitSemSaldoAgendamento, escolherPesquisakitVolumes, escolherVoltagemkitVolumes, escolherPesquisaSaldoReceber, 
-         escolherVoltagemSaldoReceber, escolherPesquisaSaldoReceberDuasLinhas, escolherVoltagemSaldoReceberDuasLinhas, 
-         clicarAddProdutoPrimeiroPrdNormalExclusiva, clicarAddProdutoSaldoReceber } from '../../../support/para_pedidos_NFe/NFe_prd_exclusiva.js';
+import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas } from '../../../support/para_pedidos_NFe/NFe_prd_exclusiva.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -33,17 +29,17 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
             saldodisponivel()
-            escolherPesquisaPrimeiroPrdNormalExclusiva()
-            escolherVoltagemPrimeiroPrdNormalExclusiva() 
-            clicarAddProdutoPrimeiroPrdNormalExclusiva()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             kitSemSaldoAgendamento() //PRODUTO KIT
             semSaldodisponivel()
-            escolherPesquisakitSemSaldoAgendamento()
-            escolherVoltagemkitSemSaldoAgendamento()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
+            addProduto()
             avancarParaTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
@@ -51,7 +47,6 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
@@ -62,16 +57,16 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             primeiroPrdNormalExclusiva() //PRODUTO
             saldodisponivel()
-            escolherPesquisaPrimeiroPrdNormalExclusiva()      
-            escolherVoltagemPrimeiroPrdNormalExclusiva() 
-            clicarAddProdutoPrimeiroPrdNormalExclusiva()
+            escolherProdutoPesquisa()      
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             kitVolumes() //PRODUTO KIT
             saldodisponivel()
-            escolherPesquisakitVolumes()
-            escolherVoltagemkitVolumes()
-            clicarAdicionarProduto()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             avancarParaTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
@@ -79,7 +74,6 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
@@ -93,9 +87,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             produtoSaldoReceber() //PRODUTO
             saldodisponivel()
-            escolherPesquisaSaldoReceber()
-            escolherVoltagemSaldoReceber() 
-            clicarAddProdutoSaldoReceber()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -105,7 +99,6 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
@@ -117,15 +110,15 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             prdSaldoReceberDuasLinhas() //PRODUTO
             saldoRemotoAReceber()
-            escolherPesquisaSaldoReceberDuasLinhas()
-            escolherVoltagemSaldoReceberDuasLinhas() 
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
             trocarFilialFaturamento()
             aumentarQuantVendaCinco()
-            clicarAdicionarProduto()
+            addProduto()
             prdSaldoReceberDuasLinhas() //SEGUNDO PRODUTO
             saldoRemotoAReceber()
             escolherProdutoPesquisa()  
-            escolherVoltagemProduto() 
+            clicarVoltagemProduto() 
             trocarFilialFaturamento()
             aumentarQuantVendaDez()
         })
@@ -134,9 +127,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
     
             primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
             saldodisponivel()
-            escolherPesquisaPrimeiroPrdNormalExclusiva()
-            escolherVoltagemPrimeiroPrdNormalExclusiva()
-            clicarAddProdutoPrimeiroPrdNormalExclusiva()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -144,9 +137,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()

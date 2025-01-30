@@ -1,7 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, 
-         escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, clicarAddProdutoNormalPrimeiro, 
-         clicarAddProdutoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -23,15 +21,15 @@ describe('Gerar pedido normal', () => {
         cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
-        escolherProdutoPesquisaNormalPrimeiro()
+        escolherProdutoPesquisa()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -47,16 +45,16 @@ describe('Gerar pedido normal', () => {
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -74,8 +72,8 @@ describe('Gerar pedido normal', () => {
 
         it('3. Ped venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
 
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -97,8 +95,8 @@ describe('Gerar pedido normal', () => {
 
         it('4. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -116,15 +114,15 @@ describe('Gerar pedido normal', () => {
 
         it('5. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo()
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()
@@ -142,8 +140,8 @@ describe('Gerar pedido normal', () => {
 
         it('6. Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()

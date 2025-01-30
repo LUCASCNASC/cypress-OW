@@ -1,10 +1,6 @@
-import { saldodisponivel, clienteComRota, trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, produtoRemotoComCDNFCe, produtoRemotoSemCDNFCe, produtoKitRemotoNFCe, 
-         escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, escolherProdutoPesquisaNormalSegundoNFCe, 
-         escolherVoltagemProdutoNormalSegundoNFCe, escolherProdutoKitRemotoNFCe, escolherVoltagemProdutoKitRemotoNFCe, 
-         escolherProdutoRemotoComCDNFCe, escolherVoltagemProdutoRemotoComCDNFCe, escolherProdutoRemotoSemCDNFCe, 
-         escolherVoltagemProdutoRemotoSemCDNFCe, clicarAddProdutoNormalPrimeiroNFCe, clicarAddProdutoNormalSegundoNFCe, 
-         clicarAddProdutoKitRemotoNFCe, clicarAddProdutoRemotoComCDNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
+import { saldodisponivel, clienteComRota, trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel,
+         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, produtoRemotoComCDNFCe, produtoRemotoSemCDNFCe, produtoKitRemotoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculadosRemotos } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -31,10 +27,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoNormalPrimeiroNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiroNFCe()
-            escolherVoltagemProdutoNormalPrimeiroNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAddProdutoNormalPrimeiroNFCe()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculadosRemotos()
             avancarParaTransportadora()
@@ -55,18 +51,18 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoNormalPrimeiroNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiroNFCe()
-            escolherVoltagemProdutoNormalPrimeiroNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAddProdutoNormalPrimeiroNFCe()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculadosRemotos()
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundoNFCe()
-            escolherVoltagemProdutoNormalSegundoNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAddProdutoNormalSegundoNFCe()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculadosRemotos()
             avancarParaTransportadora()
@@ -87,11 +83,11 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoKitRemotoNFCe() //PRODUTO
             saldoCDDisponivel()
-            escolherProdutoKitRemotoNFCe()
-            escolherVoltagemProdutoKitRemotoNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
             composicaoDesteKit()
-            clicarAddProdutoKitRemotoNFCe()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculadosRemotos()
             avancarParaTransportadora()
@@ -115,10 +111,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoRemotoComCDNFCe() //PRODUTO
             semSaldodisponivel()
-            escolherProdutoRemotoComCDNFCe()
-            escolherVoltagemProdutoRemotoComCDNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
-            clicarAddProdutoRemotoComCDNFCe()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculadosRemotos()
             avancarParaTransportadora()
@@ -139,8 +135,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             produtoRemotoSemCDNFCe() //PRODUTO
             semSaldodisponivel()
-            escolherProdutoRemotoSemCDNFCe()
-            escolherVoltagemProdutoRemotoSemCDNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."

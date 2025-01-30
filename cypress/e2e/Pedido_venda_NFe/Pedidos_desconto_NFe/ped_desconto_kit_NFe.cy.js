@@ -1,5 +1,5 @@
-import { saldodisponivel, clienteComRota, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoKitDesconto, escolherProdutoKitDesconto, escolherVoltagemProdutoKitDesconto, clicarAddProdutoKitDesconto } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoKitDesconto } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -27,10 +27,10 @@ describe('Gerar pedido de venda Kit com desconto', () => {
     
             produtoKitDesconto() //PRODUTO
             saldodisponivel()
-            escolherProdutoKitDesconto()  
-            escolherVoltagemProdutoKitDesconto()
+            escolherProdutoPesquisa()  
+            clicarVoltagemProduto()
             composicaoDesteKit()
-            clicarAddProdutoKitDesconto()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             clicarBotaoDesconto() //DESCONTO
@@ -41,7 +41,6 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
             avancarFinal()
             botaoFinalizarPedido() //RESUMO

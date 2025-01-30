@@ -1,8 +1,5 @@
-import { saldodisponivel, clienteComRota, composicaoDesteKit }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro, escolherProdutoPesquisaNormalPrimeiro, 
-         escolherVoltagemProdutoNormalPrimeiro, escolherProdutoPesquisaNormalSegundo, escolherVoltagemProdutoNormalSegundo, 
-         escolherProdutoKitPrimeiro, escolherVoltagemProdutoKitPrimeiro, clicarAddProdutoNormalPrimeiro, clicarAddProdutoNormalSegundo, 
-         clicarAddProdutoKitPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
          adicionarEntrega, adicionarServico, botaoGerarParcelasAlterar, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
@@ -35,9 +32,9 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() 
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -61,18 +58,18 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarAumentoQtdProduto() //AUMENTANDO QUANTIDADE DO PRODUTO
 
             produtoNormalPrimeiro() //SEGUNDO PRODUTO
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() 
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(500)
 
             produtoKitPrimeiro() //PRODUTO KIT
-            escolherProdutoKitPrimeiro()
-            escolherVoltagemProdutoKitPrimeiro() 
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
             composicaoDesteKit()
-            clicarAddProdutoKitPrimeiro()
+            addProduto()
             okServicosVinculados()
             tirarEntregaTerceiro()
             avancarParaParcelasAlterar()
@@ -89,9 +86,9 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() 
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -117,18 +114,18 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             produtoNormalSegundo() //SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundo()
-            escolherVoltagemProdutoNormalSegundo() 
-            clicarAddProdutoNormalSegundo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS -SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA -SEGUNDO PRODUTO - APÓS REMOVER O PRIMEIRO
 
             produtoNormalPrimeiro() //TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() 
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS -TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA -TERCEIRO PRODUTO - APÓS REMOVER O PRIMEIRO
@@ -148,9 +145,9 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() 
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() 
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -193,9 +190,9 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
                       
             produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalPrimeiro()
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()

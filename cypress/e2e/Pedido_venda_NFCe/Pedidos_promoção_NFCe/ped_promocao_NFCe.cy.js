@@ -1,8 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartidaNFCe, produtoPromoPrazoEntradaNFCe, produtoPromoPrazoParceladoNFCe, escolherProdutoPromoPartidaNFCe, 
-         escolherVoltagemProdutoPromoPartidaNFCe, escolherProdutoPromoPrazoEntradaNFCe, escolherVoltagemProdutoPromoPrazoEntradaNFCe, 
-         escolherProdutoPromoPrazoParceladoNFCe, escolherVoltagemProdutoPromoPrazoParceladoNFCe, clicarAddProdutoPromoPartidaNFCe, 
-         clicarAddProdutoPromoPrazoEntradaNFCe, clicarAddProdutoPromoPrazoParceladoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { produtoPromoPartidaNFCe, produtoPromoPrazoEntradaNFCe, produtoPromoPrazoParceladoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
 import { clicarUsarPromocao, selecionarFormaPagPromo, incluirDataAmanha } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -30,11 +27,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             produtoPromoPartidaNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPartidaNFCe()    
-            escolherVoltagemProdutoPromoPartidaNFCe()
+            escolherProdutoPesquisa()    
+            clicarVoltagemProduto()
             clicarUsarPromocao()
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPartidaNFCe()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -58,11 +55,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             produtoPromoPrazoEntradaNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPrazoEntradaNFCe()     
-            escolherVoltagemProdutoPromoPrazoEntradaNFCe()
+            escolherProdutoPesquisa()     
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPrazoEntradaNFCe()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
@@ -93,11 +90,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             produtoPromoPrazoParceladoNFCe() //PRODUTO
             saldodisponivel()
-            escolherProdutoPromoPrazoParceladoNFCe()
-            escolherVoltagemProdutoPromoPrazoParceladoNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
             clicarUsarPromocao() //PROMOÇÃO
             selecionarFormaPagPromo()
-            clicarAddProdutoPromoPrazoParceladoNFCe()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()

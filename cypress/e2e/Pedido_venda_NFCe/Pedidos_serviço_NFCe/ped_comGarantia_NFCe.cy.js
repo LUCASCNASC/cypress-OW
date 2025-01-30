@@ -1,7 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe, escolherProdutoPesquisaNormalPrimeiroNFCe, escolherVoltagemProdutoNormalPrimeiroNFCe, 
-         escolherProdutoPesquisaNormalSegundoNFCe, escolherVoltagemProdutoNormalSegundoNFCe, clicarAddProdutoNormalPrimeiroNFCe,
-         clicarAddProdutoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -22,9 +20,9 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         cy.wait(500)
         produtoNormalPrimeiroNFCe()
         saldodisponivel()
-        escolherProdutoPesquisaNormalPrimeiroNFCe()
-        escolherVoltagemProdutoNormalPrimeiroNFCe() //PRODUTO
-        clicarAddProdutoNormalPrimeiroNFCe()
+        escolherProdutoPesquisa()
+        clicarVoltagemProduto() //PRODUTO
+        addProduto()
         modalServicosVinculados()
     })   
 
@@ -55,9 +53,9 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundoNFCe()
-            escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAddProdutoNormalSegundoNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()
@@ -100,9 +98,9 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundoNFCe()
-            escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAddProdutoNormalSegundoNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
             okServicosVinculados()
             avancarParaTransportadora()
@@ -145,9 +143,9 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisaNormalSegundoNFCe()
-            escolherVoltagemProdutoNormalSegundoNFCe()
-            clicarAddProdutoNormalSegundoNFCe()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
+            addProduto()
             okServicosVinculados()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA

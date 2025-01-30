@@ -1,5 +1,5 @@
-import { saldodisponivel, clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, escolherProdutoPesquisaNormalPrimeiro, escolherVoltagemProdutoNormalPrimeiro, clicarAddProdutoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoNormalPrimeiro } from '../../../support/para_pedidos/apenas_produtos_pedidos.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
          escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
@@ -22,15 +22,15 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
-        escolherProdutoPesquisaNormalPrimeiro()
+        escolherProdutoPesquisa()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
 
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -56,8 +56,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it('2. Ped venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
 
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -78,8 +78,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it('3. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
 
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -106,8 +106,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it('4. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
 
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -134,8 +134,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
         it('5. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
 
-            escolherVoltagemProdutoNormalPrimeiro() //PRODUTO
-            clicarAddProdutoNormalPrimeiro()
+            clicarVoltagemProduto() //PRODUTO
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -161,8 +161,5 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
-    })
-
-    context('Com entrega/ processo 9860 - caminho feliz', () => {
     })
 })

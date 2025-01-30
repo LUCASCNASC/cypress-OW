@@ -1,5 +1,5 @@
-import { clienteComRota, semSaldodisponivel } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoSemSaldo, escolherProdutoSemSaldo, escolherVoltagemProdutoSemSaldo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { clienteComRota, semSaldodisponivel, escolherProdutoPesquisa, clicarVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoSemSaldo } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -21,8 +21,8 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
             
             produtoSemSaldo() // PRODUTO
             semSaldodisponivel()
-            escolherProdutoSemSaldo()
-            escolherVoltagemProdutoSemSaldo()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
             cy.get('[ng-if="semSaldoCD"][style=""] > p')

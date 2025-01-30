@@ -1,5 +1,5 @@
-import { saldodisponivel, clienteComRota, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoKitPrimeiro, escolherProdutoKitPrimeiro, escolherVoltagemProdutoKitPrimeiro, clicarAddProdutoKitPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
+import { saldodisponivel, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { produtoKitPrimeiro } from '../../../support/para_pedidos_NFe/NFe_prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -20,16 +20,16 @@ describe('Gerar pedido normal', () => {
         cy.wait(500)
         produtoKitPrimeiro()
         saldodisponivel()
-        escolherProdutoKitPrimeiro()
+        escolherProdutoPesquisa()
     })
   
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
         
         it('1. Ped venda: kit 1862 0 0', () => {
                       
-            escolherVoltagemProdutoKitPrimeiro() //PRODUTO
+            clicarVoltagemProduto() //PRODUTO
             composicaoDesteKit()
-            clicarAddProdutoKitPrimeiro()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -50,9 +50,9 @@ describe('Gerar pedido normal', () => {
         
         it('2. Ped venda: kit 1862 0 0', () => {
                       
-            escolherVoltagemProdutoKitPrimeiro() //PRODUTO
+            clicarVoltagemProduto() //PRODUTO
             composicaoDesteKit()
-            clicarAddProdutoKitPrimeiro()
+            addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()

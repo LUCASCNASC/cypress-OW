@@ -165,88 +165,6 @@ export function clienteComRota (selector) {
     cy.wait('@api_pedido_validar_cliente', { timeout: 40000 })
 }
 
-//Clicar para selecionar o produto que queremos adicionar ao pedido
-export function escolherProdutoPesquisa (selector) {
-
-    //cy.intercept('GET', '/images/icons/tap.svg').as('api_imagem_produto')
-
-    //Imagem do produto
-    cy.get('.resultado-imagem')
-        .should('be.visible')
-
-    //Nome do produto
-    cy.get('.md-resultado-titulo')
-        .should('be.visible')
-
-    //Saldo disponível
-    cy.get('.md-list-item-text > .ng-scope')
-        .should('be.visible')
-
-    //Código do produto
-    cy.get('.badge-saldo.ng-binding')
-        .should('be.visible')
-
-    //Cifrão do valor do produto
-    cy.get('sup')
-        .should('be.visible')
-        .and('have.text', 'R$')
-
-    //Valor do produto
-    cy.get('.valor-busca')
-        .should('be.visible')
-
-    //Check box do produto
-    cy.get('.expandeIcone')
-        .should('be.visible')
-
-    //Clicar para adicionar no carrinho
-    cy.get('.md-list-item-text')
-        .should('be.visible')
-        .click({force:true})
-
-    //cy.wait('@api_imagem_produto', { timeout: 40000 })
-}
-
-//Clicar para selecionar a voltagem que queremos adicionar ao pedido
-export function escolherVoltagemProduto (selector) {
-
-    //cy.intercept('GET', '/images/icons/expand_content.svg').as('api_imagem_expandida_produto')
-
-    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
-    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
-
-    //Botão de expandir produto
-    cy.get('.layout-align-end-center > .md-fab')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //ícone do botão de expandir produto
-    cy.get('.layout-align-end-center > .md-fab')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //Card de voltagem - Cifrão
-    cy.get('.md-secondary-container > div > .ng-binding > sup')
-        .should('be.visible')
-        .and('have.text', 'R$')
-
-    //Card de voltagem 
-    cy.get('.md-list-item-inner')
-        .should('be.visible')
-        .and('contain', 'Cód. Fabricante:')
-        .and('contain', 'Filial:')
-        .and('contain', 'Saldo Local:')
-        .and('contain', 'Saldo Depósito:')
-
-    //Card de voltagem - clicar
-    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
-        .click({force:true})
-
-    //cy.wait('@api_imagem_expandida_produto', { timeout: 40000 })
-}
-
 //Trocar filial de faturamento - faturamento remoto da filial 50 para 6
 export function trocarFilialFaturamento (selector) {
 
@@ -287,26 +205,6 @@ export function trocarFilialFaturamento (selector) {
     //Card Filial de faturamento - clicar na filial 6
     cy.get('.white > md-list.md-default-theme > :nth-child(2) > div.md-button > .md-no-style')
         .click()
-}
-
-//Botão adicionar produto após selecionar voltagem do produto
-export function clicarAdicionarProduto (selector) {
-
-    //cy.intercept('GET', '/services/v3/produto_servico_vinculado?sku=1860.0.0&valor=1313&quantidade=1&processo=9860').as('api_modal_servicos')
-
-    //Botão adicionar produto após selecionar voltagem do produto
-    cy.get('[style="padding: 0px 5px;"] > .md-accent')
-        .scrollIntoView()
-        .wait(200)
-        .should('be.visible')
-        .and('not.be.disabled')
-        .and('contain','Adicionar')
-
-    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
-    cy.get('[style="padding: 0px 5px;"] > .md-accent')
-        .click({force:true})
-
-    //cy.wait('@api_modal_servicos', { timeout: 40000 })
 }
 
 //validando composição deste KIT
@@ -389,4 +287,106 @@ export function ticketPrestamistaAdicionado (selector) {
     cy.get('ul > :nth-child(2) > .md-primary')
         .should('be.visible')
         .and('not.be.disabled')
+}
+
+//Clicar para selecionar o produto que queremos adicionar ao pedido
+export function escolherProdutoPesquisa (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
+
+    //Imagem do produto
+    cy.get('.resultado-imagem')
+        .should('be.visible')
+
+    //Nome do produto
+    cy.get('.md-resultado-titulo')
+        .should('be.visible')
+
+    //Saldo disponível
+    cy.get('.md-list-item-text > .ng-scope')
+        .should('be.visible')
+
+    //Código do produto
+    cy.get('.badge-saldo.ng-binding')
+        .should('be.visible')
+
+    //Cifrão do valor do produto
+    cy.get('sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Valor do produto
+    cy.get('.valor-busca')
+        .should('be.visible')
+
+    // //Check box do produto
+    // cy.get('.expandeIcone')
+    //     .should('be.visible')
+
+    //Clicar para adicionar no carrinho
+    cy.get('.md-list-item-text')
+        .should('be.visible')
+        .click({force:true})
+
+    cy.wait('@api_produto_tambem_compraram', { timeout: 40000 })
+}
+
+//Clicar para selecionar a voltagem que queremos adicionar ao pedido
+export function clicarVoltagemProduto (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
+
+    //Mensagem "Selecione a cor, a voltagem e o local de saldo "
+    cy.get('md-list.md-default-theme > .btn-rounded > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Selecione a cor, a voltagem e o local de saldo')
+
+    //Botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //ícone do botão de expandir produto
+    cy.get('.layout-align-end-center > .md-fab')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card de voltagem - Cifrão
+    cy.get('.md-secondary-container > div > .ng-binding > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //Card de voltagem 
+    cy.get('.md-list-item-inner')
+        .should('be.visible')
+        .and('contain', 'Cód. Fabricante:')
+        .and('contain', 'Filial:')
+        .and('contain', 'Saldo Local:')
+        .and('contain', 'Saldo Depósito:')
+
+    //Card de voltagem - clicar
+    cy.get(':nth-child(1) > md-list.md-default-theme > .md-2-line > div.md-button > .md-no-style')
+        .click({force:true})
+
+    cy.wait('@api_produto_relacionado_lista', { timeout: 40000 })
+}
+
+//Botão adicionar produto após selecionar voltagem do produto
+export function addProduto (selector) {
+
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
+
+    //Botão adicionar produto após selecionar voltagem do produto
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain','Adicionar')
+
+    //Botão adicionar produto após selecionar voltagem do produto, clicar no botão
+    cy.get('[style="padding: 0px 5px;"] > .md-accent')
+        .click({force:true})
+
+    cy.wait('@api_servicos_vinculados', { timeout: 40000 })
 }
