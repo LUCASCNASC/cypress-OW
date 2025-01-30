@@ -62,9 +62,7 @@ describe('Gerar pedido normal', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -84,7 +82,6 @@ describe('Gerar pedido normal', () => {
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -104,9 +101,7 @@ describe('Gerar pedido normal', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -130,9 +125,7 @@ describe('Gerar pedido normal', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -151,9 +144,7 @@ describe('Gerar pedido normal', () => {
             botaoGerarParcelas()
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherUmaParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()

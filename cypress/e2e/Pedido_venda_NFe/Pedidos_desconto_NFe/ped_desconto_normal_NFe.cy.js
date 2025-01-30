@@ -40,7 +40,6 @@ describe('Gerar pedido de venda com desconto', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherUmaParcelaPagamento()
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
@@ -64,7 +63,6 @@ describe('Gerar pedido de venda com desconto', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherUmaParcelaPagamento()
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
@@ -88,7 +86,6 @@ describe('Gerar pedido de venda com desconto', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherUmaParcelaPagamento()
             avancarFinal()
             botaoFinalizarPedido() //RESUMO

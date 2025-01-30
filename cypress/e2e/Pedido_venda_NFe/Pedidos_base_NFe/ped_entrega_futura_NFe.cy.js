@@ -32,13 +32,11 @@ describe('Gerar pedido de entrega futura', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            cy.wait(400)
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -63,9 +61,7 @@ describe('Gerar pedido de entrega futura', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal() 
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -85,9 +81,7 @@ describe('Gerar pedido de entrega futura', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -111,9 +105,7 @@ describe('Gerar pedido de entrega futura', () => {
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal() 
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()

@@ -80,14 +80,12 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
 
             //Selecionando processo de receber entrada
             cy.contains('div.md-text.ng-binding', '3861 - T.A. A Receber A Vista')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .click({force:true})
 
             //Clicando no botão GERAR PAGAMENTO da entrada
             cy.get('.white > .layout-align-center-center > .md-primary')
-                .should('exist')
-                .and('be.visible')
+                .should('be.visible')
                 .and('not.be.disabled')
                 .and('contain','Gerar pagamento')
                 .click({force:true})
@@ -106,7 +104,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 
             //Usar promoção, no card "Promoções"
             cy.get('.md-3-line > div.md-button > .md-no-style').click({force:true})
-                 
             //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3866 - T.A. A Receber Prestamista   Futuro"]').click({force:true})
                 
@@ -133,7 +130,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 
             ///Usar promoção, no card "Promoções"
              cy.get('.md-3-line > div.md-button > .md-no-style').click({force:true})
-    
             //Escolher uma forma de pagamento, no card de "Formas de pagamento"
             cy.get('button[aria-label="3866 - T.A. A Receber Prestamista   Futuro"]').click({force:true})
     

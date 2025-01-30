@@ -42,9 +42,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(3000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -56,9 +54,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             escolherPedidoPendente()
             clicarDetalhes()
             clicarEditarPedido()
-            cy.wait(8000)
             avancarParaTransportadora()
-            cy.wait(11000)
             avancarParcelasEntrega()
             arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
             removerFormaPagamento()
@@ -68,9 +64,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherSegundaFormaPagamento()
-            cy.wait(3000)
             escolherUmaParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoAlteradoSucesso()
