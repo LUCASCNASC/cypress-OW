@@ -190,3 +190,89 @@ export function okSeguroPrestamista (selector) {
     cy.get('md-dialog-actions.layout-row > .md-primary')
         .click()
 }
+
+//menssagem que o prestamista será removido, pois as duas formas de pagamento foram agrupadas
+export function messPrestamistaRemovido (selector) {
+
+    //Card Endereço incluído com sucesso.
+    cy.get('.toast')
+        .should('be.visible')
+
+    //Card Endereço incluído com sucesso. - Aviso
+    cy.get('.toast-title')
+        .should('be.visible')
+        .and('have.text', 'Atenção')
+
+    //Card Endereço incluído com sucesso. - Referencia Comercial incluído com sucesso.
+    cy.get('.toast-message')
+        .should('be.visible')
+        .and('have.text', 'O seguro prestamista será removido, você terá que adicioná-lo novamente')
+}
+
+//validar modal e clicar para adicionar
+export function addSeguroPrestamista (selector) {
+
+    //título modal "Seguro prestamista"
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        //.and('include.text',' Seguro prestamista')
+
+    //botão X
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //informação de dentro do modal
+    cy.get('.white > .md-no-sticky > .md-subheader-inner')
+        .should('be.visible')
+        //.and('include.text',' Seguro Prestamista')
+
+    //checkbox Seguro Prestamista
+    cy.get('.md-container')
+        //.should('be.checked')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //nome do seguro prestamista cadastrado
+    cy.get('.md-no-style > .md-list-item-text > :nth-child(1)')
+        .should('be.visible')
+
+    //quantidade
+    cy.get('.md-list-item-text > :nth-child(2)')
+        .should('be.visible')
+        .and('include.text', 'Quantidade')
+
+    //valor unitário
+    cy.get('.md-list-item-text > :nth-child(3)')
+        .should('be.visible')
+        .and('include.text', 'Valor unitário')
+
+    //cifrão do valor
+    cy.get('.md-no-style > .md-secondary-container > :nth-child(1) > .ng-binding > sup')
+        .should('be.visible')
+        .and('contain', 'R$')
+
+    //valor em si
+    cy.get('.md-no-style > .md-secondary-container > :nth-child(1) > .ng-binding')
+        .should('be.visible')
+        .and('include.text', 'R$')
+
+    //botão para adicionar o seguro prestamista
+    cy.get('#checkbox-158-0 > .md-container')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //botão para adicionar o seguro prestamista
+    cy.get('#checkbox-158-0 > .md-container')
+        .click()
+
+    //botão OK
+    cy.get('md-dialog-actions.layout-row > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('have.text',' Ok ')
+
+    //clicar no botão OK
+    cy.get('md-dialog-actions.layout-row > .md-primary')
+        .click()
+}

@@ -261,6 +261,10 @@ export function clicarEditarParcelas (selector) {
 //validar adição do serviço prestamista, após clicarmos para adicionar
 export function ticketPrestamistaAdicionado (selector) {
 
+    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul')
+        .scrollIntoView()
+        .wait(200)
+
     //ticket inteiro
     cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul')
         .should('be.visible')
@@ -287,6 +291,14 @@ export function ticketPrestamistaAdicionado (selector) {
     cy.get('ul > :nth-child(2) > .md-primary')
         .should('be.visible')
         .and('not.be.disabled')
+}
+
+//validar adição do serviço prestamista, após clicarmos para agrupar lançamentos
+export function ticketPrestAdicionadoRecebAgrupado (selector) {
+
+    cy.get('b.ng-binding')
+      .contains('T.A. Prestamista Não separa Com juros - Futuro')
+      .should('be.visible')
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido

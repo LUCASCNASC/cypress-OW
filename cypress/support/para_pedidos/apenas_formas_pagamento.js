@@ -1,4 +1,4 @@
-import { umDiaAposHoje } from '../../support/gerarDados'
+import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../support/gerarDados'
 
 //escolhendo forma de pagamento 3860 (3860 - T.A. A Receber Futuro) do pedido de venda
 export function escolherFormaPagamentoPrincipal (selector) {
@@ -503,7 +503,8 @@ export function inserirDataAmanha1Vencimento (selector) {
 
     const data_hoje = umDiaAposHoje();
 
-    cy.contains('1º Vencimento').parent().find('input')
+    //cy.contains('1º Vencimento').parent().find('input')
+    cy.get('.gerar-parcelas > .layout-wrap')
         .scrollIntoView()
         .wait(300)
 
@@ -514,14 +515,32 @@ export function inserirDataAmanha1Vencimento (selector) {
         .type(data_hoje)
 }
 
+//no campo 1 vencimento, colocar 31 dias após a data de hoje
+export function inserirData31Dias1Vencimento (selector) {
+
+    const data_31_dias = trintaUmDiasAposHoje();
+
+    //cy.contains('1º Vencimento').parent().find('input')
+    cy.get('.gerar-parcelas > .layout-wrap')
+        .scrollIntoView()
+        .wait(300)
+
+    //Clicar na data que desejo
+    cy.contains('1º Vencimento').parent().find('input')
+        .clear()
+        .wait(200)
+        .type(data_31_dias)
+}
+
 //Botão "GERAR PARCELAS" quando alteramos a data de vencimento da 1
 export function botaoGerarParcelasAlterVencimento (selector) {
 
     cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_formas_pagamento')
+    cy.wait('@api_formas_pagamento', { timeout: 40000 })
+
+    cy.wait(2000)
 
     //Botão "GERAR PARCELAS" - clicar
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
         .click({force:true})
-        
-    cy.wait('@api_formas_pagamento', { timeout: 40000 })
 }

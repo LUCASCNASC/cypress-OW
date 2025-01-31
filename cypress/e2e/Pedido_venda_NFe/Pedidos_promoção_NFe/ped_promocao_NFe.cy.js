@@ -3,12 +3,12 @@ import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcela
 import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento, 
          inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento, 
-         escolherSegundaFormaPagamento, escolherRecebAVista } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+         escolherSegundaFormaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { escolherTransportadora, tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 
 describe('Gerar pedidos com promoção', () => {
 

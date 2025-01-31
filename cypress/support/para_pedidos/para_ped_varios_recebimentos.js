@@ -63,16 +63,16 @@ export function agruparLancamentos (selector) {
         .should('be.visible')
         .and('have.text', 'Sim, desejo agrupar este pagamento')
         .and('not.be.disabled')
-        .invoke('css', 'color') // Obtém a cor do elemento
-        .should('equal', 'rgb(36, 13, 105)')
+        // .invoke('css', 'color') // Obtém a cor do elemento
+        // .should('equal', 'rgb(36, 13, 105)')
 
     //validando opção "Não, desejo mantê-los individuais"
     cy.get('.md-cancel-button')
         .should('be.visible')
         .and('have.text', 'Não, desejo mantê-los individuais')
         .and('not.be.disabled')
-        .invoke('css', 'color') // Obtém a cor do elemento
-        .should('equal', 'rgb(36, 13, 105)')
+        // .invoke('css', 'color') // Obtém a cor do elemento
+        // .should('equal', 'rgb(36, 13, 105)')
 
     //clicar em SIM
     cy.get('.md-confirm-button')

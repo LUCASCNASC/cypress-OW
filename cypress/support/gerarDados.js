@@ -143,6 +143,22 @@ function umDiaAposHoje() {
   return `${day}/${month}/${year}`;
 }
 
+function trintaUmDiasAposHoje() {
+  // Cria uma nova instância do objeto Date com a data atual
+  const today = new Date();
+
+  // Adiciona um dia (24 horas) à data atual
+  today.setDate(today.getDate() + 31);
+
+  // Formata a data no formato dd/mm/aaaa
+  const day = String(today.getDate()).padStart(2, '0');
+  const month = String(today.getMonth() + 1).padStart(2, '0'); // Mês começa do 0, então somamos 1
+  const year = today.getFullYear();
+
+  // Retorna a data no formato dd/mm/aaaa
+  return `${day}/${month}/${year}`;
+}
+
   
 export { gerarCpf, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa,
-         gerarRelacionamento, gerarObservação, umDiaAposHoje }; 
+         gerarRelacionamento, gerarObservação, umDiaAposHoje, trintaUmDiasAposHoje }; 

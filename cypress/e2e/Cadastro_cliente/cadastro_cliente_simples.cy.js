@@ -1,7 +1,7 @@
-import { iconeMenuOpcoes, opcaoClienteSimples, salvarClienteSimples, preencherNomeCompletoCPF, preencherNomeCompletoCNPJ, inserirPesquisarCEP, 
+import { iconeMenuOpcoes, opcaoClienteSimples, salvarClienteSimples, preencherNomeCompletoCPF, preencherNomeCompletoCNPJ, 
          preencherDataNascimento, inserirNumeroEndereco, arrastarPessoaJuridica, sexoPessoaFisica, cadastroRotaCliente, 
          mensagemPrimeiroRegistSalvoSucesso, prencherCPFcliente, preencherCNPJcliente, logarNovamente, clicarSairSistema,
-         desejoVisualizarCadastro, autorizarTrialAlterarDataNascimento } from '../../support/para_cadastro_cliente/para_cliente_simples';
+         desejoVisualizarCadastro, autorizarTrialAlterarDataNascimento, inserirPesquisarCEP } from '../../support/para_cadastro_cliente/para_cliente_simples';
 import { gerarCpf }  from '../../support/gerarDados';
 
 //
