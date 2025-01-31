@@ -1,5 +1,6 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../../../gerarDados';
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../gerarDadosPIX'
+import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada, 
+         gerarChavePixEmail, gerarChavePixCPF, gerarChavePixAleatoria } from '../../../gerarDadosPIX'
 
 
 //--------REFERENCIAS - REFERENCIA BANCÁRIA -------
@@ -591,10 +592,88 @@ export function clicarEditarRefBancaria (selector) {
 
     //ícone lápis
     cy.get('.btn-remove-item-list > :nth-child(1) > .md-raised > .ng-binding')
+        .should('be.visible')
 
     //botão inteiro
     cy.get('.btn-remove-item-list > :nth-child(1) > .md-raised')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
 
+    cy.get('.btn-remove-item-list > :nth-child(1) > .md-raised')
+        .click({force:true})
+
+    cy.intercept('GET', '/services/v3/forma_pagamento').as('api_modal_referencia_bancaria')
+    cy.wait('@api_modal_referencia_bancaria', { timeout: 40000 })
 }
 
+//gerar chave pix tipo telefone correta
+export function selectChavePixTelefone (selector) {
 
+    const chave_pix_telefone = gerarChavePixTelefone();
+
+    cy.get('#txtChavePix')
+        .scrollIntoView()
+        .wait(200)
+
+    //inserir chave PIX
+    cy.get('#txtChavePix')
+        .clear()
+        .wait(200)
+        .should('have.value', '')
+        .wait(200)
+        .type(chave_pix_telefone)
+}
+
+//gerar chave pix tipo email correta
+export function selectChavePixEmail (selector) {
+
+    const chave_pix_email = gerarChavePixEmail();
+
+    cy.get('#txtChavePix')
+        .scrollIntoView()
+        .wait(200)
+
+    //inserir chave PIX
+    cy.get('#txtChavePix')
+        .clear()
+        .wait(200)
+        .should('have.value', '')
+        .wait(200)
+        .type(chave_pix_email)
+}
+
+//gerar chave pix tipo CPF correta
+export function selectChavePixCPF (selector) {
+
+    const chave_pix_cpf = gerarChavePixCPF();
+
+    cy.get('#txtChavePix')
+        .scrollIntoView()
+        .wait(200)
+
+    //inserir chave PIX
+    cy.get('#txtChavePix')
+        .clear()
+        .wait(200)
+        .should('have.value', '')
+        .wait(200)
+        .type(chave_pix_cpf)
+}
+
+//gerar chave pix tipo Aleatorio correta
+export function selectChavePixAleatorio (selector) {
+
+    const chave_pix_aleatoria = gerarChavePixAleatoria();
+
+    cy.get('#txtChavePix')
+        .scrollIntoView()
+        .wait(200)
+
+    //inserir chave PIX
+    cy.get('#txtChavePix')
+        .clear()
+        .wait(200)
+        .should('have.value', '')
+        .wait(200)
+        .type(chave_pix_aleatoria)
+}

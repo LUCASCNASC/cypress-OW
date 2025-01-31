@@ -1,5 +1,5 @@
 import { iconeMenuOpcoes, opcaoClienteCompleto, clicarSalvarCliente, messRegistroSalvoSucesso, modalAguardeCarregando, botaoSalvarDesabilitado,
-         clicarMenuCadastroClienteCompleto, clicarSalvarClienteCompleto, messAlertaEnderecoObrigatorio, clicarAbaReferencias } from '../../support/para_cadastro_cliente/cliente_completo/para_cliente_completo.js';
+         clicarMenuCadastroClienteCompleto, clicarSalvarClienteCompleto, messAlertaEnderecoObrigatorio, clicarAbaReferencias } from '../../../support/para_cadastro_cliente/cliente_completo/para_cliente_completo.js';
 import { clicarAbaRefBancaria, validarAbaRefBancariaVazia, clicarAddNovaRefBancaria, modalRefBancariaVazio, messRefBancariaChavePixAletoriaInvalida,
          selectBancoRefBancaria, selectAgenciaRefBancaria, selectContaRefBancaria, selectDataAberturaRefBancaria, selectBoletoRefBancaria,
          selectTelefoneRefBancaria,selectGerenteRefBancaria, selectEmailRefBancaria, selectCPFCorrentistaRefBancaria,
@@ -7,27 +7,29 @@ import { clicarAbaRefBancaria, validarAbaRefBancariaVazia, clicarAddNovaRefBanca
          selectTipoChavePixTelefoneRefBancaria, selectChavePixTefefoneRefBancaria, clicarSalvarRefBancaria,
          messRefBancariaIncluidaSucesso, infosRefBancariaAdicionada, selectChavePixTelefoneErrada, messRefBancariaChavePixTelefoneInvalida, 
          messRefBancariaChavePixEmailInvalida, selectChavePixEmailErrada, selectTipoChavePixEmailRefBancaria, selectTipoChavePixCpfCnpjRefBancaria, 
-         selectChavePixCpfCnpjErrada, messRefBancariaChavePixCpfCnpjInvalida, selectTipoChavePixAletoriaRefBancaria } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_bancaria.js';
+         selectChavePixCpfCnpjErrada, messRefBancariaChavePixCpfCnpjInvalida, selectTipoChavePixAletoriaRefBancaria, arrastarEditarRefBancaria, 
+         clicarEditarRefBancaria, selectChavePixTelefone, selectChavePixEmail, selectChavePixCPF, selectChavePixAleatorio } from '../../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_bancaria.js';
 import { clicarAbaRefPessoal, validarAbaRefPessoalVazia, clicarAddNovaRefPessoal, modalRefPessoalVazio, selectNomeRefPessoal, 
          selectEmailRefPessoal, selectTelefoneRefPessoal, selectRlacionamentoRefPessoal, clicarSalvarRefPessoal, messRefPessoalIncluidaSucesso,
-         infosRefPessoalAdicionada } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_pessoal.js'
+         infosRefPessoalAdicionada } from '../../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_pessoal.js'
 import { clicarAbaRota, clicarAdicionarNovaRota, modalRotaVazioValidar, escolherTipoEnderecoRota, preencherRotaCompleta, infosRotaAdicionada,
-         messRotaIncluidaSucesso } from '../../support/para_cadastro_cliente/cliente_completo/aba_rota.js'
+         messRotaIncluidaSucesso } from '../../../support/para_cadastro_cliente/cliente_completo/aba_rota.js'
 import { preecherDataNascimento, selecionarSexoCliente, preencherNomeCompleto, preencherNomeCNPJ, preencherCPFcliente, preencherNomeSocial,
-         preencherCNPJcliente, preencherNomeFantasiaCNPJ } from '../../support/para_cadastro_cliente/cliente_completo/aba_pessoa.js'
+         preencherCNPJcliente, preencherNomeFantasiaCNPJ } from '../../../support/para_cadastro_cliente/cliente_completo/aba_pessoa.js'
 import { clicarAbaAnexo, validarAbaAnexoVazia, selecionarPrimeiroTipoAnexo, anexarArquivoPFD, confirmarEnvioArquivo, messAnexoIncluidoSucesso, 
-         validarAnexoInserido } from '../../support/para_cadastro_cliente/cliente_completo/aba_anexo.js'
+         validarAnexoInserido } from '../../../support/para_cadastro_cliente/cliente_completo/aba_anexo.js'
 import { clicarAbaEndereco, messEnderecoIncluidoSucesso, clicarAdicionarNovoEndereço, modalEnderecoVazioValidar, clicarAbrirTipoEndereco,
          infosEnderecoAdicionado, escolherTipoEndereco, clicarSalvarEndereco, preencherCampoCEPEndereco, preencherCampoNumeroEndereco,
-         cardEnderecoVazioValidar } from '../../support/para_cadastro_cliente/cliente_completo/aba_endereco.js'
+         cardEnderecoVazioValidar } from '../../../support/para_cadastro_cliente/cliente_completo/aba_endereco.js'
 import { clicarAbaTelefone, clicarAdicionarNovoTelefone, modalTelefoneVazioValidar, escolherTipoTelefone, preencherNumeroTelefone, 
-         preencherRamalTelefone, clicarSalvarTelefone, infosTelefoneAdicionado, messTelefoneIncluidoSucesso } from '../../support/para_cadastro_cliente/cliente_completo/aba_telefone.js'
+         preencherRamalTelefone, clicarSalvarTelefone, infosTelefoneAdicionado, messTelefoneIncluidoSucesso } from '../../../support/para_cadastro_cliente/cliente_completo/aba_telefone.js'
 import { clicarAbaRefComercial, validarAbaRefComercialVazia, clicarAddNovaRefComercial, modalRefComercialVazio, selectEmpresaRefComercial,
          selectContatoRefComercial, selectTelefoneRefComercial, selectEmailRefComercial, selectObservacaoRefComercial, clicarSalvarRefComercial,
-         messRefComercialIncluidaSucesso, infosRefComercialAdicionada } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_comercial.js'
+         messRefComercialIncluidaSucesso, infosRefComercialAdicionada } from '../../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_comercial.js'
 import { clicarAbaRefFinanceira, validarAbaRefFinanceiraVazia, clicarAddNovaRefFinanceira, modalRefFinanceiraVazio, selectDataInicioRefFinanceira, 
          selectLocalExpRefFinanceira, selectPlanoExpRefFinanceira, selectValorPrestRefFinanceira, clicarSalvarRefFinanceira, 
-         messRefFinanceiraIncluidaSucesso, infosRefFinanceiraAdicionada } from '../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_financeira.js'
+         messRefFinanceiraIncluidaSucesso, infosRefFinanceiraAdicionada } from '../../../support/para_cadastro_cliente/cliente_completo/aba_Referencia/referencia_financeira.js'
+import { clicarAbaEmpregaticio, validarAbaEmpregaticioVazia, clicarAddNovoEmpregaticio } from '../../../support/para_cadastro_cliente/cliente_completo/aba_empregaticio.js'
 
 describe('Cadastrar cliente completo', () => {
 
@@ -385,7 +387,7 @@ describe('Cadastrar cliente completo', () => {
             messRegistroSalvoSucesso()
         })  
 
-        it.only('6. Cliente completo CPF - validar tipo de chave PIX Telefone ', () => {
+        it('6. Cliente completo CPF - validar tipo de chave PIX Telefone ', () => {
 
             iconeMenuOpcoes()
             opcaoClienteCompleto()
@@ -464,6 +466,15 @@ describe('Cadastrar cliente completo', () => {
             infosRefBancariaAdicionada()
             clicarSalvarCliente()
             messRefBancariaChavePixTelefoneInvalida()
+
+            // arrastarEditarRefBancaria() //Editar Referencia Bancaria
+            // clicarEditarRefBancaria()
+            // selectChavePixTelefone() //Chave Pix correta
+            // clicarSalvarCliente()
+            // cy.wait(2000)
+            // modalAguardeCarregando()
+            // cy.wait(2000)
+            // messRegistroSalvoSucesso()
         })  
 
         it('7. Cliente completo CPF - validar tipo de chave PIX Email ', () => {
@@ -545,6 +556,10 @@ describe('Cadastrar cliente completo', () => {
             infosRefBancariaAdicionada()
             clicarSalvarCliente()
             messRefBancariaChavePixEmailInvalida()
+
+            // arrastarEditarRefBancaria() //Editar Referencia Bancaria
+            // clicarEditarRefBancaria()
+            // selectChavePixEmail()
         })  
 
         it('8.Cliente completo CPF - validar tipo de chave CPF CNPJ ', () => {
@@ -626,6 +641,10 @@ describe('Cadastrar cliente completo', () => {
             infosRefBancariaAdicionada()
             clicarSalvarCliente()
             messRefBancariaChavePixCpfCnpjInvalida()
+
+            // arrastarEditarRefBancaria() //Editar Referencia Bancaria
+            // clicarEditarRefBancaria()
+            // selectChavePixCPF()
         })  
 
         it('9.Cliente completo CPF - validar tipo de chave Aleatória ', () => {
@@ -706,6 +725,10 @@ describe('Cadastrar cliente completo', () => {
             infosRefBancariaAdicionada()
             clicarSalvarCliente()
             messRefBancariaChavePixAletoriaInvalida()
+
+            // arrastarEditarRefBancaria() //Editar Referencia Bancaria
+            // clicarEditarRefBancaria()
+            // selectChavePixAleatorio()
         })  
     })
 
@@ -922,6 +945,66 @@ describe('Cadastrar cliente completo', () => {
             clicarSalvarCliente()
             cy.wait(4000)
             messRegistroSalvoSucesso()
+        }) 
+    })
+
+    context('Cadastro de cliente completo - incluindo referencia financeira', () => {
+
+        it.only('13. Cliente completo CPF - caminho feliz', () => {
+
+            iconeMenuOpcoes()
+            opcaoClienteCompleto()
+            preencherCPFcliente() //PESSOA
+            preencherNomeCompleto()
+            preencherNomeSocial()
+            preecherDataNascimento()
+            selecionarSexoCliente()
+            clicarSalvarCliente()
+            cy.wait(500)
+            
+            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            clicarAbaEndereco() //ENDEREÇO
+            clicarAdicionarNovoEndereço()
+            cy.wait(200)
+            escolherTipoEndereco()
+            modalEnderecoVazioValidar()
+            cy.wait(200)
+            clicarAbrirTipoEndereco()
+            cy.wait(300)
+            escolherTipoEndereco()
+            preencherCampoCEPEndereco()
+            cy.wait(300)
+            preencherCampoNumeroEndereco()
+
+            botaoSalvarDesabilitado()
+            clicarSalvarEndereco()
+            cy.wait(200)
+            infosEnderecoAdicionado()
+            messEnderecoIncluidoSucesso()
+
+            clicarAbaRota() //ROTA
+            clicarAdicionarNovaRota()
+            modalRotaVazioValidar()
+            escolherTipoEnderecoRota()
+            preencherRotaCompleta()
+            messRotaIncluidaSucesso()
+            infosRotaAdicionada()
+
+            clicarAbaTelefone() //TELEFONE
+            clicarAdicionarNovoTelefone()
+            modalTelefoneVazioValidar()
+            escolherTipoTelefone()
+            preencherNumeroTelefone()
+            preencherRamalTelefone()
+            clicarSalvarTelefone()
+            infosTelefoneAdicionado()
+            cy.wait(4000)
+            messTelefoneIncluidoSucesso()
+
+            clicarAbaEmpregaticio() //aba Empregatício
+            validarAbaEmpregaticioVazia()
+            clicarAddNovoEmpregaticio()
         }) 
     })
 })
