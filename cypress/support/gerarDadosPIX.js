@@ -36,8 +36,21 @@ function gerarChavePixCPF() {
 }
 
 function gerarChavePixAleatoria() {
-  // Gera uma chave de 32 caracteres aleatórios (letras e números)
-  return Math.random().toString(36).substring(2, 18) + Math.random().toString(36).substring(2, 18);
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let chavePix = '';
+
+  // Gera a chave de 32 caracteres alfanuméricos, com 4 grupos de 8 caracteres
+  for (let i = 0; i < 4; i++) {
+    let grupo = '';
+    for (let j = 0; j < 8; j++) {
+      const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
+      grupo += caracteres.charAt(indiceAleatorio);
+    }
+    chavePix += grupo;
+    if (i < 3) chavePix += '-'; // Adiciona o traço separador, exceto no último grupo
+  }
+
+  return chavePix;
 }
 
 //Incorretas

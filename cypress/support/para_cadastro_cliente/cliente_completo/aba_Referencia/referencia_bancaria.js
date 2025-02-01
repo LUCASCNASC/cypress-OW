@@ -361,16 +361,6 @@ export function selectFormaPagamentoRefBancaria (selector) {
         .click()
 }
 
-//referencia bancaria - escolher Chave PIX
-export function selectChavePixTefefoneRefBancaria (selector) {
-
-    const chave_pix_telefone = gerarChavePixTelefone();
-
-    //inserir chave PIX
-    cy.get('#txtChavePix')
-        .type(chave_pix_telefone)
-}
-
 //clicar para salvar Referencia Bancaria
 export function clicarSalvarRefBancaria (selector) {
 
@@ -676,4 +666,4 @@ export function selectChavePixAleatorio (selector) {
         .should('have.value', '')
         .wait(200)
         .type(chave_pix_aleatoria)
-}
+} 
