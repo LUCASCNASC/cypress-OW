@@ -402,3 +402,29 @@ export function addProduto (selector) {
 
     cy.wait('@api_servicos_vinculados', { timeout: 40000 })
 }
+
+// valores Subtotal e Total Financeiro comparar eles
+export function compararSubtotalTotalFinanceiro (span1, span2) {
+    
+    cy.get(span1)
+      .invoke('text')
+      .then((texto1) => {
+        // Limpar o texto, removendo 'R$', vírgulas e espaços
+        const valor1 = texto1.replace(/[^0-9,]/g, '').trim();
+  
+        cy.get(span2)
+          .invoke('text')
+          .then((texto2) => {
+            // Limpar o texto, removendo 'R$', vírgulas e espaços
+            const valor2 = texto2.replace(/[^0-9,]/g, '').trim();
+  
+            // Converter para formato numérico, substituindo vírgula por ponto para considerar como decimal
+            const valor1Numerico = parseFloat(valor1.replace(',', '.'));
+            const valor2Numerico = parseFloat(valor2.replace(',', '.'));
+  
+            // Comparar os valores
+            expect(valor1Numerico).to.equal(valor2Numerico);
+          });
+      });
+  }
+  

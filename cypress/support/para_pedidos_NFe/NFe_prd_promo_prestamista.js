@@ -170,3 +170,26 @@ export function escolherRecebPromoPrazoFuturoSemJurosPrest (selector) {
     cy.get('button[aria-label="3876 - T.A. A Receber Futuro - para Prestamista sem juros   Futuro"]')
         .click()
 }
+
+//selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
+export function escolherRecebPromoPartidaPresentePrest (selector) {
+
+    //botão voltar
+    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //título modal formas de pagamento
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('contain', 'Formas de pagamento')
+
+    //botão X
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //forma de pagamento da promoção
+    cy.get('button[aria-label="3875 - T.A.A Receber Presente CDCI - para Prestamista   Presente"]')
+        .click()
+}

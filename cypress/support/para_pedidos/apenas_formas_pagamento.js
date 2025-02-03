@@ -45,7 +45,7 @@ export function escolherSegundaFormaPagamento (selector) {
 
     //escolhendo forma de pagamento - 3862
     cy.intercept('POST', '/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento_escolherSegundaFormaPagamento')
-    cy.get(':nth-child(3) > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-binding')
+    cy.contains('3862 - T.A.A Receber CDCI')
         .click({force:true})
     cy.wait('@api_pedido_forma_pagamento_escolherSegundaFormaPagamento', { timeout: 40000 })
 }
@@ -275,6 +275,9 @@ export function escolherRecebCheque (selector) {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebCheque', { timeout: 40000 })
 }
 
+
+//---------- Prestamista Abatimento %
+
 //escolhendo forma de pagamento 3874 (3874 - T.A. A Receber Futuro - para Prestamista) para aparecer seguro prestamista
 export function escolherRecebFuturoPrestamistaComJuros (selector) {
 
@@ -358,6 +361,95 @@ export function escolherRecebFuturoPrestamistaSemJuros (selector) {
         .click({force:true})
     cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 })
 }
+
+
+//---------- Prestamista Abatimento Valor Fixo
+
+//escolhendo forma de pagamento 3877 (3877 - T.A. A Receb Fut com juros - Prest. Valor Fixo) para aparecer seguro prestamista
+export function escolherRecebFutSemJurosPrestAbatValFixo (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    cy.contains('3877 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
+        .scrollIntoView()
+
+    //escolhendo forma de pagamento - 3877
+    cy.contains('3877 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //escolhendo forma de pagamento - 3877
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros')
+    cy.contains('3877 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
+        .click({force:true})
+    cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 })
+}
+
+//escolhendo forma de pagamento 3878 (3878 - T.A.A Receb Presente CDCI - Prest. Valor Fixo) para aparecer seguro prestamista
+export function escolherRecebPresentePrestAbatValFixo (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    cy.contains('3878 - T.A.A Receb Presente CDCI - Prest. Valor Fixo')
+        .scrollIntoView()
+
+    //escolhendo forma de pagamento - 3878
+    cy.contains('3878 - T.A.A Receb Presente CDCI - Prest. Valor Fixo')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //escolhendo forma de pagamento - 3878
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros')
+    cy.contains('3878 - T.A.A Receb Presente CDCI - Prest. Valor Fixo')
+        .click({force:true})
+    cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 })
+}
+
+//escolhendo forma de pagamento 3879 (3879 - T.A. A Receb Fut sem juros - Prest. Valor Fixo) para aparecer seguro prestamista
+export function escolherRecebFutComJurosPrestAbatValFixo (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    cy.contains('3879 - T.A. A Receb Fut sem juros - Prest. Valor Fixo')
+        .scrollIntoView()
+
+    //escolhendo forma de pagamento - 3879
+    cy.contains('3879 - T.A. A Receb Fut sem juros - Prest. Valor Fixo')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //escolhendo forma de pagamento - 3879
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros')
+    cy.contains('3879 - T.A. A Receb Fut sem juros - Prest. Valor Fixo')
+        .click({force:true})
+    cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 })
+}
+
+
 
 //-------------------
 
@@ -535,8 +627,8 @@ export function inserirData31Dias1Vencimento (selector) {
 //Botão "GERAR PARCELAS" quando alteramos a data de vencimento da 1
 export function botaoGerarParcelasAlterVencimento (selector) {
 
-    cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_formas_pagamento')
-    cy.wait('@api_formas_pagamento', { timeout: 40000 })
+    //.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_formas_pagamento')
+    //cy.wait('@api_formas_pagamento', { timeout: 40000 })
 
     cy.wait(2000)
 
