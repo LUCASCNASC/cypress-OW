@@ -1,4 +1,4 @@
-//Escolher primeiro produto normal - 1918 0 0 - com Intercept - processo venda 9860 (NFe)
+//Escolher produto prestamista abatimento % - 1918 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
 export function prdPromoPrazoParcelaPrest (selector) {
 
     const primeiro_produto_normal = '1918'
@@ -29,7 +29,7 @@ export function prdPromoPrazoParcelaPrest (selector) {
     cy.wait('@apiConsultaProdutos_PromoPrazoParcelaPrest', { timeout: 40000 })
 }
 
-//Escolher primeiro produto normal - 1919 0 0 - com Intercept - processo venda 9860 (NFe)
+//Escolher produto prestamista abatimento % - 1919 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
 export function prdSegPromoPrazoParcelaPrest (selector) {
 
     const primeiro_produto_normal = '1919'
@@ -60,7 +60,7 @@ export function prdSegPromoPrazoParcelaPrest (selector) {
     cy.wait('@apiConsultaProdutos_SegPromoPrazoParcelaPrest', { timeout: 40000 })
 }
 
-//Escolher produto com promoção a prazo - 1920 0 0 - com Intercept - processo venda 9860 (NFe)
+//Escolher prestamista abatimento % com promoção a prazo - 1920 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
 export function prdPromoPartidaPrest (selector) {
 
     const primeiro_produto_normal = '1920'
@@ -91,7 +91,7 @@ export function prdPromoPartidaPrest (selector) {
     cy.wait('@apiConsultaProdutos_PromoPartidaPrest', { timeout: 40000 })
 }
 
-//Escolher primeiro produto normal - 1921 0 0 - com Intercept - processo venda 9860 (NFe)
+//Escolher prestamista abatimento % normal - 1921 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
 export function prdTerPromoPrazoParcelaPrest (selector) {
 
     const primeiro_produto_normal = '1921'
@@ -122,6 +122,100 @@ export function prdTerPromoPrazoParcelaPrest (selector) {
     cy.wait('@apiConsultaProdutos_TerPromoPrazoParcelaPrest', { timeout: 40000 })
 }
 
+//Escolher prestamista abatimento Valor Fixo - 1922 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
+export function prdPromoPrazoPrestPrimAbatVF (selector) {
+
+    const primeiro_produto_normal = '1922'
+
+    cy.intercept('GET', /\/consultaprodutos\/.*1922.*/).as('apiConsultaProdutos_PromoPrazoPrestPrimeiroAbatVF')
+
+    //Limpando campo com o produto anterior
+    cy.get('#searchText')
+        .clear()
+        .wait(100)
+        .should('have.value', '')
+
+    //Validando campo Buscar produto
+    cy.get('#searchText')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+    cy.get('label[for="searchText"]')
+        .should('have.text', 'Buscar produtos')
+
+    //Prenchendo campo Buscar produto
+    cy.get('#searchText')
+        .type(primeiro_produto_normal)
+        .wait(100)
+        .should('have.value', primeiro_produto_normal)
+
+    cy.wait('@apiConsultaProdutos_PromoPrazoPrestPrimeiroAbatVF', { timeout: 40000 })
+}
+
+//Escolher prestamista abatimento Valor Fixo - 1923 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
+export function prdPromoPrazoPrestSegAbatVF (selector) {
+
+    const primeiro_produto_normal = '1923'
+
+    cy.intercept('GET', /\/consultaprodutos\/.*1923.*/).as('apiConsultaProdutos_PromoPrazoPrestSegAbatVF')
+
+    //Limpando campo com o produto anterior
+    cy.get('#searchText')
+        .clear()
+        .wait(100)
+        .should('have.value', '')
+
+    //Validando campo Buscar produto
+    cy.get('#searchText')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+    cy.get('label[for="searchText"]')
+        .should('have.text', 'Buscar produtos')
+
+    //Prenchendo campo Buscar produto
+    cy.get('#searchText')
+        .type(primeiro_produto_normal)
+        .wait(100)
+        .should('have.value', primeiro_produto_normal)
+
+    cy.wait('@apiConsultaProdutos_PromoPrazoPrestSegAbatVF', { timeout: 40000 })
+}
+
+//Escolher prestamista abatimento Valor Fixo - 1924 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
+export function prdPromoPrazoPrestTercAbatVF (selector) {
+
+    const primeiro_produto_normal = '1924'
+
+    cy.intercept('GET', /\/consultaprodutos\/.*1924.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVF')
+
+    //Limpando campo com o produto anterior
+    cy.get('#searchText')
+        .clear()
+        .wait(100)
+        .should('have.value', '')
+
+    //Validando campo Buscar produto
+    cy.get('#searchText')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+    cy.get('label[for="searchText"]')
+        .should('have.text', 'Buscar produtos')
+
+    //Prenchendo campo Buscar produto
+    cy.get('#searchText')
+        .type(primeiro_produto_normal)
+        .wait(100)
+        .should('have.value', primeiro_produto_normal)
+
+    cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVF', { timeout: 40000 })
+}
+
+
 
 //---------------
 
@@ -148,7 +242,7 @@ export function escolherRecebPromoPrazoFuturoComJurosPrest (selector) {
         .click()
 }
 
-//selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
+//selecionando forma de pagamento "3876 - T.A. A Receber Futuro - para Prestamista sem juros" da promoção
 export function escolherRecebPromoPrazoFuturoSemJurosPrest (selector) {
 
     //botão voltar
@@ -171,7 +265,7 @@ export function escolherRecebPromoPrazoFuturoSemJurosPrest (selector) {
         .click()
 }
 
-//selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
+//selecionando forma de pagamento "3875 - T.A.A Receber Presente CDCI - para Prestamista" da promoção
 export function escolherRecebPromoPartidaPresentePrest (selector) {
 
     //botão voltar

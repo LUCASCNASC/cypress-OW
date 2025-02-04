@@ -365,8 +365,8 @@ export function escolherRecebFuturoPrestamistaSemJuros (selector) {
 
 //---------- Prestamista Abatimento Valor Fixo
 
-//escolhendo forma de pagamento 3877 (3877 - T.A. A Receb Fut com juros - Prest. Valor Fixo) para aparecer seguro prestamista
-export function escolherRecebFutSemJurosPrestAbatValFixo (selector) {
+//escolhendo forma de pagamento 3880 (3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo) para aparecer seguro prestamista
+export function escolherRecebFutComJurosPrestAbatValFixo (selector) {
 
     //validando título Forma de pagamento
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -378,17 +378,17 @@ export function escolherRecebFutSemJurosPrestAbatValFixo (selector) {
         .should('be.visible')
         .and('not.be.disabled')
 
-    cy.contains('3877 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
+    cy.contains('3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
         .scrollIntoView()
 
-    //escolhendo forma de pagamento - 3877
-    cy.contains('3877 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
+    //escolhendo forma de pagamento - 3880
+    cy.contains('3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
         .should('be.visible')
         .and('not.be.disabled')
 
-    //escolhendo forma de pagamento - 3877
+    //escolhendo forma de pagamento - 3880
     cy.intercept('POST', '/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros')
-    cy.contains('3877 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
+    cy.contains('3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo')
         .click({force:true})
     cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 })
 }
@@ -422,7 +422,7 @@ export function escolherRecebPresentePrestAbatValFixo (selector) {
 }
 
 //escolhendo forma de pagamento 3879 (3879 - T.A. A Receb Fut sem juros - Prest. Valor Fixo) para aparecer seguro prestamista
-export function escolherRecebFutComJurosPrestAbatValFixo (selector) {
+export function escolherRecebFutSemJurosPrestAbatValFixo (selector) {
 
     //validando título Forma de pagamento
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
