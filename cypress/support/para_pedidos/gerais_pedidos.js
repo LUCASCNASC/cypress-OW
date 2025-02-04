@@ -428,5 +428,5 @@ export function compararSubtotalTotalFinanceiro (span1, span2) {
             expect(valor1Numerico).to.equal(valor2Numerico);
           });
       });
-  }
+}
   
