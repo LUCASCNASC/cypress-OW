@@ -18,7 +18,6 @@ describe('Gerar pedido normal com entrega', () => {
         cy.tituloPagina()
         processoVendaNFCe()
         clienteComRota()
-        cy.wait(500)
         produtoNormalPrimeiroNFCe()
         saldodisponivel()
         escolherProdutoPesquisa()

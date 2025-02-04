@@ -18,7 +18,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
     })
   
     context('Sem entrega/ com promoção/ com serviço processo 9860 - caminho feliz', () => {

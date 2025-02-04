@@ -18,7 +18,6 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
         cy.tituloPagina() 
         processoVendaNFCe()
         clienteComRota()
-        cy.wait(500)
         produtoNormalPrimeiroNFCe() //PRODUTO
         saldodisponivel()
         escolherProdutoPesquisa()

@@ -24,7 +24,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento %', () => {
         cy.tituloPagina() 
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
     })   
 
     context('Sem entrega / Produtos sem promoção - Prestamista com abatimento %', () => {

@@ -17,7 +17,6 @@ describe('Venda de serviço avulso Host - 104', () => {
         cy.tituloPagina()
         processoVendaServicoAvulso()
         clienteComRota()
-        cy.wait(500)
     })
 
     context('Processo 9888 - caminho feliz', () => {

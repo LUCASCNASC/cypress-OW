@@ -17,7 +17,6 @@ describe('Gerar pedido normal', () => {
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
         produtoKitPrimeiro()
         saldodisponivel()
         escolherProdutoPesquisa()

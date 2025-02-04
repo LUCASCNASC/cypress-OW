@@ -17,7 +17,6 @@ describe('Gerar pedido com proposta de crédito', () => {
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
         escolherProdutoPesquisa()

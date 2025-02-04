@@ -1,7 +1,7 @@
 import { saldodisponivel, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
          escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, ticketPrestAdicionadoRecebAgrupado, compararSubtotalTotalFinanceiro } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/para_pedidos_NFe/NFe_prd_normal.js';
-import {  } from '../../../../support/para_pedidos_NFe/NFe_prd_promo_prestamista.js';
+import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVF, escolherRecebPromoPrazoFutComJurosPrestAbatVF } from '../../../../support/para_pedidos_NFe/NFe_prd_promo_prestamista.js';
 import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSeguroPrestamista, messPrestamistaRemovido, addSeguroPrestamista } from '../../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherQuatroParcelaPagamento, 
          inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento,  escolherUmaParcelaPagamento, inserirData31Dias1Vencimento,
@@ -23,7 +23,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
         cy.tituloPagina() 
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
     })   
 
     context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo', () => {
@@ -85,24 +84,17 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
 
         it.only('3. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            // produtoNormalPrimeiro()
+            prdPromoPrazoPrestPrimAbatVF()
             // saldodisponivel()
             // escolherProdutoPesquisa()
             // clicarVoltagemProduto() //PRODUTO
+            // selecionarPrimeiraPromoProduto()
+            // escolherRecebPromoPrazoFutComJurosPrestAbatVF()
+
             // addProduto()
             // modalServicosVinculados()
             // okServicosVinculados() //SERVIÇOS
-            // avancarParaTransportadora()
-            // avancarParcelasEntrega()
-            // botaoGerarParcelas() //GERAR PARCELAS
-            // carregandoFormaPagamento()
-            // escolherRecebFuturoPrestamistaSemJuros()
-            // escolherQuatroParcelaPagamento()
-            // okSeguroPrestamista()
-            // ticketPrestamistaAdicionado() //Validando adição do prestamista
-            // avancarFinal()
-            // botaoFinalizarPedido() //RESUMO
-            // pedidoGerado()
+             
         })
     })
 

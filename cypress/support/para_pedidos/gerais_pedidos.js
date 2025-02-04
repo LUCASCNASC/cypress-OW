@@ -154,6 +154,8 @@ export function clienteComRota (selector) {
         .should('be.visible')
         .click()
     cy.wait('@api_modalclientes', { timeout: 40000 })
+    cy.intercept('/consultaclientes/*').as('api_consultaclientes');
+    cy.wait('@api_consultaclientes', { timeout: 40000 })
 
     // cy.wait(1000)
 

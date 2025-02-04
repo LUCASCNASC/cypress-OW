@@ -21,7 +21,6 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
     })
 
     context('Sem enterga/ processo 9860 - caminho feliz - produtos sem serviço', () => {

@@ -19,7 +19,6 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
         produtoNormalPrimeiro()
         saldodisponivel()
         escolherProdutoPesquisa()

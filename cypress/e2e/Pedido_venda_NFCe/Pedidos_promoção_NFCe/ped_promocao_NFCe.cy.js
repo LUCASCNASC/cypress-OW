@@ -18,7 +18,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
         cy.tituloPagina()
         processoVendaNFCe()
         clienteComRota()
-        cy.wait(500)
     })
 
     context('Com entrega /com promoção/ processo 9890 - caminho feliz', () => {

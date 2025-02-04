@@ -20,7 +20,6 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         cy.tituloPagina()
         processoVendaExclusiva()
         clienteComRota()
-        cy.wait(500)
     })
 
     context('Configuração de processo - Exclusiva: 36 = 2; 139 = 6; 552= 5 dias', () => {

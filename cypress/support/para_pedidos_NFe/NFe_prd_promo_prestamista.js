@@ -217,7 +217,7 @@ export function prdPromoPrazoPrestTercAbatVF (selector) {
 
 
 
-//---------------
+//--------------- Abatimento %
 
 //selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
 export function escolherRecebPromoPrazoFuturoComJurosPrest (selector) {
@@ -285,5 +285,30 @@ export function escolherRecebPromoPartidaPresentePrest (selector) {
 
     //forma de pagamento da promoção
     cy.get('button[aria-label="3875 - T.A.A Receber Presente CDCI - para Prestamista   Presente"]')
+        .click()
+}
+
+//--------------- Abatimento Valor Fixo
+
+//selecionando forma de pagamento "3880 - T.A. T.A. A Receb Fut com juros - Prest. Valor Fixo" da promoção
+export function escolherRecebPromoPrazoFutComJurosPrestAbatVF (selector) {
+
+    //botão voltar
+    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //título modal formas de pagamento
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('contain', 'Formas de pagamento')
+
+    //botão X
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //forma de pagamento da promoção
+    cy.get('button[aria-label="T.A. A Receb Fut com juros - Prest. Valor Fixo   Futuro"]')
         .click()
 }

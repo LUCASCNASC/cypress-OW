@@ -17,7 +17,6 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         cy.tituloPagina()
         processoEntregaFuturaNFCe()
         clienteComRota()
-        cy.wait(500)
         prdPrimeiroEntregaFutNFCe()
         saldodisponivel()
         escolherProdutoPesquisa()

@@ -18,7 +18,6 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
         produtoArredondarCimaBaixo()
         saldodisponivel()
         escolherProdutoPesquisa()

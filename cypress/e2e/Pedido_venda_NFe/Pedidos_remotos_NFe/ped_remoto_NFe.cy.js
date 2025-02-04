@@ -19,7 +19,6 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         cy.tituloPagina() 
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
     })
   
     context('Pedido de venda remoto normal', () => {

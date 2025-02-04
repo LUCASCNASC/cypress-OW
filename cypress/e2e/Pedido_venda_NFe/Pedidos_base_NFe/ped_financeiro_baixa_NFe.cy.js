@@ -17,7 +17,6 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.tituloPagina()
         processoFinanceiroBaixaNFe()
         clienteComRota()
-        cy.wait(500)
         prdPrimeiroFinanBaixaNFe()
         saldodisponivel()
         escolherProdutoPesquisa()

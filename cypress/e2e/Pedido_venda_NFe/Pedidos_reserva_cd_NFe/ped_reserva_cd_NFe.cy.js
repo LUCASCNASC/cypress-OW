@@ -17,7 +17,6 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         cy.tituloPagina() 
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {

@@ -18,7 +18,6 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
     })
   
     context('Sem entrega/ processo 9862 - caminho feliz', () => {

@@ -23,7 +23,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        cy.wait(500)
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
