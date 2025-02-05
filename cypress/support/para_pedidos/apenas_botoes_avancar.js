@@ -98,6 +98,10 @@ export function avancarFinal (selector) {
     cy.wait('@api_carinho_confirmacao', { timeout: 40000 })
 }
 
+
+// ------------ ALTERAÇÃO DE PEDIDO -------------------
+
+
 //Botão para avançar para a tela de Gerar parcelas (ALTERAÇÃO DE PEDIDO) - com intercept
 export function avancarParaParcelasAlterar (selector) {
 

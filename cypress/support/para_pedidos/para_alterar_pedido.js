@@ -1,4 +1,4 @@
-//clicaR no botão OK do mocal de Pedido Concuído
+//clicaR no botão OK do modal de Pedido Concuído
 export function okPedidoGerado (selector) {
 
     cy.get('md-dialog-actions.layout-align-center-center > .md-primary')

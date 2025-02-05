@@ -1,3 +1,5 @@
+//------------------- PROCESSOS  ------
+
 //Para escolher processo de venda 9860 NFe
 export function processoVendaNFe (selector) {
 
@@ -24,8 +26,8 @@ export function processoVendaNFe (selector) {
         .wait(200) 
 }
 
-//Para escolher processo de venda 9860 NFCe
-export function processoVendaNFCe (selector) {
+//Para escolher processo de venda 9869 para exclusiva NFe
+export function processoVendaExclusiva (selector) {
 
     //clicar para aparecer as opções de processo
     cy.get('#select_value_label_4 > .md-select-icon')
@@ -36,18 +38,18 @@ export function processoVendaNFCe (selector) {
     //rolar para o meio das opções de processo
     cy.get('#select_listbox_12')
         .should('be.visible')
-        .scrollTo('bottom')
+        .scrollTo('center')
 
-    //selecionar processo de venda "9860"
+    //selecionar processo de venda "9869"
     cy.get('.md-text.ng-binding')
-        .contains('9890 - T.A. Pedido Negociável - NFCe')
+        .contains('9869 - T.A. Pedido Negociável Exclusiva')
         .click({force:true})
 
     //fechar modal de processos
     cy.get('.md-select-backdrop')
         .wait(200)
         .dblclick()
-        .wait(200) 
+        .wait(200)
 }
 
 //Para escolher processo de venda entrega futura 9862 normal - NFe
@@ -102,33 +104,7 @@ export function processoFinanceiroBaixaNFe (selector) {
         .wait(200)
 }
 
-//Para escolher processo de venda 9869 para exclusiva
-export function processoVendaExclusiva (selector) {
-
-    //clicar para aparecer as opções de processo
-    cy.get('#select_value_label_4 > .md-select-icon')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .click()
-
-    //rolar para o meio das opções de processo
-    cy.get('#select_listbox_12')
-        .should('be.visible')
-        .scrollTo('center')
-
-    //selecionar processo de venda "9869"
-    cy.get('.md-text.ng-binding')
-        .contains('9869 - T.A. Pedido Negociável Exclusiva')
-        .click({force:true})
-
-    //fechar modal de processos
-    cy.get('.md-select-backdrop')
-        .wait(200)
-        .dblclick()
-        .wait(200)
-}
-
-//Para escolher processo de venda 9888 - serviços avulsos - quando já temos uma nota de venda de produto e quando vamos vender igual produto
+//Para escolher processo de venda 9888 - serviços avulsos - quando já temos uma nota de venda de produto e quando vamos vender igual produto - NFe
 export function processoVendaServicoAvulso (selector) {
 
     //clicar para aparecer as opções de processo
@@ -153,6 +129,35 @@ export function processoVendaServicoAvulso (selector) {
         .wait(200)
         .dblclick()
         .wait(200)
+}
+
+
+//------------------- GERAR ENTRADA NO PAGAMENTO ------
+
+//Para escolher processo de venda 9860 NFCe
+export function processoVendaNFCe (selector) {
+
+    //clicar para aparecer as opções de processo
+    cy.get('#select_value_label_4 > .md-select-icon')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .click()
+
+    //rolar para o meio das opções de processo
+    cy.get('#select_listbox_12')
+        .should('be.visible')
+        .scrollTo('bottom')
+
+    //selecionar processo de venda "9860"
+    cy.get('.md-text.ng-binding')
+        .contains('9890 - T.A. Pedido Negociável - NFCe')
+        .click({force:true})
+
+    //fechar modal de processos
+    cy.get('.md-select-backdrop')
+        .wait(200)
+        .dblclick()
+        .wait(200) 
 }
 
 //Para escolher processo de venda entrega futura 9891 normal - NFCe

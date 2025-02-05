@@ -1,3 +1,5 @@
+//------------------- ADICIONAR SERVIÇOS ------
+
 //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
 export function garantiaSeparaMesmoProcesso (selector) {
     
@@ -55,6 +57,9 @@ export function maoObraNaoDestacaSeparaProcessoDiferente (selector) {
 
     cy.get('#checkbox-144-2 > .md-container').click()
 }
+
+
+//------------------- RELACIONADOS A SERVIÇOS ------
 
 //Validações card de serviços
 export function modalServicosVinculados (selector) {

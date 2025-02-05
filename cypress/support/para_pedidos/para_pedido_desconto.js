@@ -1,3 +1,5 @@
+//------------------- RELACIONADOS A DESCONTO ------
+
 //validar e clicar botão % (desconto)
 export function clicarBotaoDesconto (selector) {
 
@@ -73,62 +75,6 @@ export function validarModalSubSobre (selector) {
         .and('contain', 'Aplicar')
         .and('not.be.disabled')
 } 
-
-//aplicar desconto Sub(-) com R$
-export function aplicarDescontoR$ (selector) {
-
-    const valor_desconto_R$ = '1000'
-
-    //clicar no botão R$    
-    cy.contains('button', 'R$')
-        .click({force:true})
-
-    //preencher campo com valor do desconto
-    cy.get('#txtReajusteReal_0')
-        .type(valor_desconto_R$)
-
-    //clicar no botão APLICAR
-    cy.get('button[ng-click="aplicarSubSobre()"]')
-        .click({force:true})
-}
-
-//aplicar desconto Sub(-) com %
-export function aplicarDescontoPorcentagem (selector) {
-
-    const valor_desconto_porcentagem = '2'
-
-    //clicar no botão %    
-    cy.contains('button', '%')
-        .click({force:true})
-
-    //preencher campo com valor do desconto
-    cy.get('#txtReajustePorc_0')
-        .type(valor_desconto_porcentagem)
-
-    //clicar no botão APLICAR
-    cy.get('button[ng-click="aplicarSubSobre()"]')
-        .click({force:true})
-}
-
-//aplicar desconto Sub(-) com VALOR FIXO
-export function aplicarDescontoValorFixo (selector) {
-
-    const valor_desconto_valorFixo = '280000'
-
-    //clicar no botão VALOR FIXO    
-    cy.contains('button', 'VALOR FIXO')
-        .click({force:true})
-
-    //preencher campo com valor do desconto
-    cy.get('#txtReajusteFixo_0')
-        .clear()
-        .wait(100)
-        .type(valor_desconto_valorFixo)
-
-    //clicar no botão APLICAR
-    cy.get('button[ng-click="aplicarSubSobre()"]')
-        .click({force:true})
-}
 
 //Desconto juros - arrastar forma de pagamento escolhida para aparecer desconto - AJUSTAR
 export function arrastarFormaPagamento (selector) {
@@ -238,4 +184,64 @@ export function alterarValorParaCima (selector) {
     //clicar no botão APLICAR
     cy.get('button[ng-click="aplicarAlterarValor()"]')
         .click({force: true})
+}
+
+
+
+//------------------- APLICAR DESCONTOS ------
+
+//aplicar desconto Sub(-) com R$
+export function aplicarDescontoR$ (selector) {
+
+    const valor_desconto_R$ = '1000'
+
+    //clicar no botão R$    
+    cy.contains('button', 'R$')
+        .click({force:true})
+
+    //preencher campo com valor do desconto
+    cy.get('#txtReajusteReal_0')
+        .type(valor_desconto_R$)
+
+    //clicar no botão APLICAR
+    cy.get('button[ng-click="aplicarSubSobre()"]')
+        .click({force:true})
+}
+
+//aplicar desconto Sub(-) com %
+export function aplicarDescontoPorcentagem (selector) {
+
+    const valor_desconto_porcentagem = '2'
+
+    //clicar no botão %    
+    cy.contains('button', '%')
+        .click({force:true})
+
+    //preencher campo com valor do desconto
+    cy.get('#txtReajustePorc_0')
+        .type(valor_desconto_porcentagem)
+
+    //clicar no botão APLICAR
+    cy.get('button[ng-click="aplicarSubSobre()"]')
+        .click({force:true})
+}
+
+//aplicar desconto Sub(-) com VALOR FIXO
+export function aplicarDescontoValorFixo (selector) {
+
+    const valor_desconto_valorFixo = '280000'
+
+    //clicar no botão VALOR FIXO    
+    cy.contains('button', 'VALOR FIXO')
+        .click({force:true})
+
+    //preencher campo com valor do desconto
+    cy.get('#txtReajusteFixo_0')
+        .clear()
+        .wait(100)
+        .type(valor_desconto_valorFixo)
+
+    //clicar no botão APLICAR
+    cy.get('button[ng-click="aplicarSubSobre()"]')
+        .click({force:true})
 }

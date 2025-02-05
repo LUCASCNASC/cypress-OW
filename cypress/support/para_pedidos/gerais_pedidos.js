@@ -1,3 +1,5 @@
+//------------------- SALDOS DO PRODUTOS ------
+
 //Validando produto com saldo disponível local
 export function saldodisponivel (selector) {
     
@@ -106,6 +108,9 @@ export function semSaldodisponivel (selector) {
     //     .should('be.visible')
 }
 
+
+//------------------- FORMAS DE ESCOLHER CLIENTE ------
+
 //Função para escolher cliente CPF para gerar pedido de venda - inserir cliente 
 export function escolherClientePedido2 (selector) {
     
@@ -167,141 +172,8 @@ export function clienteComRota (selector) {
     cy.wait('@api_pedido_validar_cliente', { timeout: 40000 })
 }
 
-//Trocar filial de faturamento - faturamento remoto da filial 50 para 6
-export function trocarFilialFaturamento (selector) {
 
-    const filial_local = '50 - PR - EMISSÃO NFe/NFCe'
-    const filial_remota = '6 - GAZIN - IND. E COM. DE MÓVEIS E ELETROD. LTDA.'
-
-    //ícone dentro do botão de filial de saldo
-    cy.get('[ng-click="openModalFilial(itemClicado.grade, false);"] > .ng-binding')
-        .should('be.visible')
-
-    //Botão filial de faturamento
-    cy.get('[ng-click="openModalFilial(itemClicado.grade, false);"]')
-        .should('be.visible')
-        .and('contain', filial_local)
-        .click({force:true})
-
-    //Card Filial de faturamento - título
-    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('have.text', 'Filial')
-    
-    //Card Filial de faturamento - X para sair do card
-    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('be.visible')
-
-    //Card Filial de faturamento - filial 50
-    cy.get('p.ng-binding')
-        .contains(filial_local)
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //Card Filial de faturamento - filial 6
-    cy.get('p.ng-binding')
-        .contains(filial_remota)
-        .should('be.visible')
-        .and('not.be.disabled')
-        
-    //Card Filial de faturamento - clicar na filial 6
-    cy.get('.white > md-list.md-default-theme > :nth-child(2) > div.md-button > .md-no-style')
-        .click()
-}
-
-//validando composição deste KIT
-export function composicaoDesteKit (selector) {
-
-    cy.get('.is-expanded > v-pane-header.ng-scope > div')
-        .scrollIntoView()
-        .wait(200)
-        .should('be.visible')
-        .and('contain', 'Composição deste KIT')
-}
-
-//escolhendo a primeira promoção do produto - uma promoção
-export function selecionarPrimeiraPromoProduto (selector) {
-
-    //botão voltar
-    cy.get('[ng-click="modalSaldo()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //título modal promoções
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Promoções')
-
-    //botão X
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //botão "NÃO USAR PROMOÇÃO"
-    cy.get('#dialogContent_137 > [style="padding: 0 5px"] > .md-primary')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //promoção em sim
-    cy.get('.md-3-line > div.md-button > .md-no-style')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //escolhendo a promoção
-    cy.get('.md-3-line > div.md-button > .md-no-style')
-        .click()
-}
-
-//clicar no botão editar parcelas da forma de pagamento - quando já temos uma forma de pagamento escolhida
-export function clicarEditarParcelas (selector) {
-
-    //ícone lápis para edição de parcelas da forma de pagamento
-    cy.get('.btn-remove-item-list > :nth-child(3) > .md-raised')
-        .click({force:true})
-}
-
-//validar adição do serviço prestamista, após clicarmos para adicionar
-export function ticketPrestamistaAdicionado (selector) {
-
-    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul')
-        .scrollIntoView()
-        .wait(200)
-
-    //ticket inteiro
-    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul')
-        .should('be.visible')
-
-    //nome do serviço prestamista
-    cy.get('ul > :nth-child(1) > .ng-binding')
-        .should('be.visible')
-
-    //cifrão do valor do prestamista
-    cy.get('ul > :nth-child(1) > sup')
-        .should('be.visible')
-        .and('have.text', 'R$')
-
-    //"Vendedor"
-    cy.get(':nth-child(2) > b') 
-        .should('be.visible')
-        .and('have.text', 'Vendedor:')
-
-    //Nome do vendedor
-    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul > :nth-child(2)')
-        .should('be.visible')
-
-    //Ícone lápis - para edição do vendedor
-    cy.get('ul > :nth-child(2) > .md-primary')
-        .should('be.visible')
-        .and('not.be.disabled')
-}
-
-//validar adição do serviço prestamista, após clicarmos para agrupar lançamentos
-export function ticketPrestAdicionadoRecebAgrupado (selector) {
-
-    cy.get('b.ng-binding')
-      .contains('T.A. Prestamista Não separa Com juros - Futuro')
-      .should('be.visible')
-}
+//------------------- PARA ADICIONAR PRODUTOS NO PEDIDO ------
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
 export function escolherProdutoPesquisa (selector) {
@@ -403,6 +275,150 @@ export function addProduto (selector) {
         .click({force:true})
 
     cy.wait('@api_servicos_vinculados', { timeout: 40000 })
+}
+
+
+//------------------- VALIDAÇÕES PRESTAMISTA ------
+
+//validar adição do serviço prestamista, após clicarmos para adicionar
+export function ticketPrestamistaAdicionado (selector) {
+
+    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul')
+        .scrollIntoView()
+        .wait(200)
+
+    //ticket inteiro
+    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul')
+        .should('be.visible')
+
+    //nome do serviço prestamista
+    cy.get('ul > :nth-child(1) > .ng-binding')
+        .should('be.visible')
+
+    //cifrão do valor do prestamista
+    cy.get('ul > :nth-child(1) > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //"Vendedor"
+    cy.get(':nth-child(2) > b') 
+        .should('be.visible')
+        .and('have.text', 'Vendedor:')
+
+    //Nome do vendedor
+    cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul > :nth-child(2)')
+        .should('be.visible')
+
+    //Ícone lápis - para edição do vendedor
+    cy.get('ul > :nth-child(2) > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+}
+
+//validar adição do serviço prestamista, após clicarmos para agrupar lançamentos
+export function ticketPrestAdicionadoRecebAgrupado (selector) {
+
+    cy.get('b.ng-binding')
+      .contains('T.A. Prestamista Não separa Com juros - Futuro')
+      .should('be.visible')
+}
+
+
+
+//------------------- OUTROS ------
+
+
+//Trocar filial de faturamento - faturamento remoto da filial 50 para 6
+export function trocarFilialFaturamento (selector) {
+
+    const filial_local = '50 - PR - EMISSÃO NFe/NFCe'
+    const filial_remota = '6 - GAZIN - IND. E COM. DE MÓVEIS E ELETROD. LTDA.'
+
+    //ícone dentro do botão de filial de saldo
+    cy.get('[ng-click="openModalFilial(itemClicado.grade, false);"] > .ng-binding')
+        .should('be.visible')
+
+    //Botão filial de faturamento
+    cy.get('[ng-click="openModalFilial(itemClicado.grade, false);"]')
+        .should('be.visible')
+        .and('contain', filial_local)
+        .click({force:true})
+
+    //Card Filial de faturamento - título
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text', 'Filial')
+    
+    //Card Filial de faturamento - X para sair do card
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+
+    //Card Filial de faturamento - filial 50
+    cy.get('p.ng-binding')
+        .contains(filial_local)
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Card Filial de faturamento - filial 6
+    cy.get('p.ng-binding')
+        .contains(filial_remota)
+        .should('be.visible')
+        .and('not.be.disabled')
+        
+    //Card Filial de faturamento - clicar na filial 6
+    cy.get('.white > md-list.md-default-theme > :nth-child(2) > div.md-button > .md-no-style')
+        .click()
+}
+
+//validando composição deste KIT
+export function composicaoDesteKit (selector) {
+
+    cy.get('.is-expanded > v-pane-header.ng-scope > div')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('contain', 'Composição deste KIT')
+}
+
+//escolhendo a primeira promoção do produto - uma promoção
+export function selecionarPrimeiraPromoProduto (selector) {
+
+    //botão voltar
+    cy.get('[ng-click="modalSaldo()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //título modal promoções
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('contain', 'Promoções')
+
+    //botão X
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //botão "NÃO USAR PROMOÇÃO"
+    cy.get('#dialogContent_137 > [style="padding: 0 5px"] > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //promoção em sim
+    cy.get('.md-3-line > div.md-button > .md-no-style')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //escolhendo a promoção
+    cy.get('.md-3-line > div.md-button > .md-no-style')
+        .click()
+}
+
+//clicar no botão editar parcelas da forma de pagamento - quando já temos uma forma de pagamento escolhida
+export function clicarEditarParcelas (selector) {
+
+    //ícone lápis para edição de parcelas da forma de pagamento
+    cy.get('.btn-remove-item-list > :nth-child(3) > .md-raised')
+        .click({force:true})
 }
 
 // valores Subtotal e Total Financeiro comparar eles
