@@ -7,7 +7,7 @@ import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSe
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento,
          escolherRecebFuturoPrestamistaComJuros, escolherQuatroParcelaPagamento, escolherRecebPresentePrestamista, 
          escolherRecebFuturoPrestamistaSemJuros, inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento, 
-         escolherRecebAVista, escolherUmaParcelaPagamento, inserirData31Dias1Vencimento, escolherSegundaFormaPagamento } from '../../../../support/para_pedidos/apenas_formas_pagamento.js';
+         escolherUmaParcelaPagamento, inserirData31Dias1Vencimento, escolherSegundaFormaPagamento } from '../../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -400,7 +400,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento %', () => {
             avancarParaParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            //ticketPrestamistaAdicionado() //Validando adição do prestamista
             clicarEditarParcelas()
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()

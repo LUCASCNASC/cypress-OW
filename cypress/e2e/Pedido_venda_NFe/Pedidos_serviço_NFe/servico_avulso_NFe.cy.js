@@ -1,9 +1,10 @@
-import { clienteComRota, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso, saldoDisponivelServico,
-         escolherServicoPesquisa } from '../../../support/para_pedidos/para_servicos_avulsos.js';
-import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso, saldoDisponivelServico,
+         escolherServicoPesquisa, messItemAdicionadoSucesso, servicoAdicionadoCarrinho, botaoGerarParcelasServicos } from '../../../support/para_pedidos/para_servicos_avulsos.js';
+import { escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaServicoAvulso } from '../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 
 describe('Venda de serviço avulso', () => {
 
@@ -24,16 +25,14 @@ describe('Venda de serviço avulso', () => {
             produtoServicoAvulso() //PRODUTO
             saldoDisponivelServico()
             escolherServicoPesquisa()
-            cy.wait(200)
+            messItemAdicionadoSucesso()
             clicarCarrinhoCompras() //CARRINHO COMPRAS
+            servicoAdicionadoCarrinho()
             botaoAvancarPedido()
-            cy.wait(3000)
-            botaoGerarParcelas() //GERAR PARCELAS
+            botaoGerarParcelasServicos() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            cy.wait(2000)
             escolherDuasParcelaPagamento()
-            cy.wait(400)
             avancarFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()

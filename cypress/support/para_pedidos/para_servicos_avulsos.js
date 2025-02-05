@@ -286,10 +286,12 @@ export function messGarantiaJaAdicionada (selector) {
 //Clicar no carrinho de compras
 export function clicarCarrinhoCompras (selector) {
 
+    cy.intercept('GET', '/images/icons/brazil-real-symbol.svg').as('api_produto_carrinho_compra')
     //validando
     cy.get('#test_btnCarrinho > .md-icon-button > .ng-binding')
         .should('be.visible')
         .click({force:true})
+    cy.wait('@api_produto_carrinho_compra', { timeout: 40000 })
 }
 
 //Botão AVANÇAR
@@ -301,13 +303,42 @@ export function botaoAvancarPedido (selector) {
         .should('be.visible')
         .and('not.be.disabled')
         .and('have.text',' Avançar ')
+
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
+    //clicando botão
+    cy.get('.flex-gt-sm-50 > .md-primary')
         .click({force:true})
+    cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
 }
+
+//Botão "GERAR PARCELAS"
+export function botaoGerarParcelasServicos (selector) {
+
+    
+
+    //Botão "GERAR PARCELAS" - validações
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .scrollIntoView()
+        .wait(200)
+        .should('exist')
+        .and('have.text', 'Gerar parcelas')
+
+    cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento')
+    //Botão "GERAR PARCELAS" - clicar
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .click({force:true})
+        
+    cy.wait('@api_modal_forma_pagamento', { timeout: 40000 })
+}
+
+
 
 //Escolher servico, para vende-lo - 144 (T.A. MO Não Destaca e Separa Processo Diferente)
 export function produtoServicoAvulso (selector) {
 
     const codigo_servico = '144'
+
+    cy.intercept('GET', /\/consultaprodutos\/.*144.*/).as('apiConsultaProdutos_produtoServicoAvulso')
 
     //Validando campo Buscar produto
     cy.get('#searchText')
@@ -323,6 +354,8 @@ export function produtoServicoAvulso (selector) {
         .type(codigo_servico)
         .wait(100)
         .should('have.value', codigo_servico)
+
+    cy.wait('@apiConsultaProdutos_produtoServicoAvulso', { timeout: 40000 })
 }
 
 //Validando serviço com saldo disponível local
@@ -385,11 +418,77 @@ export function escolherServicoPesquisa (selector) {
     cy.get('.valor-busca')
         .should('be.visible')
 
+    cy.intercept('GET', '/services/v3/produto_servico/*').as('api_produto_produto_servico')
     //Clicar para adicionar no carrinho
     cy.get('.md-list-item-text')
         .should('be.visible')
         .click({force:true})
+    cy.wait('@api_produto_produto_servico', { timeout: 40000 })
 }
+
+//Mensagem de "Item adicionado com sucesso!"
+export function messItemAdicionadoSucesso (selector) {
+
+    //O Serviço Garantias já foi adicionado à esse produto. - card inteiro
+    cy.get('.toast')
+        .should('be.visible')
+
+    //O Serviço Garantias já foi adicionado à esse produto. - Aviso
+    cy.get('.toast-title')
+        .should('be.visible')
+        .and('have.text', 'Aviso')
+
+    //O Serviço Garantias já foi adicionado à esse produto. - Mensagem em si
+    cy.get('.toast-message')
+        .should('be.visible')
+        .and('contain', 'Item adicionado com sucesso!')
+}
+
+//validando que serviço foi adicionando ao carrinho - serviço que gera NFe
+export function servicoAdicionadoCarrinho (selector) {
+
+    //card completo
+    cy.get('.servicos > .noscroll')
+        .should('be.visible')
+
+    //nome do serviço
+    cy.get('span.list-title')
+        .should('be.visible')
+
+    //Quantidade
+    cy.get('.flex-60 > :nth-child(2) > b')
+        .should('be.visible')
+        .and('have.text', 'Quantidade:')
+
+    //valor da quantidade
+    cy.get('.flex-60 > :nth-child(2)')
+        .should('be.visible')
+
+    //Vandedor
+    cy.get('.flex-60 > :nth-child(3) > b')
+        .should('be.visible')
+        .and('have.text', 'Vendedor:')
+
+    //Valor do vendedor
+    cy.get('.flex-60 > :nth-child(3)')
+        .should('be.visible')
+
+    //botão para editar vendedor
+    cy.get('.flex-60 > :nth-child(3) > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //valor real do serviço
+    cy.get('input[ng-model="servAtual.valorFinal"]')
+        .should('be.visible')
+
+    //botão excluir seviço
+    cy.get('.btn-remove-item-list > .md-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+}
+
+
 
 //Escolher servico host, para vende-lo - 104 (Recarga Homologação TIM TIM)
 export function produtoServicoHost (selector) {

@@ -6,7 +6,7 @@ import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSe
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherQuatroParcelaPagamento, 
          inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento,  escolherUmaParcelaPagamento, inserirData31Dias1Vencimento,
          escolherSegundaFormaPagamento,escolherRecebFutSemJurosPrestAbatValFixo, escolherRecebPresentePrestAbatValFixo,
-         escolherRecebFutComJurosPrestAbatValFixo } from '../../../../support/para_pedidos/apenas_formas_pagamento.js';
+         escolherRecebFutComJurosPrestAbatValFixo, escolherRecebFutComJurosPrestAbatOrigemPrd } from '../../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../../support/para_pedidos/apenas_processos_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -27,7 +27,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
 
     context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo', () => {
 
-        it.skip('1. Ped venda: produto 1860 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
+        it.skip('1. Ped venda: produto 1860 0 0, inclusão 3881, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
@@ -40,7 +40,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            escolherRecebFutComJurosPrestAbatValFixo()
+            escolherRecebFutComJurosPrestAbatOrigemPrd()
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
@@ -70,7 +70,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            escolherRecebFutComJurosPrestAbatValFixo()
+            escolherRecebFutComJurosPrestAbatOrigemPrd()
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado()
@@ -78,56 +78,5 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
-    })
-
-    context('Com entrega / Produtos com promoção - Prestamista com abatimento Valor Fixo', () => {
-
-        it.only('3. Ped venda: produto 1922 0 0 (promo a prazo 171), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
-    
-            prdPromoPrazoPrestPrimAbatVF()
-            saldodisponivel()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPrazoFutComJurosPrestAbatVF()
-            addProduto()
-            modalServicosVinculados()
-            okServicosVinculados() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
-            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
-            cy.wait('@api_icons', { timeout: 40000 })
-            clicarEditarParcelas()
-            escolherQuatroParcelaPagamento()
-            okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
-             
-        })
-    })
-
-    context('Com entrega / Produto sem promoção - Prestamista com abatimento Valor Fixo', () => {
-
-        it.skip('6. Ped venda: produto 1860 0 0, inclusão 3878, prestamista 161 (55,90), 4 parcelas no recebimento Presente com juros.', () => {
-    
-            produtoNormalPrimeiro()
-            saldodisponivel()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() //PRODUTO
-            addProduto()
-            modalServicosVinculados()
-            okServicosVinculados() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
-            escolherRecebPresentePrestAbatValFixo()
-            escolherQuatroParcelaPagamento()
-            okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
-            avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
-        })
-
     })
 })

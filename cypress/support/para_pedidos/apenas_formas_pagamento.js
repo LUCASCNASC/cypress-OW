@@ -450,6 +450,38 @@ export function escolherRecebFutSemJurosPrestAbatValFixo (selector) {
 }
 
 
+//---------- Prestamista Abatimento Valor Fixo
+
+//escolhendo forma de pagamento 3881 (3881 - T.A. A Receb Fut com juros - Prest. Origem Produto) para aparecer seguro prestamista
+export function escolherRecebFutComJurosPrestAbatOrigemPrd (selector) {
+
+    //validando título Forma de pagamento
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('have.text','Forma de pagamento')
+
+    //validando botão X
+    cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .md-icon-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    cy.contains('3881 - T.A. A Receb Fut com juros - Prest. Origem Produto')
+        .scrollIntoView()
+
+    //escolhendo forma de pagamento - 3881
+    cy.contains('3881 - T.A. A Receb Fut com juros - Prest. Origem Produto')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //escolhendo forma de pagamento - 3881
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros')
+    cy.contains('3881 - T.A. A Receb Fut com juros - Prest. Origem Produto')
+        .click({force:true})
+    cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 })
+}
+
+
+
 
 //-------------------
 

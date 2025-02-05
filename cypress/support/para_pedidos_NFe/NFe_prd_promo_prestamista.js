@@ -217,7 +217,7 @@ export function prdPromoPrazoPrestTercAbatVF (selector) {
 
 
 
-//--------------- Abatimento %
+//--------------- Abatimento % - processo de inclusão PROMOÇÃO
 
 //selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
 export function escolherRecebPromoPrazoFuturoComJurosPrest (selector) {
@@ -288,7 +288,8 @@ export function escolherRecebPromoPartidaPresentePrest (selector) {
         .click()
 }
 
-//--------------- Abatimento Valor Fixo
+
+//--------------- Abatimento Valor Fixo - processo de inclusão PROMOÇÃO
 
 //selecionando forma de pagamento "3880 - T.A. T.A. A Receb Fut com juros - Prest. Valor Fixo" da promoção
 export function escolherRecebPromoPrazoFutComJurosPrestAbatVF (selector) {
@@ -309,6 +310,7 @@ export function escolherRecebPromoPrazoFutComJurosPrestAbatVF (selector) {
         .and('not.be.disabled')
 
     //forma de pagamento da promoção
-    cy.get('button[aria-label="T.A. A Receb Fut com juros - Prest. Valor Fixo   Futuro"]')
+    cy.get('button[aria-label="3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo   Futuro"]')
         .click()
 }
+
