@@ -4,7 +4,7 @@ import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela 
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 

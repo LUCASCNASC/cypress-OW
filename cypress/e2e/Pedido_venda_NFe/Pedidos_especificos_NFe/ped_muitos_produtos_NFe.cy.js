@@ -3,10 +3,11 @@ import { clienteComRota, produtoPrincipal, escolherProdutoPesquisa, addproduto1,
          addproduto16, addproduto17, addproduto18, addproduto19, addproduto20, addproduto21, addproduto22, addproduto23, addproduto24, 
          addproduto25, addproduto26, addproduto27,addproduto28, addproduto29, addproduto30, addproduto31, addproduto32, addproduto33, addproduto34, 
          addproduto35, addproduto36, addproduto37, addproduto38, addproduto39, addproduto40 } from '../../../support/para_pedidos/para_pedidos_muitos_produtos.js';
-import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp, modalInconsApenasRota, tirarEntrega,
          tirarEntregaSegundo, tirarEntregaTerceiro, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';

@@ -2,10 +2,11 @@ import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltage
 import { produtoNormalPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
-         escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal, escolherEntradaFormaPagamento, clicarGerarPagamento, 
-         primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, selecionarLancAgrupar, clicarAgrupar } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
-import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/apenas_processos_venda.js';
+         escolherEntradaFormaPagamento, clicarGerarPagamento, primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, 
+         selecionarLancAgrupar, clicarAgrupar } from '../../../support/para_pedidos/parcelas_pedido.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
+import { escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 

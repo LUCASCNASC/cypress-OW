@@ -4,12 +4,13 @@ import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support
 import { prdPromoPrazoParcelaPrest, escolherRecebPromoPrazoFuturoComJurosPrest, escolherRecebPromoPrazoFuturoSemJurosPrest, 
          prdSegPromoPrazoParcelaPrest, prdTerPromoPrazoParcelaPrest, prdPromoPartidaPrest, escolherRecebPromoPartidaPresentePrest } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSeguroPrestamista, messPrestamistaRemovido, addSeguroPrestamista } from '../../../../support/para_pedidos/apenas_servicos.js';
-import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento,
-         escolherRecebFuturoPrestamistaComJuros, escolherQuatroParcelaPagamento, escolherRecebPresentePrestamista, 
-         escolherRecebFuturoPrestamistaSemJuros, inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento, 
-         escolherUmaParcelaPagamento, inserirData31Dias1Vencimento, escolherSegundaFormaPagamento } from '../../../../support/para_pedidos/apenas_formas_pagamento.js';
+import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento,
+         escolherQuatroParcelaPagamento, inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento,
+         inserirData31Dias1Vencimento } from '../../../../support/para_pedidos/parcelas_pedido.js';
+import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, escolherRecebFuturoPrestamistaComJuros, escolherRecebFuturoPrestamistaSemJuros, 
+         escolherRecebPresentePrestamista } from '../../../../support/para_pedidos/processo_recebimento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../../support/para_pedidos/apenas_processos_venda.js';
+import { processoVendaNFe } from '../../../../support/para_pedidos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../../support/para_pedidos/apenas_entrega.js';
 import { agruparLancamentos } from '../../../../support/para_pedidos/para_ped_varios_recebimentos.js';
