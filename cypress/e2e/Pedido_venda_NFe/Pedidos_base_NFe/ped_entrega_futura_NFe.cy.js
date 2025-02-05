@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiroEntregaFutNFe, prdSegundoEntregaFutNFe } from '../../../support/para_pedidos_NFe/NFe_prd_entrega_futura.js';
+import { prdPrimeiroEntregaFut, prdSegundoEntregaFut } from '../../../support/produtos_pedidos/prd_entrega_futura.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -17,7 +17,7 @@ describe('Gerar pedido de entrega futura', () => {
         cy.tituloPagina()
         processoEntregaFuturaNFe()
         clienteComRota()
-        prdPrimeiroEntregaFutNFe() //PESQUISA PRODUTO
+        prdPrimeiroEntregaFut() //PESQUISA PRODUTO
         saldodisponivel()
         escolherProdutoPesquisa() //ESCOLHER PRODUTO
     })
@@ -48,7 +48,7 @@ describe('Gerar pedido de entrega futura', () => {
             modalServicosVinculados() //MODAL SERVIÇOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA PRODUTO
-            prdSegundoEntregaFutNFe() //PESQUISA PRODUTO - SEGUNDO
+            prdSegundoEntregaFut() //PESQUISA PRODUTO - SEGUNDO
             saldodisponivel()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
@@ -92,7 +92,7 @@ describe('Gerar pedido de entrega futura', () => {
             addProduto()
             modalServicosVinculados() //MODAL SERVIÇOS
             okServicosVinculados()
-            prdSegundoEntregaFutNFe() //PESQUISA PRODUTO - SEGUNDO
+            prdSegundoEntregaFut() //PESQUISA PRODUTO - SEGUNDO
             saldodisponivel()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM - SEGUNDO

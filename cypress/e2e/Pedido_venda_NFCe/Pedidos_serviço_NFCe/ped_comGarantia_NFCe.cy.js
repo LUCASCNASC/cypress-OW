@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -17,7 +17,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         cy.tituloPagina() 
         processoVendaNFCe()
         clienteComRota()
-        produtoNormalPrimeiroNFCe()
+        produtoNormalPrimeiro()
         saldodisponivel()
         escolherProdutoPesquisa()
         clicarVoltagemProduto() //PRODUTO
@@ -48,7 +48,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -89,7 +89,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -130,7 +130,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

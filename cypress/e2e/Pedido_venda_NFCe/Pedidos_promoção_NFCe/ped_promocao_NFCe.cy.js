@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartidaNFCe, produtoPromoPrazoEntradaNFCe, produtoPromoPrazoParceladoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
+import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado } from '../../../support/produtos_pedidos/prd_normal.js';
 import { clicarUsarPromocao, selecionarFormaPagPromo, incluirDataAmanha } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
@@ -24,7 +24,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            produtoPromoPartidaNFCe() //PRODUTO
+            produtoPromoPartida() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()    
             clicarVoltagemProduto()
@@ -52,7 +52,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
         it.only('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            produtoPromoPrazoEntradaNFCe() //PRODUTO
+            produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()     
             clicarVoltagemProduto()
@@ -87,7 +87,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
         it('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            produtoPromoPrazoParceladoNFCe() //PRODUTO
+            produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

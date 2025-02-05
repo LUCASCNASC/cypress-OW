@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNFCe, produtoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
+import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, modalServicosVinculados, 
          okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -18,7 +18,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
         cy.tituloPagina()
         processoVendaNFCe()
         clienteComRota()
-        produtoNormalPrimeiroNFCe() //PRODUTO
+        produtoNormalPrimeiro() //PRODUTO
         saldodisponivel()
         escolherProdutoPesquisa()
         clicarVoltagemProduto()
@@ -49,7 +49,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -90,7 +90,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -131,7 +131,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             okServicosVinculados() //SERVIÇOS
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

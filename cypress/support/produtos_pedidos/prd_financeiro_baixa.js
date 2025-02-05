@@ -1,9 +1,9 @@
-//Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9892 (NFCe Financeiro na baixa)
-export function prdPrimeiroFinanBaixaNFCe (selector) {
+//Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9863 (NFe Financeiro na baixa)
+export function prdPrimeiroFinanBaixa (selector) {
 
     const primeiro_produto_normal = '1860'
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1860.*/).as('apiConsultaProdutos_prdPrimeiroFinanBaixaNFCe')
+    cy.intercept('GET', /\/consultaprodutos\/.*1860.*/).as('apiConsultaProdutos_FinanBaixaNFe')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -26,17 +26,17 @@ export function prdPrimeiroFinanBaixaNFCe (selector) {
         .wait(100)
         .should('have.value', primeiro_produto_normal)
 
-    cy.wait('@apiConsultaProdutos_prdPrimeiroFinanBaixaNFCe', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_FinanBaixaNFe', { timeout: 40000 })
 }
 
 //-----
 
-//Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9892 (NFCe Financeiro na baixa)
-export function prdSegundoFinanBaixaNFCe (selector) {
+//Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9863 (NFe Financeiro na baixa)
+export function prdSegundoFinanBaixa (selector) {
 
     const segundo_produto_normal = '1870'
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1870.*/).as('apiConsultaProdutos_prdSegundoFinanBaixaNFCe')
+    cy.intercept('GET', /\/consultaprodutos\/.*1870.*/).as('apiConsultaProdutos_SegundoFinanBaixaNFe')
 
     //Limpando campo com o produto anterior
     cy.get('#searchText')
@@ -60,5 +60,5 @@ export function prdSegundoFinanBaixaNFCe (selector) {
         .wait(100)
         .should('have.value', segundo_produto_normal)
 
-    cy.wait('@apiConsultaProdutos_prdSegundoFinanBaixaNFCe', { timeout: 40000 })
+    cy.wait('@apiConsultaProdutos_SegundoFinanBaixaNFe', { timeout: 40000 })
 }

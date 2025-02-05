@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, saldoCDDisponivel, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoCDPrimeiroNFCe, produtoNormalSegundoNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal.js';
+import { produtoCDPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -23,7 +23,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
 
         it('1. Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
-            produtoCDPrimeiroNFCe() //PRODUTO
+            produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -45,14 +45,14 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
 
         it('2. Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
             
-            produtoCDPrimeiroNFCe() //PRODUTO
+            produtoCDPrimeiro() //PRODUTO
             saldoCDDisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            produtoNormalSegundoNFCe() //SEGUNDO PRODUTO
+            produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

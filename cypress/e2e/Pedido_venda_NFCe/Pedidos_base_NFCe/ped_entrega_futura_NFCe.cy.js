@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiroEntregaFutNFCe, prdSegundoEntregaFutNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_entrega_futura.js';
+import { prdPrimeiroEntregaFut, prdSegundoEntregaFut } from '../../../support/produtos_pedidos/prd_entrega_futura.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -17,7 +17,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         cy.tituloPagina()
         processoEntregaFuturaNFCe()
         clienteComRota()
-        prdPrimeiroEntregaFutNFCe()
+        prdPrimeiroEntregaFut()
         saldodisponivel()
         escolherProdutoPesquisa()
     })
@@ -50,7 +50,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            prdSegundoEntregaFutNFCe() //SEGUNDO PRODUTO
+            prdSegundoEntregaFut() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

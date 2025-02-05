@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiroNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_normal';
+import { produtoNormalPrimeiro } from '../../../support/produtos_pedidos/prd_normal';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          removerFormaPagamento } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
@@ -27,7 +27,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
 
         it.skip('1. Gerar pedido com entrega, alterar forma de pagamento. Produto 1860 0 0.', () => {
                       
-            produtoNormalPrimeiroNFCe() //PRODUTO
+            produtoNormalPrimeiro() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO

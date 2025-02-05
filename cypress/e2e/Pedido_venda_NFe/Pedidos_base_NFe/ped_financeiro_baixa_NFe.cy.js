@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiroFinanBaixaNFe, prdSegundoFinanBaixaNFe } from '../../../support/para_pedidos_NFe/NFe_prd_financeiro_baixa.js'
+import { prdPrimeiroFinanBaixa, prdSegundoFinanBaixa } from '../../../support/produtos_pedidos/prd_financeiro_baixa.js'
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -17,7 +17,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.tituloPagina()
         processoFinanceiroBaixaNFe()
         clienteComRota()
-        prdPrimeiroFinanBaixaNFe() //PESQUISA PRODUTO
+        prdPrimeiroFinanBaixa() //PESQUISA PRODUTO
         saldodisponivel()
         escolherProdutoPesquisa() //ESCOLHER PRODUTO
     })
@@ -48,7 +48,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            prdSegundoFinanBaixaNFe() //PESQUISA PRODUTO - SEGUNDO
+            prdSegundoFinanBaixa() //PESQUISA PRODUTO - SEGUNDO
             saldodisponivel()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
@@ -92,7 +92,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
-            prdSegundoFinanBaixaNFe() //PESQUISA PRODUTO - SEGUNDO
+            prdSegundoFinanBaixa() //PESQUISA PRODUTO - SEGUNDO
             saldodisponivel()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM

@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiroFinanBaixaNFCe, prdSegundoFinanBaixaNFCe } from '../../../support/para_pedidos_NFCe/NFCe_prd_financeiro_baixa.js';
+import { prdPrimeiroFinanBaixa, prdSegundoFinanBaixa } from '../../../support/produtos_pedidos/prd_financeiro_baixa.js';
 import { botaoGerarParcelas, escolherFormaPagamentoPrincipal, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -17,7 +17,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
         cy.tituloPagina()
         processoFinanceiroBaixaNFCe()
         clienteComRota()
-        prdPrimeiroFinanBaixaNFCe()
+        prdPrimeiroFinanBaixa()
         saldodisponivel()
         escolherProdutoPesquisa()
     })
@@ -50,7 +50,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
-            prdSegundoFinanBaixaNFCe() //SEGUNDO PRODUTO
+            prdSegundoFinanBaixa() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
