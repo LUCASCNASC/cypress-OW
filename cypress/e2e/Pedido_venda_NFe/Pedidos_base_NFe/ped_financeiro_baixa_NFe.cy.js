@@ -17,18 +17,18 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.tituloPagina()
         processoFinanceiroBaixaNFe()
         clienteComRota()
-        prdPrimeiroFinanBaixaNFe()
+        prdPrimeiroFinanBaixaNFe() //PESQUISA PRODUTO
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoPesquisa() //ESCOLHER PRODUTO
     })
   
     context('Sem entrega/ processo 9863 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -43,17 +43,17 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
-            prdSegundoFinanBaixaNFe() //SEGUNDO PRODUTO
+            prdSegundoFinanBaixaNFe() //PESQUISA PRODUTO - SEGUNDO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            escolherProdutoPesquisa() //ESCOLHER PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
+            modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
@@ -71,9 +71,9 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('3. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -88,16 +88,16 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
-            prdSegundoFinanBaixaNFe() //SEGUNDO PRODUTO
+            prdSegundoFinanBaixaNFe() //PESQUISA PRODUTO - SEGUNDO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            escolherProdutoPesquisa() //ESCOLHER PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
+            modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
             avancarParcelasEntrega()

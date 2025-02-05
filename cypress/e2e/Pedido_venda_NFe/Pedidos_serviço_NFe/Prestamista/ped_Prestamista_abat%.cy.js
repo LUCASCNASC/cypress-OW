@@ -14,7 +14,7 @@ import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarPa
 import { tirarEntrega, tirarEntregaSegundo } from '../../../../support/para_pedidos/apenas_entrega.js';
 import { agruparLancamentos } from '../../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 
-describe('Gerar pedidos com serviço Prestamista Abatimento %', () => {
+describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
     beforeEach(() => {
         cy.visit('/')

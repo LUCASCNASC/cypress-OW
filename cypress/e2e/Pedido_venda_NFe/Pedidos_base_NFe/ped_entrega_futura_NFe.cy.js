@@ -17,52 +17,52 @@ describe('Gerar pedido de entrega futura', () => {
         cy.tituloPagina()
         processoEntregaFuturaNFe()
         clienteComRota()
-        prdPrimeiroEntregaFutNFe()
+        prdPrimeiroEntregaFutNFe() //PESQUISA PRODUTO
         saldodisponivel()
-        escolherProdutoPesquisa()
+        escolherProdutoPesquisa() //ESCOLHER PRODUTO
     })
 
     context('Sem entrega/ processo 9862 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            modalServicosVinculados() //MODAL SERVIÇOS
             okServicosVinculados()
-            tirarEntrega() //ENTREGA
+            tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
+            botaoFinalizarPedido() //FINAL PEDIDO
             pedidoGerado()
         })
         
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            modalServicosVinculados() //MODAL SERVIÇOS
             okServicosVinculados()
-            tirarEntrega() //ENTREGA
-            prdSegundoEntregaFutNFe() //SEGUNDO PRODUTO
+            tirarEntrega() //ENTREGA PRODUTO
+            prdSegundoEntregaFutNFe() //PESQUISA PRODUTO - SEGUNDO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
+            clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
             addProduto()
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
+            modalServicosVinculados() //MODAL SERVIÇOS  - SEGUNDO
             okServicosVinculados()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal() 
-            botaoFinalizarPedido() //RESUMO
+            botaoFinalizarPedido() //FINAL PEDIDO
             pedidoGerado()
         })
     })
@@ -71,42 +71,42 @@ describe('Gerar pedido de entrega futura', () => {
 
         it('3. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            modalServicosVinculados() //MODAL SERVIÇOS
             okServicosVinculados()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
+            botaoFinalizarPedido() //FINAL PEDIDO
             pedidoGerado()
         })    
         
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            modalServicosVinculados() //MODAL SERVIÇOS
             okServicosVinculados()
-            prdSegundoEntregaFutNFe() //SEGUNDO PRODUTO
+            prdSegundoEntregaFutNFe() //PESQUISA PRODUTO - SEGUNDO
             saldodisponivel()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
+            clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
             addProduto()
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
+            modalServicosVinculados() //MODAL SERVIÇOS - SEGUNDO
             okServicosVinculados()
-            avancarParaTransportadora()
+            avancarParaTransportadora() //TRANSPORTADORA
             avancarParcelasEntrega() 
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal() 
-            botaoFinalizarPedido() //RESUMO
+            botaoFinalizarPedido() //FINAL PEDIDO
             pedidoGerado()
         })  
     })

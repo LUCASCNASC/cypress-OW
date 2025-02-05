@@ -13,7 +13,7 @@ import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarPa
 import { tirarEntrega, tirarEntregaSegundo } from '../../../../support/para_pedidos/apenas_entrega.js';
 import { agruparLancamentos } from '../../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 
-describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
+describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem Produto (162)', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -49,7 +49,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
             pedidoGerado()
         })
 
-        it.skip('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
+        it.skip('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3881 e 3860, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()

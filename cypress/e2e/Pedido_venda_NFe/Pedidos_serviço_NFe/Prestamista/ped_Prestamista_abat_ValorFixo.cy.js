@@ -13,7 +13,7 @@ import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarPa
 import { tirarEntrega, tirarEntregaSegundo } from '../../../../support/para_pedidos/apenas_entrega.js';
 import { agruparLancamentos } from '../../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 
-describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
+describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -102,6 +102,12 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
              
+        })
+
+        it('4. Ped venda: produto 1923 0 0 (promo a prazo 172 - isentar juros serviços), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
+        })
+
+        it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
         })
     })
 
