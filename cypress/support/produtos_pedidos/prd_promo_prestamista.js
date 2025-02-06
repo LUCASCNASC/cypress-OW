@@ -215,6 +215,37 @@ export function prdPromoPrazoPrestTercAbatVF (selector) {
     cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVF', { timeout: 40000 })
 }
 
+//Escolher prestamista abatimento Valor Fixo - 1925 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo - Origem produto
+export function prdPromoPrazoPrestTercAbatVFOP (selector) {
+
+    const primeiro_produto_normal = '1925'
+
+    cy.intercept('GET', /\/consultaprodutos\/.*1925.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP')
+
+    //Limpando campo com o produto anterior
+    cy.get('#searchText')
+        .clear()
+        .wait(100)
+        .should('have.value', '')
+
+    //Validando campo Buscar produto
+    cy.get('#searchText')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+    cy.get('label[for="searchText"]')
+        .should('have.text', 'Buscar produtos')
+
+    //Prenchendo campo Buscar produto
+    cy.get('#searchText')
+        .type(primeiro_produto_normal)
+        .wait(100)
+        .should('have.value', primeiro_produto_normal)
+
+    cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP', { timeout: 40000 })
+}
+
 
 
 //--------------- Abatimento % - processo de inclusão PROMOÇÃO
@@ -289,7 +320,7 @@ export function escolherRecebPromoPartidaPresentePrest (selector) {
 }
 
 
-//--------------- Abatimento Valor Fixo - processo de inclusão PROMOÇÃO
+//--------------- Abatimento Valor Fixo 55,90 - processo de inclusão PROMOÇÃO
 
 //selecionando forma de pagamento "3880 - T.A. T.A. A Receb Fut com juros - Prest. Valor Fixo" da promoção
 export function escolherRecebPromoPrazoFutComJurosPrestAbatVF (selector) {
@@ -314,3 +345,52 @@ export function escolherRecebPromoPrazoFutComJurosPrestAbatVF (selector) {
         .click()
 }
 
+
+
+//--------------- Abatimento Valor Fixo 99,30 - Origem Produto - processo de inclusão PROMOÇÃO
+
+//selecionando forma de pagamento "3881 - T.A. A Receb Fut com juros - Prest. Origem Produto" da promoção
+export function escolherRecebPromoPrazoFutComJurosPrestAbatVFOP (selector) {
+
+    //botão voltar
+    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //título modal formas de pagamento
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('contain', 'Formas de pagamento')
+
+    //botão X
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //forma de pagamento da promoção
+    cy.get('button[aria-label="3881 - T.A. A Receb Fut com juros - Prest. Origem Produto   Futuro"]')
+        .click()
+}
+
+//selecionando forma de pagamento "3882 - T.A. A Receb Presen com juros - Prest. Origem Prd" da promoção
+export function escolherRecebPromoPartidaPresenComJurosPrestAbatVFOP (selector) {
+
+    //botão voltar
+    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //título modal formas de pagamento
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('contain', 'Formas de pagamento')
+
+    //botão X
+    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //forma de pagamento da promoção
+    cy.get('button[aria-label="3882 - T.A. A Receb Presen com juros - Prest. Origem Prd   Presente"]')
+        .click()
+}

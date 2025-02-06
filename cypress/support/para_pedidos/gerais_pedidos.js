@@ -315,6 +315,36 @@ export function ticketPrestamistaAdicionado (selector) {
         .and('not.be.disabled')
 }
 
+//validar adição do prestamista na pagina de finalizar o pedido
+export function ticketPrestamistaPaginaFinal (selector) {
+
+    cy.get('.ng-scope > ul')
+        .scrollIntoView()
+        .wait(200)
+
+    //ticket inteiro
+    cy.get('.ng-scope > ul')
+        .should('be.visible')
+
+    //nome do serviço prestamista
+    cy.get('ul > :nth-child(1) > .ng-binding')
+        .should('be.visible')
+
+    //cifrão do valor do prestamista
+    cy.get('ul > :nth-child(1) > sup')
+        .should('be.visible')
+        .and('have.text', 'R$')
+
+    //"Vendedor"
+    cy.get('ul > :nth-child(2) > b') 
+        .should('be.visible')
+        .and('have.text', 'Vendedor:')
+
+    //Nome do vendedor
+    cy.get('.ng-scope > ul > :nth-child(2)')
+        .should('be.visible')
+}
+
 //validar adição do serviço prestamista, após clicarmos para agrupar lançamentos
 export function ticketPrestAdicionadoRecebAgrupado (selector) {
 
