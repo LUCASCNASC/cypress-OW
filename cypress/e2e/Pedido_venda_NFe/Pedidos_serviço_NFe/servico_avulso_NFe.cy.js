@@ -1,5 +1,5 @@
 import { clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso, saldoDisponivelServico, escolherServicoPesquisa, 
-         messItemAdicionadoSucesso, servicoAdicionadoCarrinho, botaoGerarParcelasServicos } from '../../../support/para_pedidos/para_servicos_avulsos.js';
+         messItemAdicionadoSucesso, servicoAdicionadoCarrinho, botaoGerarParcelasServicos } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';

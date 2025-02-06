@@ -1,5 +1,5 @@
 import { clienteComRota, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoHost, saldoDisponivelServico,
-         escolherServicoPesquisa, escolherValorRecarga } from '../../../support/para_pedidos/para_servicos_avulsos.js';
+         escolherServicoPesquisa, escolherValorRecarga } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { iconeMenuOpcoes } from '../../../support/para_menus/para_menu_opcoes.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
