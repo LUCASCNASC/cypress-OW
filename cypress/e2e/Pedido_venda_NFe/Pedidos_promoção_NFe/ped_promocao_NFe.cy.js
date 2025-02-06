@@ -1,12 +1,13 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
-import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
+import { selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
          botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processo_recebimento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
+import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 
@@ -30,8 +31,8 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOCAO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOCAO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
@@ -50,8 +51,8 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa()      
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
@@ -76,8 +77,8 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
@@ -99,8 +100,8 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa() 
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados() 
@@ -135,11 +136,9 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
-            cy.wait(400)
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
-            cy.wait(500)
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             tirarEntrega() //ENTREGA
@@ -173,8 +172,8 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa() 
             clicarVoltagemProduto()
-            clicarUsarPromocao()
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto()
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
@@ -198,8 +197,8 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa()    
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
@@ -239,8 +238,8 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
@@ -268,8 +267,8 @@ describe('Gerar pedidos com promoção', () => {
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()

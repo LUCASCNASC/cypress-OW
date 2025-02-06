@@ -80,67 +80,6 @@ export function adicionarPrestamista (selector) {
         .click({force:true})
 }
 
-//validando e clicando para usar promoção
-export function clicarUsarPromocao (selector) {
-
-    //validando título do modal Promoções
-    cy.get('h2.flex')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .and('contain.text', 'Promoções')
-
-    //validando seta do modal Promoções
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //validando X modal Promoções
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //validando NÃO USAR PROMOÇÃO modal Promoções
-    cy.get('[style="padding: 0 5px"] > .md-primary')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .and('contain', 'Não usar promoção')
-
-    //validando existencia da promoção no modal Promoções
-    cy.get('.md-3-line > div.md-button > .md-no-style')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //clicar na promoção
-    cy.get('.md-3-line > div.md-button > .md-no-style')
-        .click({force:true})
-}
-
-//validando e escolhendo forma de pagamento da promoção
-export function selecionarFormaPagPromo (selector) {
-
-    //validando título do modal Formas de pagamento
-    cy.get('h2.flex')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .and('contain.text', 'Formas de pagamento')
-
-    //validando seta do modal Formas de pagamento
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //validando X modal Formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //Escolher uma forma de pagamento, no card de "Formas de pagamento"
-    cy.get('button[aria-label="3860 - T.A. A Receber Futuro   Futuro"]')
-        .should('be.visible')
-        .and('not.be.disabled')
-        .click()
-}
-
 //Validando Tipo "Tipo(s) Serviço(s) Isento(s):" dentro do modal Promoções
 export function tipoServicoIsentoValidar (selector) {
 

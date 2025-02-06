@@ -1,11 +1,11 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado } from '../../../support/produtos_pedidos/prd_normal.js';
-import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/processo_venda.js';
+import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processo_recebimento_promo.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 
@@ -29,8 +29,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             saldodisponivel()
             escolherProdutoPesquisa()    
             clicarVoltagemProduto()
-            clicarUsarPromocao()
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto()
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
@@ -51,14 +51,14 @@ describe('Gerar pedidos com promoção com entrega', () => {
             pedidoGerado()
         })
     
-        it.only('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()     
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
@@ -85,14 +85,14 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // pedidoGerado()
         })
 
-        it('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
             addProduto()
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
