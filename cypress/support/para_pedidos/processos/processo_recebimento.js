@@ -1,4 +1,4 @@
-import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../support/gerarDados'
+import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../gerarDados'
 
 //escolhendo forma de pagamento 3860 (3860 - T.A. A Receber Futuro) do pedido de venda
 export function escolherFormaPagamentoPrincipal (selector) {

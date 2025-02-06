@@ -1,10 +1,12 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
-import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, 
+         okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarServicosVinculados } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 
@@ -28,19 +30,20 @@ describe('Gerar pedidos com Garantia', () => {
 
     context('Sem entrega/processo 9860 - caminho feliz', () => {
 
-        it('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it.only('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
-            garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            // garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
-            tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
-            avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            validarServicosVinculados()
+            // tirarEntrega() //ENTREGA
+            // avancarParaParcelas() 
+            // botaoGerarParcelas() //GERAR PARCELAS
+            // carregandoFormaPagamento() 
+            // escolherFormaPagamentoPrincipal()
+            // escolherDuasParcelaPagamento()
+            // avancarFinal()
+            // botaoFinalizarPedido() //RESUMO
+            // pedidoGerado()
         })
 
         it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {

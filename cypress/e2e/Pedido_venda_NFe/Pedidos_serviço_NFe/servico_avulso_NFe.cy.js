@@ -1,9 +1,9 @@
 import { clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso, saldoDisponivelServico, escolherServicoPesquisa, 
          messItemAdicionadoSucesso, servicoAdicionadoCarrinho, botaoGerarParcelasServicos } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaServicoAvulso } from '../../../support/para_pedidos/processo_venda.js';
+import { processoVendaServicoAvulso } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { clienteComRota } from '../../../support/para_pedidos/gerais_pedidos.js';
 

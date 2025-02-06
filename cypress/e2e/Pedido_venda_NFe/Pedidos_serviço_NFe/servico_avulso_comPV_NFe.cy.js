@@ -4,9 +4,9 @@ import { clienteComRota, iconeMenuOpcoes, clienteCompletoOpcaoMenu, clicarMenuCl
          clicarCarrinhoCompras, botaoAvancarPedido } from '../../../support/para_pedidos/para_servicos_avulsos.js';
 import { garantiaSeparaMesmoProcesso, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaServicoAvulso } from '../../../support/para_pedidos/processo_venda.js';
+import { processoVendaServicoAvulso } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {

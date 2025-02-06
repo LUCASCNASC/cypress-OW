@@ -2,9 +2,9 @@ import { clienteComRota, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancar
          escolherServicoPesquisa, escolherValorRecarga } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { iconeMenuOpcoes } from '../../../support/para_menus/para_menu_opcoes.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaServicoAvulso } from '../../../support/para_pedidos/processo_venda.js';
+import { processoVendaServicoAvulso } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
 //Para este cenário, é necessário fazer update na coluna dataultimaatualizacao, da tabela glb.servicofaixavalorfixo
