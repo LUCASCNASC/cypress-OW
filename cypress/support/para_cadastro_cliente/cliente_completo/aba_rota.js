@@ -71,6 +71,39 @@ export function escolherTipoEnderecoRota (selector) {
         .click({force:true})
 }
 
+// validando mensagem Rota Incluída com sucesso, após incluírmos a rota no cadastro
+export function messRotaIncluidaSucesso (selector) {
+
+    //Card Rota incluída com sucesso.
+    cy.get('#toast-container > :nth-child(1)')
+        .should('be.visible')
+
+    //Card Rota incluída com sucesso. - Aviso
+    cy.get(':nth-child(1) > .toast-title')
+        .should('be.visible')
+        .and('have.text', 'Aviso')
+
+    //Card Rota incluída com sucesso. - Rota incluída com sucesso.
+    cy.get(':nth-child(1) > .toast-message')
+        .should('be.visible')
+        .and('have.text', 'Rota incluída com sucesso.')
+}
+
+//validando informações que foram adicionadas no cadastro de rota
+export function infosRotaAdicionada (selector) {
+
+    //Card de rota adicionad1
+    cy.get('.md-whiteframe-2dp')
+        .should('be.visible')
+        .and('contain', 'Grupo: 5')
+        .and('contain', 'Rota: 1')
+        .and('contain', 'Cidade: 1')
+        .and('contain', 'Tipo endereço: 1')
+}
+
+//------------------- PREENCHER CAMPO ------
+
+
 //preencher Rota no cadastro de rota e escolher as opções certas
 export function preencherRotaCompleta (selector) {
 
@@ -103,32 +136,3 @@ export function preencherRotaCompleta (selector) {
         .click({force:true})
 }
 
-// validando mensagem Rota Incluída com sucesso, após incluírmos a rota no cadastro
-export function messRotaIncluidaSucesso (selector) {
-
-    //Card Rota incluída com sucesso.
-    cy.get('#toast-container > :nth-child(1)')
-        .should('be.visible')
-
-    //Card Rota incluída com sucesso. - Aviso
-    cy.get(':nth-child(1) > .toast-title')
-        .should('be.visible')
-        .and('have.text', 'Aviso')
-
-    //Card Rota incluída com sucesso. - Rota incluída com sucesso.
-    cy.get(':nth-child(1) > .toast-message')
-        .should('be.visible')
-        .and('have.text', 'Rota incluída com sucesso.')
-}
-
-//validando informações que foram adicionadas no cadastro de rota
-export function infosRotaAdicionada (selector) {
-
-    //Card de rota adicionad1
-    cy.get('.md-whiteframe-2dp')
-        .should('be.visible')
-        .and('contain', 'Grupo: 5')
-        .and('contain', 'Rota: 1')
-        .and('contain', 'Cidade: 1')
-        .and('contain', 'Tipo endereço: 1')
-}

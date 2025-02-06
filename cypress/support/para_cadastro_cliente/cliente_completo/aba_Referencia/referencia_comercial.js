@@ -122,56 +122,6 @@ export function modalRefComercialVazio (selector) {
         .should('have.attr', 'disabled')
 }
 
-//referencia Comercial - escolher Agencia
-export function selectEmpresaRefComercial (selector) {
-
-    const empresa = gerarNomeEmpresa()
-
-    //inserir dados
-    cy.get('#txtEmpresaRefCom')
-        .type(empresa)
-}
-
-//referencia Comercial - escolher Contato
-export function selectContatoRefComercial (selector) {
-
-    const contato = gerarTelefoneAleatorio()
-
-    //inserir dados
-    cy.get('#txtContatoRefCom')
-        .type(contato)
-}
-
-//referencia Comercial - escolher Telefone
-export function selectTelefoneRefComercial (selector) {
-
-    const telefone = gerarTelefoneAleatorio()
-
-    //inserir dados
-    cy.get('#txtTelefoneRefCom')
-        .type(telefone)
-}
-
-//referencia Comercial - escolher Email
-export function selectEmailRefComercial (selector) {
-
-    const email = gerarEmailAleatorio()
-
-    //inserir dados
-    cy.get('#txtEmailRefCom')
-        .type(email)
-}
-
-//referencia Comercial - escolher Observação
-export function selectObservacaoRefComercial (selector) {
-
-    const observacao = gerarObservação()
-
-    //inserir dados
-    cy.get('#txtObsRefCom')
-        .type(observacao)
-}
-
 //clicar para salvar Referencia Comercial
 export function clicarSalvarRefComercial (selector) {
 
@@ -224,4 +174,58 @@ export function infosRefComercialAdicionada (selector) {
     //email
     cy.get('[ng-show="(item.email)"]')
         .should('be.visible')
+}
+
+
+//------------------- PREENCHER CAMPO ------
+
+
+//referencia Comercial - escolher Agencia
+export function selectEmpresaRefComercial (selector) {
+
+    const empresa = gerarNomeEmpresa()
+
+    //inserir dados
+    cy.get('#txtEmpresaRefCom')
+        .type(empresa)
+}
+
+//referencia Comercial - escolher Contato
+export function selectContatoRefComercial (selector) {
+
+    const contato = gerarTelefoneAleatorio()
+
+    //inserir dados
+    cy.get('#txtContatoRefCom')
+        .type(contato)
+}
+
+//referencia Comercial - escolher Telefone
+export function selectTelefoneRefComercial (selector) {
+
+    const telefone = gerarTelefoneAleatorio()
+
+    //inserir dados
+    cy.get('#txtTelefoneRefCom')
+        .type(telefone)
+}
+
+//referencia Comercial - escolher Email
+export function selectEmailRefComercial (selector) {
+
+    const email = gerarEmailAleatorio()
+
+    //inserir dados
+    cy.get('#txtEmailRefCom')
+        .type(email)
+}
+
+//referencia Comercial - escolher Observação
+export function selectObservacaoRefComercial (selector) {
+
+    const observacao = gerarObservação()
+
+    //inserir dados
+    cy.get('#txtObsRefCom')
+        .type(observacao)
 }

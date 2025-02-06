@@ -152,20 +152,3 @@ export function tipoServicoIsentoValidar (selector) {
     cy.contains('Garantias')
         .should('be.visible')
 }
-
-//no campo 1 vencimento, modificar a data para um dia após hoje, ou seja, data de amanhã
-export function incluirDataAmanha (selector) {
-
-    const data_amanha = umDiaAposHoje()
-
-    cy.get('[ng-show="parcelamentoAutomaticoDisponivel"] > .md-subheader-inner > .md-subheader-content').click()
-
-    cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
-        .scrollIntoView()
-        .wait(200)
-
-    cy.get('.md-datepicker-input[inputmode="numeric"]').clear()
-
-    // cy.contains('1º Vencimento').parent().find('input')
-    //     .clear()
-}

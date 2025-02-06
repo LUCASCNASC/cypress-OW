@@ -380,39 +380,6 @@ export function composicaoDesteKit (selector) {
         .and('contain', 'Composição deste KIT')
 }
 
-//escolhendo a primeira promoção do produto - uma promoção
-export function selecionarPrimeiraPromoProduto (selector) {
-
-    //botão voltar
-    cy.get('[ng-click="modalSaldo()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //título modal promoções
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Promoções')
-
-    //botão X
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //botão "NÃO USAR PROMOÇÃO"
-    cy.get('#dialogContent_137 > [style="padding: 0 5px"] > .md-primary')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //promoção em sim
-    cy.get('.md-3-line > div.md-button > .md-no-style')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //escolhendo a promoção
-    cy.get('.md-3-line > div.md-button > .md-no-style')
-        .click()
-}
-
 //clicar no botão editar parcelas da forma de pagamento - quando já temos uma forma de pagamento escolhida
 export function clicarEditarParcelas (selector) {
 
@@ -446,3 +413,38 @@ export function compararSubtotalTotalFinanceiro (span1, span2) {
       });
 }
   
+
+//------------------- PROMOÇÃO ------
+
+//escolhendo a primeira promoção do produto - uma promoção
+export function selecionarPrimeiraPromoProduto (selector) {
+
+    //botão voltar
+    cy.get('[ng-click="modalSaldo()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //título modal promoções
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
+        .should('be.visible')
+        .and('contain', 'Promoções')
+
+    //botão X
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //botão "NÃO USAR PROMOÇÃO"
+    cy.get('#dialogContent_137 > [style="padding: 0 5px"] > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //promoção em sim
+    cy.get('.md-3-line > div.md-button > .md-no-style')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //escolhendo a promoção
+    cy.get('.md-3-line > div.md-button > .md-no-style')
+        .click()
+}

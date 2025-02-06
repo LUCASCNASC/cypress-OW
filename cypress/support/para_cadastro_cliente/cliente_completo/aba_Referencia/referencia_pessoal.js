@@ -117,46 +117,6 @@ export function modalRefPessoalVazio (selector) {
         .should('have.attr', 'disabled')
 }
 
-//referencia pessoal - escolher Nome 
-export function selectNomeRefPessoal (selector) {
-
-    const Nome = gerarNomeAleatorio(); 
-
-    //clicar para abrir as opções
-    cy.get('#txtNomeRefPes')
-        .type(Nome)
-}
-
-//referencia pessoal - escolher Email
-export function selectEmailRefPessoal (selector) {
-
-    const email = gerarEmailAleatorio();
-
-    //clicar para abrir as opções
-    cy.get('#txtEmailRefPes')
-        .type(email)
-}
-
-//referencia pessoal - escolher Telefone
-export function selectTelefoneRefPessoal (selector) {
-
-    const numero_telefone = gerarTelefoneAleatorio();
-
-    //clicar para abrir as opções
-    cy.get('#txtTelefoneRefPes')
-        .type(numero_telefone)
-}
-
-//referencia pessoal - escolher Relacionamento
-export function selectRlacionamentoRefPessoal (selector) {
-
-    const relacionamento = gerarRelacionamento();
-
-    //clicar para abrir as opções
-    cy.get('#txtRelacionamentoRefPes')
-        .type(relacionamento)
-}
-
 //clicar para salvar Referencia Pessoal
 export function clicarSalvarRefPessoal (selector) {
 
@@ -222,4 +182,47 @@ export function infosRefPessoalAdicionada (selector) {
     cy.get('.layout-align-gt-sm-center-end > .list-title')
         .should('be.visible')
         .and('contain', dataAtual)
+}
+
+
+//------------------- PREENCHER CAMPO ------
+
+//referencia pessoal - escolher Nome 
+export function selectNomeRefPessoal (selector) {
+
+    const Nome = gerarNomeAleatorio(); 
+
+    //clicar para abrir as opções
+    cy.get('#txtNomeRefPes')
+        .type(Nome)
+}
+
+//referencia pessoal - escolher Email
+export function selectEmailRefPessoal (selector) {
+
+    const email = gerarEmailAleatorio();
+
+    //clicar para abrir as opções
+    cy.get('#txtEmailRefPes')
+        .type(email)
+}
+
+//referencia pessoal - escolher Telefone
+export function selectTelefoneRefPessoal (selector) {
+
+    const numero_telefone = gerarTelefoneAleatorio();
+
+    //clicar para abrir as opções
+    cy.get('#txtTelefoneRefPes')
+        .type(numero_telefone)
+}
+
+//referencia pessoal - escolher Relacionamento
+export function selectRlacionamentoRefPessoal (selector) {
+
+    const relacionamento = gerarRelacionamento();
+
+    //clicar para abrir as opções
+    cy.get('#txtRelacionamentoRefPes')
+        .type(relacionamento)
 }

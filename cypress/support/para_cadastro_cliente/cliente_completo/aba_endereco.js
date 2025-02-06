@@ -143,49 +143,12 @@ export function infosEnderecoAdicionado (selector) {
         .and('contain', '87065-300')
 }
 
-//selecionar tipo de endereço
-export function escolherTipoEndereco (selector) {
-
-    //Selecionar tipo de endereço
-    cy.get('.md-text.ng-binding')
-        .contains('Padrão')
-        .click({force:true})
-}
-
 //clicar no botão salvar endereço
 export function clicarSalvarEndereco (selector) {
 
     //Clicar no botão SALVAR, para adicionar endereço
     cy.get('#btnModalAddEndereco')
         .click()
-}
-
-//preencher campo CEP no cadastro de endereço e pesquisar
-export function preencherCampoCEPEndereco (selector) {
-
-    const CEPcadastro = "87065300"
-
-    //Preenchendo campo CEP
-    cy.get('#txtCepEndereco')
-        .type(CEPcadastro, {force:true})
-
-    //Lupa de pesquisa de CEP
-    cy.get('.md-icon-float > .ng-binding')
-        .should('be.visible')
-
-    //Clicar na lupa de pesquisa de CEP
-    cy.get('.md-icon-float > .ng-binding')
-        .click({force:true})
-}
-
-//preencher campo Numero no cadastro de endereço
-export function preencherCampoNumeroEndereco (selector) {
-
-    const numero_endereco = "66"
-
-    //Preenchendo campo Número
-    cy.get('#txtNumEndereco')
-        .type(numero_endereco, {force:true})
 }
 
 //validando card endereço antes de preencher os campos
@@ -214,4 +177,44 @@ export function cardEnderecoVazioValidar (selector) {
     cy.get('#txtTpEndereco')
         .should('be.visible')
         .and('have.value', '')
+}
+
+//------------------- PREENCHER CAMPO ------
+
+
+//selecionar tipo de endereço
+export function escolherTipoEndereco (selector) {
+
+    //Selecionar tipo de endereço
+    cy.get('.md-text.ng-binding')
+        .contains('Padrão')
+        .click({force:true})
+}
+
+//preencher campo CEP no cadastro de endereço e pesquisar
+export function preencherCampoCEPEndereco (selector) {
+
+    const CEPcadastro = "87065300"
+
+    //Preenchendo campo CEP
+    cy.get('#txtCepEndereco')
+        .type(CEPcadastro, {force:true})
+
+    //Lupa de pesquisa de CEP
+    cy.get('.md-icon-float > .ng-binding')
+        .should('be.visible')
+
+    //Clicar na lupa de pesquisa de CEP
+    cy.get('.md-icon-float > .ng-binding')
+        .click({force:true})
+}
+
+//preencher campo Numero no cadastro de endereço
+export function preencherCampoNumeroEndereco (selector) {
+
+    const numero_endereco = "66"
+
+    //Preenchendo campo Número
+    cy.get('#txtNumEndereco')
+        .type(numero_endereco, {force:true})
 }

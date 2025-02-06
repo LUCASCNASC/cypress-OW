@@ -40,7 +40,6 @@ function gerarValorDuasCasasAposVirgula() {
 }
 
 
-
 //--------REFERENCIAS - REFERENCIA FINANCEIRA -------
 
 //validar e clicar na aba Financeira, dentro de Referencias
@@ -158,48 +157,6 @@ export function modalRefFinanceiraVazio (selector) {
         .and('have.attr', 'disabled')
 }
 
-//referencia financeira - escolher Início exp. crédito
-export function selectDataInicioRefFinanceira (selector) {
-
-    const data_inicio = gerarDataReferenciaFinanceira();
-
-    //clicar para abrir as opções
-    cy.contains('Início exp. crédito')
-        .parent()
-        .find('input')
-        .type(data_inicio)
-}
-
-//referencia financeira - escolher Local Experiencia
-export function selectLocalExpRefFinanceira (selector) {
-
-    const local_experiencia = gerarNomeEmpresa();
-
-    //clicar para abrir as opções
-    cy.get('#txtLocExp')
-        .type(local_experiencia)
-}
-
-//referencia financeira - escolher Plano experiencia
-export function selectPlanoExpRefFinanceira (selector) {
-
-    const plano_experiencia = '444';
-
-    //clicar para abrir as opções
-    cy.get('#txtPlExp')
-        .type(plano_experiencia)
-}
-
-//referencia financeira - escolher Valor prestação
-export function selectValorPrestRefFinanceira (selector) {
-
-    const valor_prestacao = gerarValorDuasCasasAposVirgula();
-
-    //clicar para abrir as opções
-    cy.get('#txtVlrPrest')
-        .type(valor_prestacao)
-}
-
 //clicar para salvar Referencia Financeira
 export function clicarSalvarRefFinanceira (selector) {
 
@@ -256,4 +213,49 @@ export function infosRefFinanceiraAdicionada (selector) {
     //quantidade do valor prestação 
     cy.get('.layout-align-gt-sm-center-end > .list-title')
         .should('be.visible')
+}
+
+
+//------------------- PREENCHER CAMPO ------
+
+//referencia financeira - escolher Início exp. crédito
+export function selectDataInicioRefFinanceira (selector) {
+
+    const data_inicio = gerarDataReferenciaFinanceira();
+
+    //clicar para abrir as opções
+    cy.contains('Início exp. crédito')
+        .parent()
+        .find('input')
+        .type(data_inicio)
+}
+
+//referencia financeira - escolher Local Experiencia
+export function selectLocalExpRefFinanceira (selector) {
+
+    const local_experiencia = gerarNomeEmpresa();
+
+    //clicar para abrir as opções
+    cy.get('#txtLocExp')
+        .type(local_experiencia)
+}
+
+//referencia financeira - escolher Plano experiencia
+export function selectPlanoExpRefFinanceira (selector) {
+
+    const plano_experiencia = '444';
+
+    //clicar para abrir as opções
+    cy.get('#txtPlExp')
+        .type(plano_experiencia)
+}
+
+//referencia financeira - escolher Valor prestação
+export function selectValorPrestRefFinanceira (selector) {
+
+    const valor_prestacao = gerarValorDuasCasasAposVirgula();
+
+    //clicar para abrir as opções
+    cy.get('#txtVlrPrest')
+        .type(valor_prestacao)
 }

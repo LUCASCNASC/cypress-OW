@@ -1,4 +1,4 @@
-//------------------- PROCESSOS  ------
+//------------------- PROCESSOS NFe ------
 
 //Para escolher processo de venda 9860 NFe
 export function processoVendaNFe (selector) {
@@ -132,7 +132,7 @@ export function processoVendaServicoAvulso (selector) {
 }
 
 
-//------------------- GERAR ENTRADA NO PAGAMENTO ------
+//------------------- PROCESSOS NFCe ------
 
 //Para escolher processo de venda 9860 NFCe
 export function processoVendaNFCe (selector) {

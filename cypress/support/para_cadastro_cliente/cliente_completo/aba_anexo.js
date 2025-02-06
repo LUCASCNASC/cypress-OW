@@ -62,15 +62,6 @@ export function selecionarPrimeiroTipoAnexo (selector) {
         .click()
 }
 
-//função para anexar arquivo dentro do cadastro de cliente completo
-export function anexarArquivoPFD (selector) {
-
-    const caminhoDoArquivo = 'cypress\fixtures\anexo_cadastro_cliente_completo.pdf';
-
-    //cy.get('#clienteBotaoUploadDeArquivo').selectFile('anexo_cadastro_cliente_completo.pdf')
-    cy.get("[type='file']").selectFile('anexo_cadastro_cliente_completo.pdf', {force:true})
-}
-
 //clicando em SIM na mensagem "Deseja enviar o arquivo selecionado?"
 export function confirmarEnvioArquivo (selector) {
 
@@ -131,4 +122,16 @@ export function validarAnexoInserido (selector) {
         .should('be.visible')
         .and('include.text', 'Anexo inserido em')
         .and('include.text', dataAtual)
+}
+
+//------------------- PREENCHER CAMPO ------
+
+
+//função para anexar arquivo dentro do cadastro de cliente completo
+export function anexarArquivoPFD (selector) {
+
+    const caminhoDoArquivo = 'cypress\fixtures\anexo_cadastro_cliente_completo.pdf';
+
+    //cy.get('#clienteBotaoUploadDeArquivo').selectFile('anexo_cadastro_cliente_completo.pdf')
+    cy.get("[type='file']").selectFile('anexo_cadastro_cliente_completo.pdf', {force:true})
 }

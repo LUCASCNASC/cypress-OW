@@ -1,23 +1,6 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../../gerarDados';
 import { gerarChavePixTelefone } from '../../gerarDadosPIX'
 
-//Validar e preencher campo Data Nascimento
-export function preecherDataNascimento (selector) {
-
-    //Ícone de data de nascimento 
-    cy.get('#txtDataNasc > .md-datepicker-button')
-        .should('be.visible')
-        .and('not.have.attr', 'disabled')
-
-    //Campo Data Nascimento - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="txtDataNasc"]')
-        .should('have.text', 'Data Nascimento') 
-
-    cy.wait(200)
-
-    cy.contains('Data Nascimento').parent().find('input').type('30/09/1998');
-
-}
 
 //Validar e escolher sexo da pessoa
 export function selecionarSexoCliente (selector) {
@@ -38,6 +21,27 @@ export function selecionarSexoCliente (selector) {
     cy.get('.md-text.ng-binding')
         .contains('Masculino')
         .click({force:true})
+}
+
+//------------------- PREENCHER CAMPO ------
+
+
+//Validar e preencher campo Data Nascimento
+export function preecherDataNascimento (selector) {
+
+    //Ícone de data de nascimento 
+    cy.get('#txtDataNasc > .md-datepicker-button')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //Campo Data Nascimento - validando mensagem dentro do campo antes de preencher
+    cy.get('label[for="txtDataNasc"]')
+        .should('have.text', 'Data Nascimento') 
+
+    cy.wait(200)
+
+    cy.contains('Data Nascimento').parent().find('input').type('30/09/1998');
+
 }
 
 //Validar e prencher campo Nome Completo - CPF

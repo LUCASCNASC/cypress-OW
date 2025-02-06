@@ -76,39 +76,6 @@ export function modalTelefoneVazioValidar (selector) {
         .and('not.have.attr', 'not.disabled')
 }
 
-//selecionar tipo de telefone na aba telefone
-export function escolherTipoTelefone (selector) {
-
-    //Card Telefone - campo tipo de telefone
-    cy.get('#txtTpTel')
-        .click({force:true})
-    
-    //Card Telefone - escolher tipo de telefone
-    cy.get('.md-text.ng-binding')
-        .contains('Padrão')
-        .click({force:true})
-}
-
-//preencher campo Numero, no cadastro de telefone
-export function preencherNumeroTelefone (selector) {
-
-    const numero_telefone = gerarTelefoneAleatorio();
-
-    //Card Telefone - preencher campo número
-    cy.get('#txtNumTel')
-        .type(numero_telefone)
-}
-
-//preencher campo Ramal, no cadastro de telefone
-export function preencherRamalTelefone (selector) {
-
-    const ramal_telefone = "435"
-
-    //Card Telefone - preencher campo ramal
-    cy.get('#txtRamalTel')
-        .type(ramal_telefone)
-}
-
 //clicar no botão salvar telefone
 export function clicarSalvarTelefone (selector) {
 
@@ -149,4 +116,40 @@ export function messTelefoneIncluidoSucesso (selector) {
     cy.get('.toast-success > .toast-message')
         .should('be.visible')
         .and('have.text', 'Telefone incluído com sucesso.')
+}
+
+
+//------------------- PREENCHER CAMPO ------
+
+//selecionar tipo de telefone na aba telefone
+export function escolherTipoTelefone (selector) {
+
+    //Card Telefone - campo tipo de telefone
+    cy.get('#txtTpTel')
+        .click({force:true})
+    
+    //Card Telefone - escolher tipo de telefone
+    cy.get('.md-text.ng-binding')
+        .contains('Padrão')
+        .click({force:true})
+}
+
+//preencher campo Numero, no cadastro de telefone
+export function preencherNumeroTelefone (selector) {
+
+    const numero_telefone = gerarTelefoneAleatorio();
+
+    //Card Telefone - preencher campo número
+    cy.get('#txtNumTel')
+        .type(numero_telefone)
+}
+
+//preencher campo Ramal, no cadastro de telefone
+export function preencherRamalTelefone (selector) {
+
+    const ramal_telefone = "435"
+
+    //Card Telefone - preencher campo ramal
+    cy.get('#txtRamalTel')
+        .type(ramal_telefone)
 }
