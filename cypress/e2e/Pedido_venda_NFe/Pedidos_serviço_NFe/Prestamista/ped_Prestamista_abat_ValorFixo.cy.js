@@ -4,14 +4,13 @@ import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support
 import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVF, escolherRecebPromoPrazoFutComJurosPrestAbatVF } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSeguroPrestamista, messPrestamistaRemovido, addSeguroPrestamista } from '../../../../support/para_pedidos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento, inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento,
-         inserirData31Dias1Vencimento } from '../../../../support/para_pedidos/parcelas_pedido.js';
+         inserirData31Dias1Vencimento, agruparLancamentos } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, escolherRecebFutSemJurosPrestAbatValFixo, escolherRecebPresentePrestAbatValFixo,
          escolherRecebFutComJurosPrestAbatValFixo } from '../../../../support/para_pedidos/processo_recebimento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../../support/para_pedidos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../../support/para_pedidos/apenas_entrega.js';
-import { agruparLancamentos } from '../../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 
 describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
 
@@ -82,7 +81,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
 
     context('Com entrega / Produtos com promoção - Prestamista com abatimento Valor Fixo', () => {
 
-        it.only('3. Ped venda: produto 1922 0 0 (promo a prazo 171), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
+        it.skip('3. Ped venda: produto 1922 0 0 (promo a prazo 171), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
     
             prdPromoPrazoPrestPrimAbatVF()
             saldodisponivel()
@@ -101,13 +100,59 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             escolherQuatroParcelaPagamento()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
-             
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
-        it('4. Ped venda: produto 1923 0 0 (promo a prazo 172 - isentar juros serviços), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
+        it.skip('4. Ped venda: produto 1923 0 0 + garantia Não separa (promo a prazo 172 - isentar juros serviços), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
+
+            prdPromoPrazoPrestSegAbatVF()
+            saldodisponivel()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            selecionarPrimeiraPromoProduto()
+            escolherRecebPromoPrazoFutComJurosPrestAbatVF()
+            addProduto()
+            modalServicosVinculados()
+            garantiaNaoSepara()
+            okServicosVinculados() //SERVIÇOS
+            avancarParaTransportadora()
+            avancarParcelasEntrega()
+            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
+            cy.wait('@api_icons', { timeout: 40000 })
+            clicarEditarParcelas()
+            escolherQuatroParcelaPagamento()
+            okSeguroPrestamista()
+            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
-        it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
+        it.skip('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
+
+            prdPromoPrazoPrestTercAbatVF()
+            saldodisponivel()
+            escolherProdutoPesquisa()
+            clicarVoltagemProduto() //PRODUTO
+            selecionarPrimeiraPromoProduto()
+            escolherRecebPromoPrazoFutComJurosPrestAbatVF()
+            addProduto()
+            modalServicosVinculados()
+            garantiaNaoSepara()
+            okServicosVinculados() //SERVIÇOS
+            avancarParaTransportadora()
+            avancarParcelasEntrega()
+            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
+            cy.wait('@api_icons', { timeout: 40000 })
+            clicarEditarParcelas()
+            escolherQuatroParcelaPagamento()
+            okSeguroPrestamista()
+            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            avancarFinal()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
     })
 

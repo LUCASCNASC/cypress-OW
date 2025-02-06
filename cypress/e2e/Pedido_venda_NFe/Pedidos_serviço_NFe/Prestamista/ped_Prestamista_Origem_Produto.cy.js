@@ -3,14 +3,13 @@ import { saldodisponivel, clienteComRota, selecionarPrimeiraPromoProduto, clicar
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
 import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVF, escolherRecebPromoPrazoFutComJurosPrestAbatVF } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSeguroPrestamista, messPrestamistaRemovido, addSeguroPrestamista } from '../../../../support/para_pedidos/apenas_servicos.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento, 
-         inserirDataAmanha1Vencimento, botaoGerarParcelasAlterVencimento,  escolherUmaParcelaPagamento, inserirData31Dias1Vencimento } from '../../../../support/para_pedidos/parcelas_pedido.js';
+import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento, inserirDataAmanha1Vencimento,
+         botaoGerarParcelasAlterVencimento,  escolherUmaParcelaPagamento, inserirData31Dias1Vencimento, agruparLancamentos } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, escolherRecebFutComJurosPrestAbatOrigemPrd } from '../../../../support/para_pedidos/processo_recebimento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../../support/para_pedidos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../../support/para_pedidos/apenas_entrega.js';
-import { agruparLancamentos } from '../../../../support/para_pedidos/para_ped_varios_recebimentos.js';
 
 describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem Produto (162)', () => {
 
