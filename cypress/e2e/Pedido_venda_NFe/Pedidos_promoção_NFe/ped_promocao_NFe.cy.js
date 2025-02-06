@@ -1,6 +1,6 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto,
+         ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
-import { selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
          botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processo_recebimento.js';
@@ -29,7 +29,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOCAO
             escolherRecebPromoPagPrincipal()
@@ -49,7 +49,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()      
+            escolherProdutoPesquisa() ; ticketPromocao() 
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
@@ -75,7 +75,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
@@ -98,7 +98,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa() 
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
@@ -134,7 +134,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
@@ -170,7 +170,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa() 
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
@@ -195,7 +195,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()    
+            escolherProdutoPesquisa() ; ticketPromocao()  
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
@@ -236,7 +236,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
@@ -265,7 +265,7 @@ describe('Gerar pedidos com promoção', () => {
     
             produtoPromoPartida() //PRODUTO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()

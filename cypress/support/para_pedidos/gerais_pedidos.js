@@ -478,3 +478,23 @@ export function selecionarPrimeiraPromoProduto (selector) {
     cy.get('.md-3-line > div.md-button > .md-no-style')
         .click()
 }
+
+//validando aqueles produtos que tem o ticket vermelho "PROMOÇÃO"
+export function ticketPromocao (selector) {
+
+    //etiqueta inteira
+    cy.get('.md-secondary-container > div > .ng-scope')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //validando nome - etiqueta promoção
+    cy.get('span[ng-if="(gradeAtual.tempromocao)"]')
+        .should('have.text', 'PROMOÇÃO')
+        .and('be.visible')
+
+    //validando as cores - etiqueta promoção
+    cy.get('span[ng-if="(gradeAtual.tempromocao)"]')
+        .should('have.css', 'background-color', 'rgb(255, 0, 0)') 
+        .and('have.css', 'color', 'rgb(255, 255, 255)')
+
+}

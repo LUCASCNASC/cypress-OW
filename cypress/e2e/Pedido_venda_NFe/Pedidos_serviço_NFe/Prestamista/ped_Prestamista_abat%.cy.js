@@ -223,7 +223,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
@@ -248,7 +248,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
@@ -273,7 +273,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
@@ -302,7 +302,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdSegPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
@@ -333,7 +333,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdSegPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
@@ -365,7 +365,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPartidaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPartidaPresentePrest()
@@ -394,7 +394,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
@@ -430,7 +430,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
@@ -470,7 +470,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
@@ -506,7 +506,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
@@ -548,7 +548,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdTerPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
@@ -576,7 +576,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
@@ -614,7 +614,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoComJurosPrest()
@@ -657,7 +657,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
@@ -695,7 +695,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFuturoSemJurosPrest()
@@ -738,7 +738,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPartidaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPartidaPresentePrest()
@@ -777,7 +777,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             prdPromoPartidaPrest()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPartidaPresentePrest()

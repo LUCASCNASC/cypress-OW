@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
-         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, ticketPrestamistaPaginaFinal } from '../../../../support/para_pedidos/gerais_pedidos.js';
+         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
 import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVFOP } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSeguroPrestamista } from '../../../../support/para_pedidos/apenas_servicos.js';
@@ -85,7 +85,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
     
             prdPromoPrazoPrestPrimAbatVF()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVFOP()
@@ -110,7 +110,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
 
             prdPromoPrazoPrestSegAbatVF()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             prdPromoPrazoPrestTercAbatVFOP()
@@ -136,7 +136,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
 
             prdPromoPrazoPrestTercAbatVFOP()
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPartidaPresenComJurosPrestAbatVFOP()

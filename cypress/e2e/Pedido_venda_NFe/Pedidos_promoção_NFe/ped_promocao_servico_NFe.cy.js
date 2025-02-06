@@ -1,5 +1,5 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto, 
-         ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal } from '../../../support/para_pedidos/gerais_pedidos.js'
+         ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
@@ -28,7 +28,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd1PrazoParcela() //PRODUTO PROMOÇÃO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
@@ -50,7 +50,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd2PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProdutoPesquisa()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
@@ -90,7 +90,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd3PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProdutoPesquisa()   
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
@@ -113,7 +113,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             prd4PrazoParcela() //PRODUTO PROMOCAO
             saldodisponivel()
-            escolherProdutoPesquisa() 
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
