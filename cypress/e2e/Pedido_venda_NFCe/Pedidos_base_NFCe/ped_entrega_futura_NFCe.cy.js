@@ -32,8 +32,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             avancarParaTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
+            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA)
             escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -60,7 +59,6 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             okServicosVinculados()
             avancarParaTransportadora() 
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherRota()
             escolherTransportadora()
             avancarParcelasEntrega() 
             botaoGerarParcelas() //GERAR PARCELAS

@@ -24,6 +24,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
     context('Com entrega /com promoção/ processo 9890 - caminho feliz', () => {
 
+        //verificar 
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             produtoPromoPartida() //PRODUTO
@@ -52,6 +53,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             pedidoGerado()
         })
     
+        //verificar 
         it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
@@ -86,6 +88,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // pedidoGerado()
         })
 
+        //verificar 
         it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO

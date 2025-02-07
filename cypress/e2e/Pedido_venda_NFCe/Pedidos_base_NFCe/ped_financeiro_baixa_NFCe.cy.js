@@ -33,7 +33,6 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             okServicosVinculados()
             avancarParaTransportadora()
             modalInconsApenasTransp()
-            escolherRota() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -60,7 +59,6 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             okServicosVinculados()
             avancarParaTransportadora() 
             modalInconsApenasTransp()
-            escolherRota() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

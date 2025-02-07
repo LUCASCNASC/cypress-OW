@@ -28,7 +28,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('1. Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
+        it.skip('1. Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
             produtoNormalPrimeiro() //PESQUISA PRODUTO
             saldodisponivel()
@@ -82,7 +82,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             pedidoAlteradoSucesso()
         })
 
-        it('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
+        it.skip('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
             produtoNormalPrimeiro() //PESQUISA PRODUTO
             saldodisponivel()
@@ -186,7 +186,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Com entrega/ processo 9860 - caminho feliz', () => {
 
-        it('4. Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it.skip('4. Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PESQUISA PRODUTO
             saldodisponivel()

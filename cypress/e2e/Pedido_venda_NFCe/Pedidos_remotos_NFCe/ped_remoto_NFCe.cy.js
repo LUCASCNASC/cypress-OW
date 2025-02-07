@@ -23,6 +23,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
   
     context('Pedido de venda remoto normal', () => {
 
+        //verificar
         it.skip('1. Ped venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
             produtoNormalPrimeiro() //PRODUTO
@@ -45,6 +46,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             pedidoGerado()
         })
 
+        //verificar
         it.skip('2. Ped venda remota: produtos 1860 0 0 e 1870 0 0', () => {
 
             produtoNormalPrimeiro() //PRODUTO
@@ -75,6 +77,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             pedidoGerado()
         })
         
+        //verificar
         it.skip('3. Ped venda remota: kit 1877 0 0', () => {
 
             produtoKitRemoto() //PRODUTO
@@ -101,6 +104,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
     
     context('Pedido de venda remoto sem saldo remoto, pegar CD', () => {
 
+        //verificar
         it.skip('4. Ped venda remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto (1883 0 0) sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
 
             produtoRemotoComCD() //PRODUTO
@@ -123,6 +127,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             pedidoGerado()
         })    
         
+        //verificar
         it.skip('5. Ped venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto (1882 0 0) sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
             produtoRemotoSemCD() //PRODUTO

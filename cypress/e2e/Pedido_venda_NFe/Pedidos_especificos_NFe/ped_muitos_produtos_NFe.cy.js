@@ -26,6 +26,7 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
 
     context('Sem enterga/ processo 9860 - caminho feliz - produtos sem serviço', () => {
 
+        //verificar 
         it.skip('1. Ped venda: produto 1907 e suas voltagens 1 1 a 40 40', () => {
 
             produtoPrincipal() //primeira pesquisa de produto - 1907 1 1
