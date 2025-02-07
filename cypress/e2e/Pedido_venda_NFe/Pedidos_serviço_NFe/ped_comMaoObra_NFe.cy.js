@@ -1,8 +1,9 @@
 import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, modalServicosVinculados, 
-         okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+         okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarServicosVinculados, validaAddMODestacaNãoSepara, validaAddMONaoDestacaSepMesmoProc, validaAddMONaoDestacaSepProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
+import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda';
@@ -33,6 +34,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
             botaoGerarParcelas() //GERAR PARCELAS
@@ -48,6 +50,7 @@ describe('Gerar pedidos com Mão de obra', () => {
 
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //PRODUTO - SEGUNDO PRODUTO
             saldodisponivel()
@@ -71,6 +74,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()  
             botaoGerarParcelas() //GERAR PARCELAS
@@ -86,6 +90,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //PRODUTO NORMAL
             saldodisponivel()
@@ -109,6 +114,7 @@ describe('Gerar pedidos com Mão de obra', () => {
 
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
             botaoGerarParcelas() //GERAR PARCELAS
@@ -124,6 +130,7 @@ describe('Gerar pedidos com Mão de obra', () => {
 
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
@@ -150,6 +157,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMODestacaNãoSepara()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -165,6 +173,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMODestacaNãoSepara()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -187,6 +196,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -202,6 +212,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -224,6 +235,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -239,6 +251,7 @@ describe('Gerar pedidos com Mão de obra', () => {
     
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()

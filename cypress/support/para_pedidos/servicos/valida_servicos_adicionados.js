@@ -5,6 +5,11 @@ export function validarServicosVinculados (selector) {
 
     //completo
     cy.get('.md-subheader-inner')
+        .scrollIntoView()
+        .wait(200)
+
+    //completo
+    cy.get('.md-subheader-inner')
         .should('be.visible')
 
     //Serviços vinculados
@@ -13,61 +18,57 @@ export function validarServicosVinculados (selector) {
         .and('have.text', 'Serviços vinculados')
 }
 
-//Marcar garantia "T.A. Garantia Separa Mesmo Processo" - 139
+//Marcar garantia "139 - T.A. Garantia Separa Mesmo Processo"
 export function validaAddGarantSepMesmoProc (selector) {
-    
-    cy.get('#checkbox-139-0 > .md-container')
-        .should('not.be.disabled')
 
-    cy.get('#checkbox-139-0 > .md-container').click()
+    cy.contains('139 - T.A. Garantia Separa Mesmo Processo')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
 }
 
-//Marcar garantia "T.A. Garantia Não Separa" - 140
+//Marcar garantia "140 - T.A. Garantia Não Separa"
 export function validaAddGarantNaoSep (selector) {
 
-    cy.get('#checkbox-140-1 > .md-container')
-        .should('exist')
-        .and('not.be.disabled') 
-
-    cy.get('#checkbox-140-1 > .md-container').click()
+    cy.contains('140 - T.A. Garantia Não Separa')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
 }
 
-//Marcar Garantia separa titulo em um processo deferente - 141
+//Marcar Garantia "141 - T.A. Garantia Separa Processo Diferente"
 export function validaAddGarantSepTituloProcDif (selector) {
 
-    cy.get('#checkbox-141-2 > .md-container')
-        .should('exist')
-        .and('not.be.disabled') 
-
-    cy.get('#checkbox-141-2 > .md-container').click()
+    cy.contains('141 - T.A. Garantia Separa Processo Diferente')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
 }
 
 //Marcar Mão de Obra "T.A. MO Destaca e Não Separa" - 142
 export function validaAddMODestacaNãoSepara (selector) {
 
-    cy.get('#checkbox-142-0 > .md-container')
-        .should('exist')
-        .and('not.be.disabled') 
-
-    cy.get('#checkbox-142-0 > .md-container').click()
+    cy.contains('142 - T.A. MO Destaca e Não Separa')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
 }
 
 //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo" - 143
 export function validaAddMONaoDestacaSepMesmoProc (selector) {
 
-    cy.get('#checkbox-143-1 > .md-container')
-        .should('exist')
-        .and('not.be.disabled')
-
-    cy.get('#checkbox-143-1 > .md-container').click()
+    cy.contains('143 - T.A. MO Não Destaca e Separa Mesmo Processo')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
 }
 
-//Marcar Mão de obra que não destaca e separa título em processo diferente - 144
+//Marcar Mão de obra '144 - T.A. MO Não Destaca e Separa Processo Diferente'
 export function validaAddMONaoDestacaSepProcDif (selector) {
 
-    cy.get('#checkbox-144-2 > .md-container')
-        .should('not.be.disabled')
-
-    cy.get('#checkbox-144-2 > .md-container').click()
+    cy.contains('144 - T.A. MO Não Destaca e Separa Processo Diferente')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
 }
 

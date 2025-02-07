@@ -4,6 +4,7 @@ import { saldodisponivel, clienteComRota, selecionarPrimeiraPromoProduto, clicar
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
 import { prdPromoPrazoParcelaPrest, prdSegPromoPrazoParcelaPrest, prdTerPromoPrazoParcelaPrest, prdPromoPartidaPrest } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSeguroPrestamista, messPrestamistaRemovido, addSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarServicosVinculados, validaAddGarantSepMesmoProc } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento, inserirDataAmanha1Vencimento, 
          botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento, inserirData31Dias1Vencimento, agruparLancamentos } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, escolherRecebFuturoPrestamistaComJuros, escolherRecebFuturoPrestamistaSemJuros, 
@@ -133,6 +134,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -154,7 +156,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             pedidoGerado()
         })
 
-        it('5. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
+        it('5. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
             produtoNormalPrimeiro()
             saldodisponivel()
@@ -164,6 +166,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -185,7 +188,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             pedidoGerado()
         })
 
-        it('6. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente sem juros.', () => {
+        it('6. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente sem juros.', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
@@ -195,6 +198,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             saldodisponivel()
             escolherProdutoPesquisa()
@@ -310,6 +314,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
@@ -341,6 +346,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
@@ -373,6 +379,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             tirarEntrega()
             avancarParaParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
@@ -544,7 +551,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             pedidoGerado()
         })
 
-        it('17. Ped venda: produto 1921 0 0 (promo a prazo 170), inclusão 3874, prestamista 158 e garantia 140 (não separa), 4 parcelas no recebimento Futuro com juros.', () => {
+        it('17. Ped venda: produto 1921 0 0 (promo a prazo 170), inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             prdTerPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -572,7 +579,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
     context('Com entrega / Misto com e sem Promoção - Prestamista abatimento %', () => {
 
-        it('18. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
+        it('18. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -584,6 +591,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             produtoNormalPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -610,7 +618,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             pedidoGerado()
         })
 
-        it('19. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
+        it('19. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -622,6 +630,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             produtoNormalPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -653,7 +662,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             pedidoGerado()
         })
 
-        it('20. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
+        it('20. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -665,6 +674,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             produtoNormalPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -691,7 +701,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             pedidoGerado()
         })
 
-        it('21. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
+        it('21. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             prdPromoPrazoParcelaPrest()
             saldodisponivel()
@@ -703,6 +713,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS)
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             produtoNormalPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -734,7 +745,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             pedidoGerado()
         })
 
-        it('22. Ped venda: produto 1920 0 0 (promo a prazo 169) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3874), prestamista 158, 4 parcelas no recebimento Presente.', () => {
+        it('22. Ped venda: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3874), prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
             prdPromoPartidaPrest()
             saldodisponivel()
@@ -746,6 +757,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             produtoNormalPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -773,7 +785,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             pedidoGerado()
         })
 
-        it('23. Ped venda: produto 1920 0 0 (promo a prazo 169) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3875 agrupar), prestamista 158, 4 parcelas no recebimento Presente.', () => {
+        it('23. Ped venda: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3875 agrupar), prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
             prdPromoPartidaPrest()
             saldodisponivel()
@@ -785,6 +797,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             modalServicosVinculados()
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS)
+            validarServicosVinculados() ; validaAddGarantNaoSep()
             produtoNormalPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
