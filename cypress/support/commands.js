@@ -30,6 +30,7 @@ import 'cypress-file-upload';
 
 // cypress/support/commands.js
 
+//fazer login no pedido web, com o usuário 393
 Cypress.Commands.add('login', (username, password) => {
   
   cy.visit('/');
@@ -42,12 +43,14 @@ Cypress.Commands.add('login', (username, password) => {
   cy.get('.click-cliente > .informe-o-cliente > .cliente-header').should('contain','Cliente') //Validando se realmente fez o login
 });
 
+//validar url após logarmos no pedido web
 Cypress.Commands.add('urlAposLogin', (username, password) => {
   
   cy.url()
     .should('include', '/')
 });
 
+//validar título da página após logarmos no pedido web - título da aba do navegador
 Cypress.Commands.add('tituloPagina', (username, password) => {
   
   cy.title()

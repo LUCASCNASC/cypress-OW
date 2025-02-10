@@ -8,6 +8,7 @@ import { escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal } from '../../.
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
@@ -49,6 +50,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -71,6 +73,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             escolherDuasParcelaPagamento()
             cy.wait(400)
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -99,6 +102,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             naoAgruparLancamentos()
             cy.wait(400)
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -127,6 +131,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             agruparLancamentos()
             cy.wait(400)
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -157,6 +162,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             clicarAgrupar()
             cy.wait(400)
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })

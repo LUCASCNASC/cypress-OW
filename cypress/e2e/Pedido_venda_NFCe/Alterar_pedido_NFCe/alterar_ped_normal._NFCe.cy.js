@@ -10,6 +10,7 @@ import { botaoFinalizarPedido, pedidoGerado, pedidoAlteradoSucesso } from '../..
 import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.', () => {
 
@@ -43,6 +44,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
             okPedidoGerado()

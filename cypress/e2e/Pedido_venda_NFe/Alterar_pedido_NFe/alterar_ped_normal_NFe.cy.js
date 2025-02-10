@@ -13,6 +13,7 @@ import { processoVendaNFe } from '../../../support/para_pedidos/processos/proces
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega, avancarParaParcelasAlterar,
          avancarFinalAlterar, avancarParaTransportadoraAlterar, avancarParcelasEntregaAlterar } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -44,6 +45,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //FINAL PEDIDO
             pedidoGerado()
             okPedidoGerado()
@@ -98,6 +100,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
             okPedidoGerado()
@@ -157,6 +160,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //FINAL PEDIDO
             pedidoGerado()
             okPedidoGerado()
@@ -202,6 +206,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //FINAL PEDIDO
             pedidoGerado()
             okPedidoGerado()

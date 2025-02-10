@@ -7,6 +7,7 @@ import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedido
 import { processoEntregaFuturaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido de entrega futura com entrega', () => {
 
@@ -40,6 +41,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })    
@@ -66,6 +68,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal() 
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })  

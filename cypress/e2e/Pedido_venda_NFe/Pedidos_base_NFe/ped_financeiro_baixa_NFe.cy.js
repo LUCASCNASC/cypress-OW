@@ -7,6 +7,7 @@ import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedido
 import { processoFinanceiroBaixaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido com financeiro na baixa', () => {
 
@@ -38,6 +39,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -63,6 +65,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -83,6 +86,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -107,6 +111,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })

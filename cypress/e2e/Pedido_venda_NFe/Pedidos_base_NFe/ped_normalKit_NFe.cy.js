@@ -7,6 +7,7 @@ import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedido
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido normal', () => {
 
@@ -39,6 +40,7 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -60,6 +62,7 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })

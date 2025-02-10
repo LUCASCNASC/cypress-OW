@@ -8,7 +8,7 @@ import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedido
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
-import { validarInfosCliente } from '../../../support/para_pedidos/validar_tela/tela_final.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido normal', () => {
 
@@ -40,7 +40,7 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            validarInfosCliente()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -66,6 +66,7 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -85,6 +86,7 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
+            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -92,7 +94,7 @@ describe('Gerar pedido normal', () => {
 
     context('Com entrega/ processo 9860 - caminho feliz', () => {
 
-        it.only('4. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
+        it('4. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
             clicarVoltagemProduto() //PRODUTO
             addProduto()
@@ -105,8 +107,9 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            // botaoFinalizarPedido() //RESUMO
-            // pedidoGerado()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
+            botaoFinalizarPedido() //RESUMO
+            pedidoGerado()
         })
 
         it('5. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -129,6 +132,7 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -148,6 +152,7 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })

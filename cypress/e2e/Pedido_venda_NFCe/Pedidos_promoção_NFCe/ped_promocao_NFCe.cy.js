@@ -9,6 +9,7 @@ import { processoVendaNFCe } from '../../../support/para_pedidos/processos/proce
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedidos com promoção com entrega', () => {
 
@@ -49,6 +50,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
 
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -84,6 +86,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // escolherFormaPagamentoPrincipal()
             // escolherDuasParcelaPagamento()
             // avancarFinal()
+            // infoFinalClienteComEntrega() ; infoFinalEntrega()
             // botaoFinalizarPedido() //RESUMO
             // pedidoGerado()
         })
@@ -112,6 +115,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
             avancarFinal()
+            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })  
