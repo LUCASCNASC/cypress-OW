@@ -1,6 +1,7 @@
-// ------------ ALTERAÇÃO DE PEDIDO -------------------
+// ------------ VALIDAÇÕES DO PEDIDO -------------------
 
-export function cliente (selector) {
+//Função para validar as informações do cliente na última tela antes de finalizar o pedido
+export function infoFinalClienteSemEntrega (selector) {
 
     //título Cliente
     cy.get('.flex-gt-xs-100 > .md-primary > .md-toolbar-tools > .flex')
@@ -65,14 +66,11 @@ export function cliente (selector) {
     //E-mail NFe:    
     cy.get('.cliente > :nth-child(6) > b')
         .should('be.visible')
-        .and('have.text', 'E-mail NFe:')
+        .and('have.text', 'E-mail NF-e:')
 
     //informação E-mail NFe
     cy.get('.cliente > :nth-child(6)')
         .should('be.visible')
         .and('contain', 'ta_cpf_automação_com_rota@gmail.com')
-
-
-
-
 }
+
