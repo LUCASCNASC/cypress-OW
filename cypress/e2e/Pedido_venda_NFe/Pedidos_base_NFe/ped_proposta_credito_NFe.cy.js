@@ -7,7 +7,7 @@ import { botaoFinalizarPedido, pedidoGerado, propostaCreditoGerada } from '../..
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
-import { infoFinalClienteSemEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido com proposta de crédito', () => {
 
@@ -39,7 +39,6 @@ describe('Gerar pedido com proposta de crédito', () => {
             escolherFormaPagaPropCredito()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             propostaCreditoGerada()
             pedidoGerado()

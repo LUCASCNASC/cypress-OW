@@ -11,7 +11,7 @@ import { botaoFinalizarPedido, pedidoGerado } from '../../../../support/para_ped
 import { processoVendaNFe } from '../../../../support/para_pedidos/processos/processo_venda.js';
 import { escolherRecebPromoPrazoFutComJurosPrestAbatVF } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
 
@@ -45,7 +45,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -77,7 +76,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             okSeguroPrestamista()
             ticketPrestamistaAdicionado()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -106,7 +104,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -134,7 +131,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -162,7 +158,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -171,7 +166,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
 
     context('Com entrega / Produto sem promoção - Prestamista com abatimento Valor Fixo', () => {
 
-        it.only('6. Ped venda: produto 1860 0 0, inclusão 3878, prestamista 161 (55,90), 4 parcelas no recebimento Presente com juros.', () => {
+        it('6. Ped venda: produto 1860 0 0, inclusão 3878, prestamista 161 (55,90), 4 parcelas no recebimento Presente com juros.', () => {
     
             produtoNormalPrimeiro()
             saldodisponivel()
@@ -189,7 +184,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()

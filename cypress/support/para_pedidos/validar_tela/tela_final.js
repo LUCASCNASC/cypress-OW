@@ -1,4 +1,4 @@
-// ------------ VALIDAÇÕES DO PEDIDO -------------------
+// ------------ VALIDAÇÕES FINAL DO PEDIDO -------------------
 
 //Função para validar as informações do cliente na última tela antes de finalizar o pedido
 export function infoFinalClienteSemEntrega (selector) {
@@ -72,6 +72,23 @@ export function infoFinalClienteSemEntrega (selector) {
     cy.get('.cliente > :nth-child(6)')
         .should('be.visible')
         .and('contain', 'ta_cpf_automação_com_rota@gmail.com')
+
+    //botão EDITAR
+    cy.get('.padding-10 > :nth-child(1) > .cliente > .md-accent')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('have.text', 'Editar')
+
+    //Consumidor Final - botão
+    cy.get('.flex-100 > .md-auto-horizontal-margin > .md-container')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Consumidor Final
+    cy.get('.flex-100 > .md-auto-horizontal-margin > .md-label')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain', 'Consumidor Final')
 }
 
 //Função para validar as informações do cliente na última tela antes de finalizar o pedido
@@ -146,6 +163,23 @@ export function infoFinalClienteComEntrega (selector) {
     cy.get('.cliente > :nth-child(6)')
         .should('be.visible')
         .and('contain', 'ta_cpf_automação_com_rota@gmail.com')
+
+    //botão EDITAR
+    cy.get('.padding-10 > :nth-child(1) > .cliente > .md-accent')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('have.text', 'Editar')
+
+    //Consumidor Final - botão
+    cy.get('.flex-100 > .md-auto-horizontal-margin > .md-container')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //Consumidor Final
+    cy.get('.flex-100 > .md-auto-horizontal-margin > .md-label')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('contain', 'Consumidor Final')
 }
 
 //Função para validar as informações da entrega na última tela antes de finalizar o pedido
@@ -199,4 +233,47 @@ export function infoFinalEntrega (selector) {
     cy.get('[ng-show="(carrinho.frete && carrinho.frete.rota && carrinho.endereco.local == \'entrega\')"]')
         .should('be.visible')
         .and('contain', 'Rota Maringá, Centro')
+
+    //botão EDITAR TELEFONE
+    cy.get('.endereco > .md-accent')
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('have.text', 'Editar Telefone')
+}
+
+//Função para validar campo - OBSERVAÇÕES PARA A NOTA FISCAL
+export function validarObsNotaFiscalVazio (selector) {
+
+    //OBSERVAÇÕES PARA A NOTA FISCAL
+    cy.get(':nth-child(1) > .header-interno > label')
+        .should('be.visible')
+        .and('have.text', 'OBSERVAÇÕES PARA A NOTA FISCAL')
+
+    //campo vazio
+    cy.get(':nth-child(1) > .col-md-12 > .form-group > .form-control')  
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('have.value', '')
+        //.and('have.attr', 'maxlength', '300') //não tem limite de caracteres
+}
+
+//Função para validar campo - OBSERVAÇÕES PARA USO INTERNO
+export function validarObsInternaVazio (selector) {
+
+    //OBSERVAÇÕES PARA USO INTERNO
+    cy.get(':nth-child(2) > .header-interno > label')
+        .should('be.visible')
+        .and('have.text', 'OBSERVAÇÕES PARA USO INTERNO')
+
+    //campo vazio
+    cy.get(':nth-child(2) > .col-md-12 > .form-group > .form-control')  
+        .should('be.visible')
+        .and('not.be.disabled')
+        .and('have.value', '')
+        .and('have.attr', 'maxlength', '300') //não tem limite de caracteres
+
+    //"Limite de 300 caracteres"
+    cy.get('.form-group > span')
+        .should('be.visible')
+        .and('have.text', 'Limite de 300 caracteres')
 }

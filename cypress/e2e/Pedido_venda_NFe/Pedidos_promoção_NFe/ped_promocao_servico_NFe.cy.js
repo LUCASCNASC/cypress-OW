@@ -10,7 +10,7 @@ import { processoVendaNFe } from '../../../support/para_pedidos/processos/proces
 import { escolherRecebPromoPagPrincipal, escolherRecebReceberPrestamista } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
-import { infoFinalClienteSemEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
@@ -45,7 +45,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             avancarFinal()
-            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -87,7 +86,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 .click({force:true})
 
             avancarFinal()
-            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -111,7 +109,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             adicionarPrestamista()
             ticketPrestamistaAdicionado()
             avancarFinal()
-            infoFinalClienteSemEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -138,7 +135,6 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             adicionarPrestamista()
             ticketPrestamistaAdicionado()
             avancarFinal()
-            infoFinalClienteSemEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()

@@ -14,7 +14,7 @@ import { processoVendaNFe } from '../../../../support/para_pedidos/processos/pro
 import { escolherRecebPromoPrazoFuturoComJurosPrest, escolherRecebPromoPrazoFuturoSemJurosPrest, escolherRecebPromoPartidaPresentePrest } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../../support/para_pedidos/apenas_entrega.js';
-import { infoFinalClienteComEntrega, infoFinalEntrega } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
@@ -56,7 +56,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -88,7 +87,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -122,7 +120,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -155,7 +152,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -188,7 +184,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -221,7 +216,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -250,7 +244,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -276,7 +269,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -303,7 +295,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -339,7 +330,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -373,7 +363,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -401,7 +390,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -441,7 +429,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -482,7 +469,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             addSeguroPrestamista()
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -519,7 +505,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -562,7 +547,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             addSeguroPrestamista()
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -588,7 +572,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -631,7 +614,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -676,7 +658,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             addSeguroPrestamista()
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -716,7 +697,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -761,7 +741,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             addSeguroPrestamista()
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -802,7 +781,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherSegundaFormaPagamento()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
@@ -848,7 +826,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             addSeguroPrestamista()
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             ticketPrestamistaPaginaFinal()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()

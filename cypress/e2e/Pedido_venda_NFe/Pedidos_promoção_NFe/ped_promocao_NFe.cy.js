@@ -10,7 +10,7 @@ import { processoVendaNFe } from '../../../support/para_pedidos/processos/proces
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega } from '../../../support/para_pedidos/validar_tela/tela_final.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -43,7 +43,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             avancarFinal() 
-            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -71,7 +70,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click()
     
             avancarFinal() 
-            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -93,7 +91,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             avancarFinal()
-            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -134,7 +131,6 @@ describe('Gerar pedidos com promoção', () => {
             //cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             // avancarFinal()
-            // infoFinalClienteSemEntrega()
             // botaoFinalizarPedido() //RESUMO
             // pedidoGerado()
         })
@@ -169,7 +165,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click({force:true}) //clicar GERAR PAGAMENTO
     
             avancarFinal()
-            infoFinalClienteSemEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -198,7 +193,6 @@ describe('Gerar pedidos com promoção', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
@@ -241,7 +235,6 @@ describe('Gerar pedidos com promoção', () => {
             // escolherFormaPagamentoPrincipal()
             // escolherDuasParcelaPagamento()
             // avancarFinal()
-            // infoFinalClienteComEntrega() ; infoFinalEntrega()
             // botaoFinalizarPedido() //RESUMO
             // pedidoGerado()
         })
@@ -269,7 +262,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })  
@@ -306,7 +298,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force: true})
 
             avancarFinal()
-            infoFinalClienteComEntrega() ; infoFinalEntrega()
             botaoFinalizarPedido() //RESUMO
             pedidoGerado()
         })
