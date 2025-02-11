@@ -258,7 +258,7 @@ export function clicarVoltagemProduto (selector) {
 }
 
 //Botão adicionar produto após selecionar voltagem do produto
-export function addProduto (selector) {
+export function clicarAdicionarProduto (selector) {
 
     cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 

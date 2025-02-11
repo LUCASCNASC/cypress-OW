@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, trocarFilialFaturamento, validarSemSaldo, composicaoDesteKit, validarComSaldoCD,
-         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+         escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiro, prdSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/produtos_pedidos/prd_normal.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -32,7 +32,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
@@ -55,7 +55,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
             prdSegundo() //SEGUNDO PRODUTO
@@ -63,7 +63,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
@@ -87,7 +87,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             clicarVoltagemProduto()
             trocarFilialFaturamento()
             composicaoDesteKit()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
@@ -113,7 +113,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
             avancarParaTransportadora()

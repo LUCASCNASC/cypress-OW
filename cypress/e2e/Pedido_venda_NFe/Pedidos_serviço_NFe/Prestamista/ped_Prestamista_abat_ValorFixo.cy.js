@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
-         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, compararSubtotalTotalFinanceiro, ticketPrestamistaPaginaFinal, 
+         escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, compararSubtotalTotalFinanceiro, ticketPrestamistaPaginaFinal, 
          ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiro, prdSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
 import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVF } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
@@ -33,7 +33,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -56,7 +56,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
@@ -64,7 +64,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -92,7 +92,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVF()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -117,7 +117,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVF()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
@@ -144,7 +144,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVF()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
@@ -172,7 +172,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()

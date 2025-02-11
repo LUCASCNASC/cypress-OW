@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, clicarAdicionarProduto, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoDescontoCifrao, produtoDescontoPercentual, produtoDescontoValorFixo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDescontoPorcentagem, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -31,7 +31,7 @@ describe('Gerar pedido de venda com desconto', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             clicarBotaoDesconto() //DESCONTO
@@ -54,7 +54,7 @@ describe('Gerar pedido de venda com desconto', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             clicarBotaoDesconto() //DESCONTO
@@ -77,7 +77,7 @@ describe('Gerar pedido de venda com desconto', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             clicarBotaoDesconto() //DESCONTO

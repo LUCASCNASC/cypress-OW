@@ -1,4 +1,4 @@
-import { clienteComRota, validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, validarSemSaldo,
+import { clienteComRota, validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, validarSemSaldo,
          trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas } from '../../../support/produtos_pedidos/prd_exclusiva';
@@ -32,7 +32,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             kitSemSaldoAgendamento() //PRODUTO KIT
@@ -40,7 +40,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
+            clicarAdicionarProduto()
             avancarParaTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
@@ -61,14 +61,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             validarComSaldo()
             escolherProdutoPesquisa()      
             clicarVoltagemProduto() 
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             kitVolumes() //PRODUTO KIT
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             avancarParaTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
@@ -92,7 +92,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -117,7 +117,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             clicarVoltagemProduto() 
             trocarFilialFaturamento()
             aumentarQuantVendaCinco()
-            addProduto()
+            clicarAdicionarProduto()
             prdSaldoReceberDuasLinhas() //SEGUNDO PRODUTO
             saldoRemotoAReceber()
             escolherProdutoPesquisa()  
@@ -133,7 +133,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA

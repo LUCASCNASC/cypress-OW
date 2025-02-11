@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento, 
          escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -30,7 +30,7 @@ describe('Gerar pedido normal com entrega', () => {
         it('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -49,14 +49,14 @@ describe('Gerar pedido normal com entrega', () => {
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -75,7 +75,7 @@ describe('Gerar pedido normal com entrega', () => {
         it('3. Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                       
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()

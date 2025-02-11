@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiro, prdSegundo, prdKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
@@ -35,7 +35,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
@@ -61,7 +61,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             prdPrimeiro() //PESQUISA PRODUTO - SEGUNDO
             escolherProdutoPesquisa()//ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(500)
@@ -70,7 +70,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - KIT
             clicarVoltagemProduto() //VOLTAGEM
             composicaoDesteKit()
-            addProduto()
+            clicarAdicionarProduto()
             clicarOKServVinculado()
             tirarEntregaTerceiro()
             avancarParaParcelasAlterar()
@@ -89,7 +89,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
@@ -117,7 +117,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
@@ -126,7 +126,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
@@ -148,7 +148,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
@@ -193,7 +193,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora() //TRANSPORTADORA

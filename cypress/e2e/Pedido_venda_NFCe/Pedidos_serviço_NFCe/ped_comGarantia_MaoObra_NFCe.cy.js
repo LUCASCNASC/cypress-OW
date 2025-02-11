@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, maoObraDestacaNãoSepara, 
          maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
@@ -24,7 +24,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
         validarComSaldo()
         escolherProdutoPesquisa()
         clicarVoltagemProduto()
-        addProduto()
+        clicarAdicionarProduto()
         validarModalServVinculado()
     })
 
@@ -57,7 +57,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -100,7 +100,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -143,7 +143,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -186,7 +186,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -229,7 +229,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -272,7 +272,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -315,7 +315,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
@@ -357,7 +357,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -400,7 +400,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()

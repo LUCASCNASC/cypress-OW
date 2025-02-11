@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto,
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, selecionarPrimeiraPromoProduto,
          ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
@@ -35,7 +35,7 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOCAO
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -56,7 +56,7 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -83,7 +83,7 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -107,7 +107,7 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -115,7 +115,7 @@ describe('Gerar pedidos com promoção', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -144,7 +144,7 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -152,7 +152,7 @@ describe('Gerar pedidos com promoção', () => {
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -180,7 +180,7 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -206,7 +206,7 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -248,7 +248,7 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -278,14 +278,14 @@ describe('Gerar pedidos com promoção', () => {
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
+            clicarAdicionarProduto()
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()

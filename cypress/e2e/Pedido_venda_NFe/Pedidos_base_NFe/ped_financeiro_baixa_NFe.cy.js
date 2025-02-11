@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiroFinanBaixa, prdSegundoFinanBaixa } from '../../../support/produtos_pedidos/prd_financeiro_baixa.js'
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -29,7 +29,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         it('1. Ped venda: produto 1860 0 0', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -46,7 +46,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -54,7 +54,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -74,7 +74,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         it('3. Ped venda: produto 1860 0 0', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -91,14 +91,14 @@ describe('Gerar pedido com financeiro na baixa', () => {
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             prdSegundoFinanBaixa() //PESQUISA PRODUTO - SEGUNDO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()

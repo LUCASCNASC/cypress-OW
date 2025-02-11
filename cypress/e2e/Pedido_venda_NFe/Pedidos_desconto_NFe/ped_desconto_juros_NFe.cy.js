@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoArredondarCimaBaixo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarValorParaBaixo, alterarValorParaCima } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -30,7 +30,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         it('1. Ped venda: produto 1860 0 0 - arredondar para baixo', () => {
 
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -52,7 +52,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
 
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA

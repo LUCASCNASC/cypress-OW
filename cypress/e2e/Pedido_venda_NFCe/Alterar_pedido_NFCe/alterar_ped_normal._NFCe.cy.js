@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiro } from '../../../support/produtos_pedidos/prd_normal';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          removerFormaPagamento } from '../../../support/para_pedidos/para_alterar_pedido.js';
@@ -32,7 +32,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()

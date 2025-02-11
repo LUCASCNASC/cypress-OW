@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
-         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
+         escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiro, prdSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
 import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVFOS } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  validarModalServVinculado, clicarOKServVinculado, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
@@ -32,7 +32,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
@@ -55,7 +55,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
@@ -63,7 +63,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -91,7 +91,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVFOS()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
@@ -116,7 +116,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             prdPromoPrazoPrestTercAbatVFOS()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
@@ -143,7 +143,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPartidaPresenComJurosPrestAbatVFOS()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado()
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS

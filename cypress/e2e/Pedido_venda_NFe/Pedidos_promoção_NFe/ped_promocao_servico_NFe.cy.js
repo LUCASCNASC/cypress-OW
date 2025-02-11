@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto, 
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, selecionarPrimeiraPromoProduto, 
          ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela } from '../../../support/produtos_pedidos/prd_normal.js';
@@ -35,7 +35,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado()
@@ -58,7 +58,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado()
@@ -98,7 +98,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
@@ -123,7 +123,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado()

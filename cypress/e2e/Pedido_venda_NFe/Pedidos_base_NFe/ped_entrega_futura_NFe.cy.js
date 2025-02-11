@@ -1,4 +1,4 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiroEntregaFut, prdSegundoEntregaFut } from '../../../support/produtos_pedidos/prd_entrega_futura.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -30,7 +30,7 @@ describe('Gerar pedido de entrega futura', () => {
         it('1. Ped venda: produto 1860 0 0', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
@@ -47,7 +47,7 @@ describe('Gerar pedido de entrega futura', () => {
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
@@ -55,7 +55,7 @@ describe('Gerar pedido de entrega futura', () => {
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -75,7 +75,7 @@ describe('Gerar pedido de entrega futura', () => {
         it('3. Ped venda: produto 1860 0 0', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -92,14 +92,14 @@ describe('Gerar pedido de entrega futura', () => {
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             prdSegundoEntregaFut() //PESQUISA PRODUTO - SEGUNDO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
-            addProduto()
+            clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora() //TRANSPORTADORA
