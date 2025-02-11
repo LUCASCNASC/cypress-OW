@@ -1,7 +1,7 @@
 import { validarComSaldo, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
          escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, compararSubtotalTotalFinanceiro, ticketPrestamistaPaginaFinal, 
          ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
 import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVF } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara, validarModalServVinculado, clicarOKServVinculado, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
@@ -29,7 +29,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
 
         it('1. Ped venda: produto 1860 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
     
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
@@ -52,7 +52,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
 
         it('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
     
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
@@ -60,7 +60,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             validarModalServVinculado()
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
-            produtoNormalSegundo()
+            prdSegundo()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
@@ -168,7 +168,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
 
         it('6. Ped venda: produto 1860 0 0, inclusão 3878, prestamista 161 (55,90), 4 parcelas no recebimento Presente com juros.', () => {
     
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO

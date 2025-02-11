@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, validarComSaldoCD, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoCDPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
+import { produtoCDPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
@@ -54,7 +54,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             addProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

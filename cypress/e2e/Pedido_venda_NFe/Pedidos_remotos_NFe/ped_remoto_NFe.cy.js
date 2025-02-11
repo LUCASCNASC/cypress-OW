@@ -1,6 +1,6 @@
 import { validarComSaldo, clienteComRota, trocarFilialFaturamento, validarSemSaldo, composicaoDesteKit, validarComSaldoCD, 
          escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/produtos_pedidos/prd_normal.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculadoRemoto } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
@@ -28,7 +28,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         //verificar
         it.skip('1. Ped venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
-            produtoNormalPrimeiro() //PRODUTO
+            prdPrimeiro() //PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -50,7 +50,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         //verificar
         it.skip('2. Ped venda remota: produtos 1860 0 0 e 1870 0 0', () => {
 
-            produtoNormalPrimeiro() //PRODUTO
+            prdPrimeiro() //PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -58,7 +58,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             addProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

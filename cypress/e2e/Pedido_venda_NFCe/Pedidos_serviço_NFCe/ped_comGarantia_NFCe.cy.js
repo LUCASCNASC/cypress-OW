@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -19,7 +19,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         cy.tituloPagina() 
         processoVendaNFCe()
         clienteComRota()
-        produtoNormalPrimeiro()
+        prdPrimeiro()
         validarComSaldo()
         escolherProdutoPesquisa()
         clicarVoltagemProduto() //PRODUTO
@@ -50,7 +50,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -91,7 +91,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             clicarOKServVinculado() //SERVIÇOS
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -132,7 +132,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             clicarOKServVinculado() //SERVIÇOS
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

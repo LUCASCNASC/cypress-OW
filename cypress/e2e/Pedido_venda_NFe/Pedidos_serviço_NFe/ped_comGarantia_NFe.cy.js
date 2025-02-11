@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, validarModalServVinculado, 
     clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validaAddGarantSepMesmoProc, validaAddGarantNaoSep, validaAddGarantSepTituloProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
@@ -22,7 +22,7 @@ describe('Gerar pedidos com Garantia', () => {
         cy.tituloPagina() 
         processoVendaNFe()
         clienteComRota()
-        produtoNormalPrimeiro()
+        prdPrimeiro()
         validarComSaldo()
         escolherProdutoPesquisa()
         clicarVoltagemProduto() //PRODUTO
@@ -54,7 +54,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -94,7 +94,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -134,7 +134,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -176,7 +176,7 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -215,7 +215,7 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -254,7 +254,7 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

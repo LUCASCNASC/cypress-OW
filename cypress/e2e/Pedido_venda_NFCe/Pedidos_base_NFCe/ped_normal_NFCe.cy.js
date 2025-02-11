@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento, 
          escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -20,7 +20,7 @@ describe('Gerar pedido normal com entrega', () => {
         cy.tituloPagina()
         processoVendaNFCe()
         clienteComRota()
-        produtoNormalPrimeiro()
+        prdPrimeiro()
         validarComSaldo()
         escolherProdutoPesquisa()
     })
@@ -52,7 +52,7 @@ describe('Gerar pedido normal com entrega', () => {
             addProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

@@ -1,7 +1,7 @@
 import { validarComSaldo, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
          escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, ticketPrestAdicionadoRecebAgrupado, compararSubtotalTotalFinanceiro,
          ticketPrestamistaPaginaFinal } from '../../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
 import { prdPromoPrazoParcelaPrest, prdSegPromoPrazoParcelaPrest, prdTerPromoPrazoParcelaPrest, prdPromoPartidaPrest } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  validarModalServVinculado, clicarOKServVinculado, okSeguroPrestamista, messPrestamistaRemovido, addSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
@@ -32,7 +32,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('1. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
@@ -40,7 +40,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             validarModalServVinculado()
             clicarOKServVinculado() //SERVIÇOS
             tirarEntrega()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -63,7 +63,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
@@ -71,7 +71,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -97,14 +97,14 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('3. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -127,7 +127,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('4. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
@@ -136,7 +136,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -159,7 +159,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('5. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
@@ -168,7 +168,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -191,7 +191,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('6. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente sem juros.', () => {
     
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
@@ -200,7 +200,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -410,7 +410,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             validarModalServVinculado()
             clicarOKServVinculado() //SERVIÇOS
             tirarEntrega()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -446,7 +446,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             validarModalServVinculado()
             clicarOKServVinculado() //SERVIÇOS
             tirarEntrega()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -486,7 +486,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             validarModalServVinculado()
             clicarOKServVinculado() //SERVIÇOS
             tirarEntrega()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -522,7 +522,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             validarModalServVinculado()
             clicarOKServVinculado() //SERVIÇOS
             tirarEntrega()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -593,7 +593,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -632,7 +632,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -676,7 +676,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -715,7 +715,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS)
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -759,7 +759,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -799,7 +799,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             clicarOKServVinculado() //SERVIÇOS)
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            produtoNormalPrimeiro()
+            prdPrimeiro()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()

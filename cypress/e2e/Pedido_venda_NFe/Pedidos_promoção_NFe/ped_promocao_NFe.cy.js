@@ -1,6 +1,6 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto,
          ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
+import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
          clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -111,7 +111,7 @@ describe('Gerar pedidos com promoção', () => {
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -148,7 +148,7 @@ describe('Gerar pedidos com promoção', () => {
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -281,7 +281,7 @@ describe('Gerar pedidos com promoção', () => {
             addProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 

@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
          escolherEntradaFormaPagamento, clicarGerarPagamento, primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, 
@@ -21,7 +21,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        produtoNormalPrimeiro()
+        prdPrimeiro()
         validarComSaldo()
         escolherProdutoPesquisa()
     })

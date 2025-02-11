@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, 
          clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddMODestacaNãoSepara, validaAddMONaoDestacaSepMesmoProc, validaAddMONaoDestacaSepProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
@@ -21,7 +21,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         cy.tituloPagina()
         processoVendaNFe()
         clienteComRota()
-        produtoNormalPrimeiro() //PRODUTO
+        prdPrimeiro() //PRODUTO
         validarComSaldo()
         escolherProdutoPesquisa()
         clicarVoltagemProduto()
@@ -53,7 +53,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //PRODUTO - SEGUNDO PRODUTO
+            prdSegundo() //PRODUTO - SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -93,7 +93,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //PRODUTO NORMAL
+            prdSegundo() //PRODUTO NORMAL
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -133,7 +133,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -175,7 +175,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMODestacaNãoSepara()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -214,7 +214,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -253,7 +253,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

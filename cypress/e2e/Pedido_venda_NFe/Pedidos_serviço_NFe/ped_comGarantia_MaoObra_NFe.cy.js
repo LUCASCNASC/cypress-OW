@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, maoObraDestacaNãoSepara, 
          maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarantNaoSep,validaAddGarantSepTituloProcDif, 
@@ -22,7 +22,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         cy.tituloPagina() 
         processoVendaNFe()
         clienteComRota()
-        produtoNormalPrimeiro() //PRODUTO
+        prdPrimeiro() //PRODUTO
         validarComSaldo()
         escolherProdutoPesquisa()
         clicarVoltagemProduto()
@@ -56,7 +56,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -98,7 +98,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -139,7 +139,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -180,7 +180,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -222,7 +222,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -264,7 +264,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -306,7 +306,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -348,7 +348,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -390,7 +390,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -434,7 +434,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -475,7 +475,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -516,7 +516,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -557,7 +557,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -598,7 +598,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -639,7 +639,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
+            prdSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -680,7 +680,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
-            produtoNormalSegundo() //PRODUTO
+            prdSegundo() //PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -720,7 +720,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
-            produtoNormalSegundo() //PRODUTO
+            prdSegundo() //PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
@@ -761,7 +761,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente()
             okServicoclicarOKServVinculadosVinculados() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
-            produtoNormalSegundo() //PRODUTO
+            prdSegundo() //PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()

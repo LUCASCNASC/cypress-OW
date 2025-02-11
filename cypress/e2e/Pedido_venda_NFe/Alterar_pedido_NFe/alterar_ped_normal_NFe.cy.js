@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
+import { prdPrimeiro, prdSegundo, prdKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
          adicionarEntrega, adicionarServico, clicarGerarParcelasAlterar, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
@@ -31,7 +31,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('1. Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO
+            prdPrimeiro() //PESQUISA PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
@@ -58,7 +58,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             clicarAumentoQtdProduto() //AUMENTANDO QUANTIDADE DO PRODUTO
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO - SEGUNDO
+            prdPrimeiro() //PESQUISA PRODUTO - SEGUNDO
             escolherProdutoPesquisa()//ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
@@ -66,7 +66,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(500)
 
-            produtoKitPrimeiro() //PESQUISA PRODUTO - KIT
+            prdKitPrimeiro() //PESQUISA PRODUTO - KIT
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - KIT
             clicarVoltagemProduto() //VOLTAGEM
             composicaoDesteKit()
@@ -85,7 +85,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO
+            prdPrimeiro() //PESQUISA PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
@@ -113,7 +113,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarRemoverProduto()
             clicarFecharIntencaoCompra()
 
-            produtoNormalSegundo() //PESQUISA PRODUTO - SEGUNDO 
+            prdSegundo() //PESQUISA PRODUTO - SEGUNDO 
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
@@ -122,7 +122,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO - TERCEIRO
+            prdPrimeiro() //PESQUISA PRODUTO - TERCEIRO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
@@ -144,7 +144,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         //erro de inconsistencia quando colocamos o serviço de entrega
         it.skip('3. Gerar pedido, alterar colocando garantia e entrega.', () => {
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO
+            prdPrimeiro() //PESQUISA PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
@@ -189,7 +189,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('4. Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
-            produtoNormalPrimeiro() //PESQUISA PRODUTO
+            prdPrimeiro() //PESQUISA PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //PRODUTO

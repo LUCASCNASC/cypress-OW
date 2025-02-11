@@ -1,5 +1,5 @@
 //Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoNormalPrimeiro (selector) {
+export function prdPrimeiro (selector) {
 
     const primeiro_produto_normal = '1860'
 
@@ -32,7 +32,7 @@ export function produtoNormalPrimeiro (selector) {
 //-----
 
 //Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoNormalSegundo (selector) {
+export function prdSegundo (selector) {
 
     const segundo_produto_normal = '1870'
 
@@ -66,7 +66,7 @@ export function produtoNormalSegundo (selector) {
 //-----
 
 //Escolher primeiro produto normal - 1862 0 0 - com Intercept - processo venda 9860 (NFe)
-export function produtoKitPrimeiro (selector) {
+export function prdKitPrimeiro (selector) {
 
     const primeiro_kit_normal = '1862'
 
