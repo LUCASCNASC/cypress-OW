@@ -378,6 +378,8 @@ export function inserirNumeroEndereco (selector) {
 //Preenchendo rota do cadastro de cliente
 export function cadastroRotaCliente (selector) {
 
+    const rota = '560';
+
     //Campo Código da rota - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="codigo_rota"]')
         .should('have.text', 'Código da rota') 
@@ -387,7 +389,7 @@ export function cadastroRotaCliente (selector) {
     cy.get('.rota-frete > .md-icon-right > .ng-binding')
         .should('be.visible')
         .and('have.value','')
-        .type('1', {force:true})
+        .type( rota, {force:true})
     cy.wait('@api_carrinho_modalRotas', { timeout: 40000 })
 
     //Lupa do campo Rota 1
@@ -403,23 +405,25 @@ export function cadastroRotaCliente (selector) {
     cy.get('#txtBuscaRotaModal')
         .should('be.visible')
         .and('have.value','')
-        .type('1', {force:true}, '{downarrow}')
+        .type( rota, {force:true}, '{downarrow}')
 
     //Lupa do campo Rota 2
     cy.get('md-icon[aria-label="Pesquisar"]')
         .should('be.visible')
         .and('not.have.attr', 'disabled')
 
-    cy.intercept('GET', '/services/v3/rota?idrota=1').as('api_id_rota_1')
+    cy.intercept('GET', '/services/v3/rota?idrota=560').as('api_id_rota_560')
     //Clicar na lupa do campo Rota 2
     cy.get('md-icon[ng-click="pesquisar()"]')
         .click({force:true})
-    cy.wait('@api_id_rota_1', { timeout: 40000 })
+    cy.wait('@api_id_rota_560', { timeout: 40000 })
     
     //Escolher última informação da rota
-    cy.get('v-pane-header.ng-scope > div')
-        .click({force:true})
+    cy.contains('560 - T.A. ROTA AUTOMAÇÃO MARINGÁ')
+        .click()
 
-    cy.contains('div', '1 - Centro')
-        .click({force:true})
+    cy.intercept('GET', '/services/v3/local_entrega?rota=560').as('api_local_entrega_560')
+    cy.contains('560 - T.A. CIDADE AUTOMAÇÃO')
+        .click()
+    cy.wait('@api_local_entrega_560', { timeout: 40000 })
 }

@@ -25,9 +25,11 @@ export function clicarAdicionarNovoTelefone (selector) {
         .should('be.visible')
         .and('not.have.attr', 'disabled')
 
+    cy.intercept('GET', '/views/cliente/ModalClienteTelefone.html').as('api_ModalClienteTelefone')
     //Botão +, para adicionar Rota
     cy.get('.layout-align-end-end > .md-fab')
         .click()
+    cy.wait('@api_ModalClienteTelefone', { timeout: 40000 })
 }
 
 //validar informações do modal Telefone enquanto ainda está vazio

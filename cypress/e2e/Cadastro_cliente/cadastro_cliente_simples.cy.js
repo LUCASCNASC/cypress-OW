@@ -4,8 +4,6 @@ import { iconeMenuOpcoes, opcaoClienteSimples, salvarClienteSimples, preencherNo
          desejoVisualizarCadastro, autorizarTrialAlterarDataNascimento, inserirPesquisarCEP } from '../../support/para_cadastro_cliente/para_cliente_simples';
 import { gerarCpf }  from '../../support/gerarDados';
 
-//
-//const cnpj = gerarCNPJ(); // Gera um CNPJ válido
 const Numeroalteracao = '113'
 const CEPalteracao = "87054320"
 const numeroCPF = "117.415.410-18" //usado apenas no teste de adicionar pelo botão na pesquisa de cliente
@@ -33,8 +31,8 @@ describe('Cadastrar cliente simples', () => {
             inserirPesquisarCEP()
             inserirNumeroEndereco()
             cadastroRotaCliente()
-            // salvarClienteSimples()
-            // mensagemPrimeiroRegistSalvoSucesso()
+            salvarClienteSimples()
+            mensagemPrimeiroRegistSalvoSucesso()
         })  
 
         it('2. Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
