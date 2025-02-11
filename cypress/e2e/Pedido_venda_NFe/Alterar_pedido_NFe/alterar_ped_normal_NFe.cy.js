@@ -8,7 +8,7 @@ import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVincula
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { clicarFinalizarPedido, validarPedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { clicarFinalizarPedido, validarPedidoGerado, validarPedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega, avancarParaParcelasAlterar,
          avancarFinalAlterar, avancarParaTransportadoraAlterar, avancarParcelasEntregaAlterar } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -80,7 +80,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
             clicarFinalizarPedido() //PROCESSO INCLUSÃO
-            pedidoAlteradoSucesso()
+            validarPedidoAlteradoSucesso()
         })
 
         it.skip('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
@@ -138,7 +138,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
             clicarFinalizarPedido() //FINAL PEDIDO
-            pedidoAlteradoSucesso()
+            validarPedidoAlteradoSucesso()
         })
 
         //erro de inconsistencia quando colocamos o serviço de entrega
@@ -180,7 +180,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             // escolherDuasParcelaPagamento()
             // avancarFinalAlterar()
             // clicarFinalizarPedido() //RESUMO
-            // pedidoAlteradoSucesso()
+            // validarPedidoAlteradoSucesso()
             
         })
     })
@@ -223,7 +223,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
             clicarFinalizarPedido() //FINAL PEDIDO
-            pedidoAlteradoSucesso()
+            validarPedidoAlteradoSucesso()
         })
     })
 })

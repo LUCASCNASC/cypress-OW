@@ -1,5 +1,5 @@
 //Função para validar modal de proposta de crédito gerada
-export function propostaCreditoGerada (selector) {
+export function validarPropCreditoGerada (selector) {
 
     //Card pedido gravado com sucesso - Título Pedido Concluído
     cy.get(':nth-child(5) > .md-transition-in > ._md > .md-toolbar-tools > .flex')
@@ -37,7 +37,7 @@ export function propostaCreditoGerada (selector) {
 }
 
 //Função para validar card de Pedido Concluído - alterado com sucesso
-export function pedidoAlteradoSucesso (selector) {
+export function validarPedidoAlteradoSucesso (selector) {
 
     //Card pedido gravado com sucesso - Título Pedido Concluído
     cy.get('.md-toolbar-tools h2.flex')
