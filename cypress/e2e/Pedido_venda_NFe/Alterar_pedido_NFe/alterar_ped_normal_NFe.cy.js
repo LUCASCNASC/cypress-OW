@@ -2,10 +2,10 @@ import { validarComSaldo, clienteComRota, composicaoDesteKit, escolherProdutoPes
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
-         adicionarEntrega, adicionarServico, botaoGerarParcelasAlterar, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
+         adicionarEntrega, adicionarServico, clicarGerarParcelasAlterar, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { garantiaSeparaMesmoProcesso, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento,
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado, validarPedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -40,7 +40,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
@@ -75,7 +75,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             tirarEntregaTerceiro()
             avancarParaParcelasAlterar()
 
-            botaoGerarParcelasAlterar() //GERAR PARCELAS
+            clicarGerarParcelasAlterar() //GERAR PARCELAS
             escolherFormaPagamentoPrincipalAlterar()
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
@@ -94,7 +94,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -132,7 +132,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             tirarEntregaSegundo() //ENTREGA PRODUTO
             avancarParaParcelasAlterar()
 
-            botaoGerarParcelasAlterar() //GERAR PARCELAS
+            clicarGerarParcelasAlterar() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipalAlterar() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
@@ -153,7 +153,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
@@ -174,7 +174,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarOKServVinculado()
             // avancarParaTransportadora()
             // avancarParcelasEntrega()
-            // botaoGerarParcelasAlterar() //GERAR PARCELAS
+            // clicarGerarParcelasAlterar() //GERAR PARCELAS
             // carregandoFormaPagamento()
             // escolherFormaPagamentoPrincipalAlterar()
             // escolherDuasParcelaPagamento()
@@ -198,7 +198,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarOKServVinculado()
             avancarParaTransportadora() //TRANSPORTADORA
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
@@ -218,7 +218,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
             removerFormaPagamento()
 
-            botaoGerarParcelasAlterar() //GERAR PARCELAS
+            clicarGerarParcelasAlterar() //GERAR PARCELAS
             escolherSegundaFormaPagamento() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()

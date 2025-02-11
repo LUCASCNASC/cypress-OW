@@ -4,7 +4,7 @@ import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloPro
     clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validaAddGarantSepMesmoProc, validaAddGarantNaoSep, validaAddGarantSepTituloProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { validarServicosVinculados } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
@@ -39,7 +39,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -63,7 +63,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -79,7 +79,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -103,7 +103,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -119,7 +119,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -143,7 +143,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -162,7 +162,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -185,7 +185,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -201,7 +201,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -224,7 +224,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -240,7 +240,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -262,7 +262,7 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()

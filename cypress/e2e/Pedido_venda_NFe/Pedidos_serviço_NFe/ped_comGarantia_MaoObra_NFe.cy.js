@@ -4,7 +4,7 @@ import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloPro
          maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarantNaoSep,validaAddGarantSepTituloProcDif, 
          validaAddMODestacaNãoSepara, validaAddMONaoDestacaSepMesmoProc, validaAddMONaoDestacaSepProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';         
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
@@ -40,7 +40,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -65,7 +65,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -82,7 +82,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -106,7 +106,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -123,7 +123,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -147,7 +147,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -164,7 +164,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -189,7 +189,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -206,7 +206,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -231,7 +231,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -248,7 +248,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -273,7 +273,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -290,7 +290,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -315,7 +315,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -332,7 +332,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -357,7 +357,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()  
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -374,7 +374,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -399,7 +399,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -419,7 +419,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
             avancarParaTransportadora()
             avancarParcelasEntrega()  
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -443,7 +443,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -460,7 +460,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -484,7 +484,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -501,7 +501,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -525,7 +525,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -542,7 +542,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -566,7 +566,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -583,7 +583,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -607,7 +607,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -624,7 +624,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -648,7 +648,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -665,7 +665,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -688,7 +688,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -705,7 +705,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -729,7 +729,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -746,7 +746,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -770,7 +770,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()

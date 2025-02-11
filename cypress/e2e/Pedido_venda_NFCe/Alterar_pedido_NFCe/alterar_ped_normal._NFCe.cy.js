@@ -4,7 +4,7 @@ import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escol
          removerFormaPagamento } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado, validarPedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
@@ -39,7 +39,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -61,7 +61,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             cy.wait(10000)
             avancarParcelasEntrega()
 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherSegundaFormaPagamento()
             escolherUmaParcelaPagamento()

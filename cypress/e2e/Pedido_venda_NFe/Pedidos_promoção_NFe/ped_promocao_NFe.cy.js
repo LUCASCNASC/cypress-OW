@@ -2,7 +2,7 @@ import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltage
          ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
-         botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
+         clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -189,7 +189,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             inserirDataAmanha1Vencimento()
             cy.wait(3000)
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
@@ -230,7 +230,7 @@ describe('Gerar pedidos com promoção', () => {
             // cy.wait(500)
 
             // inserirDataAmanha1Vencimento()
-            // botaoGerarParcelasAlterVencimento()
+            // clicarGerarParcAlterarVenc()
             // cy.wait(3000)
             // escolherFormaPagamentoPrincipal()
             // escolherDuasParcelaPagamento()

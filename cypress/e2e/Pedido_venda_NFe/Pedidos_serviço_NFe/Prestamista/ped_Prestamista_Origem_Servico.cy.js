@@ -4,7 +4,7 @@ import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support
 import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVFOS } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  validarModalServVinculado, clicarOKServVinculado, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento } from '../../../../support/para_pedidos/parcelas_pedido.js';
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherRecebFutComJurosPrestAbatOrigemPrd  } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../../support/para_pedidos/processos/processo_venda.js';
@@ -37,7 +37,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFutComJurosPrestAbatOrigemPrd()
             escolherQuatroParcelaPagamento()
@@ -68,7 +68,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFutComJurosPrestAbatOrigemPrd()
             escolherQuatroParcelaPagamento()

@@ -3,7 +3,7 @@ import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/pr
 import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, 
          clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddMODestacaNãoSepara, validaAddMONaoDestacaSepMesmoProc, validaAddMONaoDestacaSepProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda';
@@ -38,7 +38,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             validarServicosVinculados() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -62,7 +62,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -78,7 +78,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()  
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -102,7 +102,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA- SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -118,7 +118,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -142,7 +142,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -161,7 +161,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             validarServicosVinculados() ; validaAddMODestacaNãoSepara()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -184,7 +184,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -200,7 +200,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -223,7 +223,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -239,7 +239,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -262,7 +262,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()

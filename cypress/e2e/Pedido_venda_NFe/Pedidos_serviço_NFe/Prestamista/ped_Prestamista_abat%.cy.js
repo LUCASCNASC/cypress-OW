@@ -5,8 +5,8 @@ import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support
 import { prdPromoPrazoParcelaPrest, prdSegPromoPrazoParcelaPrest, prdTerPromoPrazoParcelaPrest, prdPromoPartidaPrest } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  validarModalServVinculado, clicarOKServVinculado, okSeguroPrestamista, messPrestamistaRemovido, addSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento, inserirDataAmanha1Vencimento, 
-         botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento, inserirData31Dias1Vencimento, agruparLancamentos } from '../../../../support/para_pedidos/parcelas_pedido.js';
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento, inserirDataAmanha1Vencimento, 
+         clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento, inserirData31Dias1Vencimento, agruparLancamentos } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, escolherRecebFuturoPrestamistaComJuros, escolherRecebFuturoPrestamistaSemJuros, 
          escolherRecebPresentePrestamista } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -49,7 +49,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo()
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFuturoPrestamistaComJuros()
             escolherQuatroParcelaPagamento()
@@ -80,7 +80,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo()
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebPresentePrestamista()
             escolherQuatroParcelaPagamento()
@@ -113,7 +113,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFuturoPrestamistaSemJuros()
             escolherQuatroParcelaPagamento()
@@ -145,7 +145,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFuturoPrestamistaComJuros()
             escolherQuatroParcelaPagamento()
@@ -177,7 +177,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebFuturoPrestamistaSemJuros()
             escolherQuatroParcelaPagamento()
@@ -209,7 +209,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherRecebPresentePrestamista()
             escolherQuatroParcelaPagamento()
@@ -322,7 +322,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.wait('@api_pagamentoPedido', { timeout: 40000 })
             inserirDataAmanha1Vencimento()
             cy.wait(4000)
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.contains('3876 - T.A. A Receber Futuro - para Prestamista sem juros').click()
             cy.intercept('/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
             cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
@@ -355,7 +355,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             //ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirDataAmanha1Vencimento()
             cy.wait(4000)
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.contains('3874 - T.A. A Receber Futuro - para Prestamista').click()
             cy.intercept('/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
             cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
@@ -425,7 +425,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirDataAmanha1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
@@ -461,7 +461,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirData31Dias1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             escolherRecebFuturoPrestamistaComJuros()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
             agruparLancamentos()
@@ -501,7 +501,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirDataAmanha1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
@@ -537,7 +537,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirData31Dias1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             escolherRecebFuturoPrestamistaSemJuros()
@@ -608,7 +608,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirDataAmanha1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             escolherFormaPagamentoPrincipal()
@@ -648,7 +648,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirData31Dias1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             escolherRecebFuturoPrestamistaComJuros()
@@ -691,7 +691,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirDataAmanha1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             escolherFormaPagamentoPrincipal()
@@ -731,7 +731,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirData31Dias1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             escolherRecebFuturoPrestamistaSemJuros()
@@ -775,7 +775,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirDataAmanha1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             escolherSegundaFormaPagamento()
@@ -816,7 +816,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             inserirData31Dias1Vencimento()
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             escolherRecebPresentePrestamista()

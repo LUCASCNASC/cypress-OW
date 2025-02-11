@@ -1,7 +1,7 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
          escolherEntradaFormaPagamento, clicarGerarPagamento, primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, 
          selecionarLancAgrupar, clicarAgrupar } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -38,13 +38,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
-            botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherRecebDebitoPOS()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(500)
-            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)
@@ -65,7 +65,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             escolherEntradaFormaPagamento()
             clicarGerarPagamento()
             cy.wait(400)
-            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)
@@ -85,13 +85,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
-            botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(500)
-            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)
@@ -112,13 +112,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
-            botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(500)
-            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)
@@ -139,13 +139,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
-            botaoGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             cy.wait(3000)
             escolherUmaParcelaPagamento()
             cy.wait(500)
-            botaoGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)

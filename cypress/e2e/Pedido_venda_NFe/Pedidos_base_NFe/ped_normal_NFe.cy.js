@@ -1,6 +1,6 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, compararSubtotalTotalFinanceiro } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, clicarGerarPagamento,
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, clicarGerarPagamento,
          escolherDuasParcelaPagamento, escolherEntradaFormaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
@@ -35,7 +35,7 @@ describe('Gerar pedido normal', () => {
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -60,7 +60,7 @@ describe('Gerar pedido normal', () => {
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
@@ -79,7 +79,7 @@ describe('Gerar pedido normal', () => {
             avancarParaParcelas()
             escolherEntradaFormaPagamento() //GERAR PARCELAS
             clicarGerarPagamento()
-            botaoGerarParcelas()
+            clicarGerarParcelas()
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
@@ -99,7 +99,7 @@ describe('Gerar pedido normal', () => {
             clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() 
             escolherDuasParcelaPagamento()
@@ -123,7 +123,7 @@ describe('Gerar pedido normal', () => {
             clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() 
             escolherDuasParcelaPagamento()
@@ -142,7 +142,7 @@ describe('Gerar pedido normal', () => {
             avancarParcelasEntrega()
             escolherEntradaFormaPagamento() //GERAR PARCELAS
             clicarGerarPagamento()
-            botaoGerarParcelas()
+            clicarGerarParcelas()
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() 
             escolherDuasParcelaPagamento()

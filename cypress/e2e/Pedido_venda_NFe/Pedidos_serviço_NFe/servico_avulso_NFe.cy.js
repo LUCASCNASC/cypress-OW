@@ -1,5 +1,5 @@
 import { clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoAvulso, escolherServicoPesquisa, 
-         messItemAdicionadoSucesso, servicoAdicionadoCarrinho, botaoGerarParcelasServicos } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+         messItemAdicionadoSucesso, servicoAdicionadoCarrinho, clicarGerarParcelas } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -29,7 +29,7 @@ describe('Venda de serviço avulso', () => {
             clicarCarrinhoCompras() //CARRINHO COMPRAS
             servicoAdicionadoCarrinho()
             botaoAvancarPedido()
-            botaoGerarParcelasServicos() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
