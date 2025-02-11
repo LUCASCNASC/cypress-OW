@@ -3,7 +3,7 @@ import { produtoArredondarCimaBaixo } from '../../../support/produtos_pedidos/pr
 import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarValorParaBaixo, alterarValorParaCima } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -31,8 +31,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -53,8 +53,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS

@@ -1,6 +1,6 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
          escolherEntradaFormaPagamento, clicarGerarPagamento, primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, 
          selecionarLancAgrupar, clicarAgrupar } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -32,8 +32,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
@@ -58,8 +58,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             escolherEntradaFormaPagamento()
@@ -79,8 +79,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
@@ -106,8 +106,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
@@ -133,8 +133,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO

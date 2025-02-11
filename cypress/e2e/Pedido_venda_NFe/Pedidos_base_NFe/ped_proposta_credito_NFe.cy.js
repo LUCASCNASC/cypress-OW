@@ -2,7 +2,7 @@ import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltage
 import { produtoNormalPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagaPropCredito } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado, validarPropCreditoGerada } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -30,8 +30,8 @@ describe('Gerar pedido com proposta de crédito', () => {
 
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS

@@ -2,7 +2,7 @@ import { clienteComRota, iconeMenuOpcoes, clienteCompletoOpcaoMenu, clicarMenuCl
          aguardeCarregandoServico, botaoAddMaoObra, botaoAddGarantias, clicarAddGarantias, modalGarantiasServicosVinculados,
          messServicoAdicionadoSucesso, botaoSalvarServico, messAguardeCarregando, messRegistroSalvoSucesso, messGarantiaJaAdicionada,
          clicarCarrinhoCompras, botaoAvancarPedido } from '../../../support/para_pedidos/para_servicos_avulsos.js';
-import { garantiaSeparaMesmoProcesso, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { garantiaSeparaMesmoProcesso, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -52,7 +52,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             clicarAddGarantias()
             modalGarantiasServicosVinculados()
             garantiaSeparaMesmoProcesso() //clicar na primeira garantia - Garantia Separa Mesmo Processo
-            okServicosVinculados()
+            clicarOKServVinculado()
             messServicoAdicionadoSucesso()
             botaoSalvarServico()
             messAguardeCarregando()

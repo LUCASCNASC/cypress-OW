@@ -1,7 +1,7 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
-import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, 
-         okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, validarModalServVinculado, 
+    clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validaAddGarantSepMesmoProc, validaAddGarantNaoSep, validaAddGarantSepTituloProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { validarServicosVinculados } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -27,7 +27,7 @@ describe('Gerar pedidos com Garantia', () => {
         escolherProdutoPesquisa()
         clicarVoltagemProduto() //PRODUTO
         addProduto()
-        modalServicosVinculados()
+        validarModalServVinculado()
     })   
 
     context('Sem entrega/processo 9860 - caminho feliz', () => {
@@ -35,7 +35,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            okServicosVinculados() //SERVIÇOS 
+            clicarOKServVinculado() //SERVIÇOS 
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -51,7 +51,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
@@ -59,8 +59,8 @@ describe('Gerar pedidos com Garantia', () => {
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -75,7 +75,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('3. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
@@ -91,7 +91,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('4. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
@@ -99,8 +99,8 @@ describe('Gerar pedidos com Garantia', () => {
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
             botaoGerarParcelas() //GERAR PARCELAS
@@ -115,7 +115,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -131,7 +131,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
@@ -139,8 +139,8 @@ describe('Gerar pedidos com Garantia', () => {
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -158,7 +158,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('7. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -174,15 +174,15 @@ describe('Gerar pedidos com Garantia', () => {
         it('8. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados() //SERVIÇOS
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -197,7 +197,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('9. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -213,15 +213,15 @@ describe('Gerar pedidos com Garantia', () => {
         it('10. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados() //SERVIÇOS
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -236,7 +236,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('11. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega() 
@@ -252,14 +252,14 @@ describe('Gerar pedidos com Garantia', () => {
         it('12. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

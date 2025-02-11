@@ -3,7 +3,7 @@ import { validarComSaldo, clienteComRota, selecionarPrimeiraPromoProduto, clicar
          ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
 import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVF } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
-import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { garantiaNaoSepara, validarModalServVinculado, clicarOKServVinculado, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherRecebPresentePrestAbatValFixo, escolherRecebFutComJurosPrestAbatValFixo } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -34,8 +34,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados()
-            okServicosVinculados() //SERVIÇOS
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -57,16 +57,16 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados()
+            validarModalServVinculado()
             garantiaNaoSepara()
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo()
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados()
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -93,8 +93,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVF()
             addProduto()
-            modalServicosVinculados()
-            okServicosVinculados() //SERVIÇOS
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
@@ -118,9 +118,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVF()
             addProduto()
-            modalServicosVinculados()
+            validarModalServVinculado()
             garantiaNaoSepara()
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -145,9 +145,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVF()
             addProduto()
-            modalServicosVinculados()
+            validarModalServVinculado()
             garantiaNaoSepara()
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -173,8 +173,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados()
-            okServicosVinculados() //SERVIÇOS
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

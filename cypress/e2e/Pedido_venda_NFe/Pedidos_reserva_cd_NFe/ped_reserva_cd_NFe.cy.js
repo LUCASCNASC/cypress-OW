@@ -2,7 +2,7 @@ import { validarComSaldo, clienteComRota, validarComSaldoCD, escolherProdutoPesq
 import { produtoCDPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -30,8 +30,8 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -50,16 +50,16 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -81,8 +81,8 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -101,15 +101,15 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

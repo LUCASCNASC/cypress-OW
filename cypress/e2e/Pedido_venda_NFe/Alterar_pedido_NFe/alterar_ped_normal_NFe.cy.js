@@ -4,7 +4,7 @@ import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escol
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
          adicionarEntrega, adicionarServico, botaoGerarParcelasAlterar, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
-import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { garantiaSeparaMesmoProcesso, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -36,8 +36,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -62,7 +62,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherProdutoPesquisa()//ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            okServicosVinculados()
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(500)
 
@@ -71,7 +71,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarVoltagemProduto() //VOLTAGEM
             composicaoDesteKit()
             addProduto()
-            okServicosVinculados()
+            clicarOKServVinculado()
             tirarEntregaTerceiro()
             avancarParaParcelasAlterar()
 
@@ -90,8 +90,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -118,8 +118,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
 
             produtoNormalPrimeiro() //PESQUISA PRODUTO - TERCEIRO
@@ -127,8 +127,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
             avancarParaParcelasAlterar()
 
@@ -149,8 +149,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -171,7 +171,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             adicionarEntrega() 
             adicionarServico()
             garantiaSeparaMesmoProcesso()
-            okServicosVinculados()
+            clicarOKServVinculado()
             // avancarParaTransportadora()
             // avancarParcelasEntrega()
             // botaoGerarParcelasAlterar() //GERAR PARCELAS
@@ -194,8 +194,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //VOLTAGEM
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora() //TRANSPORTADORA
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

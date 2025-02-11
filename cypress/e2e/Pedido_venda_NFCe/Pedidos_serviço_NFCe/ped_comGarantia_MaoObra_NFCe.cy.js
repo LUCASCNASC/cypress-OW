@@ -1,7 +1,7 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, maoObraDestacaNãoSepara, 
-         maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+         maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
@@ -25,7 +25,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
         escolherProdutoPesquisa()
         clicarVoltagemProduto()
         addProduto()
-        modalServicosVinculados()
+        validarModalServVinculado()
     })
 
     context('Com entrega/processo 9890 - caminho feliz', () => {
@@ -34,7 +34,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -52,14 +52,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -77,7 +77,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -95,14 +95,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -120,7 +120,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -138,14 +138,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -163,7 +163,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -181,14 +181,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -206,7 +206,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -224,14 +224,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -249,7 +249,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -267,14 +267,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -292,7 +292,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -310,13 +310,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -334,7 +334,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -352,14 +352,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -377,7 +377,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaTituloProcessoDiferente //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaProcessoDiferente()
-            okServicosVinculados()
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -395,14 +395,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             garantiaSeparaTituloProcessoDiferente//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaProcessoDiferente()
-            okServicosVinculados() //SERVIÇOS
+            clicarOKServVinculado() //SERVIÇOS
             produtoNormalSegundo() //PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()

@@ -3,7 +3,7 @@ import { validarComSaldo, clienteComRota, trocarFilialFaturamento, validarSemSal
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculadosRemotos } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculadoRemoto } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -34,8 +34,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             clicarVoltagemProduto()
             trocarFilialFaturamento()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculadosRemotos()
+            validarModalServVinculado() //SERVIÇOS
+            clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -56,16 +56,16 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             clicarVoltagemProduto()
             trocarFilialFaturamento()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculadosRemotos()
+            validarModalServVinculado() //SERVIÇOS
+            clicarOKServVinculadoRemoto()
             produtoNormalSegundo() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculadosRemotos()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -87,8 +87,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             trocarFilialFaturamento()
             composicaoDesteKit()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculadosRemotos()
+            validarModalServVinculado() //SERVIÇOS
+            clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -112,8 +112,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             clicarVoltagemProduto()
             trocarFilialFaturamento()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculadosRemotos()
+            validarModalServVinculado() //SERVIÇOS
+            clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

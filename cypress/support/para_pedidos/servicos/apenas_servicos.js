@@ -62,7 +62,7 @@ export function maoObraNaoDestacaSeparaProcessoDiferente (selector) {
 //------------------- RELACIONADOS A SERVIÇOS ------
 
 //Validações card de serviços
-export function modalServicosVinculados (selector) {
+export function validarModalServVinculado (selector) {
 
     //Título do modal - Serviços Vinculados
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -102,7 +102,7 @@ export function modalServicosVinculados (selector) {
 }
 
 //botão OK modal Serviços Vinculados - com intercept
-export function okServicosVinculados (selector) {
+export function clicarOKServVinculado (selector) {
 
     cy.intercept('POST', '/services/v3/pedido_calcular_frete').as('api_pedido_calcular_frete')
 
@@ -120,7 +120,7 @@ export function okServicosVinculados (selector) {
 }
 
 //botão OK modal Serviços Vinculados de pedidos remotos
-export function okServicosVinculadosRemotos (selector) {
+export function clicarOKServVinculadoRemoto (selector) {
 
     //validando botão
     cy.get('button[ng-click="salvar()"]')

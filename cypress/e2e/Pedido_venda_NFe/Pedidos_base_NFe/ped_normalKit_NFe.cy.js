@@ -2,7 +2,7 @@ import { validarComSaldo, clienteComRota, composicaoDesteKit, escolherProdutoPes
 import { produtoKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -31,8 +31,8 @@ describe('Gerar pedido normal', () => {
             clicarVoltagemProduto() //PRODUTO
             composicaoDesteKit()
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -52,8 +52,8 @@ describe('Gerar pedido normal', () => {
             clicarVoltagemProduto() //PRODUTO
             composicaoDesteKit()
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

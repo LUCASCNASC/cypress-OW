@@ -3,7 +3,7 @@ import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltage
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
@@ -36,9 +36,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            okServicosVinculados()
+            clicarOKServVinculado()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
@@ -59,9 +59,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            okServicosVinculados()
+            clicarOKServVinculado()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
@@ -99,8 +99,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
@@ -124,9 +124,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
             addProduto()
-            modalServicosVinculados() //SERVICOS
+            validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            okServicosVinculados()
+            clicarOKServVinculado()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()

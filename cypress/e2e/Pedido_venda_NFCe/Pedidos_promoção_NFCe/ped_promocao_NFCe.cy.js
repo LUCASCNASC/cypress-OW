@@ -3,7 +3,7 @@ import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltage
 import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
@@ -35,8 +35,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -64,8 +64,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
@@ -99,8 +99,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()

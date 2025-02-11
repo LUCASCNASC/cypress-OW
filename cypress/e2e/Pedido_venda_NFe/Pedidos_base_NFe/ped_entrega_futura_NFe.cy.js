@@ -2,7 +2,7 @@ import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltage
 import { prdPrimeiroEntregaFut, prdSegundoEntregaFut } from '../../../support/produtos_pedidos/prd_entrega_futura.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoEntregaFuturaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -31,8 +31,8 @@ describe('Gerar pedido de entrega futura', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -48,16 +48,16 @@ describe('Gerar pedido de entrega futura', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             prdSegundoEntregaFut() //PESQUISA PRODUTO - SEGUNDO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS  - SEGUNDO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -76,8 +76,8 @@ describe('Gerar pedido de entrega futura', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -93,15 +93,15 @@ describe('Gerar pedido de entrega futura', () => {
                       
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             prdSegundoEntregaFut() //PESQUISA PRODUTO - SEGUNDO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
             addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS - SEGUNDO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora() //TRANSPORTADORA
             avancarParcelasEntrega() 
             botaoGerarParcelas() //GERAR PARCELAS

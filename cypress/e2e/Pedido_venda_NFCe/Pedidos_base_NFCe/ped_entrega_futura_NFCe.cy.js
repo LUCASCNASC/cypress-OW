@@ -2,7 +2,7 @@ import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltage
 import { prdPrimeiroEntregaFut, prdSegundoEntregaFut } from '../../../support/produtos_pedidos/prd_entrega_futura.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoEntregaFuturaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -30,8 +30,8 @@ describe('Gerar pedido de entrega futura com entrega', () => {
                       
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA)
             escolherTransportadora()
@@ -49,15 +49,15 @@ describe('Gerar pedido de entrega futura com entrega', () => {
                       
             clicarVoltagemProduto() //PRODUTO
             addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             prdSegundoEntregaFut() //SEGUNDO PRODUTO
             validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
-            modalServicosVinculados() //SERVICOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora() 
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
