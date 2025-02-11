@@ -7,7 +7,7 @@ import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSe
 import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherRecebPresentePrestAbatValFixo, escolherRecebFutComJurosPrestAbatValFixo } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
-import { botaoFinalizarPedido, pedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { clicarFinalizarPedido, validarPedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../../support/para_pedidos/processos/processo_venda.js';
 import { escolherRecebPromoPrazoFutComJurosPrestAbatVF } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -46,8 +46,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
@@ -77,8 +77,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ticketPrestamistaAdicionado()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
@@ -105,8 +105,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('4. Ped venda: produto 1923 0 0 + garantia Não separa (promo a prazo 172 - isentar juros serviços), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
@@ -132,8 +132,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
@@ -159,8 +159,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
@@ -185,8 +185,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
     })

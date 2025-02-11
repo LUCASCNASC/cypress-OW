@@ -3,7 +3,7 @@ import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/pr
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -42,8 +42,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -66,8 +66,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('3. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
@@ -83,8 +83,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('4. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
@@ -107,8 +107,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
@@ -124,8 +124,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
@@ -147,8 +147,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 })

@@ -4,7 +4,7 @@ import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDe
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal} from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -44,8 +44,8 @@ describe('Gerar pedido de venda com desconto', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('2. Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
@@ -67,8 +67,8 @@ describe('Gerar pedido de venda com desconto', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('3. Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
@@ -90,8 +90,8 @@ describe('Gerar pedido de venda com desconto', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 })

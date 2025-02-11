@@ -3,7 +3,7 @@ import { clienteComRota, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancar
 import { iconeMenuOpcoes } from '../../../support/para_menus/para_menu_opcoes.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaServicoAvulso } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 
@@ -42,8 +42,8 @@ describe('Venda de serviço avulso Host - 104', () => {
             escolherUmaParcelaPagamento()
             cy.wait(400)
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 })

@@ -8,7 +8,7 @@ import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVincula
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { botaoFinalizarPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { clicarFinalizarPedido, validarPedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega, avancarParaParcelasAlterar,
          avancarFinalAlterar, avancarParaTransportadoraAlterar, avancarParcelasEntregaAlterar } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -45,8 +45,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //FINAL PEDIDO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -79,7 +79,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipalAlterar()
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
-            botaoFinalizarPedido() //PROCESSO INCLUSÃO
+            clicarFinalizarPedido() //PROCESSO INCLUSÃO
             pedidoAlteradoSucesso()
         })
 
@@ -99,8 +99,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -137,7 +137,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipalAlterar() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
-            botaoFinalizarPedido() //FINAL PEDIDO
+            clicarFinalizarPedido() //FINAL PEDIDO
             pedidoAlteradoSucesso()
         })
 
@@ -158,8 +158,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //FINAL PEDIDO
-            pedidoGerado()
+            clicarFinalizarPedido() //FINAL PEDIDO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -179,7 +179,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             // escolherFormaPagamentoPrincipalAlterar()
             // escolherDuasParcelaPagamento()
             // avancarFinalAlterar()
-            // botaoFinalizarPedido() //RESUMO
+            // clicarFinalizarPedido() //RESUMO
             // pedidoAlteradoSucesso()
             
         })
@@ -203,8 +203,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //FINAL PEDIDO
-            pedidoGerado()
+            clicarFinalizarPedido() //FINAL PEDIDO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -222,7 +222,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherSegundaFormaPagamento() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
-            botaoFinalizarPedido() //FINAL PEDIDO
+            clicarFinalizarPedido() //FINAL PEDIDO
             pedidoAlteradoSucesso()
         })
     })

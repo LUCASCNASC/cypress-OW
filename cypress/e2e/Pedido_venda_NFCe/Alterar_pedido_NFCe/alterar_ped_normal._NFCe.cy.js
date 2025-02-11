@@ -6,7 +6,7 @@ import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedid
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { botaoFinalizarPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { clicarFinalizarPedido, validarPedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -44,8 +44,8 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -66,7 +66,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             escolherSegundaFormaPagamento()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
+            clicarFinalizarPedido() //RESUMO
             pedidoAlteradoSucesso()
         })
     })

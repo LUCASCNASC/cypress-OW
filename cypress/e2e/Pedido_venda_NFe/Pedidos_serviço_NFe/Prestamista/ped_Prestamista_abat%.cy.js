@@ -9,7 +9,7 @@ import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPaga
          botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento, inserirData31Dias1Vencimento, agruparLancamentos } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, escolherRecebFuturoPrestamistaComJuros, escolherRecebFuturoPrestamistaSemJuros, 
          escolherRecebPresentePrestamista } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
-import { botaoFinalizarPedido, pedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { clicarFinalizarPedido, validarPedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../../support/para_pedidos/processos/processo_venda.js';
 import { escolherRecebPromoPrazoFuturoComJurosPrest, escolherRecebPromoPrazoFuturoSemJurosPrest, escolherRecebPromoPartidaPresentePrest } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -57,8 +57,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente.', () => {
@@ -88,8 +88,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
@@ -121,8 +121,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('4. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
@@ -153,8 +153,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('5. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
@@ -185,8 +185,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('6. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente sem juros.', () => {
@@ -217,8 +217,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
@@ -245,8 +245,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('8. Ped venda: produto 1918 0 0 (promoção a prazo 167), inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
@@ -270,8 +270,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('9. Ped venda: produto 1918 0 0 (promoção a prazo 167), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
@@ -296,8 +296,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
@@ -331,8 +331,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('11. Ped venda: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
@@ -364,8 +364,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
         
         it('12. Ped venda: produto 1920 0 0 (promoção partida 169), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
@@ -391,8 +391,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
@@ -430,8 +430,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherUmaParcelaPagamento()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('14. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
@@ -470,8 +470,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('15. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
@@ -506,8 +506,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherUmaParcelaPagamento()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('16. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
@@ -548,8 +548,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('17. Ped venda: produto 1921 0 0 (promo a prazo 170), inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
@@ -573,8 +573,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
@@ -615,8 +615,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherUmaParcelaPagamento()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('19. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
@@ -659,8 +659,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('20. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
@@ -698,8 +698,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherUmaParcelaPagamento()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('21. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
@@ -742,8 +742,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('22. Ped venda: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3874), prestamista 158, 4 parcelas no recebimento Presente.', () => {
@@ -782,8 +782,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             escolherUmaParcelaPagamento()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
         it('23. Ped venda: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3875 agrupar), prestamista 158, 4 parcelas no recebimento Presente.', () => {
@@ -827,8 +827,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ticketPrestAdicionadoRecebAgrupado()
             avancarFinal()
             ticketPrestamistaPaginaFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 })

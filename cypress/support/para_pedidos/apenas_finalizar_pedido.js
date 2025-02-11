@@ -83,7 +83,7 @@ export function pedidoAlteradoSucesso (selector) {
 }
 
 //Botão para finalizar o pedido
-export function botaoFinalizarPedido (selector) {
+export function clicarFinalizarPedido (selector) {
 
     cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar')
 
@@ -134,7 +134,7 @@ export function botaoFinalizarPedido (selector) {
 }
 
 //Função para validar card de Pedido Concluído
-export function pedidoGerado (selector) {
+export function validarPedidoGerado (selector) {
 
     //Card pedido gravado com sucesso - Título Pedido Concluído
     cy.get('.md-toolbar-tools h2.flex')
