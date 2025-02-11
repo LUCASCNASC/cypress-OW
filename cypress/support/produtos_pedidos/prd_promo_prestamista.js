@@ -216,7 +216,7 @@ export function prdPromoPrazoPrestTercAbatVF (selector) {
 }
 
 //Escolher prestamista abatimento Valor Fixo - 1925 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo - Origem produto
-export function prdPromoPrazoPrestTercAbatVFOP (selector) {
+export function prdPromoPrazoPrestTercAbatVFOS (selector) {
 
     const primeiro_produto_normal = '1925'
 

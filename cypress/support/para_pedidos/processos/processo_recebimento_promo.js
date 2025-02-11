@@ -150,7 +150,7 @@ export function escolherRecebPromoPartidaPresentePrest (selector) {
 //--------------- Abatimento Valor Fixo 99,30 - Origem Produto - processo de inclusão PROMOÇÃO
 
 //selecionando forma de pagamento "3881 - T.A. A Receb Fut com juros - Prest. Origem Produto" da promoção
-export function escolherRecebPromoPrazoFutComJurosPrestAbatVFOP (selector) {
+export function escolherRecebPromoPrazoFutComJurosPrestAbatVFOS (selector) {
 
     //botão voltar
     cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
@@ -173,7 +173,7 @@ export function escolherRecebPromoPrazoFutComJurosPrestAbatVFOP (selector) {
 }
 
 //selecionando forma de pagamento "3882 - T.A. A Receb Presen com juros - Prest. Origem Prd" da promoção
-export function escolherRecebPromoPartidaPresenComJurosPrestAbatVFOP (selector) {
+export function escolherRecebPromoPartidaPresenComJurosPrestAbatVFOS (selector) {
 
     //botão voltar
     cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')

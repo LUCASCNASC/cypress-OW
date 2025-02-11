@@ -1,18 +1,18 @@
 import { saldodisponivel, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
          escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
-import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVFOP } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
+import { prdPromoPrazoPrestPrimAbatVF, prdPromoPrazoPrestSegAbatVF, prdPromoPrazoPrestTercAbatVFOS } from '../../../../support/produtos_pedidos/prd_promo_prestamista.js';
 import { garantiaNaoSepara,  modalServicosVinculados, okServicosVinculados, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherRecebFutComJurosPrestAbatOrigemPrd  } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaNFe } from '../../../../support/para_pedidos/processos/processo_venda.js';
-import { escolherRecebPromoPrazoFutComJurosPrestAbatVFOP, escolherRecebPromoPartidaPresenComJurosPrestAbatVFOP } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
+import { escolherRecebPromoPrazoFutComJurosPrestAbatVFOS, escolherRecebPromoPartidaPresenComJurosPrestAbatVFOS } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
 
-describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem Produto (162)', () => {
+describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem Serviço (162)', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -24,7 +24,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         clienteComRota()
     })   
 
-    context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo - Origem Produto (162)', () => {
+    context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo - Origem Serviço (162)', () => {
 
         it('1. Ped venda: produto 1860 0 0, inclusão 3881, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
@@ -90,7 +90,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPrazoFutComJurosPrestAbatVFOP()
+            escolherRecebPromoPrazoFutComJurosPrestAbatVFOS()
             addProduto()
             modalServicosVinculados()
             okServicosVinculados() //SERVIÇOS
@@ -115,7 +115,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
-            prdPromoPrazoPrestTercAbatVFOP()
+            prdPromoPrazoPrestTercAbatVFOS()
             addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
@@ -137,12 +137,12 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
 
         it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3882, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
 
-            prdPromoPrazoPrestTercAbatVFOP()
+            prdPromoPrazoPrestTercAbatVFOS()
             saldodisponivel()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPartidaPresenComJurosPrestAbatVFOP()
+            escolherRecebPromoPartidaPresenComJurosPrestAbatVFOS()
             addProduto()
             modalServicosVinculados()
             garantiaNaoSepara()
