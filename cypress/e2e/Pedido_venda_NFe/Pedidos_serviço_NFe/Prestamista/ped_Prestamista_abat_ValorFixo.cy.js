@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
+import { validarComSaldo, clienteComRota, selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado,
          escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, compararSubtotalTotalFinanceiro, ticketPrestamistaPaginaFinal, 
          ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../../support/produtos_pedidos/prd_normal.js';
@@ -30,7 +30,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('1. Ped venda: produto 1860 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
     
             produtoNormalPrimeiro()
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()
@@ -53,7 +53,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
     
             produtoNormalPrimeiro()
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()
@@ -61,7 +61,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             garantiaNaoSepara()
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo()
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()
@@ -87,7 +87,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('3. Ped venda: produto 1922 0 0 (promo a prazo 171), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
     
             prdPromoPrazoPrestPrimAbatVF()
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
@@ -112,7 +112,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('4. Ped venda: produto 1923 0 0 + garantia Não separa (promo a prazo 172 - isentar juros serviços), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
 
             prdPromoPrazoPrestSegAbatVF()
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
@@ -139,7 +139,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
 
             prdPromoPrazoPrestTercAbatVF()
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
@@ -169,7 +169,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('6. Ped venda: produto 1860 0 0, inclusão 3878, prestamista 161 (55,90), 4 parcelas no recebimento Presente com juros.', () => {
     
             produtoNormalPrimeiro()
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() //PRODUTO
             addProduto()

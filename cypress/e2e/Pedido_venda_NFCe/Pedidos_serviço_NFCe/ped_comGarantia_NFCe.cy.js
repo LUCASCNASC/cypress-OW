@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -20,7 +20,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         processoVendaNFCe()
         clienteComRota()
         produtoNormalPrimeiro()
-        saldodisponivel()
+        validarComSaldo()
         escolherProdutoPesquisa()
         clicarVoltagemProduto() //PRODUTO
         addProduto()
@@ -51,7 +51,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -92,7 +92,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -133,7 +133,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             okServicosVinculados() //SERVIÇOS
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()

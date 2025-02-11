@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
@@ -32,7 +32,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         it.skip('1. Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
             produtoNormalPrimeiro() //PESQUISA PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
@@ -86,7 +86,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         it.skip('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
             produtoNormalPrimeiro() //PESQUISA PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
@@ -114,7 +114,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarFecharIntencaoCompra()
 
             produtoNormalSegundo() //PESQUISA PRODUTO - SEGUNDO 
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
@@ -123,7 +123,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             tirarEntregaSegundo() //ENTREGA PRODUTO
 
             produtoNormalPrimeiro() //PESQUISA PRODUTO - TERCEIRO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
@@ -145,7 +145,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         it.skip('3. Gerar pedido, alterar colocando garantia e entrega.', () => {
 
             produtoNormalPrimeiro() //PESQUISA PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
@@ -190,7 +190,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         it.skip('4. Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
             produtoNormalPrimeiro() //PESQUISA PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //PRODUTO
             addProduto()

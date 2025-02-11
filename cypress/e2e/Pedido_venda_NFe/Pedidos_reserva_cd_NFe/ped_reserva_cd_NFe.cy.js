@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, saldoCDDisponivel, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, validarComSaldoCD, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoCDPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -26,7 +26,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         it('1. Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
 
             produtoCDPrimeiro() //PRODUTO
-            saldoCDDisponivel()
+            validarComSaldoCD()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -46,7 +46,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         it('2. Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
 
             produtoCDPrimeiro() //PRODUTO
-            saldoCDDisponivel()
+            validarComSaldoCD()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -54,7 +54,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -77,7 +77,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         it('3. Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
             produtoCDPrimeiro() //PRODUTO
-            saldoCDDisponivel()
+            validarComSaldoCD()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -97,14 +97,14 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         it('4. Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
             
             produtoCDPrimeiro() //PRODUTO
-            saldoCDDisponivel()
+            validarComSaldoCD()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()

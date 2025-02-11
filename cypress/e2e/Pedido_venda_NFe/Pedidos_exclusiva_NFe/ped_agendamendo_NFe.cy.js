@@ -1,4 +1,4 @@
-import { clienteComRota, saldodisponivel, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, semSaldodisponivel,
+import { clienteComRota, validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, validarSemSaldo,
          trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas } from '../../../support/produtos_pedidos/prd_exclusiva';
@@ -29,14 +29,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('1. Vender um produto normal (com saldo e com entrega, 15 dias) e um kit remoto (2 composições, sem saldo e sem a receber, 20 dias).', () => {
 
             primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             kitSemSaldoAgendamento() //PRODUTO KIT
-            semSaldodisponivel()
+            validarSemSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
@@ -58,14 +58,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('2. Vender um produto normal (com saldo e com entrega) e um kit com composição 6 volumes (data atual + parametro 552/ 5 dias).', () => {
 
             primeiroPrdNormalExclusiva() //PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()      
             clicarVoltagemProduto() 
             addProduto()
             modalServicosVinculados() //SERVICOS
             okServicosVinculados()
             kitVolumes() //PRODUTO KIT
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -89,7 +89,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('3. Vender um produto (sem saldo e com saldo a receber para 10 dias, e com entrega), e ter um agendamento para a data de previsão.', () => {
 
             produtoSaldoReceber() //PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
             addProduto()
@@ -130,7 +130,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('5. Pedido de venda normal: produto 1896 0 0 (sem entrega)', () => {
     
             primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()

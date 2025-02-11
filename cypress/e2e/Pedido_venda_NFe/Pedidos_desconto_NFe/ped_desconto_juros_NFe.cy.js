@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoArredondarCimaBaixo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarValorParaBaixo, alterarValorParaCima } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -21,7 +21,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         processoVendaNFe()
         clienteComRota()
         produtoArredondarCimaBaixo()
-        saldodisponivel()
+        validarComSaldo()
         escolherProdutoPesquisa()
     })
 

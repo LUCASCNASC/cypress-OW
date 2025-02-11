@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento,
@@ -22,7 +22,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         processoVendaNFe()
         clienteComRota()
         produtoNormalPrimeiro()
-        saldodisponivel()
+        validarComSaldo()
         escolherProdutoPesquisa()
     })
 

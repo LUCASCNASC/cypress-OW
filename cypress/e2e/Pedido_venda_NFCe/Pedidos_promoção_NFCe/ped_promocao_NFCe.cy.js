@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto,
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto,
          ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
@@ -29,7 +29,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             produtoPromoPartida() //PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao() 
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto()
@@ -58,7 +58,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao() 
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
@@ -93,7 +93,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto() //PROMOÇÃO

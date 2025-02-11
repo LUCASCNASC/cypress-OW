@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto, 
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, selecionarPrimeiraPromoProduto, 
          ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela } from '../../../support/produtos_pedidos/prd_normal.js';
@@ -29,7 +29,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('1. Ped venda com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
     
             prd1PrazoParcela() //PRODUTO PROMOÇÃO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             tipoServicoIsentoValidar()
@@ -52,7 +52,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('2. Ped venda com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
     
             prd2PrazoParcela() //PRODUTO PROMOCAO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             tipoServicoIsentoValidar()
@@ -93,7 +93,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('3. Ped venda com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
     
             prd3PrazoParcela() //PRODUTO PROMOCAO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             selecionarPrimeiraPromoProduto()
@@ -117,7 +117,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('4. Ped venda com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
     
             prd4PrazoParcela() //PRODUTO PROMOCAO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
             tipoServicoIsentoValidar()

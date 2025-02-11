@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiroFinanBaixa, prdSegundoFinanBaixa } from '../../../support/produtos_pedidos/prd_financeiro_baixa.js'
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -20,7 +20,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         processoFinanceiroBaixaNFe()
         clienteComRota()
         prdPrimeiroFinanBaixa() //PESQUISA PRODUTO
-        saldodisponivel()
+        validarComSaldo()
         escolherProdutoPesquisa() //ESCOLHER PRODUTO
     })
   
@@ -51,7 +51,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             okServicosVinculados()
             tirarEntrega() //ENTREGA
             prdSegundoFinanBaixa() //PESQUISA PRODUTO - SEGUNDO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()
@@ -95,7 +95,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             modalServicosVinculados() //SERVIÇOS
             okServicosVinculados()
             prdSegundoFinanBaixa() //PESQUISA PRODUTO - SEGUNDO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
             addProduto()

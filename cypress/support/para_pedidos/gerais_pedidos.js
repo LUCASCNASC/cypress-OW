@@ -1,7 +1,7 @@
 //------------------- SALDOS DO PRODUTOS ------
 
 //Validando produto com saldo disponível local
-export function saldodisponivel (selector) {
+export function validarComSaldo (selector) {
     
     //Validando imagem
     cy.get('.resultado-imagem')
@@ -37,7 +37,7 @@ export function saldodisponivel (selector) {
 }
 
 //Validando produto com saldo disponível no CD 
-export function saldoCDDisponivel (selector) {
+export function validarComSaldoCD (selector) {
     
     //Validando imagem
     cy.get('.resultado-imagem')
@@ -73,7 +73,7 @@ export function saldoCDDisponivel (selector) {
 }
 
 //Validando produto com saldo indisponível
-export function semSaldodisponivel (selector) {
+export function validarSemSaldo (selector) {
     
     //Validando imagem
     cy.get('.resultado-imagem')

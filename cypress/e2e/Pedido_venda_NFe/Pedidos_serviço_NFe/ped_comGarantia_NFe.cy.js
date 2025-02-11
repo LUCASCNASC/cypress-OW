@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoNormalPrimeiro, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, modalServicosVinculados, 
          okServicosVinculados } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
@@ -23,7 +23,7 @@ describe('Gerar pedidos com Garantia', () => {
         processoVendaNFe()
         clienteComRota()
         produtoNormalPrimeiro()
-        saldodisponivel()
+        validarComSaldo()
         escolherProdutoPesquisa()
         clicarVoltagemProduto() //PRODUTO
         addProduto()
@@ -55,7 +55,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -95,7 +95,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantNaoSep()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -135,7 +135,7 @@ describe('Gerar pedidos com Garantia', () => {
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             tirarEntrega() //ENTREGA
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -177,7 +177,7 @@ describe('Gerar pedidos com Garantia', () => {
             okServicosVinculados() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -216,7 +216,7 @@ describe('Gerar pedidos com Garantia', () => {
             okServicosVinculados() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()
@@ -255,7 +255,7 @@ describe('Gerar pedidos com Garantia', () => {
             okServicosVinculados() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             addProduto()

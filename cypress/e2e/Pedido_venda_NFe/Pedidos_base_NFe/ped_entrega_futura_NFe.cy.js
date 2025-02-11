@@ -1,4 +1,4 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { prdPrimeiroEntregaFut, prdSegundoEntregaFut } from '../../../support/produtos_pedidos/prd_entrega_futura.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -21,7 +21,7 @@ describe('Gerar pedido de entrega futura', () => {
         processoEntregaFuturaNFe()
         clienteComRota()
         prdPrimeiroEntregaFut() //PESQUISA PRODUTO
-        saldodisponivel()
+        validarComSaldo()
         escolherProdutoPesquisa() //ESCOLHER PRODUTO
     })
 
@@ -52,7 +52,7 @@ describe('Gerar pedido de entrega futura', () => {
             okServicosVinculados()
             tirarEntrega() //ENTREGA PRODUTO
             prdSegundoEntregaFut() //PESQUISA PRODUTO - SEGUNDO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
             addProduto()
@@ -96,7 +96,7 @@ describe('Gerar pedido de entrega futura', () => {
             modalServicosVinculados() //MODAL SERVIÇOS
             okServicosVinculados()
             prdSegundoEntregaFut() //PESQUISA PRODUTO - SEGUNDO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM - SEGUNDO
             addProduto()

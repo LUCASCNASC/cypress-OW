@@ -1,4 +1,4 @@
-import { clienteComRota, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoHost, saldoDisponivelServico,
+import { clienteComRota, clicarServicosMenu, clicarCarrinhoCompras, botaoAvancarPedido, produtoServicoHost,
          escolherServicoPesquisa, escolherValorRecarga } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { iconeMenuOpcoes } from '../../../support/para_menus/para_menu_opcoes.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -28,7 +28,6 @@ describe('Venda de serviço avulso Host - 104', () => {
             clicarServicosMenu()
             cy.wait(400)
             produtoServicoHost() //PRODUTO
-            saldoDisponivelServico()
             escolherServicoPesquisa()
             cy.wait(200)
             escolherValorRecarga()
