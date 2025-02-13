@@ -1,5 +1,5 @@
 import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiroFinanBaixa, prdSegundoFinanBaixa } from '../../../support/produtos_pedidos/prd_financeiro_baixa.js'
+import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js'
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
@@ -19,7 +19,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.tituloPagina()
         processoFinanceiroBaixaNFe()
         clienteComRota()
-        prdPrimeiroFinanBaixa() //PESQUISA PRODUTO
+        prdPrimeiro() //PESQUISA PRODUTO
         validarComSaldo()
         escolherProdutoPesquisa() //ESCOLHER PRODUTO
     })
@@ -50,7 +50,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            prdSegundoFinanBaixa() //PESQUISA PRODUTO - SEGUNDO
+            prdSegundo() //PESQUISA PRODUTO - SEGUNDO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
@@ -94,7 +94,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
-            prdSegundoFinanBaixa() //PESQUISA PRODUTO - SEGUNDO
+            prdSegundo() //PESQUISA PRODUTO - SEGUNDO
             validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM

@@ -1,196 +1,202 @@
-//--------------- Promoções para arquivos apenas de promoção e promoção serviço -----------
+export class recebimentoPromo {
 
-//selecionando forma de pagamento "3860 - T.A. A Receber Futuro" da promoção
-export function escolherRecebPromoPagPrincipal (selector) {
+    constructor(page) {
+        this.page = page
+    }
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+    //--------------- Promoções para arquivos apenas de promoção e promoção serviço -----------
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+    //selecionando forma de pagamento "3860 - T.A. A Receber Futuro" da promoção
+    async PagPrincipal (selector) {
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //botão voltar
+        cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3860 - T.A. A Receber Futuro   Futuro"]')
-        .click()
-}
+        //título modal formas de pagamento
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('contain', 'Formas de pagamento')
 
-//selecionando forma de pagamento "3866 - T.A. A Receber Prestamista" da promoção
-export function escolherRecebReceberPrestamista (selector) {
+        //botão X
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //forma de pagamento da promoção
+        cy.get('button[aria-label="3860 - T.A. A Receber Futuro   Futuro"]')
+            .click()
+    }
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+    //selecionando forma de pagamento "3866 - T.A. A Receber Prestamista" da promoção
+    async ReceberPrest (selector) {
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //botão voltar
+        cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3866 - T.A. A Receber Prestamista   Futuro"]')
-        .click()
-}
+        //título modal formas de pagamento
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('contain', 'Formas de pagamento')
+
+        //botão X
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
+
+        //forma de pagamento da promoção
+        cy.get('button[aria-label="3866 - T.A. A Receber Prestamista   Futuro"]')
+            .click()
+    }
 
 
-//--------------- Promoções para arquivos apenas de promoção com prestamista-----------
+    //--------------- Promoções para arquivos apenas de promoção com prestamista-----------
 
 
+    //--------------- Abatimento Valor Fixo 55,90 - processo de inclusão PROMOÇÃO
 
-//--------------- Abatimento Valor Fixo 55,90 - processo de inclusão PROMOÇÃO
+    //selecionando forma de pagamento "3880 - T.A. T.A. A Receb Fut com juros - Prest. Valor Fixo" da promoção
+    async PrazoFutComJurosPrestAbatVF (selector) {
 
-//selecionando forma de pagamento "3880 - T.A. T.A. A Receb Fut com juros - Prest. Valor Fixo" da promoção
-export function escolherRecebPromoPrazoFutComJurosPrestAbatVF (selector) {
+        //botão voltar
+        cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //título modal formas de pagamento
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('contain', 'Formas de pagamento')
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+        //botão X
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //forma de pagamento da promoção
+        cy.get('button[aria-label="3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo   Futuro"]')
+            .click()
+    }
 
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo   Futuro"]')
-        .click()
-}
+    //--------------- Abatimento % - processo de inclusão PROMOÇÃO
 
-//--------------- Abatimento % - processo de inclusão PROMOÇÃO
+    //selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
+    async PrazoFutComJurosPrest (selector) {
 
-//selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
-export function escolherRecebPromoPrazoFuturoComJurosPrest (selector) {
+        //botão voltar
+        cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //título modal formas de pagamento
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('contain', 'Formas de pagamento')
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+        //botão X
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //forma de pagamento da promoção
+        cy.get('button[aria-label="3874 - T.A. A Receber Futuro - para Prestamista   Futuro"]')
+            .click()
+    }
 
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3874 - T.A. A Receber Futuro - para Prestamista   Futuro"]')
-        .click()
-}
+    //selecionando forma de pagamento "3876 - T.A. A Receber Futuro - para Prestamista sem juros" da promoção
+    async PrazoFutSemJurosPrest (selector) {
 
-//selecionando forma de pagamento "3876 - T.A. A Receber Futuro - para Prestamista sem juros" da promoção
-export function escolherRecebPromoPrazoFuturoSemJurosPrest (selector) {
+        //botão voltar
+        cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //título modal formas de pagamento
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('contain', 'Formas de pagamento')
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+        //botão X
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //forma de pagamento da promoção
+        cy.get('button[aria-label="3876 - T.A. A Receber Futuro - para Prestamista sem juros   Futuro"]')
+            .click()
+    }
 
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3876 - T.A. A Receber Futuro - para Prestamista sem juros   Futuro"]')
-        .click()
-}
+    //selecionando forma de pagamento "3875 - T.A.A Receber Presente CDCI - para Prestamista" da promoção
+    async PartPresentePrest (selector) {
 
-//selecionando forma de pagamento "3875 - T.A.A Receber Presente CDCI - para Prestamista" da promoção
-export function escolherRecebPromoPartidaPresentePrest (selector) {
+        //botão voltar
+        cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //título modal formas de pagamento
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('contain', 'Formas de pagamento')
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+        //botão X
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //forma de pagamento da promoção
+        cy.get('button[aria-label="3875 - T.A.A Receber Presente CDCI - para Prestamista   Presente"]')
+            .click()
+    }
 
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3875 - T.A.A Receber Presente CDCI - para Prestamista   Presente"]')
-        .click()
-}
+    //--------------- Abatimento Valor Fixo 99,30 - Origem Produto - processo de inclusão PROMOÇÃO
 
-//--------------- Abatimento Valor Fixo 99,30 - Origem Produto - processo de inclusão PROMOÇÃO
+    //selecionando forma de pagamento "3881 - T.A. A Receb Fut com juros - Prest. Origem Produto" da promoção
+    async PrazoFutComJurosPrestAbatVFOS (selector) {
 
-//selecionando forma de pagamento "3881 - T.A. A Receb Fut com juros - Prest. Origem Produto" da promoção
-export function escolherRecebPromoPrazoFutComJurosPrestAbatVFOS (selector) {
+        //botão voltar
+        cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //título modal formas de pagamento
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('contain', 'Formas de pagamento')
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+        //botão X
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //forma de pagamento da promoção
+        cy.get('button[aria-label="3881 - T.A. A Receb Fut com juros - Prest. Origem Produto   Futuro"]')
+            .click()
+    }
 
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3881 - T.A. A Receb Fut com juros - Prest. Origem Produto   Futuro"]')
-        .click()
-}
+    //selecionando forma de pagamento "3882 - T.A. A Receb Presen com juros - Prest. Origem Prd" da promoção
+    async PartPresenteComJurosPrestAbatVFOS (selector) {
 
-//selecionando forma de pagamento "3882 - T.A. A Receb Presen com juros - Prest. Origem Prd" da promoção
-export function escolherRecebPromoPartidaPresenComJurosPrestAbatVFOS (selector) {
+        //botão voltar
+        cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+        //título modal formas de pagamento
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('contain', 'Formas de pagamento')
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+        //botão X
+        cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3882 - T.A. A Receb Presen com juros - Prest. Origem Prd   Presente"]')
-        .click()
+        //forma de pagamento da promoção
+        cy.get('button[aria-label="3882 - T.A. A Receb Presen com juros - Prest. Origem Prd   Presente"]')
+            .click()
+    }
 }

@@ -1,247 +1,254 @@
-//Escolher produto prestamista abatimento % - 1918 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
-export function prdPromoPrazoParcelaPrest (selector) {
+export class produtoPromo {
 
-    const primeiro_produto_normal = '1918'
+    constructor(page) {
+        this.page = page
+    }
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1918.*/).as('apiConsultaProdutos_PromoPrazoParcelaPrest')
+    //Escolher produto prestamista abatimento % - 1918 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
+    async PrazoParcelaPrest (selector) {
 
-    //Limpando campo com o produto anterior
-    cy.get('#searchText')
-        .clear()
-        .wait(100)
-        .should('have.value', '')
+        const primeiro_produto_normal = '1918'
 
-    //Validando campo Buscar produto
-    cy.get('#searchText')
-        .should('be.visible')
-        .and('not.be.disabled')
+        cy.intercept('GET', /\/consultaprodutos\/.*1918.*/).as('apiConsultaProdutos_PromoPrazoParcelaPrest')
 
-    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="searchText"]')
-        .should('have.text', 'Buscar produtos')
+        //Limpando campo com o produto anterior
+        cy.get('#searchText')
+            .clear()
+            .wait(100)
+            .should('have.value', '')
 
-    //Prenchendo campo Buscar produto
-    cy.get('#searchText')
-        .type(primeiro_produto_normal)
-        .wait(100)
-        .should('have.value', primeiro_produto_normal)
+        //Validando campo Buscar produto
+        cy.get('#searchText')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    cy.wait('@apiConsultaProdutos_PromoPrazoParcelaPrest', { timeout: 40000 })
-}
+        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="searchText"]')
+            .should('have.text', 'Buscar produtos')
 
-//Escolher produto prestamista abatimento % - 1919 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
-export function prdSegPromoPrazoParcelaPrest (selector) {
+        //Prenchendo campo Buscar produto
+        cy.get('#searchText')
+            .type(primeiro_produto_normal)
+            .wait(100)
+            .should('have.value', primeiro_produto_normal)
 
-    const primeiro_produto_normal = '1919'
+        cy.wait('@apiConsultaProdutos_PromoPrazoParcelaPrest', { timeout: 40000 })
+    }
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1919.*/).as('apiConsultaProdutos_SegPromoPrazoParcelaPrest')
+    //Escolher produto prestamista abatimento % - 1919 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
+    async SegPrazoParcelaPrest (selector) {
 
-    //Limpando campo com o produto anterior
-    cy.get('#searchText')
-        .clear()
-        .wait(100)
-        .should('have.value', '')
+        const primeiro_produto_normal = '1919'
 
-    //Validando campo Buscar produto
-    cy.get('#searchText')
-        .should('be.visible')
-        .and('not.be.disabled')
+        cy.intercept('GET', /\/consultaprodutos\/.*1919.*/).as('apiConsultaProdutos_SegPromoPrazoParcelaPrest')
 
-    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="searchText"]')
-        .should('have.text', 'Buscar produtos')
+        //Limpando campo com o produto anterior
+        cy.get('#searchText')
+            .clear()
+            .wait(100)
+            .should('have.value', '')
 
-    //Prenchendo campo Buscar produto
-    cy.get('#searchText')
-        .type(primeiro_produto_normal)
-        .wait(100)
-        .should('have.value', primeiro_produto_normal)
+        //Validando campo Buscar produto
+        cy.get('#searchText')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    cy.wait('@apiConsultaProdutos_SegPromoPrazoParcelaPrest', { timeout: 40000 })
-}
+        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="searchText"]')
+            .should('have.text', 'Buscar produtos')
 
-//Escolher prestamista abatimento % com promoção a prazo - 1920 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
-export function prdPromoPartidaPrest (selector) {
+        //Prenchendo campo Buscar produto
+        cy.get('#searchText')
+            .type(primeiro_produto_normal)
+            .wait(100)
+            .should('have.value', primeiro_produto_normal)
 
-    const primeiro_produto_normal = '1920'
+        cy.wait('@apiConsultaProdutos_SegPromoPrazoParcelaPrest', { timeout: 40000 })
+    }
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1920.*/).as('apiConsultaProdutos_PromoPartidaPrest')
+    //Escolher prestamista abatimento % com promoção a prazo - 1920 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
+    async PartPrest (selector) {
 
-    //Limpando campo com o produto anterior
-    cy.get('#searchText')
-        .clear()
-        .wait(100)
-        .should('have.value', '')
+        const primeiro_produto_normal = '1920'
 
-    //Validando campo Buscar produto
-    cy.get('#searchText')
-        .should('be.visible')
-        .and('not.be.disabled')
+        cy.intercept('GET', /\/consultaprodutos\/.*1920.*/).as('apiConsultaProdutos_PromoPartidaPrest')
 
-    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="searchText"]')
-        .should('have.text', 'Buscar produtos')
+        //Limpando campo com o produto anterior
+        cy.get('#searchText')
+            .clear()
+            .wait(100)
+            .should('have.value', '')
 
-    //Prenchendo campo Buscar produto
-    cy.get('#searchText')
-        .type(primeiro_produto_normal)
-        .wait(100)
-        .should('have.value', primeiro_produto_normal)
+        //Validando campo Buscar produto
+        cy.get('#searchText')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    cy.wait('@apiConsultaProdutos_PromoPartidaPrest', { timeout: 40000 })
-}
+        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="searchText"]')
+            .should('have.text', 'Buscar produtos')
 
-//Escolher prestamista abatimento % normal - 1921 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
-export function prdTerPromoPrazoParcelaPrest (selector) {
+        //Prenchendo campo Buscar produto
+        cy.get('#searchText')
+            .type(primeiro_produto_normal)
+            .wait(100)
+            .should('have.value', primeiro_produto_normal)
 
-    const primeiro_produto_normal = '1921'
+        cy.wait('@apiConsultaProdutos_PromoPartidaPrest', { timeout: 40000 })
+    }
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1921.*/).as('apiConsultaProdutos_TerPromoPrazoParcelaPrest')
+    //Escolher prestamista abatimento % normal - 1921 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
+    async TerPrazoParcelaPrest (selector) {
 
-    //Limpando campo com o produto anterior
-    cy.get('#searchText')
-        .clear()
-        .wait(100)
-        .should('have.value', '')
+        const primeiro_produto_normal = '1921'
 
-    //Validando campo Buscar produto
-    cy.get('#searchText')
-        .should('be.visible')
-        .and('not.be.disabled')
+        cy.intercept('GET', /\/consultaprodutos\/.*1921.*/).as('apiConsultaProdutos_TerPromoPrazoParcelaPrest')
 
-    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="searchText"]')
-        .should('have.text', 'Buscar produtos')
+        //Limpando campo com o produto anterior
+        cy.get('#searchText')
+            .clear()
+            .wait(100)
+            .should('have.value', '')
 
-    //Prenchendo campo Buscar produto
-    cy.get('#searchText')
-        .type(primeiro_produto_normal)
-        .wait(100)
-        .should('have.value', primeiro_produto_normal)
+        //Validando campo Buscar produto
+        cy.get('#searchText')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    cy.wait('@apiConsultaProdutos_TerPromoPrazoParcelaPrest', { timeout: 40000 })
-}
+        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="searchText"]')
+            .should('have.text', 'Buscar produtos')
 
-//Escolher prestamista abatimento Valor Fixo - 1922 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
-export function prdPromoPrazoPrestPrimAbatVF (selector) {
+        //Prenchendo campo Buscar produto
+        cy.get('#searchText')
+            .type(primeiro_produto_normal)
+            .wait(100)
+            .should('have.value', primeiro_produto_normal)
 
-    const primeiro_produto_normal = '1922'
+        cy.wait('@apiConsultaProdutos_TerPromoPrazoParcelaPrest', { timeout: 40000 })
+    }
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1922.*/).as('apiConsultaProdutos_PromoPrazoPrestPrimeiroAbatVF')
+    //Escolher prestamista abatimento Valor Fixo - 1922 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
+    async PrazoPrestPrimAbatVF (selector) {
 
-    //Limpando campo com o produto anterior
-    cy.get('#searchText')
-        .clear()
-        .wait(100)
-        .should('have.value', '')
+        const primeiro_produto_normal = '1922'
 
-    //Validando campo Buscar produto
-    cy.get('#searchText')
-        .should('be.visible')
-        .and('not.be.disabled')
+        cy.intercept('GET', /\/consultaprodutos\/.*1922.*/).as('apiConsultaProdutos_PromoPrazoPrestPrimeiroAbatVF')
 
-    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="searchText"]')
-        .should('have.text', 'Buscar produtos')
+        //Limpando campo com o produto anterior
+        cy.get('#searchText')
+            .clear()
+            .wait(100)
+            .should('have.value', '')
 
-    //Prenchendo campo Buscar produto
-    cy.get('#searchText')
-        .type(primeiro_produto_normal)
-        .wait(100)
-        .should('have.value', primeiro_produto_normal)
+        //Validando campo Buscar produto
+        cy.get('#searchText')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    cy.wait('@apiConsultaProdutos_PromoPrazoPrestPrimeiroAbatVF', { timeout: 40000 })
-}
+        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="searchText"]')
+            .should('have.text', 'Buscar produtos')
 
-//Escolher prestamista abatimento Valor Fixo - 1923 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
-export function prdPromoPrazoPrestSegAbatVF (selector) {
+        //Prenchendo campo Buscar produto
+        cy.get('#searchText')
+            .type(primeiro_produto_normal)
+            .wait(100)
+            .should('have.value', primeiro_produto_normal)
 
-    const primeiro_produto_normal = '1923'
+        cy.wait('@apiConsultaProdutos_PromoPrazoPrestPrimeiroAbatVF', { timeout: 40000 })
+    }
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1923.*/).as('apiConsultaProdutos_PromoPrazoPrestSegAbatVF')
+    //Escolher prestamista abatimento Valor Fixo - 1923 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
+    async PrazoPrestSegAbatVF (selector) {
 
-    //Limpando campo com o produto anterior
-    cy.get('#searchText')
-        .clear()
-        .wait(100)
-        .should('have.value', '')
+        const primeiro_produto_normal = '1923'
 
-    //Validando campo Buscar produto
-    cy.get('#searchText')
-        .should('be.visible')
-        .and('not.be.disabled')
+        cy.intercept('GET', /\/consultaprodutos\/.*1923.*/).as('apiConsultaProdutos_PromoPrazoPrestSegAbatVF')
 
-    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="searchText"]')
-        .should('have.text', 'Buscar produtos')
+        //Limpando campo com o produto anterior
+        cy.get('#searchText')
+            .clear()
+            .wait(100)
+            .should('have.value', '')
 
-    //Prenchendo campo Buscar produto
-    cy.get('#searchText')
-        .type(primeiro_produto_normal)
-        .wait(100)
-        .should('have.value', primeiro_produto_normal)
+        //Validando campo Buscar produto
+        cy.get('#searchText')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    cy.wait('@apiConsultaProdutos_PromoPrazoPrestSegAbatVF', { timeout: 40000 })
-}
+        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="searchText"]')
+            .should('have.text', 'Buscar produtos')
 
-//Escolher prestamista abatimento Valor Fixo - 1924 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
-export function prdPromoPrazoPrestTercAbatVF (selector) {
+        //Prenchendo campo Buscar produto
+        cy.get('#searchText')
+            .type(primeiro_produto_normal)
+            .wait(100)
+            .should('have.value', primeiro_produto_normal)
 
-    const primeiro_produto_normal = '1924'
+        cy.wait('@apiConsultaProdutos_PromoPrazoPrestSegAbatVF', { timeout: 40000 })
+    }
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1924.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVF')
+    //Escolher prestamista abatimento Valor Fixo - 1924 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
+    async PrazoPrestTercAbatVF (selector) {
 
-    //Limpando campo com o produto anterior
-    cy.get('#searchText')
-        .clear()
-        .wait(100)
-        .should('have.value', '')
+        const primeiro_produto_normal = '1924'
 
-    //Validando campo Buscar produto
-    cy.get('#searchText')
-        .should('be.visible')
-        .and('not.be.disabled')
+        cy.intercept('GET', /\/consultaprodutos\/.*1924.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVF')
 
-    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="searchText"]')
-        .should('have.text', 'Buscar produtos')
+        //Limpando campo com o produto anterior
+        cy.get('#searchText')
+            .clear()
+            .wait(100)
+            .should('have.value', '')
 
-    //Prenchendo campo Buscar produto
-    cy.get('#searchText')
-        .type(primeiro_produto_normal)
-        .wait(100)
-        .should('have.value', primeiro_produto_normal)
+        //Validando campo Buscar produto
+        cy.get('#searchText')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVF', { timeout: 40000 })
-}
+        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="searchText"]')
+            .should('have.text', 'Buscar produtos')
 
-//Escolher prestamista abatimento Valor Fixo - 1925 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo - Origem produto
-export function prdPromoPrazoPrestTercAbatVFOS (selector) {
+        //Prenchendo campo Buscar produto
+        cy.get('#searchText')
+            .type(primeiro_produto_normal)
+            .wait(100)
+            .should('have.value', primeiro_produto_normal)
 
-    const primeiro_produto_normal = '1925'
+        cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVF', { timeout: 40000 })
+    }
 
-    cy.intercept('GET', /\/consultaprodutos\/.*1925.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP')
+    //Escolher prestamista abatimento Valor Fixo - 1925 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo - Origem produto
+    async PrazoPrestTercAbatVFOS (selector) {
 
-    //Limpando campo com o produto anterior
-    cy.get('#searchText')
-        .clear()
-        .wait(100)
-        .should('have.value', '')
+        const primeiro_produto_normal = '1925'
 
-    //Validando campo Buscar produto
-    cy.get('#searchText')
-        .should('be.visible')
-        .and('not.be.disabled')
+        cy.intercept('GET', /\/consultaprodutos\/.*1925.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP')
 
-    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-    cy.get('label[for="searchText"]')
-        .should('have.text', 'Buscar produtos')
+        //Limpando campo com o produto anterior
+        cy.get('#searchText')
+            .clear()
+            .wait(100)
+            .should('have.value', '')
 
-    //Prenchendo campo Buscar produto
-    cy.get('#searchText')
-        .type(primeiro_produto_normal)
-        .wait(100)
-        .should('have.value', primeiro_produto_normal)
+        //Validando campo Buscar produto
+        cy.get('#searchText')
+            .should('be.visible')
+            .and('not.be.disabled')
 
-    cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP', { timeout: 40000 })
+        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="searchText"]')
+            .should('have.text', 'Buscar produtos')
+
+        //Prenchendo campo Buscar produto
+        cy.get('#searchText')
+            .type(primeiro_produto_normal)
+            .wait(100)
+            .should('have.value', primeiro_produto_normal)
+
+        cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP', { timeout: 40000 })
+    }
 }

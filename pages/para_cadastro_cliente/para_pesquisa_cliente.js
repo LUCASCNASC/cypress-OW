@@ -1,216 +1,223 @@
-//validando mensagem "Aguarde carregando..."
-export function mensagemAguardeCarregando (selector) {
+export class pesquisaCliente {
 
-    //Mensagem de "Aguarde carregando..."
-    cy.get('.md-dialog-fullscreen > .carregando')
-        .should('be.visible')
-        .and('have.text', ' Aguarde carregando...')
-}
+    constructor(page) {
+        this.page = page
+    }
 
-//clicando na lupa pesquisa de cliente
-export function clicarLupaPesquisaCliente (selector) {
+    //validando mensagem "Aguarde carregando..."
+    async messAguardeCarregando (selector) {
 
-    cy.intercept('GET', '/views/cliente/modalClientes.html').as('api_cliente_modalClientes')
-    //clicar na lupa de pesquisa de clientes
-    cy.get('.md-block > .ng-binding')
-        .should('be.visible')
-        .click({force:true})
-    cy.wait('@api_cliente_modalClientes', { timeout: 40000 })
-}
+        //Mensagem de "Aguarde carregando..."
+        cy.get('.md-dialog-fullscreen > .carregando')
+            .should('be.visible')
+            .and('have.text', ' Aguarde carregando...')
+    }
 
-//validando botão X do card cliente
-export function cardClienteValidar (selector) {
+    //clicando na lupa pesquisa de cliente
+    async clicarLupaPesquisaCliente (selector) {
 
-    //Card de clientes - Botão X
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('be.visible')
-        .and('not.have.attr', 'disabled')
+        cy.intercept('GET', '/views/cliente/modalClientes.html').as('api_cliente_modalClientes')
+        //clicar na lupa de pesquisa de clientes
+        cy.get('.md-block > .ng-binding')
+            .should('be.visible')
+            .click({force:true})
+        cy.wait('@api_cliente_modalClientes', { timeout: 40000 })
+    }
 
-    //Card inteiro de Clientes
-    cy.get('.md-dialog-fullscreen')
-        .should('be.visible')
+    //validando botão X do card cliente
+    async cardClienteValidar (selector) {
 
-    //Card de clientes - Título Clientes
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('have.text', 'Clientes')
+        //Card de clientes - Botão X
+        cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
 
-    //Card de clientes - Texto Digite o nome ou o CPF do cliente para busca
-    cy.get('label[for="txtBuscaClienteModal"]')
-        .should('have.text', 'Digite o nome ou o CPF do cliente para busca')
-        .and('be.visible')
+        //Card inteiro de Clientes
+        cy.get('.md-dialog-fullscreen')
+            .should('be.visible')
 
-    //Card de clientes - Botão de cadastrar novo cliente
-    cy.get('[ng-click="novoCliente()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.have.attr', 'disabled')
+        //Card de clientes - Título Clientes
+        cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('have.text', 'Clientes')
 
-    //Card de clientes - Botão comando de voz
-    cy.get('[ng-click="capturarVozCliente()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.have.attr', 'disabled')
+        //Card de clientes - Texto Digite o nome ou o CPF do cliente para busca
+        cy.get('label[for="txtBuscaClienteModal"]')
+            .should('have.text', 'Digite o nome ou o CPF do cliente para busca')
+            .and('be.visible')
 
-    //Card de clientes - campo para digitar cliente
-    cy.get('#txtBuscaClienteModal')
-        .should('be.visible')
-        .invoke('val')
-        .should('not.be.empty')
-}
+        //Card de clientes - Botão de cadastrar novo cliente
+        cy.get('[ng-click="novoCliente()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
 
-//validando numero e descrição do cliente CPF selecionado
-export function numeroDescricaoCPFpesquisado (selector) {
+        //Card de clientes - Botão comando de voz
+        cy.get('[ng-click="capturarVozCliente()"] > .ng-binding')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
 
-    //Número CPF do cliente selecionado
-    cy.get('#lblCpfClienteSelecionado')
-        .should('be.visible')
+        //Card de clientes - campo para digitar cliente
+        cy.get('#txtBuscaClienteModal')
+            .should('be.visible')
+            .invoke('val')
+            .should('not.be.empty')
+    }
 
-    //Descrição CPF do cliente selecionado
-    cy.get('#lblNomeClienteSelecionado')
-        .should('be.visible')
-}
+    //validando numero e descrição do cliente CPF selecionado
+    async numeroDescriCPFpesquisado (selector) {
 
-//validando numero e descrição do cliente CNPJ selecionado
-export function numeroDescricaoCNPJpesquisado (selector) {
+        //Número CPF do cliente selecionado
+        cy.get('#lblCpfClienteSelecionado')
+            .should('be.visible')
 
-    //Número CNPJ do cliente selecionado
-    cy.get('#lblCpfClienteSelecionado')
-        .should('be.visible')
+        //Descrição CPF do cliente selecionado
+        cy.get('#lblNomeClienteSelecionado')
+            .should('be.visible')
+    }
 
-    //Descrição CNPJ do cliente selecionado
-    cy.get('#lblNomeClienteSelecionado') 
-        .should('be.visible')
-}
+    //validando numero e descrição do cliente CNPJ selecionado
+    async numeroDescriCNPJpesquisado (selector) {
 
-//clicando cliente CPF pesquisado
-export function clicarCPFPesquisado (selector) {
+        //Número CNPJ do cliente selecionado
+        cy.get('#lblCpfClienteSelecionado')
+            .should('be.visible')
 
-    //Card de clientes - Conteúdo que a pesquisa trouxe
-    cy.get('button[aria-label="CPF AUTOMACAO SABIUM - LUCAS CAMARGO 117.415.410-18   - MARINGA/PR"]')
-        .should('be.visible')
-        .and('not.have.attr', 'disabled')
+        //Descrição CNPJ do cliente selecionado
+        cy.get('#lblNomeClienteSelecionado') 
+            .should('be.visible')
+    }
 
-    //Card de clientes - clicar no botão de conteúdo que a pesquisa trouxe
-    cy.get('button[aria-label="CPF AUTOMACAO SABIUM - LUCAS CAMARGO 117.415.410-18   - MARINGA/PR"]')
-        .click()
-}
+    //clicando cliente CPF pesquisado
+    async clicarCPFPesquisado (selector) {
 
-//clicando cliente CNPJ pesquisado
-export function clicarCNPJPesquisado (selector) {
+        //Card de clientes - Conteúdo que a pesquisa trouxe
+        cy.get('button[aria-label="CPF AUTOMACAO SABIUM - LUCAS CAMARGO 117.415.410-18   - MARINGA/PR"]')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
 
-    //Card de clientes - Conteúdo que a pesquisa trouxe
-    cy.get('button[aria-label="CNPJ AUTOMACAO SABIUM - LUCAS CAMARGO 24.468.163/0001-61   - MARINGA/PR"]')
-        .should('be.visible')
-        .and('not.have.attr', 'disabled')
+        //Card de clientes - clicar no botão de conteúdo que a pesquisa trouxe
+        cy.get('button[aria-label="CPF AUTOMACAO SABIUM - LUCAS CAMARGO 117.415.410-18   - MARINGA/PR"]')
+            .click()
+    }
 
-    //Card de clientes - clicar no botão de conteúdo que a pesquisa trouxe
-    cy.get('button[aria-label="CNPJ AUTOMACAO SABIUM - LUCAS CAMARGO 24.468.163/0001-61   - MARINGA/PR"]')
-        .click()
-}
+    //clicando cliente CNPJ pesquisado
+    async clicarCNPJPesquisado (selector) {
 
-//pesquisar cliente por numero de CPF
-export function inserirCPF (selector) {
+        //Card de clientes - Conteúdo que a pesquisa trouxe
+        cy.get('button[aria-label="CNPJ AUTOMACAO SABIUM - LUCAS CAMARGO 24.468.163/0001-61   - MARINGA/PR"]')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
 
-    const numeroCPF = "117.415.410-18"
+        //Card de clientes - clicar no botão de conteúdo que a pesquisa trouxe
+        cy.get('button[aria-label="CNPJ AUTOMACAO SABIUM - LUCAS CAMARGO 24.468.163/0001-61   - MARINGA/PR"]')
+            .click()
+    }
 
-    //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
-    cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
-        .wait(500)
-        .type(numeroCPF,'{downArrow}')
-}
+    //pesquisar cliente por numero de CPF
+    async inserirCPF (selector) {
 
-//digitar cliente por numero de CPF
-export function digitarNovamenteCPF (selector) {
+        const numeroCPF = "117.415.410-18"
 
-    const numeroCPF = "117.415.410-18"
+        //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
+        cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
+            .wait(500)
+            .type(numeroCPF,'{downArrow}')
+    }
 
-    //Card de clientes - campo para digitar cliente
-    cy.get('#txtBuscaClienteModal')
-        .clear()
-        .wait(100)
-        .should('have.value','')
-        .wait(100)
-        .type(numeroCPF)
-}
+    //digitar cliente por numero de CPF
+    async digitarNovamenteCPF (selector) {
 
-//pesquisar cliente por numero de CNPJ
-export function inserirCNPJ (selector) {
+        const numeroCPF = "117.415.410-18"
 
-    const numeroCNPJ = "24468163000161"
+        //Card de clientes - campo para digitar cliente
+        cy.get('#txtBuscaClienteModal')
+            .clear()
+            .wait(100)
+            .should('have.value','')
+            .wait(100)
+            .type(numeroCPF)
+    }
 
-    //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
-    cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
-        .wait(500)
-        .type(numeroCNPJ,'{downArrow}')
-}
+    //pesquisar cliente por numero de CNPJ
+    async inserirCNPJ (selector) {
 
-//digitar cliente por numero de CNPJ
-export function digitarNovamenteCNPJ (selector) {
+        const numeroCNPJ = "24468163000161"
 
-    const numeroCNPJ = "24468163000161"
+        //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
+        cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
+            .wait(500)
+            .type(numeroCNPJ,'{downArrow}')
+    }
 
-    //Card de clientes - campo para digitar cliente
-    cy.get('#txtBuscaClienteModal')
-        .clear()
-        .wait(100)
-        .should('have.value','')
-        .wait(100)
-        .type(numeroCNPJ)
-}
+    //digitar cliente por numero de CNPJ
+    async digitarNovamenteCNPJ (selector) {
 
-//pesquisar cliente por descrição de CPF
-export function inserirDescricaoCPF (selector) {
+        const numeroCNPJ = "24468163000161"
 
-    const descricaoCPF = "CPF AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
+        //Card de clientes - campo para digitar cliente
+        cy.get('#txtBuscaClienteModal')
+            .clear()
+            .wait(100)
+            .should('have.value','')
+            .wait(100)
+            .type(numeroCNPJ)
+    }
 
-    //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
-    cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
-        .click()
+    //pesquisar cliente por descrição de CPF
+    async inserirDescricaoCPF (selector) {
 
-    //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
-    cy.get('#txtBuscaCliente')
-        .wait(500)
-        .type(descricaoCPF,'{downArrow}')
-}
+        const descricaoCPF = "CPF AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
 
-//digitar cliente por descrição de CPF
-export function digitarNovamenteDescricaoCPF (selector) {
+        //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
+        cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
+            .click()
 
-    const descricaoCPF = "CPF AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
+        //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
+        cy.get('#txtBuscaCliente')
+            .wait(500)
+            .type(descricaoCPF,'{downArrow}')
+    }
 
-    //Card de clientes - campo para digitar cliente
-    cy.get('#txtBuscaClienteModal')
-        .clear()
-        .wait(100)
-        .should('have.value','')
-        .wait(100)
-        .type(descricaoCPF)
-}
+    //digitar cliente por descrição de CPF
+    async digitarNovamenteDescriCPF (selector) {
 
-//pesquisar cliente por descrição de CNPJ
-export function inserirDescricaoCNPJ (selector) {
+        const descricaoCPF = "CPF AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
 
-    const descricaoCNPJ = "CNPJ AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
+        //Card de clientes - campo para digitar cliente
+        cy.get('#txtBuscaClienteModal')
+            .clear()
+            .wait(100)
+            .should('have.value','')
+            .wait(100)
+            .type(descricaoCPF)
+    }
 
-    //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
-    cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
-        .click()
+    //pesquisar cliente por descrição de CNPJ
+    async inserirDescriCNPJ (selector) {
 
-    //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
-    cy.get('#txtBuscaCliente')
-        .wait(500)
-        .type(descricaoCNPJ,'{downArrow}')
-}
+        const descricaoCNPJ = "CNPJ AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
 
-//digitar cliente por descrição de CNPJ
-export function digitarNovamenteDescricaoCNPJ (selector) {
+        //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
+        cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
+            .click()
 
-    const descricaoCNPJ = "CNPJ AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
+        //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
+        cy.get('#txtBuscaCliente')
+            .wait(500)
+            .type(descricaoCNPJ,'{downArrow}')
+    }
 
-    //Card de clientes - campo para digitar cliente
-    cy.get('#txtBuscaClienteModal')
-        .clear()
-        .wait(100)
-        .should('have.value','')
-        .wait(100)
-        .type(descricaoCNPJ)
+    //digitar cliente por descrição de CNPJ
+    async digitarNovamenteDescriCNPJ (selector) {
+
+        const descricaoCNPJ = "CNPJ AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
+
+        //Card de clientes - campo para digitar cliente
+        cy.get('#txtBuscaClienteModal')
+            .clear()
+            .wait(100)
+            .should('have.value','')
+            .wait(100)
+            .type(descricaoCNPJ)
+    }
 }
