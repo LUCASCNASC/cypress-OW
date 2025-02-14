@@ -1,4 +1,4 @@
-export class validaFinal {
+export class ValidaFinal {
 
     constructor(page) {
         this.page = page
@@ -248,7 +248,7 @@ export class validaFinal {
     }
 
     //Função para validar campo - OBSERVAÇÕES PARA A NOTA FISCAL
-    async ObsNotaFiscalVazio (selector) {
+    async obsNotaFiscalVazio (selector) {
 
         //OBSERVAÇÕES PARA A NOTA FISCAL
         cy.get(':nth-child(1) > .header-interno > label')
@@ -264,7 +264,7 @@ export class validaFinal {
     }
 
     //Função para validar campo - OBSERVAÇÕES PARA USO INTERNO
-    async ObsInternaVazio (selector) {
+    async obsInternaVazio (selector) {
 
         //OBSERVAÇÕES PARA USO INTERNO
         cy.get(':nth-child(2) > .header-interno > label')
@@ -283,7 +283,4 @@ export class validaFinal {
             .should('be.visible')
             .and('have.text', 'Limite de 300 caracteres')
     }
-
 }
-
-

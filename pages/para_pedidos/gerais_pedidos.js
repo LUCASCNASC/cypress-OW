@@ -1,4 +1,4 @@
-export class geralPedido {
+export class GeralPedido {
 
     constructor(page) {
         this.page = page

@@ -1,4 +1,4 @@
-export class recebimentoPromo {
+export class RecebimentoPromo {
 
     constructor(page) {
         this.page = page
@@ -7,7 +7,7 @@ export class recebimentoPromo {
     //--------------- Promoções para arquivos apenas de promoção e promoção serviço -----------
 
     //selecionando forma de pagamento "3860 - T.A. A Receber Futuro" da promoção
-    async PagPrincipal (selector) {
+    async PpagPrincipal (selector) {
 
         //botão voltar
         cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
@@ -30,7 +30,7 @@ export class recebimentoPromo {
     }
 
     //selecionando forma de pagamento "3866 - T.A. A Receber Prestamista" da promoção
-    async ReceberPrest (selector) {
+    async receberPrest (selector) {
 
         //botão voltar
         cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
@@ -59,7 +59,7 @@ export class recebimentoPromo {
     //--------------- Abatimento Valor Fixo 55,90 - processo de inclusão PROMOÇÃO
 
     //selecionando forma de pagamento "3880 - T.A. T.A. A Receb Fut com juros - Prest. Valor Fixo" da promoção
-    async PrazoFutComJurosPrestAbatVF (selector) {
+    async prazoFutComJurosPrestAbatVF (selector) {
 
         //botão voltar
         cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
@@ -84,7 +84,7 @@ export class recebimentoPromo {
     //--------------- Abatimento % - processo de inclusão PROMOÇÃO
 
     //selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
-    async PrazoFutComJurosPrest (selector) {
+    async prazoFutComJurosPrest (selector) {
 
         //botão voltar
         cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
@@ -107,7 +107,7 @@ export class recebimentoPromo {
     }
 
     //selecionando forma de pagamento "3876 - T.A. A Receber Futuro - para Prestamista sem juros" da promoção
-    async PrazoFutSemJurosPrest (selector) {
+    async prazoFutSemJurosPrest (selector) {
 
         //botão voltar
         cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
@@ -130,7 +130,7 @@ export class recebimentoPromo {
     }
 
     //selecionando forma de pagamento "3875 - T.A.A Receber Presente CDCI - para Prestamista" da promoção
-    async PartPresentePrest (selector) {
+    async partPresentePrest (selector) {
 
         //botão voltar
         cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
@@ -155,7 +155,7 @@ export class recebimentoPromo {
     //--------------- Abatimento Valor Fixo 99,30 - Origem Produto - processo de inclusão PROMOÇÃO
 
     //selecionando forma de pagamento "3881 - T.A. A Receb Fut com juros - Prest. Origem Produto" da promoção
-    async PrazoFutComJurosPrestAbatVFOS (selector) {
+    async RecebimentoPromorazoFutComJurosPrestAbatVFOS (selector) {
 
         //botão voltar
         cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')

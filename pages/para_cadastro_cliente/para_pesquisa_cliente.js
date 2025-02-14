@@ -1,4 +1,4 @@
-export class pesquisaCliente {
+export class PesquisaCliente {
 
     constructor(page) {
         this.page = page

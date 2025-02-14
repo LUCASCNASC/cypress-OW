@@ -1,11 +1,11 @@
-export class preencherEndereco {
+export class PreencherEndereco {
 
     constructor(page) {
         this.page = page
     }
 
     //selecionar tipo de endereço
-    async TipoEndereco (selector) {
+    async tipoEndereco (selector) {
 
         //Selecionar tipo de endereço
         cy.get('.md-text.ng-binding')
@@ -14,7 +14,7 @@ export class preencherEndereco {
     }
 
     //preencher campo CEP no cadastro de endereço e pesquisar
-     CEPEndereco (selector) {
+    async cepEndereco (selector) {
 
         const CEPcadastro = "87065300"
 
@@ -34,7 +34,7 @@ export class preencherEndereco {
     }
 
     //preencher campo Numero no cadastro de endereço
-    async NumeroEndereco (selector) {
+    async numeroEndereco (selector) {
 
         const numero_endereco = "66"
 

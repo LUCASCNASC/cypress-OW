@@ -1,4 +1,4 @@
-export class servico {
+export class Servico {
 
     constructor(page) {
         this.page = page
@@ -7,7 +7,7 @@ export class servico {
     //------------------- ADICIONAR SERVIÇOS ------
 
     //Marcar garantia "T.A. Garantia Separa Mesmo Processo" - 139
-    async GarantiaSepMesmoProc (selector) {
+    async garantiaSepMesmoProc (selector) {
         
         cy.get('#checkbox-139-0 > .md-container')
             .should('not.be.disabled')
@@ -16,7 +16,7 @@ export class servico {
     }
 
     //Marcar garantia "T.A. Garantia Não Separa" - 140
-    async GarantiaNaoSep (selector) {
+    async garantiaNaoSep (selector) {
 
         cy.get('#checkbox-140-1 > .md-container')
             .should('exist')
@@ -26,7 +26,7 @@ export class servico {
     }
 
     //Marcar Garantia separa titulo em um processo deferente - 141
-    async GarantiaSepTituloProcDif (selector) {
+    async garantiaSepTituloProcDif (selector) {
 
         cy.get('#checkbox-141-2 > .md-container')
             .should('exist')
@@ -36,7 +36,7 @@ export class servico {
     }
 
     //Marcar Mão de Obra "T.A. MO Destaca e Não Separa" - 142
-    async MaoObraDestNãoSep (selector) {
+    async maoObraDestNãoSep (selector) {
 
         cy.get('#checkbox-142-0 > .md-container')
             .should('exist')
@@ -46,7 +46,7 @@ export class servico {
     }
 
     //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo" - 143
-    async MaoObraNaoDestSepMesmoProc (selector) {
+    async maoObraNaoDestSepMesmoProc (selector) {
 
         cy.get('#checkbox-143-1 > .md-container')
             .should('exist')
@@ -56,7 +56,7 @@ export class servico {
     }
 
     //Marcar Mão de obra que não destaca e separa título em processo diferente - 144
-    async MaoObraNaoDestSepaProcDif (selector) {
+    async maoObraNaoDestSepaProcDif (selector) {
 
         cy.get('#checkbox-144-2 > .md-container')
             .should('not.be.disabled')
@@ -288,4 +288,3 @@ export class servico {
             .click()
     }
 }
-

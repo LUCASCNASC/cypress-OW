@@ -1,4 +1,4 @@
-export class validarServico {
+export class ValidarServico {
 
     constructor(page) {
         this.page = page
@@ -7,7 +7,7 @@ export class validarServico {
     //------------------- VALIDA ADICIÇÃO DE SERVIÇOS PEDIDO COM UM PRODUTO ------
 
     //SERVIÇOS VINCULADOS - título - pedido com um produto
-    async ServVinc (selector) {
+    async servVinc (selector) {
 
         //completo
         cy.get('.md-subheader-inner')
@@ -34,7 +34,7 @@ export class validarServico {
     }
 
     //Marcar garantia "140 - T.A. Garantia Não Separa"
-    async AddGarantNaoSep (selector) {
+    async addGarantNaoSep (selector) {
 
         cy.contains('140 - T.A. Garantia Não Separa')
             .scrollIntoView()
@@ -43,7 +43,7 @@ export class validarServico {
     }
 
     //Marcar Garantia "141 - T.A. Garantia Separa Processo Diferente"
-    async AddGarantSepTituloProcDif (selector) {
+    async addGarantSepTituloProcDif (selector) {
 
         cy.contains('141 - T.A. Garantia Separa Processo Diferente')
             .scrollIntoView()
@@ -52,7 +52,7 @@ export class validarServico {
     }
 
     //Marcar Mão de Obra "T.A. MO Destaca e Não Separa" - 142
-    async AddMODestNãoSepara (selector) {
+    async addMODestNãoSepara (selector) {
 
         cy.contains('142 - T.A. MO Destaca e Não Separa')
             .scrollIntoView()
@@ -61,7 +61,7 @@ export class validarServico {
     }
 
     //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo" - 143
-    async AddMONaoDestSepMesmoProc (selector) {
+    async addMONaoDestSepMesmoProc (selector) {
 
         cy.contains('143 - T.A. MO Não Destaca e Separa Mesmo Processo')
             .scrollIntoView()
@@ -70,16 +70,11 @@ export class validarServico {
     }
 
     //Marcar Mão de obra '144 - T.A. MO Não Destaca e Separa Processo Diferente'
-    async AddMONaoDestSepProcDif (selector) {
+    async addMONaoDestSepProcDif (selector) {
 
         cy.contains('144 - T.A. MO Não Destaca e Separa Processo Diferente')
             .scrollIntoView()
             .wait(200)
             .should('be.visible')
     }
-
 }
-
-
-
-

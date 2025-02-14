@@ -1,11 +1,11 @@
-export class validarSaldo {
+export class ValidarSaldo {
 
     constructor(page) {
         this.page = page
     }
 
     //Validando produto com saldo disponível local
-    async ComSaldo (selector) {
+    async comSaldo (selector) {
         
         //Validando imagem
         cy.get('.resultado-imagem')
@@ -41,7 +41,7 @@ export class validarSaldo {
     }
 
     //Validando produto com saldo disponível no CD 
-    async ComSaldoCD (selector) {
+    async comSaldoCD (selector) {
         
         //Validando imagem
         cy.get('.resultado-imagem')
@@ -77,7 +77,7 @@ export class validarSaldo {
     }
 
     //Validando produto com saldo indisponível
-    async SemSaldo (selector) {
+    async semSaldo (selector) {
         
         //Validando imagem
         cy.get('.resultado-imagem')

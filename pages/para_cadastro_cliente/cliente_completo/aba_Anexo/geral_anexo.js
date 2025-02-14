@@ -2,14 +2,14 @@ import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTele
 import { gerarChavePixTelefone } from '../../../gerarDadosPIX'
 
 
-export class geralAnexo {
+export class GeralAnexo {
 
     constructor(page) {
         this.page = page
     }
     
     //Validar e clicar na aba Telefone
-    async ClicarAbaAnexo (selector) {
+    async clicarAbaAnexo (selector) {
 
         //Validando aba Telefones
         cy.get('#menu_mais_pri > :nth-child(4)')
@@ -25,7 +25,7 @@ export class geralAnexo {
     }
 
     //validando informações da tela antes de fazer upload do arquivo anexo
-    async ValidarAbaAnexoVazia (selector) {
+    async validarAbaAnexoVazia (selector) {
 
         //título "Anexos" quando entramos na aba
         cy.get('[ng-controller="ListaDeAnexosController"] > :nth-child(1)')
@@ -58,7 +58,7 @@ export class geralAnexo {
     }
 
     //selecionando o tipo de anexo que quero colocar
-    async SelecionarPrimeiroTipoAnexo (selector) {
+    async selecionarPrimeiroTipoAnexo (selector) {
 
         //clicar no campo Tipo de Anexo para abrir as opções
         cy.get('#ComboTipoAnexo')
@@ -70,7 +70,7 @@ export class geralAnexo {
     }
 
     //clicando em SIM na mensagem "Deseja enviar o arquivo selecionado?"
-    async ConfirmEnvioArquivo (selector) {
+    async confirmEnvioArquivo (selector) {
 
         //mensagem "Deseja enviar o arquivo selecionado?" do modal
         cy.get('.md-title')
@@ -97,7 +97,7 @@ export class geralAnexo {
     }
 
     //mensagem de anexo incluído com sucesso
-    async MessAnexoIncluidoSucesso (selector) {
+    async messAnexoIncluidoSucesso (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast')
@@ -115,7 +115,7 @@ export class geralAnexo {
     }
 
     //validar se o anexo realmente foi adicionado
-    async ValidarAnexoInserido (selector) {
+    async validarAnexoInserido (selector) {
 
         const hoje = new Date();
         const dataAtual = hoje.toLocaleDateString('pt-BR')

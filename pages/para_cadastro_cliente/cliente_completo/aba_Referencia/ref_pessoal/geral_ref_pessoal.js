@@ -1,7 +1,7 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarRelacionamento }  from '../../../../gerarDados';
 import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX'
 
-export class geralRefPessoal {
+export class GeralRefPessoal {
 
     constructor(page) {
         this.page = page
@@ -187,4 +187,3 @@ export class geralRefPessoal {
             .and('contain', dataAtual)
     }
 }
-

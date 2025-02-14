@@ -1,4 +1,4 @@
-export class geralEmpregaticio {
+export class GeralEmpregaticio {
 
     constructor(page) {
         this.page = page

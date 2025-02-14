@@ -1,11 +1,11 @@
-export class addMuitosProdutos {
+export class AddMuitosProdutos {
 
     constructor(page) {
         this.page = page
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 1 1
-    async Produto1 (selector) {
+    async produto1 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.1.1').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -25,7 +25,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 2 2
-    async Produto2 (selector) {
+    async produto2 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.2.2').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -45,7 +45,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 3 3
-    async Produto3 (selector) {
+    async produto3 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.3.3').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -65,7 +65,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 4 4
-    async Produto4 (selector) {
+    async produto4 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.4.4').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -85,7 +85,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 5 5
-    async Produto5 (selector) {
+    async produto5 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.5.5').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -105,7 +105,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 6 6
-    async Produto6 (selector) {
+    async produto6 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.6.6').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -125,7 +125,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 7 7
-    async Produto7 (selector) {
+    async produto7 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.7.7').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -145,7 +145,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 8 8
-    async Produto8 (selector) {
+    async produto8 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.8.8').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -165,7 +165,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 9 9
-    async Produto9 (selector) {
+    async produto9 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.9.9').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -185,7 +185,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 10 10
-    async Produto10 (selector) {
+    async produto10 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.10.10').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -205,7 +205,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 11 11
-    async Produto11 (selector) {
+    async produto11 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.11.11').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -225,7 +225,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 12 12
-    async Produto12 (selector) {
+    async produto12 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.12.12').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -245,7 +245,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 13 13
-    async Produto13 (selector) {
+    async produto13 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.13.13').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -265,7 +265,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 14 14
-    async Produto14 (selector) {
+    async produto14 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.14.14').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -285,7 +285,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 15 15
-    async Produto15 (selector) {
+    async produto15 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.15.15').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -305,7 +305,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 16 16
-    async Produto16 (selector) {
+    async produto16 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.16.16').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -325,7 +325,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 17 17
-    async Produto17 (selector) {
+    async produto17 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.17.17').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -345,7 +345,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 18 18
-    async Produto18 (selector) {
+    async produto18 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.18.18').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -365,7 +365,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 19 19
-    async Produto19 (selector) {
+    async produto19 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.19.19').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -385,7 +385,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 20 20
-    async Produto20 (selector) {
+    async produto20 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.20.20').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -405,7 +405,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 21 21
-    async Produto21 (selector) {
+    async produto21 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.21.21').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -425,7 +425,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 22 22
-    async Produto22 (selector) {
+    async produto22 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.22.22').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -445,7 +445,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 23 23
-    async Produto23 (selector) {
+    async produto23 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.23.23').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -465,7 +465,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 24 24
-    async Produto24 (selector) {
+    async produto24 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.24.24').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -485,7 +485,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 25 25
-    async Produto25 (selector) {
+    async produto25 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.25.25').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -505,7 +505,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 26 26
-    async Produto26 (selector) {
+    async produto26 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.26.26').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -525,7 +525,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 27 27
-    async Produto27 (selector) {
+    async produto27 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.27.27').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -545,7 +545,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 28 28
-    async Produto28 (selector) {
+    async produto28 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.28.28').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -565,7 +565,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 29 29
-    async Produto29 (selector) {
+    async produto29 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.29.29').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -585,7 +585,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 30 30
-    async Produto30 (selector) {
+    async produto30 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.30.30').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -605,7 +605,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 31 31
-    async Produto31 (selector) {
+    async produto31 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.31.31').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -625,7 +625,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 32 32
-    async Produto32 (selector) {
+    async produto32 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.32.32').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -645,7 +645,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 33 33
-    async Produto33 (selector) {
+    async produto33 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.33.33').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -665,7 +665,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 34 34
-    async Produto34 (selector) {
+    async produto34 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.34.34').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -685,7 +685,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 35 35
-    async Produto35 (selector) {
+    async produto35 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.35.35').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -705,7 +705,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 36 36
-    async Produto36 (selector) {
+    async produto36 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.36.36').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -725,7 +725,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 37 37
-    async Produto37 (selector) {
+    async produto37 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.37.37').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -745,7 +745,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 38 38
-    async Produto38 (selector) {
+    async produto38 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.38.38').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -765,7 +765,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 39 39
-    async Produto39 (selector) {
+    async produto39 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.39.39').as('api_local_saldo')
         //Card de voltagem - clicar
@@ -785,7 +785,7 @@ export class addMuitosProdutos {
     }
 
     //escolher voltagem, clicar botão Adicionar e tirar entrega - 1907 40 40
-    async Produto40 (selector) {
+    async produto40 (selector) {
 
         cy.intercept('GET', '/services/v3/local_saldo?filial_saldo=10050&sku=1907.40.40').as('api_local_saldo')
         //Card de voltagem - clicar

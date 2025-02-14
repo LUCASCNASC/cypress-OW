@@ -1,4 +1,4 @@
-export class pedDesconto {
+export class PedDesconto {
 
     constructor(page) {
         this.page = page

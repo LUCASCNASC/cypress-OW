@@ -1,11 +1,11 @@
-export class produto {
+export class Produto {
 
     constructor(page) {
         this.page = page
     }
 
     //Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9860 (NFe)
-    async Primeiro (selector) {
+    async primeiro (selector) {
 
         const primeiro_produto_normal = '1860'
 
@@ -36,7 +36,7 @@ export class produto {
     }
 
     //Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9860 (NFe)
-    async Segundo (selector) {
+    async segundo (selector) {
 
         const segundo_produto_normal = '1870'
 
@@ -68,7 +68,7 @@ export class produto {
     }
 
     //Escolher primeiro produto normal - 1862 0 0 - com Intercept - processo venda 9860 (NFe)
-    async KitPrimeiro (selector) {
+    async kitPrimeiro (selector) {
 
         const primeiro_kit_normal = '1862'
 
@@ -95,7 +95,7 @@ export class produto {
     }
 
     //Escolher primeiro produto normal - 1869 0 0 - com Intercept - processo venda 9860 (NFe)
-    async SemSaldo (selector) {
+    async semSaldo (selector) {
 
         const produto_sem_saldo = '1869'
 
@@ -121,7 +121,7 @@ export class produto {
     }
 
     //Escolher primeiro produto normal - 1880 0 0 - com Intercept - processo venda 9860 (NFe)
-    async CDPrimeiro (selector) {
+    async cdPrimeiro (selector) {
 
         const primeiro_produto_CD = '1880'
 
@@ -147,7 +147,7 @@ export class produto {
     }
 
     //Escolher segundo produto normal - 1881 0 0
-    async CDSegundo (selector) {
+    async cdSegundo (selector) {
 
         const segundo_produto_CD = '1881'
 
@@ -175,7 +175,7 @@ export class produto {
     }
 
     //Escolher produto remoto com saldo em seu CD (filial 1) - 1883 0 0 - com Intercept - processo venda 9860 (NFe)
-    async RemotoComCD (selector) {
+    async remotoComCD (selector) {
 
         const remoto_saldo_CD = '1883'
 
@@ -201,7 +201,7 @@ export class produto {
     }
 
     //Escolher produto remoto com saldo em seu CD (filial 1) - com Intercept - processo venda 9860 (NFe)
-    async RemotoSemCD (selector) {
+    async remotoSemCD (selector) {
 
         const remoto__sem_saldo_CD = '1882'
 
@@ -227,7 +227,7 @@ export class produto {
     }
 
     //Escolher produto arredondar primeiro - 1908 0 0 - com Intercept - processo venda 9860 (NFe)
-    async ArredondarCimaBaixo (selector) {
+    async arredondarCimaBaixo (selector) {
 
         const produto_arredondar = '1908'
 
@@ -252,7 +252,7 @@ export class produto {
     }
 
     //Escolher produto com desconto R$ - 1912 0 0 - com Intercept - processo venda 9860 (NFe)
-    async DescontoCifrao (selector) {
+    async descontoCifrao (selector) {
 
         const produto_desconto_cifrao = '1912'
 
@@ -302,7 +302,7 @@ export class produto {
     }
 
     //Escolher produto com desconto valor fixo - 1914 0 0  - com Intercept - processo venda 9860 (NFe)
-    async DescontoValorFixo (selector) {
+    async descontoValorFixo (selector) {
 
         const produto_desconto_valorfixo = '1914'
 
@@ -327,7 +327,7 @@ export class produto {
     }
 
     //Escolher Kit desconto - 1909 0 0 - com Intercept - processo venda 9860 (NFe)
-    async KitDesconto (selector) {
+    async kitDesconto (selector) {
 
         const primeiro_kit_desconto = '1909'
 
@@ -353,7 +353,7 @@ export class produto {
     }
 
     //Escolher produto kit remoto - 1915 0 0 - com Intercept - processo venda 9860 (NFe)
-    async KitRemoto (selector) {
+    async kitRemoto (selector) {
 
         const primeiro_kit_remoto = '1915'
 
@@ -379,7 +379,7 @@ export class produto {
     }
 
     //Escolher primeiro produto com promoção partida - 1868 0 0 - com Intercept - processo venda 9860 (NFe)
-    async PromoPartida (selector) {
+    async promoPartida (selector) {
 
         const produto_promocao_partida = '1868'
 
@@ -405,7 +405,7 @@ export class produto {
     }
 
     //Escolher primeiro produto com promoção a prazo com entrada - 1866 0 0 - com Intercept - processo venda 9860 (NFe)
-    async PromoPrazoEntrada (selector) {
+    async promoPrazoEntrada (selector) {
 
         const produto_promocao_prazo_entrada = '1866'
 
@@ -431,7 +431,7 @@ export class produto {
     }
 
     //Escolher primeiro produto com promoção a prazo parcelado - 1867 0 0 - com Intercept - processo venda 9860 (NFe)
-    async PromoPrazoParcelado (selector) {
+    async promoPrazoParcelado (selector) {
 
         const produto_promocao_prazo_parcelado = '1867'
 
@@ -457,7 +457,7 @@ export class produto {
     }
 
     //Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)
-    async PrimeiroPrazoParcela (selector) {
+    async primeiroPrazoParcela (selector) {
 
         const produto_codigo = '1891'
 
@@ -483,7 +483,7 @@ export class produto {
     }
 
     //Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)
-    async SegundoPrazoParcela (selector) {
+    async segundoPrazoParcela (selector) {
 
         const produto_codigo = '1895'
 
@@ -509,7 +509,7 @@ export class produto {
     }
 
     //Pedido com promoção a prazo/parcelas (promoção 160): produto 1893 0 0 com prestamista (isento de juros)
-    async TerceiroPrazoParcela (selector) {
+    async terceiroPrazoParcela (selector) {
 
         const produto_codigo = '1893'
 
@@ -535,7 +535,7 @@ export class produto {
     }
 
     //Pedido com promoção a prazo/parcelas (promoção 161): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)
-    async QuartoPrazoParcela (selector) {
+    async quartoPrazoParcela (selector) {
 
         const produto_codigo = '1894'
 

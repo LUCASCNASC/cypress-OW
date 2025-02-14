@@ -1,14 +1,14 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarRelacionamento }  from '../../../../gerarDados';
 import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX'
 
-export class preencherRefPessoal {
+export class PreencherRefPessoal {
 
     constructor(page) {
         this.page = page
     }
 
     //referencia pessoal - escolher Nome 
-    async Nome (selector) {
+    async nome (selector) {
 
         const Nome = gerarNomeAleatorio(); 
 
@@ -18,7 +18,7 @@ export class preencherRefPessoal {
     }
 
     //referencia pessoal - escolher Email
-    async Email (selector) {
+    async email (selector) {
 
         const email = gerarEmailAleatorio();
 
@@ -28,7 +28,7 @@ export class preencherRefPessoal {
     }
 
     //referencia pessoal - escolher Telefone
-    async Telefone (selector) {
+    async telefone (selector) {
 
         const numero_telefone = gerarTelefoneAleatorio();
 
@@ -38,7 +38,7 @@ export class preencherRefPessoal {
     }
 
     //referencia pessoal - escolher Relacionamento
-    async Relacionamento (selector) {
+    async relacionamento (selector) {
 
         const relacionamento = gerarRelacionamento();
 

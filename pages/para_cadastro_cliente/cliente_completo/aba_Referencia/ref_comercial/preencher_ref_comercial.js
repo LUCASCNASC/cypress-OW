@@ -3,14 +3,14 @@ import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTele
 import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX'
 
 
-export class preencherRefComercial {
+export class GreencherRefComercial {
 
     constructor(page) {
         this.page = page
     }
 
     //referencia Comercial - escolher Agencia
-    async Empresa (selector) {
+    async empresa (selector) {
 
         const empresa = gerarNomeEmpresa()
 
@@ -20,7 +20,7 @@ export class preencherRefComercial {
     }
 
     //referencia Comercial - escolher Contato
-    async Contato (selector) {
+    async contato (selector) {
 
         const contato = gerarTelefoneAleatorio()
 
@@ -30,7 +30,7 @@ export class preencherRefComercial {
     }
 
     //referencia Comercial - escolher Telefone
-    async Telefone (selector) {
+    async telefone (selector) {
 
         const telefone = gerarTelefoneAleatorio()
 
@@ -40,7 +40,7 @@ export class preencherRefComercial {
     }
 
     //referencia Comercial - escolher Email
-    async Email (selector) {
+    async email (selector) {
 
         const email = gerarEmailAleatorio()
 
@@ -50,7 +50,7 @@ export class preencherRefComercial {
     }
 
     //referencia Comercial - escolher Observação
-    async Observacao (selector) {
+    async observacao (selector) {
 
         const observacao = gerarObservação()
 

@@ -1,6 +1,6 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa }  from '../../gerarDados';
 
-export class preencher {
+export class Preencher {
 
     constructor(page) {
         this.page = page

@@ -1,4 +1,4 @@
-export class pedServicoAvulso{
+export class PedServicoAvulso{
 
     constructor(page) {
         this.page = page

@@ -39,7 +39,7 @@ function gerarValorDuasCasasAposVirgula() {
     return valorFinal;
 }
 
-export class geralRefFinanceira {
+export class GeralRefFinanceira {
 
     constructor(page) {
         this.page = page

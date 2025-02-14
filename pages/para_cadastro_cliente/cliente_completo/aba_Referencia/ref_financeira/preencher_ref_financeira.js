@@ -21,7 +21,6 @@ const ano = dataAleatoria.getFullYear();
 // Retornar no formato dd/mm/aaaa
 return `${dia}/${mes}/${ano}`;
 }
-
 //Valor prestação
 function gerarValorDuasCasasAposVirgula() {
 // Gerar um número aleatório entre 100 e 999 (3 dígitos)
@@ -36,14 +35,14 @@ const valorFinal = `${valorInteiro}.${valorDecimal}`;
 return valorFinal;
 }
 
-export class preencherRefFinanceira {
+export class PreencherRefFinanceira {
 
     constructor(page) {
         this.page = page
     }
 
     //referencia financeira - escolher Início exp. crédito
-    async DataInicio (selector) {
+    async dataInicio (selector) {
 
         const data_inicio = gerarDataReferenciaFinanceira();
 
@@ -55,7 +54,7 @@ export class preencherRefFinanceira {
     }
 
     //referencia financeira - escolher Local Experiencia
-    async LocalExp (selector) {
+    async localExp (selector) {
 
         const local_experiencia = gerarNomeEmpresa();
 
@@ -65,7 +64,7 @@ export class preencherRefFinanceira {
     }
 
     //referencia financeira - escolher Plano experiencia
-    async PlanoExp (selector) {
+    async planoExp (selector) {
 
         const plano_experiencia = '444';
 
@@ -75,7 +74,7 @@ export class preencherRefFinanceira {
     }
 
     //referencia financeira - escolher Valor prestação
-    async ValorPrest (selector) {
+    async valorPrest (selector) {
 
         const valor_prestacao = gerarValorDuasCasasAposVirgula();
 

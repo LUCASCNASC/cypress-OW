@@ -1,4 +1,4 @@
-export class geralRota {
+export class GeralRota {
 
     constructor(page) {
         this.page = page

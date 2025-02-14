@@ -1,11 +1,11 @@
-export class tirarMontagem {
+export class TirarMontagem {
 
     constructor(page) {
         this.page = page
     }
 
     //Arrastar botão de Montagem
-    async Primeiro (selector) {
+    async primeiro (selector) {
 
         //Botão como um todo
         cy.get('.produto-nome > .valor > .md-auto-horizontal-margin > .md-container > .md-bar')
@@ -28,7 +28,7 @@ export class tirarMontagem {
     }
 
     //Arrastar botão de Montagem do segundo produto
-    async Segundo (selector) {
+    async segundo (selector) {
 
         //Botão como um todo
         cy.get(':nth-child(3) > .md-whiteframe-2dp > :nth-child(3) > .produto-nome > .valor > .md-auto-horizontal-margin > .md-container > .md-bar')

@@ -1,11 +1,11 @@
-export class escolherCliente {
+export class EscolherCliente {
 
     constructor(page) {
         this.page = page
     }
 
     //Função para escolher cliente CPF para gerar pedido de venda - inserir cliente 
-    async Pedido2 (selector) {
+    async pedido2 (selector) {
         
         //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
         cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
@@ -39,7 +39,7 @@ export class escolherCliente {
     }
 
     //Função para escolher cliente CPF para gerar pedido de venda - pesquisa por cliente
-    async ComRota (selector) {
+    async comRota (selector) {
 
         //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
         cy.get('.click-cliente > .informe-o-cliente > .cliente-header')

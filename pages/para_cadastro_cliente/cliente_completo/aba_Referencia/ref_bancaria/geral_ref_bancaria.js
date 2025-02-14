@@ -4,7 +4,7 @@ import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailE
 
 
 
-export class geralRefBancaria {
+export class GeralRefBancaria {
 
     constructor(page) {
         this.page = page
@@ -393,5 +393,3 @@ export class geralRefBancaria {
         cy.wait('@api_modal_referencia_bancaria', { timeout: 40000 })
     }
 }
-
-

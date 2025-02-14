@@ -1,5 +1,6 @@
 import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado, 
          botaoEntrarDesabilitado, clicarBotaoEntrar, mensagemEntrandoSistema, botaoIniciarAtendimento, messLoginSenhaIncorreto } from '../../support/para_logins/para_login';
+import {} from '../../../pages/para_logins/para_login'
 
 const usuSabiumAutomacao = "sabium.automacao"; //usuário ERP Sabium (contexto 1)
 const senhaautomacao = "123.automacao"; //senha usuário ERP Sabium (contexto 1)
@@ -21,7 +22,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
 
     context('Usuário contexto 1', () => {
 
-        it('1. Login - caminho feliz', () => {
+        it.only('1. Login - caminho feliz', () => {
 
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')

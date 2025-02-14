@@ -1,4 +1,4 @@
-export class produtoExclusiva {
+export class ProdutoExclusiva {
 
     constructor(page) {
         this.page = page

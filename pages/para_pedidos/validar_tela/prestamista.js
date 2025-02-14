@@ -1,11 +1,11 @@
-export class ticketPrestamista {
+export class TicketPrestamista {
 
     constructor(page) {
         this.page = page
     }
 
     //validar adição do serviço prestamista, após clicarmos para adicionar
-    async Adicionado (selector) {
+    async adicionado (selector) {
 
         cy.get('[ng-repeat="itemAtual in item.servicos track by $index"] > ul')
             .scrollIntoView()
@@ -40,7 +40,7 @@ export class ticketPrestamista {
     }
 
     //validar adição do prestamista na pagina de finalizar o pedido
-    async PaginaFinal (selector) {
+    async paginaFinal (selector) {
 
         cy.get('.ng-scope > ul')
             .scrollIntoView()
@@ -70,7 +70,7 @@ export class ticketPrestamista {
     }
 
     //validar adição do serviço prestamista, após clicarmos para agrupar lançamentos
-    async AdicionadoRecebAgrupado (selector) {
+    async adicionadoRecebAgrupado (selector) {
 
         cy.get('b.ng-binding')
         .contains('T.A. Prestamista Não separa Com juros - Futuro')

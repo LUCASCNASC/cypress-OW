@@ -1,4 +1,4 @@
-export class processoRecebPrest {
+export class ProcessoRecebPrest {
 
     constructor(page) {
         this.page = page
@@ -7,7 +7,7 @@ export class processoRecebPrest {
     //---------- Prestamista Abatimento %
 
     //escolhendo forma de pagamento 3874 (3874 - T.A. A Receber Futuro - para Prestamista) para aparecer seguro prestamista
-    async FuturoComJurosAbatPercentual (selector) {
+    async futuroComJurosAbatPercentual (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -35,7 +35,7 @@ export class processoRecebPrest {
     }
 
     //escolhendo forma de pagamento 3875 (3875 - T.A.A Receber Presente CDCI - para Prestamista) para aparecer seguro prestamista
-    async PresenteAbatPercentual (selector) {
+    async presenteAbatPercentual (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -63,7 +63,7 @@ export class processoRecebPrest {
     }
 
     //escolhendo forma de pagamento 3876 (3876 - T.A. A Receber Futuro - para Prestamista sem juros) para aparecer seguro prestamista
-    async FuturoSemJurosAbatPercentual (selector) {
+    async futuroSemJurosAbatPercentual (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -94,7 +94,7 @@ export class processoRecebPrest {
     //---------- Prestamista Abatimento Valor Fixo
 
     //escolhendo forma de pagamento 3880 (3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo) para aparecer seguro prestamista
-    async FuturoComJurosAbatValorFixo (selector) {
+    async futuroComJurosAbatValorFixo (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -122,7 +122,7 @@ export class processoRecebPrest {
     }
 
     //escolhendo forma de pagamento 3878 (3878 - T.A.A Receb Presente CDCI - Prest. Valor Fixo) para aparecer seguro prestamista
-    async PresenteAbatValorFixo (selector) {
+    async presenteAbatValorFixo (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -150,7 +150,7 @@ export class processoRecebPrest {
     }
 
     //escolhendo forma de pagamento 3879 (3879 - T.A. A Receb Fut sem juros - Prest. Valor Fixo) para aparecer seguro prestamista
-    async FuturoSemJurosAbatValorFixo (selector) {
+    async futuroSemJurosAbatValorFixo (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -181,7 +181,7 @@ export class processoRecebPrest {
     //---------- Prestamista Abatimento Valor Fixo
 
     //escolhendo forma de pagamento 3881 (3881 - T.A. A Receb Fut com juros - Prest. Origem Serviço) para aparecer seguro prestamista
-    async FuturoComJurosAbatOrigemServico (selector) {
+    async futuroComJurosAbatOrigemServico (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')

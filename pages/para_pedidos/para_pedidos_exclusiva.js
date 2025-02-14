@@ -1,4 +1,4 @@
-export class pedExclusiva{
+export class PedExclusiva{
 
     constructor(page) {
         this.page = page

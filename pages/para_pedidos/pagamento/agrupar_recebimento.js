@@ -1,4 +1,4 @@
-export class agruparReceb{
+export class AgruparReceb{
 
     constructor(page) {
         this.page = page

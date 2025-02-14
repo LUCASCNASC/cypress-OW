@@ -1,11 +1,11 @@
-export class tirarEntrega {
+export class TirarEntrega {
 
     constructor(page) {
         this.page = page
     }
 
     //Arrastar botão de Retirada / Entrega
-    async Primeiro (selector) {
+    async primeiro (selector) {
 
         //Botão Retirada / Entrega parte esquerda
         cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-container')
@@ -28,7 +28,7 @@ export class tirarEntrega {
     }
 
     //Arrastar botão de Retirada / Entrega do segundo produto
-    async Segundo (selector) {
+    async segundo (selector) {
 
         //Botão Retirada / Entrega - texto Retirada / Entrega
         cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
@@ -41,7 +41,7 @@ export class tirarEntrega {
     }
 
     //Arrastar botão de Retirada / Entrega do terceiro produto
-    async Terceiro (selector) {
+    async terceiro (selector) {
 
         //Botão Retirada / Entrega - texto Retirada / Entrega
         cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')

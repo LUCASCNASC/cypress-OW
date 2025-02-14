@@ -33,7 +33,7 @@ export class processoVenda{
     }
 
     //Para escolher processo de venda 9869 para exclusiva NFe
-    async Exclusiva (selector) {
+    async exclusiva (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -59,7 +59,7 @@ export class processoVenda{
     }
 
     //Para escolher processo de venda entrega futura 9862 normal - NFe
-    async EntregaFutNFe (selector) {
+    async entregaFutNFe (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -85,7 +85,7 @@ export class processoVenda{
     }
 
     //Para escolher processo de venda financeiro baixa 9863 normal - NFe
-    async FinanBaixaNFe (selector) {
+    async finanBaixaNFe (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -111,7 +111,7 @@ export class processoVenda{
     }
 
     //Para escolher processo de venda 9888 - serviços avulsos - quando já temos uma nota de venda de produto e quando vamos vender igual produto - NFe
-    async VendaServicoAvulso (selector) {
+    async vendaServicoAvulso (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -166,7 +166,7 @@ export class processoVenda{
     }
 
     //Para escolher processo de venda entrega futura 9891 normal - NFCe
-    async EntregaFutNFCe (selector) {
+    async entregaFutNFCe (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -193,7 +193,7 @@ export class processoVenda{
     }
 
     //Para escolher processo de venda financeiro baixa 9892 normal - NFCe
-    async FinanBaixaNFCe (selector) {
+    async finanBaixaNFCe (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -219,4 +219,3 @@ export class processoVenda{
             .wait(200)
     }
 }
-

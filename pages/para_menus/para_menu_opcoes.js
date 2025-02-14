@@ -1,4 +1,4 @@
-export class menuOpcoes {
+export class MenuOpcoes {
 
     constructor(page) {
         this.page = page

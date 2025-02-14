@@ -1,11 +1,11 @@
-export class preencherRota {
+export class PreencherRota {
 
     constructor(page) {
         this.page = page
     }
 
     //preencher Rota no cadastro de rota e escolher as opções certas
-    async RotaCompleta (selector) {
+    async rotaCompleta (selector) {
 
         const rota_cadastro = "560"
 
@@ -42,7 +42,7 @@ export class preencherRota {
     }
 
     //selecionar tipo de endereço do modal de rota Padrão
-    async TipoEnderecoRota (selector) {
+    async tipoEnderecoRota (selector) {
 
         //Clicar no campo tipo de endereço
         cy.get('#txtTpEnderecoRota')

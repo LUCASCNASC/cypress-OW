@@ -1,6 +1,6 @@
 import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../gerarDados'
 
-export class pedExclusiva{
+export class PedExclusiva{
 
     constructor(page) {
         this.page = page

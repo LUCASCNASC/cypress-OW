@@ -1,11 +1,11 @@
-export class escolherParcelaReceb {
+export class EscolherParcelaReceb {
 
     constructor(page) {
         this.page = page
     }
 
     //escolhendo parcelas da forma de pagamento escolhida - 1X
-    async Uma (selector) {
+    async uma (selector) {
 
         //selecionando parcelas - 1X
         cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding')
@@ -20,7 +20,7 @@ export class escolherParcelaReceb {
     }
 
     //escolhendo parcelas da forma de pagamento escolhida - 2X
-    async Duas (selector) {
+    async duas (selector) {
 
         //selecionando parcelas - 2X
         cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(2) > div.ng-binding')
@@ -30,7 +30,7 @@ export class escolherParcelaReceb {
     }
 
     //escolhendo parcelas da forma de pagamento escolhida - 4X
-    async Quatro (selector) {
+    async quatro (selector) {
 
         cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding') 
             .scrollIntoView()

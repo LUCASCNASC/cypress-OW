@@ -1,14 +1,14 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../../../gerarDados';
 import { gerarChavePixTelefone } from '../../../gerarDadosPIX'
 
-export class preencherPessoa {
+export class PreencherPessoa {
 
     constructor(page) {
         this.page = page
     }
 
     //Validar e preencher campo Data Nascimento
-    async DataNascimento (selector) {
+    async dataNascimento (selector) {
 
         //Ícone de data de nascimento 
         cy.get('#txtDataNasc > .md-datepicker-button')
@@ -26,7 +26,7 @@ export class preencherPessoa {
     }
 
     //Validar e prencher campo Nome Completo - CPF
-    async NomeCompleto (selector) {
+    async nomeCompleto (selector) {
 
         const NomeCompleto = gerarNomeAleatorio();
 
@@ -42,7 +42,7 @@ export class preencherPessoa {
     }
 
     //Validar e prencher campo Nome CNPJ - CPF
-    async NomeCNPJ (selector) {
+    async nomeCNPJ (selector) {
 
         const razaoSocial = gerarNomeEmpresa();
 
@@ -62,7 +62,7 @@ export class preencherPessoa {
     }
 
     //Validar e preencher campo CPF
-    async CPFcliente (selector) {
+    async cpfCliente (selector) {
 
         const cpf = gerarCpf(); // Gera um CPF válido
 
@@ -78,7 +78,7 @@ export class preencherPessoa {
     }
 
     //Validar e preencher campo CNPJ
-    async CNPJcliente (selector) {
+    async cnpjCliente (selector) {
 
         const cnpj = gerarCNPJ(); // Gera um CNPJ válido
 
@@ -94,7 +94,7 @@ export class preencherPessoa {
     }
 
     //Validar e prencher campo Nome Fantasia - CPF
-    async NomeFantasiaCNPJ (selector) {
+    async nomeFantasiaCNPJ (selector) {
 
         const nomeClienteCNPJ = "Novo cadastro cliente CNPJ"
 
@@ -109,7 +109,7 @@ export class preencherPessoa {
     }
 
     //Validar e prencher campo Nome Social - CPF
-    async NomeSocial (selector) {
+    async nomeSocial (selector) {
 
         const NomeSocial = gerarNomeAleatorio();
 
