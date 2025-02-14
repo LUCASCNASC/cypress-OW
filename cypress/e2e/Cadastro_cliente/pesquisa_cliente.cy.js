@@ -1,6 +1,4 @@
-import { mensagemAguardeCarregando, clicarLupaPesquisaCliente, numeroDescricaoCPFpesquisado, numeroDescricaoCNPJpesquisado,
-         clicarCPFPesquisado, clicarCNPJPesquisado, inserirCPF, digitarNovamenteCPF, inserirCNPJ, digitarNovamenteCNPJ,
-         inserirDescricaoCPF, digitarNovamenteDescricaoCPF, inserirDescricaoCNPJ, digitarNovamenteDescricaoCNPJ, cardClienteValidar} from '../../support/para_cadastro_cliente/para_pesquisa_cliente';
+import { PesquisaCliente } from '../../../pages/para_cadastro_cliente/para_pesquisa_cliente'
 
 describe('Cadastrar cliente', () => {
 
@@ -16,57 +14,58 @@ describe('Cadastrar cliente', () => {
 
         it('1-Pesquisa por número CPF', () => {
     
-            inserirCPF()
-            clicarLupaPesquisaCliente()
+            PesquisaCliente.inserirCPF()
+            PesquisaCliente.clicarLupaPesquisaCliente()
             cy.wait(1000)
-            cardClienteValidar()
-            digitarNovamenteCPF()
-            clicarCPFPesquisado()
-            mensagemAguardeCarregando()
+            PesquisaCliente.cardClienteValidar()
+            PesquisaCliente.digitarNovamenteCPF()
+            PesquisaCliente.clicarCPFPesquisado()
+            PesquisaCliente.mensagemAguardeCarregando()
             cy.wait(2500)
-            numeroDescricaoCPFpesquisado()
+            PesquisaCliente.numeroDescricaoCPFpesquisado()
         }) 
 
         it('2-Pesquisa por número CNPJ', () => {
-    
-            inserirCNPJ()
-            clicarLupaPesquisaCliente()
+
+            PesquisaCliente.inserirCNPJ()
+            PesquisaCliente.clicarLupaPesquisaCliente()
             cy.wait(1000)
-            cardClienteValidar()
-            digitarNovamenteCNPJ()
-            clicarCNPJPesquisado()
-            mensagemAguardeCarregando()
+            PesquisaCliente.cardClienteValidar()
+            PesquisaCliente.digitarNovamenteCNPJ()
+            PesquisaCliente.clicarLupaPesquisaCliente()
+            PesquisaCliente.clicarCNPJPesquisado()
+            PesquisaCliente.mensagemAguardeCarregando()
             cy.wait(2500)
-            numeroDescricaoCNPJpesquisado()
+            PesquisaCliente.numeroDescricaoCNPJpesquisado()
         }) 
     })
 
     context('Pesquisa cliente por descrição', () => {
 
         it('3-Pesquisa por descrição CPF', () => {
-    
-            inserirDescricaoCPF()
-            clicarLupaPesquisaCliente()
+
+            PesquisaCliente.inserirDescricaoCPF()
+            PesquisaCliente.clicarLupaPesquisaCliente()
             cy.wait(1000)
-            cardClienteValidar()
-            digitarNovamenteDescricaoCPF()
-            clicarCPFPesquisado()
-            mensagemAguardeCarregando()
+            PesquisaCliente.cardClienteValidar()
+            PesquisaCliente.digitarNovamenteCPF()
+            PesquisaCliente.clicarCPFPesquisado()
+            PesquisaCliente.mensagemAguardeCarregando()
             cy.wait(2500)
-            numeroDescricaoCPFpesquisado()
+            PesquisaCliente.numeroDescricaoCPFpesquisado()
         }) 
 
         it('4-Pesquisa por descrição CNPJ', () => {
-    
-            inserirDescricaoCNPJ()
-            clicarLupaPesquisaCliente()
+
+            PesquisaCliente.inserirDescricaoCNPJ()
+            PesquisaCliente.clicarLupaPesquisaCliente()
             cy.wait(1000)
-            cardClienteValidar()
-            digitarNovamenteDescricaoCNPJ
-            clicarCNPJPesquisado()
-            mensagemAguardeCarregando()
+            PesquisaCliente.cardClienteValidar()
+            PesquisaCliente.digitarNovamenteCNPJ()
+            PesquisaCliente.clicarCNPJPesquisado()
+            PesquisaCliente.mensagemAguardeCarregando()
             cy.wait(2500)
-            numeroDescricaoCNPJpesquisado()
+            PesquisaCliente.numeroDescricaoCNPJpesquisado()
         }) 
     })
 })

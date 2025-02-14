@@ -1,9 +1,8 @@
-//Importando funções 
-import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado, 
-         clicarBotaoEntrar, mensagemEntrandoSistema } from '../../support/para_logins/para_login';
+import { Login } from '../../../pages/para_logins/para_login'
 
 const usuSabiumAutomacao = "usu.expiradosistema"; //usuário 496
 const senhaautomacao = "123.automacao";
+
 describe('Senha do usuário expirada', () => {
 
     beforeEach(() => {
@@ -11,9 +10,9 @@ describe('Senha do usuário expirada', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        logoEmpresaLogin()
-        iconeComputadorLogin()
-        usuarioTextoIcone()
+        Login.logoEmpresaLogin()
+        Login.iconeComputadorLogin()
+        Login.usuarioTextoIcone()
     })
 
     it('1. Tentar logar com usuário com senha do usuário expirada', () => {
@@ -26,7 +25,7 @@ describe('Senha do usuário expirada', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        senhaTextoIcone()
+        Login.senhaTextoIcone()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -36,11 +35,11 @@ describe('Senha do usuário expirada', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        iconeOlhosSenha()
-        botaoEsqueceuSenha()
-        botaoEntrarHabilitado()
-        clicarBotaoEntrar()
-        mensagemEntrandoSistema()
+        Login.iconeOlhosSenha()
+        Login.botaoEsqueceuSenha()
+        Login.botaoEntrarHabilitado()
+        Login.clicarBotaoEntrar()
+        Login.mensagemEntrandoSistema()
         cy.wait(2000)
 
         //Mensagem "Seu acesso ao sistema expirou."
@@ -58,6 +57,6 @@ describe('Senha do usuário expirada', () => {
         cy.get('md-dialog-actions > .md-primary')
             .click()
 
-        iconeComputadorLogin() //Validando que não entrou no sistema
+        Login.iconeComputadorLogin() //Validando que não entrou no sistema
     })
 })

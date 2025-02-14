@@ -1,6 +1,6 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa }  from '../gerarDados';
 
-export class ClienteSimples {
+export class GeralClienteSimples {
 
     constructor(page) {
         this.page = page
@@ -60,7 +60,7 @@ export class ClienteSimples {
     }
 
     //Primeira mensagem de Registro salvo com sucesso!
-    async mESSPrimeiroRegistSalvoSucesso (selector) {
+    async messPrimeiroRegistSalvoSucesso (selector) {
 
         //Card de mensagem de Registro salvo com sucesso!
         cy.get('.toast')

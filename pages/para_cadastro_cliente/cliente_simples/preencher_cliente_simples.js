@@ -1,13 +1,13 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa }  from '../../gerarDados';
 
-export class Preencher {
+export class PreencherClienteSimples {
 
     constructor(page) {
         this.page = page
     }
 
     //Campo Data Nascimento - validar e preencher
-    async DataNascimento (selector) {
+    async dataNascimento (selector) {
 
         //Ícone de data de nascimento
         cy.get(':nth-child(3) > .layout-xs-column > .md-block > .validaData > .md-datepicker-button')
@@ -30,7 +30,7 @@ export class Preencher {
     }
 
     //Preencher campo CPF com CPF
-    async CPFcliente (selector) {
+    async cpfCliente (selector) {
 
         const cpf = gerarCpf(); // Gera um CPF válido
 
@@ -46,7 +46,7 @@ export class Preencher {
     }
 
     //Preencher campo CNPJ com CNPJ
-    async CNPJcliente (selector) {
+    async cnpjCliente (selector) {
 
         const cnpj = gerarCNPJ(); // Gera um CNPJ válido
 
@@ -62,7 +62,7 @@ export class Preencher {
     }
 
     //Campo Nome completo - cliente CPF
-    async NomeCompletoCPF (selector) {
+    async nomeCompletoCPF (selector) {
 
         const nomeCompleto = gerarNomeAleatorio();
 
@@ -78,7 +78,7 @@ export class Preencher {
     }
 
     //Campo Nome completo - cliente CNPJ
-    async NomeCompletoCNPJ (selector) {
+    async nomeCompletoCNPJ (selector) {
 
         const nomeCompletoEmpresa = gerarNomeEmpresa();
 
@@ -95,7 +95,7 @@ export class Preencher {
     }
 
     //Selecionar sexo da pessoa física
-    async SexoPessoaFisica (selector) {
+    async sexoPessoaFisica (selector) {
 
         //Campo Sexo
         cy.get('.md-default-theme[ng-model="cliente.idtiposexo"]')
@@ -114,7 +114,7 @@ export class Preencher {
     }
 
     //Campo CEP - inserir e pesquisar
-    async PesquisarCEP (selector) {
+    async pesquisarCEP (selector) {
 
         const CEPcadastro = "87065300"
 
@@ -143,7 +143,7 @@ export class Preencher {
     }
 
     //Campo Número - validar e preencher
-    async NumeroEndereco (selector) {
+    async numeroEndereco (selector) {
 
         const numero_rendereco = '66'
 
@@ -159,7 +159,7 @@ export class Preencher {
     }
 
     //Preenchendo rota do cadastro de cliente
-    async RotaCliente (selector) {
+    async rotaCliente (selector) {
 
         const rota = '560';
 
