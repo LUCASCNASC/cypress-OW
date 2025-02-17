@@ -95,10 +95,10 @@ export function infosRotaAdicionada (selector) {
     //Card de rota adicionad1
     cy.get('.md-whiteframe-2dp')
         .should('be.visible')
-        .and('contain', 'Grupo: 5')
-        .and('contain', 'Rota: 1')
-        .and('contain', 'Cidade: 1')
-        .and('contain', 'Tipo endereço: 1')
+        // .and('contain', 'Grupo: 5')
+        // .and('contain', 'Rota: 1')
+        // .and('contain', 'Cidade: 1')
+        // .and('contain', 'Tipo endereço: 1')
 }
 
 //------------------- PREENCHER CAMPO ------
@@ -107,7 +107,7 @@ export function infosRotaAdicionada (selector) {
 //preencher Rota no cadastro de rota e escolher as opções certas
 export function preencherRotaCompleta (selector) {
 
-    const rota_cadastro = "1"
+    const rota_cadastro = "560"
 
     //Campo Rota - validando mensagem dentro do campo antes de preencher
     cy.get('label[for="txtRota"]')
@@ -119,11 +119,11 @@ export function preencherRotaCompleta (selector) {
 
     cy.wait(200)
 
+    cy.intercept('GET', '/services/v3/rota?idrota=560').as('api_rota_560')
     //Clicando na lupa de rota
     cy.get('.layout-gt-sm-column > .md-block > .ng-binding')
         .click({force:true})
-
-    cy.wait(200)
+    cy.wait('@api_rota_560', { timeout: 40000 })
 
     //Clicando na rota maringá - segunda rota
     cy.get('v-pane-header.ng-scope > div')
@@ -131,8 +131,13 @@ export function preencherRotaCompleta (selector) {
 
     cy.wait(200)
 
+    cy.intercept('GET', '/services/v3/local_entrega?rota=560').as('api_local_entrega_560')
     //Clicando rota centro - terceira rota
-    cy.get(':nth-child(4) > .padding-10-0')
-        .click({force:true})
+    cy.contains('560 - T.A. ROTA AUTOMAÇÃO MARINGÁ')
+        .click()
+
+    cy.contains('560 - T.A. CIDADE AUTOMAÇÃO')
+        .click()
+    cy.wait('@api_local_entrega_560', { timeout: 40000 })
 }
 

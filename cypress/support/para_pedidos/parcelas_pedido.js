@@ -548,7 +548,7 @@ export function carregandoFormaPagamento (selector) {
 //------------------- BOTÕES GERAR PARCELAS ------
 
 //Botão "GERAR PARCELAS"
-export function botaoGerarParcelas (selector) {
+export function clicarGerarParcelas (selector) {
 
     cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
     cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento')
@@ -569,7 +569,7 @@ export function botaoGerarParcelas (selector) {
 }
 
 //Botão "GERAR PARCELAS" quando alteramos a data de vencimento da 1
-export function botaoGerarParcelasAlterVencimento (selector) {
+export function clicarGerarParcAlterarVenc (selector) {
 
     //.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_formas_pagamento')
     //cy.wait('@api_formas_pagamento', { timeout: 40000 })

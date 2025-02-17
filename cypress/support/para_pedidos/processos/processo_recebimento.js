@@ -1,4 +1,4 @@
-import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../support/gerarDados'
+import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../gerarDados'
 
 //escolhendo forma de pagamento 3860 (3860 - T.A. A Receber Futuro) do pedido de venda
 export function escolherFormaPagamentoPrincipal (selector) {
@@ -363,7 +363,7 @@ export function escolherRecebFuturoPrestamistaSemJuros (selector) {
 }
 
 
-//---------- Prestamista Abatimento Valor Fixo
+//---------- Prestamista Abatimento Valor Fixo - 55,90
 
 //escolhendo forma de pagamento 3880 (3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo) para aparecer seguro prestamista
 export function escolherRecebFutComJurosPrestAbatValFixo (selector) {
@@ -450,7 +450,7 @@ export function escolherRecebFutSemJurosPrestAbatValFixo (selector) {
 }
 
 
-//---------- Prestamista Abatimento Valor Fixo
+//---------- Prestamista Abatimento Valor Fixo - Origem Produto 99,30
 
 //escolhendo forma de pagamento 3881 (3881 - T.A. A Receb Fut com juros - Prest. Origem Produto) para aparecer seguro prestamista
 export function escolherRecebFutComJurosPrestAbatOrigemPrd (selector) {
@@ -479,3 +479,4 @@ export function escolherRecebFutComJurosPrestAbatOrigemPrd (selector) {
         .click({force:true})
     cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 })
 }
+

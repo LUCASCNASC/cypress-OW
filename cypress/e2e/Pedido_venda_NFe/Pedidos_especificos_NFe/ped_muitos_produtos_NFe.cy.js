@@ -4,10 +4,10 @@ import { clienteComRota, produtoPrincipal, escolherProdutoPesquisa, addproduto1,
          addproduto25, addproduto26, addproduto27,addproduto28, addproduto29, addproduto30, addproduto31, addproduto32, addproduto33, addproduto34, 
          addproduto35, addproduto36, addproduto37, addproduto38, addproduto39, addproduto40 } from '../../../support/para_pedidos/para_pedidos_muitos_produtos.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, finalizandoPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { clicarFinalizarPedido, validarPedidoGerado, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp, modalInconsApenasRota, tirarEntrega,
          tirarEntregaSegundo, tirarEntregaTerceiro, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -26,6 +26,7 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
 
     context('Sem enterga/ processo 9860 - caminho feliz - produtos sem serviço', () => {
 
+        //verificar 
         it.skip('1. Ped venda: produto 1907 e suas voltagens 1 1 a 40 40', () => {
 
             produtoPrincipal() //primeira pesquisa de produto - 1907 1 1
@@ -193,7 +194,7 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
     })
 
     // afterEach(() => {
-    //     botaoFinalizarPedido() //RESUMO
-    //     pedidoGerado()
+    //     clicarFinalizarPedido() //RESUMO
+    //     validarPedidoGerado()
     //   });
 })

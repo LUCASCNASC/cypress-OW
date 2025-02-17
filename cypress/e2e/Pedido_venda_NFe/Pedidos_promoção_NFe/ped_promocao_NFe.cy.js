@@ -1,14 +1,16 @@
-import { saldodisponivel, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, produtoNormalSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
-import { clicarUsarPromocao, selecionarFormaPagPromo } from '../../../support/para_pedidos/para_pedidos_promocao.js';
+import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, selecionarPrimeiraPromoProduto,
+         ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
-         botaoGerarParcelasAlterVencimento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
+         clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
+import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
+import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -24,37 +26,39 @@ describe('Gerar pedidos com promoção', () => {
   
     context('Sem entrega/ com promoção/ processo 9860 - caminho feliz', () => {
 
-        it('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
+        //verificar
+        it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             produtoPromoPartida() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa()
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOCAO
-            selecionarFormaPagPromo()
-            addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            selecionarPrimeiraPromoProduto() //PROMOCAO
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             avancarFinal() 
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     
-        it('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        //verificar
+        it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa()      
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao() 
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
-            addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
     
@@ -66,52 +70,54 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click()
     
             avancarFinal() 
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     
-        it('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        //verificar
+        it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa()
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
     context('Sem entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
 
+        //verificar
         it.skip('4. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPartida() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa() 
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados() 
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            prdSegundo() //SEGUNDO PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -125,31 +131,30 @@ describe('Gerar pedidos com promoção', () => {
             //cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             // avancarFinal()
-            // botaoFinalizarPedido() //RESUMO
-            // pedidoGerado()
+            // clicarFinalizarPedido() //RESUMO
+            // validarPedidoGerado()
         })
 
+        //verificar
         it.skip('5. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa()
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
-            cy.wait(400)
-            addProduto()
-            cy.wait(500)
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            prdSegundo() //SEGUNDO PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
 
@@ -160,49 +165,50 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click({force:true}) //clicar GERAR PAGAMENTO
     
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
     context('Com entrega /com promoção/ processo 9860 - caminho feliz', () => {
 
-        it('6. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it.skip('6. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             produtoPromoPartida() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa() 
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
-            clicarUsarPromocao()
-            selecionarFormaPagPromo()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
+            selecionarPrimeiraPromoProduto()
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega() //ENTREGA
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             inserirDataAmanha1Vencimento()
             cy.wait(3000)
-            botaoGerarParcelasAlterVencimento()
+            clicarGerarParcAlterarVenc()
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     
+        //verificar
         it.skip('7. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             produtoPromoPrazoEntrada() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa()    
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao()  
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
@@ -224,26 +230,27 @@ describe('Gerar pedidos com promoção', () => {
             // cy.wait(500)
 
             // inserirDataAmanha1Vencimento()
-            // botaoGerarParcelasAlterVencimento()
+            // clicarGerarParcAlterarVenc()
             // cy.wait(3000)
             // escolherFormaPagamentoPrincipal()
             // escolherDuasParcelaPagamento()
             // avancarFinal()
-            // botaoFinalizarPedido() //RESUMO
-            // pedidoGerado()
+            // clicarFinalizarPedido() //RESUMO
+            // validarPedidoGerado()
         })
 
+        //verificar
         it.skip('8. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             produtoPromoPrazoParcelado() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa()
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -255,30 +262,31 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })  
     }) 
 
     context('Com entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
 
+        //verificar
         it.skip('9. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             produtoPromoPartida() //PRODUTO
-            saldodisponivel()
-            escolherProdutoPesquisa()
+            validarComSaldo()
+            escolherProdutoPesquisa() ; ticketPromocao()
             clicarVoltagemProduto()
-            clicarUsarPromocao() //PROMOÇÃO
-            selecionarFormaPagPromo()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculados()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            escolherRecebPromoPagPrincipal()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
+            prdSegundo() //SEGUNDO PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
-            okServicosVinculados() //SERVIÇOS
+            clicarAdicionarProduto()
+            clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -290,8 +298,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force: true})
 
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 })

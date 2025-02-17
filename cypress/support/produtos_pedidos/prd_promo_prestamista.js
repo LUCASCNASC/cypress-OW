@@ -215,102 +215,33 @@ export function prdPromoPrazoPrestTercAbatVF (selector) {
     cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVF', { timeout: 40000 })
 }
 
+//Escolher prestamista abatimento Valor Fixo - 1925 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo - Origem produto
+export function prdPromoPrazoPrestTercAbatVFOS (selector) {
 
+    const primeiro_produto_normal = '1925'
 
-//--------------- Abatimento % - processo de inclusão PROMOÇÃO
+    cy.intercept('GET', /\/consultaprodutos\/.*1925.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP')
 
-//selecionando forma de pagamento "3874 - T.A. A Receber Futuro - para Prestamista com juros" da promoção
-export function escolherRecebPromoPrazoFuturoComJurosPrest (selector) {
+    //Limpando campo com o produto anterior
+    cy.get('#searchText')
+        .clear()
+        .wait(100)
+        .should('have.value', '')
 
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
+    //Validando campo Buscar produto
+    cy.get('#searchText')
         .should('be.visible')
         .and('not.be.disabled')
 
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
+    //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
+    cy.get('label[for="searchText"]')
+        .should('have.text', 'Buscar produtos')
 
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
+    //Prenchendo campo Buscar produto
+    cy.get('#searchText')
+        .type(primeiro_produto_normal)
+        .wait(100)
+        .should('have.value', primeiro_produto_normal)
 
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3874 - T.A. A Receber Futuro - para Prestamista   Futuro"]')
-        .click()
+    cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP', { timeout: 40000 })
 }
-
-//selecionando forma de pagamento "3876 - T.A. A Receber Futuro - para Prestamista sem juros" da promoção
-export function escolherRecebPromoPrazoFuturoSemJurosPrest (selector) {
-
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
-
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3876 - T.A. A Receber Futuro - para Prestamista sem juros   Futuro"]')
-        .click()
-}
-
-//selecionando forma de pagamento "3875 - T.A.A Receber Presente CDCI - para Prestamista" da promoção
-export function escolherRecebPromoPartidaPresentePrest (selector) {
-
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
-
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3875 - T.A.A Receber Presente CDCI - para Prestamista   Presente"]')
-        .click()
-}
-
-
-//--------------- Abatimento Valor Fixo - processo de inclusão PROMOÇÃO
-
-//selecionando forma de pagamento "3880 - T.A. T.A. A Receb Fut com juros - Prest. Valor Fixo" da promoção
-export function escolherRecebPromoPrazoFutComJurosPrestAbatVF (selector) {
-
-    //botão voltar
-    cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //título modal formas de pagamento
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
-        .should('be.visible')
-        .and('contain', 'Formas de pagamento')
-
-    //botão X
-    cy.get('#modal-formaPagamento > .md-dialog-fullscreen > .md-primary > .md-toolbar-tools > [ng-click="cancel()"] > .ng-binding')
-        .should('be.visible')
-        .and('not.be.disabled')
-
-    //forma de pagamento da promoção
-    cy.get('button[aria-label="3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo   Futuro"]')
-        .click()
-}
-

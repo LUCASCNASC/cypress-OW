@@ -43,9 +43,11 @@ export function clicarAdicionarNovoEndereço (selector) {
         .should('be.visible')
         .and('not.have.attr', 'disabled')
 
+    cy.intercept('GET', '/views/cliente/ModalClienteEndereco.html').as('api_ModalClienteEndereco')
     //Clicar no botão +, para adicionar um novo endereço
     cy.get('.layout-align-end-end > .md-fab')
         .click()
+    cy.wait('@api_ModalClienteEndereco', { timeout: 40000 })
 }
 
 //validar informações do modal Endereço enquanto ainda está vazio
@@ -204,9 +206,11 @@ export function preencherCampoCEPEndereco (selector) {
     cy.get('.md-icon-float > .ng-binding')
         .should('be.visible')
 
+    cy.intercept('GET', '/services/v3/cidade?uf=PR').as('api_cidade')
     //Clicar na lupa de pesquisa de CEP
     cy.get('.md-icon-float > .ng-binding')
         .click({force:true})
+    cy.wait('@api_cidade', { timeout: 40000 })
 }
 
 //preencher campo Numero no cadastro de endereço

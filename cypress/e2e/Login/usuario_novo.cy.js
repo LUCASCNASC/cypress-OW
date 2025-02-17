@@ -1,5 +1,4 @@
-import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado, 
-         botaoEntrarDesabilitado, clicarBotaoEntrar, mensagemEntrandoSistema } from '../../support/para_logins/para_login';
+import { Login } from '../../../pages/para_logins/para_login'
 
 const usunovo = "testtest"; //494
 const senhausunovo = "!MV87gsp";
@@ -11,9 +10,9 @@ describe('Logar com novo usuário', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        logoEmpresaLogin()
-        iconeComputadorLogin()
-        usuarioTextoIcone()
+        Login.logoEmpresaLogin()
+        Login.iconeComputadorLogin()
+        Login.usuarioTextoIcone()
     })
 
     it.skip('1. Novo usuário - clicar em Fechar, não alterando a senha', () => {
@@ -26,7 +25,7 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        senhaTextoIcone()
+        Login.senhaTextoIcone()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -36,10 +35,10 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        iconeOlhosSenha()
-        botaoEsqueceuSenha()
-        botaoEntrarHabilitado
-        clicarBotaoEntrar()
+        Login.iconeOlhosSenha()
+        Login.botaoEsqueceuSenha()
+        Login.botaoEntrarHabilitado
+        Login.clicarBotaoEntrar()
         cy.wait(2000)
 
         //Card Sua Senha expirou - Mensagem "Sua Senha expirou..."
@@ -207,7 +206,7 @@ describe('Logar com novo usuário', () => {
         cy.get('[ng-show="!loading"] > a')
             .click()
 
-        iconeComputadorLogin() //Validando que não entrou no sistema
+        Login.iconeComputadorLogin() //Validando que não entrou no sistema
     })
 
     it.skip('2. Novo usuário - clicar em CONFIRMAR, alterando a senha', () => {
@@ -220,7 +219,7 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        senhaTextoIcone()
+        Login.senhaTextoIcone()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -230,10 +229,10 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        iconeOlhosSenha()
-        botaoEsqueceuSenha()
-        botaoEntrarHabilitado
-        clicarBotaoEntrar()
+        Login.iconeOlhosSenha()
+        Login.botaoEsqueceuSenha()
+        Login.botaoEntrarHabilitado()
+        Login.clicarBotaoEntrar()
         cy.wait(2000)
 
         //Card Sua Senha expirou - Mensagem "Sua Senha expirou..."

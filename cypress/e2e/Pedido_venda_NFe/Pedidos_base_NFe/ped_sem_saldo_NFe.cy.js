@@ -1,6 +1,6 @@
-import { clienteComRota, semSaldodisponivel, escolherProdutoPesquisa, clicarVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { clienteComRota, validarSemSaldo, escolherProdutoPesquisa, clicarVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoSemSaldo } from '../../../support/produtos_pedidos/prd_normal.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -19,7 +19,7 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
         it('1. Ped venda: produto 1869 0 0 (Venda local de produto sem saldo - sem entrega)', () => {
             
             produtoSemSaldo() // PRODUTO
-            semSaldodisponivel()
+            validarSemSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
 

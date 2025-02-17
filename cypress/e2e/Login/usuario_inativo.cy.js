@@ -1,6 +1,4 @@
-//Importando funções 
-import { logoEmpresaLogin, iconeComputadorLogin, usuarioTextoIcone, senhaTextoIcone, iconeOlhosSenha, botaoEsqueceuSenha, botaoEntrarHabilitado, 
-         botaoEntrarDesabilitado, clicarBotaoEntrar, mensagemEntrandoSistema } from '../../support/para_logins/para_login';
+import { Login } from '../../../pages/para_logins/para_login'
 
 const usuSabiumAutomacao = "usu.inativo"; //usuário 416
 const senhaautomacao = "123.automacao";
@@ -11,9 +9,9 @@ describe('Usuário inativo', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        logoEmpresaLogin()
-        iconeComputadorLogin()
-        usuarioTextoIcone()
+        Login.logoEmpresaLogin()
+        Login.iconeComputadorLogin()
+        Login.usuarioTextoIcone()
     })
 
     it('1. Tentar logar com usuário inativo', () => {
@@ -26,7 +24,7 @@ describe('Usuário inativo', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        senhaTextoIcone()
+        Login.senhaTextoIcone()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -36,10 +34,10 @@ describe('Usuário inativo', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        iconeOlhosSenha()
-        botaoEsqueceuSenha()
-        botaoEntrarHabilitado()
-        clicarBotaoEntrar()
+        Login.iconeOlhosSenha()
+        Login.botaoEsqueceuSenha()
+        Login.botaoEntrarHabilitado()
+        Login.clicarBotaoEntrar()
 
         //Card de mensagem 
         cy.get('.toast')
@@ -60,6 +58,6 @@ describe('Usuário inativo', () => {
         cy.get('.toast-close-button')
             .should('be.visible')
 
-        iconeComputadorLogin() //Validando que não entrou no sistema
+        Login.iconeComputadorLogin() //Validando que não entrou no sistema
     })
 })

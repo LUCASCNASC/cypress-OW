@@ -315,7 +315,7 @@ export function adicionarServico (selector) {
 }
 
 //botão GERAR PARCELAS quando vamos alterar um pedido
-export function botaoGerarParcelasAlterar (selector) {
+export function clicarGerarParcelasAlterar (selector) {
 
     //Botão "GERAR PARCELAS" - validações
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')

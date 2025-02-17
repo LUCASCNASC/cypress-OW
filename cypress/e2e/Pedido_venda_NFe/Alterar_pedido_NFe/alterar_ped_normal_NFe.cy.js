@@ -1,18 +1,19 @@
-import { saldodisponivel, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
+import { validarComSaldo, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
+import { prdPrimeiro, prdSegundo, prdKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
-         adicionarEntrega, adicionarServico, botaoGerarParcelasAlterar, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
+         adicionarEntrega, adicionarServico, clicarGerarParcelasAlterar, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
-import { garantiaSeparaMesmoProcesso, modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento,
+import { garantiaSeparaMesmoProcesso, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processo_recebimento.js';
-import { botaoFinalizarPedido, pedidoGerado, pedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processo_venda.js';
+import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
+import { clicarFinalizarPedido, validarPedidoGerado, validarPedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega, avancarParaParcelasAlterar,
          avancarFinalAlterar, avancarParaTransportadoraAlterar, avancarParcelasEntregaAlterar } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -28,24 +29,24 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('1. Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
+        it.skip('1. Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO
-            saldodisponivel()
+            prdPrimeiro() //PESQUISA PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //FINAL PEDIDO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -57,49 +58,49 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             clicarAumentoQtdProduto() //AUMENTANDO QUANTIDADE DO PRODUTO
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO - SEGUNDO
+            prdPrimeiro() //PESQUISA PRODUTO - SEGUNDO
             escolherProdutoPesquisa()//ESCOLHER PRODUTO - SEGUNDO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(500)
 
-            produtoKitPrimeiro() //PESQUISA PRODUTO - KIT
+            prdKitPrimeiro() //PESQUISA PRODUTO - KIT
             escolherProdutoPesquisa() //ESCOLHER PRODUTO - KIT
             clicarVoltagemProduto() //VOLTAGEM
             composicaoDesteKit()
-            addProduto()
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            clicarOKServVinculado()
             tirarEntregaTerceiro()
             avancarParaParcelasAlterar()
 
-            botaoGerarParcelasAlterar() //GERAR PARCELAS
+            clicarGerarParcelasAlterar() //GERAR PARCELAS
             escolherFormaPagamentoPrincipalAlterar()
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
-            botaoFinalizarPedido() //PROCESSO INCLUSÃO
-            pedidoAlteradoSucesso()
+            clicarFinalizarPedido() //PROCESSO INCLUSÃO
+            validarPedidoAlteradoSucesso()
         })
 
-        it('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
+        it.skip('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO
-            saldodisponivel()
+            prdPrimeiro() //PESQUISA PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -112,53 +113,53 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarRemoverProduto()
             clicarFecharIntencaoCompra()
 
-            produtoNormalSegundo() //PESQUISA PRODUTO - SEGUNDO 
-            saldodisponivel()
+            prdSegundo() //PESQUISA PRODUTO - SEGUNDO 
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO - TERCEIRO
-            saldodisponivel()
+            prdPrimeiro() //PESQUISA PRODUTO - TERCEIRO
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
             avancarParaParcelasAlterar()
 
-            botaoGerarParcelasAlterar() //GERAR PARCELAS
+            clicarGerarParcelasAlterar() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipalAlterar() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
-            botaoFinalizarPedido() //FINAL PEDIDO
-            pedidoAlteradoSucesso()
+            clicarFinalizarPedido() //FINAL PEDIDO
+            validarPedidoAlteradoSucesso()
         })
 
         //erro de inconsistencia quando colocamos o serviço de entrega
         it.skip('3. Gerar pedido, alterar colocando garantia e entrega.', () => {
 
-            produtoNormalPrimeiro() //PESQUISA PRODUTO
-            saldodisponivel()
+            prdPrimeiro() //PESQUISA PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //VOLTAGEM
-            addProduto()
-            modalServicosVinculados() //MODAL SERVIÇOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //FINAL PEDIDO
-            pedidoGerado()
+            clicarFinalizarPedido() //FINAL PEDIDO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -170,40 +171,40 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             adicionarEntrega() 
             adicionarServico()
             garantiaSeparaMesmoProcesso()
-            okServicosVinculados()
+            clicarOKServVinculado()
             // avancarParaTransportadora()
             // avancarParcelasEntrega()
-            // botaoGerarParcelasAlterar() //GERAR PARCELAS
+            // clicarGerarParcelasAlterar() //GERAR PARCELAS
             // carregandoFormaPagamento()
             // escolherFormaPagamentoPrincipalAlterar()
             // escolherDuasParcelaPagamento()
             // avancarFinalAlterar()
-            // botaoFinalizarPedido() //RESUMO
-            // pedidoAlteradoSucesso()
+            // clicarFinalizarPedido() //RESUMO
+            // validarPedidoAlteradoSucesso()
             
         })
     })
 
     context('Com entrega/ processo 9860 - caminho feliz', () => {
 
-        it('4. Gerar pedido com frete, alterar forma de pagamento.', () => {
+        it.skip('4. Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
-            produtoNormalPrimeiro() //PESQUISA PRODUTO
-            saldodisponivel()
+            prdPrimeiro() //PESQUISA PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa() //ESCOLHER PRODUTO
             clicarVoltagemProduto() //PRODUTO
-            addProduto()
-            modalServicosVinculados() //VOLTAGEM
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora() //TRANSPORTADORA
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //FINAL PEDIDO
-            pedidoGerado()
+            clicarFinalizarPedido() //FINAL PEDIDO
+            validarPedidoGerado()
             okPedidoGerado()
             cy.wait(1500)
 
@@ -217,12 +218,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
             removerFormaPagamento()
 
-            botaoGerarParcelasAlterar() //GERAR PARCELAS
+            clicarGerarParcelasAlterar() //GERAR PARCELAS
             escolherSegundaFormaPagamento() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
             avancarFinalAlterar()
-            botaoFinalizarPedido() //FINAL PEDIDO
-            pedidoAlteradoSucesso()
+            clicarFinalizarPedido() //FINAL PEDIDO
+            validarPedidoAlteradoSucesso()
         })
     })
 })

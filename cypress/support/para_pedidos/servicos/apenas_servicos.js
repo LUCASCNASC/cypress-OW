@@ -1,6 +1,6 @@
 //------------------- ADICIONAR SERVIÇOS ------
 
-//Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+//Marcar garantia "T.A. Garantia Separa Mesmo Processo" - 139
 export function garantiaSeparaMesmoProcesso (selector) {
     
     cy.get('#checkbox-139-0 > .md-container')
@@ -9,7 +9,7 @@ export function garantiaSeparaMesmoProcesso (selector) {
     cy.get('#checkbox-139-0 > .md-container').click()
 }
 
-//Marcar garantia "T.A. Garantia Não Separa"
+//Marcar garantia "T.A. Garantia Não Separa" - 140
 export function garantiaNaoSepara (selector) {
 
     cy.get('#checkbox-140-1 > .md-container')
@@ -19,7 +19,7 @@ export function garantiaNaoSepara (selector) {
     cy.get('#checkbox-140-1 > .md-container').click()
 }
 
-//Marcar Garantia separa titulo em um processo deferente
+//Marcar Garantia separa titulo em um processo deferente - 141
 export function garantiaSeparaTituloProcessoDiferente (selector) {
 
     cy.get('#checkbox-141-2 > .md-container')
@@ -29,7 +29,7 @@ export function garantiaSeparaTituloProcessoDiferente (selector) {
     cy.get('#checkbox-141-2 > .md-container').click()
 }
 
-//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
+//Marcar Mão de Obra "T.A. MO Destaca e Não Separa" - 142
 export function maoObraDestacaNãoSepara (selector) {
 
     cy.get('#checkbox-142-0 > .md-container')
@@ -39,7 +39,7 @@ export function maoObraDestacaNãoSepara (selector) {
     cy.get('#checkbox-142-0 > .md-container').click()
 }
 
-//Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
+//Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo" - 143
 export function maoObraNaoDestacaSeparaMesmoProcesso (selector) {
 
     cy.get('#checkbox-143-1 > .md-container')
@@ -49,7 +49,7 @@ export function maoObraNaoDestacaSeparaMesmoProcesso (selector) {
     cy.get('#checkbox-143-1 > .md-container').click()
 }
 
-//Marcar Mão de obra que não destaca e separa título em processo diferente
+//Marcar Mão de obra que não destaca e separa título em processo diferente - 144
 export function maoObraNaoDestacaSeparaProcessoDiferente (selector) {
 
     cy.get('#checkbox-144-2 > .md-container')
@@ -62,7 +62,7 @@ export function maoObraNaoDestacaSeparaProcessoDiferente (selector) {
 //------------------- RELACIONADOS A SERVIÇOS ------
 
 //Validações card de serviços
-export function modalServicosVinculados (selector) {
+export function validarModalServVinculado (selector) {
 
     //Título do modal - Serviços Vinculados
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -102,7 +102,7 @@ export function modalServicosVinculados (selector) {
 }
 
 //botão OK modal Serviços Vinculados - com intercept
-export function okServicosVinculados (selector) {
+export function clicarOKServVinculado (selector) {
 
     cy.intercept('POST', '/services/v3/pedido_calcular_frete').as('api_pedido_calcular_frete')
 
@@ -120,7 +120,7 @@ export function okServicosVinculados (selector) {
 }
 
 //botão OK modal Serviços Vinculados de pedidos remotos
-export function okServicosVinculadosRemotos (selector) {
+export function clicarOKServVinculadoRemoto (selector) {
 
     //validando botão
     cy.get('button[ng-click="salvar()"]')

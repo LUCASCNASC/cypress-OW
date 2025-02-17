@@ -1,12 +1,12 @@
-import { clienteComRota, saldodisponivel, escolherProdutoPesquisa, clicarVoltagemProduto, addProduto, semSaldodisponivel,
+import { clienteComRota, validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, validarSemSaldo,
          trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas } from '../../../support/produtos_pedidos/prd_exclusiva';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculados } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaExclusiva } from '../../../support/para_pedidos/processo_venda.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
+import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { processoVendaExclusiva } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, modalInconsApenasTransp, escolherTransportadora } from '../../../support/para_pedidos/apenas_entrega.js';
 
@@ -25,21 +25,22 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
     context('Configuração de processo - Exclusiva: 36 = 2; 139 = 6; 552= 5 dias', () => {
 
+        //cenário dependente - não colocar no fluxo
         it.skip('1. Vender um produto normal (com saldo e com entrega, 15 dias) e um kit remoto (2 composições, sem saldo e sem a receber, 20 dias).', () => {
 
             primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             kitSemSaldoAgendamento() //PRODUTO KIT
-            semSaldodisponivel()
+            validarSemSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
+            clicarAdicionarProduto()
             avancarParaTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
@@ -49,24 +50,25 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
+        //cenário dependente - não colocar no fluxo
         it.skip('2. Vender um produto normal (com saldo e com entrega) e um kit com composição 6 volumes (data atual + parametro 552/ 5 dias).', () => {
 
             primeiroPrdNormalExclusiva() //PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()      
             clicarVoltagemProduto() 
-            addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             kitVolumes() //PRODUTO KIT
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
+            clicarAdicionarProduto()
             avancarParaTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
@@ -76,22 +78,23 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 
     context('Configuração de processo - Exclusiva: 36 = 2; 139 = 6; 552= 5 dias', () => {
 
+        //cenário dependente - não colocar no fluxo
         it.skip('3. Vender um produto (sem saldo e com saldo a receber para 10 dias, e com entrega), e ter um agendamento para a data de previsão.', () => {
 
             produtoSaldoReceber() //PRODUTO
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto() 
-            addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
@@ -101,11 +104,11 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
-        //necessário esperar tarefa PVW-220
+        //cenário dependente - não colocar no fluxo
         it.skip('4. Vender um produto em duas linhas (um com 5 unidades a receber e 10 para solicitar compra), e ter um agendamento para a data de previsão para a receber.', () => {
 
             prdSaldoReceberDuasLinhas() //PRODUTO
@@ -114,7 +117,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             clicarVoltagemProduto() 
             trocarFilialFaturamento()
             aumentarQuantVendaCinco()
-            addProduto()
+            clicarAdicionarProduto()
             prdSaldoReceberDuasLinhas() //SEGUNDO PRODUTO
             saldoRemotoAReceber()
             escolherProdutoPesquisa()  
@@ -123,15 +126,16 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             aumentarQuantVendaDez()
         })
 
+        //cenário dependente - não colocar no fluxo
         it.skip('5. Pedido de venda normal: produto 1896 0 0 (sem entrega)', () => {
     
             primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
-            saldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
-            addProduto()
-            modalServicosVinculados() //SERVICOS
-            okServicosVinculados()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVICOS
+            clicarOKServVinculado()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -139,8 +143,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
 })

@@ -1,13 +1,14 @@
-import { saldodisponivel, clienteComRota, trocarFilialFaturamento, semSaldodisponivel, composicaoDesteKit, saldoCDDisponivel,
-         escolherProdutoPesquisa, clicarVoltagemProduto, addProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoNormalPrimeiro, produtoNormalSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/produtos_pedidos/prd_normal.js';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processo_recebimento.js';
-import { modalServicosVinculados, okServicosVinculadosRemotos } from '../../../support/para_pedidos/apenas_servicos.js';
-import { botaoFinalizarPedido, pedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFCe } from '../../../support/para_pedidos/processo_venda.js';
+import { validarComSaldo, clienteComRota, trocarFilialFaturamento, validarSemSaldo, composicaoDesteKit, validarComSaldoCD,
+         escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
+import { prdPrimeiro, prdSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/produtos_pedidos/prd_normal.js';
+import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
+import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
+import { validarModalServVinculado, clicarOKServVinculadoRemoto } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { clicarFinalizarPedido, validarPedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
+import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora } from '../../../support/para_pedidos/apenas_entrega.js';
+import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -23,110 +24,115 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
   
     context('Pedido de venda remoto normal', () => {
 
+        //verificar
         it.skip('1. Ped venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
-            produtoNormalPrimeiro() //PRODUTO
-            saldodisponivel()
+            prdPrimeiro() //PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculadosRemotos()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVIÇOS
+            clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
             escolherTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
 
+        //verificar
         it.skip('2. Ped venda remota: produtos 1860 0 0 e 1870 0 0', () => {
 
-            produtoNormalPrimeiro() //PRODUTO
-            saldodisponivel()
+            prdPrimeiro() //PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculadosRemotos()
-            produtoNormalSegundo() //SEGUNDO PRODUTO
-            saldodisponivel()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVIÇOS
+            clicarOKServVinculadoRemoto()
+            prdSegundo() //SEGUNDO PRODUTO
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS - SEGUNDO PRODUTO
-            okServicosVinculadosRemotos()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
             escolherTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
         
+        //verificar
         it.skip('3. Ped venda remota: kit 1877 0 0', () => {
 
             produtoKitRemoto() //PRODUTO
-            saldoCDDisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
             composicaoDesteKit()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculadosRemotos()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVIÇOS
+            clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
             escolherTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })
     })
     
     context('Pedido de venda remoto sem saldo remoto, pegar CD', () => {
 
+        //verificar
         it.skip('4. Ped venda remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto (1883 0 0) sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
 
             produtoRemotoComCD() //PRODUTO
-            semSaldodisponivel()
+            validarComSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
-            addProduto()
-            modalServicosVinculados() //SERVIÇOS
-            okServicosVinculadosRemotos()
+            clicarAdicionarProduto()
+            validarModalServVinculado() //SERVIÇOS
+            clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
             escolherTransportadora()
             avancarParcelasEntrega()
-            botaoGerarParcelas() //GERAR PARCELAS
+            clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             avancarFinal()
-            botaoFinalizarPedido() //RESUMO
-            pedidoGerado()
+            clicarFinalizarPedido() //RESUMO
+            validarPedidoGerado()
         })    
         
+        //verificar
         it.skip('5. Ped venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto (1882 0 0) sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
             produtoRemotoSemCD() //PRODUTO
-            semSaldodisponivel()
+            validarSemSaldo()
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             trocarFilialFaturamento()
