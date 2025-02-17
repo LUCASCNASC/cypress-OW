@@ -1,16 +1,15 @@
-import { titulopagina } from '../../support/para_todos';
-import { mensagemAguardeCarregando, clicarLupaPesquisaCliente, botaoXCardCliente, tituloCardClientes, textoInformativoClienteBusca, 
-         botaoCadastrarNovoCliente, botaoComandoVoz, campoDigitarCliente, numeroDescricaoCPFpesquisado, numeroDescricaoCNPJpesquisado,
+import { mensagemAguardeCarregando, clicarLupaPesquisaCliente, numeroDescricaoCPFpesquisado, numeroDescricaoCNPJpesquisado,
          clicarCPFPesquisado, clicarCNPJPesquisado, inserirCPF, digitarNovamenteCPF, inserirCNPJ, digitarNovamenteCNPJ,
-         inserirDescricaoCPF, digitarNovamenteDescricaoCPF, inserirDescricaoCNPJ, digitarNovamenteDescricaoCNPJ} from '../../support/para_cadastro_cliente/para_pesquisa_cliente';
+         inserirDescricaoCPF, digitarNovamenteDescricaoCPF, inserirDescricaoCNPJ, digitarNovamenteDescricaoCNPJ, cardClienteValidar} from '../../support/para_cadastro_cliente/para_pesquisa_cliente';
 
 describe('Cadastrar cliente', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        titulopagina()
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
     })
 
     context('Pesquisa cliente por número', () => {
@@ -18,15 +17,9 @@ describe('Cadastrar cliente', () => {
         it('1-Pesquisa por número CPF', () => {
     
             inserirCPF()
-            cy.wait(800)
             clicarLupaPesquisaCliente()
-            cy.wait(2000)
-            tituloCardClientes()
-            botaoXCardCliente()
-            textoInformativoClienteBusca()
-            botaoCadastrarNovoCliente()
-            botaoComandoVoz()
-            campoDigitarCliente()
+            cy.wait(1000)
+            cardClienteValidar()
             digitarNovamenteCPF()
             clicarCPFPesquisado()
             mensagemAguardeCarregando()
@@ -37,15 +30,9 @@ describe('Cadastrar cliente', () => {
         it('2-Pesquisa por número CNPJ', () => {
     
             inserirCNPJ()
-            cy.wait(800)
             clicarLupaPesquisaCliente()
-            cy.wait(2000)
-            tituloCardClientes()
-            botaoXCardCliente()
-            textoInformativoClienteBusca()
-            botaoCadastrarNovoCliente()
-            botaoComandoVoz()
-            campoDigitarCliente()
+            cy.wait(1000)
+            cardClienteValidar()
             digitarNovamenteCNPJ()
             clicarCNPJPesquisado()
             mensagemAguardeCarregando()
@@ -59,15 +46,9 @@ describe('Cadastrar cliente', () => {
         it('3-Pesquisa por descrição CPF', () => {
     
             inserirDescricaoCPF()
-            cy.wait(800)
             clicarLupaPesquisaCliente()
-            cy.wait(2000)
-            tituloCardClientes()
-            botaoXCardCliente()
-            textoInformativoClienteBusca()
-            botaoCadastrarNovoCliente()
-            botaoComandoVoz()
-            campoDigitarCliente()
+            cy.wait(1000)
+            cardClienteValidar()
             digitarNovamenteDescricaoCPF()
             clicarCPFPesquisado()
             mensagemAguardeCarregando()
@@ -78,15 +59,9 @@ describe('Cadastrar cliente', () => {
         it('4-Pesquisa por descrição CNPJ', () => {
     
             inserirDescricaoCNPJ()
-            cy.wait(800)
             clicarLupaPesquisaCliente()
-            cy.wait(2000)
-            tituloCardClientes()
-            botaoXCardCliente()
-            textoInformativoClienteBusca()
-            botaoCadastrarNovoCliente()
-            botaoComandoVoz()
-            campoDigitarCliente()
+            cy.wait(1000)
+            cardClienteValidar()
             digitarNovamenteDescricaoCNPJ
             clicarCNPJPesquisado()
             mensagemAguardeCarregando()

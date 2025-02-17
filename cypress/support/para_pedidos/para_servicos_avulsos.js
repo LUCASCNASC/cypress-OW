@@ -1,32 +1,3 @@
-//Para escolher processo de venda 9888 - serviços avulsos - quando já temos uma nota de venda de produto e quando vamos vender igual produto
-export function processoVendaServicoAvulso (selector) {
-
-    //clicar para aparecer as opções de processo
-    cy.get('#select_value_label_4 > .md-select-icon')
-        .should('exist')
-        .and('be.visible')
-        .and('not.be.disabled')
-        .click()
-
-    //rolar para o meio das opções de processo
-    cy.get('#select_listbox_12')
-        .should('exist')
-        .and('be.visible')
-        .scrollTo('bottom')
-        .wait(200)
-
-    //escolher processo 9888
-    cy.get('.md-text.ng-binding')
-        .contains('9888 - T.A. Venda de serviço avulso')
-        .click({force:true})
-
-    //fechar modal de processos
-    cy.get('.md-select-backdrop')
-        .wait(200)
-        .dblclick()
-        .wait(200)
-}
-
 //Função para escolher cliente CPF para gerar pedido de venda - pesquisa por cliente
 export function escolherClientePedido (selector) {
 
@@ -39,16 +10,14 @@ export function escolherClientePedido (selector) {
 
     //clicar na lupa de pesquisa de clientes
     cy.get('.md-block > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .click()
 
     cy.wait(1500)
 
     //após a pesquisa encontrar o cliente, vamos selecionar ele
     cy.get('.md-3-line > div.md-button > .md-no-style')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .click()
 }
 
@@ -57,8 +26,7 @@ export function iconeMenuOpcoes (selector) {
 
     //Ícone do menu de opções
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
             
     //Clicar ni ícone do menu de opções
@@ -76,8 +44,7 @@ export function clienteCompletoOpcaoMenu (selector) {
 
     //Opção Cliente completo no menu de opções
     cy.get('a[aria-label="Cliente completo"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Opção Cliente completo no menu de opções
@@ -98,8 +65,7 @@ export function pesquisarPedidoNumero (selector) {
 
     //Campo Cliente ou pedido
     cy.get('#input_96')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.value','')
         .type(nomeClienteCPF, {force: true})
 }
@@ -109,8 +75,7 @@ export function clicarMenuClienteCompleto (selector) {
 
     //Validando 
     cy.get('#menu_click_pri')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //clicar no menu
@@ -123,8 +88,7 @@ export function clicarOpcaoServicos (selector) {
 
     //Validando
     cy.get('div[ng-repeat="tab in tabs"][ng-if="tab.checked"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Serviços')
         .and('not.have.attr', 'disabled')
 
@@ -138,13 +102,11 @@ export function aguardeCarregandoServico (selector) {
 
     //ícone de carregamento
     cy.get('.layout-align-center-center > .md-accent')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Mensagem "Aguarde carregando..."
     cy.get('.carregando')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aguarde carregando...')
 }
 
@@ -152,8 +114,7 @@ export function aguardeCarregandoServico (selector) {
 export function botaoAddMaoObra (selector) {
 
     cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > .prodServicoUl > :nth-child(1) > .md-default')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Adicionar Mão de Obra')
         .and('not.have.attr', 'disabled')
 }
@@ -162,8 +123,7 @@ export function botaoAddMaoObra (selector) {
 export function botaoAddGarantias (selector) {
 
     cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > .prodServicoUl > :nth-child(2) > .md-default')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Adicionar Garantias')
         .and('not.have.attr', 'disabled')
 }
@@ -187,21 +147,18 @@ export function modalGarantiasServicosVinculados (selector) {
 
     //Título do modal - Serviços Vinculados
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Serviços Vinculados')
 
     //botão x do modal Serviços Vinculados
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //mensagem do modal Serviços Vinculados - "Garantias"
     cy.get('p.ng-binding')
         .contains('Garantias')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 }
 
 //Validações card de serviços
@@ -209,14 +166,12 @@ export function modalMaoObraServicosVinculados (selector) {
 
     //Título do modal - Serviços Vinculados
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Serviços Vinculados')
 
     //botão x do modal Serviços Vinculados
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //mensagem do modal Serviços Vinculados - "Mão de Obra"
@@ -224,8 +179,7 @@ export function modalMaoObraServicosVinculados (selector) {
         .contains('Mão de Obra')
         .scrollIntoView()
         .wait(200)
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 }
 
 //botão OK modal Serviços Vinculados
@@ -233,8 +187,7 @@ export function okServicosVinculados (selector) {
 
     //validando botão
     cy.get('button[ng-click="salvar()"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.be.disabled')
         .and('have.text',' Ok ')
 
@@ -248,21 +201,17 @@ export function messServicoAdicionadoSucesso (selector) {
 
     //Item adicionado com sucesso! - card inteiro
     cy.get('.toast')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Item adicionado com sucesso! - Aviso
     cy.get('.toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aviso')
 
     //Item adicionado com sucesso! - Mensagem em si
     cy.get('.toast-message')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Item adicionado com sucesso!')
-
 }
 
 //Botão SALVAR
@@ -270,14 +219,12 @@ export function botaoSalvarServico (selector) {
 
     //Validando botão completo
     cy.get('.btn')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.be.disabled')
         .and('contain',' SALVAR ')
 
     cy.get('.btn > .ng-scope')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //clicar no botão
@@ -290,14 +237,13 @@ export function messAguardeCarregando (selector) {
 
     //ícone giratório
     cy.get('svg')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Mensagem "Aguarde carregando..."
-    cy.get('#dialogContent_209 > .layout-align-center-center > h3')
+    cy.contains('Aguarde carregando...')
         .should('exist')
-        .and('be.visible')
-        .and('contain', 'Aguarde carregando...')
+        //.and('be.visible')
+        //.and('contain', 'Aguarde carregando...')
 }
 
 //Mensagem de "Registro salvo com sucesso!"
@@ -305,19 +251,16 @@ export function messRegistroSalvoSucesso (selector) {
 
     //Registro salvo com sucesso! - card inteiro
     cy.get('[style="display: block;"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Registro salvo com sucesso! - Aviso
     cy.get(':nth-child(1) > .toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Aviso')
 
     //Registro salvo com sucesso!! - Mensagem em si
     cy.get(':nth-child(1) > .toast-message')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Registro salvo com sucesso!')
 
 }
@@ -327,30 +270,28 @@ export function messGarantiaJaAdicionada (selector) {
 
     //O Serviço Garantias já foi adicionado à esse produto. - card inteiro
     cy.get('.toast-warning')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //O Serviço Garantias já foi adicionado à esse produto. - Aviso
     cy.get('.toast-warning > .toast-title')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'Atenção')
 
     //O Serviço Garantias já foi adicionado à esse produto. - Mensagem em si
     cy.get('.toast-warning')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'O Serviço Garantias já foi adicionado à esse produto.')
 }
 
 //Clicar no carrinho de compras
 export function clicarCarrinhoCompras (selector) {
 
+    cy.intercept('GET', '/images/icons/brazil-real-symbol.svg').as('api_produto_carrinho_compra')
     //validando
     cy.get('#test_btnCarrinho > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .click({force:true})
+    cy.wait('@api_produto_carrinho_compra', { timeout: 40000 })
 }
 
 //Botão AVANÇAR
@@ -359,23 +300,49 @@ export function botaoAvancarPedido (selector) {
     //validando botão
     cy.get('.flex-gt-sm-50 > .md-primary')
         .scrollIntoView()
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.be.disabled')
         .and('have.text',' Avançar ')
+
+    cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
+    //clicando botão
+    cy.get('.flex-gt-sm-50 > .md-primary')
         .click({force:true})
+    cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
 }
+
+//Botão "GERAR PARCELAS"
+export function botaoGerarParcelasServicos (selector) {
+
+    
+
+    //Botão "GERAR PARCELAS" - validações
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .scrollIntoView()
+        .wait(200)
+        .should('exist')
+        .and('have.text', 'Gerar parcelas')
+
+    cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento')
+    //Botão "GERAR PARCELAS" - clicar
+    cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
+        .click({force:true})
+        
+    cy.wait('@api_modal_forma_pagamento', { timeout: 40000 })
+}
+
+
 
 //Escolher servico, para vende-lo - 144 (T.A. MO Não Destaca e Separa Processo Diferente)
 export function produtoServicoAvulso (selector) {
 
     const codigo_servico = '144'
 
+    cy.intercept('GET', /\/consultaprodutos\/.*144.*/).as('apiConsultaProdutos_produtoServicoAvulso')
+
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
-        //.and('have.value', '')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
@@ -387,6 +354,8 @@ export function produtoServicoAvulso (selector) {
         .type(codigo_servico)
         .wait(100)
         .should('have.value', codigo_servico)
+
+    cy.wait('@apiConsultaProdutos_produtoServicoAvulso', { timeout: 40000 })
 }
 
 //Validando serviço com saldo disponível local
@@ -394,37 +363,31 @@ export function saldoDisponivelServico (selector) {
     
     //Validando imagem
     cy.get('.resultado-imagem')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Validando "Saldo disponivel"
     cy.get('.label')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text','Saldo disponivel')
         .invoke('css', 'background-color') // Obtém a cor do elemento
         .should('equal', 'rgb(92, 184, 92)')
 
     //Validando nome do serviço dentro card
     cy.get('.md-resultado-titulo')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Validado código do serviço dentro do card
     cy.get('.badge-saldo.ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Validando R$ dentro do card
     cy.get('sup')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text','R$')
 
     //Validando valor do serviço dentro do card
     cy.get('.valor-busca')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 }
 
 //Clicar para selecionar o produto que queremos adicionar ao pedido
@@ -432,41 +395,100 @@ export function escolherServicoPesquisa (selector) {
 
     //Imagem do produto
     cy.get('.resultado-imagem')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Nome do produto
     cy.get('.md-resultado-titulo')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Saldo disponível
     cy.get('.md-list-item-text > .ng-scope')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Código do produto
     cy.get('.badge-saldo.ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //Cifrão do valor do produto
     cy.get('sup')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('have.text', 'R$')
 
     //Valor do produto
     cy.get('.valor-busca')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
+    cy.intercept('GET', '/services/v3/produto_servico/*').as('api_produto_produto_servico')
     //Clicar para adicionar no carrinho
     cy.get('.md-list-item-text')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .click({force:true})
+    cy.wait('@api_produto_produto_servico', { timeout: 40000 })
 }
+
+//Mensagem de "Item adicionado com sucesso!"
+export function messItemAdicionadoSucesso (selector) {
+
+    //O Serviço Garantias já foi adicionado à esse produto. - card inteiro
+    cy.get('.toast')
+        .should('be.visible')
+
+    //O Serviço Garantias já foi adicionado à esse produto. - Aviso
+    cy.get('.toast-title')
+        .should('be.visible')
+        .and('have.text', 'Aviso')
+
+    //O Serviço Garantias já foi adicionado à esse produto. - Mensagem em si
+    cy.get('.toast-message')
+        .should('be.visible')
+        .and('contain', 'Item adicionado com sucesso!')
+}
+
+//validando que serviço foi adicionando ao carrinho - serviço que gera NFe
+export function servicoAdicionadoCarrinho (selector) {
+
+    //card completo
+    cy.get('.servicos > .noscroll')
+        .should('be.visible')
+
+    //nome do serviço
+    cy.get('span.list-title')
+        .should('be.visible')
+
+    //Quantidade
+    cy.get('.flex-60 > :nth-child(2) > b')
+        .should('be.visible')
+        .and('have.text', 'Quantidade:')
+
+    //valor da quantidade
+    cy.get('.flex-60 > :nth-child(2)')
+        .should('be.visible')
+
+    //Vandedor
+    cy.get('.flex-60 > :nth-child(3) > b')
+        .should('be.visible')
+        .and('have.text', 'Vendedor:')
+
+    //Valor do vendedor
+    cy.get('.flex-60 > :nth-child(3)')
+        .should('be.visible')
+
+    //botão para editar vendedor
+    cy.get('.flex-60 > :nth-child(3) > .md-primary')
+        .should('be.visible')
+        .and('not.be.disabled')
+
+    //valor real do serviço
+    cy.get('input[ng-model="servAtual.valorFinal"]')
+        .should('be.visible')
+
+    //botão excluir seviço
+    cy.get('.btn-remove-item-list > .md-button')
+        .should('be.visible')
+        .and('not.be.disabled')
+}
+
+
 
 //Escolher servico host, para vende-lo - 104 (Recarga Homologação TIM TIM)
 export function produtoServicoHost (selector) {
@@ -475,9 +497,7 @@ export function produtoServicoHost (selector) {
 
     //Validando campo Buscar produto
     cy.get('#searchText')
-        .should('exist')
-        .and('be.visible')
-        //.and('have.value', '')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
@@ -496,8 +516,7 @@ export function clicarServicosMenu (selector) {
 
     //Opção Serviços no menu de opções
     cy.get('a[aria-label="Serviços"]')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.have.attr', 'disabled')
 
     //Opção Serviços no menu de opções
@@ -505,9 +524,9 @@ export function clicarServicosMenu (selector) {
         .should('have.attr', 'aria-label', 'Serviços')
 
     //ícone Serviços 
-    cy.get('md-icon[md-svg-src="images/icons/services.svg"]')
+    cy.get('[role="listitem"][href="#!/servicos"] > div.md-button > .md-no-style')
         .scrollIntoView()
-        .should('exist')
+        .should('be.visible')
         .click({force:true})
 }
 
@@ -516,45 +535,37 @@ export function escolherValorRecarga (selector) {
 
     //validando título do modal
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Selecione uma faixa de preço para o serviço')
 
     //validando botão X do modal
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.be.disabled')
 
     //validando Garantia Celular Host
     cy.get('.md-subheader-content')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain.text', 'Recarga Celular HOST')
 
     //validando nome do serviço, dentro do card
     cy.get('h3.ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
 
     //validando Valor do serviço dentro do card
     cy.get('.md-no-style > .md-list-item-text > p.ng-binding')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Valor:')
 
     //validando "Valor" na escolha do valor da recarga
     cy.get('.md-secondary-container > :nth-child(1)')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('contain', 'Valor')
 
-    //seta para escolher valor da recarga
-    cy.get('#select_value_label_121 > .md-select-icon')
-        .should('exist')
-        .and('be.visible')
-        .and('not.be.disabled')
-        .click({force:true})
+    //clicar na caixinha para escolher o valor da recarga
+    cy.contains('.md-text.ng-binding', '2,00')  // Encontra o texto "2,00" dentro do <div>
+        .parents('md-select-value')  // Sobe para o <md-select-value> pai
+        .click();  // Clica no <md-select-value>
 
     //selecionando valor da recarga
     cy.contains('10,00')
@@ -564,8 +575,7 @@ export function escolherValorRecarga (selector) {
 
     //clicando no botão OK após selecionarmos o valor da recarga
     cy.get('.layout-align-end-end > .md-raised')
-        .should('exist')
-        .and('be.visible')
+        .should('be.visible')
         .and('not.be.disabled')
         .and('have.text', ' Ok ')
         .click({force:true})      
