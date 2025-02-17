@@ -28,5 +28,7 @@ node_modules
 cypress/videos
 cypress/screenshots
 js/*.js
+cypress.config.js
+
 
 cypress/fixtures/local.json
