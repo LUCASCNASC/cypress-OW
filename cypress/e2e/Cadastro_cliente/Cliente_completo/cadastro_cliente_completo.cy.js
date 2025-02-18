@@ -9,7 +9,7 @@ import { PreencherPessoa } from '../../../../pages/para_cadastro_cliente/cliente
 import { GeralRefBancaria } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/geral_ref_bancaria';
 import { PreencherRefBancaria } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/preencher_ref_bancaria';
 import { GeralRefComercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/geral_ref_comercial';
-import { GreencherRefComercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/preencher_ref_comercial';
+import { PreencherRefComercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/preencher_ref_comercial';
 import { GeralRefFinanceira } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/geral_ref_financeira';
 import { PreencherRefFinanceira } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/preencher_ref_financeira';
 import { GeralRefPessoal } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/geral_ref_pessoal';
@@ -963,16 +963,17 @@ describe('Cadastrar cliente completo', () => {
             GeralTelefone.messTelefoneIncluidoSucesso()
 
             ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            validarAbaRefPessoalVazia() //REFERENCIA PESSOAL
-            clicarAddNovaRefPessoal()
-            modalRefPessoalVazio()
-            selectNomeRefPessoal()
-            selectEmailRefPessoal()
-            selectTelefoneRefPessoal()
-            selectRlacionamentoRefPessoal()
-            clicarSalvarRefPessoal()
-            messRefPessoalIncluidaSucesso()
-            infosRefPessoalAdicionada()
+            GeralRefPessoal.clicarAbaRefPessoal()
+            GeralRefPessoal.validarAbaRefPessoalVazia() //REFERENCIA PESSOAL
+            GeralRefPessoal.clicarAddNovaRefPessoal()
+            GeralRefPessoal.modalRefPessoalVazio()
+            PreencherRefPessoal.nome()
+            PreencherRefPessoal.email()
+            PreencherRefPessoal.telefone()
+            PreencherRefPessoal.relacionamento()
+            GeralRefPessoal.clicarSalvar()
+            GeralRefPessoal.messRefPessoalIncluidaSucesso()
+            GeralRefPessoal.infosAdicionada()
             ClicarClienteCompleto.salvarCliente()
             cy.wait(3000)
             GeralClienteCompleto.modalAguardeCarregando()
@@ -1033,18 +1034,18 @@ describe('Cadastrar cliente completo', () => {
             GeralTelefone.messTelefoneIncluidoSucesso()
 
             ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            clicarAbaRefComercial() //REFERENCIA COMERCIAL
-            validarAbaRefComercialVazia()
-            clicarAddNovaRefComercial()
-            modalRefComercialVazio()
-            selectEmpresaRefComercial()
-            selectContatoRefComercial()
-            selectTelefoneRefComercial()
-            selectEmailRefComercial()
-            selectObservacaoRefComercial()
-            clicarSalvarRefComercial()
-            infosRefComercialAdicionada()
-            messRefComercialIncluidaSucesso()
+            GeralRefComercial.clicarAbaRefComercial() //REFERENCIA COMERCIAL
+            GeralRefComercial.validarAbaRefComercialVazia()
+            GeralRefComercial.clicarAddNovaRefComercial()
+            GeralRefComercial.modalRefComercialVazio()
+            PreencherRefComercial.empresa()
+            PreencherRefComercial.contato()
+            PreencherRefComercial.telefone()
+            PreencherRefComercial.email()
+            PreencherRefComercial.observacao()
+            GeralRefComercial.clicarSalvarRefComercial()
+            GeralRefComercial.infosRefComercialAdicionada()
+            GeralRefComercial.messRefComercialIncluidaSucesso()
             ClicarClienteCompleto.salvarCliente()
             cy.wait(3000)
             GeralClienteCompleto.modalAguardeCarregando()
@@ -1105,17 +1106,17 @@ describe('Cadastrar cliente completo', () => {
             GeralTelefone.messTelefoneIncluidoSucesso()
 
             ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            clicarAbaRefFinanceira() //REFERENCIA FINANCEIRA
-            validarAbaRefFinanceiraVazia()
-            clicarAddNovaRefFinanceira()
-            modalRefFinanceiraVazio()
-            selectDataInicioRefFinanceira()
-            selectLocalExpRefFinanceira()
-            selectPlanoExpRefFinanceira()
-            selectValorPrestRefFinanceira()
-            clicarSalvarRefFinanceira()
-            messRefFinanceiraIncluidaSucesso()
-            infosRefFinanceiraAdicionada()
+            GeralRefFinanceira.clicarAba() //REFERENCIA FINANCEIRA
+            GeralRefFinanceira.validarAbaVazia()
+            GeralRefFinanceira.clicarAddNova()
+            GeralRefFinanceira.modalVazio()
+            PreencherRefFinanceira.dataInicio()
+            PreencherRefFinanceira.localExp()
+            PreencherRefFinanceira.planoExp()
+            PreencherRefFinanceira.valorPrest()
+            GeralRefFinanceira.clicarSalvar()
+            GeralRefFinanceira.messRefFinanceiraIncluidaSucesso()
+            GeralRefFinanceira.infosRefFinanceiraAdicionada()
             ClicarClienteCompleto.salvarCliente()
             cy.wait(4000)
             GeralClienteCompleto.modalAguardeCarregando()
@@ -1177,9 +1178,9 @@ describe('Cadastrar cliente completo', () => {
             GeralTelefone.messTelefoneIncluidoSucesso()
             GeralTelefone()
 
-            clicarAbaEmpregaticio() //aba Empregatício
-            validarAbaEmpregaticioVazia()
-            clicarAddNovoEmpregaticio()
+            GeralEmpregaticio.clicarAbaEmpregat() //aba Empregatício
+            GeralEmpregaticio.validarAbaEmpregatVazia()
+            GeralEmpregaticio.clicarAddNovoEmpregat()
         }) 
     })
 })

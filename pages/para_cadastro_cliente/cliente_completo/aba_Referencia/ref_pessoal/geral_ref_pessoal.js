@@ -186,4 +186,68 @@ export class GeralRefPessoal {
             .should('be.visible')
             .and('contain', dataAtual)
     }
+
+    async modalRefPessoalVazio (selector) {
+
+        //título modal 
+        cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
+            .should('be.visible')
+            .and('have.text', 'Referência pessoal')
+    
+        //botão X
+        cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .md-icon-button > .ng-binding')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
+    
+        //campo Nome
+        cy.get('#txtNomeRefPes')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
+    
+        //informação campo Nome
+        cy.get('label[for="txtNomeRefPes"]')
+            .should('have.text', 'Nome')
+    
+        //campo Email
+        cy.get('#txtEmailRefPes')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
+    
+        //informação campo Email
+        cy.get('label[for="txtEmailRefPes"]')
+            .should('have.text', 'Email')
+    
+        //campo Telefone
+        cy.get('#txtTelefoneRefPes')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
+    
+        //informação campo Telefone
+        cy.get('label[for="txtTelefoneRefPes"]')
+            .should('have.text', 'Telefone')
+    
+        //campo Relacionamento
+        cy.get('#txtRelacionamentoRefPes')
+            .should('be.visible')
+            .and('not.have.attr', 'disabled')
+    
+        //informação campo Relacionamento
+        cy.get('label[for="txtRelacionamentoRefPes"]')
+            .should('have.text', 'Relacionamento')
+    
+        //campo Data inclusão
+        cy.get('#txtDtInclusaoRefPes')
+            .should('be.visible')
+            .and('have.attr', 'disabled')
+    
+        //informação Data inclusão
+        cy.get('label[for="txtDtInclusaoRefPes"]')
+            .should('have.text', 'Data inclusão')
+        
+        //validar botão SALVAR, desabilitado
+        cy.get('#btnModalAddRefPessoal')
+            .should('be.visible')
+            .should('have.attr', 'disabled')
+    }
+    
 }
