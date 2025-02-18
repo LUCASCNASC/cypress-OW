@@ -180,4 +180,3 @@ export class GeralRefComercial {
             .should('be.visible')
     }
 }
-

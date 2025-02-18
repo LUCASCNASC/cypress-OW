@@ -123,4 +123,25 @@ export class PreencherPessoa {
             .and('have.value','')
             .type(NomeSocial)
     }
+
+     //Validar e escolher sexo da pessoa
+     async sexoCliente (selector) {
+
+        //Campo Sexo - validando mensagem dentro do campo antes de preencher
+        cy.get('label[for="txtSexo"]')
+            .should('have.text', 'Sexo') 
+
+        //Campo Tipo de Sexo
+        cy.get('#txtSexo')
+            .should('be.visible')
+
+        //Clicar no campo Tipo de sexo
+        cy.get('#txtSexo')
+            .click({force:true})
+
+        //Clicar na opção MASCULINO
+        cy.get('.md-text.ng-binding')
+            .contains('Masculino')
+            .click({force:true})
+    }
 }

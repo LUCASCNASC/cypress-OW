@@ -8,7 +8,7 @@ export class PreencherTelefone {
     }
 
     //selecionar tipo de telefone na aba telefone
-    async escolherTipoTelefone (selector) {
+    async tipoTelefone (selector) {
 
         //Card Telefone - campo tipo de telefone
         cy.get('#txtTpTel')
@@ -21,7 +21,7 @@ export class PreencherTelefone {
     }
 
     //preencher campo Numero, no cadastro de telefone
-    async preencherNumeroTelefone (selector) {
+    async numeroTelefone (selector) {
 
         const numero_telefone = gerarTelefoneAleatorio();
 
@@ -31,7 +31,7 @@ export class PreencherTelefone {
     }
 
     //preencher campo Ramal, no cadastro de telefone
-    async preencherRamalTelefone (selector) {
+    async ramalTelefone (selector) {
 
         const ramal_telefone = "435"
 

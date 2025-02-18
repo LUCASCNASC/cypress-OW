@@ -77,7 +77,7 @@ export class PreencherRefBancaria {
     }
 
     //referencia bancaria - escolher Email
-    async Email (selector) {
+    async email (selector) {
 
         const emailAleatorio = gerarEmailAleatorio();
 
@@ -154,7 +154,7 @@ export class PreencherRefBancaria {
     }
 
     //gerar chave pix tipo telefone errada
-    async ChavePixTelefoneErrada (selector) {
+    async chavePixTelefoneErrada (selector) {
 
         const chave_pix_telefone_errada = gerarChavePixTelefoneErrada();
 

@@ -1,22 +1,25 @@
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/geral_cliente_completo';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/geral_anexo';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/preencher_anexo';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/geral_empregaticio';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/preencher_empregaticio';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/geral_pessoa';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/preencher_pessoa';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/geral_ref_bancaria';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/preencher_ref_bancaria';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/geral_ref_comercial';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/preencher_ref_comercial';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/geral_ref_financeira';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/preencher_ref_financeira';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/geral_ref_pessoal';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/preencher_ref_pessoal';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/geral_rota';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/preencher_rota';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/geral_telefone';
-import {  } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/preencher_telefone';
+import { GeralClienteCompleto } from '../../../../pages/para_cadastro_cliente/cliente_completo/geral_cliente_completo';
+import { ClicarClienteCompleto } from '../../../../pages/para_cadastro_cliente/cliente_completo/clicar_cliente_completo';
+import { GeralAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/geral_anexo';
+import { PreencherCampoAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/preencher_anexo';
+import { clicarAbaEmpregat } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/geral_empregaticio';
+import { } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/preencher_empregaticio';
+import { } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/geral_pessoa';
+import { PreencherPessoa } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/preencher_pessoa';
+import { GeralRefBancaria } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/geral_ref_bancaria';
+import { PreencherRefBancaria } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/preencher_ref_bancaria';
+import { GeralRefComercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/geral_ref_comercial';
+import { GreencherRefComercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/preencher_ref_comercial';
+import { GeralRefFinanceira } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/geral_ref_financeira';
+import { PreencherRefFinanceira } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/preencher_ref_financeira';
+import { GeralRefPessoal } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/geral_ref_pessoal';
+import { PreencherRefPessoal } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/preencher_ref_pessoal';
+import { GeralRota } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/geral_rota';
+import { PreencherRota } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/preencher_rota';
+import { GeralTelefone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/geral_telefone';
+import { PreencherTelefone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/preencher_telefone';
+import { GeralEndereco } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/geral_endereco';
+import { PreencherEndereco } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/preencher_endereco';
 
 
 describe('Cadastrar cliente completo', () => {
@@ -33,249 +36,243 @@ describe('Cadastrar cliente completo', () => {
 
         it('1. Cliente completo CPF', () => {
 
-            iconeMenuOpcoes() //PESSOA
-            opcaoClienteCompleto()
-            preencherCPFcliente()
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes() //PESSOA
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
-            modalEnderecoVazioValidar()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            preencherCampoNumeroEndereco()
-            clicarSalvarEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
-            //messTelefoneIncluidoSucesso()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            clicarSalvarCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(2000)
-            modalAguardeCarregando()
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         })  
 
         it('2. Cliente completo CPF - mensagem de campos obrigatórios', () => {
     
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            clicarSalvarClienteCompleto() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            ClicarClienteCompleto.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
 
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
             cy.wait(500)
 
-            clicarAbaEndereco() //ENDEREÇO
-            //cy.wait(5000)
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
 
-            clicarSalvarClienteCompleto() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            ClicarClienteCompleto.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            ClicarClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
 
-            clicarAdicionarNovoEndereço() //ENDEREÇO
-            cardEnderecoVazioValidar()
-            cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
-            cy.wait(200)
-            botaoSalvarDesabilitado()
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAdicionarNovoEndereço() //ENDEREÇO
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
-
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            PreencherEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarAbrirTipoEndereco()
+            cy.wait(300)
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
+
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
+            cy.wait(200)
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
-            //messTelefoneIncluidoSucesso()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            clicarSalvarCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(2000)
-            modalAguardeCarregando()
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         })  
 
         it('3. Cliente completo CNPJ', () => {
     
-            iconeMenuOpcoes()
-            opcaoClienteCompleto() 
-            preencherCNPJcliente() //PESSOA
-            preencherNomeCNPJ()
-            preencherNomeFantasiaCNPJ()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto() 
+            PreencherPessoa.cnpjCliente() //PESSOA
+            PreencherPessoa.nomeCNPJ()
+            PreencherPessoa.nomeFantasiaCNPJ()
 
-            clicarSalvarClienteCompleto() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            ClicarClienteCompleto.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
             cy.wait(400)
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            botaoSalvarDesabilitado()
-            clicarAbrirTipoEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
-            clicarSalvarCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(2000)
-            modalAguardeCarregando()
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         }) 
     })
 
     context('Cadastro de cliente completo - incluindo anexo após salvar o cadastro de cliente', () => {
 
-        it('4. Cliente completo CPF - caminho feliz', () => {
+        it('4. Cliente completo CPF - caminho feliz', () => {GeralClienteCompleto.
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto() 
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto() 
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
-            
-            //messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            messTelefoneIncluidoSucesso()
-            clicarSalvarCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(2000)
-            modalAguardeCarregando()
-            //messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
             cy.wait(2000)
 
-            clicarMenuCadastroClienteCompleto()
-            clicarAbaAnexo()
-            validarAbaAnexoVazia()
-            selecionarPrimeiroTipoAnexo()
+            ClicarClienteCompleto.menuCadastroClienteCompleto()
+            GeralAnexo.clicarAbaAnexo()
+            GeralAnexo.validarAbaAnexoVazia()
+            GeralAnexo.selecionarPrimeiroTipoAnexo()
             cy.wait(500)
-            anexarArquivoPFD()
-            confirmarEnvioArquivo()
+            PreencherCampoAnexo.anexarArquivoPFD()
+            GeralAnexo.confirmarEnvioArquivo()
             cy.wait(1000)
-            messAnexoIncluidoSucesso()
-            validarAnexoInserido()
-            clicarSalvarClienteCompleto()
+            GeralAnexo.messAnexoIncluidoSucesso()
+            GeralAnexo.validarAnexoInserido()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(3000)
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         })
     })
 
@@ -283,654 +280,633 @@ describe('Cadastrar cliente completo', () => {
 
         it('5. Cliente completo CPF - tipo de chave PIX Telefone correto', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto() 
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto() 
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
-            //messEnderecoIncluidoSucesso()
+            GeralEndereco.infosEnderecoAdicionado()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
-
-            clicarAbaReferencias() //REFERENCIA
-            clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
-            validarAbaRefBancariaVazia()
-            clicarAddNovaRefBancaria()
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
+            GeralRefBancaria.clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
+            GeralRefBancaria.validarAbaRefBancariaVazia()
+            GeralRefBancaria.clicarAddNovaRefBancaria()
             cy.wait(2000)
-            modalRefBancariaVazio()
-            selectBancoRefBancaria()
-            selectAgenciaRefBancaria()
-            selectContaRefBancaria()
-            selectDataAberturaRefBancaria()
-            //selectBoletoRefBancaria()
-            selectTelefoneRefBancaria()
-            selectGerenteRefBancaria()
-            selectEmailRefBancaria()
-            selectCPFCorrentistaRefBancaria()
-            selectNomeCorrentistaRefBancaria()
-            selectTipoContaRefBancaria()
-            selectOperacaoRefBancaria()
-            selectFormaPagamentoRefBancaria()
-            selectTipoChavePixTelefoneRefBancaria()
-            selectChavePixTelefone()
-            clicarSalvarRefBancaria()
-            messRefBancariaIncluidaSucesso()
-            infosRefBancariaAdicionada()
-            clicarSalvarCliente()
+            GeralRefBancaria.modalRefBancariaVazio()
+            PreencherRefBancaria.banco()
+            PreencherRefBancaria.agencia()
+            PreencherRefBancaria.conta()
+            PreencherRefBancaria.dataAbertura()
+            PreencherRefBancaria.telefone()
+            PreencherRefBancaria.gerente()
+            PreencherRefBancaria.email()
+            PreencherRefBancaria.cpfCorrentista()
+            PreencherRefBancaria.nomeCorrentista()
+            PreencherRefBancaria.tipoConta()
+            PreencherRefBancaria.operacao()
+            PreencherRefBancaria.formaPagamento()
+
+
+            PreencherRefBancaria.tipoChavePixTelefone()
+            PreencherRefBancaria.chavePixTelefone()
+            GeralRefBancaria.clicarSalvarRefBancaria()
+            GeralRefBancaria.messRefBancariaIncluidaSucesso()
+            GeralRefBancaria.infosRefBancariaAdicionada()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(2000)
-            modalAguardeCarregando()
-            cy.wait(2000)
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         })  
 
         it('6. Cliente completo CPF - tipo de chave PIX Email correto', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto() 
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto() 
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
+            GeralRefBancaria.clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
+            GeralRefBancaria.validarAbaRefBancariaVazia()
+            GeralRefBancaria.clicarAddNovaRefBancaria()
+            cy.wait(2000)
+            GeralRefBancaria.modalRefBancariaVazio()
+            PreencherRefBancaria.banco()
+            PreencherRefBancaria.agencia()
+            PreencherRefBancaria.conta()
+            PreencherRefBancaria.dataAbertura()
+            PreencherRefBancaria.telefone()
+            PreencherRefBancaria.gerente()
+            PreencherRefBancaria.email()
+            PreencherRefBancaria.cpfCorrentista()
+            PreencherRefBancaria.nomeCorrentista()
+            PreencherRefBancaria.tipoConta()
+            PreencherRefBancaria.operacao()
+            PreencherRefBancaria.formaPagamento()
 
-            clicarAbaReferencias() //REFERENCIA
-            clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
-            validarAbaRefBancariaVazia()
-            clicarAddNovaRefBancaria()
+            PreencherRefBancaria.tipoChavePixEmail()
+            PreencherRefBancaria.chavePixEmail()
+            GeralRefBancaria.clicarSalvarRefBancaria()
+            GeralRefBancaria.messRefBancariaIncluidaSucesso()
+            GeralRefBancaria.infosRefBancariaAdicionada()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(2000)
-            modalRefBancariaVazio()
-            selectBancoRefBancaria()
-            selectAgenciaRefBancaria()
-            selectContaRefBancaria()
-            selectDataAberturaRefBancaria()
-            //selectBoletoRefBancaria()
-            selectTelefoneRefBancaria()
-            selectGerenteRefBancaria()
-            selectEmailRefBancaria()
-            selectCPFCorrentistaRefBancaria()
-            selectNomeCorrentistaRefBancaria()
-            selectTipoContaRefBancaria()
-            selectOperacaoRefBancaria()
-            selectFormaPagamentoRefBancaria()
-            selectTipoChavePixEmailRefBancaria()
-            selectChavePixEmail()
-            clicarSalvarRefBancaria()
-            messRefBancariaIncluidaSucesso()
-            infosRefBancariaAdicionada()
-            clicarSalvarCliente()
-            cy.wait(2000)
-            modalAguardeCarregando()
-            cy.wait(2000)
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         }) 
 
         it('7. Cliente completo CPF - tipo de chave PIX CPF CNPJ correto', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto() 
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto() 
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
+            GeralRefBancaria.clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
+            GeralRefBancaria.validarAbaRefBancariaVazia()
+            GeralRefBancaria.clicarAddNovaRefBancaria()
+            cy.wait(2000)
+            GeralRefBancaria.modalRefBancariaVazio()
+            PreencherRefBancaria.banco()
+            PreencherRefBancaria.agencia()
+            PreencherRefBancaria.conta()
+            PreencherRefBancaria.dataAbertura()
+            PreencherRefBancaria.telefone()
+            PreencherRefBancaria.gerente()
+            PreencherRefBancaria.email()
+            PreencherRefBancaria.cpfCorrentista()
+            PreencherRefBancaria.nomeCorrentista()
+            PreencherRefBancaria.tipoConta()
+            PreencherRefBancaria.operacao()
+            PreencherRefBancaria.formaPagamento()
 
-            clicarAbaReferencias() //REFERENCIA
-            clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
-            validarAbaRefBancariaVazia()
-            clicarAddNovaRefBancaria()
+            PreencherRefBancaria.tipoChavePixCpfCnpj()
+            PreencherRefBancaria.chavePixCPF()
+            GeralRefBancaria.clicarSalvarRefBancaria()
+            GeralRefBancaria.messRefBancariaIncluidaSucesso()
+            GeralRefBancaria.infosRefBancariaAdicionada()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(2000)
-            modalRefBancariaVazio()
-            selectBancoRefBancaria()
-            selectAgenciaRefBancaria()
-            selectContaRefBancaria()
-            selectDataAberturaRefBancaria()
-            //selectBoletoRefBancaria()
-            selectTelefoneRefBancaria()
-            selectGerenteRefBancaria()
-            selectEmailRefBancaria()
-            selectCPFCorrentistaRefBancaria()
-            selectNomeCorrentistaRefBancaria()
-            selectTipoContaRefBancaria()
-            selectOperacaoRefBancaria()
-            selectFormaPagamentoRefBancaria()
-            selectTipoChavePixCpfCnpjRefBancaria()
-            selectChavePixCPF()
-            clicarSalvarRefBancaria()
-            //messRefBancariaIncluidaSucesso()
-            infosRefBancariaAdicionada()
-            clicarSalvarCliente()
-            cy.wait(2000)
-            modalAguardeCarregando()
-            cy.wait(2000)
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         }) 
 
-        //verificar 
-        it.skip('8. Cliente completo CPF - tipo de chave PIX CPF CNPJ correto', () => {
+        it('8. Cliente completo CPF - tipo de chave PIX CPF CNPJ correto', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto() 
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto() 
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
+            GeralRefBancaria.clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
+            GeralRefBancaria.validarAbaRefBancariaVazia()
+            GeralRefBancaria.clicarAddNovaRefBancaria()
+            cy.wait(2000)
+            GeralRefBancaria.modalRefBancariaVazio()
+            PreencherRefBancaria.banco()
+            PreencherRefBancaria.agencia()
+            PreencherRefBancaria.conta()
+            PreencherRefBancaria.dataAbertura()
+            PreencherRefBancaria.telefone()
+            PreencherRefBancaria.gerente()
+            PreencherRefBancaria.email()
+            PreencherRefBancaria.cpfCorrentista()
+            PreencherRefBancaria.nomeCorrentista()
+            PreencherRefBancaria.tipoConta()
+            PreencherRefBancaria.operacao()
+            PreencherRefBancaria.formaPagamento()
 
-            clicarAbaReferencias() //REFERENCIA
-            clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
-            validarAbaRefBancariaVazia()
-            clicarAddNovaRefBancaria()
+            PreencherRefBancaria.tipoChavePixAletoria()
+            PreencherRefBancaria.chavePixAleatorio()
+            GeralRefBancaria.clicarSalvarRefBancaria()
+            GeralRefBancaria.messRefBancariaIncluidaSucesso()
+            GeralRefBancaria.infosRefBancariaAdicionada()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(2000)
-            modalRefBancariaVazio()
-            selectBancoRefBancaria()
-            selectAgenciaRefBancaria()
-            selectContaRefBancaria()
-            selectDataAberturaRefBancaria()
-            //selectBoletoRefBancaria()
-            selectTelefoneRefBancaria()
-            selectGerenteRefBancaria()
-            selectEmailRefBancaria()
-            selectCPFCorrentistaRefBancaria()
-            selectNomeCorrentistaRefBancaria()
-            selectTipoContaRefBancaria()
-            selectOperacaoRefBancaria()
-            selectFormaPagamentoRefBancaria()
-            selectTipoChavePixAletoriaRefBancaria()
-            selectChavePixAleatorio()
-            clicarSalvarRefBancaria()
-            messRefBancariaIncluidaSucesso()
-            infosRefBancariaAdicionada()
-            clicarSalvarCliente()
-            cy.wait(2000)
-            modalAguardeCarregando()
-            cy.wait(2000)
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         }) 
 
         it('9. Cliente completo CPF - validar tipo de chave PIX Telefone incorreto ', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
-
-            clicarAbaReferencias() //aba REFERENCIA
-            clicarAbaRefBancaria() //aba REFERENCIA BANCARIA
-            validarAbaRefBancariaVazia()
-            clicarAddNovaRefBancaria()
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
+            GeralRefBancaria.clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
+            GeralRefBancaria.validarAbaRefBancariaVazia()
+            GeralRefBancaria.clicarAddNovaRefBancaria()
             cy.wait(2000)
-            modalRefBancariaVazio()
-            selectBancoRefBancaria() //preencher campo BANCO
-            selectAgenciaRefBancaria()
-            selectContaRefBancaria()
-            selectDataAberturaRefBancaria()
-            //selectBoletoRefBancaria()
-            selectTelefoneRefBancaria()
-            selectGerenteRefBancaria()
-            selectEmailRefBancaria()
-            selectCPFCorrentistaRefBancaria()
-            selectNomeCorrentistaRefBancaria()
-            selectTipoContaRefBancaria()
-            selectOperacaoRefBancaria()
-            selectFormaPagamentoRefBancaria()
-            selectTipoChavePixTelefoneRefBancaria()
-            selectChavePixTelefoneErrada()
-            clicarSalvarRefBancaria()
-            messRefBancariaIncluidaSucesso()
-            infosRefBancariaAdicionada()
-            clicarSalvarCliente()
-            messRefBancariaChavePixTelefoneInvalida()
+            GeralRefBancaria.modalRefBancariaVazio()
+            PreencherRefBancaria.banco()
+            PreencherRefBancaria.agencia()
+            PreencherRefBancaria.conta()
+            PreencherRefBancaria.dataAbertura()
+            PreencherRefBancaria.telefone()
+            PreencherRefBancaria.gerente()
+            PreencherRefBancaria.email()
+            PreencherRefBancaria.cpfCorrentista()
+            PreencherRefBancaria.nomeCorrentista()
+            PreencherRefBancaria.tipoConta()
+            PreencherRefBancaria.operacao()
+            PreencherRefBancaria.formaPagamento()
+
+            PreencherRefBancaria.tipoChavePixTelefone()
+            PreencherRefBancaria.chavePixTelefoneErrada()
+            GeralRefBancaria.clicarSalvarRefBancaria()
+            GeralRefBancaria.messRefBancariaIncluidaSucesso()
+            GeralRefBancaria.infosRefBancariaAdicionada()
+            ClicarClienteCompleto.salvarCliente()
+            GeralRefBancaria.messRefBancariaChavePixTelefoneInvalida()
         })  
 
         it('10. Cliente completo CPF - validar tipo de chave PIX Email incorreto ', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
-
-            clicarAbaReferencias() //aba REFERENCIA
-            clicarAbaRefBancaria() //aba REFERENCIA BANCARIA
-            validarAbaRefBancariaVazia()
-            clicarAddNovaRefBancaria()
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
+            GeralRefBancaria.clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
+            GeralRefBancaria.validarAbaRefBancariaVazia()
+            GeralRefBancaria.clicarAddNovaRefBancaria()
             cy.wait(2000)
-            modalRefBancariaVazio()
-            selectBancoRefBancaria() //preencher campo BANCO
-            selectAgenciaRefBancaria()
-            selectContaRefBancaria()
-            selectDataAberturaRefBancaria()
-            //selectBoletoRefBancaria()
-            selectTelefoneRefBancaria()
-            selectGerenteRefBancaria()
-            selectEmailRefBancaria()
-            selectCPFCorrentistaRefBancaria()
-            selectNomeCorrentistaRefBancaria()
-            selectTipoContaRefBancaria()
-            selectOperacaoRefBancaria()
-            selectFormaPagamentoRefBancaria()
-            selectTipoChavePixEmailRefBancaria()
-            selectChavePixEmailErrada()
-            clicarSalvarRefBancaria()
-            messRefBancariaIncluidaSucesso()
-            infosRefBancariaAdicionada()
-            clicarSalvarCliente()
-            messRefBancariaChavePixEmailInvalida()
+            GeralRefBancaria.modalRefBancariaVazio()
+            PreencherRefBancaria.banco()
+            PreencherRefBancaria.agencia()
+            PreencherRefBancaria.conta()
+            PreencherRefBancaria.dataAbertura()
+            PreencherRefBancaria.telefone()
+            PreencherRefBancaria.gerente()
+            PreencherRefBancaria.email()
+            PreencherRefBancaria.cpfCorrentista()
+            PreencherRefBancaria.nomeCorrentista()
+            PreencherRefBancaria.tipoConta()
+            PreencherRefBancaria.operacao()
+            PreencherRefBancaria.formaPagamento()
+
+            PreencherRefBancaria.tipoChavePixEmail()
+            PreencherRefBancaria.chavePixEmailErrada()
+            GeralRefBancaria.clicarSalvarRefBancaria()
+            GeralRefBancaria.messRefBancariaIncluidaSucesso()
+            GeralRefBancaria.infosRefBancariaAdicionada()
+            ClicarClienteCompleto.salvarCliente()
+            GeralRefBancaria.messRefBancariaChavePixEmailInvalida()
         })  
 
         it('11.Cliente completo CPF - validar tipo de chave CPF CNPJ incorreto ', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
-
-            clicarAbaReferencias() //aba REFERENCIA
-            clicarAbaRefBancaria() //aba REFERENCIA BANCARIA
-            validarAbaRefBancariaVazia()
-            clicarAddNovaRefBancaria()
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
+            GeralRefBancaria.clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
+            GeralRefBancaria.validarAbaRefBancariaVazia()
+            GeralRefBancaria.clicarAddNovaRefBancaria()
             cy.wait(2000)
-            modalRefBancariaVazio()
-            selectBancoRefBancaria() //preencher campo BANCO
-            selectAgenciaRefBancaria()
-            selectContaRefBancaria()
-            selectDataAberturaRefBancaria()
-            //selectBoletoRefBancaria()
-            selectTelefoneRefBancaria()
-            selectGerenteRefBancaria()
-            selectEmailRefBancaria()
-            selectCPFCorrentistaRefBancaria()
-            selectNomeCorrentistaRefBancaria()
-            selectTipoContaRefBancaria()
-            selectOperacaoRefBancaria()
-            selectFormaPagamentoRefBancaria()
-            selectTipoChavePixCpfCnpjRefBancaria()
-            selectChavePixCpfCnpjErrada()
-            clicarSalvarRefBancaria()
-            messRefBancariaIncluidaSucesso()
-            infosRefBancariaAdicionada()
-            clicarSalvarCliente()
-            messRefBancariaChavePixCpfCnpjInvalida()
+            GeralRefBancaria.modalRefBancariaVazio()
+            PreencherRefBancaria.banco()
+            PreencherRefBancaria.agencia()
+            PreencherRefBancaria.conta()
+            PreencherRefBancaria.dataAbertura()
+            PreencherRefBancaria.telefone()
+            PreencherRefBancaria.gerente()
+            PreencherRefBancaria.email()
+            PreencherRefBancaria.cpfCorrentista()
+            PreencherRefBancaria.nomeCorrentista()
+            PreencherRefBancaria.tipoConta()
+            PreencherRefBancaria.operacao()
+            PreencherRefBancaria.formaPagamento()
+
+            PreencherRefBancaria.tipoChavePixCpfCnpj()
+            PreencherRefBancaria.tipoChavePixAletoria()
+            GeralRefBancaria.clicarSalvarRefBancaria()
+            GeralRefBancaria.messRefBancariaIncluidaSucesso()
+            GeralRefBancaria.infosRefBancariaAdicionada()
+            ClicarClienteCompleto.salvarCliente()
+            GeralRefBancaria.messRefBancariaChavePixCpfCnpjInvalida()
         })  
 
         it('12.Cliente completo CPF - validar tipo de chave Aleatória incorreto ', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            //messTelefoneIncluidoSucesso()
-
-            clicarAbaReferencias() //aba REFERENCIA
-            clicarAbaRefBancaria() //aba REFERENCIA BANCARIA
-            validarAbaRefBancariaVazia()
-            clicarAddNovaRefBancaria()
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
+            GeralRefBancaria.clicarAbaRefBancaria() //REFERENCIA BANCÁRIA
+            GeralRefBancaria.validarAbaRefBancariaVazia()
+            GeralRefBancaria.clicarAddNovaRefBancaria()
             cy.wait(2000)
-            modalRefBancariaVazio()
-            selectBancoRefBancaria() //preencher campo BANCO
-            selectAgenciaRefBancaria()
-            selectContaRefBancaria()
-            selectDataAberturaRefBancaria()
-            //selectBoletoRefBancaria()
-            selectTelefoneRefBancaria()
-            selectGerenteRefBancaria()
-            selectEmailRefBancaria()
-            selectCPFCorrentistaRefBancaria()
-            selectNomeCorrentistaRefBancaria()
-            selectTipoContaRefBancaria()
-            selectOperacaoRefBancaria()
-            selectFormaPagamentoRefBancaria()
-            selectTipoChavePixAletoriaRefBancaria()
-            clicarSalvarRefBancaria()
-            messRefBancariaIncluidaSucesso()
-            infosRefBancariaAdicionada()
-            clicarSalvarCliente()
-            messRefBancariaChavePixAletoriaInvalida()
+            GeralRefBancaria.modalRefBancariaVazio()
+            PreencherRefBancaria.banco()
+            PreencherRefBancaria.agencia()
+            PreencherRefBancaria.conta()
+            PreencherRefBancaria.dataAbertura()
+            PreencherRefBancaria.telefone()
+            PreencherRefBancaria.gerente()
+            PreencherRefBancaria.email()
+            PreencherRefBancaria.cpfCorrentista()
+            PreencherRefBancaria.nomeCorrentista()
+            PreencherRefBancaria.tipoConta()
+            PreencherRefBancaria.operacao()
+            PreencherRefBancaria.formaPagamento()
+
+            PreencherRefBancaria.tipoChavePixAletoria()
+            GeralRefBancaria.clicarSalvarRefBancaria()
+            GeralRefBancaria.messRefBancariaIncluidaSucesso()
+            GeralRefBancaria.infosRefBancariaAdicionada()
+            ClicarClienteCompleto.salvarCliente()
+            GeralRefBancaria.messRefBancariaChavePixAletoriaInvalida()
         })  
     })
 
@@ -938,57 +914,55 @@ describe('Cadastrar cliente completo', () => {
 
         it('13. Cliente completo CPF - caminho feliz', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
             cy.wait(4000)
-            //messTelefoneIncluidoSucesso()
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            clicarAbaReferencias() //aba REFERENCIA
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
             validarAbaRefPessoalVazia() //REFERENCIA PESSOAL
             clicarAddNovaRefPessoal()
             modalRefPessoalVazio()
@@ -999,65 +973,66 @@ describe('Cadastrar cliente completo', () => {
             clicarSalvarRefPessoal()
             messRefPessoalIncluidaSucesso()
             infosRefPessoalAdicionada()
-            clicarSalvarCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(3000)
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         }) 
     })
 
     context('Cadastro de cliente completo - incluindo referencia comercial', () => {
+
         it('14. Cliente completo CPF - caminho feliz', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
-            //messTelefoneIncluidoSucesso()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            clicarAbaReferencias() //aba REFERENCIA
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
             clicarAbaRefComercial() //REFERENCIA COMERCIAL
             validarAbaRefComercialVazia()
             clicarAddNovaRefComercial()
@@ -1070,9 +1045,10 @@ describe('Cadastrar cliente completo', () => {
             clicarSalvarRefComercial()
             infosRefComercialAdicionada()
             messRefComercialIncluidaSucesso()
-            clicarSalvarCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(3000)
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         }) 
     })
 
@@ -1080,56 +1056,55 @@ describe('Cadastrar cliente completo', () => {
 
         it('15. Cliente completo CPF - caminho feliz', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
+            GeralEndereco.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            //messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
-            //messTelefoneIncluidoSucesso()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
+            cy.wait(4000)
+            GeralTelefone.messTelefoneIncluidoSucesso()
 
-            clicarAbaReferencias() //aba REFERENCIA
+            ClicarClienteCompleto.abaReferencias() //REFERENCIA
             clicarAbaRefFinanceira() //REFERENCIA FINANCEIRA
             validarAbaRefFinanceiraVazia()
             clicarAddNovaRefFinanceira()
@@ -1141,66 +1116,66 @@ describe('Cadastrar cliente completo', () => {
             clicarSalvarRefFinanceira()
             messRefFinanceiraIncluidaSucesso()
             infosRefFinanceiraAdicionada()
-            clicarSalvarCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(4000)
-            messRegistroSalvoSucesso()
+            GeralClienteCompleto.modalAguardeCarregando()
+            GeralClienteCompleto.messRegistroSalvoSucesso()
         }) 
     })
 
     context('Cadastro de cliente completo - incluindo Empregatício', () => {
 
-        //verificar 
-        it.skip('16. Cliente completo CPF - caminho feliz', () => {
+        it('16. Cliente completo CPF - caminho feliz', () => {
 
-            iconeMenuOpcoes()
-            opcaoClienteCompleto()
-            preencherCPFcliente() //PESSOA
-            preencherNomeCompleto()
-            preencherNomeSocial()
-            preecherDataNascimento()
-            selecionarSexoCliente()
-            clicarSalvarCliente()
+            GeralClienteCompleto.iconeMenuOpcoes()
+            GeralClienteCompleto.opcaoClienteCompleto()
+            PreencherPessoa.cpfCliente()
+            PreencherPessoa.nomeCompleto()
+            PreencherPessoa.nomeSocial()
+            PreencherPessoa.dataNascimento()
+            PreencherPessoa.sexoCliente()
+            ClicarClienteCompleto.salvarCliente()
             cy.wait(500)
             
-            messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            clicarAbaEndereco() //ENDEREÇO
-            clicarAdicionarNovoEndereço()
+            GeralEndereco.clicarAbaEndereco() //ENDEREÇO
+            GeralEndereco.clicarAdicionarNovoEndereço()
             cy.wait(200)
-            escolherTipoEndereco()
-            modalEnderecoVazioValidar()
+            GeralEndereco.tipoEndereco()
+            GeralEndereco.modalEnderecoVazioValidar()
             cy.wait(200)
-            clicarAbrirTipoEndereco()
+            GeralEndereco.clicarAbrirTipoEndereco()
             cy.wait(300)
-            escolherTipoEndereco()
-            preencherCampoCEPEndereco()
-            cy.wait(300)
-            preencherCampoNumeroEndereco()
+            PreencherEndereco.tipoEndereco()
+            PreencherEndereco.cepEndereco()
+            PreencherEndereco.numeroEndereco()
 
-            botaoSalvarDesabilitado()
-            clicarSalvarEndereco()
+            GeralClienteCompleto.botaoSalvarDesabilitado()
+            GeralEndereco.clicarSalvarEndereco()
             cy.wait(200)
-            infosEnderecoAdicionado()
-            messEnderecoIncluidoSucesso()
+            GeralEndereco.clicarSalvarEndereco()
+            cy.wait(200)
+            GeralEndereco.infosEnderecoAdicionado()
 
-            clicarAbaRota() //ROTA
-            clicarAdicionarNovaRota()
-            modalRotaVazioValidar()
-            escolherTipoEnderecoRota()
-            preencherRotaCompleta()
-            messRotaIncluidaSucesso()
-            infosRotaAdicionada()
+            GeralRota.clicarAbaRota() //ROTA
+            GeralRota.clicarAdicionarNovaRota()
+            GeralRota.modalRotaVazioValidar()
+            PreencherRota.tipoEnderecoRota()
+            PreencherRota.rotaCompleta()
+            PreencherRota.infosRotaAdicionada()
 
-            clicarAbaTelefone() //TELEFONE
-            clicarAdicionarNovoTelefone()
-            modalTelefoneVazioValidar()
-            escolherTipoTelefone()
-            preencherNumeroTelefone()
-            preencherRamalTelefone()
-            clicarSalvarTelefone()
-            infosTelefoneAdicionado()
+            GeralTelefone.clicarAbaTelefone() //TELEFONE
+            GeralTelefone.clicarAdicionarNovoTelefone()
+            GeralTelefone.modalTelefoneVazioValidar()
+            PreencherTelefone.tipoTelefone()
+            PreencherTelefone.numeroTelefone()
+            PreencherTelefone.ramalTelefone()
+            GeralTelefone.clicarSalvarTelefone()
+            GeralTelefone.infosTelefoneAdicionado()
             cy.wait(4000)
-            messTelefoneIncluidoSucesso()
+            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeralTelefone()
 
             clicarAbaEmpregaticio() //aba Empregatício
             validarAbaEmpregaticioVazia()
