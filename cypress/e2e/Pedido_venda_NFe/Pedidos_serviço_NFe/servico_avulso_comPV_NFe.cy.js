@@ -8,6 +8,8 @@ import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/p
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { processoVendaServicoAvulso } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
@@ -17,8 +19,8 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        processoVendaServicoAvulso()
-        clienteComRota()
+        ProcessoVenda.vendaServicoAvulso()
+        EscolherCliente.comRota()
     })
 
     context('Processo 9888 - caminho feliz', () => {

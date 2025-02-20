@@ -11,6 +11,8 @@ import { escolherRecebPromoPagPrincipal, escolherRecebReceberPrestamista } from 
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
@@ -20,8 +22,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaNFe()
-        clienteComRota()
+        ProcessoVenda.NFe()
+        EscolherCliente.comRota()
     })
   
     context('Sem entrega/ com promoção/ com serviço processo 9860 - caminho feliz', () => {

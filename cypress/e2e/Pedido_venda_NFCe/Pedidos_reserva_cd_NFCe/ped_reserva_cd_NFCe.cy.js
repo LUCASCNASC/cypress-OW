@@ -8,6 +8,8 @@ import { processoVendaNFCe } from '../../../support/para_pedidos/processos/proce
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -17,8 +19,8 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        processoVendaNFCe()
-        clienteComRota()
+        ProcessoVenda.NFCe()
+        EscolherCliente.comRota()
     })
 
     context('Com entrega/ processo 9890 - caminho feliz', () => {

@@ -1,6 +1,8 @@
 import { clienteComRota, validarSemSaldo, escolherProdutoPesquisa, clicarVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { produtoSemSaldo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -10,8 +12,8 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaNFe()
-        clienteComRota()
+        ProcessoVenda.NFe()
+        EscolherCliente.comRota()
     })
 
     context('Processo 9860 - não permitir fazer a venda - no momento de adicionar produto, devem aparecer mensagens de aviso', () => {

@@ -64,4 +64,4 @@ export class EscolherCliente {
             .click()
         cy.wait('@api_pedido_validar_cliente', { timeout: 40000 })
     }
-}
+} 

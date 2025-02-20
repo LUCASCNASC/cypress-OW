@@ -9,6 +9,8 @@ import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/par
 import { processoVendaExclusiva } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, modalInconsApenasTransp, escolherTransportadora } from '../../../support/para_pedidos/apenas_entrega.js';
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
@@ -19,8 +21,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaExclusiva()
-        clienteComRota()
+        ProcessoVenda.NFe()
+        EscolherCliente.comRota()
     })
 
     context('Configuração de processo - Exclusiva: 36 = 2; 139 = 6; 552= 5 dias', () => {

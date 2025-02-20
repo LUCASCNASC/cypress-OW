@@ -8,7 +8,8 @@ import { clicarFinalizarPedido, validarPedidoGerado, } from '../../../support/pa
 import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
-
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 //verificar todos
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -19,8 +20,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        processoVendaNFe()
-        clienteComRota()
+        ProcessoVenda.NFe()
+        EscolherCliente.comRota()
     })
   
     context('Pedido de venda remoto normal', () => {

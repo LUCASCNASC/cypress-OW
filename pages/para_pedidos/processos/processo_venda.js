@@ -1,4 +1,4 @@
-export class processoVenda{
+export class ProcessoVenda {
 
     constructor(page) {
         this.page = page

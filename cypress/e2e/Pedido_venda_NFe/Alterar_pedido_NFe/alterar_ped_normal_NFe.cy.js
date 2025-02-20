@@ -14,6 +14,8 @@ import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarPa
          avancarFinalAlterar, avancarParaTransportadoraAlterar, avancarParcelasEntregaAlterar } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -23,8 +25,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaNFe()
-        clienteComRota()
+        ProcessoVenda.NFe()
+        EscolherCliente.comRota()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {

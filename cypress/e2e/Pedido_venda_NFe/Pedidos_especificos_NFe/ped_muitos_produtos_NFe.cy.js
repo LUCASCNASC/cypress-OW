@@ -11,6 +11,8 @@ import { processoVendaNFe } from '../../../support/para_pedidos/processos/proces
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp, modalInconsApenasRota, tirarEntrega,
          tirarEntregaSegundo, tirarEntregaTerceiro, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () => {
 
@@ -20,8 +22,8 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaNFe()
-        clienteComRota()
+        ProcessoVenda.NFe()
+        EscolherCliente.comRota()
     })
 
     context('Sem enterga/ processo 9860 - caminho feliz - produtos sem serviço', () => {

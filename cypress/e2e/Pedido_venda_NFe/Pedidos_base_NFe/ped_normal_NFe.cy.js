@@ -9,6 +9,8 @@ import { processoVendaNFe } from '../../../support/para_pedidos/processos/proces
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
+import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 
 describe('Gerar pedido normal', () => {
 
@@ -18,8 +20,8 @@ describe('Gerar pedido normal', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        processoVendaNFe()
-        clienteComRota()
+        ProcessoVenda.NFe()
+        EscolherCliente.comRota()
         prdPrimeiro()
         validarComSaldo()
         escolherProdutoPesquisa()
