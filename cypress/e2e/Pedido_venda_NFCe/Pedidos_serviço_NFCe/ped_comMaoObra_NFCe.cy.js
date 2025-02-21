@@ -1,16 +1,16 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, 
          clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 
 describe('Gerar pedidos com Mão de obra e com entrega', () => {
 
@@ -22,11 +22,11 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
         cy.tituloPagina()
         ProcessoVenda.NFCe()
         EscolherCliente.comRota()
-        prdPrimeiro() //PRODUTO
-        validarComSaldo()
-        escolherProdutoPesquisa()
-        clicarVoltagemProduto()
-        clicarAdicionarProduto()
+        Produto.primeiro() //PRODUTO
+        ValidarSaldo.comSaldo()
+        GeralProduto.escolherProdutoPesquisa()
+        GeralProduto.clicarVoltagemProduto() //PRODUTO
+        GeralProduto.clicarAdicionarProduto()
         validarModalServVinculado()
     })
 
@@ -53,11 +53,11 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             clicarOKServVinculado() //SERVIÇOS
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //SEGUNDO PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -94,11 +94,11 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //SEGUNDO PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTP
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -135,11 +135,11 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             clicarOKServVinculado() //SERVIÇOS
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //SEGUNDO PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()

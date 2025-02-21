@@ -1,15 +1,15 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 
 describe('Gerar pedidos com Garantia e com entrega', () => {
 
@@ -21,11 +21,11 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         cy.tituloPagina() 
         ProcessoVenda.NFCe()
         EscolherCliente.comRota()
-        prdPrimeiro()
-        validarComSaldo()
-        escolherProdutoPesquisa()
-        clicarVoltagemProduto() //PRODUTO
-        clicarAdicionarProduto()
+        Produto.primeiro() //PRODUTO
+        ValidarSaldo.comSaldo()
+        GeralProduto.escolherProdutoPesquisa()
+        GeralProduto.clicarVoltagemProduto() //PRODUTO
+        GeralProduto.clicarAdicionarProduto()
         validarModalServVinculado()
     })   
 
@@ -52,11 +52,11 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -93,11 +93,11 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             clicarOKServVinculado() //SERVIÇOS
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -134,11 +134,11 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
     
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             clicarOKServVinculado() //SERVIÇOS
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             clicarOKServVinculado()
             avancarParaTransportadora()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA

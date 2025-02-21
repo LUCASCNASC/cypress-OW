@@ -1,5 +1,3 @@
-import { validarComSaldo, clienteComRota, composicaoDesteKit, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto }  from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiro, prdSegundo, prdKitPrimeiro } from '../../../support/produtos_pedidos/prd_normal.js';
 import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
          menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
          adicionarEntrega, adicionarServico, clicarGerarParcelasAlterar, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
@@ -9,13 +7,15 @@ import { clicarGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPaga
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado, validarPedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega, avancarParaParcelasAlterar,
          avancarFinalAlterar, avancarParaTransportadoraAlterar, avancarParcelasEntregaAlterar } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -33,11 +33,11 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('1. Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
-            prdPrimeiro() //PESQUISA PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            Produto.primeiro() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
@@ -60,19 +60,19 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             clicarAumentoQtdProduto() //AUMENTANDO QUANTIDADE DO PRODUTO
 
-            prdPrimeiro() //PESQUISA PRODUTO - SEGUNDO
-            escolherProdutoPesquisa()//ESCOLHER PRODUTO - SEGUNDO
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
-            clicarOKServVinculado()
+            Produto.primeiro() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(500)
 
-            prdKitPrimeiro() //PESQUISA PRODUTO - KIT
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO - KIT
-            clicarVoltagemProduto() //VOLTAGEM
-            composicaoDesteKit()
-            clicarAdicionarProduto()
+            Produto.kitPrimeiro() //PESQUISA PRODUTO - KIT
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             clicarOKServVinculado()
             tirarEntregaTerceiro()
             avancarParaParcelasAlterar()
@@ -87,11 +87,11 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
-            prdPrimeiro() //PESQUISA PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            Produto.primeiro() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
@@ -115,20 +115,20 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             clicarRemoverProduto()
             clicarFecharIntencaoCompra()
 
-            prdSegundo() //PESQUISA PRODUTO - SEGUNDO 
-            validarComSaldo()
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
 
-            prdPrimeiro() //PESQUISA PRODUTO - TERCEIRO
-            validarComSaldo()
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            Produto.primeiro() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA PRODUTO
@@ -146,11 +146,11 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         //erro de inconsistencia quando colocamos o serviço de entrega
         it.skip('3. Gerar pedido, alterar colocando garantia e entrega.', () => {
 
-            prdPrimeiro() //PESQUISA PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            Produto.primeiro() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA PRODUTO
@@ -191,11 +191,11 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('4. Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
-            prdPrimeiro() //PESQUISA PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO
-            clicarVoltagemProduto() //PRODUTO
-            clicarAdicionarProduto()
+            Produto.primeiro() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora() //TRANSPORTADORA

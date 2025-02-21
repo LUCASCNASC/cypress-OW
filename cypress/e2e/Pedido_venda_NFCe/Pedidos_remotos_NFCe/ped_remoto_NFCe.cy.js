@@ -1,16 +1,16 @@
-import { validarComSaldo, clienteComRota, trocarFilialFaturamento, validarSemSaldo, composicaoDesteKit, validarComSaldoCD,
-         escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiro, prdSegundo, produtoRemotoComCD, produtoRemotoSemCD, produtoKitRemoto } from '../../../support/produtos_pedidos/prd_normal.js';
+import { trocarFilialFaturamento, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculadoRemoto } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFCe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -29,12 +29,12 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         //verificar
         it.skip('1. Ped venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
-            prdPrimeiro() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            Produto.primeiro() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
@@ -52,20 +52,20 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         //verificar
         it.skip('2. Ped venda remota: produtos 1860 0 0 e 1870 0 0', () => {
 
-            prdPrimeiro() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            Produto.primeiro() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
@@ -83,13 +83,13 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         //verificar
         it.skip('3. Ped venda remota: kit 1877 0 0', () => {
 
-            produtoKitRemoto() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            Produto.kitRemoto() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
             composicaoDesteKit()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
@@ -110,12 +110,12 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         //verificar
         it.skip('4. Ped venda remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto (1883 0 0) sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
 
-            produtoRemotoComCD() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            Produto.remotoComCD() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS
             clicarOKServVinculadoRemoto()
             avancarParaTransportadora()
@@ -133,10 +133,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         //verificar
         it.skip('5. Ped venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto (1882 0 0) sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
-            produtoRemotoSemCD() //PRODUTO
-            validarSemSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
+            Produto.remotoSemCD() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
