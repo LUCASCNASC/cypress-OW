@@ -11,6 +11,8 @@ import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
 
 describe('Gerar pedido de venda com desconto', () => {
 
@@ -28,11 +30,11 @@ describe('Gerar pedido de venda com desconto', () => {
 
         it('1. Ped venda: produto 1912 0 0 com desconto Sub (-) / R$', () => {
 
-            produtoDescontoCifrao() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() 
-            clicarAdicionarProduto()
+            Produto.descontoCifrao() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             clicarBotaoDesconto() //DESCONTO
@@ -51,11 +53,11 @@ describe('Gerar pedido de venda com desconto', () => {
 
         it('2. Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
 
-            produtoDescontoPercentual() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() 
-            clicarAdicionarProduto()
+            Produto.descontoPercentual() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             clicarBotaoDesconto() //DESCONTO
@@ -74,11 +76,11 @@ describe('Gerar pedido de venda com desconto', () => {
 
         it('3. Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
 
-            produtoDescontoValorFixo() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() 
-            clicarAdicionarProduto()
+            Produto.descontoValorFixo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             clicarBotaoDesconto() //DESCONTO

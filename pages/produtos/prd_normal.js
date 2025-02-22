@@ -277,7 +277,7 @@ export class Produto {
     }
 
     //Escolher produto com desconto percentual - 1913 0 0 - com Intercept - processo venda 9860 (NFe)
-    async DescontoPercentual (selector) {
+    async descontoPercentual (selector) {
 
         const produto_desconto_percentual = '1913'
 

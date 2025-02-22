@@ -11,6 +11,8 @@ import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
 
 describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
 
@@ -22,17 +24,17 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.tituloPagina()
         ProcessoVenda.NFe()
         EscolherCliente.comRota()
-        produtoArredondarCimaBaixo()
-        validarComSaldo()
-        escolherProdutoPesquisa()
+        Produto.arredondarCimaBaixo() //PRODUTO
+        ValidarSaldo.comSaldo()
+        GeralProduto.escolherProdutoPesquisa()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz - processo de inclusão 3860', () => {
 
         it('1. Ped venda: produto 1860 0 0 - arredondar para baixo', () => {
 
-            clicarVoltagemProduto() //PRODUTO
-            clicarAdicionarProduto()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -53,8 +55,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
         it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
 
-            clicarVoltagemProduto() //PRODUTO
-            clicarAdicionarProduto()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA

@@ -10,6 +10,8 @@ import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
 
 describe('Gerar pedido com financeiro na baixa', () => {
 
@@ -21,17 +23,17 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.tituloPagina()
         ProcessoVenda.finanBaixaNFe()
         EscolherCliente.comRota()
-        prdPrimeiro() //PESQUISA PRODUTO
-        validarComSaldo()
-        escolherProdutoPesquisa() //ESCOLHER PRODUTO
+        Produto.primeiro() //PRODUTO
+        ValidarSaldo.comSaldo()
+        GeralProduto.escolherProdutoPesquisa()
     })
   
     context('Sem entrega/ processo 9863 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -47,16 +49,16 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            prdSegundo() //PESQUISA PRODUTO - SEGUNDO
-            validarComSaldo()
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -75,8 +77,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('3. Ped venda: produto 1860 0 0', () => {
                       
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -92,15 +94,15 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                       
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
-            prdSegundo() //PESQUISA PRODUTO - SEGUNDO
-            validarComSaldo()
-            escolherProdutoPesquisa() //ESCOLHER PRODUTO
-            clicarVoltagemProduto() //VOLTAGEM
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()

@@ -10,6 +10,8 @@ import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
 
 describe('Gerar pedido normal', () => {
 
@@ -21,18 +23,18 @@ describe('Gerar pedido normal', () => {
         cy.tituloPagina()
         ProcessoVenda.NFe()
         EscolherCliente.comRota()
-        prdKitPrimeiro()
-        validarComSaldo()
-        escolherProdutoPesquisa()
+        Produto.kitPrimeiro() //PRODUTO
+        ValidarSaldo.comSaldo()
+        GeralProduto.escolherProdutoPesquisa()
     })
   
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
         
         it('1. Ped venda: kit 1862 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             composicaoDesteKit()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -51,9 +53,9 @@ describe('Gerar pedido normal', () => {
         
         it('2. Ped venda: kit 1862 0 0', () => {
                       
-            clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             composicaoDesteKit()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
