@@ -1,18 +1,17 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, validarModalServVinculado, 
-    clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+         clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validaAddGarantSepMesmoProc, validaAddGarantNaoSep, validaAddGarantSepTituloProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { validarServicosVinculados } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
 
 describe('Gerar pedidos com Garantia', () => {
 
@@ -24,11 +23,11 @@ describe('Gerar pedidos com Garantia', () => {
         cy.tituloPagina() 
         ProcessoVenda.NFe()
         EscolherCliente.comRota()
-        prdPrimeiro()
-        validarComSaldo()
-        escolherProdutoPesquisa()
-        clicarVoltagemProduto() //PRODUTO
-        clicarAdicionarProduto()
+        Produto.primeiro() //PRODUTO
+        ValidarSaldo.comSaldo()
+        GeralProduto.escolherProdutoPesquisa()
+        GeralProduto.clicarVoltagemProduto() //PRODUTO
+        GeralProduto.clicarAdicionarProduto()
         validarModalServVinculado()
     })   
 
@@ -56,11 +55,11 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -96,11 +95,11 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             tirarEntrega() //ENTREGA
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -136,11 +135,11 @@ describe('Gerar pedidos com Garantia', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
             tirarEntrega() //ENTREGA
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -178,11 +177,11 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
@@ -217,11 +216,11 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
@@ -256,11 +255,11 @@ describe('Gerar pedidos com Garantia', () => {
             garantiaSeparaTituloProcessoDiferente() //Marcar Garantia separa titulo em um processo diferente
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif()
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()

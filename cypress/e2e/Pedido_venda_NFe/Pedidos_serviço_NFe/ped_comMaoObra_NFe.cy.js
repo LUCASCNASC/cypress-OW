@@ -1,17 +1,16 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, 
          clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddMODestacaNãoSepara, validaAddMONaoDestacaSepMesmoProc, validaAddMONaoDestacaSepProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
 
 describe('Gerar pedidos com Mão de obra', () => {
 
@@ -23,11 +22,11 @@ describe('Gerar pedidos com Mão de obra', () => {
         cy.tituloPagina()
         ProcessoVenda.NFe()
         EscolherCliente.comRota()
-        prdPrimeiro() //PRODUTO
-        validarComSaldo()
-        escolherProdutoPesquisa()
-        clicarVoltagemProduto()
-        clicarAdicionarProduto()
+        Produto.primeiro() //PRODUTO
+        ValidarSaldo.comSaldo()
+        GeralProduto.escolherProdutoPesquisa()
+        GeralProduto.clicarVoltagemProduto() //PRODUTO
+        GeralProduto.clicarAdicionarProduto()
         validarModalServVinculado()
     })
   
@@ -55,11 +54,11 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
-            prdSegundo() //PRODUTO - SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -95,11 +94,11 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
-            prdSegundo() //PRODUTO NORMAL
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA- SEGUNDO PRODUTO
@@ -135,11 +134,11 @@ describe('Gerar pedidos com Mão de obra', () => {
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -177,11 +176,11 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMODestacaNãoSepara()
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
@@ -216,11 +215,11 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTP
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
@@ -255,11 +254,11 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             clicarOKServVinculado() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()

@@ -940,7 +940,7 @@ export class GeralMuitosPrd {
     }
 
     // produto
-    async produtoPrincipal (selector) {
+    async prdPrincipal (selector) {
 
         const produto_principal = '1907'
 
@@ -960,7 +960,7 @@ export class GeralMuitosPrd {
     }
 
     //Clicar para selecionar o produto que queremos adicionar ao pedido - sem validações
-    async escolherProdutoPesquisa (selector) {
+    async escolherPrdPesquisa (selector) {
 
         cy.intercept('GET', '/services/v3/produto_tambem_compraram?lista=1907').as('api_produto_tambem_compraram')
 

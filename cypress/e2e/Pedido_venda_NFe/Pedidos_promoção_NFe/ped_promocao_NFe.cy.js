@@ -1,18 +1,17 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, selecionarPrimeiraPromoProduto,
-         ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { produtoPromoPartida, produtoPromoPrazoEntrada, produtoPromoPrazoParcelado, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
+import { selecionarPrimeiraPromoProduto, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
          clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -31,13 +30,13 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            produtoPromoPartida() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.promoPartida() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOCAO
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -52,13 +51,13 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            produtoPromoPrazoEntrada() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao() 
-            clicarVoltagemProduto()
+            Produto.promoPrazoEntrada() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -79,13 +78,13 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            produtoPromoPrazoParcelado() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.promoPrazoParcelado() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
@@ -103,21 +102,21 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('4. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            produtoPromoPartida() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.promoPartida() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -140,21 +139,21 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('5. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            produtoPromoPrazoEntrada() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.promoPrazoEntrada() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
@@ -176,13 +175,13 @@ describe('Gerar pedidos com promoção', () => {
 
         it.skip('6. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            produtoPromoPartida() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.promoPartida() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -202,13 +201,13 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('7. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            produtoPromoPrazoEntrada() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()  
-            clicarVoltagemProduto()
+            Produto.promoPrazoEntrada() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -244,13 +243,13 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('8. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            produtoPromoPrazoParcelado() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.promoPrazoParcelado() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             avancarParaTransportadora()
@@ -274,20 +273,20 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('9. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            produtoPromoPartida() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.promoPartida() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
-            prdSegundo() //SEGUNDO PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() 
-            clicarAdicionarProduto()
+            Produto.segundo() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            GeralProduto.clicarAdicionarProduto()
             clicarOKServVinculado() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()

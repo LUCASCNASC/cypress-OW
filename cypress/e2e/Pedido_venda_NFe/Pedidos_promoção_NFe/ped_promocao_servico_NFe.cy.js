@@ -1,18 +1,17 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, selecionarPrimeiraPromoProduto, 
-         ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
+import { selecionarPrimeiraPromoProduto, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
-import { prd1PrazoParcela, prd2PrazoParcela, prd3PrazoParcela, prd4PrazoParcela } from '../../../support/produtos_pedidos/prd_normal.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { escolherRecebPromoPagPrincipal, escolherRecebReceberPrestamista } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Produto } from '../../../../pages/produtos/prd_normal.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
@@ -30,14 +29,14 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
 
         it('1. Ped venda com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
     
-            prd1PrazoParcela() //PRODUTO PROMOÇÃO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.primeiroPrazoParcela() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado()
@@ -53,14 +52,14 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
         it('2. Ped venda com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
     
-            prd2PrazoParcela() //PRODUTO PROMOCAO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.segundoPrazoParcela() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado()
@@ -94,13 +93,13 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
         it('3. Ped venda com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
     
-            prd3PrazoParcela() //PRODUTO PROMOCAO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.terceiroPrazoParcela() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
@@ -118,14 +117,14 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
 
         it('4. Ped venda com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
     
-            prd4PrazoParcela() //PRODUTO PROMOCAO
-            validarComSaldo()
-            escolherProdutoPesquisa() ; ticketPromocao()
-            clicarVoltagemProduto()
+            Produto.quartoPrazoParcela() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.clicarVoltagemProduto() //PRODUTO
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
-            clicarAdicionarProduto()
+            GeralProduto.clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             clicarOKServVinculado()
