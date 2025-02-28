@@ -8,6 +8,8 @@ import { processoVendaServicoAvulso } from '../../../support/para_pedidos/proces
 import { avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 //Para este cenário, é necessário fazer update na coluna dataultimaatualizacao, da tabela glb.servicofaixavalorfixo
 describe('Venda de serviço avulso Host - 104', () => {

@@ -9,6 +9,8 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { GeralMuitosPrd } from '../../../../pages/para_pedidos/ped_muitos_produtos/geral_muitos_produtos.js'
 import { AddMuitosProdutos } from '../../../../pages/para_pedidos/ped_muitos_produtos/produtos_muitos_produtos.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 
 describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () => {
 

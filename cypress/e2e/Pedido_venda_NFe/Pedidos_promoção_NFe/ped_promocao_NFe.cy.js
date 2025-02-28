@@ -2,7 +2,6 @@ import { selecionarPrimeiraPromoProduto, ticketPromocao } from '../../../support
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
          clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
@@ -12,6 +11,8 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -37,8 +38,8 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto() //PROMOCAO
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
@@ -58,8 +59,8 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
     
@@ -85,8 +86,8 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
@@ -109,16 +110,16 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -146,16 +147,16 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
 
@@ -182,8 +183,8 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega() //ENTREGA
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
@@ -208,8 +209,8 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
@@ -250,8 +251,8 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS
@@ -280,14 +281,14 @@ describe('Gerar pedidos com promoção', () => {
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             botaoGerarParcelas() //GERAR PARCELAS

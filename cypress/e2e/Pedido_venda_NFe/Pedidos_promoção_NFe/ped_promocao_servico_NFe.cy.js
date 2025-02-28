@@ -1,7 +1,6 @@
 import { selecionarPrimeiraPromoProduto, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
-import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { escolherRecebPromoPagPrincipal, escolherRecebReceberPrestamista } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
@@ -12,6 +11,8 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
@@ -37,9 +38,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
+            Servico.validarModalServVinc() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            clicarOKServVinculado()
+            Servico.clicarOKServVinc()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
@@ -60,9 +61,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
+            Servico.validarModalServVinc() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            clicarOKServVinculado()
+            Servico.clicarOKServVinc()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
@@ -100,8 +101,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
@@ -125,9 +126,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             selecionarPrimeiraPromoProduto()
             escolherRecebReceberPrestamista()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
+            Servico.validarModalServVinc() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            clicarOKServVinculado()
+            Servico.clicarOKServVinc()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()

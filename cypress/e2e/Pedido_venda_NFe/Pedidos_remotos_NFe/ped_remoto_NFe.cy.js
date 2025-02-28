@@ -1,7 +1,6 @@
 import { trocarFilialFaturamento, composicaoDesteKit, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { validarModalServVinculado, clicarOKServVinculadoRemoto } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
@@ -9,6 +8,8 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 //verificar todos
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -34,8 +35,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralProduto.clicarVoltagemProduto()
             trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVIÇOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -56,16 +57,16 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralProduto.clicarVoltagemProduto()
             trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVIÇOS
+            Servico.clicarOKServVinc()
             Produto.segundo() //SEGUNDO PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
             trocarFilialFaturamento()
             clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -87,8 +88,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             trocarFilialFaturamento()
             composicaoDesteKit()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVIÇOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -112,8 +113,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralProduto.clicarVoltagemProduto()
             trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVIÇOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS

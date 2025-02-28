@@ -1,10 +1,9 @@
-import { clienteComRota, validarSemSaldo, escolherProdutoPesquisa, clicarVoltagemProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { produtoSemSaldo } from '../../../support/produtos_pedidos/prd_normal.js';
-import { processoVendaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 

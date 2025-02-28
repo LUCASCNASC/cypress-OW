@@ -1,17 +1,15 @@
-import { validarComSaldo, clienteComRota, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { prdPrimeiro, prdSegundo } from '../../../support/produtos_pedidos/prd_normal.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoEntregaFuturaNFe } from '../../../support/para_pedidos/processos/processo_venda.js';
 import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 describe('Gerar pedido de entrega futura', () => {
 
@@ -34,8 +32,8 @@ describe('Gerar pedido de entrega futura', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA PRODUTO
             avancarParaParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -51,16 +49,16 @@ describe('Gerar pedido de entrega futura', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            clicarOKServVinServico.clicarOKServVincculado()
             tirarEntrega() //ENTREGA PRODUTO
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -79,8 +77,8 @@ describe('Gerar pedido de entrega futura', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -96,15 +94,15 @@ describe('Gerar pedido de entrega futura', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora() //TRANSPORTADORA
             avancarParcelasEntrega() 
             botaoGerarParcelas() //GERAR PARCELAS

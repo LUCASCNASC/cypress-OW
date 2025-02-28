@@ -1,5 +1,5 @@
 import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, maoObraDestacaNãoSepara, 
-         maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente, validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+         maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarantNaoSep,validaAddGarantSepTituloProcDif, 
          validaAddMODestacaNãoSepara, validaAddMONaoDestacaSepMesmoProc, validaAddMONaoDestacaSepProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';         
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
@@ -12,6 +12,8 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
@@ -28,7 +30,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         GeralProduto.escolherProdutoPesquisa()
         GeralProduto.clicarVoltagemProduto() //PRODUTO
         GeralProduto.clicarAdicionarProduto()
-        validarModalServVinculado()
+        Servico.validarModalServVinc()
     })
 
     context('Sem entrega/processo 9860 - caminho feliz', () => {
@@ -37,7 +39,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -54,7 +56,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -62,8 +64,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -79,7 +81,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas()
@@ -96,7 +98,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -104,7 +106,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            clicarOKServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
@@ -120,7 +122,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -137,7 +139,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -145,7 +147,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
@@ -161,7 +163,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -178,7 +180,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -186,8 +188,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVIÇOS
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA
             avancarParaParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
@@ -203,7 +205,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -220,7 +222,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -228,8 +230,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
@@ -245,7 +247,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -262,7 +264,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -270,8 +272,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
@@ -287,7 +289,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -304,7 +306,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -312,8 +314,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
@@ -329,7 +331,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -346,7 +348,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -354,8 +356,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas()  
             clicarGerarParcelas() //GERAR PARCELAS
@@ -371,7 +373,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaProcessoDiferente()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             avancarParaParcelas() 
@@ -388,7 +390,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaProcessoDiferente()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
             Produto.segundo() //PRODUTO
@@ -396,8 +398,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado()
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
             avancarParaParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
@@ -416,7 +418,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
             avancarParaTransportadora()
             avancarParcelasEntrega()  
@@ -433,15 +435,15 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -457,7 +459,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -474,15 +476,15 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -498,7 +500,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -515,15 +517,15 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -539,7 +541,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -556,15 +558,15 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -580,7 +582,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -597,15 +599,15 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -621,7 +623,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -638,15 +640,15 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaNaoSepara() //Marcar garantia "T.A. Garantia Não Separa"
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -662,7 +664,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -679,14 +681,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -702,7 +704,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
             avancarParaTransportadora()
             avancarParcelasEntrega() 
@@ -719,15 +721,15 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega() 
             clicarGerarParcelas() //GERAR PARCELAS
@@ -743,7 +745,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaProcessoDiferente()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -760,15 +762,15 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
             garantiaSeparaTituloProcessoDiferente//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             maoObraNaoDestacaSeparaProcessoDiferente()
-            okServicoclicarOKServVinculadosVinculados() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS

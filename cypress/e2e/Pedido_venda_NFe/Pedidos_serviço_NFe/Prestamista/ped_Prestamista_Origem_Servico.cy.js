@@ -1,5 +1,5 @@
 import { selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../../support/para_pedidos/gerais_pedidos.js';
-import { garantiaNaoSepara,  validarModalServVinculado, clicarOKServVinculado, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { garantiaNaoSepara,  okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherRecebFutComJurosPrestAbatOrigemPrd  } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
@@ -11,6 +11,8 @@ import { ProcessoVenda } from '../../../../../pages/para_pedidos/processos/proce
 import { EscolherCliente } from '../../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../../pages/produtos/prd_normal.js'
+import { GeralProduto } from '../../../../../pages/produtos/gerais_pedido.js'
+import { Servico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem Serviço (162)', () => {
 
@@ -33,8 +35,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc()
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -56,16 +58,16 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado()
+            Servico.validarModalServVinc()
             garantiaNaoSepara()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado()
-            clicarOKServVinculado()
+            Servico.validarModalServVinc()
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             avancarParcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
@@ -92,8 +94,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPrazoFutComJurosPrestAbatVFOS()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.validarModalServVinc()
+            Servico.clicarOKServVinc() //SERVIÇOS
             avancarParaTransportadora()
             avancarParcelasEntrega()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
@@ -116,9 +118,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado()
+            Servico.validarModalServVinc()
             garantiaNaoSepara()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             avancarParaTransportadora()
             avancarParcelasEntrega()
@@ -143,9 +145,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             selecionarPrimeiraPromoProduto()
             escolherRecebPromoPartidaPresenComJurosPrestAbatVFOS()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado()
+            Servico.validarModalServVinc()
             garantiaNaoSepara()
-            clicarOKServVinculado() //SERVIÇOS
+            Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
             avancarParaTransportadora()
             avancarParcelasEntrega()
