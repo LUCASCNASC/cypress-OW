@@ -1,7 +1,6 @@
 import { trocarFilialFaturamento, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { validarModalServVinculado, clicarOKServVinculadoRemoto } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado, } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora } from '../../../support/para_pedidos/apenas_entrega.js';
@@ -11,6 +10,7 @@ import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -35,8 +35,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             escolherTransportadora()
             avancarParcelasEntrega()
@@ -58,16 +58,16 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS - SEGUNDO PRODUTO
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             escolherTransportadora()
             avancarParcelasEntrega()
@@ -90,8 +90,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             trocarFilialFaturamento()
             composicaoDesteKit()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             escolherTransportadora()
             avancarParcelasEntrega()
@@ -116,8 +116,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            validarModalServVinculado() //SERVIÇOS
-            clicarOKServVinculadoRemoto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             avancarParaTransportadora()
             escolherTransportadora()
             avancarParcelasEntrega()
