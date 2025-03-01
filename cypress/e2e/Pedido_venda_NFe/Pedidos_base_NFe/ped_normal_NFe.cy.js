@@ -1,6 +1,5 @@
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, clicarGerarPagamento, escolherDuasParcelaPagamento, escolherEntradaFormaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -41,8 +40,8 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -66,8 +65,8 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
 
         it('3. Ped venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
@@ -85,8 +84,8 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     })
 
@@ -105,8 +104,8 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal() 
             escolherDuasParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
 
         it('5. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -129,8 +128,8 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal() 
             escolherDuasParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
 
         it('6. Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
@@ -148,8 +147,8 @@ describe('Gerar pedido normal', () => {
             escolherFormaPagamentoPrincipal() 
             escolherDuasParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     })
 })

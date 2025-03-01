@@ -1,6 +1,5 @@
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagaPropCredito } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { clicarFinalizarPedido, validarPedidoGerado, validarPropCreditoGerada } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -41,9 +40,9 @@ describe('Gerar pedido com proposta de crédito', () => {
             escolherFormaPagaPropCredito()
             escolherUmaParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPropCreditoGerada()
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPropCreditoGerada()
+            FinalizarPed.validarPedGerado()
         })
     })
 })

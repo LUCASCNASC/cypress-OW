@@ -2,7 +2,6 @@ import { selecionarPrimeiraPromoProduto, ticketPromocao } from '../../../support
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
          clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
@@ -45,8 +44,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             AvancarNormal.final() 
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     
         //verificar
@@ -72,8 +71,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click()
     
             AvancarNormal.final() 
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     
         //verificar
@@ -93,8 +92,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     })
 
@@ -133,8 +132,8 @@ describe('Gerar pedidos com promoção', () => {
             //cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             // AvancarNormal.final()
-            // clicarFinalizarPedido() //RESUMO
-            // validarPedidoGerado()
+            // FinalizarPed.clicarFinalizarPed() //RESUMO
+            // FinalizarPed.validarPedGerado()
         })
 
         //verificar
@@ -167,8 +166,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click({force:true}) //clicar GERAR PAGAMENTO
     
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     })
 
@@ -195,8 +194,8 @@ describe('Gerar pedidos com promoção', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     
         //verificar
@@ -237,8 +236,8 @@ describe('Gerar pedidos com promoção', () => {
             // escolherFormaPagamentoPrincipal()
             // escolherDuasParcelaPagamento()
             // AvancarNormal.final()
-            // clicarFinalizarPedido() //RESUMO
-            // validarPedidoGerado()
+            // FinalizarPed.clicarFinalizarPed() //RESUMO
+            // FinalizarPed.validarPedGerado()
         })
 
         //verificar
@@ -264,8 +263,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })  
     }) 
 
@@ -300,8 +299,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force: true})
 
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     })
 })

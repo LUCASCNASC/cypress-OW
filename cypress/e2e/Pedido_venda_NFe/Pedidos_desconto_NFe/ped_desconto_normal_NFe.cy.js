@@ -1,7 +1,6 @@
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDescontoPorcentagem, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -45,8 +44,8 @@ describe('Gerar pedido de venda com desconto', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
 
         it('2. Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
@@ -68,8 +67,8 @@ describe('Gerar pedido de venda com desconto', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
 
         it('3. Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
@@ -91,8 +90,8 @@ describe('Gerar pedido de venda com desconto', () => {
             escolherFormaPagamentoPrincipal()
             escolherUmaParcelaPagamento()
             AvancarNormal.final()
-            clicarFinalizarPedido() //RESUMO
-            validarPedidoGerado()
+            FinalizarPed.clicarFinalizarPed() //RESUMO
+            FinalizarPed.validarPedGerado()
         })
     })
 })

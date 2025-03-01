@@ -1,7 +1,6 @@
 import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { clicarFinalizarPedido, validarPedidoGerado, pedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { escolherTransportadora, escolherRota, modalInconsRotaTransp, modalInconsApenasTransp, modalInconsApenasRota, tirarEntrega,
          tirarEntregaSegundo, tirarEntregaTerceiro, tirarMontagem, tirarMontagemSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -194,7 +193,7 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
     })
 
     // afterEach(() => {
-    //     clicarFinalizarPedido() //RESUMO
-    //     validarPedidoGerado()
+    //     FinalizarPed.clicarFinalizarPed() //RESUMO
+    //     FinalizarPed.validarPedGerado()
     //   });
 })
