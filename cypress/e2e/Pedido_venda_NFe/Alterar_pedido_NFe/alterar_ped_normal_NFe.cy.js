@@ -7,8 +7,6 @@ import { clicarGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPaga
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado, validarPedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega, avancarParaParcelasAlterar,
-         avancarFinalAlterar, avancarParaTransportadoraAlterar, avancarParcelasEntregaAlterar } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -17,6 +15,7 @@ import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AvancarAlterar } from '../../../../pages/para_pedidos/botoes/avancar/avancar_alterar.js'
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -42,12 +41,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA PRODUTO
-            avancarParaParcelas()
+            AvancarAlterar.paraParcelasAlt()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
             okPedidoGerado()
@@ -76,12 +75,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.clicarOKServVinc()
             tirarEntregaTerceiro()
-            avancarParaParcelasAlterar()
+            AvancarAlterar.paraParcelasAlt()
 
             clicarGerarParcelasAlterar() //GERAR PARCELAS
             escolherFormaPagamentoPrincipalAlterar()
             escolherDuasParcelaPagamento()
-            avancarFinalAlterar()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //PROCESSO INCLUSÃO
             validarPedidoAlteradoSucesso()
         })
@@ -96,12 +95,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA PRODUTO
-            avancarParaParcelas()
+            AvancarAlterar.paraParcelasAlt()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
             okPedidoGerado()
@@ -133,13 +132,13 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA PRODUTO
-            avancarParaParcelasAlterar()
+            AvancarAlterar.paraParcelasAlt()
 
             clicarGerarParcelasAlterar() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipalAlterar() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
-            avancarFinalAlterar()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //FINAL PEDIDO
             validarPedidoAlteradoSucesso()
         })
@@ -155,12 +154,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA PRODUTO
-            avancarParaParcelas()
+            AvancarAlterar.paraParcelasAlt()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //FINAL PEDIDO
             validarPedidoGerado()
             okPedidoGerado()
@@ -175,13 +174,13 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             adicionarServico()
             garantiaSeparaMesmoProcesso()
             Servico.clicarOKServVinc()
-            // avancarParaTransportadora()
-            // avancarParcelasEntrega()
+            // AvancarAlterar.paraTransportadoraAlt()
+            // AvancarAlterar.parcelasEntregaAlt()
             // clicarGerarParcelasAlterar() //GERAR PARCELAS
             // carregandoFormaPagamento()
             // escolherFormaPagamentoPrincipalAlterar()
             // escolherDuasParcelaPagamento()
-            // avancarFinalAlterar()
+            // AvancarAlterar.finalAlt()
             // clicarFinalizarPedido() //RESUMO
             // validarPedidoAlteradoSucesso()
             
@@ -199,13 +198,13 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            avancarParaTransportadora() //TRANSPORTADORA
-            avancarParcelasEntrega()
+            AvancarAlterar.paraTransportadoraAlt() //TRANSPORTADORA
+            AvancarAlterar.parcelasEntregaAlt()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //FINAL PEDIDO
             validarPedidoGerado()
             okPedidoGerado()
@@ -216,15 +215,15 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             escolherPedidoPendente()
             clicarDetalhes()
             clicarEditarPedido()
-            avancarParaTransportadoraAlterar()
-            avancarParcelasEntregaAlterar()
+            AvancarAlterar.paraTransportadoraAlt()
+            AvancarAlterar.parcelasEntregaAlt()
             arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
             removerFormaPagamento()
 
             clicarGerarParcelasAlterar() //GERAR PARCELAS
             escolherSegundaFormaPagamento() //PROCESSO INCLUSÃO
             escolherDuasParcelaPagamento()
-            avancarFinalAlterar()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //FINAL PEDIDO
             validarPedidoAlteradoSucesso()
         })

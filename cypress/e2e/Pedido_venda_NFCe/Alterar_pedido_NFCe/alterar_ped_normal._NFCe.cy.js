@@ -4,7 +4,6 @@ import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedid
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado, validarPedidoAlteradoSucesso } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -13,6 +12,7 @@ import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AvancarAlterar } from '../../../../pages/para_pedidos/botoes/avancar/avancar_alterar.js'
 
 describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.', () => {
 
@@ -37,15 +37,15 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            avancarParaTransportadora()
+            AvancarAlterar.paraTransportadoraAlt()
             modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             escolherTransportadora()
-            avancarParcelasEntrega()
+            AvancarAlterar.parcelasEntregaAlt()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
             okPedidoGerado()
@@ -56,18 +56,18 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             escolherPedidoPendente()
             clicarDetalhes()
             clicarEditarPedido()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarAlterar.paraTransportadoraAlt()
+            AvancarAlterar.parcelasEntregaAlt()
             arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
             removerFormaPagamento()
             cy.wait(10000)
-            avancarParcelasEntrega()
+            AvancarAlterar.parcelasEntregaAlt()
 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherSegundaFormaPagamento()
             escolherUmaParcelaPagamento()
-            avancarFinal()
+            AvancarAlterar.finalAlt()
             clicarFinalizarPedido() //RESUMO
             validarPedidoAlteradoSucesso()
         })

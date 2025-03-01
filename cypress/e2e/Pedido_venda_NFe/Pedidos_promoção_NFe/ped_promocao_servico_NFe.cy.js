@@ -4,7 +4,6 @@ import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apena
 import { validarServicosVinculados, validaAddGarantSepMesmoProc } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { escolherRecebPromoPagPrincipal, escolherRecebReceberPrestamista } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
-import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -13,6 +12,8 @@ import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
@@ -43,10 +44,10 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.clicarOKServVinc()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -66,7 +67,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.clicarOKServVinc()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
 
@@ -87,7 +88,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 .and('contain','Gerar pagamento')
                 .click({force:true})
 
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -105,12 +106,12 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.clicarOKServVinc()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             adicionarPrestamista()
             ticketPrestamistaAdicionado()
-            avancarFinal()
+            AvancarNormal.final()
             ticketPrestamistaPaginaFinal()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
@@ -131,12 +132,12 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.clicarOKServVinc()
             validarServicosVinculados() ; validaAddGarantSepMesmoProc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             adicionarPrestamista()
             ticketPrestamistaAdicionado()
-            avancarFinal()
+            AvancarNormal.final()
             ticketPrestamistaPaginaFinal()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()

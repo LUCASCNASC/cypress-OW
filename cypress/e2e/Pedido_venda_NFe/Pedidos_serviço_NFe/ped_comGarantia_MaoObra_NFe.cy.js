@@ -5,7 +5,6 @@ import { validarServicosVinculados, validaAddGarantSepMesmoProc, validaAddGarant
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -14,6 +13,7 @@ import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 
 describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
@@ -42,12 +42,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -67,12 +67,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -84,12 +84,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -108,12 +108,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.clicarOKServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -125,12 +125,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -149,12 +149,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.clicarOKServVinc() //SERVIÇOS
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -166,12 +166,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -191,12 +191,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -208,12 +208,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -233,12 +233,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -250,12 +250,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -275,12 +275,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -292,12 +292,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -317,12 +317,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -334,12 +334,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -359,12 +359,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            avancarParaParcelas()  
+            AvancarNormal.paraParcelas()  
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -376,12 +376,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -401,12 +401,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
-            avancarParaParcelas() 
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -420,13 +420,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMODestacaNãoSepara()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()  
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()  
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -444,13 +444,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -461,13 +461,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepMesmoProc()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -485,13 +485,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -502,13 +502,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepMesmoProc() ; validaAddMONaoDestacaSepProcDif()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -526,13 +526,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -543,13 +543,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMODestacaNãoSepara()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -567,13 +567,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -584,13 +584,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepMesmoProc()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -608,13 +608,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -625,13 +625,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep() ; validaAddMONaoDestacaSepProcDif()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -649,13 +649,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -666,13 +666,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMODestacaNãoSepara()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -689,13 +689,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -706,13 +706,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepMesmoProc()
-            avancarParaTransportadora()
-            avancarParcelasEntrega() 
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -730,13 +730,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega() 
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -747,13 +747,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente()
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantSepTituloProcDif() ; validaAddMONaoDestacaSepProcDif()
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })  
@@ -771,13 +771,13 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            avancarParaTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraTransportadora()
+            AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })

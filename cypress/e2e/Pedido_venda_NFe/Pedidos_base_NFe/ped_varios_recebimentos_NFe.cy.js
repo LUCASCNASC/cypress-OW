@@ -2,7 +2,6 @@ import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagame
          escolherEntradaFormaPagamento, clicarGerarPagamento, primeiroValorAParcelar, naoAgruparLancamentos, agruparLancamentos, 
          selecionarLancAgrupar, clicarAgrupar } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherRecebDebitoPOS, escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { avancarParaParcelas, avancarFinal } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega } from '../../../support/para_pedidos/apenas_entrega.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
@@ -12,6 +11,7 @@ import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 
 describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
@@ -37,7 +37,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
             clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
@@ -51,7 +51,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -63,7 +63,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             escolherEntradaFormaPagamento()
             clicarGerarPagamento()
             cy.wait(400)
@@ -72,7 +72,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             escolherFormaPagamentoPrincipal() //SEGUNDA FORMA DE PAGAMENTO
             cy.wait(3000)
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -84,7 +84,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
             clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
@@ -99,7 +99,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.wait(3000)
             escolherUmaParcelaPagamento()
             naoAgruparLancamentos()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -111,7 +111,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
             clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
@@ -126,7 +126,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.wait(3000)
             escolherUmaParcelaPagamento()
             agruparLancamentos()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -138,7 +138,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             cy.wait(1000)
             clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
@@ -155,7 +155,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             naoAgruparLancamentos()
             selecionarLancAgrupar()
             clicarAgrupar()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })

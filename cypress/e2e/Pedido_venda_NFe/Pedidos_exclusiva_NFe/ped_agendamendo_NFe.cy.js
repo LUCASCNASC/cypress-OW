@@ -1,4 +1,4 @@
-import { clienteComRota, validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, validarSemSaldo,
+import { validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, validarSemSaldo,
          trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas } from '../../../support/produtos_pedidos/prd_exclusiva';
@@ -6,11 +6,10 @@ import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamen
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
-import { processoVendaExclusiva } from '../../../support/para_pedidos/processos/processo_venda.js';
-import { avancarParaParcelas, avancarFinal, avancarParaTransportadora, avancarParcelasEntrega } from '../../../support/para_pedidos/apenas_botoes_avancar.js';
 import { tirarEntrega, modalInconsApenasTransp, escolherTransportadora } from '../../../support/para_pedidos/apenas_entrega.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
@@ -43,15 +42,15 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             clicarVoltagemProduto()
             trocarFilialFaturamento()
             clicarAdicionarProduto()
-            avancarParaTransportadora()
+            AvancarNormal.paraTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -71,15 +70,15 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             escolherProdutoPesquisa()
             clicarVoltagemProduto()
             clicarAdicionarProduto()
-            avancarParaTransportadora()
+            AvancarNormal.paraTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -97,15 +96,15 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             clicarAdicionarProduto()
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
-            avancarParaTransportadora()
+            AvancarNormal.paraTransportadora()
             modalInconsApenasTransp()
             escolherTransportadora()
-            avancarParcelasEntrega()
+            AvancarNormal.paraParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
@@ -139,12 +138,12 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             validarModalServVinculado() //SERVICOS
             clicarOKServVinculado()
             tirarEntrega() //ENTREGA
-            avancarParaParcelas()
+            AvancarNormal.paraParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             escolherDuasParcelaPagamento()
-            avancarFinal()
+            AvancarNormal.final()
             clicarFinalizarPedido() //RESUMO
             validarPedidoGerado()
         })
