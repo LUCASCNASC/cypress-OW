@@ -3,7 +3,6 @@ import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagame
          clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
-import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -13,6 +12,7 @@ import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -40,7 +40,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
@@ -61,7 +61,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
     
             //GERAR PARCELAS
@@ -88,7 +88,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -112,7 +112,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -120,7 +120,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
             botaoGerarParcelas() //GERAR PARCELAS
             cy.wait(4000)
@@ -149,7 +149,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -157,7 +157,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
 
             //GERAR PARCELAS 

@@ -6,7 +6,6 @@ import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/servi
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento, escolherUmaParcelaPagamento,
          escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { tirarEntrega, tirarEntregaSegundo, tirarEntregaTerceiro } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -16,6 +15,7 @@ import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarAlterar } from '../../../../pages/para_pedidos/botoes/avancar/avancar_alterar.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -40,7 +40,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA PRODUTO
+            TirarEntrega.primeiro() //ENTREGA PRODUTO
             AvancarAlterar.paraParcelasAlt()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -65,7 +65,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             cy.wait(500)
 
             Produto.kitPrimeiro() //PESQUISA PRODUTO - KIT
@@ -74,7 +74,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
             Servico.clicarOKServVinc()
-            tirarEntregaTerceiro()
+            TirarEntrega.terceiro()
             AvancarAlterar.paraParcelasAlt()
 
             clicarGerarParcelasAlterar() //GERAR PARCELAS
@@ -94,7 +94,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA PRODUTO
+            TirarEntrega.primeiro() //ENTREGA PRODUTO
             AvancarAlterar.paraParcelasAlt()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -122,7 +122,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo() //ENTREGA PRODUTO
+            TirarEntrega.segundo() //ENTREGA PRODUTO
 
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
@@ -131,7 +131,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo() //ENTREGA PRODUTO
+            TirarEntrega.segundo() //ENTREGA PRODUTO
             AvancarAlterar.paraParcelasAlt()
 
             clicarGerarParcelasAlterar() //GERAR PARCELAS
@@ -153,7 +153,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA PRODUTO
+            TirarEntrega.primeiro() //ENTREGA PRODUTO
             AvancarAlterar.paraParcelasAlt()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()

@@ -2,7 +2,6 @@ import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObra
 import { validarServicosVinculados, validaAddMODestacaNãoSepara, validaAddMONaoDestacaSepMesmoProc, validaAddMONaoDestacaSepProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -12,6 +11,7 @@ import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 
 describe('Gerar pedidos com Mão de obra', () => {
 
@@ -38,7 +38,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddMODestacaNãoSepara()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
@@ -54,7 +54,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddMODestacaNãoSepara()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -62,7 +62,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
@@ -78,7 +78,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()  
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
@@ -94,7 +94,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -102,7 +102,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo() //ENTREGA- SEGUNDO PRODUTO
+            TirarEntrega.segundo() //ENTREGA- SEGUNDO PRODUTO
             AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
@@ -118,7 +118,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
@@ -134,7 +134,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -142,7 +142,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 

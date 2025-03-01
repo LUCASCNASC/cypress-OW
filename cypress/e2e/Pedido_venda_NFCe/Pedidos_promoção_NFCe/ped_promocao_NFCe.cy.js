@@ -1,7 +1,6 @@
 import { selecionarPrimeiraPromoProduto, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { clicarGerarParcelas } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
-import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -11,6 +10,7 @@ import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
 
 describe('Gerar pedidos com promoção com entrega', () => {
 
@@ -39,8 +39,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
+            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
 
@@ -68,8 +68,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
+            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             cy.wait(6000)
 
@@ -103,8 +103,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
+            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
 

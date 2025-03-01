@@ -6,7 +6,6 @@ import { clicarGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPag
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento, escolherRecebFuturoPrestamistaComJuros, escolherRecebFuturoPrestamistaSemJuros, 
          escolherRecebPresentePrestamista } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
 import { escolherRecebPromoPrazoFuturoComJurosPrest, escolherRecebPromoPrazoFuturoSemJurosPrest, escolherRecebPromoPartidaPresentePrest } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
-import { tirarEntrega, tirarEntregaSegundo } from '../../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../../pages/para_pedidos/cliente/cliente.js'
@@ -16,6 +15,8 @@ import { GeralProduto } from '../../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../../pages/para_pedidos/finalizar_pedido.js'
+import { TirarEntrega } from '../../../../../pages/para_pedidos/entrega/tirar_entrega.js'
+
 
 describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
@@ -40,7 +41,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -48,7 +49,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo()
+            TirarEntrega.segundo()
             AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -71,7 +72,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega()
+            TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -79,7 +80,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo()
+            TirarEntrega.segundo()
             AvancarNormal.paraParcelas()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -236,7 +237,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            TirarEntrega.primeiro()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -261,7 +262,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            TirarEntrega.primeiro()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -287,7 +288,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validarModalServVinc()
             garantiaNaoSepara()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            TirarEntrega.primeiro()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -382,7 +383,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             garantiaNaoSepara()
             Servico.clicarOKServVinc() //SERVIÇOS
             validarServicosVinculados() ; validaAddGarantNaoSep()
-            tirarEntrega()
+            TirarEntrega.primeiro()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -410,7 +411,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            tirarEntTirarEntrega.primeirorega()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -418,7 +419,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
-            tirarEntrega()
+            TirarEntrega.segundo()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -447,7 +448,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -455,7 +456,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
-            tirarEntrega()
+            TirarEntrega.segundo()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -488,7 +489,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -496,7 +497,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
-            tirarEntrega()
+            TirarEntrega.segundo()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -525,7 +526,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -533,7 +534,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
-            tirarEntrega()
+            TirarEntrega.segundo()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -568,7 +569,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            tirarEntrega()
+            TirarEntrega.primeiro()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })

@@ -1,6 +1,5 @@
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento, escolherEntradaFormaPagamento, clicarGerarPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { escolherTransportadora, modalInconsApenasTransp } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -10,6 +9,7 @@ import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
 
 describe('Gerar pedido normal com entrega', () => {
 
@@ -35,8 +35,8 @@ describe('Gerar pedido normal com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
+            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -61,8 +61,8 @@ describe('Gerar pedido normal com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
+            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
@@ -80,8 +80,8 @@ describe('Gerar pedido normal com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
-            modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            escolherTransportadora()
+            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             escolherEntradaFormaPagamento() //GERAR PARCELAS
             clicarGerarPagamento()

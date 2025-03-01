@@ -1,6 +1,5 @@
 import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { tirarEntrega, tirarEntregaSegundo } from '../../../support/para_pedidos/apenas_entrega.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -10,6 +9,7 @@ import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 
 describe('Gerar pedido com financeiro na baixa', () => {
 
@@ -34,7 +34,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento() 
@@ -51,7 +51,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntrega() //ENTREGA
+            TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -59,7 +59,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            tirarEntregaSegundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas() 
             clicarGerarParcelas() //GERAR PARCELAS
             carregandoFormaPagamento()
