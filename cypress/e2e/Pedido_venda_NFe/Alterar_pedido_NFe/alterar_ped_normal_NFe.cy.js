@@ -15,6 +15,7 @@ import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarAlterar } from '../../../../pages/para_pedidos/botoes/avancar/avancar_alterar.js'
+import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 

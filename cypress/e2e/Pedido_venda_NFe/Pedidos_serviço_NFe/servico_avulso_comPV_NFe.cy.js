@@ -8,6 +8,7 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 

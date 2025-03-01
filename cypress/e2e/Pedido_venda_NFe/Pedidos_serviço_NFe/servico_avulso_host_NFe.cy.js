@@ -5,6 +5,7 @@ import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/p
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 
 //Para este cenário, é necessário fazer update na coluna dataultimaatualizacao, da tabela glb.servicofaixavalorfixo
 describe('Venda de serviço avulso Host - 104', () => {
