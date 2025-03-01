@@ -1,7 +1,6 @@
 import { selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { garantiaNaoSepara, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { clicarGerarParcelas, carregandoFormaPagamento, escolherQuatroParcelaPagamento } from '../../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherRecebPresentePrestAbatValFixo, escolherRecebFutComJurosPrestAbatValFixo } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
 import { escolherRecebPromoPrazoFutComJurosPrestAbatVF } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
@@ -13,6 +12,8 @@ import { GeralProduto } from '../../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../../pages/para_pedidos/finalizar_pedido.js'
+import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 
 describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
 
@@ -39,10 +40,10 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherRecebFutComJurosPrestAbatValFixo()
-            escolherQuatroParcelaPagamento()
+            EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -70,10 +71,10 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherRecebFutComJurosPrestAbatValFixo()
-            escolherQuatroParcelaPagamento()
+            EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado()
             AvancarNormal.final()
@@ -101,7 +102,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             clicarEditarParcelas()
-            escolherQuatroParcelaPagamento()
+            EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -128,7 +129,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             clicarEditarParcelas()
-            escolherQuatroParcelaPagamento()
+            EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -155,7 +156,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             clicarEditarParcelas()
-            escolherQuatroParcelaPagamento()
+            EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -178,10 +179,10 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherRecebPresentePrestAbatValFixo()
-            escolherQuatroParcelaPagamento()
+            EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
             AvancarNormal.final()

@@ -47,4 +47,4 @@ export class EscolherParcelaReceb {
             .click({force:true})
         cy.wait('@api_modal_seguro_prestamista', { timeout: 40000 })
     }
-}
+} 

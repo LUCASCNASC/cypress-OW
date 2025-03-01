@@ -1,5 +1,4 @@
 import { trocarFilialFaturamento, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -11,6 +10,8 @@ import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
+import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -40,10 +41,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AvancarNormal.paraTransportadora()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -71,10 +72,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AvancarNormal.paraTransportadora()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -95,10 +96,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AvancarNormal.paraTransportadora()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -121,10 +122,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AvancarNormal.paraTransportadora()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

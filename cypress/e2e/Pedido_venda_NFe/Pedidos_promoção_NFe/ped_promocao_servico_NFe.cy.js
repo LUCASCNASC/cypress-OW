@@ -1,7 +1,6 @@
 import { selecionarPrimeiraPromoProduto, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
-import { clicarFinalizarPedido, validarPedidoGerado } from '../../../support/para_pedidos/apenas_finalizar_pedido.js';
 import { escolherRecebPromoPagPrincipal, escolherRecebReceberPrestamista } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'

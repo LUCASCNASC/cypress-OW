@@ -2,13 +2,14 @@ import { iconeMenuOpcoes, clienteCompletoOpcaoMenu, clicarMenuClienteCompleto, c
          aguardeCarregandoServico, botaoAddMaoObra, botaoAddGarantias, clicarAddGarantias, modalGarantiasServicosVinculados,
          messServicoAdicionadoSucesso, botaoSalvarServico, messAguardeCarregando, messRegistroSalvoSucesso, messGarantiaJaAdicionada } from '../../../support/para_pedidos/para_servicos_avulsos.js';
 import { garantiaSeparaMesmoProcesso, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
@@ -63,11 +64,11 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             clicarCarrinhoCompras()
             botaoAvancarPedido()
             cy.wait(3000)
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
             cy.wait(2000)
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             cy.wait(400)
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

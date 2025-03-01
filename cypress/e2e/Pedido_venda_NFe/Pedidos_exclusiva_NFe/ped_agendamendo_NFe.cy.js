@@ -1,7 +1,6 @@
 import { validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, validarSemSaldo, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas } from '../../../support/produtos_pedidos/prd_exclusiva';
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherUmaParcelaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -10,6 +9,8 @@ import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/ava
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
+import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
@@ -46,10 +47,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.paraParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -74,10 +75,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.paraParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -100,10 +101,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.paraParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -139,10 +140,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             clicarOKServVinculado()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal()
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

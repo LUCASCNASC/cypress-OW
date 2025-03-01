@@ -1,5 +1,4 @@
 import { selecionarPrimeiraPromoProduto, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { clicarGerarParcelas } from '../../../support/para_pedidos/apenas_formas_pagamento.js';
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -11,6 +10,7 @@ import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
+import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 
 describe('Gerar pedidos com promoção com entrega', () => {
 
@@ -42,7 +42,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
-            clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher "Forma de pagamento"
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click()
@@ -106,7 +106,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
-            clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})

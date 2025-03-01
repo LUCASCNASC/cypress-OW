@@ -1,6 +1,4 @@
 import { selecionarPrimeiraPromoProduto, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { botaoGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento, inserirDataAmanha1Vencimento,
-         clicarGerarParcAlterarVenc, escolherUmaParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
@@ -13,6 +11,8 @@ import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
+import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -122,7 +122,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             cy.wait(4000)
 
             //Escolher forma de pagamento
@@ -189,11 +189,11 @@ describe('Gerar pedidos com promoção', () => {
             AvancarNormal.paraParcelas() //ENTREGA
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
-            inserirDataAmanha1Vencimento()
+            GeralPagamento.inserirDataAmanha1Vencimento()
             cy.wait(3000)
-            clicarGerarParcAlterarVenc()
+            GeralPagamento.clicarGerarParcAlterarVenc()
             escolherFormaPagamentoPrincipal()
-            escolherUmaParcelaPagamento()
+            EscolherParcelaReceb.uma()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -216,11 +216,11 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
 
-            inserirDataAmanha1Vencimento()
+            GeralPagamento.inserirDataAmanha1Vencimento()
             cy.wait(4000)
             cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({force:true})
             escolherFormaPagamentoPrincipal()
-            escolherUmaParcelaPagamento()
+            EscolherParcelaReceb.uma()
             cy.wait(400)
 
             // //"GERAR PAGAMENTO"
@@ -231,11 +231,11 @@ describe('Gerar pedidos com promoção', () => {
             // cy.get('.md-select-backdrop').click({force:true})
             // cy.wait(500)
 
-            // inserirDataAmanha1Vencimento()
-            // clicarGerarParcAlterarVenc()
+            // GeralPagamento.inserirDataAmanha1Vencimento()
+            // GeralPagamento.clicarGerarParcAlterarVenc()
             // cy.wait(3000)
             // escolherFormaPagamentoPrincipal()
-            // escolherDuasParcelaPagamento()
+            // EscolherParcelaReceb.duas()
             // AvancarNormal.final()
             // FinalizarPed.clicarFinalizarPed() //RESUMO
             // FinalizarPed.validarPedGerado()
@@ -255,7 +255,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
@@ -291,7 +291,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
-            botaoGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher forma de pagemento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force: true})

@@ -1,4 +1,3 @@
-import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
 import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -10,6 +9,8 @@ import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
+import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 
 describe('Gerar pedido de entrega futura', () => {
 
@@ -36,10 +37,10 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA PRODUTO
             AvancarNormal.paraParcelas()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -61,10 +62,10 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final() 
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -81,10 +82,10 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
-            clicarGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento()
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento()
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -105,10 +106,10 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora() //TRANSPORTADORA
             AvancarNormal.paraParcelas() 
-            botaoGerarParcelas() //GERAR PARCELAS
-            carregandoFormaPagamento() 
+            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.carregandoFormaPagamento() 
             escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
-            escolherDuasParcelaPagamento()
+            EscolherParcelaReceb.duas()
             AvancarNormal.final() 
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
