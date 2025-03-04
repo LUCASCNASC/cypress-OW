@@ -1,5 +1,4 @@
 import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDescontoPorcentagem, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -12,6 +11,7 @@ import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 
 describe('Gerar pedido de venda com desconto', () => {
 
@@ -43,7 +43,7 @@ describe('Gerar pedido de venda com desconto', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -66,7 +66,7 @@ describe('Gerar pedido de venda com desconto', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -89,7 +89,7 @@ describe('Gerar pedido de venda com desconto', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

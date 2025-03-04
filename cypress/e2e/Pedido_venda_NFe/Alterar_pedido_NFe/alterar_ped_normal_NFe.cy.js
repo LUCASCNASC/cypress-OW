@@ -3,7 +3,6 @@ import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escol
          adicionarEntrega, adicionarServico, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
 import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -16,6 +15,7 @@ import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -44,7 +44,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.paraParcelasAlt()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
+            Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -98,7 +98,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.paraParcelasAlt()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -157,7 +157,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.paraParcelasAlt()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
+            Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
@@ -202,7 +202,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.parcelasEntregaAlt()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal() //PROCESSO INCLUSÃO
+            Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
@@ -221,7 +221,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             removerFormaPagamento()
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
-            escolherSegundaFormaPagamento() //PROCESSO INCLUSÃO
+            Recebimento.segundaForma() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO

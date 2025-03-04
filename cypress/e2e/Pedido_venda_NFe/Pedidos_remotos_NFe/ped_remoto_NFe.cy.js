@@ -1,5 +1,4 @@
 import { trocarFilialFaturamento, composicaoDesteKit, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -10,6 +9,7 @@ import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 
 //verificar todos
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -41,7 +41,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -71,7 +71,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -94,7 +94,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -119,7 +119,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

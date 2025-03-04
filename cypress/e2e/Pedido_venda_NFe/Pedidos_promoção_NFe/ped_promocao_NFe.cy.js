@@ -1,6 +1,4 @@
 import { selecionarPrimeiraPromoProduto, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { escolherFormaPagamentoPrincipal, escolherSegundaFormaPagamento } from '../../../support/para_pedidos/processos/processo_recebimento.js';
-import { escolherRecebPromoPagPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -13,6 +11,8 @@ import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { RecebimentoPromo } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -36,7 +36,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOCAO
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -57,7 +57,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -84,7 +84,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -108,7 +108,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -145,7 +145,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -181,7 +181,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -192,7 +192,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralPagamento.inserirDataAmanha1Vencimento()
             cy.wait(3000)
             GeralPagamento.clicarGerarParcAlterarVenc()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -207,7 +207,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -219,7 +219,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralPagamento.inserirDataAmanha1Vencimento()
             cy.wait(4000)
             cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({force:true})
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.uma()
             cy.wait(400)
 
@@ -234,7 +234,7 @@ describe('Gerar pedidos com promoção', () => {
             // GeralPagamento.inserirDataAmanha1Vencimento()
             // GeralPagamento.clicarGerarParcAlterarVenc()
             // cy.wait(3000)
-            // escolherFormaPagamentoPrincipal()
+            // Recebimento.principal()
             // EscolherParcelaReceb.duas()
             // AvancarNormal.final()
             // FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -249,7 +249,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -279,7 +279,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto() //PROMOÇÃO
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()

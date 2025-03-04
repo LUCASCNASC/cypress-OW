@@ -1,8 +1,6 @@
-import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente, validarModalServVinculado, 
-         clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
+import { garantiaNaoSepara, garantiaSeparaMesmoProcesso, garantiaSeparaTituloProcessoDiferente } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validaAddGarantSepMesmoProc, validaAddGarantNaoSep, validaAddGarantSepTituloProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
 import { validarServicosVinculados } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -15,6 +13,7 @@ import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 
 describe('Gerar pedidos com Garantia', () => {
 
@@ -45,7 +44,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -69,7 +68,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -85,7 +84,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -109,7 +108,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -125,7 +124,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -149,7 +148,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -168,7 +167,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -191,7 +190,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -207,7 +206,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -230,7 +229,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -246,7 +245,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -268,7 +267,7 @@ describe('Gerar pedidos com Garantia', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

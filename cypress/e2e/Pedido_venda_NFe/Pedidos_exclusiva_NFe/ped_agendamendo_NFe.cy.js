@@ -1,7 +1,6 @@
 import { validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, validarSemSaldo, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
 import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
 import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas } from '../../../support/produtos_pedidos/prd_exclusiva';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -11,6 +10,7 @@ import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entre
 import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
@@ -49,7 +49,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -77,7 +77,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -103,7 +103,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -142,7 +142,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

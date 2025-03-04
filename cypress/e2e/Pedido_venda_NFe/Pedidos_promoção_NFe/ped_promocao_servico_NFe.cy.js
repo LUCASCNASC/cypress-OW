@@ -1,7 +1,6 @@
 import { selecionarPrimeiraPromoProduto, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
 import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
-import { escolherRecebPromoPagPrincipal, escolherRecebReceberPrestamista } from '../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -13,6 +12,7 @@ import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/ava
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
+import { RecebimentoPromo } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
@@ -36,7 +36,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
@@ -59,7 +59,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             tipoServicoIsentoValidar()
             selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPagPrincipal()
+            RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"

@@ -1,8 +1,6 @@
 import { selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal } from '../../../../support/para_pedidos/gerais_pedidos.js';
 import { garantiaNaoSepara, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { validarServicosVinculados, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { escolherRecebPresentePrestAbatValFixo, escolherRecebFutComJurosPrestAbatValFixo } from '../../../../support/para_pedidos/processos/processo_recebimento.js';
-import { escolherRecebPromoPrazoFutComJurosPrestAbatVF } from '../../../../support/para_pedidos/processos/processo_recebimento_promo.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../../pages/para_pedidos/cliente/cliente.js'
@@ -14,6 +12,8 @@ import { AvancarNormal } from '../../../../../pages/para_pedidos/botoes/avancar/
 import { FinalizarPed } from '../../../../../pages/para_pedidos/finalizar_pedido.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Recebimento } from '../../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { RecebimentoPromo } from '../../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
 
 describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
 
@@ -42,7 +42,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherRecebFutComJurosPrestAbatValFixo()
+            Recebimento.futSemJurosPrestAbatValFixo()
             EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista
@@ -73,7 +73,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherRecebFutComJurosPrestAbatValFixo()
+            Recebimento.futSemJurosPrestAbatValFixo()
             EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado()
@@ -93,7 +93,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPrazoFutComJurosPrestAbatVF()
+            RecebimentoPromo.prazoFutComJurosPrestAbatVF()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -118,7 +118,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPrazoFutComJurosPrestAbatVF()
+            RecebimentoPromo.prazoFutComJurosPrestAbatVF()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             garantiaNaoSepara()
@@ -145,7 +145,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             selecionarPrimeiraPromoProduto()
-            escolherRecebPromoPrazoFutComJurosPrestAbatVF()
+            RecebimentoPromo.prazoFutComJurosPrestAbatVF()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
             garantiaNaoSepara()
@@ -181,7 +181,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherRecebPresentePrestAbatValFixo()
+            Recebimento.presentePrestAbatValFixo()
             EscolherParcelaReceb.quatro()
             okSeguroPrestamista()
             ticketPrestamistaAdicionado() //Validando adição do prestamista

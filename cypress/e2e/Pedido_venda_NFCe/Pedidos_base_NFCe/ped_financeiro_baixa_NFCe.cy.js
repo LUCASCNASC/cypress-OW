@@ -1,5 +1,3 @@
-import { clicarGerarParcelas, carregandoFormaPagamento, escolherDuasParcelaPagamento } from '../../../support/para_pedidos/parcelas_pedido.js';
-import { escolherFormaPagamentoPrincipal } from '../../../support/para_pedidos/processos/processo_recebimento.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
@@ -12,6 +10,7 @@ import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js
 import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 
 describe('Gerar pedido com financeiro na baixa com entrega', () => {
 
@@ -42,7 +41,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             AvancarNormal.parcelasEntrega()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -68,7 +67,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             AvancarNormal.parcelasEntrega()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
-            escolherFormaPagamentoPrincipal()
+            Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

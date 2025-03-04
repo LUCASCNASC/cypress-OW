@@ -281,6 +281,7 @@ export class Recebimento {
         cy.wait('@api_pedido_forma_pagamento_escolherRecebCheque', { timeout: 40000 })
     }
 
+    
     //---------- Prestamista Abatimento %
 
     //escolhendo forma de pagamento 3874 (3874 - T.A. A Receber Futuro - para Prestamista) para aparecer seguro prestamista
