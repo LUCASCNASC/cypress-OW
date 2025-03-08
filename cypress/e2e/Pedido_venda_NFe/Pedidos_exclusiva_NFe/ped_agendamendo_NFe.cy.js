@@ -1,7 +1,3 @@
-import { validarComSaldo, escolherProdutoPesquisa, clicarVoltagemProduto, clicarAdicionarProduto, validarSemSaldo, trocarFilialFaturamento } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { aumentarQuantVendaCinco, saldoRemotoAReceber, aumentarQuantVendaDez } from '../../../support/para_pedidos/para_pedidos_exclusiva.js';
-import { primeiroPrdNormalExclusiva, kitSemSaldoAgendamento, kitVolumes, produtoSaldoReceber, prdSaldoReceberDuasLinhas } from '../../../support/produtos_pedidos/prd_exclusiva';
-import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
@@ -11,6 +7,12 @@ import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entre
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { PedExclusiva } from '../../../../pages/para_pedidos/para_pedidos_exclusiva.js'
+import { ProdutoExclusiva } from '../../../../pages/produtos/prd_exclusiva.js'
+import { GeralPedido } from '../../../../pages/para_pedidos/gerais_pedidos.js'
+import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { GeralProduto } from '../../../../pages/produtos/gerais_produto.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/apenas_servicos.js'
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
@@ -30,19 +32,19 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         //cenário dependente - não colocar no fluxo
         it.skip('1. Vender um produto normal (com saldo e com entrega, 15 dias) e um kit remoto (2 composições, sem saldo e sem a receber, 20 dias).', () => {
 
-            primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() 
-            clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
-            kitSemSaldoAgendamento() //PRODUTO KIT
-            validarSemSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            trocarFilialFaturamento()
-            clicarAdicionarProduto()
+            ProdutoExclusiva.PrimeiroNormal() //PRODUTO EXCLUSIVA
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() 
+            GeralProduto.clicarAdicionarProduto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
+            ProdutoExclusiva.kitSemSaldoAgendamento() //PRODUTO KIT
+            ValidarSaldo.semSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto()
+            GeralPedido.trocarFilialFaturamento()
+            GeralProduto.clicarAdicionarProduto()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
@@ -59,18 +61,18 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         //cenário dependente - não colocar no fluxo
         it.skip('2. Vender um produto normal (com saldo e com entrega) e um kit com composição 6 volumes (data atual + parametro 552/ 5 dias).', () => {
 
-            primeiroPrdNormalExclusiva() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()      
-            clicarVoltagemProduto() 
-            clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
-            kitVolumes() //PRODUTO KIT
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
+            ProdutoExclusiva.PrimeiroNormal() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()      
+            GeralProduto.clicarVoltagemProduto() 
+            GeralProduto.clicarAdicionarProduto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
+            ProdutoExclusiva.kitVolumes() //PRODUTO KIT
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto()
+            GeralProduto.clicarAdicionarProduto()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
@@ -90,13 +92,13 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         //cenário dependente - não colocar no fluxo
         it.skip('3. Vender um produto (sem saldo e com saldo a receber para 10 dias, e com entrega), e ter um agendamento para a data de previsão.', () => {
 
-            produtoSaldoReceber() //PRODUTO
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() 
-            clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            ProdutoExclusiva.SaldoReceber() //PRODUTO
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() 
+            GeralProduto.clicarAdicionarProduto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
@@ -113,31 +115,31 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         //cenário dependente - não colocar no fluxo
         it.skip('4. Vender um produto em duas linhas (um com 5 unidades a receber e 10 para solicitar compra), e ter um agendamento para a data de previsão para a receber.', () => {
 
-            prdSaldoReceberDuasLinhas() //PRODUTO
-            saldoRemotoAReceber()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto() 
-            trocarFilialFaturamento()
-            aumentarQuantVendaCinco()
-            clicarAdicionarProduto()
-            prdSaldoReceberDuasLinhas() //SEGUNDO PRODUTO
-            saldoRemotoAReceber()
-            escolherProdutoPesquisa()  
-            clicarVoltagemProduto() 
-            trocarFilialFaturamento()
-            aumentarQuantVendaDez()
+            ProdutoExclusiva.SaldoRecebDuasLinhas() //PRODUTO
+            PedExclusiva.saldoRemotoAReceber()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto() 
+            GeralPedido.trocarFilialFaturamento()
+            PedExclusiva.aumentarQuantVendaCinco()
+            GeralProduto.clicarAdicionarProduto()
+            ProdutoExclusiva.SaldoRecebDuasLinhas() //SEGUNDO PRODUTO
+            PedExclusiva.saldoRemotoAReceber()
+            GeralProduto.escolherProdutoPesquisa()  
+            GeralProduto.clicarVoltagemProduto() 
+            GeralPedido.trocarFilialFaturamento()
+            PedExclusiva.aumentarQuantVendaDez()
         })
 
         //cenário dependente - não colocar no fluxo
         it.skip('5. Pedido de venda normal: produto 1896 0 0 (sem entrega)', () => {
     
-            primeiroPrdNormalExclusiva() //PRODUTO EXCLUSIVA
-            validarComSaldo()
-            escolherProdutoPesquisa()
-            clicarVoltagemProduto()
-            clicarAdicionarProduto()
-            validarModalServVinculado() //SERVICOS
-            clicarOKServVinculado()
+            ProdutoExclusiva.PrimeiroNormal() //PRODUTO EXCLUSIVA
+            ValidarSaldo.comSaldo()
+            GeralProduto.escolherProdutoPesquisa()
+            GeralProduto.clicarVoltagemProduto()
+            GeralProduto.clicarAdicionarProduto()
+            Servico.validarModalServVinc() //SERVICOS
+            Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS

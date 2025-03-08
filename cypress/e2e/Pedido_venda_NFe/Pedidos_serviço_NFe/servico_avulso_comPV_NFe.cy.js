@@ -1,7 +1,3 @@
-import { iconeMenuOpcoes, clienteCompletoOpcaoMenu, clicarMenuClienteCompleto, clicarOpcaoServicos, clicarCarrinhoCompras, botaoAvancarPedido,
-         aguardeCarregandoServico, botaoAddMaoObra, botaoAddGarantias, clicarAddGarantias, modalGarantiasServicosVinculados,
-         messServicoAdicionadoSucesso, botaoSalvarServico, messAguardeCarregando, messRegistroSalvoSucesso, messGarantiaJaAdicionada } from '../../../support/para_pedidos/para_servicos_avulsos.js';
-import { garantiaSeparaMesmoProcesso, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
@@ -10,6 +6,9 @@ import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { PedServicoAvulso } from '../../../../pages/para_pedidos/para_servicos_avulsos.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/apenas_servicos.js'
+
 
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
@@ -29,11 +28,11 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
             const numero_pedido = '8605'
             
-            iconeMenuOpcoes()
-            clienteCompletoOpcaoMenu()
-            clicarMenuClienteCompleto()
-            clicarOpcaoServicos()
-            aguardeCarregandoServico()
+            PedServicoAvulso.iconeMenuOpcoes()
+            PedServicoAvulso.clienteCompletoOpcaoMenu()
+            PedServicoAvulso.clicarMenuClienteCompleto()
+            PedServicoAvulso.clicarOpcaoServicos()
+            PedServicoAvulso.aguardeCarregandoServico()
 
             //Validando campo
             cy.get('form.ng-pristine > .ng-pristine')
@@ -49,20 +48,20 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > h3 > .ng-binding')
                 .should('have.text', numero_pedido)
 
-            botaoAddMaoObra()
-            botaoAddGarantias()
-            clicarAddGarantias()
-            modalGarantiasServicosVinculados()
-            garantiaSeparaMesmoProcesso() //clicar na primeira garantia - Garantia Separa Mesmo Processo
+            PedServicoAvulso.botaoAddMaoObra()
+            PedServicoAvulso.botaoAddGarantias()
+            PedServicoAvulso.clicarAddGarantias()
+            PedServicoAvulso.modalGarantiasServicosVinculados()
+            Servico.garantiaSepMesmoProc() //clicar na primeira garantia - Garantia Separa Mesmo Processo
             Servico.clicarOKServVinc()()
-            messServicoAdicionadoSucesso()
-            botaoSalvarServico()
-            messAguardeCarregando()
-            messRegistroSalvoSucesso()
-            clicarAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
-            messGarantiaJaAdicionada() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
-            clicarCarrinhoCompras()
-            botaoAvancarPedido()
+            PedServicoAvulso.messServicoAdicionadoSucesso()
+            PedServicoAvulso.botaoSalvarServico()
+            PedServicoAvulso.messAguardeCarregando()
+            PedServicoAvulso.messRegistroSalvoSucesso()
+            PedServicoAvulso.clicarAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
+            PedServicoAvulso.messGarantiaJaAdicionada() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
+            PedServicoAvulso.clicarCarrinhoCompras()
+            PedServicoAvulso.botaoAvancarPedido()
             cy.wait(3000)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()

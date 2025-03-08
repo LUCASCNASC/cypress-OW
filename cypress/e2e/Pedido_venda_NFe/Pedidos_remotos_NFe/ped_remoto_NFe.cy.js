@@ -1,5 +1,3 @@
-import { trocarFilialFaturamento, composicaoDesteKit, clicarAdicionarProduto } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
@@ -10,6 +8,7 @@ import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/ava
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { GeralPedido } from '../../../../pages/para_pedidos/gerais_pedidos.js'
 
 //verificar todos
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -33,7 +32,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
@@ -55,7 +54,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
@@ -63,7 +62,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
@@ -85,8 +84,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
-            trocarFilialFaturamento()
-            composicaoDesteKit()
+            GeralPedido.trocarFilialFaturamento()
+            GeralPedido.composicaoDesteKit()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
@@ -111,7 +110,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
@@ -133,7 +132,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.semSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
             cy.get('[ng-if="semSaldoCD"][style=""] > p')

@@ -280,7 +280,7 @@ export class Recebimento {
             .click({force:true})
         cy.wait('@api_pedido_forma_pagamento_escolherRecebCheque', { timeout: 40000 })
     }
-
+ 
     
     //---------- Prestamista Abatimento %
 

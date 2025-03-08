@@ -1,5 +1,3 @@
-import { trocarFilialFaturamento, composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
@@ -12,6 +10,7 @@ import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entre
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { GeralPedido } from '../../../../pages/para_pedidos/gerais_pedidos.js'
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -34,7 +33,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -57,7 +56,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -65,7 +64,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -88,8 +87,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            trocarFilialFaturamento()
-            composicaoDesteKit()
+            GeralPedido.trocarFilialFaturamento()
+            GeralPedido.composicaoDesteKit()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -115,7 +114,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -138,7 +137,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            trocarFilialFaturamento()
+            GeralPedido.trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
             cy.get('[ng-if="semSaldoCD"][style=""] > p')

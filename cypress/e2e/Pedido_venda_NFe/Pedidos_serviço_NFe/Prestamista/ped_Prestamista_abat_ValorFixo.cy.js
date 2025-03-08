@@ -1,8 +1,3 @@
-import { selecionarPrimeiraPromoProduto, clicarEditarParcelas, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal } from '../../../../support/para_pedidos/gerais_pedidos.js';
-import { garantiaNaoSepara, okSeguroPrestamista } from '../../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { validarServicosVinculados, validaAddGarantNaoSep } from '../../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../../support/para_pedidos/validar_tela/tela_final.js';
-import { ProcessoVenda } from '../../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../../pages/produtos/prd_normal.js'
@@ -14,6 +9,9 @@ import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_p
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../../pages/para_pedidos/processos/processo_recebimento.js'
 import { RecebimentoPromo } from '../../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
+import { ValidarServico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { Promocao } from '../../../../../pages/para_pedidos/promocao/promocao.js'
+import { TicketPrestamista } from '../../../../../pages/para_pedidos/validar_tela/prestamista.js'
 
 describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
 
@@ -24,7 +22,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVenda.NFe()
-    EscolherCliente.comRota()
+        EscolherCliente.comRota()
     })   
 
     context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo', () => {
@@ -44,10 +42,10 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.futSemJurosPrestAbatValFixo()
             EscolherParcelaReceb.quatro()
-            okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            ValidarServico.okSeguroPrest()
+            TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
-            ticketPrestamistaPaginaFinal()
+            TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -60,7 +58,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
-            garantiaNaoSepara()
+            ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
@@ -75,10 +73,10 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.futSemJurosPrestAbatValFixo()
             EscolherParcelaReceb.quatro()
-            okSeguroPrestamista()
-            ticketPrestamistaAdicionado()
+            ValidarServico.okSeguroPrest()
+            TicketPrestamista.adicionado()
             AvancarNormal.final()
-            ticketPrestamistaPaginaFinal()
+            TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -92,7 +90,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto()
+            Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrestAbatVF()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -101,12 +99,12 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            clicarEditarParcelas()
+            GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.quatro()
-            okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            ValidarServico.okSeguroPrest()
+            TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
-            ticketPrestamistaPaginaFinal()
+            TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -117,23 +115,23 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto()
+            Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrestAbatVF()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
-            garantiaNaoSepara()
+            ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddGarantNaoSep()
+            ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            clicarEditarParcelas()
+            GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.quatro()
-            okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            ValidarServico.okSeguroPrest()
+            TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
-            ticketPrestamistaPaginaFinal()
+            TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -144,23 +142,23 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto()
+            Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrestAbatVF()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc()
-            garantiaNaoSepara()
+            ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddGarantNaoSep()
+            ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            clicarEditarParcelas()
+            GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.quatro()
-            okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            ValidarServico.okSeguroPrest()
+            TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
-            ticketPrestamistaPaginaFinal()
+            TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -183,13 +181,12 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.presentePrestAbatValFixo()
             EscolherParcelaReceb.quatro()
-            okSeguroPrestamista()
-            ticketPrestamistaAdicionado() //Validando adição do prestamista
+            ValidarServico.okSeguroPrest()
+            TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
-            ticketPrestamistaPaginaFinal()
+            TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
-
     })
 })

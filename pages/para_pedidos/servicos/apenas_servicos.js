@@ -1,4 +1,4 @@
-export class Servico {
+export class Servico { 
 
     constructor(page) {
         this.page = page
@@ -34,7 +34,7 @@ export class Servico {
 
         cy.get('#checkbox-141-2 > .md-container').click()
     }
-
+ 
     //Marcar Mão de Obra "T.A. MO Destaca e Não Separa" - 142
     async maoObraDestNãoSep (selector) {
 
@@ -287,4 +287,4 @@ export class Servico {
         cy.get('md-dialog-actions.layout-row > .md-primary')
             .click()
     }
-} 
+}    

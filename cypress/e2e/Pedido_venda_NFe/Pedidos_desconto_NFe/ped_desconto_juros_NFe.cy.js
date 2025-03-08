@@ -1,5 +1,3 @@
-import { arrastarFormaPagamento, clicarAlterarValor, modalAlterarValor, alterarValorParaBaixo, alterarValorParaCima } from '../../../support/para_pedidos/para_pedido_desconto.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
@@ -12,6 +10,7 @@ import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entre
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { PedDesconto } from '../../../../pages/para_pedidos/para_pedido_desconto.js'
 
 describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
 
@@ -42,10 +41,10 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
-            arrastarFormaPagamento() //DESCONTO
-            clicarAlterarValor()
-            modalAlterarValor()
-            alterarValorParaBaixo()
+            PedDesconto.arrastarFormaPagamento() //DESCONTO
+            PedDesconto.clicarAlterarValor()
+            PedDesconto.modalAlterarValor()
+            PedDesconto.alterarValorParaBaixo()
             cy.wait(400)
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -64,10 +63,10 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
-            arrastarFormaPagamento() //DESCONTO
-            clicarAlterarValor()
-            modalAlterarValor()
-            alterarValorParaCima()
+            PedDesconto.arrastarFormaPagamento() //DESCONTO
+            PedDesconto.clicarAlterarValor()
+            PedDesconto.modalAlterarValor()
+            PedDesconto.alterarValorParaCima()
             cy.wait(400)
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

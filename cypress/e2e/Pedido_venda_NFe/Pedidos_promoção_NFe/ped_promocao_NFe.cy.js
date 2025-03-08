@@ -1,5 +1,3 @@
-import { selecionarPrimeiraPromoProduto, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
@@ -13,6 +11,7 @@ import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_p
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 import { RecebimentoPromo } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
+import { Promocao } from '../../../../pages/para_pedidos/promocao/promocao.js'
 
 describe('Gerar pedidos com promoção', () => {
 
@@ -33,9 +32,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPartida() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto() //PROMOCAO
+            Promocao.selecionarPrimeiraPromoProduto() //PROMOCAO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -54,9 +53,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPrazoEntrada() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -81,9 +80,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPrazoParcelado() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -105,9 +104,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPartida() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -142,9 +141,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPrazoEntrada() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -178,9 +177,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPartida() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto()
+            Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -204,9 +203,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPrazoEntrada() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -246,9 +245,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPrazoParcelado() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
@@ -276,9 +275,9 @@ describe('Gerar pedidos com promoção', () => {
     
             Produto.promoPartida() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS

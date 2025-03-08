@@ -1,4 +1,3 @@
-import { validarModalServVinculado, clicarOKServVinculado } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { GeralMuitosPrd } from '../../../../pages/para_pedidos/ped_muitos_produtos/geral_muitos_produtos.js'

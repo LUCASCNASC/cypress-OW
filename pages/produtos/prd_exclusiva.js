@@ -142,4 +142,4 @@ export class ProdutoExclusiva {
 
         cy.wait('@apiConsultaProdutos_prdSaldoReceberDuasLinhas', { timeout: 40000 })
     }
-}
+} 

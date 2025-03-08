@@ -1,6 +1,3 @@
-import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, removerFormaPagamento } from '../../../support/para_pedidos/para_alterar_pedido.js';
-import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
@@ -13,6 +10,7 @@ import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entre
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { AlterarPedido } from '../../../../pages/para_pedidos//para_alterar_pedido.js'
 
 
 describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.', () => {
@@ -49,18 +47,17 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
-            okPedidoGerado()
+            AlterarPedido.okPedGerado()
             cy.wait(1500)
 
-            iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
-            pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
-            escolherPedidoPendente()
-            clicarDetalhes()
-            clicarEditarPedido()
+            AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
+            AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
+            AlterarPedido.escolherPedPend()
+            AlterarPedido.clicarDetalhes()
+            AlterarPedido.clicarEditPed()
             AvancarAlterar.paraTransportadoraAlt()
             AvancarAlterar.parcelasEntregaAlt()
-            arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
-            removerFormaPagamento()
+            AlterarPedido.removerFormaPag() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
             cy.wait(10000)
             AvancarAlterar.parcelasEntregaAlt()
 

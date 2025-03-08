@@ -4,7 +4,7 @@ export class ValidarServico {
         this.page = page
     }
 
-    //------------------- VALIDA ADICIÇÃO DE SERVIÇOS PEDIDO COM UM PRODUTO ------
+    //------------------- VALIDA ADIÇÃO DE SERVIÇOS PEDIDO COM UM PRODUTO ------
 
     //SERVIÇOS VINCULADOS - título - pedido com um produto
     async servVinc (selector) {

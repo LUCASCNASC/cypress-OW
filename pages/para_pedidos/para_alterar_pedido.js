@@ -1,11 +1,11 @@
-export class GeralPedido {
+export class AlterarPedido {
 
     constructor(page) {
         this.page = page
     }
 
     //clicaR no botão OK do modal de Pedido Concuído
-    async okPedidoGerado (selector) {
+    async okPedGerado (selector) {
 
         cy.get('md-dialog-actions.layout-align-center-center > .md-primary')
             .click()
@@ -25,7 +25,7 @@ export class GeralPedido {
     }
 
     //Validando opção Pedidos Pendentes, do menu de opções
-    async pedidosPendentesOpcaoMenuPed (selector) {
+    async pediPendOpcaoMenuPed (selector) {
 
         //ícone Pedidos pendentes 
         cy.get('md-icon[md-svg-src="images/icons/pedido.svg"]')
@@ -50,7 +50,7 @@ export class GeralPedido {
     }
 
     //validando card com informações do pedido a ser alterado
-    async escolherPedidoPendente (selector) {
+    async escolherPedPend (selector) {
 
         //card inteiro
         cy.get(':nth-child(1) > .md-whiteframe-2dp')
@@ -105,7 +105,7 @@ export class GeralPedido {
     }
 
     //validando informações tela de informações do pedido
-    async infosPedidoValidarInfos (selector) {
+    async infosPedValidInfos (selector) {
 
         //título 
         cy.get('[ng-show="!(nenhum_registro)"] > :nth-child(1) > div')
@@ -164,7 +164,7 @@ export class GeralPedido {
     }
 
     //validando botões da tela de informações do pedido
-    async infosPedidoValidarBotoes (selector) {
+    async infosPedValidBotoes (selector) {
 
         //botão RESUMO DO PEDIDO
         cy.get('button[ng-click="abrirResumoPedido()"]')
@@ -204,7 +204,7 @@ export class GeralPedido {
     }
 
     //clicar no botão lápis, para editar
-    async clicarEditarPedido (selector) {
+    async clicarEditPed (selector) {
 
         cy.intercept('/services/v3/executar_filtro').as('api_executar_filtro')
         cy.get('.row-fluid > .md-primary > .ng-binding')
@@ -215,7 +215,7 @@ export class GeralPedido {
     }
 
     //mensagem de carregamento de pedido para alterá-lo
-    async menssCarregarPedAlterar (selector) {
+    async menssCarregarPedAlt (selector) {
 
         //ícone carregamento
         cy.get('.layout-align-center-center > .md-accent')
@@ -229,7 +229,7 @@ export class GeralPedido {
     }
 
     //clicar no botão + para aumentar a quantidade do produto já adicionado anteriormente
-    async clicarAumentoQtdProduto (selector) {
+    async clicarAumentoQtdPrd (selector) {
 
         cy.get('.iconeBuscaDetalheVenda')
             .scrollIntoView()
@@ -244,7 +244,7 @@ export class GeralPedido {
     }
 
     //clicar para remover primeiro produto
-    async clicarRemoverProduto (selector) {
+    async clicarRemoverPrd (selector) {
 
         //botão completo
         cy.get('.flex-20 > .md-warn')
@@ -259,7 +259,7 @@ export class GeralPedido {
     }
 
     //fechar modal de intenção de compra
-    async clicarFecharIntencaoCompra (selector) {
+    async clicarFecharIntCompra (selector) {
 
         //título modal
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -282,7 +282,7 @@ export class GeralPedido {
     }
 
     //remover forma de pagamento na edição de um pedido
-    async removerFormaPagamento (selector) {
+    async removerFormaPag (selector) {
 
         cy.get('.btn-remove-item-list > :nth-child(4) > .md-raised')
             .should('exist')
@@ -290,7 +290,7 @@ export class GeralPedido {
     }
 
     //Arrastar botão de Retirada / Entrega, para colocar entrega
-    async adicionarEntrega (selector) {
+    async addEntrega (selector) {
 
         //Botão Retirada / Entrega parte esquerda
         cy.get('.valor.flex-gt-sm-50 > .flex-gt-sm-30 > .md-label')
@@ -304,7 +304,7 @@ export class GeralPedido {
     }
 
     //Adicionar serviço a um produto já adicionado ao pedido
-    async adicionarServico (selector) {
+    async addServ (selector) {
         
         cy.contains('button', 'Serviços Vinculados')
             .should('exist')
@@ -321,7 +321,7 @@ export class GeralPedido {
     }
 
     //botão GERAR PARCELAS quando vamos alterar um pedido
-    async clicarGerarParcelasAlterar (selector) {
+    async clicarGerarParcAlt (selector) {
 
         //Botão "GERAR PARCELAS" - validações
         cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
@@ -336,7 +336,7 @@ export class GeralPedido {
     }
 
     //escolhendo forma de pagamento 3860 (3860 - T.A. A Receber Futuro) do pedido de venda -ALTERAÇÃO
-    async escolherFormaPagamentoPrincipalAlterar (selector) {
+    async escolherFormaPagPrincipalAlt (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')

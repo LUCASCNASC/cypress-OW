@@ -1,7 +1,3 @@
-import { selecionarPrimeiraPromoProduto, ticketPrestamistaAdicionado, ticketPrestamistaPaginaFinal, ticketPromocao } from '../../../support/para_pedidos/gerais_pedidos.js'
-import { adicionarPrestamista, tipoServicoIsentoValidar } from '../../../support/para_pedidos/para_pedidos_promocao.js';
-import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/apenas_servicos.js'
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
@@ -9,10 +5,14 @@ import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { RecebimentoPromo } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
+import { Promocao } from '../../../../pages/para_pedidos/promocao/promocao.js'
+import { TicketPrestamista } from '../../../../pages/para_pedidos/validar_tela/prestamista.js'
+import { ValidarServico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { Recebimento } from '../../../../pages/para_pedidos/promocao/promocao.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
@@ -32,16 +32,16 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             Produto.primeiroPrazoParcela() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            tipoServicoIsentoValidar()
-            selecionarPrimeiraPromoProduto()
+            Promocao.tipoServicoIsentoValidar()
+            Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
-            garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
-            validarServicosVinculados() ; validaAddGarantSepMesmoProc()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
@@ -55,16 +55,16 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             Produto.segundoPrazoParcela() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            tipoServicoIsentoValidar()
-            selecionarPrimeiraPromoProduto()
+            Promocao.tipoServicoIsentoValidar()
+            Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
-            garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
-            validarServicosVinculados() ; validaAddGarantSepMesmoProc()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
@@ -96,22 +96,22 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             Produto.terceiroPrazoParcela() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            selecionarPrimeiraPromoProduto()
-            escolherRecebReceberPrestamista()
+            Promocao.selecionarPrimeiraPromoProduto()
+            Recebimento.comPrestamista()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            validarServicosVinculados() ; validaAddGarantSepMesmoProc()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            adicionarPrestamista()
-            ticketPrestamistaAdicionado()
+            Promocao.adicionarPrestamista()
+            TicketPrestamista.adicionado()
             AvancarNormal.final()
-            ticketPrestamistaPaginaFinal()
+            TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -120,24 +120,24 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             Produto.quartoPrazoParcela() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; ticketPromocao()
+            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            tipoServicoIsentoValidar()
-            selecionarPrimeiraPromoProduto()
-            escolherRecebReceberPrestamista()
+            Promocao.tipoServicoIsentoValidar()
+            Promocao.selecionarPrimeiraPromoProduto()
+            Recebimento.comPrestamista()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
-            garantiaSeparaMesmoProcesso() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
-            validarServicosVinculados() ; validaAddGarantSepMesmoProc()
+            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            adicionarPrestamista()
-            ticketPrestamistaAdicionado()
+            Promocao.adicionarPrestamista()
+            TicketPrestamista.adicionado()
             AvancarNormal.final()
-            ticketPrestamistaPaginaFinal()
+            TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })

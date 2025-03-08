@@ -1,5 +1,3 @@
-import { composicaoDesteKit } from '../../../support/para_pedidos/gerais_pedidos.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
@@ -12,6 +10,7 @@ import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entre
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { GeralPedido } from '../../../../pages/para_pedidos/gerais_pedidos.js'
 
 describe('Gerar pedido normal com entrega', () => {
 
@@ -33,7 +32,7 @@ describe('Gerar pedido normal com entrega', () => {
         it('1. Ped venda: kit 1862 0 0', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
-            composicaoDesteKit()
+            GeralPedido.composicaoDesteKit()
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()

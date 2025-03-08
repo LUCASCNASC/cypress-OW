@@ -250,4 +250,4 @@ export class PedDesconto {
         cy.get('button[ng-click="aplicarSubSobre()"]')
             .click({force:true})
     }
-}
+} 

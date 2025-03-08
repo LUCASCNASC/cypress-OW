@@ -1,7 +1,3 @@
-import { okPedidoGerado, iconeMenuOpcoesPed, pedidosPendentesOpcaoMenuPed, escolherPedidoPendente, clicarDetalhes, clicarEditarPedido, 
-         menssCarregarPedAlterar, clicarAumentoQtdProduto, clicarRemoverProduto, clicarFecharIntencaoCompra, removerFormaPagamento, 
-         adicionarEntrega, adicionarServico, escolherFormaPagamentoPrincipalAlterar } from '../../../support/para_pedidos/para_alterar_pedido.js';
-import { arrastarFormaPagamento } from '../../../support/para_pedidos/para_pedido_desconto.js';
 import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
 import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
@@ -16,6 +12,7 @@ import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entre
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { AlterarPedido } from '../../../../pages/para_pedidos//para_alterar_pedido.js'
 
 describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
@@ -49,16 +46,16 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
-            okPedidoGerado()
+            AlterarPedido.okPedGerado()
             cy.wait(1500)
 
-            iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
-            pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
-            escolherPedidoPendente()
-            clicarDetalhes()
-            clicarEditarPedido()
+            AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
+            AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
+            AlterarPedido.escolherPedPend()
+            AlterarPedido.clicarDetalhes()
+            AlterarPedido.clicarEditPed()
 
-            clicarAumentoQtdProduto() //AUMENTANDO QUANTIDADE DO PRODUTO
+            AlterarPedido.clicarAumentoQtdPrd() //AUMENTANDO QUANTIDADE DO PRODUTO
 
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
@@ -78,7 +75,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.paraParcelasAlt()
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
-            escolherFormaPagamentoPrincipalAlterar()
+            AlterarPedido.escolherFormaPagPrincipalAlt()
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //PROCESSO INCLUSÃO
@@ -103,17 +100,17 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
-            okPedidoGerado()
+            AlterarPedido.okPedGerado()
             cy.wait(1500)
 
-            iconeMenuOpcoesPed()  //ALTERAÇÃO PEDIDO WEB
-            pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
-            escolherPedidoPendente()
-            clicarDetalhes()
-            clicarEditarPedido()
+            AlterarPedido.iconeMenuOpcoesPed()  //ALTERAÇÃO PEDIDO WEB
+            AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
+            AlterarPedido.escolherPedPend()
+            AlterarPedido.clicarDetalhes()
+            AlterarPedido.clicarEditPed()
 
-            clicarRemoverProduto()
-            clicarFecharIntencaoCompra()
+            AlterarPedido.clicarRemoverPrd()
+            AlterarPedido.clicarFecharIntCompra()
 
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
@@ -136,7 +133,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
-            escolherFormaPagamentoPrincipalAlterar() //PROCESSO INCLUSÃO
+            AlterarPedido.escolherFormaPagPrincipalAlt() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
@@ -162,16 +159,16 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedGerado()
-            okPedidoGerado()
+            AlterarPedido.okPedGerado()
             cy.wait(1500)
 
-            iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
-            pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
-            escolherPedidoPendente()
-            clicarDetalhes()
-            clicarEditarPedido()
-            adicionarEntrega() 
-            adicionarServico()
+            AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
+            AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
+            AlterarPedido.escolherPedPend()
+            AlterarPedido.clicarDetalhes()
+            AlterarPedido.clicarEditPed()
+            AlterarPedido.addEntrega() 
+            AlterarPedido.addServ()
             garantiaSeparaMesmoProcesso()
             Servico.clicarOKServVinc()
             // AvancarAlterar.paraTransportadoraAlt()
@@ -207,18 +204,17 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.finalAlt()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedGerado()
-            okPedidoGerado()
+            AlterarPedido.okPedGerado()
             cy.wait(1500)
 
-            iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
-            pedidosPendentesOpcaoMenuPed() //PEDIDOS PENDENTES
-            escolherPedidoPendente()
-            clicarDetalhes()
-            clicarEditarPedido()
+            AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
+            AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
+            AlterarPedido.escolherPedPend()
+            AlterarPedido.clicarDetalhes()
+            AlterarPedido.clicarEditPed()
             AvancarAlterar.paraTransportadoraAlt()
             AvancarAlterar.parcelasEntregaAlt()
-            arrastarFormaPagamento() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
-            removerFormaPagamento()
+            AlterarPedido.removerFormaPag()
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
             Recebimento.segundaForma() //PROCESSO INCLUSÃO

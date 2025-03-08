@@ -1,5 +1,3 @@
-import { clicarBotaoDesconto, validarModalSubSobre, aplicarDescontoR$, aplicarDescontoPorcentagem, aplicarDescontoValorFixo } from '../../../support/para_pedidos/para_pedido_desconto.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
@@ -12,6 +10,7 @@ import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entre
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { PedDesconto } from '../../../../pages/para_pedidos/para_pedido_desconto.js'
 
 describe('Gerar pedido de venda com desconto', () => {
 
@@ -36,9 +35,9 @@ describe('Gerar pedido de venda com desconto', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            clicarBotaoDesconto() //DESCONTO
-            validarModalSubSobre()
-            aplicarDescontoR$()
+            PedDesconto.clicarBotaoDesconto() //DESCONTO
+            PedDesconto.validarModalSubSobre()
+            PedDesconto.aplicarDescontoR$()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -59,9 +58,9 @@ describe('Gerar pedido de venda com desconto', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            clicarBotaoDesconto() //DESCONTO
-            validarModalSubSobre()
-            aplicarDescontoPorcentagem()
+            PedDesconto.clicarBotaoDesconto() //DESCONTO
+            PedDesconto.validarModalSubSobre()
+            PedDesconto.aplicarDescontoPorcentagem()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -82,9 +81,9 @@ describe('Gerar pedido de venda com desconto', () => {
             GeralProduto.clicarAdicionarProduto()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            clicarBotaoDesconto() //DESCONTO
-            validarModalSubSobre()
-            aplicarDescontoValorFixo()
+            PedDesconto.clicarBotaoDesconto() //DESCONTO
+            PedDesconto.validarModalSubSobre()
+            PedDesconto.aplicarDescontoValorFixo()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS

@@ -76,4 +76,4 @@ export class TicketPrestamista {
         .contains('T.A. Prestamista Não separa Com juros - Futuro')
         .should('be.visible')
     }
-}
+} 

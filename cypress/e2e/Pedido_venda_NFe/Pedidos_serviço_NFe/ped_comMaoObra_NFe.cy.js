@@ -1,6 +1,3 @@
-import { maoObraDestacaNãoSepara, maoObraNaoDestacaSeparaMesmoProcesso, maoObraNaoDestacaSeparaProcessoDiferente } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { validarServicosVinculados, validaAddMODestacaNãoSepara, validaAddMONaoDestacaSepMesmoProc, validaAddMONaoDestacaSepProcDif } from '../../../support/para_pedidos/servicos/valida_servicos_adicionados.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
@@ -13,6 +10,8 @@ import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entre
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { Servico } from '../../../../pages/para_pedidos/servicos/apenas_servicos.js'
+import { ValidarServico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 
 describe('Gerar pedidos com Mão de obra', () => {
 
@@ -36,9 +35,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('1. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título', () => {
     
-            maoObraDestacaNãoSepara() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
+            Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMODestacaNãoSepara()
+            ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -52,9 +51,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('2. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
 
-            maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
+            Servico.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMODestacaNãoSepara()
+            ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
@@ -76,9 +75,9 @@ describe('Gerar pedidos com Mão de obra', () => {
     
         it('3. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
-            maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
+            Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()  
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -92,9 +91,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('4. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
-            maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
+            Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
@@ -116,9 +115,9 @@ describe('Gerar pedidos com Mão de obra', () => {
     
         it('5. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
 
-            maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
+            Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -132,9 +131,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('6. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
 
-            maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
+            Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
@@ -159,9 +158,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('7. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título)', () => {
     
-            maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
+            Servico.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMODestacaNãoSepara()
+            ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -175,9 +174,9 @@ describe('Gerar pedidos com Mão de obra', () => {
         
         it('8. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
-            maoObraDestacaNãoSepara()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
+            Servico.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMODestacaNãoSepara()
+            ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -198,9 +197,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('9. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
-            maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
+            Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -214,9 +213,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('10. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
-            maoObraNaoDestacaSeparaMesmoProcesso() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
+            Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMONaoDestacaSepMesmoProc()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
@@ -237,9 +236,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('11. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
     
-            maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
+            Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -253,9 +252,9 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('12. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
     
-            maoObraNaoDestacaSeparaProcessoDiferente() //Marcar Mão de obra que não destaca e separa título em processo diferente
+            Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
-            validarServicosVinculados() ; validaAddMONaoDestacaSepProcDif()
+            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
