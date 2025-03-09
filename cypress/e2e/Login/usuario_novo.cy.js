@@ -37,9 +37,8 @@ describe('Logar com novo usuário', () => {
 
         Login.iconeOlhosSenha()
         Login.botaoEsqueceuSenha()
-        Login.botaoEntrarHabilitado
+        Login.botaoEntrarHabilitado()
         Login.clicarBotaoEntrar()
-        cy.wait(2000)
 
         //Card Sua Senha expirou - Mensagem "Sua Senha expirou..."
         cy.get('.md-dialog-content-body')
@@ -233,7 +232,6 @@ describe('Logar com novo usuário', () => {
         Login.botaoEsqueceuSenha()
         Login.botaoEntrarHabilitado()
         Login.clicarBotaoEntrar()
-        cy.wait(2000)
 
         //Card Sua Senha expirou - Mensagem "Sua Senha expirou..."
         cy.get('.md-dialog-content-body')

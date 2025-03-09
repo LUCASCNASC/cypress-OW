@@ -45,7 +45,6 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             PedDesconto.clicarAlterarValor()
             PedDesconto.modalAlterarValor()
             PedDesconto.alterarValorParaBaixo()
-            cy.wait(400)
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -67,7 +66,6 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             PedDesconto.clicarAlterarValor()
             PedDesconto.modalAlterarValor()
             PedDesconto.alterarValorParaCima()
-            cy.wait(400)
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

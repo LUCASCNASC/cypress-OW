@@ -48,7 +48,6 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
-            cy.wait(1500)
 
             AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
             AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
@@ -58,7 +57,6 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             AvancarAlterar.paraTransportadoraAlt()
             AvancarAlterar.parcelasEntregaAlt()
             AlterarPedido.removerFormaPag() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
-            cy.wait(10000)
             AvancarAlterar.parcelasEntregaAlt()
 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS

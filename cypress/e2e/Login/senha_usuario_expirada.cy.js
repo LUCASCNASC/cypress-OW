@@ -27,7 +27,7 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
 
-                Login.senhaTextoIcone()
+            Login.senhaTextoIcone()
 
             //Campo Informe sua senha
             cy.get('#txtpassword')
@@ -41,7 +41,6 @@ describe('Senha do usuário expirada', () => {
             Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            cy.wait(2000)
             Login.messSenhaUsuarioExpirada()
 
             //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
@@ -84,7 +83,7 @@ describe('Senha do usuário expirada', () => {
                 .contains('Regras para a Nova Senha')
                 .should('be.visible')
 
-                Login.regrasNovaSenhaAntes()
+            Login.regrasNovaSenhaAntes()
 
             //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
             cy.get('input[name="password_new"]')
@@ -168,7 +167,6 @@ describe('Senha do usuário expirada', () => {
             Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            cy.wait(2000)
             Login.messSenhaUsuarioExpirada()
 
             //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
@@ -308,7 +306,6 @@ describe('Senha do usuário expirada', () => {
                 Login.botaoEntrarHabilitado()
                 Login.clicarBotaoEntrar()
                 Login.mensagemEntrandoSistema()
-                cy.wait(6500)
         
                 Login.expiraAcessoCardValidar() //APÓS LOGAR
         
@@ -346,7 +343,6 @@ describe('Senha do usuário expirada', () => {
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
             Login.mensagemEntrandoSistema()
-            cy.wait(6500)
     
             Login.expiraAcessoCardValidar() //APÓS LOGAR
             Login.clicarSIMExpira() //clicar SIM 
@@ -476,7 +472,6 @@ describe('Senha do usuário expirada', () => {
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
             Login.mensagemEntrandoSistema()
-            cy.wait(8000)
     
             //APÓS LOGAR
             Login.expiraAcessoCardValidar()

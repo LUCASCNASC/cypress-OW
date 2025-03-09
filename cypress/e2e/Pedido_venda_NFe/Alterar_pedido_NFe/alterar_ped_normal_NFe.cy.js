@@ -1,5 +1,3 @@
-import { garantiaSeparaMesmoProcesso } from '../../../support/para_pedidos/servicos/apenas_servicos.js';
-import { infoFinalClienteSemEntrega, infoFinalClienteComEntrega, infoFinalEntrega, validarObsNotaFiscalVazio, validarObsInternaVazio } from '../../../support/para_pedidos/validar_tela/tela_final.js';
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
@@ -47,7 +45,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
-            cy.wait(1500)
 
             AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
             AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
@@ -63,7 +60,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            cy.wait(500)
 
             Produto.kitPrimeiro() //PESQUISA PRODUTO - KIT
             ValidarSaldo.comSaldo()
@@ -101,7 +97,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
-            cy.wait(1500)
 
             AlterarPedido.iconeMenuOpcoesPed()  //ALTERAÇÃO PEDIDO WEB
             AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
@@ -160,7 +155,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
-            cy.wait(1500)
 
             AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
             AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES
@@ -169,7 +163,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AlterarPedido.clicarEditPed()
             AlterarPedido.addEntrega() 
             AlterarPedido.addServ()
-            garantiaSeparaMesmoProcesso()
+            Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"()
             Servico.clicarOKServVinc()
             // AvancarAlterar.paraTransportadoraAlt()
             // AvancarAlterar.parcelasEntregaAlt()
@@ -205,7 +199,6 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
-            cy.wait(1500)
 
             AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
             AlterarPedido.pediPendOpcaoMenuPed() //PEDIDOS PENDENTES

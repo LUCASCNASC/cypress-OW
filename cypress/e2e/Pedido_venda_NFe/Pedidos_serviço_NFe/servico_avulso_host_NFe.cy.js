@@ -26,20 +26,15 @@ describe('Venda de serviço avulso Host - 104', () => {
 
             PedServicoAvulso.iconeMenuOpcoes()
             PedServicoAvulso.clicarServicosMenu()
-            cy.wait(400)
             PedServicoAvulso.produtoServicoHost() //PRODUTO
             PedServicoAvulso.escolherServicoPesquisa()
-            cy.wait(200)
             PedServicoAvulso.escolherValorRecarga()
-            cy.wait(200)
             PedServicoAvulso.clicarCarrinhoCompras() //CARRINHO COMPRAS
             PedServicoAvulso.botaoAvancarPedido()
-            cy.wait(3000)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
-            cy.wait(400)
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

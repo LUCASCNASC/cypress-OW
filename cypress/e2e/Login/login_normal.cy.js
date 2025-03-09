@@ -45,7 +45,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
             Login.mensagemEntrandoSistema()
-            cy.wait(6000)
             Login.botaoIniciarAtendimento()
         })
     
@@ -73,7 +72,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            cy.wait(800)
             Login.messLoginSenhaIncorreto() 
             Login.iconeComputadorLogin() //Validando que não entrou no sistema
         })
@@ -102,7 +100,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            cy.wait(800)
             Login.messLoginSenhaIncorreto()
             Login.iconeComputadorLogin() //Validando que não entrou no sistema
         })
@@ -212,7 +209,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
             Login.mensagemEntrandoSistema()
-            cy.wait(6000)
             Login.botaoIniciarAtendimento()
         })
     
@@ -240,7 +236,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            cy.wait(800)
             Login.messLoginSenhaIncorreto()
             Login.iconeComputadorLogin() //Validando que não entrou no sistema
         })
@@ -269,7 +264,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            cy.wait(800)
             Login.messLoginSenhaIncorreto()
             Login.iconeComputadorLogin() //Validando que não entrou no sistema
         })

@@ -9,8 +9,6 @@ import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js
 import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { RecebimentoPromo } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
-import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Promocao } from '../../../../pages/para_pedidos/promocao/promocao.js'
 
 describe('Gerar pedidos com promoção com entrega', () => {
@@ -47,7 +45,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
             //Escolher "Forma de pagamento"
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click()
-            cy.wait(4000)
             //Escolher parcelamento
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
 
@@ -72,7 +69,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
-            cy.wait(6000)
 
             //"GERAR PAGAMENTO"
             cy.get('.layout-wrap > .md-primary').scrollTo('top').wait(200)
@@ -82,7 +78,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
             // GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             // GeralPagamento.carregandoFormaPagamento()
-            // cy.wait(3000)
             // Recebimento.principal()()
             // EscolherParcelaReceb.duas()
             // AvancarNormal.final()
@@ -110,7 +105,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
-            cy.wait(3000)
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
             AvancarNormal.final()

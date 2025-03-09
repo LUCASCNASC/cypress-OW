@@ -38,17 +38,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            cy.wait(1000)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.DebitoPOS()
-            cy.wait(3000)
             EscolherParcelaReceb.uma()
-            cy.wait(500)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            cy.wait(3000)
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -65,11 +61,9 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             AvancarNormal.paraParcelas()
             GeralPagamento.escolherEntradaFormaPagamento()
             GeralPagamento.clicarGerarPagamento()
-            cy.wait(400)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            cy.wait(3000)
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -85,17 +79,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            cy.wait(1000)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
-            cy.wait(3000)
             EscolherParcelaReceb.uma()
-            cy.wait(500)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            cy.wait(3000)
             EscolherParcelaReceb.uma()
             AgruparReceb.naoAgruparLancamentos()
             AvancarNormal.final()
@@ -112,17 +102,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            cy.wait(1000)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
-            cy.wait(3000)
             EscolherParcelaReceb.uma()
-            cy.wait(500)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            cy.wait(3000)
             EscolherParcelaReceb.uma()
             AgruparReceb.agruparLancamentos()
             AvancarNormal.final()
@@ -139,17 +125,13 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            cy.wait(1000)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
-            cy.wait(3000)
             EscolherParcelaReceb.uma()
-            cy.wait(500)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            cy.wait(3000)
             EscolherParcelaReceb.uma()
             AgruparReceb.naoAgruparLancamentos()
             AgruparReceb.selecionarLancAgrupar()

@@ -62,13 +62,10 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             PedServicoAvulso.messGarantiaJaAdicionada() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
             PedServicoAvulso.clicarCarrinhoCompras()
             PedServicoAvulso.botaoAvancarPedido()
-            cy.wait(3000)
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
-            cy.wait(2000)
             EscolherParcelaReceb.duas()
-            cy.wait(400)
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

@@ -40,7 +40,6 @@ describe('Senha do usuário expirada', () => {
         Login.botaoEntrarHabilitado()
         Login.clicarBotaoEntrar()
         Login.mensagemEntrandoSistema()
-        cy.wait(2000)
 
         //Mensagem "Seu acesso ao sistema expirou."
         cy.get('.md-dialog-content-body')

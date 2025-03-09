@@ -90,7 +90,6 @@ describe('Cadastrar cliente simples', () => {
             PreencherClienteSimples.rotaCliente()
             GeralClienteSimples.salvarClienteSimples()
             GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
-            cy.wait(2000)
             
             GeralClienteSimples.iconeMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             GeralClienteSimples.opcaoClienteSimples()
@@ -142,11 +141,9 @@ describe('Cadastrar cliente simples', () => {
             PreencherClienteSimples.rotaCliente()
             GeralClienteSimples.salvarClienteSimples()
             GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
-            cy.wait(1000)
 
             GeralClienteSimples.iconeMenuOpcoes()
             GeralClienteSimples.clicarSairSistema()
-            cy.wait(2000)
 
             GeralClienteSimples.logarNovamente()
             GeralClienteSimples.iconeMenuOpcoes()
@@ -163,9 +160,7 @@ describe('Cadastrar cliente simples', () => {
             cy.contains('Data de nascimento').parent().find('input')
                 .click()
 
-            cy.wait (1000)
             GeralClienteSimples.desejoVisualizarCadastro()
-            cy.wait(2500)
 
             //Clicar na data que desejo, 29/09/1998
             cy.contains('Data de nascimento').parent().find('input')
@@ -182,7 +177,6 @@ describe('Cadastrar cliente simples', () => {
             cy.wait('@api_modalClienteAutorizacao', { timeout: 40000 })
 
             GeralClienteSimples.autorizarTrialAlterarDataNascimento()
-            cy.wait(1000)
             GeralClienteSimples.mensagemPrimeiroRegistSalvoSucesso()
         })
 
@@ -218,10 +212,8 @@ describe('Cadastrar cliente simples', () => {
             PreencherClienteSimples.rotaCliente()
             GeralClienteSimples.salvarClienteSimples()
             GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
-            cy.wait(1000)
             GeralClienteSimples.iconeMenuOpcoes()
             GeralClienteSimples.opcaoClienteSimples()
-            cy.wait(2000)
             GeralClienteSimples.logarNovamente() 
             GeralClienteSimples.iconeMenuOpcoes()
             GeralClienteSimples.opcaoClienteSimples()
@@ -237,7 +229,6 @@ describe('Cadastrar cliente simples', () => {
                 .wait(1000)
 
             GeralClienteSimples.desejoVisualizarCadastro()
-            cy.wait(3000)
 
             // ALTERAR SEXO 
 
@@ -250,13 +241,10 @@ describe('Cadastrar cliente simples', () => {
                 .contains('Feminino')
                 .click()
 
-            cy.wait(1000)
-
             //Clicar para abrir a modificação
             cy.get('.date-picker.flex-md-100 > .validaData > .md-datepicker-input-container > .md-datepicker-triangle-button')
                 .click()
 
-            cy.wait(200)
             GeralClienteSimples.iconeMenuOpcoes()
             GeralClienteSimples.opcaoClienteSimples()
         })
@@ -327,8 +315,6 @@ describe('Cadastrar cliente simples', () => {
             cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
                 .wait(800)
                 .type(numeroCPF,'{downArrow}')
-
-            cy.wait(800)
 
             //clicar na lupa de pesquisa de clientes
             cy.get('.md-block > .ng-binding')

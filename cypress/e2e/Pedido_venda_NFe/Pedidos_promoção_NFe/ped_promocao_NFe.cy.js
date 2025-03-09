@@ -122,7 +122,6 @@ describe('Gerar pedidos com promoção', () => {
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            cy.wait(4000)
 
             //Escolher forma de pagamento
             cy.contains('3868 - T.A. A Receber PIX TEF').click({force:true})
@@ -189,7 +188,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             GeralPagamento.inserirDataAmanha1Vencimento()
-            cy.wait(3000)
             GeralPagamento.clicarGerarParcAlterarVenc()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
@@ -216,11 +214,9 @@ describe('Gerar pedidos com promoção', () => {
             cy.wait('@api_icons', { timeout: 40000 })
 
             GeralPagamento.inserirDataAmanha1Vencimento()
-            cy.wait(4000)
             cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({force:true})
             Recebimento.principal()
             EscolherParcelaReceb.uma()
-            cy.wait(400)
 
             // //"GERAR PAGAMENTO"
             // cy.get('.white > :nth-child(3)').scrollIntoView().wait(300)
@@ -228,7 +224,6 @@ describe('Gerar pedidos com promoção', () => {
             // cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
             // cy.get('.white > .layout-align-center-center > .md-primary').click({force:true})
             // cy.get('.md-select-backdrop').click({force:true})
-            // cy.wait(500)
 
             // GeralPagamento.inserirDataAmanha1Vencimento()
             // GeralPagamento.clicarGerarParcAlterarVenc()
@@ -258,7 +253,6 @@ describe('Gerar pedidos com promoção', () => {
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
-            cy.wait(3000)
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
@@ -294,7 +288,6 @@ describe('Gerar pedidos com promoção', () => {
 
             //Escolher forma de pagemento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force: true})
-            cy.wait(3000)
             //Escolher parcelamento
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force: true})
 

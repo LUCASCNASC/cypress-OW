@@ -16,12 +16,10 @@ describe('Cadastrar cliente', () => {
     
             PesquisaCliente.inserirCPF()
             PesquisaCliente.clicarLupaPesquisaCliente()
-            cy.wait(1000)
             PesquisaCliente.cardClienteValidar()
             PesquisaCliente.digitarNovamenteCPF()
             PesquisaCliente.clicarCPFPesquisado()
             PesquisaCliente.mensagemAguardeCarregando()
-            cy.wait(2500)
             PesquisaCliente.numeroDescricaoCPFpesquisado()
         }) 
 
@@ -29,13 +27,11 @@ describe('Cadastrar cliente', () => {
 
             PesquisaCliente.inserirCNPJ()
             PesquisaCliente.clicarLupaPesquisaCliente()
-            cy.wait(1000)
             PesquisaCliente.cardClienteValidar()
             PesquisaCliente.digitarNovamenteCNPJ()
             PesquisaCliente.clicarLupaPesquisaCliente()
             PesquisaCliente.clicarCNPJPesquisado()
             PesquisaCliente.mensagemAguardeCarregando()
-            cy.wait(2500)
             PesquisaCliente.numeroDescricaoCNPJpesquisado()
         }) 
     })
@@ -46,12 +42,10 @@ describe('Cadastrar cliente', () => {
 
             PesquisaCliente.inserirDescricaoCPF()
             PesquisaCliente.clicarLupaPesquisaCliente()
-            cy.wait(1000)
             PesquisaCliente.cardClienteValidar()
             PesquisaCliente.digitarNovamenteCPF()
             PesquisaCliente.clicarCPFPesquisado()
             PesquisaCliente.mensagemAguardeCarregando()
-            cy.wait(2500)
             PesquisaCliente.numeroDescricaoCPFpesquisado()
         }) 
 
@@ -59,12 +53,10 @@ describe('Cadastrar cliente', () => {
 
             PesquisaCliente.inserirDescricaoCNPJ()
             PesquisaCliente.clicarLupaPesquisaCliente()
-            cy.wait(1000)
             PesquisaCliente.cardClienteValidar()
             PesquisaCliente.digitarNovamenteCNPJ()
             PesquisaCliente.clicarCNPJPesquisado()
             PesquisaCliente.mensagemAguardeCarregando()
-            cy.wait(2500)
             PesquisaCliente.numeroDescricaoCNPJpesquisado()
         }) 
     })
