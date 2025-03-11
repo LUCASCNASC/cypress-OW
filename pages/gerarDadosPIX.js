@@ -80,6 +80,5 @@ function gerarChavePixCpfCnpjErrada() {
   return resultado + '@';
 }
 
-
 export { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada,
          gerarChavePixEmail, gerarChavePixCPF, gerarChavePixAleatoria }; 

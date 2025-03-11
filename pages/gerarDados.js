@@ -1,6 +1,5 @@
 //Função para gerar Dados
 
-
 const gerarCNPJ = () => {
     const randomDigits = () => Math.floor(Math.random() * 10);
   
