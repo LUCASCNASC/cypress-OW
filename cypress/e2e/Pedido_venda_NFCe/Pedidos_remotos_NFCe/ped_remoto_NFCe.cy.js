@@ -1,7 +1,6 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
-import { GeralProduto } from '../../../../pages/produtos/gerais_produto.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
@@ -31,10 +30,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -54,18 +53,18 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -85,11 +84,11 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             Produto.kitRemoto() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             GeralPedido.composicaoDesteKit()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -112,10 +111,10 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             Produto.remotoComCD() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -135,8 +134,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
 
             Produto.remotoSemCD() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."

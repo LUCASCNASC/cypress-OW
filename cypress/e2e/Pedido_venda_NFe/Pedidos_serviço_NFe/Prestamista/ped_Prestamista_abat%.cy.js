@@ -2,7 +2,6 @@ import { ProcessoVenda } from '../../../../../pages/para_pedidos/processos/proce
 import { EscolherCliente } from '../../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../../pages/produtos/prd_normal.js'
-import { GeralProduto } from '../../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../../pages/para_pedidos/finalizar_pedido.js'
@@ -35,17 +34,17 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             TirarEntrega.segundo()
@@ -66,17 +65,17 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.segundo()
@@ -100,16 +99,16 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -130,18 +129,18 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -162,18 +161,18 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -194,18 +193,18 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -229,11 +228,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
@@ -254,11 +253,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutSemJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
@@ -279,11 +278,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutSemJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
@@ -308,11 +307,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutSemJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
@@ -340,11 +339,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
@@ -373,11 +372,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.partPresentePrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
@@ -403,19 +402,19 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             tirarEntTirarEntrega.primeirorega()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             TirarEntrega.segundo()
@@ -440,19 +439,19 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             TirarEntrega.segundo()
@@ -481,19 +480,19 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutSemJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             TirarEntrega.segundo()
@@ -518,19 +517,19 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutSemJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             TirarEntrega.segundo()
@@ -561,11 +560,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
@@ -589,20 +588,20 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -629,20 +628,20 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -674,20 +673,20 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutSemJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -714,20 +713,20 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutSemJurosPrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS)
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -759,20 +758,20 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.partPresentePrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc()
@@ -800,20 +799,20 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
     
             Produto.prazoParcelaPrest() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.partPresentePrest()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduc()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS)
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc()

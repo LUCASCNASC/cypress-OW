@@ -2,7 +2,6 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
-import { GeralProduto } from '../../../../pages/produtos/gerais_produto.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
@@ -32,12 +31,12 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             Produto.primeiroPrazoParcela() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.tipoServicoIsentoValidar()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.pagPrincipal()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
@@ -55,12 +54,12 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             Produto.segundoPrazoParcela() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.tipoServicoIsentoValidar()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.pagPrincipal()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
@@ -96,11 +95,11 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             Produto.terceiroPrazoParcela() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             Recebimento.comPrestamista()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
@@ -120,12 +119,12 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
             Produto.quartoPrazoParcela() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.tipoServicoIsentoValidar()
             Promocao.selecionarPrimeiraPromoProduto()
             Recebimento.comPrestamista()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()

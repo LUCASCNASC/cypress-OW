@@ -1,7 +1,6 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
-import { GeralProduto } from '../../../../pages/produtos/gerais_produto.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
@@ -29,9 +28,9 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             
             Produto.cdPrimeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -51,16 +50,16 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             Produto.segundo() //SEGUNDO PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()

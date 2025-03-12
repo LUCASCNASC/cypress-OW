@@ -11,7 +11,6 @@ import { PedExclusiva } from '../../../../pages/para_pedidos/para_pedidos_exclus
 import { ProdutoExclusiva } from '../../../../pages/produtos/prd_exclusiva.js'
 import { GeralPedido } from '../../../../pages/para_pedidos/gerais_pedidos.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
-import { GeralProduto } from '../../../../pages/produtos/gerais_produto.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/apenas_servicos.js'
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
@@ -34,17 +33,17 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             ProdutoExclusiva.PrimeiroNormal() //PRODUTO EXCLUSIVA
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() 
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             ProdutoExclusiva.kitSemSaldoAgendamento() //PRODUTO KIT
             ValidarSaldo.semSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto()
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
@@ -63,16 +62,16 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             ProdutoExclusiva.PrimeiroNormal() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()      
-            GeralProduto.clicarVoltagemProduto() 
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             ProdutoExclusiva.kitVolumes() //PRODUTO KIT
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto()
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
@@ -94,9 +93,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             ProdutoExclusiva.SaldoReceber() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() 
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -117,15 +116,15 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
             ProdutoExclusiva.SaldoRecebDuasLinhas() //PRODUTO
             PedExclusiva.saldoRemotoAReceber()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() 
+            cy.clickVoltageProduct()
+            cy.clickAddProduc() 
             GeralPedido.trocarFilialFaturamento()
             PedExclusiva.aumentarQuantVendaCinco()
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
             ProdutoExclusiva.SaldoRecebDuasLinhas() //SEGUNDO PRODUTO
             PedExclusiva.saldoRemotoAReceber()
-            GeralProduto.escolherProdutoPesquisa()  
-            GeralProduto.clicarVoltagemProduto() 
+            cy.clickVoltageProduct() 
+            cy.clickAddProduct()
             GeralPedido.trocarFilialFaturamento()
             PedExclusiva.aumentarQuantVendaDez()
         })
@@ -135,9 +134,9 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
     
             ProdutoExclusiva.PrimeiroNormal() //PRODUTO EXCLUSIVA
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto()
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA

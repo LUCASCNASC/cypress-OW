@@ -1,7 +1,6 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
-import { GeralProduto } from '../../../../pages/produtos/gerais_produto.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
@@ -25,16 +24,16 @@ describe('Gerar pedido normal', () => {
         EscolherCliente.comRota()
         Produto.kitPrimeiro() //PRODUTO
         ValidarSaldo.comSaldo()
-        GeralProduto.escolherProdutoPesquisa()
+        cy.selectProductSearch()
     })
   
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
         
         it('1. Ped venda: kit 1862 0 0', () => {
                       
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
             GeralPedido.composicaoDesteKit()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
@@ -53,9 +52,9 @@ describe('Gerar pedido normal', () => {
         
         it('2. Ped venda: kit 1862 0 0', () => {
                       
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
             GeralPedido.composicaoDesteKit()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()

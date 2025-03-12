@@ -2,7 +2,6 @@ import { ProcessoVenda } from '../../../../../pages/para_pedidos/processos/proce
 import { EscolherCliente } from '../../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../../pages/produtos/prd_normal.js'
-import { GeralProduto } from '../../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../../pages/para_pedidos/finalizar_pedido.js'
@@ -33,9 +32,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
     
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             AvancarNormal.paraTransportadora()
@@ -56,17 +55,17 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
     
             Produto.primeiro() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -90,11 +89,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
     
             Produto.prazoPrestPrimAbatVF() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.prazoFutComJurosPrestAbatVFOS()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             AvancarNormal.paraTransportadora()
@@ -115,10 +114,10 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
 
             Produto.prazoPrestSegAbatVF() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
@@ -141,11 +140,11 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
 
             Produto.prazoPrestTercAbatVF() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
+            cy.clickVoltageProduct()
+            cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.partPresenteComJurosPrestAbatVFOS()
-            GeralProduto.clicarAdicionarProduto()
+            cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS

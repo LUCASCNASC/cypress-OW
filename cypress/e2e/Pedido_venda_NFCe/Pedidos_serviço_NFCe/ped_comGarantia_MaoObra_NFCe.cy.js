@@ -1,7 +1,6 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
-import { GeralProduto } from '../../../../pages/produtos/gerais_produto.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
@@ -24,9 +23,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
         EscolherCliente.comRota()
         Produto.primeiro() //PRODUTO
         ValidarSaldo.comSaldo()
-        GeralProduto.escolherProdutoPesquisa()
-        GeralProduto.clicarVoltagemProduto() //PRODUTO
-        GeralProduto.clicarAdicionarProduto()
+        cy.selectProductSearch()
+        cy.clickVoltageProduct()
+        cy.clickAddProduct()
         Servico.validarModalServVinc()
     })
 
@@ -57,9 +56,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -100,9 +99,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -143,9 +142,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -186,9 +185,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -229,9 +228,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -272,9 +271,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -315,9 +314,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
@@ -357,9 +356,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
@@ -400,9 +399,9 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
             ValidarSaldo.comSaldo()
-            GeralProduto.escolherProdutoPesquisa()
-            GeralProduto.clicarVoltagemProduto() //PRODUTO
-            GeralProduto.clicarAdicionarProduto()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
