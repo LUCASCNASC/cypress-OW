@@ -21,7 +21,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
         cy.tituloPagina() 
         ProcessoVenda.NFCe()
         EscolherCliente.comRota()
-        Produto.primeiro() //PRODUTO
+        Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()
         cy.clickVoltageProduct()
@@ -54,7 +54,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraDestNãoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -97,7 +97,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -140,7 +140,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraNaoDestSepaProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -183,7 +183,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraDestNãoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -226,7 +226,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -269,7 +269,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraNaoDestSepaProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -312,7 +312,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaSepTituloProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraDestNãoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -354,7 +354,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaSepTituloProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -397,7 +397,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.garantiaSepTituloProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraNaoDestSepaProcDif()
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()

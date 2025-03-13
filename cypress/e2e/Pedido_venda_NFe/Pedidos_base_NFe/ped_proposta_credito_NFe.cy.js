@@ -20,7 +20,7 @@ describe('Gerar pedido com proposta de crédito', () => {
         cy.tituloPagina()
         ProcessoVenda.NFe()
         EscolherCliente.comRota()
-        Produto.primeiro() //PRODUTO
+        Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()
     })

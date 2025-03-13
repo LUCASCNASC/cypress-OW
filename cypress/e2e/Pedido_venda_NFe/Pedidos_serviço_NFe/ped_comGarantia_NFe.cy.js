@@ -22,7 +22,7 @@ describe('Gerar pedidos com Garantia', () => {
         cy.tituloPagina() 
         ProcessoVenda.NFe()
         EscolherCliente.comRota()
-        Produto.primeiro() //PRODUTO
+        Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()
         cy.clickVoltageProduct()
@@ -54,7 +54,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -94,7 +94,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             TirarEntrega.primeiro() //ENTREGA
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -134,7 +134,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
             TirarEntrega.primeiro() //ENTREGA
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -176,7 +176,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -215,7 +215,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -254,7 +254,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()

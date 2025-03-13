@@ -21,7 +21,7 @@ describe('Gerar pedido normal com entrega', () => {
         cy.tituloPagina()
         ProcessoVenda.NFCe()
         EscolherCliente.comRota()
-        Produto.kitPrimeiro()
+        Produto.kitFirst()
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()
     })

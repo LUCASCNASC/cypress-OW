@@ -21,7 +21,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.tituloPagina()
         ProcessoVenda.finanBaixaNFe()
         EscolherCliente.comRota()
-        Produto.primeiro() //PRODUTO
+        Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
         cy.clickVoltageProduct()
     })
@@ -52,7 +52,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -96,7 +96,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()

@@ -32,7 +32,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('1. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -40,7 +40,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -63,7 +63,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -71,7 +71,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -97,14 +97,14 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('3. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -127,7 +127,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('4. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -136,7 +136,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -159,7 +159,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('5. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -168,7 +168,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -191,7 +191,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('6. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente sem juros.', () => {
     
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -200,7 +200,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -410,7 +410,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             tirarEntTirarEntrega.primeirorega()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -447,7 +447,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -488,7 +488,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -525,7 +525,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
             TirarEntrega.primeiro()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -597,7 +597,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -637,7 +637,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -682,7 +682,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -722,7 +722,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS)
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -767,7 +767,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -808,7 +808,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS)
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()

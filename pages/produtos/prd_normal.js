@@ -5,7 +5,7 @@ export class Produto {
     }
 
     //Escolher primeiro produto normal - 1860 0 0 - com Intercept - processo venda 9860 (NFe)
-    async primeiro (selector) {
+    async fisrt (selector) {
 
         const primeiro_produto_normal = '1860'
 
@@ -36,7 +36,7 @@ export class Produto {
     }
 
     //Escolher segundo produto normal - 1870 0 0 - com Intercept - processo venda 9860 (NFe)
-    async segundo (selector) {
+    async second (selector) {
 
         const segundo_produto_normal = '1870'
 
@@ -68,7 +68,7 @@ export class Produto {
     }
 
     //Escolher primeiro produto normal - 1862 0 0 - com Intercept - processo venda 9860 (NFe)
-    async kitPrimeiro (selector) {
+    async kitFirst (selector) {
 
         const primeiro_kit_normal = '1862'
 

@@ -22,7 +22,8 @@ describe('Gerar pedido normal', () => {
         cy.tituloPagina()
         ProcessoVenda.NFe()
         EscolherCliente.comRota()
-        Produto.kitPrimeiro() //PRODUTO
+        Produto.kitFirst
+        () //PRODUTO
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()
     })

@@ -1,3 +1,4 @@
+//NÃO ESTÃO SENDO USADOS
 export class GeralProduto {
 
     constructor(page) {

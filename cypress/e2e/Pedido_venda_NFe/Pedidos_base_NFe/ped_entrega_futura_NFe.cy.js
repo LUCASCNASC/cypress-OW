@@ -20,7 +20,7 @@ describe('Gerar pedido de entrega futura', () => {
         cy.tituloPagina()
         ProcessoVenda.entregaFutNFe()
         EscolherCliente.comRota()
-        Produto.primeiro() //PRODUTO
+        Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
         cy.clickVoltageProduct()
     })
@@ -51,7 +51,7 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.validarModalServVinc() //SERVICOS
             clicarOKServVinServico.clicarOKServVincculado()
             TirarEntrega.primeiro() //ENTREGA PRODUTO
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -95,7 +95,7 @@ describe('Gerar pedido de entrega futura', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()

@@ -20,7 +20,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
         cy.tituloPagina()
         ProcessoVenda.finanBaixaNFCe()
         EscolherCliente.comRota()
-        Produto.primeiro() //PRODUTO
+        Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()
     })
@@ -52,7 +52,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            Produto.segundo() //SEGUNDO PRODUTO
+            Produto.second() //SEGUNDO PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

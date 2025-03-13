@@ -21,7 +21,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
         cy.tituloPagina()
         ProcessoVenda.NFCe()
         EscolherCliente.comRota()
-        Produto.primeiro() //PRODUTO
+        Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()
         cy.clickVoltageProduct()
@@ -52,7 +52,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             Servico.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
-            Produto.segundo() //SEGUNDO PRODUTO
+            Produto.second() //SEGUNDO PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -93,7 +93,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc()
-            Produto.segundo() //SEGUNDO PRODUTO
+            Produto.second() //SEGUNDO PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -134,7 +134,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
     
             Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc()
-            Produto.segundo() //SEGUNDO PRODUTO
+            Produto.second() //SEGUNDO PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()

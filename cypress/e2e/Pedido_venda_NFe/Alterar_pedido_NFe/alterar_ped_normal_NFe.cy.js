@@ -27,7 +27,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('1. Gerar pedido, alterar aumentando quantidade de produto e adicionando outro produto e um kit.', () => {
 
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -53,14 +53,14 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             AlterarPedido.clicarAumentoQtdPrd() //AUMENTANDO QUANTIDADE DO PRODUTO
 
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
 
-            Produto.kitPrimeiro() //PESQUISA PRODUTO - KIT
+            Produto.kitFirst() //PESQUISA PRODUTO - KIT
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -79,7 +79,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
 
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -106,7 +106,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AlterarPedido.clicarRemoverPrd()
             AlterarPedido.clicarFecharIntCompra()
 
-            Produto.segundo() //PRODUTO
+            Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -115,7 +115,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA PRODUTO
 
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -137,7 +137,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         //erro de inconsistencia quando colocamos o serviço de entrega
         it.skip('3. Gerar pedido, alterar colocando garantia e entrega.', () => {
 
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -181,7 +181,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
         it.skip('4. Gerar pedido com frete, alterar forma de pagamento.', () => {
                       
-            Produto.primeiro() //PRODUTO
+            Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
