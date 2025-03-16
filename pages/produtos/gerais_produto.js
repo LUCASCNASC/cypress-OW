@@ -6,7 +6,7 @@ export class GeralProduto {
     }
 
     //Clicar para selecionar o produto que queremos adicionar ao pedido
-    async escolherProdutoPesquisa (selector) {
+    async chooseProductSearch (selector) {
 
         cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram')
 
@@ -48,7 +48,7 @@ export class GeralProduto {
     }
 
     //Clicar para selecionar a voltagem que queremos adicionar ao pedido
-    async clicarVoltagemProduto (selector) {
+    async clickVoltageProduct (selector) {
 
         cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista')
 
@@ -88,7 +88,7 @@ export class GeralProduto {
     }
 
     //Botão adicionar produto após selecionar voltagem do produto
-    async clicarAdicionarProduto (selector) {
+    async clickAddProduct (selector) {
 
         cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
 

@@ -26,7 +26,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
         it('1. Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
 
-            Produto.cdPrimeiro() //PRODUTO
+            Produto.cdFirst() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -46,7 +46,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
         it('2. Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
 
-            Produto.cdPrimeiro() //PRODUTO
+            Produto.cdFirst() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -77,7 +77,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
         it('3. Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
-            Produto.cdPrimeiro() //PRODUTO
+            Produto.cdFirst() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()

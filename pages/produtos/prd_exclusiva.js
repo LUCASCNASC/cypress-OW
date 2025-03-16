@@ -5,7 +5,7 @@ export class ProdutoExclusiva {
     }
 
     //produto normal com saldo, para exclusiva - 1896 0 0 - com intercept
-    async PrimeiroNormal (selector) {
+    async firstNormal (selector) {
 
         const produto_exclusiva = '1896'
 
@@ -30,7 +30,7 @@ export class ProdutoExclusiva {
     }
 
     //produto kit normal sem saldo, para exclusiva e sem saldo a receber - 1900 0 0 - com intercept
-    async kitSemSaldoAgendamento (selector) {
+    async kitWithoutBalanceScheduling (selector) {
 
         const kit_semsaldo = '1900'
 
@@ -94,7 +94,7 @@ export class ProdutoExclusiva {
     }
 
     //produto normal com saldo a receber, para exclusiva - 1905 0 0 - com intercept
-    async SaldoReceber (selector) {
+    async balanceReceive (selector) {
 
         const produto_saldoreceber = '1905'
 
@@ -119,7 +119,7 @@ export class ProdutoExclusiva {
     }
 
     //produto normal com saldo a receber e outra parte solicitar compra, para exclusiva
-    async SaldoRecebDuasLinhas (selector) {
+    async balanceReceiveTwoLines (selector) {
 
         const produto_saldoreceber_duaslinhas = '1906'
 

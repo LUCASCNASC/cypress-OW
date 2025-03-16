@@ -29,7 +29,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            Produto.promoPartida() //PRODUTO
+            Produto.promoMatch() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -50,7 +50,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            Produto.promoPrazoEntrada() //PRODUTO
+            Produto.promoDeadlineEntry() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -77,7 +77,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            Produto.promoPrazoParcelado() //PRODUTO
+            Produto.promoDeadlineInstallment() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -101,7 +101,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('4. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            Produto.promoPartida() //PRODUTO
+            Produto.promoMatch() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -137,7 +137,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('5. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            Produto.promoPrazoEntrada() //PRODUTO
+            Produto.promoDeadlineEntry() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -173,7 +173,7 @@ describe('Gerar pedidos com promoção', () => {
 
         it.skip('6. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            Produto.promoPartida() //PRODUTO
+            Produto.promoMatch() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -198,7 +198,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('7. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            Produto.promoPrazoEntrada() //PRODUTO
+            Produto.promoDeadlineEntry() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -237,7 +237,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('8. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            Produto.promoPrazoParcelado() //PRODUTO
+            Produto.promoDeadlineInstallment() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -266,7 +266,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('9. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            Produto.promoPartida() //PRODUTO
+            Produto.promoMatch() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()

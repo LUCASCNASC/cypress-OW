@@ -26,7 +26,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
 
         it('1. Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
-            Produto.cdPrimeiro() //PRODUTO
+            Produto.cdFirst() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
