@@ -220,35 +220,4 @@ export class ProdutoPromo {
 
         cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVF', { timeout: 40000 })
     }
-
-    //Escolher prestamista abatimento Valor Fixo - 1925 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo - Origem produto
-    async prazoPrestTercAbatVFOS (selector) {
-
-        const primeiro_produto_normal = '1925'
-
-        cy.intercept('GET', /\/consultaprodutos\/.*1925.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP')
-
-        //Limpando campo com o produto anterior
-        cy.get('#searchText')
-            .clear()
-            .wait(100)
-            .should('have.value', '')
-
-        //Validando campo Buscar produto
-        cy.get('#searchText')
-            .should('be.visible')
-            .and('not.be.disabled')
-
-        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="searchText"]')
-            .should('have.text', 'Buscar produtos')
-
-        //Prenchendo campo Buscar produto
-        cy.get('#searchText')
-            .type(primeiro_produto_normal)
-            .wait(100)
-            .should('have.value', primeiro_produto_normal)
-
-        cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVFOP', { timeout: 40000 })
-    }
 }
