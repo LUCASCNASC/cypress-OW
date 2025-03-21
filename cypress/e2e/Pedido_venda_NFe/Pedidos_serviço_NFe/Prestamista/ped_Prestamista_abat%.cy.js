@@ -226,7 +226,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('7. Ped venda: produto 1918 0 0 (promoção a prazo 167), inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -251,7 +251,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('8. Ped venda: produto 1918 0 0 (promoção a prazo 167), inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -276,7 +276,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('9. Ped venda: produto 1918 0 0 (promoção a prazo 167), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -305,7 +305,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('10. Ped venda: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -337,7 +337,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('11. Ped venda: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
 
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -370,7 +370,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         
         it('12. Ped venda: produto 1920 0 0 (promoção partida 169), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -400,7 +400,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('13. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -437,7 +437,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('14. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -478,7 +478,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('15. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -515,7 +515,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('16. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -558,7 +558,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('17. Ped venda: produto 1921 0 0 (promo a prazo 170), inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -586,7 +586,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('18. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -626,7 +626,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('19. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -671,7 +671,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('20. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -711,7 +711,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('21. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -756,7 +756,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('22. Ped venda: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3874), prestamista 158, 4 parcelas no recebimento Presente.', () => {
 
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -797,7 +797,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('23. Ped venda: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3875 agrupar), prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
-            Produto.prazoParcelaPrest() //PRODUTO
+            Produto.termInstallmentPrest() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()

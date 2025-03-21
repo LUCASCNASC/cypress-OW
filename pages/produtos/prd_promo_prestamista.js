@@ -5,7 +5,7 @@ export class ProdutoPromo {
     }
 
     //Escolher produto prestamista abatimento % - 1918 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
-    async prazoParcelaPrest (selector) {
+    async termInstallmentPrest (selector) {
 
         const primeiro_produto_normal = '1918'
 
@@ -36,7 +36,7 @@ export class ProdutoPromo {
     }
 
     //Escolher produto prestamista abatimento % - 1919 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
-    async segPrazoParcelaPrest (selector) {
+    async secondTermInstallmentPrest (selector) {
 
         const primeiro_produto_normal = '1919'
 
@@ -67,7 +67,7 @@ export class ProdutoPromo {
     }
 
     //Escolher prestamista abatimento % com promoção a prazo - 1920 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
-    async partPrest (selector) {
+    async matchPrest (selector) {
 
         const primeiro_produto_normal = '1920'
 
@@ -98,7 +98,7 @@ export class ProdutoPromo {
     }
 
     //Escolher prestamista abatimento % normal - 1921 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento %
-    async terPrazoParcelaPrest (selector) {
+    async thirdTermInstallmentPrest (selector) {
 
         const primeiro_produto_normal = '1921'
 
@@ -129,7 +129,7 @@ export class ProdutoPromo {
     }
 
     //Escolher prestamista abatimento Valor Fixo - 1922 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
-    async prazoPrestPrimAbatVF (selector) {
+    async termFisrtPrestAbatVF (selector) {
 
         const primeiro_produto_normal = '1922'
 
@@ -160,7 +160,7 @@ export class ProdutoPromo {
     }
 
     //Escolher prestamista abatimento Valor Fixo - 1923 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
-    async prazoPrestSegAbatVF (selector) {
+    async termSecondPrestAbatVF (selector) {
 
         const primeiro_produto_normal = '1923'
 
@@ -191,7 +191,7 @@ export class ProdutoPromo {
     }
 
     //Escolher prestamista abatimento Valor Fixo - 1924 0 0 - com Intercept - processo venda 9860 (NFe) - prestamista abatimento Valor Fixo
-    async prazoPrestTercAbatVF (selector) {
+    async termThirdPrestAbatVF (selector) {
 
         const primeiro_produto_normal = '1924'
 
