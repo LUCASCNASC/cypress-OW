@@ -39,7 +39,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             AvancarNormal.final() 
@@ -60,7 +60,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
     
             //GERAR PARCELAS
             cy.get('.white > :nth-child(3)').click()
@@ -87,7 +87,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             AvancarNormal.final()
@@ -119,7 +119,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher forma de pagamento
@@ -155,7 +155,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
 
             //GERAR PARCELAS 
             cy.get('.layout-row.flex-100 > :nth-child(1) > .md-fab').should('be.visible').click({force:true})
@@ -182,8 +182,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas() //ENTREGA
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments() //ENTREGA
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             GeralPagamento.inserirDataAmanha1Vencimento()
@@ -207,8 +207,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
 
@@ -246,8 +246,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher a forma de pagamento
@@ -281,8 +281,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.clicarOKServVinc() //SERVIÇOS
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher forma de pagemento

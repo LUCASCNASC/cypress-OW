@@ -35,8 +35,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -65,8 +65,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -88,8 +88,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -113,8 +113,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()

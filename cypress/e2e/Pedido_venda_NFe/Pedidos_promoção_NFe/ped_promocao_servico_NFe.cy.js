@@ -42,7 +42,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             AvancarNormal.final()
@@ -65,7 +65,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
 
@@ -104,7 +104,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Promocao.adicionarPrestamista()
@@ -130,7 +130,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Promocao.adicionarPrestamista()

@@ -38,7 +38,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS 
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -62,7 +62,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -78,7 +78,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -102,7 +102,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -118,7 +118,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -142,7 +142,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -160,8 +160,8 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -183,8 +183,8 @@ describe('Gerar pedidos com Garantia', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -199,8 +199,8 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -222,8 +222,8 @@ describe('Gerar pedidos com Garantia', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -238,8 +238,8 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -260,8 +260,8 @@ describe('Gerar pedidos com Garantia', () => {
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.clicarOKServVinc() //SERVIÇOS
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()

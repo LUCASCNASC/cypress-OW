@@ -5,7 +5,7 @@ export class AvancarAlterar {
     }
 
     //Botão para avançar para a tela de Gerar parcelas (ALTERAÇÃO DE PEDIDO) - com intercept
-    async paraParcelasAlt (selector) {
+    async toInstallmentsAlter (selector) {
 
         cy.intercept('/services/v3/pedido_validar').as('api_ped_validar')
 
@@ -32,7 +32,7 @@ export class AvancarAlterar {
     }
 
     //Botão AVANÇAR, da tela antes de finalizar o pedido (ALTERAÇÃO DE PEDIDO) - com intercept
-    async finalAlt (selector) {
+    async finalAlter (selector) {
 
         //cy.intercept('GET', '/views/carrinho/confirmacao.html').as('api_carinho_confirmacao_alterar')
 
@@ -52,7 +52,7 @@ export class AvancarAlterar {
     }
 
     //Botão para avançar para a tela de escolher transportadora e rota (ALTERAÇÃO DE PEDIDO) - com intercept
-    async paraTransportadoraAlt (selector) {
+    async toTransporterAlter (selector) {
 
         cy.intercept('/cliente/**').as('api_tela_transportadora_pedido_alterar')
 
@@ -82,7 +82,7 @@ export class AvancarAlterar {
     }
 
     //Botão para avançar para a tela de Gerar parcelas (ALTERAÇÃO DE PEDIDO) - com intercept
-    async parcelasEntregaAlt (selector) {
+    async installmentDeliveryAlter (selector) {
 
         cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')
             .scrollIntoView()

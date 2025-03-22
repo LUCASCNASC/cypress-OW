@@ -35,8 +35,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.futSemJurosPrestAbatValFixo()
@@ -66,8 +66,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.futSemJurosPrestAbatValFixo()
@@ -94,8 +94,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
@@ -121,8 +121,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
@@ -148,8 +148,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
@@ -174,8 +174,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.presentePrestAbatValFixo()

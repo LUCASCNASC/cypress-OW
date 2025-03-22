@@ -34,7 +34,7 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA PRODUTO
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
@@ -59,7 +59,7 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
@@ -78,8 +78,8 @@ describe('Gerar pedido de entrega futura', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
@@ -102,8 +102,8 @@ describe('Gerar pedido de entrega futura', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora() //TRANSPORTADORA
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toTransporter() //TRANSPORTADORA
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal() //PROCESSO INCLUSÃO

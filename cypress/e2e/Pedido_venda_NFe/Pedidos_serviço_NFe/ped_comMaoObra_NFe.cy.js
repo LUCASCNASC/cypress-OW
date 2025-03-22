@@ -38,7 +38,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -62,7 +62,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -78,7 +78,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()  
+            AvancarNormal.toInstallments()  
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -102,7 +102,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA- SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -118,7 +118,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -142,7 +142,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.paraParcelas() 
+            AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -160,8 +160,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -183,8 +183,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -199,8 +199,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -222,8 +222,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTP
             Servico.clicarOKServVinc() //SERVIÇOS
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -238,8 +238,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -261,8 +261,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
-            AvancarNormal.paraTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toTransporter()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()

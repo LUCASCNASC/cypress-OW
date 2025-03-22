@@ -34,10 +34,10 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA)
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega()
+            AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             RecebimentoPromo.pagPrincipal()
@@ -60,10 +60,10 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora() 
+            AvancarNormal.toTransporter() 
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega() 
+            AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()

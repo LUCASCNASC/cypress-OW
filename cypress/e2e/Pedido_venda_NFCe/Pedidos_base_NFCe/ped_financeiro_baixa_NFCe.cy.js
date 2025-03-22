@@ -33,10 +33,10 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega()
+            AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
@@ -59,10 +59,10 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             cy.selectProductSearch()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora() 
+            AvancarNormal.toTransporter() 
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega()
+            AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()

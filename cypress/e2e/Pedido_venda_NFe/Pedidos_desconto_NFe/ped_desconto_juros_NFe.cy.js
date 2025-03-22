@@ -35,7 +35,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -56,7 +56,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()

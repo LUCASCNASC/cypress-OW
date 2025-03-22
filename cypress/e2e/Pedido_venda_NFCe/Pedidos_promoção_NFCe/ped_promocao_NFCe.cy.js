@@ -36,10 +36,10 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega()
+            AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher "Forma de pagamento"
@@ -64,10 +64,10 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega()
+            AvancarNormal.installmentDelivery()
 
             //"GERAR PAGAMENTO"
             cy.get('.layout-wrap > .md-primary').scrollTo('top').wait(200)
@@ -96,10 +96,10 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega()
+            AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
             //Escolher a forma de pagamento

@@ -35,7 +35,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
@@ -57,7 +57,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.escolherEntradaFormaPagamento()
             GeralPagamento.clicarGerarPagamento()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
@@ -76,7 +76,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
@@ -99,7 +99,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
@@ -122,7 +122,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()

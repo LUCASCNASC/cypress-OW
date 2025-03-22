@@ -33,10 +33,10 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega()
+            AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -62,10 +62,10 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.parcelasEntrega()
+            AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()

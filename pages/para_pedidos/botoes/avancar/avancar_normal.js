@@ -5,7 +5,7 @@ export class AvancarNormal {
     }
 
     //Botão para avançar para a tela de Gerar parcelas - com intercept
-    async paraParcelas (selector) {
+    async toInstallments (selector) {
 
         cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento')
 
@@ -32,7 +32,7 @@ export class AvancarNormal {
     }
 
     //Botão para avançar para a tela de escolher transportadora e rota - com intercept
-    async paraTransportadora (selector) {
+    async toTransporter (selector) {
 
         cy.intercept('GET', '/views/carrinho/endereco.html').as('apiEndereco')
         cy.intercept('GET', '/services/v3/cidade?uf=PR').as('apiCidade')
@@ -64,7 +64,7 @@ export class AvancarNormal {
     }
 
     //Botão para avançar para a tela de Gerar parcelas - com intercept
-    async parcelasEntrega (selector) {
+    async installmentDelivery (selector) {
 
         cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento')
 

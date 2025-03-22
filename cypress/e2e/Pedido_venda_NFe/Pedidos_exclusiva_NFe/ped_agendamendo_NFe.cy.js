@@ -44,10 +44,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -72,10 +72,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -98,10 +98,10 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarNormal.paraTransportadora()
+            AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -140,7 +140,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
-            AvancarNormal.paraParcelas()
+            AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()

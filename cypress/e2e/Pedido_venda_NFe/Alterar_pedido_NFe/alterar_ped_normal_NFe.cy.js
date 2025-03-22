@@ -35,12 +35,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA PRODUTO
-            AvancarAlterar.paraParcelasAlt()
+            AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
@@ -67,12 +67,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.clickAddProduct()
             Servico.clicarOKServVinc()
             TirarEntrega.terceiro()
-            AvancarAlterar.paraParcelasAlt()
+            AvancarAlterar.toInstallmentsAlter()
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
             AlterarPedido.escolherFormaPagPrincipalAlt()
             EscolherParcelaReceb.duas()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //PROCESSO INCLUSÃO
             FinalizarPed.validarPedAlteradoSucesso()
         })
@@ -87,12 +87,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA PRODUTO
-            AvancarAlterar.paraParcelasAlt()
+            AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
@@ -123,13 +123,13 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA PRODUTO
-            AvancarAlterar.paraParcelasAlt()
+            AvancarAlterar.toInstallmentsAlter()
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             AlterarPedido.escolherFormaPagPrincipalAlt() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedAlteradoSucesso()
         })
@@ -145,12 +145,12 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA PRODUTO
-            AvancarAlterar.paraParcelasAlt()
+            AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
@@ -164,13 +164,13 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AlterarPedido.addServ()
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"()
             Servico.clicarOKServVinc()
-            // AvancarAlterar.paraTransportadoraAlt()
-            // AvancarAlterar.parcelasEntregaAlt()
+            // AvancarAlterar.toTransporterAlter()
+            // AvancarAlterar.installmentDeliveryAlter()
             // GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
             // GeralPagamento.carregandoFormaPagamento()
             // escolherFormaPagamentoPrincipalAlterar()
             // EscolherParcelaReceb.duas()
-            // AvancarAlterar.finalAlt()
+            // AvancarAlterar.finalAlter()
             // FinalizarPed.clicarFinalizarPed() //RESUMO
             // FinalizarPed.validarPedAlteradoSucesso()
             
@@ -188,13 +188,13 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarAlterar.paraTransportadoraAlt() //TRANSPORTADORA
-            AvancarAlterar.parcelasEntregaAlt()
+            AvancarAlterar.toTransporterAlter() //TRANSPORTADORA
+            AvancarAlterar.installmentDeliveryAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
@@ -204,14 +204,14 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AlterarPedido.escolherPedPend()
             AlterarPedido.clicarDetalhes()
             AlterarPedido.clicarEditPed()
-            AvancarAlterar.paraTransportadoraAlt()
-            AvancarAlterar.parcelasEntregaAlt()
+            AvancarAlterar.toTransporterAlter()
+            AvancarAlterar.installmentDeliveryAlter()
             AlterarPedido.removerFormaPag()
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
             Recebimento.segundaForma() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedAlteradoSucesso()
         })

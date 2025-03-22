@@ -35,15 +35,15 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            AvancarAlterar.paraTransportadoraAlt()
+            AvancarAlterar.toTransporterAlter()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
-            AvancarAlterar.parcelasEntregaAlt()
+            AvancarAlterar.installmentDeliveryAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
             AlterarPedido.okPedGerado()
@@ -53,16 +53,16 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             AlterarPedido.escolherPedPend()
             AlterarPedido.clicarDetalhes()
             AlterarPedido.clicarEditPed()
-            AvancarAlterar.paraTransportadoraAlt()
-            AvancarAlterar.parcelasEntregaAlt()
+            AvancarAlterar.toTransporterAlter()
+            AvancarAlterar.installmentDeliveryAlter()
             AlterarPedido.removerFormaPag() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
-            AvancarAlterar.parcelasEntregaAlt()
+            AvancarAlterar.installmentDeliveryAlter()
 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.segundaForma()
             EscolherParcelaReceb.uma()
-            AvancarAlterar.finalAlt()
+            AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
