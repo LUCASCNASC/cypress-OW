@@ -34,8 +34,8 @@ describe('Gerar pedido normal com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -60,8 +60,8 @@ describe('Gerar pedido normal com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -79,8 +79,8 @@ describe('Gerar pedido normal com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.escolherEntradaFormaPagamento() //GERAR PARCELAS
             GeralPagamento.clicarGerarPagamento()

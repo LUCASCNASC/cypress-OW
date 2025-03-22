@@ -36,8 +36,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -60,8 +60,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -77,8 +77,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -101,8 +101,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -118,8 +118,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaSepTituloProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.escolherTranspochooseTransporterrtadora()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -142,8 +142,8 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 

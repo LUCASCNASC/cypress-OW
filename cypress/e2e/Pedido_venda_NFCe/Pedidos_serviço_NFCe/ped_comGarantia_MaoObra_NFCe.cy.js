@@ -37,8 +37,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraDestNãoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()  
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -62,8 +62,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -80,8 +80,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -105,8 +105,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -123,8 +123,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -148,8 +148,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -166,8 +166,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraDestNãoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -191,8 +191,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -209,8 +209,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -234,8 +234,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -252,8 +252,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -277,8 +277,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -295,8 +295,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraDestNãoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -319,8 +319,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -337,8 +337,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -362,8 +362,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -380,8 +380,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.maoObraNaoDestSepaProcDif()
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -405,8 +405,8 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 

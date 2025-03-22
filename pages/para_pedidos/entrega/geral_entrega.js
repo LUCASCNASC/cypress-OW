@@ -5,7 +5,7 @@ export class GeralEntrega {
     }
 
     //Função criada para clicar no campo transportadora e escolher a trasportadora
-    async escolherTransportadora (selector) {
+    async chooseTransporter (selector) {
 
         //rolando até um elemento da parte de cima da página
         cy.get('.progressbar') 
@@ -24,7 +24,7 @@ export class GeralEntrega {
     }
 
     //Escolher rota completa, rota maringá
-    async escolherRota (selector) {
+    async chooseRoute (selector) {
 
         //Lupa de pesquisa de rota - clicar para pesquisar
         cy.get('.rota-frete > .md-icon-right > .ng-binding')
@@ -55,7 +55,7 @@ export class GeralEntrega {
     }
 
     //Card Inconsistências - rota e transportadora
-    async modalInconsRotaTransp (selector) {
+    async modalInconsRouteTransporter (selector) {
 
         //Título Inconsistências
         cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .flex')
@@ -105,7 +105,7 @@ export class GeralEntrega {
     }
 
     //Card Inconsistências - apenas transportadora
-    async modalInconsApenasTransp (selector) {
+    async modalInconsOnlyTransporter (selector) {
 
         //Título Inconsistências
         cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .flex')
@@ -145,7 +145,7 @@ export class GeralEntrega {
     }
 
     //Card Inconsistências - apenas transportadora
-    async modalInconsApenasRota (selector) {
+    async modalInconsOnlyRoute (selector) {
 
         //Título Inconsistências
         cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .flex')

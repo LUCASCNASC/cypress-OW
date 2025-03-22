@@ -35,8 +35,8 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA)
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA)
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -61,8 +61,8 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter() 
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()

@@ -36,8 +36,8 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Servico.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -60,8 +60,8 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc() //SERVIÇOS
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -77,8 +77,8 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -101,8 +101,8 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -118,8 +118,8 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -142,8 +142,8 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()  
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 

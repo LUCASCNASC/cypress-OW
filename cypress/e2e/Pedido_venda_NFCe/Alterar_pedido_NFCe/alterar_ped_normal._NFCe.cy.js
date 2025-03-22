@@ -36,8 +36,8 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarAlterar.toTransporterAlter()
-            GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.escolherTransportadora()
+            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeralEntrega.chooseTransporter()
             AvancarAlterar.installmentDeliveryAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
