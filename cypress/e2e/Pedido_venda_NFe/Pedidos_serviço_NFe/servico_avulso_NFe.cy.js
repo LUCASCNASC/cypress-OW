@@ -16,7 +16,7 @@ describe('Venda de serviço avulso', () => {
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVenda.vendaServicoAvulso()
-        EscolherCliente.comRota()
+        EscolherCliente.withRoute()
     })
 
     context('Processo 9888 - caminho feliz', () => {

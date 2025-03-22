@@ -21,7 +21,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVenda.NFe()
-        EscolherCliente.comRota()
+        EscolherCliente.withRoute()
     })
   
     context('Sem entrega/ processo 9862 - caminho feliz', () => {

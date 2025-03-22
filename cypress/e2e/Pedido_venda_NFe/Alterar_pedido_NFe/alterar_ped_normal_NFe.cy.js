@@ -20,7 +20,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVenda.NFe()
-        EscolherCliente.comRota()
+        EscolherCliente.withRoute()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {

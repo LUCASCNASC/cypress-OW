@@ -20,7 +20,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVenda.NFCe()
-        EscolherCliente.comRota()
+        EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()

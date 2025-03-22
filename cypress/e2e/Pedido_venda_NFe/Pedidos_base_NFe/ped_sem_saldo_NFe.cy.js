@@ -12,7 +12,7 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVenda.NFe()
-        EscolherCliente.comRota()
+        EscolherCliente.withRoute()
     })
 
     context('Processo 9860 - não permitir fazer a venda - no momento de adicionar produto, devem aparecer mensagens de aviso', () => {

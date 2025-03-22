@@ -19,7 +19,7 @@ describe('Gerar pedido normal - sem serviço vinculado e tirar a entrega', () =>
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVenda.NFe()
-        EscolherCliente.comRota()
+        EscolherCliente.withRoute()
     })
 
     context('Sem enterga/ processo 9860 - caminho feliz - produtos sem serviço', () => {

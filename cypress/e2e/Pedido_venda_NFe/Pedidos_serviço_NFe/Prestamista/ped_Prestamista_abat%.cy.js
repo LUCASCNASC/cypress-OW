@@ -25,7 +25,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVenda.NFe()
-        EscolherCliente.comRota()
+        EscolherCliente.withRoute()
     })   
 
     context('Sem entrega / Produtos sem promoção - Prestamista com abatimento %', () => {

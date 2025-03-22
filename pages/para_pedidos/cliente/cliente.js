@@ -39,7 +39,7 @@ export class EscolherCliente {
     }
 
     //Função para escolher cliente CPF para gerar pedido de venda - pesquisa por cliente
-    async comRota (selector) {
+    async withRoute (selector) {
 
         //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
         cy.get('.click-cliente > .informe-o-cliente > .cliente-header')

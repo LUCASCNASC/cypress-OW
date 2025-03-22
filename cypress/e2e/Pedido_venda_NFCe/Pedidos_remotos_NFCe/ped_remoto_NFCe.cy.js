@@ -20,7 +20,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVenda.NFCe()
-        EscolherCliente.comRota()
+        EscolherCliente.withRoute()
     })
   
     context('Pedido de venda remoto normal', () => {
