@@ -39,7 +39,8 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             PedDesconto.clicarBotaoDesconto() //DESCONTO
             PedDesconto.validarModalSubSobre()
             PedDesconto.aplicarDescontoValorFixo()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst
+            () //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()

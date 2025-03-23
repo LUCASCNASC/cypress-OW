@@ -57,7 +57,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
-            Produto.second() //SEGUNDO PRODUTO
+            Produto.freightSecond() //SEGUNDO PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()

@@ -34,7 +34,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
@@ -56,7 +56,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.escolherEntradaFormaPagamento()
             GeralPagamento.clicarGerarPagamento()
@@ -75,7 +75,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
@@ -98,7 +98,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
@@ -121,7 +121,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst
+            () //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO

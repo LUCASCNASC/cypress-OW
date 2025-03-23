@@ -23,7 +23,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVenda.NFe()
-        EscolherCliente.withRoute()
+        EscolherCliente.withRoute
+        ()
     })   
 
     context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo - Origem Serviço (162)', () => {

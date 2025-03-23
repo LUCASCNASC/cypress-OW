@@ -41,7 +41,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
@@ -64,7 +64,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
@@ -103,7 +103,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
@@ -129,7 +129,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc()
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })

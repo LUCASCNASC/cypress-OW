@@ -22,7 +22,7 @@ describe('Gerar pedido normal', () => {
         cy.tituloPagina()
         ProcessoVenda.NFe()
         EscolherCliente.withRoute()
-        Produto.kitFirst
+        Produto.kitFirst()
         () //PRODUTO
         ValidarSaldo.comSaldo()
         cy.selectProductSearch()
@@ -37,7 +37,7 @@ describe('Gerar pedido normal', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()

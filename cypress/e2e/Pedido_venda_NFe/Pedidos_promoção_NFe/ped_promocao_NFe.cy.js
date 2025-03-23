@@ -38,7 +38,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
@@ -59,7 +59,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
     
             //GERAR PARCELAS
@@ -86,7 +86,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -110,7 +110,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -118,7 +118,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
 
@@ -146,7 +146,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -154,7 +154,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments()
 
             //GERAR PARCELAS 

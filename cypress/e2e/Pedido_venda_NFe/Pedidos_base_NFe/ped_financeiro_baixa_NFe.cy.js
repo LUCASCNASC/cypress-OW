@@ -34,7 +34,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -51,7 +51,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -59,7 +59,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()

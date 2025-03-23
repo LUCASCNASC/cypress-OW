@@ -37,7 +37,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -53,7 +53,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -61,7 +61,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -77,7 +77,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()  
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -93,7 +93,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -101,7 +101,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA- SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA- SEGUNDO PRODUTO
             AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -117,7 +117,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 
@@ -133,7 +133,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -141,7 +141,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento() 

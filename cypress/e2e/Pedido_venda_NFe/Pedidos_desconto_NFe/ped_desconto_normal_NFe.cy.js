@@ -37,7 +37,7 @@ describe('Gerar pedido de venda com desconto', () => {
             PedDesconto.clicarBotaoDesconto() //DESCONTO
             PedDesconto.validarModalSubSobre()
             PedDesconto.aplicarDescontoR$()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -60,7 +60,7 @@ describe('Gerar pedido de venda com desconto', () => {
             PedDesconto.clicarBotaoDesconto() //DESCONTO
             PedDesconto.validarModalSubSobre()
             PedDesconto.aplicarDescontoPorcentagem()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -83,7 +83,8 @@ describe('Gerar pedido de venda com desconto', () => {
             PedDesconto.clicarBotaoDesconto() //DESCONTO
             PedDesconto.validarModalSubSobre()
             PedDesconto.aplicarDescontoValorFixo()
-            TirarEntrega.primeiro() //ENTREGA
+            TirarEntrega.freightFirst
+            () //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()

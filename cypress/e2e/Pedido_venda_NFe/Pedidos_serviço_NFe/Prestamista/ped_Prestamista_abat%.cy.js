@@ -39,7 +39,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -47,7 +47,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo()
+            TirarEntrega.freightSecond()
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -70,7 +70,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -78,7 +78,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo()
+            TirarEntrega.freightSecond()
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -235,7 +235,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -260,7 +260,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -286,7 +286,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -381,7 +381,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -417,7 +417,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo()
+            TirarEntrega.freightSecond()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -446,7 +446,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -454,7 +454,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo()
+            TirarEntrega.freightSecond()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -487,7 +487,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -495,7 +495,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo()
+            TirarEntrega.freightSecond()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -524,7 +524,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
-            TirarEntrega.primeiro()
+            TirarEntrega.freightFirst()
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -532,7 +532,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo()
+            TirarEntrega.freightSecond()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })

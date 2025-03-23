@@ -5,7 +5,7 @@ export class TirarEntrega {
     }
 
     //Arrastar botão de Retirada / Entrega
-    async primeiro (selector) {
+    async freightFirst (selector) {
 
         //Botão Retirada / Entrega parte esquerda
         cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-container')
@@ -28,7 +28,7 @@ export class TirarEntrega {
     }
 
     //Arrastar botão de Retirada / Entrega do segundo produto
-    async segundo (selector) {
+    async freightSecond (selector) {
 
         //Botão Retirada / Entrega - texto Retirada / Entrega
         cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
@@ -41,7 +41,7 @@ export class TirarEntrega {
     }
 
     //Arrastar botão de Retirada / Entrega do terceiro produto
-    async terceiro (selector) {
+    async freightThird (selector) {
 
         //Botão Retirada / Entrega - texto Retirada / Entrega
         cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
@@ -52,4 +52,4 @@ export class TirarEntrega {
             .and('have.text', ' Retirada / Entrega ')
             .click({force:true})
     }
-}
+} 

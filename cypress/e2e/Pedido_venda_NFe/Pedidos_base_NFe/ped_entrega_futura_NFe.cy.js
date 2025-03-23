@@ -33,7 +33,7 @@ describe('Gerar pedido de entrega futura', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA PRODUTO
+            TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -50,7 +50,7 @@ describe('Gerar pedido de entrega futura', () => {
             cy.clickAddProduc()
             Servico.validarModalServVinc() //SERVICOS
             clicarOKServVinServico.clicarOKServVincculado()
-            TirarEntrega.primeiro() //ENTREGA PRODUTO
+            TirarEntrega.freightFirst() //ENTREGA PRODUTO
             Produto.second() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.selectProductSearch()
@@ -58,7 +58,7 @@ describe('Gerar pedido de entrega futura', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()

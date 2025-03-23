@@ -34,7 +34,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA PRODUTO
+            TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -58,7 +58,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
 
             Produto.kitFirst() //PESQUISA PRODUTO - KIT
             ValidarSaldo.comSaldo()
@@ -66,7 +66,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.clicarOKServVinc()
-            TirarEntrega.terceiro()
+            TirarEntrega.freightThird()
             AvancarAlterar.toInstallmentsAlter()
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
@@ -86,7 +86,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA PRODUTO
+            TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
@@ -113,7 +113,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA PRODUTO
 
             Produto.fisrt() //PRODUTO
             ValidarSaldo.comSaldo()
@@ -122,7 +122,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.segundo() //ENTREGA PRODUTO
+            TirarEntrega.freightSecond() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
 
             GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
@@ -144,7 +144,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
-            TirarEntrega.primeiro() //ENTREGA PRODUTO
+            TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
