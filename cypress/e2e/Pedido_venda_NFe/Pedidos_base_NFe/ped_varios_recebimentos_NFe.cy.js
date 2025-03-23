@@ -36,7 +36,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.DebitoPOS()
@@ -77,7 +77,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -86,7 +86,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.uma()
-            AgruparReceb.naoAgruparLancamentos()
+            AgruparReceb.notGroupReleases()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -100,7 +100,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -109,7 +109,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.uma()
-            AgruparReceb.agruparLancamentos()
+            AgruparReceb.groupReleases()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -124,7 +124,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             TirarEntrega.freightFirst
             () //ENTREGA
             AvancarNormal.toInstallments()
-            AgruparReceb.primeiroValorAParcelar() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
@@ -133,9 +133,9 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.uma()
-            AgruparReceb.naoAgruparLancamentos()
-            AgruparReceb.selecionarLancAgrupar()
-            AgruparReceb.clicarAgrupar()
+            AgruparReceb.notGroupReleases()
+            AgruparReceb.selectReleasesGroup()
+            AgruparReceb.clickGroup()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

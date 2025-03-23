@@ -466,7 +466,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clicarGerarParcAlterarVenc()
             Recebimento.futPrestComJuros()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.agruparLancamentos()
+            AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
             ValidarServico.addSeguroPrest()
             GeralPedido.adicionadoRecebAgrupado()
@@ -546,7 +546,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Recebimento.futPrestSemJuros()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.agruparLancamentos()
+            AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
             ValidarServico.addSeguroPrest()
             GeralPedido.adicionadoRecebAgrupado()
@@ -659,7 +659,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Recebimento.futPrestComJuros()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.agruparLancamentos()
+            AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
             ValidarServico.addSeguroPrest()
             GeralPedido.adicionadoRecebAgrupado()
@@ -744,7 +744,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Recebimento.futPrestSemJuros()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.agruparLancamentos()
+            AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
             ValidarServico.addSeguroPrest()
             GeralPedido.adicionadoRecebAgrupado()
@@ -831,7 +831,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Recebimento.presentePrest()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.agruparLancamentos()
+            AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
             ValidarServico.addSeguroPrest()
             GeralPedido.adicionadoRecebAgrupado()

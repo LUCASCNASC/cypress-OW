@@ -5,7 +5,7 @@ export class TirarMontagem {
     }
 
     //Arrastar botão de Montagem
-    async primeiro (selector) {
+    async fisrt (selector) {
 
         //Botão como um todo
         cy.get('.produto-nome > .valor > .md-auto-horizontal-margin > .md-container > .md-bar')
@@ -28,7 +28,7 @@ export class TirarMontagem {
     }
 
     //Arrastar botão de Montagem do segundo produto
-    async segundo (selector) {
+    async second (selector) {
 
         //Botão como um todo
         cy.get(':nth-child(3) > .md-whiteframe-2dp > :nth-child(3) > .produto-nome > .valor > .md-auto-horizontal-margin > .md-container > .md-bar')

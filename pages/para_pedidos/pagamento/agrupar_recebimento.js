@@ -1,11 +1,11 @@
-export class AgruparReceb{
+export class AgruparReceb {
 
     constructor(page) {
         this.page = page
     }
 
     //clicar para NÃO agrupar lançamentos com o mesmo processo de recebimento
-    async naoAgruparLancamentos (selector) {
+    async notGroupReleases (selector) {
 
         //validar mensagem do modal de aviso
         cy.get('.md-title')
@@ -39,7 +39,7 @@ export class AgruparReceb{
     }
 
     //clicar para SIM agrupar lançamentos com o mesmo processo de recebimento
-    async agruparLancamentos (selector) {
+    async groupReleases (selector) {
 
         //validar mensagem do modal de aviso
         cy.get('.md-title')
@@ -73,7 +73,7 @@ export class AgruparReceb{
     }
 
     //selecionar dois lançamentos com o mesmo processo de recebimento para posteriormente clicar no botão AGRUPAR
-    async selecionarLancAgrupar (selector) {
+    async selectReleasesGroup (selector) {
 
         //texto "Lançamentos já realizados"
         cy.get('[ng-show="parcelamentoAutomaticoDisponivel"] > .md-subheader-inner > .md-subheader-content')
@@ -199,7 +199,7 @@ export class AgruparReceb{
     }
 
     //clicar no botão AGRUPAR
-    async clicarAgrupar (selector) {
+    async clickGroup (selector) {
 
         //botão AGRUPAR
         cy.get('.layout-align-center-end > .flex-gt-sm-50 > .md-primary')
@@ -211,7 +211,7 @@ export class AgruparReceb{
     }
 
     //colocar o valor da primeira forma de pagamento no campo valor a parcelar
-    async primeiroValorAParcelar (selector) {
+    async firstValueInstallment (selector) {
 
         //informativo "Valor a parcelar"
         cy.contains('label', 'Valor a parcelar')
@@ -222,4 +222,4 @@ export class AgruparReceb{
             .wait(200)
             .type('40000')
     }
-}
+} 
