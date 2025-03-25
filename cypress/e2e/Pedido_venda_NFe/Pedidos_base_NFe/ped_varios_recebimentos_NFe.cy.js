@@ -40,11 +40,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.DebitoPOS()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -63,7 +63,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -81,11 +81,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AgruparReceb.notGroupReleases()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -104,11 +104,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AgruparReceb.groupReleases()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -128,11 +128,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AgruparReceb.notGroupReleases()
             AgruparReceb.selectReleasesGroup()
             AgruparReceb.clickGroup()

@@ -42,7 +42,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -66,7 +66,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -83,7 +83,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -107,7 +107,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -124,7 +124,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -148,7 +148,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

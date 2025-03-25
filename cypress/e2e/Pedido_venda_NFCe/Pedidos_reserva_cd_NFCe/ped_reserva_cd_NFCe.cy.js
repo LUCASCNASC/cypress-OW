@@ -40,7 +40,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -69,7 +69,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

@@ -34,7 +34,7 @@ describe('Venda de serviço avulso Host - 104', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

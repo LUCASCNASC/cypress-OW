@@ -52,7 +52,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.futPrestComJuros()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -83,7 +83,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.presentePrest()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -116,7 +116,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.futPrestSemJuros()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -148,7 +148,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.futPrestComJuros()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -180,7 +180,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.futPrestSemJuros()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -212,7 +212,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.presentePrest()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -240,7 +240,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -265,7 +265,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -291,7 +291,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -326,7 +326,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.contains('3876 - T.A. A Receber Futuro - para Prestamista sem juros').click()
             cy.intercept('/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
             cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             avancAvancarNormal.finalarFinal()
@@ -359,7 +359,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.contains('3874 - T.A. A Receber Futuro - para Prestamista').click()
             cy.intercept('/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
             cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -386,7 +386,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -422,13 +422,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDateTomorrow1Due()
             GeralPagamento.clicarGerarParcAlterarVenc()
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -459,7 +459,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDate31Days1Due()
@@ -500,13 +500,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDateTomorrow1Due()
             GeralPagamento.clicarGerarParcAlterarVenc()
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -537,7 +537,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDate31Days1Due()
@@ -572,7 +572,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -609,7 +609,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDateTomorrow1Due()
@@ -617,7 +617,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -650,7 +650,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDate31Days1Due()
@@ -694,7 +694,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDateTomorrow1Due()
@@ -702,7 +702,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -735,7 +735,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDate31Days1Due()
@@ -780,7 +780,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDateTomorrow1Due()
@@ -788,7 +788,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Recebimento.segundaForma()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -822,7 +822,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDate31Days1Due()

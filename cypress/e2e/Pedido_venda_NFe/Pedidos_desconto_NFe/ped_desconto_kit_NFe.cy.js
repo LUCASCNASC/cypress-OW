@@ -45,7 +45,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

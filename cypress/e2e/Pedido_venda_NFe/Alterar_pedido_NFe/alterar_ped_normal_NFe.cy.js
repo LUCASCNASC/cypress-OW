@@ -39,7 +39,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -71,7 +71,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
             AlterarPedido.escolherFormaPagPrincipalAlt()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //PROCESSO INCLUSÃO
             FinalizarPed.validarPedAlteradoSucesso()
@@ -91,7 +91,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal()
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -128,7 +128,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             AlterarPedido.escolherFormaPagPrincipalAlt() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedAlteradoSucesso()
@@ -149,7 +149,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedGerado()
@@ -169,7 +169,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             // GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
             // GeralPagamento.loadingFormPayment()
             // escolherFormaPagamentoPrincipalAlterar()
-            // EscolherParcelaReceb.duas()
+            // EscolherParcelaReceb.two()
             // AvancarAlterar.finalAlter()
             // FinalizarPed.clicarFinalizarPed() //RESUMO
             // FinalizarPed.validarPedAlteradoSucesso()
@@ -193,7 +193,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedGerado()
@@ -210,7 +210,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
 
             GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
             Recebimento.segundaForma() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
             FinalizarPed.validarPedAlteradoSucesso()

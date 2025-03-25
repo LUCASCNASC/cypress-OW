@@ -38,7 +38,7 @@ describe('Gerar pedido de entrega futura', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -63,7 +63,7 @@ describe('Gerar pedido de entrega futura', () => {
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final() 
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -83,7 +83,7 @@ describe('Gerar pedido de entrega futura', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -107,7 +107,7 @@ describe('Gerar pedido de entrega futura', () => {
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
             Recebimento.principal() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.duas()
+            EscolherParcelaReceb.two()
             AvancarNormal.final() 
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()

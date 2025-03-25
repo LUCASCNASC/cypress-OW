@@ -43,7 +43,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.futComJurosPrestAbatOrigemPrd()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -75,7 +75,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.futComJurosPrestAbatOrigemPrd()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado()
             AvancarNormal.final()
@@ -103,7 +103,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -129,7 +129,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
@@ -156,7 +156,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
-            EscolherParcelaReceb.quatro()
+            EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.paginaFinal() //Validando adição do prestamista
             AvancarNormal.final()

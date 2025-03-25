@@ -189,7 +189,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralPagamento.insertDateTomorrow1Due()
             GeralPagamento.clicarGerarParcAlterarVenc()
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
@@ -215,7 +215,7 @@ describe('Gerar pedidos com promoção', () => {
             GeralPagamento.insertDateTomorrow1Due()
             cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({force:true})
             Recebimento.principal()
-            EscolherParcelaReceb.uma()
+            EscolherParcelaReceb.one()
 
             // //"GERAR PAGAMENTO"
             // cy.get('.white > :nth-child(3)').scrollIntoView().wait(300)
@@ -228,7 +228,7 @@ describe('Gerar pedidos com promoção', () => {
             // GeralPagamento.clicarGerarParcAlterarVenc()
             // cy.wait(3000)
             // Recebimento.principal()
-            // EscolherParcelaReceb.duas()
+            // EscolherParcelaReceb.two()
             // AvancarNormal.final()
             // FinalizarPed.clicarFinalizarPed() //RESUMO
             // FinalizarPed.validarPedGerado()
