@@ -36,12 +36,12 @@ describe('Gerar pedido normal com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsOnlyTransporter
+            GeralEntrega.modalInconsOnlyTransporter()
             () //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

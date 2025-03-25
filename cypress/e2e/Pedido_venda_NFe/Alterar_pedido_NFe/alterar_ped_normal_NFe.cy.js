@@ -36,8 +36,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlter()
@@ -69,7 +69,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             TirarEntrega.freightThird()
             AvancarAlterar.toInstallmentsAlter()
 
-            GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
             AlterarPedido.escolherFormaPagPrincipalAlt()
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlter()
@@ -88,8 +88,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlter()
@@ -125,8 +125,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             TirarEntrega.freightSecond() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
 
-            GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             AlterarPedido.escolherFormaPagPrincipalAlt() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlter()
@@ -146,8 +146,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlter()
@@ -166,8 +166,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.clicarOKServVinc()
             // AvancarAlterar.toTransporterAlter()
             // AvancarAlterar.installmentDeliveryAlter()
-            // GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
-            // GeralPagamento.carregandoFormaPagamento()
+            // GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
+            // GeralPagamento.loadingFormPayment()
             // escolherFormaPagamentoPrincipalAlterar()
             // EscolherParcelaReceb.duas()
             // AvancarAlterar.finalAlter()
@@ -190,8 +190,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Servico.clicarOKServVinc()
             AvancarAlterar.toTransporterAlter() //TRANSPORTADORA
             AvancarAlterar.installmentDeliveryAlter()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlter()
@@ -208,7 +208,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.installmentDeliveryAlter()
             AlterarPedido.removerFormaPag()
 
-            GeralPagamento.clicarGerarParcAlterarVenc() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
             Recebimento.segundaForma() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlter()

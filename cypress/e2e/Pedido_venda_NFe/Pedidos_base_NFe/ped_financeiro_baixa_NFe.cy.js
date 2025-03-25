@@ -36,8 +36,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -61,8 +61,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments() 
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -81,8 +81,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -105,8 +105,8 @@ describe('Gerar pedido com financeiro na baixa', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

@@ -37,8 +37,8 @@ describe('Gerar pedido normal', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -62,8 +62,8 @@ describe('Gerar pedido normal', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -79,10 +79,10 @@ describe('Gerar pedido normal', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            GeralPagamento.escolherEntradaFormaPagamento() //GERAR PARCELAS
-            GeralPagamento.clicarGerarPagamento()
-            GeralPagamento.clicarGerarParcelas()
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.chooseEntryFormPayment() //GERAR PARCELAS
+            GeralPagamento.clickGeneratePayment()
+            GeralPagamento.clickGenerateInstallments()
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()
@@ -101,8 +101,8 @@ describe('Gerar pedido normal', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() 
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -125,8 +125,8 @@ describe('Gerar pedido normal', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() 
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -142,10 +142,10 @@ describe('Gerar pedido normal', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.escolherEntradaFormaPagamento() //GERAR PARCELAS
-            GeralPagamento.clicarGerarPagamento()
-            GeralPagamento.clicarGerarParcelas()
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.chooseEntryFormPayment() //GERAR PARCELAS
+            GeralPagamento.clickGeneratePayment()
+            GeralPagamento.clickGenerateInstallments()
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() 
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

@@ -38,8 +38,8 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA)
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             RecebimentoPromo.pagPrincipal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -64,8 +64,8 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery() 
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final() 

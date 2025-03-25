@@ -29,8 +29,8 @@ describe('Venda de serviço avulso', () => {
             PedServicoAvulso.clicarCarrinhoCompras() //CARRINHO COMPRAS
             PedServicoAvulso.servicoAdicionadoCarrinho()
             PedServicoAvulso.botaoAvancarPedido()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

@@ -39,8 +39,8 @@ describe('Gerar pedido de venda com desconto', () => {
             PedDesconto.aplicarDescontoR$()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()
@@ -62,8 +62,8 @@ describe('Gerar pedido de venda com desconto', () => {
             PedDesconto.aplicarDescontoPorcentagem()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()
@@ -83,11 +83,11 @@ describe('Gerar pedido de venda com desconto', () => {
             PedDesconto.clicarBotaoDesconto() //DESCONTO
             PedDesconto.validarModalSubSobre()
             PedDesconto.aplicarDescontoValorFixo()
-            TirarEntrega.freightFirst
+            TirarEntrega.freightFirst()
             () //ENTREGA
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()

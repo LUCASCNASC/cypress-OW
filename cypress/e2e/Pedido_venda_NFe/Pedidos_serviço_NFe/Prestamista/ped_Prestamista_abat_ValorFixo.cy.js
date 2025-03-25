@@ -37,8 +37,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.futSemJurosPrestAbatValFixo()
             EscolherParcelaReceb.quatro()
             ValidarServico.okSeguroPrest()
@@ -68,8 +68,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.futSemJurosPrestAbatValFixo()
             EscolherParcelaReceb.quatro()
             ValidarServico.okSeguroPrest()
@@ -176,8 +176,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.presentePrestAbatValFixo()
             EscolherParcelaReceb.quatro()
             ValidarServico.okSeguroPrest()

@@ -8,7 +8,7 @@ export class GeralPagamento{
 
     //------------------- OUTROS ------
     //Carregamento de forma de pagamento, quando clicamos no botão Gerar parcelas
-    async carregandoFormaPagamento (selector) {
+    async loadingFormPayment (selector) {
 
         //Modal Forma de pagamento - título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -23,7 +23,7 @@ export class GeralPagamento{
 
     //------------------- BOTÕES GERAR PARCELAS ------
     //Botão "GERAR PARCELAS"
-    async clicarGerarParcelas (selector) {
+    async clickGenerateInstallments (selector) {
 
         cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
         cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento')
@@ -44,7 +44,7 @@ export class GeralPagamento{
     }
 
     //Botão "GERAR PARCELAS" quando alteramos a data de vencimento da 1
-    async clicarGerarParcAlterarVenc (selector) {
+    async clickGenerateInstallAlterDue (selector) {
 
         //.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_formas_pagamento')
         //cy.wait('@api_formas_pagamento', { timeout: 40000 })
@@ -59,7 +59,7 @@ export class GeralPagamento{
 
     //------------------- GERAR ENTRADA NO PAGAMENTO ------
     //preencher pagamento entrada
-    async escolherEntradaFormaPagamento (selector) {
+    async chooseEntryFormPayment (selector) {
 
         //texto "Valor máximo da entrada"
         cy.get('[ng-show="carrinho.getValorParcelamento() > 0"] > .btn-rounded > .layout-wrap > :nth-child(1) > md-list.md-default-theme > .padding-0 > .md-list-item-text > p')
@@ -106,7 +106,7 @@ export class GeralPagamento{
     }
 
     //validando e clicando no botão GERAR PAGAMENTO
-    async clicarGerarPagamento (selector) {
+    async clickGeneratePayment (selector) {
 
         //botão
         cy.get('.white > .layout-align-center-center > .md-primary')
@@ -119,7 +119,7 @@ export class GeralPagamento{
 
     //------------------- MODIFICAR PRIMEIRO DIA DE VENCIMENTO ------
     //no campo 1 vencimento, colocar o dia de amanha para mudar as formas de pagamento
-    async inserirDataAmanha1Vencimento (selector) {
+    async insertDateTomorrow1Due (selector) {
 
         const data_hoje = umDiaAposHoje();
 
@@ -136,7 +136,7 @@ export class GeralPagamento{
     }
 
     //no campo 1 vencimento, colocar 31 dias após a data de hoje
-    async inserirData31Dias1Vencimento (selector) {
+    async insertDate31Days1Due (selector) {
 
         const data_31_dias = trintaUmDiasAposHoje();
 

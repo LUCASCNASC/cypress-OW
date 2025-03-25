@@ -37,11 +37,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.DebitoPOS()
             EscolherParcelaReceb.uma()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.duas()
@@ -58,9 +58,9 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            GeralPagamento.escolherEntradaFormaPagamento()
+            GeralPagamento.chooseEntryFormPayment()
             GeralPagamento.clicarGerarPagamento()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.duas()
@@ -78,11 +78,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.uma()
@@ -101,11 +101,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.uma()
@@ -125,11 +125,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             () //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.uma()

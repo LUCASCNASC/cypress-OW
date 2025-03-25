@@ -37,8 +37,8 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter()
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -63,8 +63,8 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter()
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

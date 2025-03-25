@@ -37,8 +37,8 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -66,8 +66,8 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

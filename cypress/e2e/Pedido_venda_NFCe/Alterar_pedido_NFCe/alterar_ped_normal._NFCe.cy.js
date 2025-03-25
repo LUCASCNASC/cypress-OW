@@ -39,8 +39,8 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarAlterar.installmentDeliveryAlter()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlter()
@@ -58,8 +58,8 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             AlterarPedido.removerFormaPag() //ARRASTAR PARA REMOVER FORMA DE PAGAMENTO ANTIGA
             AvancarAlterar.installmentDeliveryAlter()
 
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.segundaForma()
             EscolherParcelaReceb.uma()
             AvancarAlterar.finalAlter()

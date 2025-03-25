@@ -120,7 +120,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher forma de pagamento
             cy.contains('3868 - T.A. A Receber PIX TEF').click({force:true})
@@ -186,7 +186,7 @@ describe('Gerar pedidos com promoção', () => {
             AvancarNormal.toInstallments() //ENTREGA
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
-            GeralPagamento.inserirDataAmanha1Vencimento()
+            GeralPagamento.insertDateTomorrow1Due()
             GeralPagamento.clicarGerarParcAlterarVenc()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
@@ -212,7 +212,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
 
-            GeralPagamento.inserirDataAmanha1Vencimento()
+            GeralPagamento.insertDateTomorrow1Due()
             cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({force:true})
             Recebimento.principal()
             EscolherParcelaReceb.uma()
@@ -224,7 +224,7 @@ describe('Gerar pedidos com promoção', () => {
             // cy.get('.white > .layout-align-center-center > .md-primary').click({force:true})
             // cy.get('.md-select-backdrop').click({force:true})
 
-            // GeralPagamento.inserirDataAmanha1Vencimento()
+            // GeralPagamento.insertDateTomorrow1Due()
             // GeralPagamento.clicarGerarParcAlterarVenc()
             // cy.wait(3000)
             // Recebimento.principal()
@@ -248,7 +248,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
@@ -283,7 +283,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher forma de pagemento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force: true})

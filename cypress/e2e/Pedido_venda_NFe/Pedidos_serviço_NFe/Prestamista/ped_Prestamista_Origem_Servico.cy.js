@@ -40,8 +40,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             Servico.clicarOKServVinc() //SERVIÇOS
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.futComJurosPrestAbatOrigemPrd()
             EscolherParcelaReceb.quatro()
             ValidarServico.okSeguroPrest()
@@ -72,8 +72,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.futComJurosPrestAbatOrigemPrd()
             EscolherParcelaReceb.quatro()
             ValidarServico.okSeguroPrest()

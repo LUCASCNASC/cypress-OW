@@ -37,8 +37,8 @@ describe('Gerar pedido normal com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -63,8 +63,8 @@ describe('Gerar pedido normal com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -82,10 +82,10 @@ describe('Gerar pedido normal com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.escolherEntradaFormaPagamento() //GERAR PARCELAS
-            GeralPagamento.clicarGerarPagamento()
-            GeralPagamento.clicarGerarParcelas()
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.chooseEntryFormPayment() //GERAR PARCELAS
+            GeralPagamento.clickGeneratePayment()
+            GeralPagamento.clickGenerateInstallments()
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()

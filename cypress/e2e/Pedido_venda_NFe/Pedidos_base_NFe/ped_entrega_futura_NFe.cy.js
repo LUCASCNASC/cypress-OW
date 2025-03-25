@@ -35,8 +35,8 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -59,9 +59,9 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.toInstallments()
+            AvancarNormal.clickGenerateInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarNormal.final() 
@@ -80,8 +80,8 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -104,8 +104,8 @@ describe('Gerar pedido de entrega futura', () => {
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter() //TRANSPORTADORA
             AvancarNormal.toInstallments() 
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment() 
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarNormal.final() 

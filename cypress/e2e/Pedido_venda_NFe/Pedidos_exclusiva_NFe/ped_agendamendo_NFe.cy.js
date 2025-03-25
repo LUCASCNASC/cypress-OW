@@ -48,7 +48,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
@@ -76,7 +76,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
@@ -102,7 +102,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
@@ -141,8 +141,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Servico.clicarOKServVinc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamento.loadingFormPayment()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

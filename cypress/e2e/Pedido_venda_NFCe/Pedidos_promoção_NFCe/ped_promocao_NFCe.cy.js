@@ -40,7 +40,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher "Forma de pagamento"
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click()
@@ -75,8 +75,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // cy.get('.white > :nth-child(3)').click({force:true})
             // cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
 
-            // GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            // GeralPagamento.carregandoFormaPagamento()
+            // GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            // GeralPagamento.loadingFormPayment()
             // Recebimento.principal()()
             // EscolherParcelaReceb.duas()
             // AvancarNormal.final()
@@ -100,7 +100,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
