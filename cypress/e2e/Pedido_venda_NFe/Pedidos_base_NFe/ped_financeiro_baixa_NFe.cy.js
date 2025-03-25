@@ -19,7 +19,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.login();
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVenda.finanBaixaNFe()
+        ProcessoVenda.financePaymentNFe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()

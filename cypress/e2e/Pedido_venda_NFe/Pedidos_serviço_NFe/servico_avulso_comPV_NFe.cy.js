@@ -18,7 +18,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessoVenda.vendaServicoAvulso()
+        ProcessoVenda.saleServiceLoose()
         EscolherCliente.withRoute()
     })
 

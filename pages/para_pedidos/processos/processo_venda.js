@@ -33,7 +33,7 @@ export class ProcessoVenda {
     }
 
     //Para escolher processo de venda 9869 para exclusiva NFe
-    async exclusiva (selector) {
+    async exclusive (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -59,7 +59,7 @@ export class ProcessoVenda {
     }
 
     //Para escolher processo de venda entrega futura 9862 normal - NFe
-    async entregaFutNFe (selector) {
+    async deliveryFutureNFe (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -85,7 +85,7 @@ export class ProcessoVenda {
     }
 
     //Para escolher processo de venda financeiro baixa 9863 normal - NFe
-    async finanBaixaNFe (selector) {
+    async financePaymentNFe (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -111,7 +111,7 @@ export class ProcessoVenda {
     }
 
     //Para escolher processo de venda 9888 - serviços avulsos - quando já temos uma nota de venda de produto e quando vamos vender igual produto - NFe
-    async vendaServicoAvulso (selector) {
+    async saleServiceLoose (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -166,7 +166,7 @@ export class ProcessoVenda {
     }
 
     //Para escolher processo de venda entrega futura 9891 normal - NFCe
-    async entregaFutNFCe (selector) {
+    async deliveryFutureNFCe (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')
@@ -193,7 +193,7 @@ export class ProcessoVenda {
     }
 
     //Para escolher processo de venda financeiro baixa 9892 normal - NFCe
-    async finanBaixaNFCe (selector) {
+    async financePaymentNFCe (selector) {
 
         //clicar para aparecer as opções de processo
         cy.get('#select_value_label_4 > .md-select-icon')

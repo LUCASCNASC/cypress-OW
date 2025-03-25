@@ -18,7 +18,7 @@ describe('Gerar pedido de entrega futura', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVenda.entregaFutNFe()
+        ProcessoVenda.deliveryFutureNFe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
         ValidarSaldo.comSaldo()
