@@ -108,9 +108,10 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Promocao.addPrestamista()
-            TicketPrestamista.adicionado()
+            TicketPrestamista.added()
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal
+            ()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -134,9 +135,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             Promocao.addPrestamista()
-            TicketPrestamista.adicionado()
+            TicketPrestamista.added()
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })

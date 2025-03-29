@@ -42,9 +42,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Recebimento.futWithoutRebVF()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado() //Validando adição do prestamista
+            TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -73,9 +73,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Recebimento.futWithoutRebVF()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado()
+            TicketPrestamista.added()
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -101,9 +101,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado() //Validando adição do prestamista
+            TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -128,9 +128,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado() //Validando adição do prestamista
+            TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -155,9 +155,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado() //Validando adição do prestamista
+            TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -181,9 +181,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Recebimento.presentMoneyRebVF()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado() //Validando adição do prestamista
+            TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })

@@ -44,9 +44,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             Recebimento.futComJurosPrestAbatOrigemPrd()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado() //Validando adição do prestamista
+            TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -75,9 +75,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             Recebimento.futComJurosPrestAbatOrigemPrd()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado()
+            TicketPrestamista.added()
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -103,9 +103,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado() //Validando adição do prestamista
+            TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -129,9 +129,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.adicionado() //Validando adição do prestamista
+            TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
@@ -156,9 +156,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
-            TicketPrestamista.paginaFinal() //Validando adição do prestamista
+            TicketPrestamista.pageFinal() //Validando adição do prestamista
             AvancarNormal.final()
-            TicketPrestamista.paginaFinal()
+            TicketPrestamista.pageFinal()
             FinalizarPed.clicarFinalizarPed() //RESUMO
             FinalizarPed.validarPedGerado()
         })
