@@ -29,9 +29,9 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             Produto.promoMatch() //PRODUTO
             ValidarSaldo.comSaldo()
-            cy.selectProductSearch() ; Promocao.ticketPromocao() 
+            cy.selectProductSearch() ; Promocao.ticketPromotion() 
             cy.clickVoltageProduct()
-            Promocao.selecionarPrimeiraPromoProduto()
+            Promocao.selectFirstPromoProduct()
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -57,9 +57,9 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             Produto.promoDeadlineEntry() //PRODUTO
             ValidarSaldo.comSaldo()
-            cy.selectProductSearch() ; Promocao.ticketPromocao() 
+            cy.selectProductSearch() ; Promocao.ticketPromotion() 
             cy.clickVoltageProduct()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -89,9 +89,9 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             Produto.promoDeadlineInstallment() //PRODUTO
             ValidarSaldo.comSaldo()
-            cy.selectProductSearch() ; Promocao.ticketPromocao()
+            cy.selectProductSearch() ; Promocao.ticketPromotion()
             cy.clickVoltageProduct()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS

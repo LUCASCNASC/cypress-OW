@@ -33,7 +33,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOCAO
+            Promocao.selectFirstPromoProduct() //PROMOCAO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -54,7 +54,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -81,7 +81,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -105,7 +105,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -141,7 +141,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -177,7 +177,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto()
+            Promocao.selectFirstPromoProduct()
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -202,7 +202,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
@@ -241,7 +241,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pag
             ()
             cy.clickAddProduct()
@@ -271,7 +271,7 @@ describe('Gerar pedidos com promoção', () => {
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
+            Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS

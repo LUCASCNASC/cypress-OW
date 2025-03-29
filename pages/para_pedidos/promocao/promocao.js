@@ -5,7 +5,7 @@ export class Promocao {
     }
 
     //escolhendo a primeira promoção do produto - uma promoção
-    async selecionarPrimeiraPromoProduto (selector) {
+    async selectFirstPromoProduct (selector) {
 
         //botão voltar
         cy.get('[ng-click="modalSaldo()"] > .ng-binding')
@@ -38,7 +38,7 @@ export class Promocao {
     }
 
     //validando aqueles produtos que tem o ticket vermelho "PROMOÇÃO"
-    async ticketPromocao (selector) {
+    async ticketPromotion (selector) {
 
         //etiqueta inteira
         cy.get('.md-secondary-container > div > .ng-scope')
@@ -58,7 +58,7 @@ export class Promocao {
     }
 
     //Validando modal de carregamento "Adicionando produtos/serviços..."
-    async messAdicionandoProdutosServicos (selector) {
+    async messAddProductsServices (selector) {
 
         //validando ícone de carregamento
         cy.get('.conteudo > .layout-align-center-center > .md-accent')
@@ -71,7 +71,7 @@ export class Promocao {
     }
 
     //validando e adicionando serviço prestamista
-    async adicionarPrestamista (selector) {
+    async addPrestamista (selector) {
 
         //validando ícone de serviço
         cy.get('.btn-remove-item-list > :nth-child(2) > .md-raised > .ng-scope')
@@ -137,7 +137,7 @@ export class Promocao {
     }
 
     //Validando Tipo "Tipo(s) Serviço(s) Isento(s):" dentro do modal Promoções
-    async tipoServicoIsentoValidar (selector) {
+    async typeServiceFreeValidate (selector) {
 
         //Validando Tipo "Tipo(s) Serviço(s) Isento(s):" dentro do modal Promoções
         cy.contains('Tipo(s) Serviço(s) Isento(s):')
