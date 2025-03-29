@@ -42,7 +42,7 @@ describe('Gerar pedido normal com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

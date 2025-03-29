@@ -41,7 +41,7 @@ describe('Gerar pedido de venda com desconto', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -64,7 +64,7 @@ describe('Gerar pedido de venda com desconto', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -88,7 +88,7 @@ describe('Gerar pedido de venda com desconto', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

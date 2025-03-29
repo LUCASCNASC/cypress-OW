@@ -41,7 +41,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             AvancarAlterar.installmentDeliveryAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -60,7 +60,7 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.segundaForma()
+            Recebimento.secondForm()
             EscolherParcelaReceb.one()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO

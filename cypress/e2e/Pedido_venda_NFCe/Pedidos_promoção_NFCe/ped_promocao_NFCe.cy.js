@@ -77,7 +77,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
             // GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             // GeralPagamento.loadingFormPayment()
-            // Recebimento.principal()()
+            // Recebimento.main()
             // EscolherParcelaReceb.two()
             // AvancarNormal.final()
             // FinalizarPed.clicarFinalizarPed() //RESUMO

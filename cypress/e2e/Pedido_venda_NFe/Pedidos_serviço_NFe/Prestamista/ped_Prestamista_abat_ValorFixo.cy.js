@@ -39,7 +39,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.futSemJurosPrestAbatValFixo()
+            Recebimento.futWithoutRebVF()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
@@ -70,7 +70,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.futSemJurosPrestAbatValFixo()
+            Recebimento.futWithoutRebVF()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado()
@@ -178,7 +178,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.presentePrestAbatValFixo()
+            Recebimento.presentMoneyRebVF()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista

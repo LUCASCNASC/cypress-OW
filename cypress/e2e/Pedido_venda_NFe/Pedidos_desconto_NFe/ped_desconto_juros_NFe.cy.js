@@ -38,7 +38,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             PedDesconto.arrastarFormaPagamento() //DESCONTO
             PedDesconto.clicarAlterarValor()
@@ -59,7 +59,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             PedDesconto.arrastarFormaPagamento() //DESCONTO
             PedDesconto.clicarAlterarValor()

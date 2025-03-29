@@ -38,7 +38,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal() //PROCESSO INCLUSÃO
+            Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -90,7 +90,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -148,7 +148,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal() //PROCESSO INCLUSÃO
+            Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
@@ -192,7 +192,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AvancarAlterar.installmentDeliveryAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal() //PROCESSO INCLUSÃO
+            Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
@@ -209,7 +209,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AlterarPedido.removerFormaPag()
 
             GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
-            Recebimento.segundaForma() //PROCESSO INCLUSÃO
+            Recebimento.secondForm() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
             FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO

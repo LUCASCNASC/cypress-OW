@@ -39,7 +39,7 @@ describe('Gerar pedido normal com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -65,7 +65,7 @@ describe('Gerar pedido normal com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -86,7 +86,7 @@ describe('Gerar pedido normal com entrega', () => {
             GeralPagamento.clickGeneratePayment()
             GeralPagamento.clickGenerateInstallments()
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

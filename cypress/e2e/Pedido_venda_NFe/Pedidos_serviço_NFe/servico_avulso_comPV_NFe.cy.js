@@ -64,7 +64,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             PedServicoAvulso.botaoAvancarPedido()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

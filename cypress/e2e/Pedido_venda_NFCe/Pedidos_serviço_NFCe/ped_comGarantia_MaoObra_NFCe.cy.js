@@ -42,7 +42,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()  
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -67,7 +67,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -85,7 +85,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -110,7 +110,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -128,7 +128,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -153,7 +153,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -171,7 +171,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -196,7 +196,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -214,7 +214,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -239,7 +239,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -257,7 +257,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -282,7 +282,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -300,7 +300,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -324,7 +324,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -342,7 +342,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -367,7 +367,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -385,7 +385,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -410,7 +410,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment() 
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

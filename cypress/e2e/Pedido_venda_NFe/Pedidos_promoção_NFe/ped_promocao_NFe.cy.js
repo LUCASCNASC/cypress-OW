@@ -214,7 +214,7 @@ describe('Gerar pedidos com promoção', () => {
 
             GeralPagamento.insertDateTomorrow1Due()
             cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({force:true})
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
 
             // //"GERAR PAGAMENTO"
@@ -227,7 +227,7 @@ describe('Gerar pedidos com promoção', () => {
             // GeralPagamento.insertDateTomorrow1Due()
             // GeralPagamento.clicarGerarParcAlterarVenc()
             // cy.wait(3000)
-            // Recebimento.principal()
+            // Recebimento.main()
             // EscolherParcelaReceb.two()
             // AvancarNormal.final()
             // FinalizarPed.clicarFinalizarPed() //RESUMO
@@ -242,7 +242,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
-            RecebimentoPromo.pagPrincipal()
+            RecebimentoPromo.pag
+            ()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()

@@ -51,7 +51,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.futPrestComJuros()
+            Recebimento.futMoneyWithFees()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
@@ -82,7 +82,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.presentePrest()
+            Recebimento.presentMoney()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
@@ -115,7 +115,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.futPrestSemJuros()
+            Recebimento.futMoneyWithoutFees()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
@@ -147,7 +147,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.futPrestComJuros()
+            Recebimento.futMoneyWithFees()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
@@ -179,7 +179,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.futPrestSemJuros()
+            Recebimento.futMoneyWithoutFees()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
@@ -211,7 +211,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.presentePrest()
+            Recebimento.presentMoney()
             EscolherParcelaReceb.for()
             ValidarServico.okSeguroPrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
@@ -427,7 +427,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDateTomorrow1Due()
             GeralPagamento.clicarGerarParcAlterarVenc()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -464,7 +464,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDate31Days1Due()
             GeralPagamento.clicarGerarParcAlterarVenc()
-            Recebimento.futPrestComJuros()
+            Recebimento.futMoneyWithFees()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
             AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
@@ -505,7 +505,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             TicketPrestamista.adicionado() //Validando adição do prestamista
             GeralPagamento.insertDateTomorrow1Due()
             GeralPagamento.clicarGerarParcAlterarVenc()
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -544,7 +544,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.futPrestSemJuros()
+            Recebimento.futMoneyWithoutFees()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
             AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
@@ -616,7 +616,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -657,7 +657,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.futPrestComJuros()
+            Recebimento.futMoneyWithFees()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
             AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
@@ -701,7 +701,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.principal()
+            Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -742,7 +742,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.futPrestSemJuros()
+            Recebimento.futMoneyWithoutFees()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
             AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()
@@ -787,7 +787,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.segundaForma()
+            Recebimento.secondForm()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -829,7 +829,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPagamento.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.presentePrest()
+            Recebimento.presentMoney()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
             AgruparReceb.groupReleases()
             ValidarServico.messPrestRemovido()

@@ -98,7 +98,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
-            Recebimento.comPrestamista()
+            Recebimento.withMoneylender()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
@@ -123,7 +123,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.clickAddProduc()
             Promocao.tipoServicoIsentoValidar()
             Promocao.selecionarPrimeiraPromoProduto()
-            Recebimento.comPrestamista()
+            Recebimento.withMoneylender()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"

@@ -37,7 +37,8 @@ describe('Gerar pedido com proposta de crédito', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.propCredito()
+            Recebimento.proposalCredit
+            ()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO
