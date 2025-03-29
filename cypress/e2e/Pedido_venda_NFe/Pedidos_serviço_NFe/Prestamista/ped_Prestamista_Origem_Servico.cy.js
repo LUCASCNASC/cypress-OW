@@ -94,7 +94,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
-            RecebimentoPromo.prazoFutComJurosPrestAbatVFOS()
+            RecebimentoPromo.termFutWithFeesPrestAbatVF()
             cy.clickAddProduct()
             Servico.validarModalServVinc()
             Servico.clicarOKServVinc() //SERVIÇOS
@@ -145,7 +145,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.selecionarPrimeiraPromoProduto()
-            RecebimentoPromo.partPresenteComJurosPrestAbatVFOS()
+            RecebimentoPromo.termPresentWithFeesPrestAbatVFOS()
             cy.clickAddProduct()
             Servico.validarModalServVinc()
             ValidarServico.garantiaNaoSep()

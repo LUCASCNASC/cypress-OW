@@ -7,7 +7,7 @@ export class ProcessoRecebPrest {
     //---------- Prestamista Abatimento %
 
     //escolhendo forma de pagamento 3874 (3874 - T.A. A Receber Futuro - para Prestamista) para aparecer seguro prestamista
-    async futuroComJurosAbatPercentual (selector) {
+    async futWithFeesAbatPercentage (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -35,7 +35,7 @@ export class ProcessoRecebPrest {
     }
 
     //escolhendo forma de pagamento 3875 (3875 - T.A.A Receber Presente CDCI - para Prestamista) para aparecer seguro prestamista
-    async presenteAbatPercentual (selector) {
+    async presentAbatPercentage (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -63,7 +63,7 @@ export class ProcessoRecebPrest {
     }
 
     //escolhendo forma de pagamento 3876 (3876 - T.A. A Receber Futuro - para Prestamista sem juros) para aparecer seguro prestamista
-    async futuroSemJurosAbatPercentual (selector) {
+    async futWithoutFeesAbatPercentage (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -94,7 +94,7 @@ export class ProcessoRecebPrest {
     //---------- Prestamista Abatimento Valor Fixo
 
     //escolhendo forma de pagamento 3880 (3880 - T.A. A Receb Fut com juros - Prest. Valor Fixo) para aparecer seguro prestamista
-    async futuroComJurosAbatValorFixo (selector) {
+    async futWithFeesAbatVF (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -122,7 +122,7 @@ export class ProcessoRecebPrest {
     }
 
     //escolhendo forma de pagamento 3878 (3878 - T.A.A Receb Presente CDCI - Prest. Valor Fixo) para aparecer seguro prestamista
-    async presenteAbatValorFixo (selector) {
+    async presentAbatVF (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -150,7 +150,7 @@ export class ProcessoRecebPrest {
     }
 
     //escolhendo forma de pagamento 3879 (3879 - T.A. A Receb Fut sem juros - Prest. Valor Fixo) para aparecer seguro prestamista
-    async futuroSemJurosAbatValorFixo (selector) {
+    async futWithoutFeesAbatVF (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -178,10 +178,10 @@ export class ProcessoRecebPrest {
     }
 
 
-    //---------- Prestamista Abatimento Valor Fixo
+    //---------- Prestamista Abatimento Origem Serviço
 
     //escolhendo forma de pagamento 3881 (3881 - T.A. A Receb Fut com juros - Prest. Origem Serviço) para aparecer seguro prestamista
-    async futuroComJurosAbatOrigemServico (selector) {
+    async futWithFeesAbatOS (selector) {
 
         //validando título Forma de pagamento
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
