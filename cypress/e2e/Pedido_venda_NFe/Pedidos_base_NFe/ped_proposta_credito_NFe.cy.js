@@ -21,7 +21,7 @@ describe('Gerar pedido com proposta de crédito', () => {
         ProcessoVenda.NFe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance()
         cy.selectProductSearch()
     })
 
@@ -37,8 +37,7 @@ describe('Gerar pedido com proposta de crédito', () => {
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
-            Recebimento.proposalCredit
-            ()
+            Recebimento.proposalCredit()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
             FinalizarPed.clicarFinalizarPed() //RESUMO

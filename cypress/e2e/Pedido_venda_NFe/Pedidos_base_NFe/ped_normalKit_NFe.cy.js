@@ -24,7 +24,8 @@ describe('Gerar pedido normal', () => {
         EscolherCliente.withRoute()
         Produto.kitFirst()
         () //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance
+        ()
         cy.selectProductSearch()
     })
   

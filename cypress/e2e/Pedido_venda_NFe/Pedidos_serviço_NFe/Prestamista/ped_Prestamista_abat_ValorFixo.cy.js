@@ -29,7 +29,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('1. Ped venda: produto 1860 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
     
             Produto.fisrt() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -52,7 +52,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
     
             Produto.fisrt() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -60,7 +60,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             ValidarServico.garantiaNaoSep()
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -86,7 +86,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('3. Ped venda: produto 1922 0 0 (promo a prazo 171), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
     
             Produto.termFisrtPrestAbatVF() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.selectFirstPromoProduct()
@@ -111,7 +111,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('4. Ped venda: produto 1923 0 0 + garantia Não separa (promo a prazo 172 - isentar juros serviços), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
 
             Produto.termSecondPrestAbatVF() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.selectFirstPromoProduct()
@@ -138,7 +138,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
 
             Produto.termThirdPrestAbatVF() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.selectFirstPromoProduct()
@@ -168,7 +168,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         it('6. Ped venda: produto 1860 0 0, inclusão 3878, prestamista 161 (55,90), 4 parcelas no recebimento Presente com juros.', () => {
     
             Produto.fisrt() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

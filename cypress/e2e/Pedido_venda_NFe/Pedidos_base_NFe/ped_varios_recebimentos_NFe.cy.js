@@ -22,7 +22,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         ProcessoVenda.NFe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance()
         cy.selectProductSearch()
     })
 

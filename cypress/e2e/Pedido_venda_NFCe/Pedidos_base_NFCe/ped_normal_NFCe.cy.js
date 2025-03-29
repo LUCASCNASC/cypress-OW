@@ -21,7 +21,7 @@ describe('Gerar pedido normal com entrega', () => {
         ProcessoVenda.NFCe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance()
         cy.selectProductSearch()
     })
 
@@ -53,7 +53,7 @@ describe('Gerar pedido normal com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             Produto.second() //PRODUTO //SEGUNDO PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()

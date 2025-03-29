@@ -32,14 +32,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('1. Vender um produto normal (com saldo e com entrega, 15 dias) e um kit remoto (2 composições, sem saldo e sem a receber, 20 dias).', () => {
 
             ProdutoExclusiva.firstNormal() //PRODUTO EXCLUSIVA
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             ProdutoExclusiva.kitWithoutBalanceScheduling() //PRODUTO KIT
-            ValidarSaldo.semSaldo()
+            ValidarSaldo.withoutBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
@@ -61,14 +61,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('2. Vender um produto normal (com saldo e com entrega) e um kit com composição 6 volumes (data atual + parametro 552/ 5 dias).', () => {
 
             ProdutoExclusiva.firstNormal() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             ProdutoExclusiva.kitVolumes() //PRODUTO KIT
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -92,7 +92,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('3. Vender um produto (sem saldo e com saldo a receber para 10 dias, e com entrega), e ter um agendamento para a data de previsão.', () => {
 
             ProdutoExclusiva.balanceReceive() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -133,7 +133,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('5. Pedido de venda normal: produto 1896 0 0 (sem entrega)', () => {
     
             ProdutoExclusiva.firstNormal() //PRODUTO EXCLUSIVA
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

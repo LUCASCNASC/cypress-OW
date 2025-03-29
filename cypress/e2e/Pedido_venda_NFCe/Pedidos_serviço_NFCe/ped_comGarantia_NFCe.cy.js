@@ -22,7 +22,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         ProcessoVenda.NFCe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance()
         cy.selectProductSearch()
         cy.clickVoltageProduct()
         cy.clickAddProduct()
@@ -53,7 +53,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -94,7 +94,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -135,7 +135,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaSepTituloProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

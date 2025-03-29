@@ -29,7 +29,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('1. Ped venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
             Produto.fisrt() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
@@ -52,7 +52,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('2. Ped venda remota: produtos 1860 0 0 e 1870 0 0', () => {
 
             Produto.fisrt() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
@@ -60,7 +60,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
@@ -83,7 +83,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('3. Ped venda remota: kit 1877 0 0', () => {
 
             Produto.kitRemote() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
@@ -110,7 +110,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('4. Ped venda remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto (1883 0 0) sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
 
             Produto.remoteWithCD() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
@@ -133,13 +133,14 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('5. Ped venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto (1882 0 0) sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
             Produto.remoteWithoutCD() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
-            cy.get('[ng-if="semSaldoCD"][style=""] > p')
+            cy.get('[ng-if="
+                CD"][style=""] > p')
                 .should('exist')
                 .and('be.visible')
                 .and('have.text','Este produto não possui saldo na filial selecionada.')

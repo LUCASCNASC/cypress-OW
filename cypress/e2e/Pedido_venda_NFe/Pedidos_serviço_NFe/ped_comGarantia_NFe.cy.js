@@ -23,7 +23,7 @@ describe('Gerar pedidos com Garantia', () => {
         ProcessoVenda.NFe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance()
         cy.selectProductSearch()
         cy.clickVoltageProduct()
         cy.clickAddProduct()
@@ -55,7 +55,7 @@ describe('Gerar pedidos com Garantia', () => {
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -95,7 +95,7 @@ describe('Gerar pedidos com Garantia', () => {
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -135,7 +135,7 @@ describe('Gerar pedidos com Garantia', () => {
             ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -177,7 +177,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -216,7 +216,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -255,7 +255,7 @@ describe('Gerar pedidos com Garantia', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

@@ -30,7 +30,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('1. Ped venda com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
     
             Produto.firstInstallmentDeadline() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.typeServiceFreeValidate()
@@ -53,7 +53,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('2. Ped venda com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
     
             Produto.secondInstallmentDeadline() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.typeServiceFreeValidate()
@@ -94,7 +94,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('3. Ped venda com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
     
             Produto.thirdInstallmentDeadline() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.selectFirstPromoProduct()
@@ -118,7 +118,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('4. Ped venda com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
     
             Produto.fourthInstallmentDeadline() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promocao.typeServiceFreeValidate()

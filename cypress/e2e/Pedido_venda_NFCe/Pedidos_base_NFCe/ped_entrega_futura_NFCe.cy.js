@@ -22,7 +22,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         ProcessoVenda.deliveryFutureNFCe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance()
         cy.selectProductSearch()
     })
     
@@ -54,7 +54,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             Produto.second() //PRODUTO //SEGUNDO PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

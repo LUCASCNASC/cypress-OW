@@ -23,7 +23,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         ProcessoVenda.NFe()
         EscolherCliente.withRoute()
         Produto.fisrt() //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance()
         cy.selectProductSearch()
         cy.clickVoltageProduct()
         cy.clickAddProduct()
@@ -55,7 +55,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -95,7 +95,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -135,7 +135,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -177,7 +177,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMODestNãoSepara()
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -216,7 +216,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -255,7 +255,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Servico.clicarOKServVinc() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepProcDif()
             Produto.second() //PRODUTO
-            ValidarSaldo.comSaldo()
+            ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

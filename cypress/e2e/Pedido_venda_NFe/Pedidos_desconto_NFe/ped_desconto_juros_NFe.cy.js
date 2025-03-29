@@ -22,7 +22,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         ProcessoVenda.NFe()
         EscolherCliente.withRoute()
         Produto.roundUpDown() //PRODUTO
-        ValidarSaldo.comSaldo()
+        ValidarSaldo.withBalance()
         cy.clickVoltageProduct()
     })
 
