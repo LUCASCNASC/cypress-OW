@@ -42,8 +42,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Recebimento.main()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         //verificar
@@ -72,8 +72,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Recebimento.main()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
         
         //verificar
@@ -95,8 +95,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Recebimento.main()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
     
@@ -120,8 +120,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Recebimento.main()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })    
         
         //verificar

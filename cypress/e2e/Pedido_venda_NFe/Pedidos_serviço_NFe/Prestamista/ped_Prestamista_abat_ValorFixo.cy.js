@@ -45,8 +45,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3880, prestamista 161 (55,90), 4 parcelas no recebimento Futuro com juros.', () => {
@@ -76,8 +76,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             TicketPrestamista.added()
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 
@@ -104,8 +104,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('4. Ped venda: produto 1923 0 0 + garantia Não separa (promo a prazo 172 - isentar juros serviços), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
@@ -131,8 +131,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3880 (outro recebimento 3860), prestamista 161, 4 parcelas no recebimento Futuro com juros', () => {
@@ -158,8 +158,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 
@@ -184,8 +184,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             TicketPrestamista.added() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

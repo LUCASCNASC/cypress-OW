@@ -44,8 +44,8 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
             AlterarPedido.okPedGerado()
 
             AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
@@ -63,8 +63,8 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             Recebimento.secondForm()
             EscolherParcelaReceb.one()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

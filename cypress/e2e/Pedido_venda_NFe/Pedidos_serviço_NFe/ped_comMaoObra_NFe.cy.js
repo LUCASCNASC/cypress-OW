@@ -44,8 +44,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('2. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
@@ -68,8 +68,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     
         it('3. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
@@ -84,8 +84,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('4. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -108,8 +108,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     
         it('5. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
@@ -124,8 +124,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('6. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
@@ -148,8 +148,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 
@@ -167,8 +167,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
         
         it('8. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
@@ -190,8 +190,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('9. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
@@ -206,8 +206,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('10. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
@@ -229,8 +229,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('11. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
@@ -245,8 +245,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validarPedvalidateOrderGeneratedGerado()
         })   
 
         it('12. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
@@ -268,8 +268,8 @@ describe('Gerar pedidos com Mão de obra', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

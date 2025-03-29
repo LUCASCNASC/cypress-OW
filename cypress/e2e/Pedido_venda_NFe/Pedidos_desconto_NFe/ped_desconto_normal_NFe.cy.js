@@ -44,8 +44,8 @@ describe('Gerar pedido de venda com desconto', () => {
             Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('2. Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
@@ -67,8 +67,8 @@ describe('Gerar pedido de venda com desconto', () => {
             Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('3. Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
@@ -91,8 +91,8 @@ describe('Gerar pedido de venda com desconto', () => {
             Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

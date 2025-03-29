@@ -42,8 +42,8 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it.only('2. Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
@@ -71,8 +71,8 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

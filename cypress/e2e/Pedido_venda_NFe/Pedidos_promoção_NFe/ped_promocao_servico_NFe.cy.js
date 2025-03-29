@@ -46,8 +46,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     
         it('2. Ped venda com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
@@ -87,8 +87,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 .click({force:true})
 
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     
         it('3. Ped venda com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
@@ -110,10 +110,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Promocao.addPrestamista()
             TicketPrestamista.added()
             AvancarNormal.final()
-            TicketPrestamista.pageFinal
-            ()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            TicketPrestamista.pageFinal()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('4. Ped venda com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
@@ -138,8 +137,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             TicketPrestamista.added()
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
  })

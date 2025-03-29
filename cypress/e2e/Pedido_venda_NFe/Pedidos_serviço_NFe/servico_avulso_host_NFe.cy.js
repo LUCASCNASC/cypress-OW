@@ -36,8 +36,8 @@ describe('Venda de serviço avulso Host - 104', () => {
             Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

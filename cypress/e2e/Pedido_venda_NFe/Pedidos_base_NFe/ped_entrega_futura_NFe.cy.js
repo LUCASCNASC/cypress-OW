@@ -40,8 +40,8 @@ describe('Gerar pedido de entrega futura', () => {
             Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
         
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -65,8 +65,8 @@ describe('Gerar pedido de entrega futura', () => {
             Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarNormal.final() 
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
     
@@ -85,8 +85,8 @@ describe('Gerar pedido de entrega futura', () => {
             Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })    
         
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
@@ -109,8 +109,8 @@ describe('Gerar pedido de entrega futura', () => {
             Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarNormal.final() 
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })  
     })
 })

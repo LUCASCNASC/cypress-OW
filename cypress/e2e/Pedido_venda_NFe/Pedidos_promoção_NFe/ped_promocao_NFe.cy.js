@@ -43,8 +43,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             AvancarNormal.final() 
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     
         //verificar
@@ -70,8 +70,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click()
     
             AvancarNormal.final() 
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     
         //verificar
@@ -91,8 +91,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 
@@ -130,8 +130,8 @@ describe('Gerar pedidos com promoção', () => {
             //cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             // AvancarNormal.final()
-            // FinalizarPed.clicarFinalizarPed() //RESUMO
-            // FinalizarPed.validarPedGerado()
+            // FinalizarPed.clickFinishOrder() //RESUMO
+            // FinalizarPed.validateOrderGenerated()
         })
 
         //verificar
@@ -164,8 +164,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click({force:true}) //clicar GERAR PAGAMENTO
     
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 
@@ -191,8 +191,8 @@ describe('Gerar pedidos com promoção', () => {
             Recebimento.principal()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     
         //verificar
@@ -230,8 +230,8 @@ describe('Gerar pedidos com promoção', () => {
             // Recebimento.main()
             // EscolherParcelaReceb.two()
             // AvancarNormal.final()
-            // FinalizarPed.clicarFinalizarPed() //RESUMO
-            // FinalizarPed.validarPedGerado()
+            // FinalizarPed.clickFinishOrder() //RESUMO
+            // FinalizarPed.validateOrderGenerated()
         })
 
         //verificar
@@ -257,8 +257,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })  
     }) 
 
@@ -292,8 +292,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force: true})
 
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

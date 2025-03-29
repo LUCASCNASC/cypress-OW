@@ -48,8 +48,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
 
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     
         //verificar 
@@ -80,8 +80,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // Recebimento.main()
             // EscolherParcelaReceb.two()
             // AvancarNormal.final()
-            // FinalizarPed.clicarFinalizarPed() //RESUMO
-            // FinalizarPed.validarPedGerado()
+            // FinalizarPed.clickFinishOrder() //RESUMO
+            // FinalizarPed.validateOrderGenerated()
         })
 
         //verificar 
@@ -107,8 +107,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })  
     })
 })

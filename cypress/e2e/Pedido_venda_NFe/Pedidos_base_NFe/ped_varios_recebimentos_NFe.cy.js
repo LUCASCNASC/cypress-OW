@@ -46,8 +46,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Recebimento.main() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('2. Ped venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
@@ -65,8 +65,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Recebimento.main() //SEGUNDA FORMA DE PAGAMENTO
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('3. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
@@ -88,8 +88,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             EscolherParcelaReceb.one()
             AgruparReceb.notGroupReleases()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('4. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
@@ -111,8 +111,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             EscolherParcelaReceb.one()
             AgruparReceb.groupReleases()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('5. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
@@ -136,8 +136,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             AgruparReceb.selectReleasesGroup()
             AgruparReceb.clickGroup()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

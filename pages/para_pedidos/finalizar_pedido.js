@@ -43,7 +43,7 @@ export class FinalizarPed {
     }
 
     //Função para validar card de Pedido Concluído - alterado com sucesso
-    async validarPedAlteradoSucesso (selector) {
+    async validateOrderChangedSucess (selector) {
 
         //Card pedido gravado com sucesso - Título Pedido Concluído
         cy.get('.md-toolbar-tools h2.flex')
@@ -89,7 +89,7 @@ export class FinalizarPed {
     }
 
     //Botão para finalizar o pedido
-    async clicarFinalizarPed (selector) {
+    async clickFinishOrder (selector) {
 
         cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar')
 
@@ -140,7 +140,7 @@ export class FinalizarPed {
     }
 
     //Função para validar card de Pedido Concluído
-    async validarPedGerado (selector) {
+    async validateOrderGenerated (selector) {
 
         //Card pedido gravado com sucesso - Título Pedido Concluído
         cy.get('.md-toolbar-tools h2.flex')

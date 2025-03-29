@@ -45,8 +45,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             PedDesconto.modalAlterarValor()
             PedDesconto.alterarValorParaBaixo()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
 
         it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
@@ -66,8 +66,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             PedDesconto.modalAlterarValor()
             PedDesconto.alterarValorParaCima()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })

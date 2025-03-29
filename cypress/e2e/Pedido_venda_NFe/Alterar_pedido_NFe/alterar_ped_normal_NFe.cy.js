@@ -41,8 +41,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
             AlterarPedido.okPedGerado()
 
             AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
@@ -73,8 +73,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AlterarPedido.escolherFormaPagPrincipalAlt()
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //PROCESSO INCLUSÃO
-            FinalizarPed.validarPedAlteradoSucesso()
+            FinalizarPed.clickFinishOrder() //PROCESSO INCLUSÃO
+            FinalizarPed.validateOrderChangedSucess()
         })
 
         it.skip('2. Gerar pedido, alterar removendo o produto e adicionando outros dois.', () => {
@@ -93,8 +93,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
             AlterarPedido.okPedGerado()
 
             AlterarPedido.iconeMenuOpcoesPed()  //ALTERAÇÃO PEDIDO WEB
@@ -130,8 +130,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AlterarPedido.escolherFormaPagPrincipalAlt() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
-            FinalizarPed.validarPedAlteradoSucesso()
+            FinalizarPed.clickFinishOrder() //FINAL PEDIDO
+            FinalizarPed.validateOrderChangedSucess()
         })
 
         //erro de inconsistencia quando colocamos o serviço de entrega
@@ -151,8 +151,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //FINAL PEDIDO
+            FinalizarPed.validateOrderGenerated()
             AlterarPedido.okPedGerado()
 
             AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
@@ -171,8 +171,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             // escolherFormaPagamentoPrincipalAlterar()
             // EscolherParcelaReceb.two()
             // AvancarAlterar.finalAlter()
-            // FinalizarPed.clicarFinalizarPed() //RESUMO
-            // FinalizarPed.validarPedAlteradoSucesso()
+            // FinalizarPed.clickFinishOrder() //RESUMO
+            // FinalizarPed.validateOrderChangedSucess()
             
         })
     })
@@ -195,8 +195,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Recebimento.main() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //FINAL PEDIDO
+            FinalizarPed.validateOrderGenerated()
             AlterarPedido.okPedGerado()
 
             AlterarPedido.iconeMenuOpcoesPed() //ALTERAÇÃO PEDIDO WEB
@@ -212,8 +212,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             Recebimento.secondForm() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.two()
             AvancarAlterar.finalAlter()
-            FinalizarPed.clicarFinalizarPed() //FINAL PEDIDO
-            FinalizarPed.validarPedAlteradoSucesso()
+            FinalizarPed.clickFinishOrder() //FINAL PEDIDO
+            FinalizarPed.validateOrderChangedSucess()
         })
     })
 })

@@ -22,8 +22,7 @@ describe('Gerar pedido normal com entrega', () => {
         ProcessoVenda.NFCe()
         EscolherCliente.withRoute()
         Produto.kitFirst()
-        ValidarSaldo.withBalance
-        ()
+        ValidarSaldo.withBalance()
         cy.selectProductSearch()
     })
     
@@ -45,8 +44,8 @@ describe('Gerar pedido normal com entrega', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clicarFinalizarPed() //RESUMO
-            FinalizarPed.validarPedGerado()
+            FinalizarPed.clickFinishOrder() //RESUMO
+            FinalizarPed.validateOrderGenerated()
         })
     })
 })
