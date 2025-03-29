@@ -135,7 +135,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.garantiaSepMesmoProc()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -167,7 +167,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.garantiaSepMesmoProc()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -199,7 +199,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.garantiaSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.garantiaSepMesmoProc()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -315,7 +315,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
@@ -347,7 +347,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
@@ -380,7 +380,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             TirarEntrega.freightFirst()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
@@ -596,7 +596,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -636,7 +636,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -681,7 +681,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -721,7 +721,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS)
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -766,7 +766,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.garantiaNaoSep()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -807,7 +807,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS)
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             Produto.second() //PRODUTO
             ValidarSaldo.comSwithBalancealdo()
             cy.selectProductSearch()

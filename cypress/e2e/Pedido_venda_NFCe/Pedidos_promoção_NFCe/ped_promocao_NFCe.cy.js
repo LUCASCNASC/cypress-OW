@@ -35,7 +35,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked() 
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()

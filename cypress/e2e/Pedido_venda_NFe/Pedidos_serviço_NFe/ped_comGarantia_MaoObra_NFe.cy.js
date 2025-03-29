@@ -37,7 +37,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -54,7 +54,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -79,7 +79,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -96,7 +96,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -120,7 +120,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -137,7 +137,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -161,7 +161,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -178,7 +178,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -203,7 +203,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -220,7 +220,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -245,7 +245,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -262,7 +262,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -287,7 +287,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -304,7 +304,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMODestNãoSepara()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -329,7 +329,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -346,7 +346,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -371,7 +371,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaSepTituloProcDif()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -388,7 +388,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaSepTituloProcDif()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -416,7 +416,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMODestNãoSepara()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()  
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -433,7 +433,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMODestNãoSepara()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -457,7 +457,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepMesmoProc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -474,7 +474,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepMesmoProc()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -498,7 +498,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepProcDif()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -515,7 +515,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc() ; ValidarServico.addMONaoDestSepProcDif()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -539,7 +539,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMODestNãoSepara()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -556,7 +556,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMODestNãoSepara()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -580,7 +580,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepMesmoProc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -597,7 +597,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepMesmoProc()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -621,7 +621,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepProcDif()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -638,7 +638,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep() ; ValidarServico.addMONaoDestSepProcDif()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -662,7 +662,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMODestNãoSepara()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -679,7 +679,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMODestNãoSepara()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMODestNãoSepara()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -702,7 +702,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepMesmoProc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -719,7 +719,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepMesmoProc()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -743,7 +743,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaSepTituloProcDif()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepProcDif()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -760,7 +760,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             Servico.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.garantiaSepTituloProcDif()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif() ; ValidarServico.addMONaoDestSepProcDif()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()

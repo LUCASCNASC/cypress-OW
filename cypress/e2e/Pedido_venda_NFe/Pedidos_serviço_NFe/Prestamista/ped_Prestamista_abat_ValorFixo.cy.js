@@ -120,7 +120,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.garantiaNaoSep()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
@@ -147,7 +147,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.garantiaNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.garantiaNaoSep()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')

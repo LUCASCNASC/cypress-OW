@@ -7,7 +7,7 @@ export class ValidarServico {
     //------------------- VALIDA ADIÇÃO DE SERVIÇOS PEDIDO COM UM PRODUTO ------
 
     //SERVIÇOS VINCULADOS - título - pedido com um produto
-    async servVinc (selector) {
+    async servLinked (selector) {
 
         //completo
         cy.get('.md-subheader-inner')

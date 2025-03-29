@@ -359,7 +359,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
+            Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
@@ -402,7 +402,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
+            Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA

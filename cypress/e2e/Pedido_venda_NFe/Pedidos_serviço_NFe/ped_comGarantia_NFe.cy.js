@@ -36,7 +36,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS 
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -52,7 +52,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -76,7 +76,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -92,7 +92,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -116,7 +116,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraNaoDestSepaProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -132,7 +132,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraNaoDestSepaProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
@@ -159,7 +159,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -175,7 +175,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -198,7 +198,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -214,7 +214,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
+            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -237,7 +237,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraNaoDestSepaProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -253,7 +253,7 @@ describe('Gerar pedidos com Garantia', () => {
     
             Servico.maoObraNaoDestSepaProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servVinc() ; ValidarServico.addGarantSepTituloProcDif()
+            ValidarServico.servLinked() ; ValidarServico.addGarantSepTituloProcDif()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()

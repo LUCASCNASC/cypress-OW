@@ -40,7 +40,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.validateModalServLinked() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clickOKServiceLinked()
-            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
@@ -63,7 +63,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.validateModalServLinked() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clickOKServiceLinked()
-            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
@@ -102,7 +102,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
-            ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
@@ -128,7 +128,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Servico.validateModalServLinked() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clickOKServiceLinked()
-            ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
+            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
