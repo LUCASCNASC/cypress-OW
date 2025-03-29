@@ -239,7 +239,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -264,7 +264,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -290,7 +290,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -385,7 +385,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -421,7 +421,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -458,7 +458,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -499,7 +499,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -536,7 +536,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -571,7 +571,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -608,7 +608,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -649,7 +649,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.added() //Validando adição do prestamista
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -693,7 +693,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -734,7 +734,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.added() //Validando adição do prestamista
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -779,7 +779,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -821,7 +821,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.added() //Validando adição do prestamista
-            GeralPedido.clicarEditarParcelas()
+            GeralPedido.clickEditInstallments()
             EscolherParcelaReceb.for()
             ValidarServico.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista

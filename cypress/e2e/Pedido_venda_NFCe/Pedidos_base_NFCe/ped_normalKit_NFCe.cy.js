@@ -31,7 +31,7 @@ describe('Gerar pedido normal com entrega', () => {
         it('1. Ped venda: kit 1862 0 0', () => {
                       
             cy.clickVoltageProduct()
-            GeralPedido.composicaoDesteKit()
+            GeralPedido.compositionKit()
             cy.clickAddProduc()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()

@@ -5,7 +5,7 @@ export class GeralPedido {
     }
 
     //Trocar filial de faturamento - faturamento remoto da filial 50 para 6
-    async trocarFilialFaturamento (selector) {
+    async changeBranchInvoicing (selector) {
 
         const filial_local = '50 - PR - EMISSÃO NFe/NFCe'
         const filial_remota = '6 - GAZIN - IND. E COM. DE MÓVEIS E ELETROD. LTDA.'
@@ -47,7 +47,7 @@ export class GeralPedido {
     }
 
     //validando composição deste KIT
-    async composicaoDesteKit (selector) {
+    async compositionKit (selector) {
 
         cy.get('.is-expanded > v-pane-header.ng-scope > div')
             .scrollIntoView()
@@ -57,7 +57,7 @@ export class GeralPedido {
     }
 
     //clicar no botão editar parcelas da forma de pagamento - quando já temos uma forma de pagamento escolhida
-    async clicarEditarParcelas (selector) {
+    async clickEditInstallments (selector) {
 
         //ícone lápis para edição de parcelas da forma de pagamento
         cy.get('.btn-remove-item-list > :nth-child(3) > .md-raised')
@@ -65,7 +65,7 @@ export class GeralPedido {
     }
 
     // valores Subtotal e Total Financeiro comparar eles
-    async compararSubtotalTotalFinanceiro (span1, span2) {
+    async compareSubtotalTotalFinancial (span1, span2) {
         
         cy.get(span1)
         .invoke('text')

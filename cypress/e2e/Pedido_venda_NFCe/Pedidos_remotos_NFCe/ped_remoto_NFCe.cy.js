@@ -32,7 +32,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeralPedido.trocarFilialFaturamento()
+            GeralPedido.changeBranchInvoicing()
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
@@ -55,7 +55,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeralPedido.trocarFilialFaturamento()
+            GeralPedido.changeBranchInvoicing()
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
@@ -63,7 +63,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeralPedido.trocarFilialFaturamento()
+            GeralPedido.changeBranchInvoicing()
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
@@ -86,7 +86,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeralPedido.trocarFilialFaturamento()
+            GeralPedido.changeBranchInvoicing()
             GeralPedido.composicaoDesteKit()
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
@@ -113,7 +113,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeralPedido.trocarFilialFaturamento()
+            GeralPedido.changeBranchInvoicing()
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
@@ -136,7 +136,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeralPedido.trocarFilialFaturamento()
+            GeralPedido.changeBranchInvoicing()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
             cy.get('[ng-if=""][style=""] > p')
