@@ -34,7 +34,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             Promocao.selectFirstPromoProduct()
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
+            Servico.validateModalServLinked() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
@@ -62,8 +62,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -94,8 +94,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
             Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()

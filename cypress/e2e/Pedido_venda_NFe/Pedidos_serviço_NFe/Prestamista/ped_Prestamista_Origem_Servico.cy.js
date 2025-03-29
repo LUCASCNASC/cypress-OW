@@ -35,15 +35,15 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc()
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.validateModalServLinked()
+            Servico.clickOKServiceLinked() //SERVIÇOS
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.futComJurosPrestAbatOrigemPrd()
             EscolherParcelaReceb.for()
-            ValidarServico.okSeguroPrest()
+            ValidarServico.okInsurancePrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -58,23 +58,23 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc()
+            Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc()
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.futComJurosPrestAbatOrigemPrd()
             EscolherParcelaReceb.for()
-            ValidarServico.okSeguroPrest()
+            ValidarServico.okInsurancePrest()
             TicketPrestamista.adicionado()
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -94,15 +94,15 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             Promocao.selectFirstPromoProduct()
             RecebimentoPromo.termFutWithFeesPrestAbatVF()
             cy.clickAddProduct()
-            Servico.validarModalServVinc()
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.validateModalServLinked()
+            Servico.clickOKServiceLinked() //SERVIÇOS
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
-            ValidarServico.okSeguroPrest()
+            ValidarServico.okInsurancePrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -118,9 +118,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.clickAddProduc()
             Promocao.selectFirstPromoProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc()
+            Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
@@ -128,7 +128,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
-            ValidarServico.okSeguroPrest()
+            ValidarServico.okInsurancePrest()
             TicketPrestamista.adicionado() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()
@@ -145,9 +145,9 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             Promocao.selectFirstPromoProduct()
             RecebimentoPromo.termPresentWithFeesPrestAbatVFOS()
             cy.clickAddProduct()
-            Servico.validarModalServVinc()
+            Servico.validateModalServLinked()
             ValidarServico.garantiaNaoSep()
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             ValidarServico.servVinc() ; ValidarServico.addGarantNaoSep()
             AvancarNormal.toTransporter()
             AvancarNormal.paraPatoInstallmentsrcelas()
@@ -155,7 +155,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.wait('@api_icons', { timeout: 40000 })
             GeralPedido.clicarEditarParcelas()
             EscolherParcelaReceb.for()
-            ValidarServico.okSeguroPrest()
+            ValidarServico.okInsurancePrest()
             TicketPrestamista.paginaFinal() //Validando adição do prestamista
             AvancarNormal.final()
             TicketPrestamista.paginaFinal()

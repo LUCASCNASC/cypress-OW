@@ -31,8 +31,8 @@ describe('Gerar pedido de entrega futura', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -48,16 +48,16 @@ describe('Gerar pedido de entrega futura', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            clicarOKServVinServico.clicarOKServVincculado()
+            Servico.validateModalServLinked() //SERVICOS
+            clicarOKServVinServico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.clickGenerateInstallments()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
@@ -76,8 +76,8 @@ describe('Gerar pedido de entrega futura', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -93,15 +93,15 @@ describe('Gerar pedido de entrega futura', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter() //TRANSPORTADORA
             AvancarNormal.toInstallments() 
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS

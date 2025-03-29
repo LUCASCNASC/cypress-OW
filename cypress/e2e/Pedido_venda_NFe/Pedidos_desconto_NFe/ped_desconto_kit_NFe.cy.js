@@ -34,8 +34,8 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             cy.clickVoltageProduct()
             GeralPedido.composicaoDesteKit()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             PedDesconto.clicarBotaoDesconto() //DESCONTO
             PedDesconto.validarModalSubSobre()
             PedDesconto.aplicarDescontoValorFixo()

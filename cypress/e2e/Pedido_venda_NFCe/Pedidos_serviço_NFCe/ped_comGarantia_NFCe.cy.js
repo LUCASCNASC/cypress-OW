@@ -26,7 +26,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         cy.selectProductSearch()
         cy.clickVoltageProduct()
         cy.clickAddProduct()
-        Servico.validarModalServVinc() //SERVICOS
+        Servico.validateModalServLinked() //SERVICOS
     })   
 
     context('Com entrega/processo 9890 - caminho feliz', () => {
@@ -34,7 +34,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -51,14 +51,14 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -75,7 +75,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('3. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -92,14 +92,14 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('4. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -116,7 +116,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             Servico.garantiaSepTituloProcDif() //Marcar Garantia separa titulo em um processo diferente
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTranspochooseTransporterrtadora()
@@ -133,14 +133,14 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             Servico.garantiaSepTituloProcDif() //Marcar Garantia separa titulo em um processo diferente
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()

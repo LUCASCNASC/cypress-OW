@@ -36,8 +36,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             ProdutoExclusiva.kitWithoutBalanceScheduling() //PRODUTO KIT
             ValidarSaldo.withoutBalance()
             cy.clickVoltageProduct()
@@ -65,8 +65,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             ProdutoExclusiva.kitVolumes() //PRODUTO KIT
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
@@ -96,8 +96,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
@@ -137,8 +137,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS

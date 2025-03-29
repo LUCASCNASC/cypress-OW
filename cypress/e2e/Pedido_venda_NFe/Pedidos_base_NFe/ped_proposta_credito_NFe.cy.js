@@ -31,8 +31,8 @@ describe('Gerar pedido com proposta de crédito', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS

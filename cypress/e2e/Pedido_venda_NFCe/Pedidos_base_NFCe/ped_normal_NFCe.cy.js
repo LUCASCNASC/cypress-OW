@@ -31,8 +31,8 @@ describe('Gerar pedido normal com entrega', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -50,15 +50,15 @@ describe('Gerar pedido normal com entrega', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             Produto.second() //PRODUTO //SEGUNDO PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -76,8 +76,8 @@ describe('Gerar pedido normal com entrega', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()

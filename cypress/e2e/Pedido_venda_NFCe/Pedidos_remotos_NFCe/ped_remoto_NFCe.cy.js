@@ -34,8 +34,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
@@ -57,16 +57,16 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
@@ -89,8 +89,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralPedido.trocarFilialFaturamento()
             GeralPedido.composicaoDesteKit()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
@@ -115,8 +115,8 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
@@ -139,8 +139,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralPedido.trocarFilialFaturamento()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
-            cy.get('[ng-if="
-                CD"][style=""] > p')
+            cy.get('[ng-if=""][style=""] > p')
                 .should('exist')
                 .and('be.visible')
                 .and('have.text','Este produto não possui saldo na filial selecionada.')

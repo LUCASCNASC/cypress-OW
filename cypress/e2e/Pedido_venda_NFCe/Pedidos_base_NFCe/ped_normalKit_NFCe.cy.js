@@ -34,11 +34,10 @@ describe('Gerar pedido normal com entrega', () => {
             cy.clickVoltageProduct()
             GeralPedido.composicaoDesteKit()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter()
-            () //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS

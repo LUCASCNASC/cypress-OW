@@ -31,8 +31,8 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter()
             GeralEntrega.chooseTransporter()
@@ -50,15 +50,15 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             Produto.second() //SEGUNDO PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             cy.selectProductSearch()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter() 
             GeralEntrega.modalInconsOnlyTransporter()
             GeralEntrega.chooseTransporter()

@@ -36,8 +36,8 @@ describe('Gerar pedidos com promoção', () => {
             Promocao.selectFirstPromoProduct() //PROMOCAO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
@@ -57,8 +57,8 @@ describe('Gerar pedidos com promoção', () => {
             Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
     
@@ -84,8 +84,8 @@ describe('Gerar pedidos com promoção', () => {
             Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
@@ -108,16 +108,16 @@ describe('Gerar pedidos com promoção', () => {
             Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -144,16 +144,16 @@ describe('Gerar pedidos com promoção', () => {
             Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.toInstallments()
 
@@ -180,8 +180,8 @@ describe('Gerar pedidos com promoção', () => {
             Promocao.selectFirstPromoProduct()
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments() //ENTREGA
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
@@ -205,8 +205,8 @@ describe('Gerar pedidos com promoção', () => {
             Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
@@ -245,8 +245,8 @@ describe('Gerar pedidos com promoção', () => {
             RecebimentoPromo.pag
             ()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -274,14 +274,14 @@ describe('Gerar pedidos com promoção', () => {
             Promocao.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS

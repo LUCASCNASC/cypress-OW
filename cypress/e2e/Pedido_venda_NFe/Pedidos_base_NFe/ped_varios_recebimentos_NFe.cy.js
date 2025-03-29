@@ -32,8 +32,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
@@ -54,8 +54,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.chooseEntryFormPayment()
@@ -73,8 +73,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
@@ -96,8 +96,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
@@ -119,10 +119,9 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
-            TirarEntrega.freightFirst
-            () //ENTREGA
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
+            TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO

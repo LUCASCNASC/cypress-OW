@@ -4,7 +4,7 @@ export class Servico {
         this.page = page
     }
 
-    //------------------- ADICIONAR SERVIÇOS ------
+    //------------------- ADICIONAR SERVIÇOS ------ NÃO TRADUZIR
 
     //Marcar garantia "T.A. Garantia Separa Mesmo Processo" - 139
     async garantiaSepMesmoProc (selector) {
@@ -68,7 +68,7 @@ export class Servico {
     //------------------- RELACIONADOS A SERVIÇOS ------
 
     //Validações card de serviços
-    async validarModalServVinc (selector) {
+    async validateModalServLinked (selector) {
 
         //Título do modal - Serviços Vinculados
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -108,7 +108,7 @@ export class Servico {
     }
 
     //botão OK modal Serviços Vinculados - com intercept
-    async clicarOKServVinc (selector) {
+    async clickOKServiceLinked (selector) {
 
         cy.intercept('POST', '/services/v3/pedido_calcular_frete').as('api_pedido_calcular_frete')
 
@@ -126,7 +126,7 @@ export class Servico {
     }
 
     //botão OK modal Serviços Vinculados de pedidos remotos
-    async clicarOKServVincRemoto (selector) {
+    async clickOKServiceLinkedRemote (selector) {
 
         //validando botão
         cy.get('button[ng-click="salvar()"]')
@@ -140,7 +140,7 @@ export class Servico {
     }
 
     //validar modal e clicar em OK
-    async okSeguroPrest (selector) {
+    async okInsurancePrest (selector) {
 
         //título modal "Seguro prestamista"
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -203,7 +203,7 @@ export class Servico {
     }
 
     //menssagem que o prestamista será removido, pois as duas formas de pagamento foram agrupadas
-    async messPrestRemovido (selector) {
+    async messPrestRemoved (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast')
@@ -221,7 +221,7 @@ export class Servico {
     }
 
     //validar modal e clicar para adicionar
-    async addSeguroPrest (selector) {
+    async addInsurancePrest (selector) {
 
         //título modal "Seguro prestamista"
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')

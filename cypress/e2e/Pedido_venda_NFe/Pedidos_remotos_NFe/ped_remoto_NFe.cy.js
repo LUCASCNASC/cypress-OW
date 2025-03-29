@@ -33,8 +33,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVIÇOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVIÇOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -55,16 +55,16 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVIÇOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVIÇOS
+            Servico.clickOKServiceLinked()
             Produto.freightSecond() //SEGUNDO PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -86,8 +86,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             GeralPedido.trocarFilialFaturamento()
             GeralPedido.composicaoDesteKit()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVIÇOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVIÇOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -111,8 +111,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickAddProduc()
             GeralPedido.trocarFilialFaturamento()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVIÇOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVIÇOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS

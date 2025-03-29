@@ -32,8 +32,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -65,7 +65,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightThird()
             AvancarAlterar.toInstallmentsAlter()
 
@@ -84,8 +84,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -111,8 +111,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightSecond() //ENTREGA PRODUTO
 
             Produto.fisrt() //PRODUTO
@@ -120,8 +120,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightSecond() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
 
@@ -142,8 +142,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
             AvancarAlterar.toInstallmentsAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -163,7 +163,7 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             AlterarPedido.addEntrega() 
             AlterarPedido.addServ()
             Servico.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"()
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             // AvancarAlterar.toTransporterAlter()
             // AvancarAlterar.installmentDeliveryAlter()
             // GeralPagamento.clickGenerateInstallAlterDue() //GERAR PARCELAS
@@ -186,8 +186,8 @@ describe('Gerar pedido normal, entrar alterando, modificar e salvar.', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarAlterar.toTransporterAlter() //TRANSPORTADORA
             AvancarAlterar.installmentDeliveryAlter()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS

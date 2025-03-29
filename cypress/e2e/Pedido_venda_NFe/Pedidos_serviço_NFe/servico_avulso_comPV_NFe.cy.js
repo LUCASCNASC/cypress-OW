@@ -53,7 +53,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             PedServicoAvulso.clicarAddGarantias()
             PedServicoAvulso.modalGarantiasServicosVinculados()
             Servico.garantiaSepMesmoProc() //clicar na primeira garantia - Garantia Separa Mesmo Processo
-            Servico.clicarOKServVinc()()
+            Servico.clickOKServiceLinked()()
             PedServicoAvulso.messServicoAdicionadoSucesso()
             PedServicoAvulso.botaoSalvarServico()
             PedServicoAvulso.messAguardeCarregando()

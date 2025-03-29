@@ -26,7 +26,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
         cy.selectProductSearch()
         cy.clickVoltageProduct()
         cy.clickAddProduct()
-        Servico.validarModalServVinc()
+        Servico.validateModalServLinked()
     })
 
     context('Com entrega/processo 9890 - caminho feliz', () => {
@@ -35,7 +35,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraDestNãoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -53,14 +53,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraDestNãoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -78,7 +78,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -96,14 +96,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -121,7 +121,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraNaoDestSepaProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -139,15 +139,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.maoObraNaoDestSepaProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
-            ValidarSaldo.withBalance
-            ()
+            ValidarSaldo.withBalance()
             cy.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -165,7 +164,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraDestNãoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -183,14 +182,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraDestNãoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -208,7 +207,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -226,14 +225,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -251,7 +250,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraNaoDestSepaProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -269,14 +268,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.maoObraNaoDestSepaProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -294,7 +293,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepTituloProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraDestNãoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -312,14 +311,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepTituloProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraDestNãoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
             AvancarNormal.installmentDelivery()
@@ -336,7 +335,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepTituloProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -354,14 +353,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepTituloProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraNaoDestSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -379,7 +378,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepTituloProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraNaoDestSepaProcDif()
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()
@@ -397,14 +396,14 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
             Servico.garantiaSepTituloProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Servico.maoObraNaoDestSepaProcDif()
-            Servico.clicarOKServVinc() //SERVIÇOS
+            Servico.clickOKServiceLinked() //SERVIÇOS
             Produto.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
             GeralEntrega.chooseTransporter()

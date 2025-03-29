@@ -37,9 +37,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Promocao.selectFirstPromoProduct()
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
+            Servico.validateModalServLinked() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
@@ -60,9 +60,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Promocao.selectFirstPromoProduct()
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
+            Servico.validateModalServLinked() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
@@ -100,8 +100,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Promocao.selectFirstPromoProduct()
             Recebimento.withMoneylender()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
-            Servico.clicarOKServVinc()
+            Servico.validateModalServLinked() //SERVICOS
+            Servico.clickOKServiceLinked()
             ValidarServico.servVinc() ; ValidarServico.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
@@ -125,9 +125,9 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             Promocao.selectFirstPromoProduct()
             Recebimento.withMoneylender()
             cy.clickAddProduct()
-            Servico.validarModalServVinc() //SERVICOS
+            Servico.validateModalServLinked() //SERVICOS
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Servico.clicarOKServVinc()
+            Servico.clickOKServiceLinked()
             ValidarServico.servVinc() ; ValidarServico.AddGarantSepMesmoProc()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
