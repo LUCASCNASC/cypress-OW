@@ -5,7 +5,7 @@ export class PedExclusiva {
     }
 
     //aumentar quantidade a ser vendida, 5 unidades
-    async aumentarQuantVendaCinco (selector) {
+    async increaseAmountSaleFive (selector) {
 
         //botão para diminuir quantidade
         cy.get('[ng-click="delItem()"]')
@@ -33,7 +33,7 @@ export class PedExclusiva {
     }
 
     //aumentar quantidade a ser vendida, 10 unidades
-    async aumentarQuantVendaDez (selector) {
+    async increaseAmountSaleTen (selector) {
 
         //botão para diminuir quantidade
         cy.get('[ng-click="delItem()"]')
@@ -66,7 +66,7 @@ export class PedExclusiva {
     }
 
     //Validando produto com saldo indisponível
-    async saldoRemotoAReceber (selector) {
+    async balanceRemoteReceive (selector) {
         
         //Validando imagem
         cy.get('.resultado-imagem')

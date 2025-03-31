@@ -26,7 +26,7 @@ export class PedDesconto {
     }
 
     //validar Sub/Sobre - Sub R$
-    async validarModalSubSobre (selector) {
+    async validateModalSub (selector) {
 
         //validando título Sub/Sobre
         cy.get('.md-transition-in > ._md > .md-toolbar-tools > .flex')
@@ -83,7 +83,7 @@ export class PedDesconto {
     } 
 
     //Desconto juros - arrastar forma de pagamento escolhida para aparecer desconto - AJUSTAR
-    async arrastarFormaPagamento (selector) {
+    async dragFormPayment (selector) {
         
         cy.get('.md-whiteframe-2dp')
             .trigger('mousedown', { which: 1 })
@@ -92,7 +92,7 @@ export class PedDesconto {
     }
 
     //Clicar no botão R$
-    async clicarAlterarValor (selector) {
+    async clickChangeValue (selector) {
 
         //Validar botão como completo
         cy.get('.btn-remove-item-list > :nth-child(1) > .md-raised')
@@ -107,7 +107,7 @@ export class PedDesconto {
     }
 
     //validar modal Alterar o valor
-    async modalAlterarValor (selector) {
+    async modalChangeValue (selector) {
 
         //validando título "Alterar o valor"
         cy.get('.md-transition-in > ._md > .md-toolbar-tools > .flex')
@@ -153,7 +153,7 @@ export class PedDesconto {
     }
 
     //alterar valor para baixo
-    async alterarValorParaBaixo (selector) {
+    async changeValueToLow (selector) {
 
         //campo Valor da parcela
         cy.get('[ng-model="formaPgtoValor"]')
@@ -173,7 +173,7 @@ export class PedDesconto {
     }
 
     //alterar valor para cima
-    async alterarValorParaCima (selector) {
+    async changeValueToTop (selector) {
 
         //campo Valor da parcela
         cy.get('[ng-model="formaPgtoValor"]')
@@ -196,7 +196,7 @@ export class PedDesconto {
     //------------------- APLICAR DESCONTOS ------
 
     //aplicar desconto Sub(-) com R$
-    async aplicarDescontoR$ (selector) {
+    async applyDiscountR$ (selector) {
 
         const valor_desconto_R$ = '1000'
 
@@ -214,7 +214,7 @@ export class PedDesconto {
     }
 
     //aplicar desconto Sub(-) com %
-    async aplicarDescontoPorcentagem (selector) {
+    async applyDiscountPencentage (selector) {
 
         const valor_desconto_porcentagem = '2'
 
@@ -232,7 +232,7 @@ export class PedDesconto {
     }
 
     //aplicar desconto Sub(-) com VALOR FIXO
-    async aplicarDescontoValorFixo (selector) {
+    async applyDiscountVF (selector) {
 
         const valor_desconto_valorFixo = '280000'
 

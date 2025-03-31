@@ -115,18 +115,18 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it.skip('4. Vender um produto em duas linhas (um com 5 unidades a receber e 10 para solicitar compra), e ter um agendamento para a data de previsão para a receber.', () => {
 
             ProdutoExclusiva.balanceReceiveTwoLines() //PRODUTO
-            PedExclusiva.saldoRemotoAReceber()
+            PedExclusiva.balanceRemoteReceive()
             cy.clickVoltageProduct()
             cy.clickAddProduc() 
             GeralPedido.trocarFilialFaturamento()
-            PedExclusiva.aumentarQuantVendaCinco()
+            PedExclusiva.increaseAmountSaleFive()
             cy.selectProductSearch()
             ProdutoExclusiva.balanceReceiveTwoLines() //SEGUNDO PRODUTO
-            PedExclusiva.saldoRemotoAReceber()
+            PedExclusiva.balanceRemoteReceive()
             cy.clickVoltageProduct() 
             cy.clickAddProduct()
             GeralPedido.trocarFilialFaturamento()
-            PedExclusiva.aumentarQuantVendaDez()
+            PedExclusiva.increaseAmountSaleTen()
         })
 
         //cenário dependente - não colocar no fluxo

@@ -28,11 +28,11 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
             const numero_pedido = '8605'
             
-            PedServicoAvulso.iconeMenuOpcoes()
-            PedServicoAvulso.clienteCompletoOpcaoMenu()
-            PedServicoAvulso.clicarMenuClienteCompleto()
-            PedServicoAvulso.clicarOpcaoServicos()
-            PedServicoAvulso.aguardeCarregandoServico()
+            PedServicoAvulso.iconMenuOptions()
+            PedServicoAvulso.clientCompleteOptionMenu()
+            PedServicoAvulso.clickMenuClientComplete()
+            PedServicoAvulso.clicarOpcaoSeclickOptionServicesrvicos()
+            PedServicoAvulso.waitLoadingService()
 
             //Validando campo
             cy.get('form.ng-pristine > .ng-pristine')
@@ -48,20 +48,20 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > h3 > .ng-binding')
                 .should('have.text', numero_pedido)
 
-            PedServicoAvulso.botaoAddMaoObra()
-            PedServicoAvulso.botaoAddGarantias()
-            PedServicoAvulso.clicarAddGarantias()
-            PedServicoAvulso.modalGarantiasServicosVinculados()
+            PedServicoAvulso.buttonAddMaoObra()
+            PedServicoAvulso.buttonAddGarantias()
+            PedServicoAvulso.clickAddGarantias()
+            PedServicoAvulso.modalGarantiasServicesLinked()
             Servico.garantiaSepMesmoProc() //clicar na primeira garantia - Garantia Separa Mesmo Processo
             Servico.clickOKServiceLinked()()
-            PedServicoAvulso.messServicoAdicionadoSucesso()
-            PedServicoAvulso.botaoSalvarServico()
-            PedServicoAvulso.messAguardeCarregando()
-            PedServicoAvulso.messRegistroSalvoSucesso()
-            PedServicoAvulso.clicarAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
-            PedServicoAvulso.messGarantiaJaAdicionada() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
-            PedServicoAvulso.clicarCarrinhoCompras()
-            PedServicoAvulso.botaoAvancarPedido()
+            PedServicoAvulso.messLinkedAddedSucess()
+            PedServicoAvulso.buttonSaveService()
+            PedServicoAvulso.messWaitLoading()
+            PedServicoAvulso.messResgistrationSaveSucess()
+            PedServicoAvulso.clickAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
+            PedServicoAvulso.messGarantiaAdded() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
+            PedServicoAvulso.clickCartShopping()
+            PedServicoAvulso.buttonAdvanceOrder()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.main()

@@ -34,9 +34,9 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
-            PedDesconto.clicarBotaoDesconto() //DESCONTO
-            PedDesconto.validarModalSubSobre()
-            PedDesconto.aplicarDescontoR$()
+            PedDesconto.clickButtonDiscount() //DESCONTO
+            PedDesconto.validateModalSub()
+            PedDesconto.applyDiscountR$()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -57,9 +57,9 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
-            PedDesconto.clicarBotaoDesconto() //DESCONTO
-            PedDesconto.validarModalSubSobre()
-            PedDesconto.aplicarDescontoPorcentagem()
+            PedDesconto.clickButtonDiscount() //DESCONTO
+            PedDesconto.validateModalSub()
+            PedDesconto.applyDiscountPencentage()
             TirarEntrega.freightFirst() //ENTREGA
             AvancarNormal.toInstallments()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
@@ -80,9 +80,9 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
-            PedDesconto.clicarBotaoDesconto() //DESCONTO
-            PedDesconto.validarModalSubSobre()
-            PedDesconto.aplicarDescontoValorFixo()
+            PedDesconto.clickButtonDiscount() //DESCONTO
+            PedDesconto.validateModalSub()
+            PedDesconto.applyDiscountVF()
             TirarEntrega.freightFirst()
             () //ENTREGA
             AvancarNormal.toInstallments()

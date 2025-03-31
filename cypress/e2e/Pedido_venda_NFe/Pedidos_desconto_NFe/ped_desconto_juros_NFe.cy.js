@@ -40,10 +40,10 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             GeralPagamento.loadingFormPayment()
             Recebimento.main()
             EscolherParcelaReceb.one()
-            PedDesconto.arrastarFormaPagamento() //DESCONTO
-            PedDesconto.clicarAlterarValor()
-            PedDesconto.modalAlterarValor()
-            PedDesconto.alterarValorParaBaixo()
+            PedDesconto.dragFormPayment() //DESCONTO
+            PedDesconto.clickChangeValue()
+            PedDesconto.modalChangeValue()
+            PedDesconto.changeValueToLow()
             AvancarNormal.final()
             FinalizarPed.clickFinishOrder() //RESUMO
             FinalizarPed.validateOrderGenerated()
@@ -61,10 +61,10 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             GeralPagamento.loadingFormPayment()
             Recebimento.main()
             EscolherParcelaReceb.one()
-            PedDesconto.arrastarFormaPagamento() //DESCONTO
-            PedDesconto.clicarAlterarValor()
-            PedDesconto.modalAlterarValor()
-            PedDesconto.alterarValorParaCima()
+            PedDesconto.dragFormPayment() //DESCONTO
+            PedDesconto.clickChangeValue()
+            PedDesconto.modalChangeValue()
+            PedDesconto.changeValueToTop()
             AvancarNormal.final()
             FinalizarPed.clickFinishOrder() //RESUMO
             FinalizarPed.validateOrderGenerated()

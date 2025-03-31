@@ -5,7 +5,7 @@ export class PedServicoAvulso{
     }
 
     //Função para escolher cliente CPF para gerar pedido de venda - pesquisa por cliente
-    async escolherClientePedido (selector) {
+    async chooseClientOrder (selector) {
 
         //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
         cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
@@ -28,7 +28,7 @@ export class PedServicoAvulso{
     }
 
     //Validar e clicar no menu de opções
-    async iconeMenuOpcoes (selector) {
+    async iconMenuOptions (selector) {
 
         //Ícone do menu de opções
         cy.get('[aria-label="Menu de opções"] > .ng-binding')
@@ -41,7 +41,7 @@ export class PedServicoAvulso{
     }
 
     //Validando opção Cliente Completo, do menu de opções
-    async clienteCompletoOpcaoMenu (selector) {
+    async clientCompleteOptionMenu (selector) {
 
         //ícone Cliente completo
         cy.get('md-icon[md-svg-src="images/icons/cliente_completo.svg"]')
@@ -63,7 +63,7 @@ export class PedServicoAvulso{
     }
 
     //Validando e inserindo número do pedido no campo Cliente ou pedido
-    async pesquisarPedidoNumero (selector) {
+    async searchOrderNumber (selector) {
 
         //Campo Cliente ou pedido - validando mensagem dentro do campo antes de preencher
         cy.get('label[for="input_96"]')
@@ -77,7 +77,7 @@ export class PedServicoAvulso{
     }
 
     //Validando menu dentro do cadastro de cliente completo
-    async clicarMenuClienteCompleto (selector) {
+    async clickMenuClientComplete (selector) {
 
         //Validando 
         cy.get('#menu_click_pri')
@@ -90,7 +90,7 @@ export class PedServicoAvulso{
     }
 
     //Validando opção serviços
-    async clicarOpcaoServicos (selector) {
+    async clickOptionServices (selector) {
 
         //Validando
         cy.get('div[ng-repeat="tab in tabs"][ng-if="tab.checked"]')
@@ -104,7 +104,7 @@ export class PedServicoAvulso{
     }
 
     //Mensagem de carregamento aba serviços
-    async aguardeCarregandoServico (selector) {
+    async waitLoadingService (selector) {
 
         //ícone de carregamento
         cy.get('.layout-align-center-center > .md-accent')
@@ -117,7 +117,7 @@ export class PedServicoAvulso{
     }
 
     //Validando botão ADICIONAR MÃO DE OBRA
-    async botaoAddMaoObra (selector) {
+    async buttonAddMaoObra (selector) {
 
         cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > .prodServicoUl > :nth-child(1) > .md-default')
             .should('be.visible')
@@ -126,7 +126,7 @@ export class PedServicoAvulso{
     }
 
     //Validando botão ADICIONAR GARANTIAS
-    async botaoAddGarantias (selector) {
+    async buttonAddGarantias (selector) {
 
         cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > .prodServicoUl > :nth-child(2) > .md-default')
             .should('be.visible')
@@ -135,21 +135,21 @@ export class PedServicoAvulso{
     }
 
     //Clicar no botão ADICIONAR MÃO DE OBRA
-    async clicarAddMaoObra (selector) {
+    async clickAddMaoObra (selector) {
 
         cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > .prodServicoUl > :nth-child(1) > .md-default')
             .click({force:true})
     }
 
     //Clicar no botão ADICIONAR GARANTIAS
-    async clicarAddGarantias (selector) {
+    async clickAddGarantias (selector) {
 
         cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > .prodServicoUl > :nth-child(2) > .md-default')
             .click({force:true})
     }
 
     //Validações card de serviços apenas com Garantias
-    async modalGarantiasServicosVinculados (selector) {
+    async modalGarantiasServicesLinked (selector) {
 
         //Título do modal - Serviços Vinculados
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -168,7 +168,7 @@ export class PedServicoAvulso{
     }
 
     //Validações card de serviços
-    async modalMaoObraServicosVinculados (selector) {
+    async modalMaoObraServicesLinked (selector) {
 
         //Título do modal - Serviços Vinculados
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -189,7 +189,7 @@ export class PedServicoAvulso{
     }
 
     //botão OK modal Serviços Vinculados
-    async okServicosVinculados (selector) {
+    async okServicesLinked (selector) {
 
         //validando botão
         cy.get('button[ng-click="salvar()"]')
@@ -203,7 +203,7 @@ export class PedServicoAvulso{
     }
 
     //Mensagem de "Item adicionado com sucesso!"
-    async messServicoAdicionadoSucesso (selector) {
+    async messLinkedAddedSucess (selector) {
 
         //Item adicionado com sucesso! - card inteiro
         cy.get('.toast')
@@ -221,7 +221,7 @@ export class PedServicoAvulso{
     }
 
     //Botão SALVAR
-    async botaoSalvarServico (selector) {
+    async buttonSaveService (selector) {
 
         //Validando botão completo
         cy.get('.btn')
@@ -239,7 +239,7 @@ export class PedServicoAvulso{
     }
 
     //Mensagem de carregamento após clicarmos em SALVAR, do serviço
-    async messAguardeCarregando (selector) {
+    async messWaitLoading (selector) {
 
         //ícone giratório
         cy.get('svg')
@@ -253,7 +253,7 @@ export class PedServicoAvulso{
     }
 
     //Mensagem de "Registro salvo com sucesso!"
-    async messRegistroSalvoSucesso (selector) {
+    async messResgistrationSaveSucess (selector) {
 
         //Registro salvo com sucesso! - card inteiro
         cy.get('[style="display: block;"]')
@@ -272,7 +272,7 @@ export class PedServicoAvulso{
     }
 
     //Mensagem de "O Serviço Garantias já foi adicionado à esse produto."
-    async messGarantiaJaAdicionada (selector) {
+    async messGarantiaAdded (selector) {
 
         //O Serviço Garantias já foi adicionado à esse produto. - card inteiro
         cy.get('.toast-warning')
@@ -290,7 +290,7 @@ export class PedServicoAvulso{
     }
 
     //Clicar no carrinho de compras
-    async clicarCarrinhoCompras (selector) {
+    async clickCartShopping (selector) {
 
         cy.intercept('GET', '/images/icons/brazil-real-symbol.svg').as('api_produto_carrinho_compra')
         //validando
@@ -301,7 +301,7 @@ export class PedServicoAvulso{
     }
 
     //Botão AVANÇAR
-    async botaoAvancarPedido (selector) {
+    async buttonAdvanceOrder (selector) {
 
         //validando botão
         cy.get('.flex-gt-sm-50 > .md-primary')
@@ -318,7 +318,7 @@ export class PedServicoAvulso{
     }
 
     //Botão "GERAR PARCELAS"
-    async botaoGerarParcelasServicos (selector) {
+    async buttonGenerateInstallmentsServices (selector) {
 
         
 
@@ -338,7 +338,7 @@ export class PedServicoAvulso{
     }
 
     //Escolher servico, para vende-lo - 144 (T.A. MO Não Destaca e Separa Processo Diferente)
-    async produtoServicoAvulso (selector) {
+    async productServiceLoose (selector) {
 
         const codigo_servico = '144'
 
@@ -363,7 +363,7 @@ export class PedServicoAvulso{
     }
 
     //Validando serviço com saldo disponível local
-    async saldoDisponivelServico (selector) {
+    async balanceAvailableService (selector) {
         
         //Validando imagem
         cy.get('.resultado-imagem')
@@ -395,7 +395,7 @@ export class PedServicoAvulso{
     }
 
     //Clicar para selecionar o produto que queremos adicionar ao pedido
-    async escolherServicoPesquisa (selector) {
+    async chooseServiceSearch (selector) {
 
         //Imagem do produto
         cy.get('.resultado-imagem')
@@ -431,7 +431,7 @@ export class PedServicoAvulso{
     }
 
     //Mensagem de "Item adicionado com sucesso!"
-    async messItemAdicionadoSucesso (selector) {
+    async messItemAddedSucess (selector) {
 
         //O Serviço Garantias já foi adicionado à esse produto. - card inteiro
         cy.get('.toast')
@@ -449,7 +449,7 @@ export class PedServicoAvulso{
     }
 
     //validando que serviço foi adicionando ao carrinho - serviço que gera NFe
-    async servicoAdicionadoCarrinho (selector) {
+    async serviceAddedCart (selector) {
 
         //card completo
         cy.get('.servicos > .noscroll')
@@ -493,7 +493,7 @@ export class PedServicoAvulso{
     }
 
     //Escolher servico host, para vende-lo - 104 (Recarga Homologação TIM TIM)
-    async produtoServicoHost (selector) {
+    async productServiceHost (selector) {
 
         const codigo_servicoHost = '104'
 
@@ -514,7 +514,7 @@ export class PedServicoAvulso{
     }
 
     //Validando e clicando opção Serviços, do menu de opções
-    async clicarServicosMenu (selector) {
+    async clickServiceMenu (selector) {
 
         //Opção Serviços no menu de opções
         cy.get('a[aria-label="Serviços"]')
@@ -533,7 +533,7 @@ export class PedServicoAvulso{
     }
 
     //modal para selecionar faixa de preço para o serviço - clicar e escolher o valor
-    async escolherValorRecarga (selector) {
+    async chooseValueRecharge (selector) {
 
         //validando título do modal
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')

@@ -24,13 +24,13 @@ describe('Venda de serviço avulso Host - 104', () => {
 
         it.skip('1. Venda de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
-            PedServicoAvulso.iconeMenuOpcoes()
-            PedServicoAvulso.clicarServicosMenu()
-            PedServicoAvulso.produtoServicoHost() //PRODUTO
-            PedServicoAvulso.escolherServicoPesquisa()
-            PedServicoAvulso.escolherValorRecarga()
-            PedServicoAvulso.clicarCarrinhoCompras() //CARRINHO COMPRAS
-            PedServicoAvulso.botaoAvancarPedido()
+            PedServicoAvulso.iconMenuOptions()
+            PedServicoAvulso.clickServiceMenu()
+            PedServicoAvulso.productServiceHost() //PRODUTO
+            PedServicoAvulso.chooseServiceSearch()
+            PedServicoAvulso.chooseValueRecharge()
+            PedServicoAvulso.clickCartShopping() //CARRINHO COMPRAS
+            PedServicoAvulso.buttonAdvanceOrder()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.main()

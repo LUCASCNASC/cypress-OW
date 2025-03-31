@@ -23,12 +23,12 @@ describe('Venda de serviço avulso', () => {
 
         it('1. Venda de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
-            PedServicoAvulso.produtoServicoAvulso() //PRODUTO
-            PedServicoAvulso.escolherServicoPesquisa()
-            PedServicoAvulso.messItemAdicionadoSucesso()
-            PedServicoAvulso.clicarCarrinhoCompras() //CARRINHO COMPRAS
-            PedServicoAvulso.servicoAdicionadoCarrinho()
-            PedServicoAvulso.botaoAvancarPedido()
+            PedServicoAvulso.productServiceLoose() //PRODUTO
+            PedServicoAvulso.chooseServiceSearch()
+            PedServicoAvulso.messItemAddedSucess()
+            PedServicoAvulso.clickCartShopping() //CARRINHO COMPRAS
+            PedServicoAvulso.serviceAddedCart()
+            PedServicoAvulso.buttonAdvanceOrder()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.main()
