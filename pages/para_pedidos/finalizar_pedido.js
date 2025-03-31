@@ -1,4 +1,4 @@
-export class FinalizarPed {
+export class FinishOrder {
 
     constructor(page) {
         this.page = page

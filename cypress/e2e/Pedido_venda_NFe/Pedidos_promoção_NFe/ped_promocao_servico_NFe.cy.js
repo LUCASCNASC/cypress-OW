@@ -1,10 +1,10 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
-import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { RecebimentoPromo } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
 import { Promocao } from '../../../../pages/para_pedidos/promocao/promocao.js'
@@ -29,7 +29,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
 
         it('1. Ped venda com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
     
-            Produto.firstInstallmentDeadline() //PRODUTO
+            Product.firstInstallmentDeadline() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -46,13 +46,13 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     
         it('2. Ped venda com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
     
-            Produto.secondInstallmentDeadline() //PRODUTO
+            Product.secondInstallmentDeadline() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -87,13 +87,13 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 .click({force:true})
 
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     
         it('3. Ped venda com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
     
-            Produto.thirdInstallmentDeadline() //PRODUTO
+            Product.thirdInstallmentDeadline() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -111,13 +111,13 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             TicketPrestamista.added()
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
 
         it('4. Ped venda com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
     
-            Produto.fourthInstallmentDeadline() //PRODUTO
+            Product.fourthInstallmentDeadline() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -137,8 +137,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             TicketPrestamista.added()
             AvancarNormal.final()
             TicketPrestamista.pageFinal()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
  })

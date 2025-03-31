@@ -1,4 +1,4 @@
-export class PedServicoAvulso{
+export class OrderServiceLoose{
 
     constructor(page) {
         this.page = page

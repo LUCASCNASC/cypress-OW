@@ -1,6 +1,6 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
-import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -19,7 +19,7 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
 
         it('1. Ped venda: produto 1869 0 0 (Venda local de produto sem saldo - sem entrega)', () => {
             
-            Produto.withoutBalance() //PRODUTO
+            Product.withoutBalance() //PRODUTO
             ValidarSaldo.comSaldo()
             cy.clickVoltageProduct()
             cy.clickAddProduc()

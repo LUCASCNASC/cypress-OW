@@ -1,4 +1,4 @@
-export class PedDesconto {
+export class OrderExclusiva {
 
     constructor(page) {
         this.page = page

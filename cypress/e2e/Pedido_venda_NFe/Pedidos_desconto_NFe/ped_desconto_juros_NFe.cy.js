@@ -1,15 +1,15 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
-import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { PedDesconto } from '../../../../pages/para_pedidos/para_pedido_desconto.js'
+import { OrderDiscount } from '../../../../pages/para_pedidos/para_pedido_desconto.js'
 
 describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
 
@@ -21,7 +21,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.tituloPagina()
         ProcessoVenda.NFe()
         EscolherCliente.withRoute()
-        Produto.roundUpDown() //PRODUTO
+        Product.roundUpDown() //PRODUTO
         ValidarSaldo.withBalance()
         cy.clickVoltageProduct()
     })
@@ -40,13 +40,13 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             GeralPagamento.loadingFormPayment()
             Recebimento.main()
             EscolherParcelaReceb.one()
-            PedDesconto.dragFormPayment() //DESCONTO
-            PedDesconto.clickChangeValue()
-            PedDesconto.modalChangeValue()
-            PedDesconto.changeValueToLow()
+            OrderDiscount.dragFormPayment() //DESCONTO
+            OrderDiscount.clickChangeValue()
+            OrderDiscount.modalChangeValue()
+            OrderDiscount.changeValueToLow()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
 
         it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
@@ -61,13 +61,13 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             GeralPagamento.loadingFormPayment()
             Recebimento.main()
             EscolherParcelaReceb.one()
-            PedDesconto.dragFormPayment() //DESCONTO
-            PedDesconto.clickChangeValue()
-            PedDesconto.modalChangeValue()
-            PedDesconto.changeValueToTop()
+            OrderDiscount.dragFormPayment() //DESCONTO
+            OrderDiscount.clickChangeValue()
+            OrderDiscount.modalChangeValue()
+            OrderDiscount.changeValueToTop()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
 })

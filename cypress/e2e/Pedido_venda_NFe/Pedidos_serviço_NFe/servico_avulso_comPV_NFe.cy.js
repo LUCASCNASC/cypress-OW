@@ -2,11 +2,11 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { PedServicoAvulso } from '../../../../pages/para_pedidos/para_servicos_avulsos.js'
+import { OrderServiceLoose } from '../../../../pages/para_pedidos/para_servicos_avulsos.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/apenas_servicos.js'
 
 
@@ -28,11 +28,11 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
             const numero_pedido = '8605'
             
-            PedServicoAvulso.iconMenuOptions()
-            PedServicoAvulso.clientCompleteOptionMenu()
-            PedServicoAvulso.clickMenuClientComplete()
-            PedServicoAvulso.clicarOpcaoSeclickOptionServicesrvicos()
-            PedServicoAvulso.waitLoadingService()
+            OrderServiceLoose.iconMenuOptions()
+            OrderServiceLoose.clientCompleteOptionMenu()
+            OrderServiceLoose.clickMenuClientComplete()
+            OrderServiceLoose.clicarOpcaoSeclickOptionServicesrvicos()
+            OrderServiceLoose.waitLoadingService()
 
             //Validando campo
             cy.get('form.ng-pristine > .ng-pristine')
@@ -48,27 +48,27 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > h3 > .ng-binding')
                 .should('have.text', numero_pedido)
 
-            PedServicoAvulso.buttonAddMaoObra()
-            PedServicoAvulso.buttonAddGarantias()
-            PedServicoAvulso.clickAddGarantias()
-            PedServicoAvulso.modalGarantiasServicesLinked()
+                OrderServiceLoose.buttonAddMaoObra()
+            OrderServiceLoose.buttonAddGarantias()
+            OrderServiceLoose.clickAddGarantias()
+            OrderServiceLoose.modalGarantiasServicesLinked()
             Servico.garantiaSepMesmoProc() //clicar na primeira garantia - Garantia Separa Mesmo Processo
             Servico.clickOKServiceLinked()()
-            PedServicoAvulso.messLinkedAddedSucess()
-            PedServicoAvulso.buttonSaveService()
-            PedServicoAvulso.messWaitLoading()
-            PedServicoAvulso.messResgistrationSaveSucess()
-            PedServicoAvulso.clickAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
-            PedServicoAvulso.messGarantiaAdded() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
-            PedServicoAvulso.clickCartShopping()
-            PedServicoAvulso.buttonAdvanceOrder()
+            OrderServiceLoose.messLinkedAddedSucess()
+            OrderServiceLoose.buttonSaveService()
+            OrderServiceLoose.messWaitLoading()
+            OrderServiceLoose.messResgistrationSaveSucess()
+            OrderServiceLoose.clickAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
+            OrderServiceLoose.messGarantiaAdded() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
+            OrderServiceLoose.clickCartShopping()
+            OrderServiceLoose.buttonAdvanceOrder()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
 })

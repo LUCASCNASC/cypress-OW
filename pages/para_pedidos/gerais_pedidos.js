@@ -1,4 +1,4 @@
-export class GeralPedido {
+export class GeneralOrder {
 
     constructor(page) {
         this.page = page

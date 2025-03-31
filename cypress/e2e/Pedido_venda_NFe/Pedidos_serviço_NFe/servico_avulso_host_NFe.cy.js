@@ -1,11 +1,11 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { PedServicoAvulso } from '../../../../pages/para_pedidos/para_servicos_avulsos.js'
+import { OrderServiceLoose } from '../../../../pages/para_pedidos/para_servicos_avulsos.js'
 
 //Para este cenário, é necessário fazer update na coluna dataultimaatualizacao, da tabela glb.servicofaixavalorfixo
 describe('Venda de serviço avulso Host - 104', () => {
@@ -24,20 +24,20 @@ describe('Venda de serviço avulso Host - 104', () => {
 
         it.skip('1. Venda de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
-            PedServicoAvulso.iconMenuOptions()
-            PedServicoAvulso.clickServiceMenu()
-            PedServicoAvulso.productServiceHost() //PRODUTO
-            PedServicoAvulso.chooseServiceSearch()
-            PedServicoAvulso.chooseValueRecharge()
-            PedServicoAvulso.clickCartShopping() //CARRINHO COMPRAS
-            PedServicoAvulso.buttonAdvanceOrder()
+            OrderServiceLoose.iconMenuOptions()
+            OrderServiceLoose.clickServiceMenu()
+            OrderServiceLoose.productServiceHost() //PRODUTO
+            OrderServiceLoose.chooseServiceSearch()
+            OrderServiceLoose.chooseValueRecharge()
+            OrderServiceLoose.clickCartShopping() //CARRINHO COMPRAS
+            OrderServiceLoose.buttonAdvanceOrder()
             GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
             GeralPagamento.loadingFormPayment()
             Recebimento.main()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
 })

@@ -1,10 +1,10 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
-import { Produto } from '../../../../pages/produtos/prd_normal.js'
+import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
@@ -29,7 +29,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            Produto.promoMatch() //PRODUTO
+            Product.promoMatch() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -43,14 +43,14 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pagamento_lista')
             cy.wait('@api_pagamento_lista', { timeout: 40000 })
             AvancarNormal.final() 
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     
         //verificar
         it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            Produto.promoDeadlineEntry() //PRODUTO
+            Product.promoDeadlineEntry() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -70,14 +70,14 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click()
     
             AvancarNormal.final() 
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     
         //verificar
         it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            Produto.promoDeadlineInstallment() //PRODUTO
+            Product.promoDeadlineInstallment() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -91,8 +91,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.intercept('GET', 'images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
 
@@ -101,7 +101,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('4. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            Produto.promoMatch() //PRODUTO
+            Product.promoMatch() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -111,7 +111,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
-            Produto.second() //PRODUTO
+            Product.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -130,14 +130,14 @@ describe('Gerar pedidos com promoção', () => {
             //cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             // AvancarNormal.final()
-            // FinalizarPed.clickFinishOrder() //RESUMO
-            // FinalizarPed.validateOrderGenerated()
+            // FinishOrder.clickFinishOrder() //RESUMO
+            // FinishOrder.validateOrderGenerated()
         })
 
         //verificar
         it.skip('5. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            Produto.promoDeadlineEntry() //PRODUTO
+            Product.promoDeadlineEntry() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -147,7 +147,7 @@ describe('Gerar pedidos com promoção', () => {
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
-            Produto.second() //PRODUTO
+            Product.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -164,8 +164,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > .layout-align-center-center > .md-primary').click({force:true}) //clicar GERAR PAGAMENTO
     
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
 
@@ -173,7 +173,7 @@ describe('Gerar pedidos com promoção', () => {
 
         it.skip('6. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            Produto.promoMatch() //PRODUTO
+            Product.promoMatch() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -191,14 +191,14 @@ describe('Gerar pedidos com promoção', () => {
             Recebimento.principal()
             EscolherParcelaReceb.one()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     
         //verificar
         it.skip('7. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            Produto.promoDeadlineEntry() //PRODUTO
+            Product.promoDeadlineEntry() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -230,14 +230,14 @@ describe('Gerar pedidos com promoção', () => {
             // Recebimento.main()
             // EscolherParcelaReceb.two()
             // AvancarNormal.final()
-            // FinalizarPed.clickFinishOrder() //RESUMO
-            // FinalizarPed.validateOrderGenerated()
+            // FinishOrder.clickFinishOrder() //RESUMO
+            // FinishOrder.validateOrderGenerated()
         })
 
         //verificar
         it.skip('8. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            Produto.promoDeadlineInstallment() //PRODUTO
+            Product.promoDeadlineInstallment() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -257,8 +257,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
 
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })  
     }) 
 
@@ -267,7 +267,7 @@ describe('Gerar pedidos com promoção', () => {
         //verificar
         it.skip('9. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
-            Produto.promoMatch() //PRODUTO
+            Product.promoMatch() //PRODUTO
             ValidarSaldo.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -276,7 +276,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
-            Produto.second() //PRODUTO
+            Product.second() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -292,8 +292,8 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force: true})
 
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
 })

@@ -1,15 +1,15 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
+import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
 import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 import { PedExclusiva } from '../../../../pages/para_pedidos/para_pedidos_exclusiva.js'
-import { ProdutoExclusiva } from '../../../../pages/produtos/prd_exclusiva.js'
-import { GeralPedido } from '../../../../pages/para_pedidos/gerais_pedidos.js'
+import { ProductExclusiva } from '../../../../pages/produtos/prd_exclusiva.js'
+import { GeneralOrder } from '../../../../pages/para_pedidos/gerais_pedidos.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/apenas_servicos.js'
 
@@ -31,18 +31,18 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         //cenário dependente - não colocar no fluxo
         it.skip('1. Vender um produto normal (com saldo e com entrega, 15 dias) e um kit remoto (2 composições, sem saldo e sem a receber, 20 dias).', () => {
 
-            ProdutoExclusiva.firstNormal() //PRODUTO EXCLUSIVA
+            ProductExclusiva.firstNormal() //PRODUTO EXCLUSIVA
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
-            ProdutoExclusiva.kitWithoutBalanceScheduling() //PRODUTO KIT
+            ProductExclusiva.kitWithoutBalanceScheduling() //PRODUTO KIT
             ValidarSaldo.withoutBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeralPedido.trocarFilialFaturamento()
+            GeneralOrder.trocarFilialFaturamento()
             cy.clickAddProduct()
             AvancarNormal.toTransporter()
             GeralEntrega.modalInconsApenasTransp()
@@ -53,21 +53,21 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
 
         //cenário dependente - não colocar no fluxo
         it.skip('2. Vender um produto normal (com saldo e com entrega) e um kit com composição 6 volumes (data atual + parametro 552/ 5 dias).', () => {
 
-            ProdutoExclusiva.firstNormal() //PRODUTO
+            ProductExclusiva.firstNormal() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Servico.validateModalServLinked() //SERVICOS
             Servico.clickOKServiceLinked()
-            ProdutoExclusiva.kitVolumes() //PRODUTO KIT
+            ProductExclusiva.kitVolumes() //PRODUTO KIT
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -81,8 +81,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
 
@@ -91,7 +91,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         //cenário dependente - não colocar no fluxo
         it.skip('3. Vender um produto (sem saldo e com saldo a receber para 10 dias, e com entrega), e ter um agendamento para a data de previsão.', () => {
 
-            ProdutoExclusiva.balanceReceive() //PRODUTO
+            ProductExclusiva.balanceReceive() //PRODUTO
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -107,32 +107,32 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
 
         //cenário dependente - não colocar no fluxo
         it.skip('4. Vender um produto em duas linhas (um com 5 unidades a receber e 10 para solicitar compra), e ter um agendamento para a data de previsão para a receber.', () => {
 
-            ProdutoExclusiva.balanceReceiveTwoLines() //PRODUTO
+            ProductExclusiva.balanceReceiveTwoLines() //PRODUTO
             PedExclusiva.balanceRemoteReceive()
             cy.clickVoltageProduct()
             cy.clickAddProduc() 
-            GeralPedido.trocarFilialFaturamento()
+            GeneralOrder.trocarFilialFaturamento()
             PedExclusiva.increaseAmountSaleFive()
             cy.selectProductSearch()
-            ProdutoExclusiva.balanceReceiveTwoLines() //SEGUNDO PRODUTO
+            ProductExclusiva.balanceReceiveTwoLines() //SEGUNDO PRODUTO
             PedExclusiva.balanceRemoteReceive()
             cy.clickVoltageProduct() 
             cy.clickAddProduct()
-            GeralPedido.trocarFilialFaturamento()
+            GeneralOrder.trocarFilialFaturamento()
             PedExclusiva.increaseAmountSaleTen()
         })
 
         //cenário dependente - não colocar no fluxo
         it.skip('5. Pedido de venda normal: produto 1896 0 0 (sem entrega)', () => {
     
-            ProdutoExclusiva.firstNormal() //PRODUTO EXCLUSIVA
+            ProductExclusiva.firstNormal() //PRODUTO EXCLUSIVA
             ValidarSaldo.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -146,8 +146,8 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Recebimento.main()
             EscolherParcelaReceb.two()
             AvancarNormal.final()
-            FinalizarPed.clickFinishOrder() //RESUMO
-            FinalizarPed.validateOrderGenerated()
+            FinishOrder.clickFinishOrder() //RESUMO
+            FinishOrder.validateOrderGenerated()
         })
     })
 })

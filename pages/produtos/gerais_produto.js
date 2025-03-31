@@ -1,5 +1,5 @@
 //NÃO ESTÃO SENDO USADOS
-export class GeralProduto {
+export class GeneralProduct {
 
     constructor(page) {
         this.page = page
