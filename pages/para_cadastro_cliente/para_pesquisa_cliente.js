@@ -5,7 +5,7 @@ export class SearchClient {
     }
 
     //validando mensagem "Aguarde carregando..."
-    async messAguardeCarregando (selector) {
+    async messWaitLoading (selector) {
 
         //Mensagem de "Aguarde carregando..."
         cy.get('.md-dialog-fullscreen > .carregando')
@@ -14,7 +14,7 @@ export class SearchClient {
     }
 
     //clicando na lupa pesquisa de cliente
-    async clicarLupaPesquisaCliente (selector) {
+    async clickGlassSearchClient (selector) {
 
         cy.intercept('GET', '/views/cliente/modalClientes.html').as('api_cliente_modalClientes')
         //clicar na lupa de pesquisa de clientes
@@ -25,7 +25,7 @@ export class SearchClient {
     }
 
     //validando botão X do card cliente
-    async cardClienteValidar (selector) {
+    async cardClientValidate (selector) {
 
         //Card de clientes - Botão X
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
@@ -64,7 +64,7 @@ export class SearchClient {
     }
 
     //validando numero e descrição do cliente CPF selecionado
-    async numeroDescriCPFpesquisado (selector) {
+    async numberDescripCPFSearch (selector) {
 
         //Número CPF do cliente selecionado
         cy.get('#lblCpfClienteSelecionado')
@@ -76,7 +76,7 @@ export class SearchClient {
     }
 
     //validando numero e descrição do cliente CNPJ selecionado
-    async numeroDescriCNPJpesquisado (selector) {
+    async numberDescripCNPJSearch (selector) {
 
         //Número CNPJ do cliente selecionado
         cy.get('#lblCpfClienteSelecionado')
@@ -88,7 +88,7 @@ export class SearchClient {
     }
 
     //clicando cliente CPF pesquisado
-    async clicarCPFPesquisado (selector) {
+    async clickCPFSearch (selector) {
 
         //Card de clientes - Conteúdo que a pesquisa trouxe
         cy.get('button[aria-label="CPF AUTOMACAO SABIUM - LUCAS CAMARGO 117.415.410-18   - MARINGA/PR"]')
@@ -101,7 +101,7 @@ export class SearchClient {
     }
 
     //clicando cliente CNPJ pesquisado
-    async clicarCNPJPesquisado (selector) {
+    async clickCNPJSearch (selector) {
 
         //Card de clientes - Conteúdo que a pesquisa trouxe
         cy.get('button[aria-label="CNPJ AUTOMACAO SABIUM - LUCAS CAMARGO 24.468.163/0001-61   - MARINGA/PR"]')
@@ -114,7 +114,7 @@ export class SearchClient {
     }
 
     //pesquisar cliente por numero de CPF
-    async inserirCPF (selector) {
+    async fillCPF (selector) {
 
         const numeroCPF = "117.415.410-18"
 
@@ -125,7 +125,7 @@ export class SearchClient {
     }
 
     //digitar cliente por numero de CPF
-    async digitarNovamenteCPF (selector) {
+    async typeAgainCPF (selector) {
 
         const numeroCPF = "117.415.410-18"
 
@@ -139,7 +139,7 @@ export class SearchClient {
     }
 
     //pesquisar cliente por numero de CNPJ
-    async inserirCNPJ (selector) {
+    async fillCNPJ (selector) {
 
         const numeroCNPJ = "24468163000161"
 
@@ -150,7 +150,7 @@ export class SearchClient {
     }
 
     //digitar cliente por numero de CNPJ
-    async digitarNovamenteCNPJ (selector) {
+    async typeAgainCNPJ (selector) {
 
         const numeroCNPJ = "24468163000161"
 
@@ -164,7 +164,7 @@ export class SearchClient {
     }
 
     //pesquisar cliente por descrição de CPF
-    async inserirDescricaoCPF (selector) {
+    async fillDescripCPF (selector) {
 
         const descricaoCPF = "CPF AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
 
@@ -179,7 +179,7 @@ export class SearchClient {
     }
 
     //digitar cliente por descrição de CPF
-    async digitarNovamenteDescriCPF (selector) {
+    async typeAgainDescriptCPF (selector) {
 
         const descricaoCPF = "CPF AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
 
@@ -193,7 +193,7 @@ export class SearchClient {
     }
 
     //pesquisar cliente por descrição de CNPJ
-    async inserirDescriCNPJ (selector) {
+    async fillDescripCNPJ (selector) {
 
         const descricaoCNPJ = "CNPJ AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
 
@@ -208,7 +208,7 @@ export class SearchClient {
     }
 
     //digitar cliente por descrição de CNPJ
-    async digitarNovamenteDescriCNPJ (selector) {
+    async typeAgainDescriptCNPJ (selector) {
 
         const descricaoCNPJ = "CNPJ AUTOMAÇÃO SABIUM - LUCAS CAMARGO"
 
