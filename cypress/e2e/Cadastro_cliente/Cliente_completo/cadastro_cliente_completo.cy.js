@@ -1,25 +1,24 @@
-import { GeralClienteCompleto } from '../../../../pages/para_cadastro_cliente/cliente_completo/geral_cliente_completo';
-import { ClicarClienteCompleto } from '../../../../pages/para_cadastro_cliente/cliente_completo/clicar_cliente_completo';
-import { GeralAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/geral_anexo';
-import { PreencherCampoAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/preencher_anexo';
+import { GeneralClientComplete } from '../../../../pages/para_cadastro_cliente/cliente_completo/geral_cliente_completo';
+import { ClickClientComplete } from '../../../../pages/para_cadastro_cliente/cliente_completo/clicar_cliente_completo';
+import { GeneralAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/geral_anexo';
+import { GeneralEmployment } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/geral_empregaticio';
+import { FillFieldAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/preencher_anexo';
 import { clicarAbaEmpregat } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/geral_empregaticio';
-import { } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/preencher_empregaticio';
-import { } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/geral_pessoa';
-import { PreencherPessoa } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/preencher_pessoa';
-import { GeralRefBancaria } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/geral_ref_bancaria';
-import { PreencherRefBancaria } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/preencher_ref_bancaria';
-import { GeralRefComercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/geral_ref_comercial';
-import { PreencherRefComercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/preencher_ref_comercial';
-import { GeralRefFinanceira } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/geral_ref_financeira';
-import { PreencherRefFinanceira } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/preencher_ref_financeira';
-import { GeralRefPessoal } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/geral_ref_pessoal';
-import { PreencherRefPessoal } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/preencher_ref_pessoal';
-import { GeralRota } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/geral_rota';
-import { PreencherRota } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/preencher_rota';
-import { GeralTelefone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/geral_telefone';
-import { PreencherTelefone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/preencher_telefone';
-import { GeralEndereco } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/geral_endereco';
-import { PreencherEndereco } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/preencher_endereco';
+import { FillPerson } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/preencher_pessoa';
+import { GeneralRefBanking } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/geral_ref_bancaria';
+import { FillRefBanking } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/preencher_ref_bancaria';
+import { GeneralRefCommercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/geral_ref_comercial';
+import { FillRefCommercial } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_comercial/preencher_ref_comercial';
+import { GeneralRefFinance } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/geral_ref_financeira';
+import { FillRefFinance } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/preencher_ref_financeira';
+import { GeneralRefGuys } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/geral_ref_pessoal';
+import { FillRefGuys } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_pessoal/preencher_ref_pessoal';
+import { GeneralRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/geral_rota';
+import { FillRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/preencher_rota';
+import { GeneralRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/geral_telefone';
+import { FillRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/preencher_telefone';
+import { GeneralAdress } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/geral_endereco';
+import { FillAdress } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/preencher_endereco';
 
 
 describe('Cadastrar cliente completo', () => {
@@ -36,212 +35,212 @@ describe('Cadastrar cliente completo', () => {
 
         it('1. Cliente completo CPF', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes() //PESSOA
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes() //PESSOA
+            GeralClienteCoGeneralClientCompletempleto.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         })  
 
         it('2. Cliente completo CPF - mensagem de campos obrigatórios', () => {
     
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            ClicarClienteCompleto.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            ClickClientComplete.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
 
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
 
-            ClicarClienteCompleto.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            ClicarClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            ClickClientComplete.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            ClickClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         })  
 
         it('3. Cliente completo CNPJ', () => {
     
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto() 
-            PreencherPessoa.cnpjCliente() //PESSOA
-            PreencherPessoa.nomeCNPJ()
-            PreencherPessoa.nomeFantasiaCNPJ()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto() 
+            FillPerson.cnpjCliente() //PESSOA
+            FillPerson.nomeCNPJ()
+            FillPerson.nomeFantasiaCNPJ()
 
-            ClicarClienteCompleto.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            ClickClientComplete.salvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         }) 
     })
 
     context('Cadastro de cliente completo - incluindo anexo após salvar o cadastro de cliente', () => {
 
-        it('4. Cliente completo CPF - caminho feliz', () => {GeralClienteCompleto.
+        it('4. Cliente completo CPF - caminho feliz', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto() 
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto() 
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
 
-            ClicarClienteCompleto.menuCadastroClienteCompleto()
-            GeralAnexo.clicarAbaAnexo() //CADASTRAR ANEXO 
-            GeralAnexo.validarAbaAnexoVazia()
-            GeralAnexo.selecionarPrimeiroTipoAnexo()
-            PreencherCampoAnexo.anexarArquivoPFD()
-            GeralAnexo.confirmarEnvioArquivo()
-            GeralAnexo.messAnexoIncluidoSucesso()
-            GeralAnexo.validarAnexoInserido()
+            ClickClientComplete.menuCadastroClienteCompleto()
+            GeneralAnexo.clicarAbaAnexo() //CADASTRAR ANEXO 
+            GeneralAnexo.validarAbaAnexoVazia()
+            GeneralAnexo.selecionarPrimeiroTipoAnexo()
+            FillFieldAnexo.anexarArquivoPFD()
+            GeneralAnexo.confirmarEnvioArquivo()
+            GeneralAnexo.messAnexoIncluidoSucesso()
+            GeneralAnexo.validarAnexoInserido()
             
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         })
     })
 
@@ -249,574 +248,573 @@ describe('Cadastrar cliente completo', () => {
 
         it('5. Cliente completo CPF - tipo de chave PIX Telefone correto', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto() 
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto() 
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefBancaria.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
-            GeralRefBancaria.validarAbaRefBancariaVazia()
-            GeralRefBancaria.clicarAddNovaRefBancaria()
-            GeralRefBancaria.modalRefBancariaVazio()
-            PreencherRefBancaria.banco()
-            PreencherRefBancaria.agencia()
-            PreencherRefBancaria.conta()
-            PreencherRefBancaria.dataAbertura()
-            PreencherRefBancaria.telefone()
-            PreencherRefBancaria.gerente()
-            PreencherRefBancaria.email()
-            PreencherRefBancaria.cpfCorrentista()
-            PreencherRefBancaria.nomeCorrentista()
-            PreencherRefBancaria.tipoConta()
-            PreencherRefBancaria.operacao()
-            PreencherRefBancaria.formaPagamento()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefBanking.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validarAbaRefBancariaVazia()
+            GeneralRefBanking.clicarAddNovaRefBancaria()
+            GeneralRefBanking.modalRefBancariaVazio()
+            FillRefBanking.banco()
+            FillRefBanking.agencia()
+            FillRefBanking.conta()
+            FillRefBanking.dataAbertura()
+            FillRefBanking.telefone()
+            FillRefBanking.gerente()
+            FillRefBanking.email()
+            FillRefBanking.cpfCorrentista()
+            FillRefBanking.nomeCorrentista()
+            FillRefBanking.tipoConta()
+            FillRefBanking.operacao()
+            FillRefBanking.formaPagamento()
 
 
-            PreencherRefBancaria.tipoChavePixTelefone()
-            PreencherRefBancaria.chavePixTelefone()
-            GeralRefBancaria.clicarSalvarRefBancaria()
-            GeralRefBancaria.messRefBancariaIncluidaSucesso()
-            GeralRefBancaria.infosRefBancariaAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            cy.wait(2000)
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            FillRefBanking.tipoChavePixTelefone()
+            FillRefBanking.chavePixTelefone()
+            GeneralRefBanking.clicarSalvarRefBancaria()
+            GeneralRefBanking.messRefBancariaIncluidaSucesso()
+            GeneralRefBanking.infosRefBancariaAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         })  
 
         it('6. Cliente completo CPF - tipo de chave PIX Email correto', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto() 
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto() 
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefBancaria.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
-            GeralRefBancaria.validarAbaRefBancariaVazia()
-            GeralRefBancaria.clicarAddNovaRefBancaria()
-            GeralRefBancaria.modalRefBancariaVazio()
-            PreencherRefBancaria.banco()
-            PreencherRefBancaria.agencia()
-            PreencherRefBancaria.conta()
-            PreencherRefBancaria.dataAbertura()
-            PreencherRefBancaria.telefone()
-            PreencherRefBancaria.gerente()
-            PreencherRefBancaria.email()
-            PreencherRefBancaria.cpfCorrentista()
-            PreencherRefBancaria.nomeCorrentista()
-            PreencherRefBancaria.tipoConta()
-            PreencherRefBancaria.operacao()
-            PreencherRefBancaria.formaPagamento()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefBanking.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validarAbaRefBancariaVazia()
+            GeneralRefBanking.clicarAddNovaRefBancaria()
+            GeneralRefBanking.modalRefBancariaVazio()
+            FillRefBanking.banco()
+            FillRefBanking.agencia()
+            FillRefBanking.conta()
+            FillRefBanking.dataAbertura()
+            FillRefBanking.telefone()
+            FillRefBanking.gerente()
+            FillRefBanking.email()
+            FillRefBanking.cpfCorrentista()
+            FillRefBanking.nomeCorrentista()
+            FillRefBanking.tipoConta()
+            FillRefBanking.operacao()
+            FillRefBanking.formaPagamento()
 
-            PreencherRefBancaria.tipoChavePixEmail()
-            PreencherRefBancaria.chavePixEmail()
-            GeralRefBancaria.clicarSalvarRefBancaria()
-            GeralRefBancaria.messRefBancariaIncluidaSucesso()
-            GeralRefBancaria.infosRefBancariaAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            FillRefBanking.tipoChavePixEmail()
+            FillRefBanking.chavePixEmail()
+            GeneralRefBanking.clicarSalvarRefBancaria()
+            GeneralRefBanking.messRefBancariaIncluidaSucesso()
+            GeneralRefBanking.infosRefBancariaAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         }) 
 
         it('7. Cliente completo CPF - tipo de chave PIX CPF CNPJ correto', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto() 
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto() 
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefBancaria.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
-            GeralRefBancaria.validarAbaRefBancariaVazia()
-            GeralRefBancaria.clicarAddNovaRefBancaria()
-            GeralRefBancaria.modalRefBancariaVazio()
-            PreencherRefBancaria.banco()
-            PreencherRefBancaria.agencia()
-            PreencherRefBancaria.conta()
-            PreencherRefBancaria.dataAbertura()
-            PreencherRefBancaria.telefone()
-            PreencherRefBancaria.gerente()
-            PreencherRefBancaria.email()
-            PreencherRefBancaria.cpfCorrentista()
-            PreencherRefBancaria.nomeCorrentista()
-            PreencherRefBancaria.tipoConta()
-            PreencherRefBancaria.operacao()
-            PreencherRefBancaria.formaPagamento()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefBanking.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validarAbaRefBancariaVazia()
+            GeneralRefBanking.clicarAddNovaRefBancaria()
+            GeneralRefBanking.modalRefBancariaVazio()
+            FillRefBanking.banco()
+            FillRefBanking.agencia()
+            FillRefBanking.conta()
+            FillRefBanking.dataAbertura()
+            FillRefBanking.telefone()
+            FillRefBanking.gerente()
+            FillRefBanking.email()
+            FillRefBanking.cpfCorrentista()
+            FillRefBanking.nomeCorrentista()
+            FillRefBanking.tipoConta()
+            FillRefBanking.operacao()
+            FillRefBanking.formaPagamento()
 
-            PreencherRefBancaria.tipoChavePixCpfCnpj()
-            PreencherRefBancaria.chavePixCPF()
-            GeralRefBancaria.clicarSalvarRefBancaria()
-            GeralRefBancaria.messRefBancariaIncluidaSucesso()
-            GeralRefBancaria.infosRefBancariaAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            FillRefBanking.tipoChavePixCpfCnpj()
+            FillRefBanking.chavePixCPF()
+            GeneralRefBanking.clicarSalvarRefBancaria()
+            GeneralRefBanking.messRefBancariaIncluidaSucesso()
+            GeneralRefBanking.infosRefBancariaAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         }) 
 
         it('8. Cliente completo CPF - tipo de chave PIX CPF CNPJ correto', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto() 
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto() 
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefBancaria.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
-            GeralRefBancaria.validarAbaRefBancariaVazia()
-            GeralRefBancaria.clicarAddNovaRefBancaria()
-            GeralRefBancaria.modalRefBancariaVazio()
-            PreencherRefBancaria.banco()
-            PreencherRefBancaria.agencia()
-            PreencherRefBancaria.conta()
-            PreencherRefBancaria.dataAbertura()
-            PreencherRefBancaria.telefone()
-            PreencherRefBancaria.gerente()
-            PreencherRefBancaria.email()
-            PreencherRefBancaria.cpfCorrentista()
-            PreencherRefBancaria.nomeCorrentista()
-            PreencherRefBancaria.tipoConta()
-            PreencherRefBancaria.operacao()
-            PreencherRefBancaria.formaPagamento()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefBanking.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validarAbaRefBancariaVazia()
+            GeneralRefBanking.clicarAddNovaRefBancaria()
+            GeneralRefBanking.modalRefBancariaVazio()
+            FillRefBanking.banco()
+            FillRefBanking.agencia()
+            FillRefBanking.conta()
+            FillRefBanking.dataAbertura()
+            FillRefBanking.telefone()
+            FillRefBanking.gerente()
+            FillRefBanking.email()
+            FillRefBanking.cpfCorrentista()
+            FillRefBanking.nomeCorrentista()
+            FillRefBanking.tipoConta()
+            FillRefBanking.operacao()
+            FillRefBanking.formaPagamento()
 
-            PreencherRefBancaria.tipoChavePixAletoria()
-            PreencherRefBancaria.chavePixAleatorio()
-            GeralRefBancaria.clicarSalvarRefBancaria()
-            GeralRefBancaria.messRefBancariaIncluidaSucesso()
-            GeralRefBancaria.infosRefBancariaAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            FillRefBanking.tipoChavePixAletoria()
+            FillRefBanking.chavePixAleatorio()
+            GeneralRefBanking.clicarSalvarRefBancaria()
+            GeneralRefBanking.messRefBancariaIncluidaSucesso()
+            GeneralRefBanking.infosRefBancariaAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         }) 
 
         it('9. Cliente completo CPF - validar tipo de chave PIX Telefone incorreto ', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefBancaria.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
-            GeralRefBancaria.validarAbaRefBancariaVazia()
-            GeralRefBancaria.clicarAddNovaRefBancaria()
-            GeralRefBancaria.modalRefBancariaVazio()
-            PreencherRefBancaria.banco()
-            PreencherRefBancaria.agencia()
-            PreencherRefBancaria.conta()
-            PreencherRefBancaria.dataAbertura()
-            PreencherRefBancaria.telefone()
-            PreencherRefBancaria.gerente()
-            PreencherRefBancaria.email()
-            PreencherRefBancaria.cpfCorrentista()
-            PreencherRefBancaria.nomeCorrentista()
-            PreencherRefBancaria.tipoConta()
-            PreencherRefBancaria.operacao()
-            PreencherRefBancaria.formaPagamento()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefBanking.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validarAbaRefBancariaVazia()
+            GeneralRefBanking.clicarAddNovaRefBancaria()
+            GeneralRefBanking.modalRefBancariaVazio()
+            FillRefBanking.banco()
+            FillRefBanking.agencia()
+            FillRefBanking.conta()
+            FillRefBanking.dataAbertura()
+            FillRefBanking.telefone()
+            FillRefBanking.gerente()
+            FillRefBanking.email()
+            FillRefBanking.cpfCorrentista()
+            FillRefBanking.nomeCorrentista()
+            FillRefBanking.tipoConta()
+            FillRefBanking.operacao()
+            FillRefBanking.formaPagamento()
 
-            PreencherRefBancaria.tipoChavePixTelefone()
-            PreencherRefBancaria.chavePixTelefoneErrada()
-            GeralRefBancaria.clicarSalvarRefBancaria()
-            GeralRefBancaria.messRefBancariaIncluidaSucesso()
-            GeralRefBancaria.infosRefBancariaAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralRefBancaria.messRefBancariaChavePixTelefoneInvalida()
+            FillRefBanking.tipoChavePixTelefone()
+            FillRefBanking.chavePixTelefoneErrada()
+            GeneralRefBanking.clicarSalvarRefBancaria()
+            GeneralRefBanking.messRefBancariaIncluidaSucesso()
+            GeneralRefBanking.infosRefBancariaAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralRefBanking.messRefBancariaChavePixTelefoneInvalida()
         })  
 
         it('10. Cliente completo CPF - validar tipo de chave PIX Email incorreto ', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefBancaria.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
-            GeralRefBancaria.validarAbaRefBancariaVazia()
-            GeralRefBancaria.clicarAddNovaRefBancaria()
-            GeralRefBancaria.modalRefBancariaVazio()
-            PreencherRefBancaria.banco()
-            PreencherRefBancaria.agencia()
-            PreencherRefBancaria.conta()
-            PreencherRefBancaria.dataAbertura()
-            PreencherRefBancaria.telefone()
-            PreencherRefBancaria.gerente()
-            PreencherRefBancaria.email()
-            PreencherRefBancaria.cpfCorrentista()
-            PreencherRefBancaria.nomeCorrentista()
-            PreencherRefBancaria.tipoConta()
-            PreencherRefBancaria.operacao()
-            PreencherRefBancaria.formaPagamento()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefBanking.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validarAbaRefBancariaVazia()
+            GeneralRefBanking.clicarAddNovaRefBancaria()
+            GeneralRefBanking.modalRefBancariaVazio()
+            FillRefBanking.banco()
+            FillRefBanking.agencia()
+            FillRefBanking.conta()
+            FillRefBanking.dataAbertura()
+            FillRefBanking.telefone()
+            FillRefBanking.gerente()
+            FillRefBanking.email()
+            FillRefBanking.cpfCorrentista()
+            FillRefBanking.nomeCorrentista()
+            FillRefBanking.tipoConta()
+            FillRefBanking.operacao()
+            FillRefBanking.formaPagamento()
 
-            PreencherRefBancaria.tipoChavePixEmail()
-            PreencherRefBancaria.chavePixEmailErrada()
-            GeralRefBancaria.clicarSalvarRefBancaria()
-            GeralRefBancaria.messRefBancariaIncluidaSucesso()
-            GeralRefBancaria.infosRefBancariaAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralRefBancaria.messRefBancariaChavePixEmailInvalida()
+            FillRefBanking.tipoChavePixEmail()
+            FillRefBanking.chavePixEmailErrada()
+            GeneralRefBanking.clicarSalvarRefBancaria()
+            GeneralRefBanking.messRefBancariaIncluidaSucesso()
+            GeneralRefBanking.infosRefBancariaAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralRefBanking.messRefBancariaChavePixEmailInvalida()
         })  
 
         it('11.Cliente completo CPF - validar tipo de chave CPF CNPJ incorreto ', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefBancaria.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
-            GeralRefBancaria.validarAbaRefBancariaVazia()
-            GeralRefBancaria.clicarAddNovaRefBancaria()
-            GeralRefBancaria.modalRefBancariaVazio()
-            PreencherRefBancaria.banco()
-            PreencherRefBancaria.agencia()
-            PreencherRefBancaria.conta()
-            PreencherRefBancaria.dataAbertura()
-            PreencherRefBancaria.telefone()
-            PreencherRefBancaria.gerente()
-            PreencherRefBancaria.email()
-            PreencherRefBancaria.cpfCorrentista()
-            PreencherRefBancaria.nomeCorrentista()
-            PreencherRefBancaria.tipoConta()
-            PreencherRefBancaria.operacao()
-            PreencherRefBancaria.formaPagamento()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefBanking.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validarAbaRefBancariaVazia()
+            GeneralRefBanking.clicarAddNovaRefBancaria()
+            GeneralRefBanking.modalRefBancariaVazio()
+            FillRefBanking.banco()
+            FillRefBanking.agencia()
+            FillRefBanking.conta()
+            FillRefBanking.dataAbertura()
+            FillRefBanking.telefone()
+            FillRefBanking.gerente()
+            FillRefBanking.email()
+            FillRefBanking.cpfCorrentista()
+            FillRefBanking.nomeCorrentista()
+            FillRefBanking.tipoConta()
+            FillRefBanking.operacao()
+            FillRefBanking.formaPagamento()
 
-            PreencherRefBancaria.tipoChavePixCpfCnpj()
-            PreencherRefBancaria.tipoChavePixAletoria()
-            GeralRefBancaria.clicarSalvarRefBancaria()
-            GeralRefBancaria.messRefBancariaIncluidaSucesso()
-            GeralRefBancaria.infosRefBancariaAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralRefBancaria.messRefBancariaChavePixCpfCnpjInvalida()
+            FillRefBanking.tipoChavePixCpfCnpj()
+            FillRefBanking.tipoChavePixAletoria()
+            GeneralRefBanking.clicarSalvarRefBancaria()
+            GeneralRefBanking.messRefBancariaIncluidaSucesso()
+            GeneralRefBanking.infosRefBancariaAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralRefBanking.messRefBancariaChavePixCpfCnpjInvalida()
         })  
 
         it('12.Cliente completo CPF - validar tipo de chave Aleatória incorreto ', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefBancaria.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
-            GeralRefBancaria.validarAbaRefBancariaVazia()
-            GeralRefBancaria.clicarAddNovaRefBancaria()
-            GeralRefBancaria.modalRefBancariaVazio()
-            PreencherRefBancaria.banco()
-            PreencherRefBancaria.agencia()
-            PreencherRefBancaria.conta()
-            PreencherRefBancaria.dataAbertura()
-            PreencherRefBancaria.telefone()
-            PreencherRefBancaria.gerente()
-            PreencherRefBancaria.email()
-            PreencherRefBancaria.cpfCorrentista()
-            PreencherRefBancaria.nomeCorrentista()
-            PreencherRefBancaria.tipoConta()
-            PreencherRefBancaria.operacao()
-            PreencherRefBancaria.formaPagamento()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefBanking.clicarAbaRefBancaria() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validarAbaRefBancariaVazia()
+            GeneralRefBanking.clicarAddNovaRefBancaria()
+            GeneralRefBanking.modalRefBancariaVazio()
+            FillRefBanking.banco()
+            FillRefBanking.agencia()
+            FillRefBanking.conta()
+            FillRefBanking.dataAbertura()
+            FillRefBanking.telefone()
+            FillRefBanking.gerente()
+            FillRefBanking.email()
+            FillRefBanking.cpfCorrentista()
+            FillRefBanking.nomeCorrentista()
+            FillRefBanking.tipoConta()
+            FillRefBanking.operacao()
+            FillRefBanking.formaPagamento()
 
-            PreencherRefBancaria.tipoChavePixAletoria()
-            GeralRefBancaria.clicarSalvarRefBancaria()
-            GeralRefBancaria.messRefBancariaIncluidaSucesso()
-            GeralRefBancaria.infosRefBancariaAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralRefBancaria.messRefBancariaChavePixAletoriaInvalida()
+            FillRefBanking.tipoChavePixAletoria()
+            GeneralRefBanking.clicarSalvarRefBancaria()
+            GeneralRefBanking.messRefBancariaIncluidaSucesso()
+            GeneralRefBanking.infosRefBancariaAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralRefBanking.messRefBancariaChavePixAletoriaInvalida()
         })  
     })
 
@@ -824,63 +822,63 @@ describe('Cadastrar cliente completo', () => {
 
         it('13. Cliente completo CPF - caminho feliz', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefPessoal.clicarAbaRefPessoal()
-            GeralRefPessoal.validarAbaRefPessoalVazia() //CADASTRAR REFERENCIA PESSOAL
-            GeralRefPessoal.clicarAddNovaRefPessoal()
-            GeralRefPessoal.modalRefPessoalVazio()
-            PreencherRefPessoal.nome()
-            PreencherRefPessoal.email()
-            PreencherRefPessoal.telefone()
-            PreencherRefPessoal.relacionamento()
-            GeralRefPessoal.clicarSalvar()
-            GeralRefPessoal.messRefPessoalIncluidaSucesso()
-            GeralRefPessoal.infosAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefGuys.clicarAbaRefPessoal()
+            GeneralRefGuys.validarAbaRefPessoalVazia() //CADASTRAR REFERENCIA PESSOAL
+            GeneralRefGuys.clicarAddNovaRefPessoal()
+            GeneralRefGuys.modalRefPessoalVazio()
+            FillRefGuys.nome()
+            FillRefGuys.email()
+            FillRefGuys.telefone()
+            FillRefGuys.relacionamento()
+            GeneralRefGuys.clicarSalvar()
+            GeneralRefGuys.messRefPessoalIncluidaSucesso()
+            GeneralRefGuys.infosAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         }) 
     })
 
@@ -888,64 +886,64 @@ describe('Cadastrar cliente completo', () => {
 
         it('14. Cliente completo CPF - caminho feliz', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefComercial.clicarAbaRefComercial() //CADASTRAR REFERENCIA COMERCIAL
-            GeralRefComercial.validarAbaRefComercialVazia()
-            GeralRefComercial.clicarAddNovaRefComercial()
-            GeralRefComercial.modalRefComercialVazio()
-            PreencherRefComercial.empresa()
-            PreencherRefComercial.contato()
-            PreencherRefComercial.telefone()
-            PreencherRefComercial.email()
-            PreencherRefComercial.observacao()
-            GeralRefComercial.clicarSalvarRefComercial()
-            GeralRefComercial.infosRefComercialAdicionada()
-            GeralRefComercial.messRefComercialIncluidaSucesso()
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefCommercial.clicarAbaRefComercial() //CADASTRAR REFERENCIA COMERCIAL
+            GeneralRefCommercial.validarAbaRefComercialVazia()
+            GeneralRefCommercial.clicarAddNovaRefComercial()
+            GeneralRefCommercial.modalRefComercialVazio()
+            FillRefCommercial.empresa()
+            FillRefCommercial.contato()
+            FillRefCommercial.telefone()
+            FillRefCommercial.email()
+            FillRefCommercial.observacao()
+            GeneralRefCommercial.clicarSalvarRefComercial()
+            GeneralRefCommercial.infosRefComercialAdicionada()
+            GeneralRefCommercial.messRefComercialIncluidaSucesso()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         }) 
     })
 
@@ -953,63 +951,63 @@ describe('Cadastrar cliente completo', () => {
 
         it('15. Cliente completo CPF - caminho feliz', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
             //messEnderecoIncluidoSucesso()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            ClicarClienteCompleto.abaReferencias() //REFERENCIA
-            GeralRefFinanceira.clicarAba() //CADASTRAR REFERENCIA FINANCEIRA
-            GeralRefFinanceira.validarAbaVazia()
-            GeralRefFinanceira.clicarAddNova()
-            GeralRefFinanceira.modalVazio()
-            PreencherRefFinanceira.dataInicio()
-            PreencherRefFinanceira.localExp()
-            PreencherRefFinanceira.planoExp()
-            PreencherRefFinanceira.valorPrest()
-            GeralRefFinanceira.clicarSalvar()
-            GeralRefFinanceira.messRefFinanceiraIncluidaSucesso()
-            GeralRefFinanceira.infosRefFinanceiraAdicionada()
-            ClicarClienteCompleto.salvarCliente()
-            GeralClienteCompleto.modalAguardeCarregando()
-            GeralClienteCompleto.messRegistroSalvoSucesso()
+            ClickClientComplete.abaReferencias() //REFERENCIA
+            GeneralRefFinance.clicarAba() //CADASTRAR REFERENCIA FINANCEIRA
+            GeneralRefFinance.validarAbaVazia()
+            GeneralRefFinance.clicarAddNova()
+            GeneralRefFinance.modalVazio()
+            FillRefFinance.dataInicio()
+            FillRefFinance.localExp()
+            FillRefFinance.planoExp()
+            FillRefFinance.valorPrest()
+            GeneralRefFinance.clicarSalvar()
+            GeneralRefFinance.messRefFinanceiraIncluidaSucesso()
+            GeneralRefFinance.infosRefFinanceiraAdicionada()
+            ClickClientComplete.salvarCliente()
+            GeneralClientComplete.modalAguardeCarregando()
+            GeneralClientComplete.messRegistroSalvoSucesso()
         }) 
     })
 
@@ -1017,52 +1015,51 @@ describe('Cadastrar cliente completo', () => {
 
         it('16. Cliente completo CPF - caminho feliz', () => {
 
-            GeralClienteCompleto.iconeMenuOpcoes()
-            GeralClienteCompleto.opcaoClienteCompleto()
-            PreencherPessoa.cpfCliente()
-            PreencherPessoa.nomeCompleto()
-            PreencherPessoa.nomeSocial()
-            PreencherPessoa.dataNascimento()
-            PreencherPessoa.sexoCliente()
-            ClicarClienteCompleto.salvarCliente()
+            GeneralClientComplete.iconeMenuOpcoes()
+            GeneralClientComplete.opcaoClienteCompleto()
+            FillPerson.cpfCliente()
+            FillPerson.nomeCompleto()
+            FillPerson.nomeSocial()
+            FillPerson.dataNascimento()
+            FillPerson.sexoCliente()
+            ClickClientComplete.salvarCliente()
             
-            GeralClienteCompleto.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            GeneralClientComplete.messAlertaEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
 
-            GeralEndereco.clicarAbaEndereco() //CADASTRAR ENDEREÇO
-            GeralEndereco.clicarAdicionarNovoEndereço()
-            GeralEndereco.tipoEndereco()
-            GeralEndereco.modalEnderecoVazioValidar()
-            GeralEndereco.clicarAbrirTipoEndereco()
-            PreencherEndereco.tipoEndereco()
-            PreencherEndereco.cepEndereco()
-            PreencherEndereco.numeroEndereco()
+            GeneralAdress.clicarAbaEndereco() //CADASTRAR ENDEREÇO
+            GeneralAdress.clicarAdicionarNovoEndereço()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalEnderecoVazioValidar()
+            GeneralAdress.clicarAbrirTipoEndereco()
+            FillAdress.tipoEndereco()
+            FillAdress.cepEndereco()
+            FillAdress.numeroEndereco()
 
-            GeralClienteCompleto.botaoSalvarDesabilitado()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.clicarSalvarEndereco()
-            GeralEndereco.infosEnderecoAdicionado()
+            GeneralClientComplete.botaoSalvarDesabilitado()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.clicarSalvarEndereco()
+            GeneralAdress.infosEnderecoAdicionado()
 
-            GeralRota.clicarAbaRota() //CADASTRAR ROTA
-            GeralRota.clicarAdicionarNovaRota()
-            GeralRota.modalRotaVazioValidar()
-            PreencherRota.tipoEnderecoRota()
-            PreencherRota.rotaCompleta()
-            PreencherRota.infosRotaAdicionada()
+            GeneralRefRoute.clicarAbaRota() //CADASTRAR ROTA
+            GeneralRefRoute.clicarAdicionarNovaRota()
+            GeneralRefRoute.modalRotaVazioValidar()
+            FillRefRoute.tipoEnderecoRota()
+            FillRefRoute.rotaCompleta()
+            FillRefRoute.infosRotaAdicionada()
 
-            GeralTelefone.clicarAbaTelefone() //CADASTRAR TELEFONE
-            GeralTelefone.clicarAdicionarNovoTelefone()
-            GeralTelefone.modalTelefoneVazioValidar()
-            PreencherTelefone.tipoTelefone()
-            PreencherTelefone.numeroTelefone()
-            PreencherTelefone.ramalTelefone()
-            GeralTelefone.clicarSalvarTelefone()
-            GeralTelefone.infosTelefoneAdicionado()
-            GeralTelefone.messTelefoneIncluidoSucesso()
-            GeralTelefone()
+            GeneralRefPhone.clicarAbaTelefone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clicarAdicionarNovoTelefone()
+            GeneralRefPhone.modalTelefoneVazioValidar()
+            FillRefPhone.tipoTelefone()
+            FillRefPhone.numeroTelefone()
+            FillRefPhone.ramalTelefone()
+            GeneralRefPhone.clicarSalvarTelefone()
+            GeneralRefPhone.infosTelefoneAdicionado()
+            GeneralRefPhone.messTelefoneIncluidoSucesso()
 
-            GeralEmpregaticio.clicarAbaEmpregat() //CADASTRAR EMPREGATÍCIO
-            GeralEmpregaticio.validarAbaEmpregatVazia()
-            GeralEmpregaticio.clicarAddNovoEmpregat()
+            GeneralEmployment.clicarAbaEmpregat() //CADASTRAR EMPREGATÍCIO
+            GeneralEmployment.validarAbaEmpregatVazia()
+            GeneralEmployment.clicarAddNovoEmpregat()
         }) 
     })
 })

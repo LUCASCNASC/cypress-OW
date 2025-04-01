@@ -1,4 +1,4 @@
-export class GeralRota {
+export class GeneralRefRoute {
 
     constructor(page) {
         this.page = page

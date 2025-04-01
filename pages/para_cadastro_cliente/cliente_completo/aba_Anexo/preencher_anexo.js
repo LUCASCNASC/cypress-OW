@@ -1,4 +1,4 @@
-export class PreencherCampoAnexo {
+export class FillFieldAnexo {
 
     constructor(page) {
         this.page = page

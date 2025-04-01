@@ -1,6 +1,6 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa }  from '../gerarDados';
 
-export class GeralClienteSimples {
+export class GeneralClientSimple {
 
     constructor(page) {
         this.page = page

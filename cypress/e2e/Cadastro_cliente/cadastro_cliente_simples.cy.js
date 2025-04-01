@@ -1,5 +1,5 @@
-import { PreencherClienteSimples } from '../../../pages/para_cadastro_cliente/cliente_simples/preencher_cliente_simples';
-import { GeralClienteSimples } from '../../../pages/para_cadastro_cliente/cliente_simples/geral_cliente_simples';
+import { FillClientSimple } from '../../../pages/para_cadastro_cliente/cliente_simples/preencher_cliente_simples';
+import { GeneralClientSimple } from '../../../pages/para_cadastro_cliente/cliente_simples/geral_cliente_simples';
 import { gerarCpf }  from '../../support/gerarDados';
 
 const Numeroalteracao = '113'
@@ -20,35 +20,35 @@ describe('Cadastrar cliente simples', () => {
 
         it('1. Cliente simples CPF', () => {
 
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
-            PreencherClienteSimples.cpfCliente()
-            PreencherClienteSimples.nomeCompletoCPF()
-            PreencherClienteSimples.dataNascimento()
-            PreencherClienteSimples.sexoPessoaFisica()
-            PreencherClienteSimples.pesquisarCEP()
-            PreencherClienteSimples.numeroEndereco()
-            PreencherClienteSimples.rotaCliente()
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
+            FillClientSimple.cpfCliente()
+            FillClientSimple.nomeCompletoCPF()
+            FillClientSimple.dataNascimento()
+            FillClientSimple.sexoPessoaFisica()
+            FillClientSimple.pesquisarCEP()
+            FillClientSimple.numeroEndereco()
+            FillClientSimple.rotaCliente()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
         })  
 
         it('2. Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
     
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
-            PreencherClienteSimples.cpfCliente()
-            PreencherClienteSimples.nomeCompletoCPF()
-            PreencherClienteSimples.dataNascimento()
-            PreencherClienteSimples.sexoPessoaFisica()
-            PreencherClienteSimples.pesquisarCEP()
-            PreencherClienteSimples.numeroEndereco()
-            PreencherClienteSimples.rotaCliente()
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
+            FillClientSimple.cpfCliente()
+            FillClientSimple.nomeCompletoCPF()
+            FillClientSimple.dataNascimento()
+            FillClientSimple.sexoPessoaFisica()
+            FillClientSimple.pesquisarCEP()
+            FillClientSimple.numeroEndereco()
+            FillClientSimple.rotaCliente()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
 
-            GeralClienteSimples.iconeMenuOpcoes() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
-            GeralClienteSimples.opcaoClienteSimples()
+            GeneralClientSimple.iconeMenuOpcoes() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            GeneralClientSimple.opcaoClienteSimples()
 
             //Campo CEP - alterar
             cy.get('#txtCep')
@@ -73,26 +73,26 @@ describe('Cadastrar cliente simples', () => {
                 .and('have.value','')
                 .type(Numeroalteracao, {force:true})
 
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
         })
 
         it('3. Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
     
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
-            PreencherClienteSimples.cpfCliente()
-            PreencherClienteSimples.nomeCompletoCPF()
-            PreencherClienteSimples.dataNascimento()
-            PreencherClienteSimples.sexoPessoaFisica()
-            PreencherClienteSimples.pesquisarCEP()
-            PreencherClienteSimples.numeroEndereco()
-            PreencherClienteSimples.rotaCliente()
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
+            FillClientSimple.cpfCliente()
+            FillClientSimple.nomeCompletoCPF()
+            FillClientSimple.dataNascimento()
+            FillClientSimple.sexoPessoaFisica()
+            FillClientSimple.pesquisarCEP()
+            FillClientSimple.numeroEndereco()
+            FillClientSimple.rotaCliente()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
             
-            GeralClienteSimples.iconeMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
-            GeralClienteSimples.opcaoClienteSimples()
+            GeneralClientSimple.iconeMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            GeneralClientSimple.opcaoClienteSimples()
 
             cy.contains('Data de nascimento').parent().find('input')
                 .scrollIntoView()
@@ -105,16 +105,16 @@ describe('Cadastrar cliente simples', () => {
                 .should('have.value','')
                 .type("10/10/1990", {force:true})
 
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
         })  
 
         it('4. Cliente simples CPF - alterar data de nascimento (deve pedir trial)', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
     
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
 
             //Campo CPF - validando mensagem dentro do campo antes de preencher
             cy.get('label[for="txtCpf"]')
@@ -133,21 +133,21 @@ describe('Cadastrar cliente simples', () => {
                     // Aqui você pode usar 'value' como precisar
                 });
 
-            PreencherClienteSimples.nomeCompletoCPF()
-            PreencherClienteSimples.dataNascimento()
-            PreencherClienteSimples.sexoPessoaFisica()
-            PreencherClienteSimples.pesquisarCEP()
-            PreencherClienteSimples.numeroEndereco()
-            PreencherClienteSimples.rotaCliente()
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            FillClientSimple.nomeCompletoCPF()
+            FillClientSimple.dataNascimento()
+            FillClientSimple.sexoPessoaFisica()
+            FillClientSimple.pesquisarCEP()
+            FillClientSimple.numeroEndereco()
+            FillClientSimple.rotaCliente()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
 
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.clicarSairSistema()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.clicarSairSistema()
 
-            GeralClienteSimples.logarNovamente()
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
+            GeneralClientSimple.logarNovamente()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
 
             //Preencher campo CPF - para alterar o cadastro que acabamos de gerar
             cy.get('#txtCpf')
@@ -160,7 +160,7 @@ describe('Cadastrar cliente simples', () => {
             cy.contains('Data de nascimento').parent().find('input')
                 .click()
 
-            GeralClienteSimples.desejoVisualizarCadastro()
+            GeneralClientSimple.desejoVisualizarCadastro()
 
             //Clicar na data que desejo, 29/09/1998
             cy.contains('Data de nascimento').parent().find('input')
@@ -173,19 +173,19 @@ describe('Cadastrar cliente simples', () => {
                 .wait(4000)
 
             cy.intercept('/views/cliente/modalClienteAutorizacao**').as('api_modalClienteAutorizacao')
-            GeralClienteSimples.salvarClienteSimples()
+            GeneralClientSimple.salvarClienteSimples()
             cy.wait('@api_modalClienteAutorizacao', { timeout: 40000 })
 
-            GeralClienteSimples.autorizarTrialAlterarDataNascimento()
-            GeralClienteSimples.mensagemPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.autorizarTrialAlterarDataNascimento()
+            GeneralClientSimple.mensagemPrimeiroRegistSalvoSucesso()
         })
 
         it('5. Cliente simples CPF - alterar tipo de sexo', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
 
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
 
             //Campo CPF - validando mensagem dentro do campo antes de preencher
             cy.get('label[for="txtCpf"]')
@@ -204,19 +204,19 @@ describe('Cadastrar cliente simples', () => {
                     // Aqui você pode usar 'value' como precisar
                 });
 
-            PreencherClienteSimples.nomeCompletoCPF()
-            PreencherClienteSimples.dataNascimento()
-            PreencherClienteSimples.sexoPessoaFisica()
-            PreencherClienteSimples.pesquisarCEP()
-            PreencherClienteSimples.numeroEndereco()
-            PreencherClienteSimples.rotaCliente()
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
-            GeralClienteSimples.logarNovamente() 
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
+            FillClientSimple.nomeCompletoCPF()
+            FillClientSimple.dataNascimento()
+            FillClientSimple.sexoPessoaFisica()
+            FillClientSimple.pesquisarCEP()
+            FillClientSimple.numeroEndereco()
+            FillClientSimple.rotaCliente()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
+            GeneralClientSimple.logarNovamente() 
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
 
             //Preencher campo CPF - para alterar o cadastro que acabamos de gerar
             cy.get('#txtCpf')
@@ -228,7 +228,7 @@ describe('Cadastrar cliente simples', () => {
                 .click({force: true})
                 .wait(1000)
 
-            GeralClienteSimples.desejoVisualizarCadastro()
+                GeneralClientSimple.desejoVisualizarCadastro()
 
             // ALTERAR SEXO 
 
@@ -245,39 +245,39 @@ describe('Cadastrar cliente simples', () => {
             cy.get('.date-picker.flex-md-100 > .validaData > .md-datepicker-input-container > .md-datepicker-triangle-button')
                 .click()
 
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
         })
 
         it('6. Cliente simples CNPJ', () => {
     
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
-            GeralClienteSimples.arrastarPessoaJuridica()
-            PreencherClienteSimples.cnpjCliente()
-            PreencherClienteSimples.nomeCompletoCNPJ()
-            PreencherClienteSimples.pesquisarCEP()
-            PreencherClienteSimples.numeroEndereco()
-            PreencherClienteSimples.rotaCliente()
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
+            GeneralClientSimple.arrastarPessoaJuridica()
+            FillClientSimple.cnpjCliente()
+            FillClientSimple.nomeCompletoCNPJ()
+            FillClientSimple.pesquisarCEP()
+            FillClientSimple.numeroEndereco()
+            FillClientSimple.rotaCliente()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
         })
 
         it('7. Cliente simples CNPJ - alterar Endereço', () => {
 
-            GeralClienteSimples.iconeMenuOpcoes()
-            GeralClienteSimples.opcaoClienteSimples()
-            GeralClienteSimples.arrastarPessoaJuridica()
-            PreencherClienteSimples.cnpjCliente()
-            PreencherClienteSimples.nomeCompletoCNPJ()
-            PreencherClienteSimples.pesquisarCEP()
-            PreencherClienteSimples.numeroEndereco()
-            PreencherClienteSimples.rotaCliente()
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.iconeMenuOpcoes()
+            GeneralClientSimple.opcaoClienteSimples()
+            GeneralClientSimple.arrastarPessoaJuridica()
+            FillClientSimple.cnpjCliente()
+            FillClientSimple.nomeCompletoCNPJ()
+            FillClientSimple.pesquisarCEP()
+            FillClientSimple.numeroEndereco()
+            FillClientSimple.rotaCliente()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
             
-            GeralClienteSimples.iconeMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
-            GeralClienteSimples.opcaoClienteSimples()
+            GeneralClientSimple.iconeMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            GeneralClientSimple.opcaoClienteSimples()
 
             //Campo CEP - alterar
             cy.get('#txtCep')
@@ -302,8 +302,8 @@ describe('Cadastrar cliente simples', () => {
                 .and('have.value','')
                 .type(Numeroalteracao, {force:true})
 
-            GeralClienteSimples.salvarClienteSimples()
-            GeralClienteSimples.messPrimeiroRegistSalvoSucesso()
+            GeneralClientSimple.salvarClienteSimples()
+            GeneralClientSimple.messPrimeiroRegistSalvoSucesso()
         })
     })
 

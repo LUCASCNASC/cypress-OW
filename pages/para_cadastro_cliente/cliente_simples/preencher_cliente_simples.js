@@ -1,6 +1,6 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa }  from '../../gerarDados';
 
-export class PreencherClienteSimples {
+export class FillClientSimple {
 
     constructor(page) {
         this.page = page

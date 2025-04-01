@@ -1,4 +1,4 @@
-export class PreencherRota {
+export class FillRefRoute {
 
     constructor(page) {
         this.page = page

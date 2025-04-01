@@ -1,4 +1,4 @@
-import { PesquisaCliente } from '../../../pages/para_cadastro_cliente/para_pesquisa_cliente'
+import { SearchClient } from '../../../pages/para_cadastro_cliente/para_pesquisa_cliente'
 
 describe('Cadastrar cliente', () => {
 
@@ -14,25 +14,25 @@ describe('Cadastrar cliente', () => {
 
         it('1-Pesquisa por número CPF', () => {
     
-            PesquisaCliente.inserirCPF()
-            PesquisaCliente.clicarLupaPesquisaCliente()
-            PesquisaCliente.cardClienteValidar()
-            PesquisaCliente.digitarNovamenteCPF()
-            PesquisaCliente.clicarCPFPesquisado()
-            PesquisaCliente.mensagemAguardeCarregando()
-            PesquisaCliente.numeroDescricaoCPFpesquisado()
+            SearchClient.inserirCPF()
+            SearchClient.clicarLupaPesquisaCliente()
+            SearchClient.cardClienteValidar()
+            SearchClient.digitarNovamenteCPF()
+            SearchClient.clicarCPFPesquisado()
+            SearchClient.mensagemAguardeCarregando()
+            SearchClient.numeroDescricaoCPFpesquisado()
         }) 
 
         it('2-Pesquisa por número CNPJ', () => {
 
-            PesquisaCliente.inserirCNPJ()
-            PesquisaCliente.clicarLupaPesquisaCliente()
-            PesquisaCliente.cardClienteValidar()
-            PesquisaCliente.digitarNovamenteCNPJ()
-            PesquisaCliente.clicarLupaPesquisaCliente()
-            PesquisaCliente.clicarCNPJPesquisado()
-            PesquisaCliente.mensagemAguardeCarregando()
-            PesquisaCliente.numeroDescricaoCNPJpesquisado()
+            SearchClient.inserirCNPJ()
+            SearchClient.clicarLupaPesquisaCliente()
+            SearchClient.cardClienteValidar()
+            SearchClient.digitarNovamenteCNPJ()
+            SearchClient.clicarLupaPesquisaCliente()
+            SearchClient.clicarCNPJPesquisado()
+            SearchClient.mensagemAguardeCarregando()
+            SearchClient.numeroDescricaoCNPJpesquisado()
         }) 
     })
 
@@ -40,24 +40,24 @@ describe('Cadastrar cliente', () => {
 
         it('3-Pesquisa por descrição CPF', () => {
 
-            PesquisaCliente.inserirDescricaoCPF()
-            PesquisaCliente.clicarLupaPesquisaCliente()
-            PesquisaCliente.cardClienteValidar()
-            PesquisaCliente.digitarNovamenteCPF()
-            PesquisaCliente.clicarCPFPesquisado()
-            PesquisaCliente.mensagemAguardeCarregando()
-            PesquisaCliente.numeroDescricaoCPFpesquisado()
+            SearchClient.inserirDescricaoCPF()
+            SearchClient.clicarLupaPesquisaCliente()
+            SearchClient.cardClienteValidar()
+            SearchClient.digitarNovamenteCPF()
+            SearchClient.clicarCPFPesquisado()
+            SearchClient.mensagemAguardeCarregando()
+            SearchClient.numeroDescricaoCPFpesquisado()
         }) 
 
         it('4-Pesquisa por descrição CNPJ', () => {
 
-            PesquisaCliente.inserirDescricaoCNPJ()
-            PesquisaCliente.clicarLupaPesquisaCliente()
-            PesquisaCliente.cardClienteValidar()
-            PesquisaCliente.digitarNovamenteCNPJ()
-            PesquisaCliente.clicarCNPJPesquisado()
-            PesquisaCliente.mensagemAguardeCarregando()
-            PesquisaCliente.numeroDescricaoCNPJpesquisado()
+            SearchClient.inserirDescricaoCNPJ()
+            SearchClient.clicarLupaPesquisaCliente()
+            SearchClient.cardClienteValidar()
+            SearchClient.digitarNovamenteCNPJ()
+            SearchClient.clicarCNPJPesquisado()
+            SearchClient.mensagemAguardeCarregando()
+            SearchClient.numeroDescricaoCNPJpesquisado()
         }) 
     })
 })

@@ -3,7 +3,7 @@ import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTele
 import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX'
 
 
-export class PreencherRefComercial {
+export class FillRefCommercial {
 
     constructor(page) {
         this.page = page

@@ -1,4 +1,4 @@
-export class PreencherEndereco {
+export class FillAdress {
 
     constructor(page) {
         this.page = page

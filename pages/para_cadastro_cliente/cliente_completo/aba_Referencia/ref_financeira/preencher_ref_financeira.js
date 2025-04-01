@@ -35,7 +35,7 @@ const valorFinal = `${valorInteiro}.${valorDecimal}`;
 return valorFinal;
 }
 
-export class PreencherRefFinanceira {
+export class FillRefFinance {
 
     constructor(page) {
         this.page = page

@@ -1,4 +1,4 @@
-export class GeralEmpregaticio {
+export class GeneralEmployment {
 
     constructor(page) {
         this.page = page
