@@ -10,9 +10,9 @@ describe('Senha do usuário expirada', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        Login.logoEmpresaLogin()
-        Login.iconeComputadorLogin()
-        Login.usuarioTextoIcone()
+        Login.logoEnterpriseLogin()
+        Login.iconComputerLogin()
+        Login.userTextIcon()
     })
 
     context('Tentar login quando a senha já está expirada', () => {
@@ -27,7 +27,7 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
 
-            Login.senhaTextoIcone()
+            Login.passwordTextIcon()
 
             //Campo Informe sua senha
             cy.get('#txtpassword')
@@ -37,11 +37,11 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
 
-            Login.iconeOlhosSenha()
-            Login.botaoEsqueceuSenha()
-            Login.botaoEntrarHabilitado()
-            Login.clicarBotaoEntrar()
-            Login.messSenhaUsuarioExpirada()
+            Login.iconEyesPassword()
+            Login.buttonForgotPassword()
+            Login.buttonEnterEnabled()
+            Login.clickButtonEnter()
+            Login.messPasswordUserExpired()
 
             //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
             cy.get('p')
@@ -83,7 +83,7 @@ describe('Senha do usuário expirada', () => {
                 .contains('Regras para a Nova Senha')
                 .should('be.visible')
 
-            Login.regrasNovaSenhaAntes()
+            Login.rulesNewPasswordBefore()
 
             //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
             cy.get('input[name="password_new"]')
@@ -95,7 +95,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
                 .should('be.visible')
 
-            Login.regrasNovaSenhaDepois()
+            Login.rulesrulesNewPasswordAfter()
 
             //Card Altere Sua Senha Temporária - botão CONFIRMAR antes de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')
@@ -153,7 +153,7 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
 
-            Login.senhaTextoIcone()
+            Login.passwordTextIcon()
 
             //Campo Informe sua senha
             cy.get('#txtpassword')
@@ -163,11 +163,11 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
 
-            Login.iconeOlhosSenha()
-            Login.botaoEsqueceuSenha()
-            Login.botaoEntrarHabilitado()
-            Login.clicarBotaoEntrar()
-            Login.messSenhaUsuarioExpirada()
+            Login.iconEyesPassword()
+            Login.buttonForgotPassword()
+            Login.botaoEntrarHabbuttonEnterEnabledilitado()
+            Login.clickButtonEnter()
+            Login.messPasswordUserExpired()
 
             //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
             cy.get('p')
@@ -209,7 +209,7 @@ describe('Senha do usuário expirada', () => {
                 .contains('Regras para a Nova Senha')
                 .should('be.visible')
 
-            regrasNovaSenhaAntes()
+            Login.rulesNewPasswordBefore()
 
             //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
             cy.get('input[name="password_new"]')
@@ -221,7 +221,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
                 .should('be.visible')
 
-            Login.regrasNovaSenhaDepois()
+            Login.rulesrulesNewPasswordAfter()
 
             //Card Altere Sua Senha Temporária - botão CONFIRMAR antes de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')
@@ -291,7 +291,7 @@ describe('Senha do usuário expirada', () => {
                     .invoke('attr', 'placeholder')
                     .should('equal', 'Informe seu usuário')
         
-                Login.senhaTextoIcone()
+                Login.passwordTextIcon()
         
                 //Campo Informe sua senha
                 cy.get('#txtpassword')
@@ -301,13 +301,13 @@ describe('Senha do usuário expirada', () => {
                     .invoke('attr', 'placeholder')
                     .should('equal', 'Informe sua senha')
         
-                Login.iconeOlhosSenha()
-                Login.botaoEsqueceuSenha()
-                Login.botaoEntrarHabilitado()
-                Login.clicarBotaoEntrar()
-                Login.mensagemEntrandoSistema()
+                Login.iconEyesPassword()
+                Login.buttonForgotPassword()
+                Login.buttonEnterEnabled()
+                Login.clickButtonEnter()
+                Login.messageOpeningSystem()
         
-                Login.expiraAcessoCardValidar() //APÓS LOGAR
+                Login.expiresAcessCardValidate() //APÓS LOGAR
         
                 //Card de expira acesso - clicar em NÃO
                 cy.get('.md-cancel-button')
@@ -328,7 +328,7 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
     
-            Login.senhaTextoIcone()
+            Login.passwordTextIcon()
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
@@ -338,14 +338,14 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
     
-            Login.iconeOlhosSenha()
-            Login.botaoEsqueceuSenha()
-            Login.botaoEntrarHabilitado()
-            Login.clicarBotaoEntrar()
-            Login.mensagemEntrandoSistema()
+            Login.iconEyesPassword()
+            Login.buttonForgotPassword()
+            Login.buttonEnterEnabled()
+            Login.clickButtonEnter()
+            Login.messageOpeningSystem()
     
-            Login.expiraAcessoCardValidar() //APÓS LOGAR
-            Login.clicarSIMExpira() //clicar SIM 
+            Login.expiresAcessCardValidate() //APÓS LOGAR
+            Login.clickSIMExpires() //clicar SIM 
     
             //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
             cy.get('p')
@@ -387,7 +387,7 @@ describe('Senha do usuário expirada', () => {
                 .contains('Regras para a Nova Senha')
                 .should('be.visible')
     
-            Login.regrasNovaSenhaAntes()
+            Login.rulesNewPasswordBefore()
     
             //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
             cy.get('input[name="password_new"]')
@@ -399,7 +399,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
                 .should('be.visible')
     
-            Login.regrasNovaSenhaDepois()
+            Login.rulesrulesNewPasswordAfter()
     
             //Card Altere Sua Senha Temporária - botão CONFIRMAR antes de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')
@@ -457,7 +457,7 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
     
-            Login.senhaTextoIcone()
+            Login.passwordTextIcon()
     
             //Campo Informe sua senha
             cy.get('#txtpassword')
@@ -467,15 +467,15 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
     
-            Login.iconeOlhosSenha()
-            Login.botaoEsqueceuSenha()
-            Login.botaoEntrarHabilitado()
-            Login.clicarBotaoEntrar()
-            Login.mensagemEntrandoSistema()
+            Login.iconEyesPassword()
+            Login.buttonForgotPassword()
+            Login.buttonEnterEnabled()
+            Login.clickButtonEnter()
+            Login.messageOpeningSystem()
     
             //APÓS LOGAR
-            Login.expiraAcessoCardValidar()
-            Login.clicarSIMExpira() //clicar SIM 
+            Login.expiresAcessCardValidate()
+            Login.clickSIMExpires() //clicar SIM 
     
             //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
             cy.get('p')
@@ -517,7 +517,7 @@ describe('Senha do usuário expirada', () => {
                 .contains('Regras para a Nova Senha')
                 .should('be.visible')
     
-            Login.regrasNovaSenhaAntes()
+            Login.rulesNewPasswordBefore()
     
             //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
             cy.get('input[name="password_new"]')
@@ -529,7 +529,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
                 .should('be.visible')
     
-            Login.regrasNovaSenhaDepois()
+            Login.rulesrulesNewPasswordAfter()
     
             //Card Altere Sua Senha Temporária - botão CONFIRMAR antes de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')

@@ -10,9 +10,9 @@ describe('Logar com novo usuário', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        Login.logoEmpresaLogin()
-        Login.iconeComputadorLogin()
-        Login.usuarioTextoIcone()
+        Login.logoEnterpriseLogin()
+        Login.iconComputerLogin()
+        Login.userTextIcon()
     })
 
     it.skip('1. Novo usuário - clicar em Fechar, não alterando a senha', () => {
@@ -25,7 +25,7 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        Login.senhaTextoIcone()
+        Login.passwordTextIcon()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -35,10 +35,10 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconeOlhosSenha()
-        Login.botaoEsqueceuSenha()
-        Login.botaoEntrarHabilitado()
-        Login.clicarBotaoEntrar()
+        Login.iconEyesPassword()
+        Login.buttonForgotPassword()
+        Login.buttonEnterEnabled()
+        Login.clickButtonEnter()
 
         //Card Sua Senha expirou - Mensagem "Sua Senha expirou..."
         cy.get('.md-dialog-content-body')
@@ -205,7 +205,7 @@ describe('Logar com novo usuário', () => {
         cy.get('[ng-show="!loading"] > a')
             .click()
 
-        Login.iconeComputadorLogin() //Validando que não entrou no sistema
+        Login.iconComputerLogin() //Validando que não entrou no sistema
     })
 
     it.skip('2. Novo usuário - clicar em CONFIRMAR, alterando a senha', () => {
@@ -218,7 +218,7 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        Login.senhaTextoIcone()
+        Login.passwordTextIcon()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -228,10 +228,10 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconeOlhosSenha()
-        Login.botaoEsqueceuSenha()
-        Login.botaoEntrarHabilitado()
-        Login.clicarBotaoEntrar()
+        Login.iconEyesPassword()
+        Login.buttonForgotPassword()
+        Login.buttonEnterEnabled()
+        Login.clickButtonEnter()
 
         //Card Sua Senha expirou - Mensagem "Sua Senha expirou..."
         cy.get('.md-dialog-content-body')

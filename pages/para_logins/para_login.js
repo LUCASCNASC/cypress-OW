@@ -5,7 +5,7 @@ export class Login {
     }
 
     //Validando Logo da empresa
-    async logoEmpresaLogin (selector) {
+    async logoEnterpriseLogin (selector) {
 
         //Validar o logo da empresa
         cy.get('.logo')
@@ -13,7 +13,7 @@ export class Login {
     }
 
     //Validando Ícone do computador
-    async iconeComputadorLogin (selector) {
+    async iconComputerLogin (selector) {
 
         //Ícone do computador
         cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
@@ -22,7 +22,7 @@ export class Login {
     }
 
     //Validando texto usuário, acima do campo usuário e validando ícone do usuário
-    async usuarioTextoIcone (selector) {
+    async userTextIcon (selector) {
 
         //Validando Texto "Usuário" acima do campo informe sue usuário
         cy.get('label[for="txtusername"]')
@@ -35,7 +35,7 @@ export class Login {
     }
 
     //Validando texto Senha, acima do campo usuário e validando ícone da Senha
-    async senhaTextoIcone (selector) {
+    async passwordTextIcon (selector) {
         
         //Validando Texto "Senha" acima do campo informe sua senha
         cy.get('label[for="txtpassword"]')
@@ -48,7 +48,7 @@ export class Login {
     }
 
     //Ícone de visualizar senha
-    async iconeOlhosSenha (selector) {
+    async iconEyesPassword (selector) {
 
         //ícone de olho, para ver a senha
         cy.get('.md-icon-right > .md-primary')
@@ -57,7 +57,7 @@ export class Login {
     }
 
     //Botão Esqueceu Senha
-    async botaoEsqueceuSenha (selector) {
+    async buttonForgotPassword (selector) {
 
         //Botão/mensagem "Esqueceu a senha?"
         cy.get('div[ng-click="modalSenhaNovaOpen()"]')
@@ -67,7 +67,7 @@ export class Login {
     }
 
     //Botão entrar habilitado
-    async botaoEntrarHabilitado (selector) {
+    async buttonEnterEnabled (selector) {
 
         //Botão ENTRAR
         cy.get('.test_btnSalvarCliente')
@@ -77,7 +77,7 @@ export class Login {
     }
 
     //Botão entrar desabilitado
-    async botaoEntrarDesabilitado (selector) {
+    async buttonEnterDisabled (selector) {
 
         //Botão ENTRAR
         cy.get('.test_btnSalvarCliente')
@@ -87,7 +87,7 @@ export class Login {
     }
 
     //Clicar no botão entrar
-    async clicarBotaoEntrar (selector) {
+    async clickButtonEnter (selector) {
 
         //Clicar no botão ENTRAR
         cy.get('.test_btnSalvarCliente')
@@ -95,7 +95,7 @@ export class Login {
     }
 
     //Mensagem Entrando no sistema
-    async mensagemEntrandoSistema (selector) {
+    async messageOpeningSystem (selector) {
 
         //Mensagem "Entrando no sistema"
         cy.get('.ng-scope > .ng-binding')
@@ -104,7 +104,7 @@ export class Login {
     }
 
     //botao INICIAR ATENDIMENTO - validando que entrou no sistema
-    async botaoIniciarAtendimento (selector) {
+    async buttonInitService (selector) {
 
         //Validando botão INICIAR ATENDIMENTO, para ver se logou
         cy.get('.md-raised > .truncate')
@@ -112,7 +112,7 @@ export class Login {
     }
 
     //validando mensagem de Login ou senha estão incorretos
-    async messLoginSenhaIncorreto (selector) {
+    async messLoginPasswordIncorrect (selector) {
 
         //Mensagem de senha errada
         cy.get('.toast')
@@ -136,7 +136,7 @@ export class Login {
     }
 
     // Card de expira acesso - "Falta(m) " 2 " dia(s) para seu acesso ao sistema expirar. Favor atualizá-lo."
-    async expiraAcessoCardValidar (selector) {
+    async expiresAcessCardValidate (selector) {
 
         //Card de expira acesso - Mensagem "Falta(m) " 2 " dia(s) para seu acesso ao sistema expirar. Favor atualizá-lo."
         cy.get('.md-dialog-content-body > .ng-binding')
@@ -157,7 +157,7 @@ export class Login {
     }
 
     //Card de expira acesso - clicar em SIM
-    async clicarSIMExpira (selector) {
+    async clickSIMExpires (selector) {
 
         //Card de expira acesso - clicar em SIM
         cy.get('.md-confirm-button')
@@ -170,7 +170,7 @@ export class Login {
     }
 
     //Validar Regras para a Nova Senha (antes de preencher campo Nova Senha)
-    async regrasNovaSenhaAntes (selector) {
+    async rulesNewPasswordBefore (selector) {
 
         //Validar a primeira Regras para a Nova Senha (antes de preencher campo Nova Senha) - Texto Ao menos 8 caracteres.
         cy.contains('span', 'Ao menos 8 caracteres.')
@@ -204,7 +204,7 @@ export class Login {
     }
 
     //Validar Regras para a Nova Senha (antes de preencher campo Nova Senha)
-    async regrasNovaSenhaDepois (selector) {
+    async rulesrulesNewPasswordAfter (selector) {
 
         //Validar a primeira Regras para a Nova Senha (depois de preencher campo Nova Senha) - Texto Ao menos 8 caracteres.
         cy.contains('span', 'Ao menos 8 caracteres.')
@@ -238,7 +238,7 @@ export class Login {
     }
 
     //validar card "Sua Senha expirou" quando a senha do usuário está expirada
-    async messSenhaUsuarioExpirada (selector) {
+    async messPasswordUserExpired (selector) {
 
         //Mensagem "Seu acesso ao sistema expirou."
         cy.get('.md-dialog-content-body')

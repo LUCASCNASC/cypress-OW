@@ -9,9 +9,9 @@ describe('Usuário inativo', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        Login.logoEmpresaLogin()
-        Login.iconeComputadorLogin()
-        Login.usuarioTextoIcone()
+        Login.logoEnterpriseLogin()
+        Login.iconComputerLogin()
+        Login.userTextIcon()
     })
 
     it('1. Tentar logar com usuário inativo', () => {
@@ -24,7 +24,7 @@ describe('Usuário inativo', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        Login.senhaTextoIcone()
+        Login.passwordTextIcon()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -34,10 +34,10 @@ describe('Usuário inativo', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconeOlhosSenha()
-        Login.botaoEsqueceuSenha()
-        Login.botaoEntrarHabilitado()
-        Login.clicarBotaoEntrar()
+        Login.iconEyesPassword()
+        Login.buttonForgotPassword()
+        Login.buttonEnterEnabled()
+        Login.clickButtonEnter()
 
         //Card de mensagem 
         cy.get('.toast')
@@ -58,6 +58,6 @@ describe('Usuário inativo', () => {
         cy.get('.toast-close-button')
             .should('be.visible')
 
-        Login.iconeComputadorLogin() //Validando que não entrou no sistema
+        Login.iconComputerLogin() //Validando que não entrou no sistema
     })
 })
