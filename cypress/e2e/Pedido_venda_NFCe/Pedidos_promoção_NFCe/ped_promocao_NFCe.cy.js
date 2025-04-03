@@ -32,7 +32,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.selectProductSearch() ; Promotion.ticketPromotion() 
             cy.clickVoltageProduct()
             Promotion.selectFirstPromoProduct()
-            RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked() 
@@ -60,7 +59,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.selectProductSearch() ; Promotion.ticketPromotion() 
             cy.clickVoltageProduct()
             Promotion.selectFirstPromoProduct() //PROMOÇÃO
-            RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
@@ -92,7 +90,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.selectProductSearch() ; Promotion.ticketPromotion()
             cy.clickVoltageProduct()
             Promotion.selectFirstPromoProduct() //PROMOÇÃO
-            RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
