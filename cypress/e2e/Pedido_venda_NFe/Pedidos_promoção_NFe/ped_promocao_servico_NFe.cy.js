@@ -1,17 +1,17 @@
-import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Product } from '../../../../pages/produtos/prd_normal.js'
-import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
-import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
-import { RecebimentoPromo } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
-import { Promocao } from '../../../../pages/para_pedidos/promocao/promocao.js'
+import { ThrowDelivery } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
+import { ReceiptPromotion } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
+import { Promotion } from '../../../../pages/para_pedidos/promocao/promocao.js'
 import { TicketPrestamista } from '../../../../pages/para_pedidos/validar_tela/prestamista.js'
-import { ValidarServico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { Recebimento } from '../../../../pages/para_pedidos/promocao/promocao.js'
+import { ValidateService } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { Promotion } from '../../../../pages/para_pedidos/promocao/promocao.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
@@ -21,8 +21,8 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVenda.NFe()
-        EscolherCliente.withRoute()
+        ProcessSale.NFe()
+        ChooseClient.withRoute()
     })
   
     context('Sem entrega/ com promoção/ com serviço processo 9860 - caminho feliz', () => {
@@ -30,22 +30,22 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('1. Ped venda com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
     
             Product.firstInstallmentDeadline() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.typeServiceFreeValidate()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.pagPrincipal()
+            Promotion.typeServiceFreeValidate()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Servico.clickOKServiceLinked()
-            ValidarServico.servLinked() ; ValidarServico.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked() //SERVICOS
+            Service.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Service.clickOKServiceLinked()
+            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            AvancarNormal.final()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -53,19 +53,19 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('2. Ped venda com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
     
             Product.secondInstallmentDeadline() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.typeServiceFreeValidate()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.pagPrincipal()
+            Promotion.typeServiceFreeValidate()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Servico.clickOKServiceLinked()
-            ValidarServico.servLinked() ; ValidarServico.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked() //SERVICOS
+            Service.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Service.clickOKServiceLinked()
+            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
 
@@ -86,7 +86,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 .and('contain','Gerar pagamento')
                 .click({force:true})
 
-            AvancarNormal.final()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -94,22 +94,22 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('3. Ped venda com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
     
             Product.thirdInstallmentDeadline() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            Recebimento.withMoneylender()
+            Promotion.selectFirstPromoProduct()
+            Receipt.withMoneylender()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            ValidarServico.servLinked() ; ValidarServico.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Promocao.addPrestamista()
+            Promotion.addPrestamista()
             TicketPrestamista.added()
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -118,24 +118,24 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('4. Ped venda com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
     
             Product.fourthInstallmentDeadline() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.typeServiceFreeValidate()
-            Promocao.selectFirstPromoProduct()
-            Recebimento.withMoneylender()
+            Promotion.typeServiceFreeValidate()
+            Promotion.selectFirstPromoProduct()
+            Receipt.withMoneylender()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Servico.clickOKServiceLinked()
-            ValidarServico.servLinked() ; ValidarServico.AddGarantSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked() //SERVICOS
+            Service.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Service.clickOKServiceLinked()
+            ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Promocao.addPrestamista()
+            Promotion.addPrestamista()
             TicketPrestamista.added()
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()

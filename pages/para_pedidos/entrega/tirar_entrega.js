@@ -1,4 +1,4 @@
-export class TirarEntrega {
+export class ThrowDelivery {
 
     constructor(page) {
         this.page = page

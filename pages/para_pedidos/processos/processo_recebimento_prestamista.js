@@ -1,4 +1,4 @@
-export class ProcessoRecebPrest {
+export class ProcessReceiptPrest {
 
     constructor(page) {
         this.page = page

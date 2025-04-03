@@ -1,4 +1,4 @@
-export class TirarMontagem {
+export class ThrowAssembly {
 
     constructor(page) {
         this.page = page

@@ -1,4 +1,4 @@
-export class ValidarServico {
+export class ValidateService {
 
     constructor(page) {
         this.page = page

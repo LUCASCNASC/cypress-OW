@@ -1,17 +1,17 @@
-import { ProcessoVenda } from '../../../../../pages/para_pedidos/processos/processo_venda.js'
-import { EscolherCliente } from '../../../../../pages/para_pedidos/cliente/cliente.js'
-import { ValidarSaldo } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { ProcessSale } from '../../../../../pages/para_pedidos/processos/processo_venda.js'
+import { ChooseClient } from '../../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidateBalance } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Product } from '../../../../../pages/produtos/prd_normal.js'
-import { Servico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { AvancarNormal } from '../../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { Service } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AdvanceNormal } from '../../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinishOrder } from '../../../../../pages/para_pedidos/finalizar_pedido.js'
-import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
-import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
-import { Recebimento } from '../../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { RecebimentoPromo } from '../../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
-import { Servico } from '../../../../../pages/para_pedidos/servicos/apenas_servicos.js'
-import { ValidarServico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { Promocao } from '../../../../../pages/para_pedidos/promocao/promocao.js'
+import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Receipt } from '../../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { ReceiptPromotion } from '../../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
+import { Service } from '../../../../../pages/para_pedidos/servicos/apenas_servicos.js'
+import { ValidateService } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { Promotion } from '../../../../../pages/para_pedidos/promocao/promocao.js'
 import { TicketPrestamista } from '../../../../../pages/para_pedidos/validar_tela/prestamista.js'
 import { GeneralOrder } from '../../../../pages/para_pedidos/gerais_pedidos.js'
 
@@ -23,8 +23,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessoVenda.NFe()
-        EscolherCliente.withRoute()
+        ProcessSale.NFe()
+        ChooseClient.withRoute()
     })   
 
     context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo - Origem Serviço (162)', () => {
@@ -32,21 +32,21 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('1. Ped venda: produto 1860 0 0, inclusão 3881, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.futComJurosPrestAbatOrigemPrd()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.futComJurosPrestAbatOrigemPrd()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -55,29 +55,29 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3881 e 3860, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.futComJurosPrestAbatOrigemPrd()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.futComJurosPrestAbatOrigemPrd()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added()
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -89,23 +89,23 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('3. Ped venda: produto 1922 0 0 (promo a prazo 171), inclusão 3881, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
     
             Product.termFisrtPrestAbatVF() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithFeesPrestAbatVF()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithFeesPrestAbatVF()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -114,24 +114,24 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('4. Ped venda: produto 1923 0 0 + garantia Não separa (promo a prazo 172 - isentar juros serviços), inclusão 3881, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
 
             Product.termSecondPrestAbatVF() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
+            Promotion.selectFirstPromoProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -140,25 +140,25 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3882, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
 
             Product.prazoPrestTercAbatVF() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termPresentWithFeesPrestAbatVFOS()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termPresentWithFeesPrestAbatVFOS()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
-            AvancarNormal.toTransporter()
-            AvancarNormal.paraPatoInstallmentsrcelas()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.paraPatoInstallmentsrcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.pageFinal() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()

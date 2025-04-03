@@ -1,4 +1,4 @@
-export class AvancarNormal {
+export class AdvanceNormal {
 
     constructor(page) {
         this.page = page

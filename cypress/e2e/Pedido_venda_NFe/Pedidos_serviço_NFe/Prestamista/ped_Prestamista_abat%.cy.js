@@ -1,18 +1,18 @@
-import { ProcessoVenda } from '../../../../../pages/para_pedidos/processos/processo_venda.js'
-import { EscolherCliente } from '../../../../../pages/para_pedidos/cliente/cliente.js'
-import { ValidarSaldo } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { ProcessSale } from '../../../../../pages/para_pedidos/processos/processo_venda.js'
+import { ChooseClient } from '../../../../../pages/para_pedidos/cliente/cliente.js'
+import { ValidateBalance } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Product } from '../../../../../pages/produtos/prd_normal.js'
-import { Servico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { AvancarNormal } from '../../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { Service } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AdvanceNormal } from '../../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinishOrder } from '../../../../../pages/para_pedidos/finalizar_pedido.js'
-import { TirarEntrega } from '../../../../../pages/para_pedidos/entrega/tirar_entrega.js'
-import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
-import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
-import { AgruparReceb } from '../../../../pages/para_pedidos/pagamento/agrupar_recebimento.js'
-import { Recebimento } from '../../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { RecebimentoPromo } from '../../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
-import { ValidarServico } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { Promocao } from '../../../../../pages/para_pedidos/promocao/promocao.js'
+import { ThrowDelivery } from '../../../../../pages/para_pedidos/entrega/tirar_entrega.js'
+import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { GroupReceipt } from '../../../../pages/para_pedidos/pagamento/agrupar_recebimento.js'
+import { Receipt } from '../../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { ReceiptPromotion } from '../../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
+import { ValidateService } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { Promotion } from '../../../../../pages/para_pedidos/promocao/promocao.js'
 import { TicketPrestamista } from '../../../../../pages/para_pedidos/validar_tela/prestamista.js'
 import { GeneralOrder } from '../../../../pages/para_pedidos/gerais_pedidos.js'
 
@@ -25,8 +25,8 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessoVenda.NFe()
-        EscolherCliente.withRoute()
+        ProcessSale.NFe()
+        ChooseClient.withRoute()
     })   
 
     context('Sem entrega / Produtos sem promoção - Prestamista com abatimento %', () => {
@@ -34,29 +34,29 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('1. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.freightFirst()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.freightFirst()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS - SEGUNDO PRODUTO
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightSecond()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.futMoneyWithFees()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            Service.validateModalServLinked() //SERVICOS - SEGUNDO PRODUTO
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightSecond()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.futMoneyWithFees()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -65,29 +65,29 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightFirst()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightFirst()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightSecond()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.presentMoney()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightSecond()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.presentMoney()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -99,28 +99,28 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('3. Ped venda: produtos 1860 0 0 e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.futMoneyWithoutFees()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.futMoneyWithoutFees()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -129,30 +129,30 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('4. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.garantiaSepMesmoProc()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.garantiaSepMesmoProc()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.futMoneyWithFees()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.futMoneyWithFees()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -161,30 +161,30 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('5. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
             Product.fisrt() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.garantiaSepMesmoProc()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.garantiaSepMesmoProc()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS - SEGUNDO PRODUTO
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.futMoneyWithoutFees()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            Service.validateModalServLinked() //SERVICOS - SEGUNDO PRODUTO
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.futMoneyWithoutFees()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -193,30 +193,30 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('6. Ped venda: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente sem juros.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.garantiaSepMesmoProc()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.garantiaSepMesmoProc()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS - SEGUNDO PRODUTO
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.presentMoney()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            Service.validateModalServLinked() //SERVICOS - SEGUNDO PRODUTO
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.presentMoney()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -228,23 +228,23 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('7. Ped venda: produto 1918 0 0 (promoção a prazo 167), inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.freightFirst()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.freightFirst()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -253,23 +253,23 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('8. Ped venda: produto 1918 0 0 (promoção a prazo 167), inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithoutFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithoutFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.freightFirst()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.freightFirst()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -278,24 +278,24 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('9. Ped venda: produto 1918 0 0 (promoção a prazo 167), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithoutFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithoutFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.freightFirst()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.freightFirst()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -307,30 +307,29 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('10. Ped venda: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithoutFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithoutFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
             cy.wait('@api_pagamentoPedido', { timeout: 40000 })
-            GeralPagamento.insertDateTomorrow1Due()
-            cy.wait(4000)
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDateTomorrow1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.contains('3876 - T.A. A Receber Futuro - para Prestamista sem juros').click()
             cy.intercept('/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
             cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
-            EscolherParcelaReceb.one()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.one()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            avancAvancarNormal.finalarFinal()
+            AdvanceNormal.finalarFinal()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -339,31 +338,30 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('11. Ped venda: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
 
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_pagamentoPedido')
             cy.wait('@api_pagamentoPedido', { timeout: 40000 })
             //TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDateTomorrow1Due()
-            cy.wait(4000)
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDateTomorrow1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.contains('3874 - T.A. A Receber Futuro - para Prestamista').click()
             cy.intercept('/services/v3/pedido_forma_pagamento').as('api_pedido_forma_pagamento')
             cy.wait('@api_pedido_forma_pagamento', { timeout: 40000 })
-            EscolherParcelaReceb.one()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.one()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -372,25 +370,25 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('12. Ped venda: produto 1920 0 0 (promoção partida 169), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.entryPresentPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.entryPresentPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
-            TirarEntrega.freightFirst()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
+            ThrowDelivery.freightFirst()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -402,35 +400,35 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('13. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            tirarEntTirarEntrega.primeirorega()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.primeiro()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightSecond()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightSecond()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDateTomorrow1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
-            Recebimento.main()
-            EscolherParcelaReceb.one()
-            AvancarNormal.final()
+            GeneralPayment.insertDateTomorrow1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
+            Receipt.main()
+            ChooseInstallmentReceipt.one()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -439,39 +437,39 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('14. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.freightFirst()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.freightFirst()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightSecond()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightSecond()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDate31Days1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
-            Recebimento.futMoneyWithFees()
+            GeneralPayment.insertDate31Days1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
+            Receipt.futMoneyWithFees()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.groupReleases()
-            ValidarServico.messPrestRemoved()
-            ValidarServico.addInsurancePrest()
+            GroupReceipt.groupReleases()
+            ValidateService.messPrestRemoved()
+            ValidateService.addInsurancePrest()
             GeneralOrder.adicionadoRecebAgrupado()
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -480,35 +478,35 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('15. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithoutFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithoutFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.freightFirst()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.freightFirst()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightSecond()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightSecond()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDateTomorrow1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
-            Recebimento.main()
-            EscolherParcelaReceb.one()
-            AvancarNormal.final()
+            GeneralPayment.insertDateTomorrow1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
+            Receipt.main()
+            ChooseInstallmentReceipt.one()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -517,41 +515,41 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('16. Ped venda: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithoutFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithoutFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.freightFirst()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.freightFirst()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightSecond()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightSecond()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDate31Days1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDate31Days1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.futMoneyWithoutFees()
+            Receipt.futMoneyWithoutFees()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.groupReleases()
-            ValidarServico.messPrestRemoved()
-            ValidarServico.addInsurancePrest()
+            GroupReceipt.groupReleases()
+            ValidateService.messPrestRemoved()
+            ValidateService.addInsurancePrest()
             GeneralOrder.adicionadoRecebAgrupado()
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -560,23 +558,23 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('17. Ped venda: produto 1921 0 0 (promo a prazo 170), inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.primeiro()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ThrowDelivery.primeiro()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -588,38 +586,38 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('18. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithFeesPrest()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDateTomorrow1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDateTomorrow1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.main()
-            EscolherParcelaReceb.one()
-            AvancarNormal.final()
+            Receipt.main()
+            ChooseInstallmentReceipt.one()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -628,43 +626,43 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('19. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.added() //Validando adição do prestamista
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDate31Days1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDate31Days1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.futMoneyWithFees()
+            Receipt.futMoneyWithFees()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.groupReleases()
-            ValidarServico.messPrestRemoved()
-            ValidarServico.addInsurancePrest()
+            GroupReceipt.groupReleases()
+            ValidateService.messPrestRemoved()
+            ValidateService.addInsurancePrest()
             GeneralOrder.adicionadoRecebAgrupado()
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -673,38 +671,38 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('20. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithoutFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithoutFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDateTomorrow1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDateTomorrow1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.main()
-            EscolherParcelaReceb.one()
-            AvancarNormal.final()
+            Receipt.main()
+            ChooseInstallmentReceipt.one()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -713,43 +711,43 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('21. Ped venda: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.termFutWithoutFeesPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.termFutWithoutFeesPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS)
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS)
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.added() //Validando adição do prestamista
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDate31Days1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDate31Days1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.futMoneyWithoutFees()
+            Receipt.futMoneyWithoutFees()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.groupReleases()
-            ValidarServico.messPrestRemoved()
-            ValidarServico.addInsurancePrest()
+            GroupReceipt.groupReleases()
+            ValidateService.messPrestRemoved()
+            ValidateService.addInsurancePrest()
             GeneralOrder.adicionadoRecebAgrupado()
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -758,39 +756,39 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('22. Ped venda: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3874), prestamista 158, 4 parcelas no recebimento Presente.', () => {
 
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.entryPresentPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.entryPresentPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS
-            ValidarServico.servLinked() ; ValidarServico.garantiaNaoSep()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS
+            ValidateService.servLinked() ; ValidateService.garantiaNaoSep()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDateTomorrow1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDateTomorrow1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.secondForm()
-            EscolherParcelaReceb.one()
-            AvancarNormal.final()
+            Receipt.secondForm()
+            ChooseInstallmentReceipt.one()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
@@ -799,44 +797,44 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         it('23. Ped venda: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3875 agrupar), prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
             Product.termInstallmentPrest() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Promocao.selectFirstPromoProduct()
-            RecebimentoPromo.entryPresentPrest()
+            Promotion.selectFirstPromoProduct()
+            ReceiptPromotion.entryPresentPrest()
             cy.clickAddProduc()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked() //SERVIÇOS)
-            ValidarServico.servLinked() ; ValidarServico.addGarantNaoSep()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked() //SERVIÇOS)
+            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             Product.second() //PRODUTO
-            ValidarSaldo.comSwithBalancealdo()
+            ValidateBalance.comSwithBalancealdo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked()
-            ValidarServico.garantiaNaoSep()
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
+            Service.validateModalServLinked()
+            ValidateService.garantiaNaoSep()
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
             // TicketPrestamista.added() //Validando adição do prestamista
             GeneralOrder.clickEditInstallments()
-            EscolherParcelaReceb.for()
-            ValidarServico.okInsurancePrest()
+            ChooseInstallmentReceipt.for()
+            ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
-            GeralPagamento.insertDate31Days1Due()
-            GeralPagamento.clicarGerarParcAlterarVenc()
+            GeneralPayment.insertDate31Days1Due()
+            GeneralPayment.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            Recebimento.presentMoney()
+            Receipt.presentMoney()
             cy.get('[style="position: relative"] > :nth-child(4) > div.ng-binding').click({force:true}) //escolher 4 parcelas
-            AgruparReceb.groupReleases()
-            ValidarServico.messPrestRemoved()
-            ValidarServico.addInsurancePrest()
+            GroupReceipt.groupReleases()
+            ValidateService.messPrestRemoved()
+            ValidateService.addInsurancePrest()
             GeneralOrder.adicionadoRecebAgrupado()
-            AvancarNormal.final()
+            AdvanceNormal.final()
             TicketPrestamista.pageFinal()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()

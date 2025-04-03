@@ -1,4 +1,4 @@
-export class EscolherCliente {
+export class ChooseClient {
 
     constructor(page) {
         this.page = page

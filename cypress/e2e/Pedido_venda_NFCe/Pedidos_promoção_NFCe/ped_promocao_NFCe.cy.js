@@ -1,14 +1,14 @@
-import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Product } from '../../../../pages/produtos/prd_normal.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
-import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
-import { GeralEntrega } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
-import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { GeneralDelivery } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
+import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { RecebimentoPromo } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
-import { Promocao } from '../../../../pages/para_pedidos/promocao/promocao.js'
+import { Promotion } from '../../../../pages/para_pedidos/promocao/promocao.js'
 
 describe('Gerar pedidos com promoção com entrega', () => {
 
@@ -18,8 +18,8 @@ describe('Gerar pedidos com promoção com entrega', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVenda.NFCe()
-        EscolherCliente.withRoute()
+        ProcessSale.NFCe()
+        ChooseClient.withRoute()
     })
 
     context('Com entrega /com promoção/ processo 9890 - caminho feliz', () => {
@@ -28,26 +28,26 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             Product.promoMatch() //PRODUTO
-            ValidarSaldo.withBalance()
-            cy.selectProductSearch() ; Promocao.ticketPromotion() 
+            ValidateBalance.withBalance()
+            cy.selectProductSearch() ; Promotion.ticketPromotion() 
             cy.clickVoltageProduct()
-            Promocao.selectFirstPromoProduct()
+            Promotion.selectFirstPromoProduct()
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked() 
-            AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.chooseTransporter()
-            AvancarNormal.installmentDelivery()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked() 
+            AdvanceNormal.toTransporter()
+            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeneralDelivery.chooseTransporter()
+            AdvanceNormal.installmentDelivery()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher "Forma de pagamento"
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click()
             //Escolher parcelamento
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
 
-            AvancarNormal.final()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -56,18 +56,18 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             Product.promoDeadlineEntry() //PRODUTO
-            ValidarSaldo.withBalance()
-            cy.selectProductSearch() ; Promocao.ticketPromotion() 
+            ValidateBalance.withBalance()
+            cy.selectProductSearch() ; Promotion.ticketPromotion() 
             cy.clickVoltageProduct()
-            Promocao.selectFirstPromoProduct() //PROMOÇÃO
+            Promotion.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.chooseTransporter()
-            AvancarNormal.installmentDelivery()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeneralDelivery.chooseTransporter()
+            AdvanceNormal.installmentDelivery()
 
             //"GERAR PAGAMENTO"
             cy.get('.layout-wrap > .md-primary').scrollTo('top').wait(200)
@@ -75,11 +75,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // cy.get('.white > :nth-child(3)').click({force:true})
             // cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
 
-            // GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            // GeralPagamento.loadingFormPayment()
-            // Recebimento.main()
-            // EscolherParcelaReceb.two()
-            // AvancarNormal.final()
+            // GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            // GeneralPayment.loadingFormPayment()
+            // Receipt.main()
+            // ChooseInstallmentReceipt.two()
+            // AdvanceNormal.final()
             // FinishOrder.clickFinishOrder() //RESUMO
             // FinishOrder.validateOrderGenerated()
         })
@@ -88,25 +88,25 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             Product.promoDeadlineInstallment() //PRODUTO
-            ValidarSaldo.withBalance()
-            cy.selectProductSearch() ; Promocao.ticketPromotion()
+            ValidateBalance.withBalance()
+            cy.selectProductSearch() ; Promotion.ticketPromotion()
             cy.clickVoltageProduct()
-            Promocao.selectFirstPromoProduct() //PROMOÇÃO
+            Promotion.selectFirstPromoProduct() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            GeralEntrega.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeralEntrega.chooseTransporter()
-            AvancarNormal.installmentDelivery()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            GeneralDelivery.chooseTransporter()
+            AdvanceNormal.installmentDelivery()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
-            AvancarNormal.final()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })  

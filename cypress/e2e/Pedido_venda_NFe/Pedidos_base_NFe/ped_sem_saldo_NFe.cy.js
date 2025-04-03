@@ -1,5 +1,5 @@
-import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 
@@ -11,8 +11,8 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVenda.NFe()
-        EscolherCliente.withRoute()
+        ProcessSale.NFe()
+        ChooseClient.withRoute()
     })
 
     context('Processo 9860 - não permitir fazer a venda - no momento de adicionar produto, devem aparecer mensagens de aviso', () => {

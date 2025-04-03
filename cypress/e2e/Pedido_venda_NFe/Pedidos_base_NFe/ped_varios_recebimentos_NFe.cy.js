@@ -1,15 +1,15 @@
-import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Product } from '../../../../pages/produtos/prd_normal.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
-import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
-import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
-import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
-import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
-import { AgruparReceb } from '../../../../pages/para_pedidos/pagamento/agrupar_recebimento.js'
-import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { ThrowDelivery } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
+import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { GroupReceipt } from '../../../../pages/para_pedidos/pagamento/agrupar_recebimento.js'
+import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 
 describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
@@ -19,10 +19,10 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVenda.NFe()
-        EscolherCliente.withRoute()
+        ProcessSale.NFe()
+        ChooseClient.withRoute()
         Product.fisrt() //PRODUTO
-        ValidarSaldo.withBalance()
+        ValidateBalance.withBalance()
         cy.selectProductSearch()
     })
 
@@ -32,20 +32,20 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
-            AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.debitTEF()
-            EscolherParcelaReceb.one()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.main() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.two()
-            AvancarNormal.final()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
+            GroupReceipt.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.debitTEF()
+            ChooseInstallmentReceipt.one()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ChooseInstallmentReceipt.two()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -54,17 +54,17 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
-            GeralPagamento.chooseEntryFormPayment()
-            GeralPagamento.clicarGerarPagamento()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.main() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.two()
-            AvancarNormal.final()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
+            GeneralPayment.chooseEntryFormPayment()
+            GeneralPayment.clicarGerarPagamento()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ChooseInstallmentReceipt.two()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -73,21 +73,21 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
-            AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.main()
-            EscolherParcelaReceb.one()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.main() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.one()
-            AgruparReceb.notGroupReleases()
-            AvancarNormal.final()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
+            GroupReceipt.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.main()
+            ChooseInstallmentReceipt.one()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ChooseInstallmentReceipt.one()
+            GroupReceipt.notGroupReleases()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -96,21 +96,21 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
-            AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.main()
-            EscolherParcelaReceb.one()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.main() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.one()
-            AgruparReceb.groupReleases()
-            AvancarNormal.final()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
+            GroupReceipt.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.main()
+            ChooseInstallmentReceipt.one()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ChooseInstallmentReceipt.one()
+            GroupReceipt.groupReleases()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -119,23 +119,23 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
-            AvancarNormal.toInstallments()
-            AgruparReceb.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.main()
-            EscolherParcelaReceb.one()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
-            GeralPagamento.carregandoFormaPagamento()
-            Recebimento.main() //SEGUNDA FORMA DE PAGAMENTO
-            EscolherParcelaReceb.one()
-            AgruparReceb.notGroupReleases()
-            AgruparReceb.selectReleasesGroup()
-            AgruparReceb.clickGroup()
-            AvancarNormal.final()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightFirst() //ENTREGA
+            AdvanceNormal.toInstallments()
+            GroupReceipt.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.main()
+            ChooseInstallmentReceipt.one()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeneralPayment.carregandoFormaPagamento()
+            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ChooseInstallmentReceipt.one()
+            GroupReceipt.notGroupReleases()
+            GroupReceipt.selectReleasesGroup()
+            GroupReceipt.clickGroup()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })

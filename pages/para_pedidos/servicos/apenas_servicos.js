@@ -1,4 +1,4 @@
-export class Servico { 
+export class Service { 
 
     constructor(page) {
         this.page = page

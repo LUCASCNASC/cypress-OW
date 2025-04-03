@@ -1,14 +1,14 @@
-import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
+import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Product } from '../../../../pages/produtos/prd_normal.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
-import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
+import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
-import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
-import { GeralPagamento } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
-import { EscolherParcelaReceb } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
-import { Recebimento } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
+import { ThrowDelivery } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
+import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
+import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 
 describe('Gerar pedido de entrega futura', () => {
 
@@ -18,10 +18,10 @@ describe('Gerar pedido de entrega futura', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVenda.deliveryFutureNFe()
-        EscolherCliente.withRoute()
+        ProcessSale.deliveryFutureNFe()
+        ChooseClient.withRoute()
         Product.fisrt() //PRODUTO
-        ValidarSaldo.withBalance()
+        ValidateBalance.withBalance()
         cy.clickVoltageProduct()
     })
 
@@ -31,15 +31,15 @@ describe('Gerar pedido de entrega futura', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA PRODUTO
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.main() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.two()
-            AvancarNormal.final()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightFirst() //ENTREGA PRODUTO
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.main() //PROCESSO INCLUSÃO
+            ChooseInstallmentReceipt.two()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -48,23 +48,23 @@ describe('Gerar pedido de entrega futura', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() //SERVICOS
             clicarOKServVinServico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA PRODUTO
+            ThrowDelivery.freightFirst() //ENTREGA PRODUTO
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
-            AvancarNormal.clickGenerateInstallments()
-            GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.main() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.two()
-            AvancarNormal.final() 
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            ThrowDelivery.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            AdvanceNormal.clickGenerateInstallments()
+            GeneralPayment.clicarGerarParcelas() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.main() //PROCESSO INCLUSÃO
+            ChooseInstallmentReceipt.two()
+            AdvanceNormal.final() 
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })
@@ -76,15 +76,15 @@ describe('Gerar pedido de entrega futura', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter()
-            AvancarNormal.toInstallments()
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment()
-            Recebimento.main() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.two()
-            AvancarNormal.final()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter()
+            AdvanceNormal.toInstallments()
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment()
+            Receipt.main() //PROCESSO INCLUSÃO
+            ChooseInstallmentReceipt.two()
+            AdvanceNormal.final()
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })    
@@ -93,22 +93,22 @@ describe('Gerar pedido de entrega futura', () => {
                       
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
             Product.second() //PRODUTO
-            ValidarSaldo.withBalance()
+            ValidateBalance.withBalance()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.validateModalServLinked() //SERVICOS
-            Servico.clickOKServiceLinked()
-            AvancarNormal.toTransporter() //TRANSPORTADORA
-            AvancarNormal.toInstallments() 
-            GeralPagamento.clickGenerateInstallments() //GERAR PARCELAS
-            GeralPagamento.loadingFormPayment() 
-            Recebimento.main() //PROCESSO INCLUSÃO
-            EscolherParcelaReceb.two()
-            AvancarNormal.final() 
+            Service.validateModalServLinked() //SERVICOS
+            Service.clickOKServiceLinked()
+            AdvanceNormal.toTransporter() //TRANSPORTADORA
+            AdvanceNormal.toInstallments() 
+            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            GeneralPayment.loadingFormPayment() 
+            Receipt.main() //PROCESSO INCLUSÃO
+            ChooseInstallmentReceipt.two()
+            AdvanceNormal.final() 
             FinishOrder.clickFinishOrder() //RESUMO
             FinishOrder.validateOrderGenerated()
         })  

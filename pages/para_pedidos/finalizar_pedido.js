@@ -5,7 +5,7 @@ export class FinishOrder {
     }
 
     //Função para validar modal de proposta de crédito gerada
-    async validarPropCreditoGerada (selector) {
+    async validatePropCreditGenerated (selector) {
 
         //Card pedido gravado com sucesso - Título Pedido Concluído
         cy.get(':nth-child(5) > .md-transition-in > ._md > .md-toolbar-tools > .flex')
@@ -184,4 +184,4 @@ export class FinishOrder {
             .and('contain', 'Ok')
             .and('not.have.attr', 'disabled')
     }
-}
+} 
