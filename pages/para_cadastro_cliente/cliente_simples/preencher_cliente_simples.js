@@ -7,7 +7,7 @@ export class FillClientSimple {
     }
 
     //Campo Data Nascimento - validar e preencher
-    async dataNascimento (selector) {
+    async dateBirth (selector) {
 
         //Ícone de data de nascimento
         cy.get(':nth-child(3) > .layout-xs-column > .md-block > .validaData > .md-datepicker-button')
@@ -28,9 +28,9 @@ export class FillClientSimple {
         cy.contains('Data de nascimento').parent().find('input')
             .type("30/09/1998", {force:true})
     }
-
+ 
     //Preencher campo CPF com CPF
-    async cpfCliente (selector) {
+    async cpfClient (selector) {
 
         const cpf = gerarCpf(); // Gera um CPF válido
 
@@ -46,7 +46,7 @@ export class FillClientSimple {
     }
 
     //Preencher campo CNPJ com CNPJ
-    async cnpjCliente (selector) {
+    async cnpjClient (selector) {
 
         const cnpj = gerarCNPJ(); // Gera um CNPJ válido
 
@@ -62,7 +62,7 @@ export class FillClientSimple {
     }
 
     //Campo Nome completo - cliente CPF
-    async nomeCompletoCPF (selector) {
+    async nameCompleteCPF (selector) {
 
         const nomeCompleto = gerarNomeAleatorio();
 
@@ -78,7 +78,7 @@ export class FillClientSimple {
     }
 
     //Campo Nome completo - cliente CNPJ
-    async nomeCompletoCNPJ (selector) {
+    async nameCompleteCNPJ (selector) {
 
         const nomeCompletoEmpresa = gerarNomeEmpresa();
 
@@ -95,7 +95,7 @@ export class FillClientSimple {
     }
 
     //Selecionar sexo da pessoa física
-    async sexoPessoaFisica (selector) {
+    async sexPersonPhysical (selector) {
 
         //Campo Sexo
         cy.get('.md-default-theme[ng-model="cliente.idtiposexo"]')
@@ -114,7 +114,7 @@ export class FillClientSimple {
     }
 
     //Campo CEP - inserir e pesquisar
-    async pesquisarCEP (selector) {
+    async searchCEP (selector) {
 
         const CEPcadastro = "87065300"
 
@@ -143,7 +143,7 @@ export class FillClientSimple {
     }
 
     //Campo Número - validar e preencher
-    async numeroEndereco (selector) {
+    async numberAdress (selector) {
 
         const numero_rendereco = '66'
 
@@ -159,7 +159,7 @@ export class FillClientSimple {
     }
 
     //Preenchendo rota do cadastro de cliente
-    async rotaCliente (selector) {
+    async routeClient (selector) {
 
         const rota = '560';
 

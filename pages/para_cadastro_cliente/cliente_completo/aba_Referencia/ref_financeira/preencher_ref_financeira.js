@@ -42,7 +42,7 @@ export class FillRefFinance {
     }
 
     //referencia financeira - escolher Início exp. crédito
-    async dataInicio (selector) {
+    async dateStart (selector) {
 
         const data_inicio = gerarDataReferenciaFinanceira();
 
@@ -64,7 +64,7 @@ export class FillRefFinance {
     }
 
     //referencia financeira - escolher Plano experiencia
-    async planoExp (selector) {
+    async flatExp (selector) {
 
         const plano_experiencia = '444';
 
@@ -74,7 +74,7 @@ export class FillRefFinance {
     }
 
     //referencia financeira - escolher Valor prestação
-    async valorPrest (selector) {
+    async valuePrest (selector) {
 
         const valor_prestacao = gerarValorDuasCasasAposVirgula();
 

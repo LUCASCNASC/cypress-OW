@@ -8,7 +8,7 @@ export class ClickClientComplete {
     }
 
     //Validar e clicar no menu de opções
-    async iconeMenuOpcoes (selector) {
+    async iconMenuOptions (selector) {
 
         //Ícone do menu de opções
         cy.get('[aria-label="Menu de opções"] > .ng-binding')
@@ -21,7 +21,7 @@ export class ClickClientComplete {
     }
 
     //Escolher opção cliente no menu de opções
-    async opcaoClienteCompleto (selector) {
+    async optionClientComplete (selector) {
 
         //Opção Cliente completo no menu de opções
         cy.get('a[aria-label="Cliente completo"]')
@@ -39,7 +39,7 @@ export class ClickClientComplete {
     }
 
     //Validar e clicar no botão para salvar cadastro de cliente
-    async salvarCliente (selector) {
+    async saveClient (selector) {
 
         //Botão SALVAR
         cy.get('.btn')
@@ -54,14 +54,14 @@ export class ClickClientComplete {
     }
 
     //clicar para salvar cadastro de cliente completo
-    async salvarClienteCompleto (selector) {
+    async saveClientComplete (selector) {
 
         cy.get('.btn > .ng-scope')
             .click({force:true})
     }
 
     //dentro do cadastro de cliente completo, clicar no menu para aparecer as opções dentro do cadastro
-    async menuCadastroClienteCompleto (selector) {
+    async menuRegisterClientComplete (selector) {
 
         cy.get('#menu_click_pri')
             .should('be.visible')
@@ -72,7 +72,7 @@ export class ClickClientComplete {
     }
 
     //validar e clicar na aba Referencias - mais de um arquivo usa essa função, então precisamos deixar aqui
-    async abaReferencias (selector) {
+    async abaReferences (selector) {
 
         //validando nome da aba
         cy.get('#menu_items_pri > :nth-child(5)')

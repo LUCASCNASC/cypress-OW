@@ -8,7 +8,7 @@ export class GeneralRefPhone {
     }
 
     //Validar e clicar na aba Telefone
-    async clicarAbaTelefone (selector) {
+    async clickAbaPhone (selector) {
 
         //Validando aba Telefones
         cy.get('#menu_items_pri > :nth-child(4)')
@@ -23,7 +23,7 @@ export class GeneralRefPhone {
     }
 
     //botão + para adicionar um novo Telefone
-    async clicarAdicionarNovoTelefone (selector) {
+    async clickAddedNewPhone (selector) {
 
         //Botão +, para adicionar Rota
         cy.get('.layout-align-end-end > .md-fab')
@@ -38,7 +38,7 @@ export class GeneralRefPhone {
     }
 
     //validar informações do modal Telefone enquanto ainda está vazio
-    async modalTelefoneVazioValidar (selector) {
+    async modalPhoneEmptyValidade (selector) {
 
         //Card Telefone
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -84,7 +84,7 @@ export class GeneralRefPhone {
     }
 
     //clicar no botão salvar telefone
-    async clicarSalvarTelefone (selector) {
+    async clickSavePhone (selector) {
 
         //Card Telefone - botão SALVAR - depois de preencher os campo obrigatório
         cy.get('#btnModalAddTel')
@@ -97,7 +97,7 @@ export class GeneralRefPhone {
     }
 
     //validando informações que foram adicionadas no cadastro de telefone
-    async infosTelefoneAdicionado (selector) {
+    async infoPhoneAdded (selector) {
 
         //Card de endereço adicionado
         cy.get('.md-whiteframe-2dp')
@@ -108,7 +108,7 @@ export class GeneralRefPhone {
     }
 
     //Validar mensagem de endereço incluído com sucesso
-    async messTelefoneIncluidoSucesso (selector) {
+    async messPhoneAddedSucess (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast-success')

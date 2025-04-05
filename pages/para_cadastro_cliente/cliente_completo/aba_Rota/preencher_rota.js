@@ -5,7 +5,7 @@ export class FillRefRoute {
     }
 
     //preencher Rota no cadastro de rota e escolher as opções certas
-    async rotaCompleta (selector) {
+    async routaComplete (selector) {
 
         const rota_cadastro = "560"
 
@@ -42,7 +42,7 @@ export class FillRefRoute {
     }
 
     //selecionar tipo de endereço do modal de rota Padrão
-    async tipoEnderecoRota (selector) {
+    async typeAdressRoute (selector) {
 
         //Clicar no campo tipo de endereço
         cy.get('#txtTpEnderecoRota')

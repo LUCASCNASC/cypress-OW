@@ -7,7 +7,7 @@ export class GeneralClientSimple {
     }
 
     //Menu de opções
-    async iconeMenuOpcoes (selector) {
+    async iconMenuOptions (selector) {
 
         //Ícone do menu de opções
         cy.get('[aria-label="Menu de opções"] > .ng-binding')
@@ -20,7 +20,7 @@ export class GeneralClientSimple {
     }
 
     //Escolher opção cliente no menu de opções
-    async opcaoClienteSimples (selector) {
+    async optionClientSimple (selector) {
 
         //Opção Cliente no menu de opções
         cy.get('a[aria-label="Cliente"]')
@@ -33,7 +33,7 @@ export class GeneralClientSimple {
     }
 
     //Botão SALVAR, do cliente simples
-    async salvarClienteSimples (selector) {
+    async saveClientSimple (selector) {
 
         //Botão SALVAR
         cy.get('.layout-align-end-center > .md-raised')
@@ -47,7 +47,7 @@ export class GeneralClientSimple {
     }
 
     //Botão arrastar para pessoa jurídica - arrastar e validar
-    async arrastarPessJuridica (selector) {
+    async dragPersonLegal (selector) {
 
         //Arrastar para Pessoa jurídica
         cy.get('.flex-md-100 > .md-auto-horizontal-margin > .md-label')
@@ -60,7 +60,7 @@ export class GeneralClientSimple {
     }
 
     //Primeira mensagem de Registro salvo com sucesso!
-    async messPrimeiroRegistSalvoSucesso (selector) {
+    async messFirstRegistSaveSucess (selector) {
 
         //Card de mensagem de Registro salvo com sucesso!
         cy.get('.toast')
@@ -78,7 +78,7 @@ export class GeneralClientSimple {
     }
 
     //logar no sistema novamente, para realizar as alterações no cadastro
-    async logarNovamente (selector) {
+    async loginAgain (selector) {
 
         //Inserir Usuário para logar novamente
         cy.get('#txtusername')
@@ -96,7 +96,7 @@ export class GeneralClientSimple {
     }
 
     //clicar para sair do sistema
-    async clicarSairSistema (selector) {
+    async clickOutSystem (selector) {
 
         //Clicar no botão Sair
         cy.get('.rodape > ._md-button-wrap > div.md-button > .md-no-style')
@@ -104,7 +104,7 @@ export class GeneralClientSimple {
     }
 
     //validar e clicar em SIM na mensagem "Deseja visualizar este cadastro?", quando quero alterar data de nascimento de um cadastro de cliente simples
-    async desejoVisualizarCadastro (selector) {
+    async desireSeeRegister (selector) {
 
         //Mensagem se desejo visualizar o cadastro
         cy.get('.md-title')
@@ -128,7 +128,7 @@ export class GeneralClientSimple {
     }
 
     //validar trial quando alteramos a data de nascimento do cliente simples
-    async autorizarTrialAltDataNasc (selector) {
+    async authorizeTrialDateBirth (selector) {
 
         const idSupervisorTrial = "393"
         const nomeSupervidorTrial = "T.A. USUÁRIO AUTOMAÇÃO"

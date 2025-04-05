@@ -10,7 +10,7 @@ export class FillRefCommercial {
     }
 
     //referencia Comercial - escolher Agencia
-    async empresa (selector) {
+    async enterprise (selector) {
 
         const empresa = gerarNomeEmpresa()
 
@@ -20,7 +20,7 @@ export class FillRefCommercial {
     }
 
     //referencia Comercial - escolher Contato
-    async contato (selector) {
+    async contact (selector) {
 
         const contato = gerarTelefoneAleatorio()
 
@@ -30,7 +30,7 @@ export class FillRefCommercial {
     }
 
     //referencia Comercial - escolher Telefone
-    async telefone (selector) {
+    async phone (selector) {
 
         const telefone = gerarTelefoneAleatorio()
 
@@ -50,7 +50,7 @@ export class FillRefCommercial {
     }
 
     //referencia Comercial - escolher Observação
-    async observacao (selector) {
+    async observation (selector) {
 
         const observacao = gerarObservação()
 
@@ -59,3 +59,4 @@ export class FillRefCommercial {
             .type(observacao)
     }
 }
+  

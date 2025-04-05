@@ -9,7 +9,7 @@ export class GeneralRefCommercial {
     }
 
     //validar e clicar na aba Comercial, dentro de Referencias
-    async clicarAbaRefComercial (selector) {
+    async clickAbaRefCommercial (selector) {
 
         //validando botão Comercial
         cy.get('#menu_items_sec > .on')
@@ -25,7 +25,7 @@ export class GeneralRefCommercial {
     }
 
     //validando informações da tela antes de adicionar qualquer coisa - aba referencia Comercial
-    async validarAbaRefComercialVazia (selector) {
+    async validadeRefCommercialEmpty (selector) {
 
         //validando título quando entramos na aba Comercial
         cy.get('h3')
@@ -49,7 +49,7 @@ export class GeneralRefCommercial {
     }
 
     //clicar no botão + para adicionar uma nova referencia Comercial
-    async clicarAddNovaRefComercial (selector) {
+    async clickAddNewRefCommercial (selector) {
 
         cy.intercept('GET', '/views/cliente/modalClienteRefComercial.html').as('api_modal_referencia_comercial')
         cy.get('.layout-align-end-end > .md-fab')
@@ -58,7 +58,7 @@ export class GeneralRefCommercial {
     }
 
     //validar informações do modal Referencia Comercial antes de preencher as informações
-    async modalRefComercialVazio (selector) {
+    async modalRefCommercialEmpty (selector) {
 
         //título modal 
         cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
@@ -127,7 +127,7 @@ export class GeneralRefCommercial {
     }
 
     //clicar para salvar Referencia Comercial
-    async clicarSalvarRefComercial (selector) {
+    async clickSaveRefCommercial (selector) {
 
         cy.contains('button', 'Salvar')
             .should('be.visible')
@@ -143,7 +143,7 @@ export class GeneralRefCommercial {
     }
 
     // validando mensagem Referencia Comercial incluída com sucesso Incluído com sucesso, após incluírmos a Referencia Comercial
-    async messRefComercialIncluidaSucesso (selector) {
+    async messRefCommercialAddedSucess (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast-success')
@@ -161,7 +161,7 @@ export class GeneralRefCommercial {
     }
 
     //validando informações que foram adicionadas no cadastro de referencia Comercial
-    async infosRefComercialAdicionada (selector) {
+    async infoRefCommercialAdded (selector) {
 
         //nome da pessoa
         cy.get('.md-whiteframe-2dp > .ng-scope > :nth-child(1) > .ng-binding')
@@ -179,4 +179,4 @@ export class GeneralRefCommercial {
         cy.get('[ng-show="(item.email)"]')
             .should('be.visible')
     }
-}
+} 

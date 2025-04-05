@@ -8,7 +8,7 @@ export class GeneralClientComplete {
     }
 
     //validar botão salvar sem ter os campos obrigatórios, ou seja, tem que estar desabilitado
-    async botaoSalvarDesabilitado (selector) {
+    async buttonSaveDisabled (selector) {
 
         //Validando botão SALVAR, antes de preencher os campos obrigatórios
         cy.get('#btnModalAddEndereco')
@@ -17,14 +17,14 @@ export class GeneralClientComplete {
     }
 
     //clicar para salvar cadastro de cliente completo
-    async clicarSalvarClienteCompleto (selector) {
+    async clickSaveClientComplete (selector) {
 
         cy.get('.btn > .ng-scope')
             .click({force:true})
     }
 
     //validar menssagem Um endereço do tipo padrão é obrigatório, quanto tento salvar cadastro sem informar endereço
-    async messAlertaEnderecoObrigatorio (selector) {
+    async messAlertAdressMandatory (selector) {
 
         //Card Um endereço do tipo padrão é obrigatório
         cy.get('.toast')
@@ -42,7 +42,7 @@ export class GeneralClientComplete {
     }
 
     //validando modal de Aguarde carregando.. - após clicar para salvar o cadastro 
-    async modalAguardeCarregando (selector) {
+    async modalWaitingLoading (selector) {
 
         //Modal Aguarde carregando...
         cy.get('.layout-align-center-center > h3')
@@ -51,7 +51,7 @@ export class GeneralClientComplete {
     }
 
     //validando mensagem Registro salvo com sucesso! - após clicar para salvar o cadastro 
-    async messRegistroSalvoSucesso (selector) {
+    async messRegisterSaveSucess (selector) {
 
         //Mensagem Registro salvo com sucesso!
         cy.get('.toast-success')

@@ -8,7 +8,7 @@ export class GeneralAdress {
     }
 
     //Validar e clicar na aba ENDEREÇO
-    async clicarAbaEndereco (selector) {
+    async clickAbaAdress (selector) {
 
         //Aba Endereço
         cy.get('#menu_items_pri > :nth-child(2)')
@@ -24,7 +24,7 @@ export class GeneralAdress {
     }
 
     // validando mensagem Endereço Incluído com sucesso, após incluírmos o endereço no cadastro
-    async messEnderecoIncluidoSucesso (selector) {
+    async messAdressAddedSucess (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast-success')
@@ -42,7 +42,7 @@ export class GeneralAdress {
     }
 
     //botão + para adicionar um novo endereço
-    async clicarAdicionarNovoEndereço (selector) {
+    async clickAddNewAdress (selector) {
 
         //Botão +, para adicionar um novo endereço
         cy.get('.layout-align-end-end > .md-fab')
@@ -57,7 +57,7 @@ export class GeneralAdress {
     }
 
     //validar informações do modal Endereço enquanto ainda está vazio
-    async modalEnderecoVazioValidar (selector) {
+    async modalAdressEmptyValidade (selector) {
 
         //Campo CEP - validando mensagem dentro do campo antes de preencher
         cy.get('label[for="txtCepEndereco"]')
@@ -133,7 +133,7 @@ export class GeneralAdress {
     }
 
     //clicar para abrir opções de tipo endereço
-    async clicarAbrirTipoEndereco (selector) {
+    async clickOpenTypeAdress (selector) {
 
         //Clicar para aparecer as opções do Tipo de Endereço
         cy.get('#txtTpEndereco')
@@ -141,7 +141,7 @@ export class GeneralAdress {
     }
 
     //validando informações que foram adicionadas no endereço
-    async infosEnderecoAdicionado (selector) {
+    async infoAdressAdded (selector) {
 
         //Card de endereço adicionado
         cy.get('.md-whiteframe-2dp')
@@ -152,7 +152,7 @@ export class GeneralAdress {
     }
 
     //clicar no botão salvar endereço
-    async clicarSalvarEndereco (selector) {
+    async clickSaveAdress (selector) {
 
         //Clicar no botão SALVAR, para adicionar endereço
         cy.get('#btnModalAddEndereco')
@@ -160,7 +160,7 @@ export class GeneralAdress {
     }
 
     //validando card endereço antes de preencher os campos
-    async cardEnderecoVazioValidar (selector) {
+    async cardAdressEmptyValidate (selector) {
 
         //Card Endereço - validando título Endereço
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')

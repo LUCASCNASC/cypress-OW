@@ -5,7 +5,7 @@ export class GeneralEmployment {
     }
 
     //Validar e clicar na aba Empregaticio
-    async clicarAbaEmpregat (selector) {
+    async clickAbaEmployment (selector) {
 
         //Validando aba Empregaticio
         cy.get('#menu_items_pri > :nth-child(6)')
@@ -21,7 +21,7 @@ export class GeneralEmployment {
     }
 
     //validando informações da tela antes de adicionar qualquer coisa
-    async validarAbaEmpregatVazia (selector) {
+    async validateAbaEmploymentEmpty (selector) {
 
         //validando título quando entramos na aba
         cy.get('h3')
@@ -45,7 +45,7 @@ export class GeneralEmployment {
     }
 
     //clicar no botão + para adicionar uma nova referencia bancária
-    async clicarAddNovoEmpregat (selector) {
+    async clickAddNewEmployment (selector) {
 
         cy.intercept('GET', '/services/v3/dados_tabela/tipocomprovanterenda').as('api_modal_empregaticio')
         cy.get('.layout-align-end-end > .md-fab')
@@ -54,7 +54,7 @@ export class GeneralEmployment {
     }
 
     //validar informações do modal Empregaticio antes de preencher as informações
-    async modalEmpregatVazio (selector) {
+    async modalEmploymentEmpty (selector) {
 
         //título modal 
         cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')

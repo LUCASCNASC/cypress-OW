@@ -8,7 +8,7 @@ export class FillRefPhone {
     }
 
     //selecionar tipo de telefone na aba telefone
-    async tipoTelefone (selector) {
+    async typePhone (selector) {
 
         //Card Telefone - campo tipo de telefone
         cy.get('#txtTpTel')
@@ -21,7 +21,7 @@ export class FillRefPhone {
     }
 
     //preencher campo Numero, no cadastro de telefone
-    async numeroTelefone (selector) {
+    async numberPhone (selector) {
 
         const numero_telefone = gerarTelefoneAleatorio();
 
@@ -31,7 +31,7 @@ export class FillRefPhone {
     }
 
     //preencher campo Ramal, no cadastro de telefone
-    async ramalTelefone (selector) {
+    async ramalPhone (selector) {
 
         const ramal_telefone = "435"
 

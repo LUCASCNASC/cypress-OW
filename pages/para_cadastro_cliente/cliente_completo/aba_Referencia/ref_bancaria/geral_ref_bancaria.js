@@ -10,7 +10,7 @@ export class GeneralRefBanking {
     //--------REFERENCIAS - REFERENCIA BANCÁRIA -------
 
     //validar e clicar na aba Bancária, dentro de Referencias
-    async clicarAbaRefBancaria (selector) {
+    async clickAbaRefBanking (selector) {
 
         //validando botão Bancária
         cy.get('#menu_items_sec > :nth-child(3)')
@@ -26,7 +26,7 @@ export class GeneralRefBanking {
     }
 
     //validando informações da tela antes de adicionar qualquer coisa
-    async validarAbaRefBancariaVazia (selector) {
+    async validateAbaRefBankingEmpty (selector) {
 
         //validando título quando entramos na aba
         cy.get('h3')
@@ -50,7 +50,7 @@ export class GeneralRefBanking {
     }
 
     //clicar no botão + para adicionar uma nova referencia bancária
-    async clicarAddNovaRefBancaria (selector) {
+    async clickAddNewRefBanking (selector) {
 
         cy.intercept('GET', '/views/cliente/modalClienteRefBancaria.html').as('api_modal_referencia_bancaria')
         cy.get('.layout-align-end-end > .md-fab')
@@ -59,7 +59,7 @@ export class GeneralRefBanking {
     }
 
     //validar informações do modal Referencia Bancária antes de preencher as informações
-    async modalRefBancariaVazio (selector) {
+    async modalRefBankingEmpty (selector) {
 
         //título modal 
         cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
@@ -233,7 +233,7 @@ export class GeneralRefBanking {
     }
 
     //clicar para salvar Referencia Bancaria
-    async clicarSalvarRefBancaria (selector) {
+    async clickSaveRefBanking (selector) {
 
         cy.contains('button', 'Salvar')
             .should('be.visible')
@@ -249,7 +249,7 @@ export class GeneralRefBanking {
     }
 
     // validando mensagem Referencia Bancária incluída com sucesso Incluído com sucesso, após incluírmos a Referencia Bancária
-    async messRefBancariaIncluidaSucesso (selector) {
+    async messRefBankingAddedSucess (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast-success')
@@ -267,7 +267,7 @@ export class GeneralRefBanking {
     }
 
     //validando informações que foram adicionadas no cadastro de referencia bancária
-    async infosRefBancariaAdicionada (selector) {
+    async infoRefBankingAdded (selector) {
 
         //Card de endereço adicionado
         cy.get('.md-whiteframe-2dp')
@@ -281,7 +281,7 @@ export class GeneralRefBanking {
     //------------ PIX ERRADO tipo TELEFONE - 
 
     // validando mensagem de chave pix telefone inválida, após tentarmos inserir uma chave pix telefone fora do padrão
-    async messRefBancariaChavePixTelefoneInvalida (selector) {
+    async messRefBankingKeyPixPhoneInvalid (selector) {
 
         //Card Erro identificado
         cy.get('.toast-error > .toast-title')
@@ -302,7 +302,7 @@ export class GeneralRefBanking {
     //------------ PIX ERRADO tipo EMAIL
 
     // validando mensagem de chave pix email inválida, após tentarmos inserir uma chave pix email fora do padrão
-    async messRefBancariaChavePixEmailInvalida (selector) {
+    async messRefBankingKeyPixEmailInvalid (selector) {
 
         //Card Erro identificado
         cy.get('.toast-error > .toast-title')
@@ -322,7 +322,7 @@ export class GeneralRefBanking {
     //------------ PIX ERRADO tipo CPF CNPJ
 
     // validando mensagem de chave pix email inválida, após tentarmos inserir uma chave pix CPF CNPJ fora do padrão
-    async messRefBancariaChavePixCpfCnpjInvalida (selector) {
+    async messRefBankingKeyPixCpfCnpjInvalid (selector) {
 
         //Card Erro identificado
         cy.get('.toast-error > .toast-title')
@@ -343,7 +343,7 @@ export class GeneralRefBanking {
     //------------ PIX ERRADO tipo Aletória
 
     // validando mensagem de chave pix email inválida, após tentarmos inserir uma chave pix Aletória fora do padrão
-    async messRefBancariaChavePixAletoriaInvalida (selector) {
+    async messRefBankingKeyPixRandomInvalid (selector) {
 
         //Card Erro identificado
         cy.get('.toast-error > .toast-title')
@@ -364,7 +364,7 @@ export class GeneralRefBanking {
     //---------------------
 
     //arrastar referencia bancaria para fazer a edição
-    async arrastarEditarRefBancaria (selector) {
+    async dragEditRefBanking (selector) {
         
         cy.get('.md-whiteframe-2dp')
             .trigger('mousedown', { which: 1 })
@@ -373,7 +373,7 @@ export class GeneralRefBanking {
     }
 
     //clicar no lápis para editar referencia bancária
-    async clicarEditarRefBancaria (selector) {
+    async clickEditRefBanking (selector) {
 
         //ícone lápis
         cy.get('.btn-remove-item-list > :nth-child(1) > .md-raised > .ng-binding')

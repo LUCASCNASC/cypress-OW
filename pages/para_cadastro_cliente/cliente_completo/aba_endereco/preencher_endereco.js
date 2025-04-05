@@ -5,7 +5,7 @@ export class FillAdress {
     }
 
     //selecionar tipo de endereço
-    async tipoEndereco (selector) {
+    async typeAdress (selector) {
 
         //Selecionar tipo de endereço
         cy.get('.md-text.ng-binding')
@@ -14,7 +14,7 @@ export class FillAdress {
     }
 
     //preencher campo CEP no cadastro de endereço e pesquisar
-    async cepEndereco (selector) {
+    async cepAdress (selector) {
 
         const CEPcadastro = "87065300"
 
@@ -34,7 +34,7 @@ export class FillAdress {
     }
 
     //preencher campo Numero no cadastro de endereço
-    async numeroEndereco (selector) {
+    async numberAdress (selector) {
 
         const numero_endereco = "66"
 

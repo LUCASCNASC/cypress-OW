@@ -9,7 +9,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher banco
-    async banco (selector) {
+    async bank (selector) {
 
         //clicar para abrir as opções
         cy.get('#txtBancoRefBanc')
@@ -21,7 +21,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Agencia
-    async agencia (selector) {
+    async agency (selector) {
 
         //clicar para abrir as opções
         cy.get('#txtAgenciaRefBanc')
@@ -29,7 +29,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Conta
-    async conta (selector) {
+    async account (selector) {
 
         //clicar para abrir as opções
         cy.get('#txtContaRefBanc')
@@ -37,7 +37,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Data Abertura
-    async dataAbertura (selector) {
+    async dateOpening (selector) {
 
         //clicar para abrir as opções
         cy.get('input.md-datepicker-input.md-input')
@@ -45,7 +45,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Boleto
-    async boleto (selector) {
+    async ticket (selector) {
 
         //clicar para abrir as opções
         cy.get('#txtBoletoRefBanc')
@@ -57,7 +57,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Telefone
-    async telefone (selector) {
+    async phone (selector) {
 
         const numero_telefone = gerarTelefoneAleatorio();
 
@@ -67,7 +67,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Gerente
-    async gerente (selector) {
+    async manager (selector) {
 
         const NomeGerente = gerarNomeAleatorio(); // Gera um CPF válido
 
@@ -87,7 +87,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher CPF/CNPJ correntista
-    async cpfCorrentista (select) {
+    async cpfAccountHolder (select) {
 
         const cpf = gerarCpf(); // Gera um CPF válido
 
@@ -98,7 +98,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Nome do correntista
-    async nomeCorrentista (selector) {
+    async nameAccountHolder (selector) {
 
         const NomeCorrentista = gerarNomeAleatorio(); 
 
@@ -108,7 +108,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Tipo de conta
-    async tipoConta (selector) {
+    async typeAccount (selector) {
 
         //abrir opções de tipo de conta
         cy.get('#txtTpContaRefBanc')
@@ -120,7 +120,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Operação
-    async operacao (selector) {
+    async operation (selector) {
 
         //inserir Operação
         cy.get('#txtOperacaoRefBanc')
@@ -128,7 +128,7 @@ export class FillRefBanking {
     }
 
     //referencia bancaria - escolher Forma de pagamento
-    async formaPagamento (selector) {
+    async formPayment (selector) {
 
         //clicar para abrir opções de forma de pagamento
         cy.get('#txtFrmPag')
@@ -142,7 +142,7 @@ export class FillRefBanking {
     //------------ PIX ERRADO tipo TELEFONE - 
 
     //referencia bancaria - escolher Tipo chave PIX Telefone
-    async tipoChavePixTelefone (selector) {
+    async typeKeyPixPhone (selector) {
 
         //clicar para abrir opções de Tipo chave PIX
         cy.get('#txtIdTipoChavePix')
@@ -154,7 +154,7 @@ export class FillRefBanking {
     }
 
     //gerar chave pix tipo telefone errada
-    async chavePixTelefoneErrada (selector) {
+    async keyPixPhoneWrong (selector) {
 
         const chave_pix_telefone_errada = gerarChavePixTelefoneErrada();
 
@@ -166,7 +166,7 @@ export class FillRefBanking {
     //------------ PIX ERRADO tipo EMAIL
 
     //referencia bancaria - escolher Tipo chave PIX Email
-    async tipoChavePixEmail (selector) {
+    async typeKeyPixEmail (selector) {
 
         //clicar para abrir opções de Tipo chave PIX Email
         cy.get('#txtIdTipoChavePix')
@@ -178,7 +178,7 @@ export class FillRefBanking {
     }
 
     //gerar chave pix tipo email errada
-    async chavePixEmailErrada (selector) {
+    async keyPixEmailWrong (selector) {
 
         const chave_pix_email_errada = gerarChavePixEmailErrada();
 
@@ -190,7 +190,7 @@ export class FillRefBanking {
     //------------ PIX ERRADO tipo CPF CNPJ
 
     //referencia bancaria - escolher Tipo chave Cpf Cnpj Email
-    async tipoChavePixCpfCnpj (selector) {
+    async typeKeyPixCpfCnpj (selector) {
 
         //clicar para abrir opções de Tipo chave CPF CNPJ
         cy.get('#txtIdTipoChavePix')
@@ -202,7 +202,7 @@ export class FillRefBanking {
     }
 
     //gerar chave pix tipo CPF CNPJ errada
-    async chavePixCpfCnpjErrada (selector) {
+    async keyPixCpfCnpjWrong (selector) {
 
         const chave_pix_CpfCnpj_errada = gerarChavePixCpfCnpjErrada();
 
@@ -214,7 +214,7 @@ export class FillRefBanking {
     //------------ PIX ERRADO tipo Aletória
 
     //referencia bancaria - escolher Tipo chave Aletória Email
-    async tipoChavePixAletoria (selector) {
+    async typeKeyPixRandom (selector) {
 
         //clicar para abrir opções de Tipo chave Aletória
         cy.get('#txtIdTipoChavePix')
@@ -228,7 +228,7 @@ export class FillRefBanking {
     //------------ PIX CHAVES CORRETAS
 
     //gerar chave pix tipo telefone correta
-    async chavePixTelefone (selector) {
+    async keyPixPhone (selector) {
 
         const chave_pix_telefone = gerarChavePixTelefone();
 
@@ -246,7 +246,7 @@ export class FillRefBanking {
     }
 
     //gerar chave pix tipo email correta
-    async chavePixEmail (selector) {
+    async keyPixEmail (selector) {
 
         const chave_pix_email = gerarChavePixEmail();
 
@@ -264,7 +264,7 @@ export class FillRefBanking {
     }
 
     //gerar chave pix tipo CPF correta
-    async chavePixCPF (selector) {
+    async keyPixCPF (selector) {
 
         const chave_pix_cpf = gerarChavePixCPF();
 
@@ -282,7 +282,7 @@ export class FillRefBanking {
     }
 
     //gerar chave pix tipo Aleatorio correta
-    async chavePixAleatorio (selector) {
+    async keyPixRandom (selector) {
 
         const chave_pix_aleatoria = gerarChavePixAleatoria();
 

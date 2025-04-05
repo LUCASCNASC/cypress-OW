@@ -8,7 +8,7 @@ export class FillPerson {
     }
 
     //Validar e preencher campo Data Nascimento
-    async dataNascimento (selector) {
+    async dateBirth (selector) {
 
         //Ícone de data de nascimento 
         cy.get('#txtDataNasc > .md-datepicker-button')
@@ -26,7 +26,7 @@ export class FillPerson {
     }
 
     //Validar e prencher campo Nome Completo - CPF
-    async nomeCompleto (selector) {
+    async nameComplete (selector) {
 
         const NomeCompleto = gerarNomeAleatorio();
 
@@ -42,7 +42,7 @@ export class FillPerson {
     }
 
     //Validar e prencher campo Nome CNPJ - CPF
-    async nomeCNPJ (selector) {
+    async nameCNPJ (selector) {
 
         const razaoSocial = gerarNomeEmpresa();
 
@@ -62,7 +62,7 @@ export class FillPerson {
     }
 
     //Validar e preencher campo CPF
-    async cpfCliente (selector) {
+    async cpfClient (selector) {
 
         const cpf = gerarCpf(); // Gera um CPF válido
 
@@ -78,7 +78,7 @@ export class FillPerson {
     }
 
     //Validar e preencher campo CNPJ
-    async cnpjCliente (selector) {
+    async cnpjClient (selector) {
 
         const cnpj = gerarCNPJ(); // Gera um CNPJ válido
 
@@ -94,7 +94,7 @@ export class FillPerson {
     }
 
     //Validar e prencher campo Nome Fantasia - CPF
-    async nomeFantasiaCNPJ (selector) {
+    async nameFantasyCNPJ (selector) {
 
         const nomeClienteCNPJ = "Novo cadastro cliente CNPJ"
 
@@ -109,7 +109,7 @@ export class FillPerson {
     }
 
     //Validar e prencher campo Nome Social - CPF
-    async nomeSocial (selector) {
+    async nameSocial (selector) {
 
         const NomeSocial = gerarNomeAleatorio();
 
@@ -125,7 +125,7 @@ export class FillPerson {
     }
 
      //Validar e escolher sexo da pessoa
-     async sexoCliente (selector) {
+     async sexClient (selector) {
 
         //Campo Sexo - validando mensagem dentro do campo antes de preencher
         cy.get('label[for="txtSexo"]')

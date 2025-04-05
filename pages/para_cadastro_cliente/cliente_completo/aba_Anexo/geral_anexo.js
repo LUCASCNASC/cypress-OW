@@ -9,7 +9,7 @@ export class GeneralAnexo {
     }
     
     //Validar e clicar na aba Telefone
-    async clicarAbaAnexo (selector) {
+    async clickAbaAttachment (selector) {
 
         //Validando aba Telefones
         cy.get('#menu_mais_pri > :nth-child(4)')
@@ -25,7 +25,7 @@ export class GeneralAnexo {
     }
 
     //validando informações da tela antes de fazer upload do arquivo anexo
-    async validarAbaAnexoVazia (selector) {
+    async validateAbaAttachmentEmpty (selector) {
 
         //título "Anexos" quando entramos na aba
         cy.get('[ng-controller="ListaDeAnexosController"] > :nth-child(1)')
@@ -58,7 +58,7 @@ export class GeneralAnexo {
     }
 
     //selecionando o tipo de anexo que quero colocar
-    async selecionarPrimeiroTipoAnexo (selector) {
+    async selectFirstTypeAttachment (selector) {
 
         //clicar no campo Tipo de Anexo para abrir as opções
         cy.get('#ComboTipoAnexo')
@@ -70,7 +70,7 @@ export class GeneralAnexo {
     }
 
     //clicando em SIM na mensagem "Deseja enviar o arquivo selecionado?"
-    async confirmEnvioArquivo (selector) {
+    async confirmSendFile (selector) {
 
         //mensagem "Deseja enviar o arquivo selecionado?" do modal
         cy.get('.md-title')
@@ -97,7 +97,7 @@ export class GeneralAnexo {
     }
 
     //mensagem de anexo incluído com sucesso
-    async messAnexoIncluidoSucesso (selector) {
+    async messAttachmentAddSucess (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast')
@@ -115,7 +115,7 @@ export class GeneralAnexo {
     }
 
     //validar se o anexo realmente foi adicionado
-    async validarAnexoInserido (selector) {
+    async validateAttachmentAdded (selector) {
 
         const hoje = new Date();
         const dataAtual = hoje.toLocaleDateString('pt-BR')

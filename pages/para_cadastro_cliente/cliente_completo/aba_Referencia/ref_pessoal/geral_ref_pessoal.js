@@ -8,7 +8,7 @@ export class GeneralRefGuys {
     }
 
     //validar e clicar na aba Bancária, dentro de Referencias
-    async clicarAbaRefPessoal (selector) {
+    async clickAbaRefGuys (selector) {
 
         //validando botão Pessoal
         cy.get('#menu_items_sec > .on')
@@ -24,7 +24,7 @@ export class GeneralRefGuys {
     }
 
     //validando informações da tela antes de adicionar qualquer coisa - aba referencia Pessoal
-    async validarAbaVazia (selector) {
+    async validateAbaEmpty (selector) {
 
         //validando título quando entramos na aba Pessoal
         cy.get('h3')
@@ -48,7 +48,7 @@ export class GeneralRefGuys {
     }
 
     //clicar no botão + para adicionar uma nova referencia pessoal
-    async clicarAddNova (selector) {
+    async clickAddNew (selector) {
 
         cy.intercept('GET', '/views/cliente/modalClienteRefPessoal.html').as('api_modal_referencia_pessoal')
         cy.get('.layout-align-end-end > .md-fab')
@@ -57,7 +57,7 @@ export class GeneralRefGuys {
     }
 
     //validar informações do modal Referencia Pessoal antes de preencher as informações
-    async modalVazio (selector) {
+    async modalEmpty (selector) {
 
         //título modal 
         cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
@@ -121,7 +121,7 @@ export class GeneralRefGuys {
     }
 
     //clicar para salvar Referencia Pessoal
-    async clicarSalvar (selector) {
+    async clickSave (selector) {
 
         cy.contains('button', 'Salvar')
             .should('be.visible')
@@ -137,7 +137,7 @@ export class GeneralRefGuys {
     }
 
     // validando mensagem Referencia Pessoal incluída com sucesso Incluído com sucesso, após incluírmos a Referencia Pessoal
-    async messRefPessoalIncluidaSucesso (selector) {
+    async messRefGuysAddedSucess (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast-success')
@@ -155,7 +155,7 @@ export class GeneralRefGuys {
     }
 
     //validando informações que foram adicionadas no cadastro de referencia Pessoal
-    async infosAdicionada (selector) {
+    async infoAdded (selector) {
 
         const hoje = new Date();
         const dataAtual = hoje.toLocaleDateString('pt-BR')
@@ -187,7 +187,7 @@ export class GeneralRefGuys {
             .and('contain', dataAtual)
     }
 
-    async modalRefPessoalVazio (selector) {
+    async modalRefGuysEmpty (selector) {
 
         //título modal 
         cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')

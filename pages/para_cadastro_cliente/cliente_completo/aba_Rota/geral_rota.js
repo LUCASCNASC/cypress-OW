@@ -5,7 +5,7 @@ export class GeneralRefRoute {
     }
 
     //Validar e clicar na aba ROTA
-    async clicarAbaRota (selector) {
+    async clickAbaRoute (selector) {
 
         //Validando aba Rota
         cy.get('#menu_items_pri > :nth-child(3)')
@@ -20,7 +20,7 @@ export class GeneralRefRoute {
     }
 
     //botão + para adicionar um nova Rota
-    async clicarAdicionarNovaRota (selector) {
+    async clickAddedNewRoute (selector) {
 
         //Botão +, para adicionar Rota
         cy.get('.layout-align-end-end > .md-fab')
@@ -33,7 +33,7 @@ export class GeneralRefRoute {
     }
 
     //validar informações do modal rota enquanto ainda está vazio
-    async modalRotaVazioValidar (selector) {
+    async modalRouteEmptyValidade (selector) {
 
         //Card Rotas - título Rotas
         cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
@@ -65,7 +65,7 @@ export class GeneralRefRoute {
     }
 
     // validando mensagem Rota Incluída com sucesso, após incluírmos a rota no cadastro
-    async messRotaIncluidaSucesso (selector) {
+    async messRouteAddedSucess (selector) {
 
         //Card Rota incluída com sucesso.
         cy.get('#toast-container > :nth-child(1)')
@@ -83,7 +83,7 @@ export class GeneralRefRoute {
     }
 
     //validando informações que foram adicionadas no cadastro de rota
-    async infosRotaAdicionada (selector) {
+    async infoRouteAdded (selector) {
 
         //Card de rota adicionad1
         cy.get('.md-whiteframe-2dp')

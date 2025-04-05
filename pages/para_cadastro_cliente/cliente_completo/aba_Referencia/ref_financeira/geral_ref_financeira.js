@@ -46,7 +46,7 @@ export class GeneralRefFinance {
     }
 
     //validar e clicar na aba Financeira, dentro de Referencias
-    async clicarAba (selector) {
+    async clickEmpty (selector) {
 
     //validando botão Financeira
     cy.get('#menu_items_sec > .on')
@@ -62,7 +62,7 @@ export class GeneralRefFinance {
     }
 
     //validando informações da tela antes de adicionar qualquer coisa - aba referencia Financeira
-    async validarAbaVazia (selector) {
+    async validateAbaEmpty (selector) {
 
     //validando título quando entramos na aba Financeira
     cy.get('h3')
@@ -86,7 +86,7 @@ export class GeneralRefFinance {
     }
 
     //clicar no botão + para adicionar uma nova referencia Financeira
-    async clicarAddNova (selector) {
+    async clickAddNew (selector) {
 
         cy.intercept('GET', '/views/cliente/modalClienteRefFinanc.html').as('api_modal_referencia_financeira')
         cy.get('.layout-align-end-end > .md-fab')
@@ -95,7 +95,7 @@ export class GeneralRefFinance {
     }
 
     //validar informações do modal Referencia Financeira antes de preencher as informações
-    async modalVazio (selector) {
+    async modalEmpty (selector) {
 
         //título modal 
         cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
@@ -161,7 +161,7 @@ export class GeneralRefFinance {
     }
 
     //clicar para salvar Referencia Financeira
-    async clicarSalvar (selector) {
+    async clickSave (selector) {
 
         cy.contains('button', 'Salvar')
             .should('be.visible')
@@ -177,7 +177,7 @@ export class GeneralRefFinance {
     }
 
     // validando mensagem Referencia Financeira incluída com sucesso Incluído com sucesso, após incluírmos a Referencia Financeira
-    async messRefFinanceiraIncluidaSucesso (selector) {
+    async messRefFinanceAddedSucess (selector) {
 
         //Card Endereço incluído com sucesso.
         cy.get('.toast-success')
@@ -195,7 +195,7 @@ export class GeneralRefFinance {
     }
 
     //validando informações que foram adicionadas no cadastro de referencia Financeira
-    async infosRefFinanceiraAdicionada (selector) {
+    async infoRefFinanceAdded (selector) {
 
         //data
         cy.get('.flex-gt-sm-70 > :nth-child(1) > .ng-binding')
@@ -218,3 +218,4 @@ export class GeneralRefFinance {
             .should('be.visible')
     }
 }
+ 

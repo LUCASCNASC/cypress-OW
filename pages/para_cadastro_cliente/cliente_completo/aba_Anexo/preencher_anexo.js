@@ -5,7 +5,7 @@ export class FillFieldAnexo {
     }
 
     //função para anexar arquivo dentro do cadastro de cliente completo
-    async arquivoPFD (selector) {
+    async filePDF (selector) {
 
         const caminhoDoArquivo = 'cypress\fixtures\anexo_cadastro_cliente_completo.pdf';
 

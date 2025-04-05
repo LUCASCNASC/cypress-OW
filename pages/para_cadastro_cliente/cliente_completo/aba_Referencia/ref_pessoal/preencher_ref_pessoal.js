@@ -8,7 +8,7 @@ export class FillRefGuys {
     }
 
     //referencia pessoal - escolher Nome 
-    async nome (selector) {
+    async name (selector) {
 
         const Nome = gerarNomeAleatorio(); 
 
@@ -28,7 +28,7 @@ export class FillRefGuys {
     }
 
     //referencia pessoal - escolher Telefone
-    async telefone (selector) {
+    async phone (selector) {
 
         const numero_telefone = gerarTelefoneAleatorio();
 
@@ -38,7 +38,7 @@ export class FillRefGuys {
     }
 
     //referencia pessoal - escolher Relacionamento
-    async relacionamento (selector) {
+    async relationship (selector) {
 
         const relacionamento = gerarRelacionamento();
 
