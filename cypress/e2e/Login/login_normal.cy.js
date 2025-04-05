@@ -20,7 +20,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
 
     context('Usuário contexto 1', () => {
 
-        it.only('1. Login - caminho feliz', () => {
+        it('1. Login - caminho feliz', () => {
 
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
@@ -294,7 +294,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             Login.iconComputerLogin() //Validando que não entrou no sistema
         })
     
-        it('11. Login - passar somente login (botão ENTRAR deve ficar desabilitado)', () => {
+        it('11. Login - passar somente senha (botão ENTRAR deve ficar desabilitado)', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')

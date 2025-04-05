@@ -143,7 +143,7 @@ describe('Senha do usuário expirada', () => {
                 .and('not.have.attr', 'disabled')
         })
 
-        it.skip('1. Tentar logar com usuário com senha do usuário expirada - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
+        it.skip('1. Tentar logar com usuário com senha do usuário expirada - clicar em NÃO atualizar senha - clicar em Fechar a redefinição de senha', () => {
         
             //Validando campo "informe seu usuário"
             cy.get('#txtusername')
@@ -316,7 +316,7 @@ describe('Senha do usuário expirada', () => {
                 //Validando botão INICIAR ATENDIMENTO, para ver se logou
                 cy.get('.md-raised > .truncate')
                     .should('be.visible')
-            })
+        })
         
         it.skip('Login - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
         
