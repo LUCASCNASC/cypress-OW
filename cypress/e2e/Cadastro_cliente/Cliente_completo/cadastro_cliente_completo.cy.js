@@ -3,7 +3,6 @@ import { ClickClientComplete } from '../../../../pages/para_cadastro_cliente/cli
 import { GeneralAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/geral_anexo';
 import { GeneralEmployment } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/geral_empregaticio';
 import { FillFieldAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/preencher_anexo';
-import { clicarAbaEmpregat } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Empregaticio/geral_empregaticio';
 import { FillPerson } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/preencher_pessoa';
 import { GeneralRefBanking } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/geral_ref_bancaria';
 import { FillRefBanking } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/preencher_ref_bancaria';
@@ -55,7 +54,6 @@ describe('Cadastrar cliente completo', () => {
             FillAdress.numberAdress()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -109,7 +107,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -157,7 +154,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -207,7 +203,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -307,7 +302,6 @@ describe('Cadastrar cliente completo', () => {
             FillRefBanking.operation()
             FillRefBanking.formPayment()
 
-
             FillRefBanking.typeKeyPixPhone()
             FillRefBanking.keyPixPhone()
             GeneralRefBanking.clickSaveRefBanking()
@@ -343,7 +337,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -415,7 +408,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -487,7 +479,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -559,7 +550,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -630,7 +620,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -701,7 +690,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -772,7 +760,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -845,7 +832,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -909,7 +895,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
@@ -974,7 +959,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-            //messAdressAddedSucess()
 
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()

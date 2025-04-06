@@ -153,7 +153,6 @@ describe('Cadastrar cliente simples', () => {
             cy.get('#txtCpf')
                 .type(`${cpf}`, { force: true }); //Inserindo CPF no campo "INFORME O CLIENTE"
 
-
             // ALTERAR DATA DE NASCIMENTO 
 
             //Clicar no campo Data de nascimento para aparecer a mensagem se desejo visualizar este cadastro
@@ -228,7 +227,7 @@ describe('Cadastrar cliente simples', () => {
                 .click({force: true})
                 .wait(1000)
 
-                GeneralClientSimple.desireSeeRegister()
+            GeneralClientSimple.desireSeeRegister()
 
             // ALTERAR SEXO 
 
