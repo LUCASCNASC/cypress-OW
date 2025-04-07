@@ -124,8 +124,6 @@ describe('Senha do usuário expirada', () => {
                 .should('be.visible')
                 .and('have.text','Confirmar')
                 .and('not.have.attr', 'disabled')
-
-            scrollTo()
                     
             //Card Altere Sua Senha Temporária - botão Fechar 
             cy.get('[ng-show="!loading"] > a')
@@ -428,8 +426,6 @@ describe('Senha do usuário expirada', () => {
                 .should('be.visible')
                 .and('have.text','Confirmar')
                 .and('not.have.attr', 'disabled')
-    
-            scrollTo()
                     
             //Card Altere Sua Senha Temporária - botão Fechar 
             cy.get('[ng-show="!loading"] > a')
@@ -558,8 +554,6 @@ describe('Senha do usuário expirada', () => {
                 .should('be.visible')
                 .and('have.text','Confirmar')
                 .and('not.have.attr', 'disabled')
-    
-            scrollTo()
                     
             //Card Altere Sua Senha Temporária - botão Fechar 
             cy.get('[ng-show="!loading"] > a')

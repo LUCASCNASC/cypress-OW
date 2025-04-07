@@ -192,8 +192,6 @@ describe('Logar com novo usuário', () => {
             .should('be.visible')
             .and('have.text','Confirmar')
             .and('not.have.attr', 'disabled')
-
-        scrollTo()
              
         //Card Altere Sua Senha Temporária - botão Fechar 
         cy.get('[ng-show="!loading"] > a')
@@ -385,8 +383,6 @@ describe('Logar com novo usuário', () => {
             .should('be.visible')
             .and('have.text','Confirmar')
             .and('not.have.attr', 'disabled')
-
-        scrollTo()
              
         //Card Altere Sua Senha Temporária - botão Fechar 
         cy.get('[ng-show="!loading"] > a')
