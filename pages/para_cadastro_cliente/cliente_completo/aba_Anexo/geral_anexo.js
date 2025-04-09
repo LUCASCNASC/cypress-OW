@@ -131,5 +131,3 @@ export class GeneralAnexo {
             .and('include.text', dataAtual)
     }
 }
-
-

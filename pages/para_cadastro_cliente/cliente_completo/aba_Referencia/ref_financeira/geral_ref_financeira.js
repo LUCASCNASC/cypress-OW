@@ -218,4 +218,3 @@ export class GeneralRefFinance {
             .should('be.visible')
     }
 }
- 

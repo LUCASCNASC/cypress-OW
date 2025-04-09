@@ -249,5 +249,4 @@ export class GeneralRefGuys {
             .should('be.visible')
             .should('have.attr', 'disabled')
     }
-    
 }

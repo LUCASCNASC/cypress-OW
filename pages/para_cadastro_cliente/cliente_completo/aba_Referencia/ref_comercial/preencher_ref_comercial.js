@@ -59,4 +59,3 @@ export class FillRefCommercial {
             .type(observacao)
     }
 }
-  
