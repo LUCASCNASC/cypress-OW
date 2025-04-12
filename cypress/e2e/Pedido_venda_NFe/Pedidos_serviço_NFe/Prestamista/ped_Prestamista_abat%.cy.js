@@ -647,7 +647,6 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             AdvanceNormal.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
-            // TicketPrestamista.added() //Validando adição do prestamista
             GeneralOrder.clickEditInstallments()
             ChooseInstallmentReceipt.for()
             ValidateService.okInsurancePrest()
