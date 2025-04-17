@@ -21,15 +21,15 @@ describe('Gerar pedido normal', () => {
         cy.tituloPagina()
         ProcessSale.NFe()
         ChooseClient.withRoute()
-        Product.fisrt() //PRODUTO
-        ValidateBalance.withBalance()
-        cy.selectProductSearch()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -46,7 +46,10 @@ describe('Gerar pedido normal', () => {
         })
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
-                      
+               
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -72,6 +75,9 @@ describe('Gerar pedido normal', () => {
 
         it('3. Ped venda: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -94,6 +100,9 @@ describe('Gerar pedido normal', () => {
 
         it('4. Ped venda: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -110,7 +119,10 @@ describe('Gerar pedido normal', () => {
         })
 
         it('5. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
-                      
+                  
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -134,7 +146,10 @@ describe('Gerar pedido normal', () => {
         })
 
         it('6. Ped venda: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
-                      
+               
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS

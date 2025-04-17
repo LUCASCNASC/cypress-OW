@@ -21,15 +21,15 @@ describe('Gerar pedido normal com entrega', () => {
         cy.tituloPagina()
         ProcessSale.NFCe()
         ChooseClient.withRoute()
-        Product.kitFirst()
-        ValidateBalance.withBalance()
-        cy.selectProductSearch()
     })
     
     context('Com entrega/processo 9890 - caminho feliz', () => {
         
         it('1. Ped venda: kit 1862 0 0', () => {
-                      
+                
+            Product.kitFirst()
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeneralOrder.compositionKit()
             cy.clickAddProduc()

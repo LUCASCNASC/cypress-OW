@@ -21,15 +21,15 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.tituloPagina()
         ProcessSale.NFe()
         ChooseClient.withRoute()
-        Product.roundUpDown() //PRODUTO
-        ValidateBalance.withBalance()
-        cy.clickVoltageProduct()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz - processo de inclusão 3860', () => {
 
         it('1. Ped venda: produto 1860 0 0 - arredondar para baixo', () => {
 
+            Product.roundUpDown() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -51,6 +51,9 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
         it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
 
+            Product.roundUpDown() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS

@@ -20,15 +20,15 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
         cy.tituloPagina()
         ProcessSale.financePaymentNFCe()
         ChooseClient.withRoute()
-        Product.fisrt() //PRODUTO
-        ValidateBalance.withBalance()
-        cy.selectProductSearch()
     })
     
     context('Com entrega/ processo 9892 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
@@ -47,7 +47,10 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
         })
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
-                      
+                
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS

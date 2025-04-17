@@ -20,15 +20,15 @@ describe('Gerar pedido de entrega futura', () => {
         cy.tituloPagina()
         ProcessSale.deliveryFutureNFe()
         ChooseClient.withRoute()
-        Product.fisrt() //PRODUTO
-        ValidateBalance.withBalance()
-        cy.clickVoltageProduct()
     })
 
     context('Sem entrega/ processo 9862 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
                       
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -45,7 +45,10 @@ describe('Gerar pedido de entrega futura', () => {
         })
         
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
-                      
+              
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -73,7 +76,10 @@ describe('Gerar pedido de entrega futura', () => {
     context('Com entrega/ processo 9862 - caminho feliz', () => {
 
         it('3. Ped venda: produto 1860 0 0', () => {
-                      
+             
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -90,7 +96,10 @@ describe('Gerar pedido de entrega futura', () => {
         })    
         
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
-                      
+                   
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS

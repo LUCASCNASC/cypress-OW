@@ -21,15 +21,15 @@ describe('Gerar pedido normal', () => {
         cy.tituloPagina()
         ProcessSale.NFe()
         ChooseClient.withRoute()
-        Product.kitFirst()
-        ValidateBalance.withBalance()
-        cy.selectProductSearch()
     })
   
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
         
         it('1. Ped venda: kit 1862 0 0', () => {
                       
+            Product.kitFirst()
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeneralOrder.compositionKit()
             cy.clickAddProduct()
@@ -50,7 +50,10 @@ describe('Gerar pedido normal', () => {
     context('Com entrega/processo 9860 - caminho feliz', () => {
         
         it('2. Ped venda: kit 1862 0 0', () => {
-                      
+              
+            Product.kitFirst()
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeralPedido.compositionKit()
             cy.clickAddProduct()

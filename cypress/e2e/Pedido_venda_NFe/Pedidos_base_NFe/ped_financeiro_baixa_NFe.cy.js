@@ -21,15 +21,15 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.tituloPagina()
         ProcessSale.financePaymentNFe()
         ChooseClient.withRoute()
-        Product.fisrt() //PRODUTO
-        ValidateBalance.withBalance()
-        cy.clickVoltageProduct()
     })
   
     context('Sem entrega/ processo 9863 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0', () => {
-                      
+                 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -46,7 +46,10 @@ describe('Gerar pedido com financeiro na baixa', () => {
         })
 
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
-                      
+              
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -74,7 +77,10 @@ describe('Gerar pedido com financeiro na baixa', () => {
     context('Com entrega/ processo 9863 - caminho feliz', () => {
 
         it('3. Ped venda: produto 1860 0 0', () => {
-                      
+                
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
@@ -91,7 +97,10 @@ describe('Gerar pedido com financeiro na baixa', () => {
         })
 
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
-                      
+                 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
