@@ -158,3 +158,109 @@ Cypress.Commands.add('clickAddProduct', (username, password) => {
 
         cy.wait('@api_servicos_vinculados', { timeout: 40000 })
 });
+
+//Botão para finalizar o pedido
+Cypress.Commands.add('clickFinishOrder', () => {
+  
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
+  
+    cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar')
+
+    //Botão FINALIZAR PEDIDO
+    cy.get('button.md-primary.btn-rounded.md-raised.btn-block.md-default-theme.md-ink-ripple[type="button"][ng-click="confirmarPedido()"]')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .should('have.text', 'Finalizar pedido')
+
+    //Clicar para finalizar pedido
+    cy.get('button[ng-click="confirmarPedido()"]')
+        .click({force:true})
+
+    //Card pedido concluído (carregando finalização do pedido) - Título Pedido Concluído
+    cy.get('.md-toolbar-tools h2.flex')
+        .should('be.visible')
+        .and('contain','Pedido Concluído')
+
+    //Card pedido concluído (carregando finalização do pedido) - X para sair da aba
+    cy.get('.md-content-overflow > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //Card pedido concluído (carregando finalização do pedido) - girando carregar
+    cy.get('.layout-column > .md-accent')
+        .should('be.visible')
+
+    //Card pedido concluído (carregando finalização do pedido) - Mensagem Finalizando pedido...
+    cy.get('.layout-column > h4')
+        .should('be.visible')
+        .and('have.text','Finalizando pedido...')
+
+    //Card pedido concluído (carregando finalização do pedido) - ATENÇÃO
+    cy.get('.layout-column > p > span')
+        .should('be.visible')
+        .and('have.text','ATENÇÃO:')
+        .and('have.css', 'color', 'rgb(204, 0, 0)')
+
+    //Card pedido concluído (carregando finalização do pedido) -  Não atualize a página ...
+    cy.get('.layout-column > p')
+        .should('be.visible')
+        .and('contain','Não atualize a página enquanto o pedido estiver sendo finalizado.')
+        .and('have.css', 'color', 'rgb(204, 0, 0)')
+
+    cy.wait('@api_pedido_finalizar', { timeout: 40000 })
+});
+
+//Função para validar card de Pedido Concluído
+Cypress.Commands.add('validateOrderGenerated', () => {
+  
+    cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados')
+  
+    cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar')
+
+    //Botão FINALIZAR PEDIDO
+    cy.get('button.md-primary.btn-rounded.md-raised.btn-block.md-default-theme.md-ink-ripple[type="button"][ng-click="confirmarPedido()"]')
+        .scrollIntoView()
+        .wait(200)
+        .should('be.visible')
+        .and('not.be.disabled')
+        .should('have.text', 'Finalizar pedido')
+
+    //Clicar para finalizar pedido
+    cy.get('button[ng-click="confirmarPedido()"]')
+        .click({force:true})
+
+    //Card pedido concluído (carregando finalização do pedido) - Título Pedido Concluído
+    cy.get('.md-toolbar-tools h2.flex')
+        .should('be.visible')
+        .and('contain','Pedido Concluído')
+
+    //Card pedido concluído (carregando finalização do pedido) - X para sair da aba
+    cy.get('.md-content-overflow > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
+        .should('be.visible')
+        .and('not.have.attr', 'disabled')
+
+    //Card pedido concluído (carregando finalização do pedido) - girando carregar
+    cy.get('.layout-column > .md-accent')
+        .should('be.visible')
+
+    //Card pedido concluído (carregando finalização do pedido) - Mensagem Finalizando pedido...
+    cy.get('.layout-column > h4')
+        .should('be.visible')
+        .and('have.text','Finalizando pedido...')
+
+    //Card pedido concluído (carregando finalização do pedido) - ATENÇÃO
+    cy.get('.layout-column > p > span')
+        .should('be.visible')
+        .and('have.text','ATENÇÃO:')
+        .and('have.css', 'color', 'rgb(204, 0, 0)')
+
+    //Card pedido concluído (carregando finalização do pedido) -  Não atualize a página ...
+    cy.get('.layout-column > p')
+        .should('be.visible')
+        .and('contain','Não atualize a página enquanto o pedido estiver sendo finalizado.')
+        .and('have.css', 'color', 'rgb(204, 0, 0)')
+
+    cy.wait('@api_pedido_finalizar', { timeout: 40000 })
+  });

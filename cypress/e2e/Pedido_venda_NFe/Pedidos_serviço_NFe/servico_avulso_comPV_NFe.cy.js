@@ -2,7 +2,6 @@ import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_v
 import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
@@ -24,7 +23,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
     context('Processo 9888 - caminho feliz', () => {
 
-        it.skip('1. Venda de garantia - 139 (T.A. Garantia Separa Mesmo Processo)', () => {
+        it('1. Venda de garantia - 139 (T.A. Garantia Separa Mesmo Processo)', () => {
 
             const numero_pedido = '8605'
             
@@ -67,8 +66,8 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
     })
 })

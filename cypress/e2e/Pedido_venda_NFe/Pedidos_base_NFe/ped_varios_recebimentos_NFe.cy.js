@@ -4,7 +4,6 @@ import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { ThrowDelivery } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
@@ -46,8 +45,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
 
         it('2. Ped venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
@@ -68,8 +67,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
 
         it('3. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
@@ -94,8 +93,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             ChooseInstallmentReceipt.one()
             GroupReceipt.notGroupReleases()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
 
         it('4. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
@@ -120,8 +119,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             ChooseInstallmentReceipt.one()
             GroupReceipt.groupReleases()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
 
         it('5. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
@@ -148,8 +147,8 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GroupReceipt.selectReleasesGroup()
             GroupReceipt.clickGroup()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
     })
 })

@@ -4,7 +4,6 @@ import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { GeneralDelivery } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
@@ -25,7 +24,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
   
     context('Pedido de venda remoto normal', () => {
 
-        it.skip('1. Ped venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
+        it('1. Ped venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance()
@@ -43,11 +42,11 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
 
-        it.skip('2. Ped venda remota: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2. Ped venda remota: produtos 1860 0 0 e 1870 0 0', () => {
 
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance()
@@ -73,11 +72,11 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
         
-        it.skip('3. Ped venda remota: kit 1877 0 0', () => {
+        it('3. Ped venda remota: kit 1877 0 0', () => {
 
             Product.kitRemote() //PRODUTO
             ValidateBalance.withBalance()
@@ -96,14 +95,14 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
     })
     
     context('Pedido de venda remoto sem saldo remoto, pegar CD', () => {
 
-        it.skip('4. Ped venda remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto (1883 0 0) sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
+        it('4. Ped venda remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto (1883 0 0) sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
 
             Product.remoteWithCD() //PRODUTO
             ValidateBalance.withBalance()
@@ -121,11 +120,11 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })    
         
-        it.skip('5. Ped venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto (1882 0 0) sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
+        it('5. Ped venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto (1882 0 0) sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
             Product.remoteWithoutCD() //PRODUTO
             ValidateBalance.withBalance()

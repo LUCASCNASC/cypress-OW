@@ -4,7 +4,6 @@ import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
-import { FinishOrder } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { ThrowDelivery } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
@@ -45,8 +44,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             OrderDiscount.modalChangeValue()
             OrderDiscount.changeValueToLow()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
 
         it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
@@ -69,8 +68,8 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             OrderDiscount.modalChangeValue()
             OrderDiscount.changeValueToTop()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
-            FinishOrder.validateOrderGenerated()
+            cy.clickFinishOrder() //RESUMO
+            cy.validateOrderGenerated()
         })
     })
 })

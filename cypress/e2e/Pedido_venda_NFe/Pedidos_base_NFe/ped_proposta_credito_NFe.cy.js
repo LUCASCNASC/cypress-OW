@@ -40,9 +40,9 @@ describe('Gerar pedido com proposta de crédito', () => {
             Receipt.proposalCredit()
             ChooseInstallmentReceipt.one()
             AdvanceNormal.final()
-            FinishOrder.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //RESUMO
             FinishOrder.validatePropCreditGenerated    ()
-            FinishOrder.validateOrderGenerated()
+            cy.validateOrderGenerated()
         })
     })
 })
