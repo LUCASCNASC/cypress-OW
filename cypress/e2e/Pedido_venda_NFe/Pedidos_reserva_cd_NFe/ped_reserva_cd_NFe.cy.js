@@ -1,5 +1,4 @@
 import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
@@ -18,7 +17,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessSale.NFe()
-        ChooseClient.withRoute()
+        cy.chooseClient()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {

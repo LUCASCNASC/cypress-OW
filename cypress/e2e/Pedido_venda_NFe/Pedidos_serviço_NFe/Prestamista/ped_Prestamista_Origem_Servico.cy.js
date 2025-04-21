@@ -1,5 +1,4 @@
 import { ProcessSale } from '../../../../../pages/para_pedidos/processos/processo_venda.js'
-import { ChooseClient } from '../../../../../pages/para_pedidos/cliente/cliente.js'
 import { ValidateBalance } from '../../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Product } from '../../../../../pages/produtos/prd_normal.js'
 import { Service } from '../../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
@@ -23,7 +22,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessSale.NFe()
-        ChooseClient.withRoute()
+        cy.chooseClient()
     })   
 
     context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo - Origem Serviço (162)', () => {

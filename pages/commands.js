@@ -1,32 +1,5 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
 import '@testing-library/cypress/add-commands'
 import 'cypress-file-upload';
-
 
 // cypress/support/commands.js
 
@@ -264,3 +237,30 @@ Cypress.Commands.add('validateOrderGenerated', () => {
 
     cy.wait('@api_pedido_finalizar', { timeout: 40000 })
   });
+
+//Escolher cliente com rota
+Cypress.Commands.add('chooseClient', () => {
+  
+    //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
+    cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
+    .wait(500)
+    .type('48976249089 {downArrow}')
+
+    cy.intercept('/views/cliente/modalClientes.html').as('api_modalclientes');
+    //clicar na lupa de pesquisa de clientes
+    cy.get('.md-block > .ng-binding')
+        .should('be.visible')
+        .click()
+    cy.wait('@api_modalclientes', { timeout: 40000 })
+    cy.intercept('/consultaclientes/*').as('api_consultaclientes');
+    cy.wait('@api_consultaclientes', { timeout: 40000 })
+
+    // cy.wait(1000)
+
+    cy.intercept('/services/v3/pedido_validar_cliente').as('api_pedido_validar_cliente');
+    //após a pesquisa encontrar o cliente, vamos selecionar ele
+    cy.get('.md-3-line > div.md-button > .md-no-style')
+        .should('be.visible')
+        .click()
+    cy.wait('@api_pedido_validar_cliente', { timeout: 40000 })
+});

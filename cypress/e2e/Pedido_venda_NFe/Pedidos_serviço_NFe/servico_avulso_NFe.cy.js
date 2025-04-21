@@ -1,5 +1,4 @@
 import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
@@ -15,7 +14,7 @@ describe('Venda de serviço avulso', () => {
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessSale.saleServiceLoose()
-        ChooseClient.withRoute()
+        cy.chooseClient()
     })
 
     context('Processo 9888 - caminho feliz', () => {

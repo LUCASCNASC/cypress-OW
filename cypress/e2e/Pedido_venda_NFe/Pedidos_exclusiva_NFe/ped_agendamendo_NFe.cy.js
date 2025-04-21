@@ -1,5 +1,4 @@
 import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { ThrowDelivery } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'
 import { GeneralDelivery } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
@@ -22,7 +21,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessSale.NFe()
-        ChooseClient.withRoute()
+        cy.chooseClient()
     })
 
     context('Configuração de processo - Exclusiva: 36 = 2; 139 = 6; 552= 5 dias', () => {
