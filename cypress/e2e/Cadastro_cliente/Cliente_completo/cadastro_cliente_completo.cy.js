@@ -35,7 +35,7 @@ describe('Cadastrar cliente completo', () => {
         it('1. Cliente completo CPF', () => {
 
             GeneralClientComplete.iconMenuOptions() //PESSOA
-            GeralClienteCoGeneralClientCompletempleto.optionClientComplete()
+            GeneralClientComplete.optionClientComplete()
             FillPerson.cpfClient()
             FillPerson.nameComplete()
             FillPerson.nameSocial()

@@ -20,18 +20,17 @@ describe('Gerar pedidos com Mão de obra', () => {
         cy.tituloPagina()
         ProcessSale.NFe()
         cy.chooseClient()
-        Product.fisrt() //PRODUTO
-        ValidateBalance.withBalance()
-        cy.selectProductSearch()
-        cy.clickVoltageProduct()
-        cy.clickAddProduct()
-        Service.validateModalServLinked()
     })
   
     context('Sem entrega/processo 9860 - caminho feliz', () => {
 
         it('1. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
@@ -48,6 +47,11 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('2. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
@@ -72,6 +76,11 @@ describe('Gerar pedidos com Mão de obra', () => {
     
         it('3. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
@@ -88,6 +97,11 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('4. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
@@ -112,6 +126,11 @@ describe('Gerar pedidos com Mão de obra', () => {
     
         it('5. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servViservLinkednc() ; ValidateService.addMONaoDestSepProcDif()
@@ -128,6 +147,11 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('6. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepProcDif()
@@ -155,6 +179,11 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('7. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título)', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
@@ -171,6 +200,11 @@ describe('Gerar pedidos com Mão de obra', () => {
         
         it('8. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
@@ -194,6 +228,11 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('9. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
@@ -210,6 +249,11 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('10. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
@@ -233,6 +277,11 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('11. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepProcDif()
@@ -249,6 +298,11 @@ describe('Gerar pedidos com Mão de obra', () => {
 
         it('12. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
     
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepProcDif()

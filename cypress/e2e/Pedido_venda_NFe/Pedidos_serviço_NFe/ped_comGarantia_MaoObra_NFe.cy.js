@@ -20,18 +20,18 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         cy.tituloPagina() 
         ProcessSale.NFe()
         cy.chooseClient()
-        Product.fisrt() //PRODUTO
-        ValidateBalance.withBalance()
-        cy.selectProductSearch()
-        cy.clickVoltageProduct()
-        cy.clickAddProduct()
-        Service.validateModalServLinked()
     })
 
     context('Sem entrega/processo 9860 - caminho feliz', () => {
     
         it('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa)', () => {
             
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
+            Service.validateModalServLinked()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -49,6 +49,12 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
+            Service.validateModalServLinked()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -74,6 +80,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('3. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -91,6 +102,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('4. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -115,6 +131,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -132,6 +153,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -156,6 +182,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('7. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -173,6 +204,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('8. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -198,6 +234,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('9. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -215,6 +256,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('10. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -240,6 +286,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('11. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -257,6 +308,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('12. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -282,6 +338,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('13. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -299,6 +360,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('14. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -324,6 +390,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('15. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -341,6 +412,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('16. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -366,6 +442,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('17. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaSepTituloProcDif()
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -383,6 +464,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('18. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaSepTituloProcDif()
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -411,6 +497,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('19. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -428,6 +519,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('20. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -452,6 +548,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('21. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -469,6 +570,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('22. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -493,6 +599,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('23. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -510,6 +621,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('24. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -534,6 +650,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('25. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -551,6 +672,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('26. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -575,6 +701,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('27. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -592,6 +723,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('28. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -616,6 +752,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('29. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -633,6 +774,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('30. Ped venda: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -657,6 +803,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('31. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -674,6 +825,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('32. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -697,6 +853,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('33. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -714,6 +875,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('34. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -738,6 +904,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('35. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaSepTituloProcDif()
             Service.clickOKServiceLinked() //SERVIÇOS
@@ -755,6 +926,11 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
         it('36. Ped venda: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
+            Product.fisrt() //PRODUTO
+            ValidateBalance.withBalance()
+            cy.selectProductSearch()
+            cy.clickVoltageProduct()
+            cy.clickAddProduct()
             Service.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
             Service.garantiaSepTituloProcDif()
             Service.clickOKServiceLinked() //SERVIÇOS

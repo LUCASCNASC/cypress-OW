@@ -17,7 +17,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessSale.NFCe()
-        ChooseClient.withRoute()
+        cy.chooseClient()
     })
 
     context('Com entrega /com promoção/ processo 9890 - caminho feliz', () => {

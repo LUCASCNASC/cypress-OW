@@ -19,7 +19,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessSale.NFCe()
-        ChooseClient.withRoute()
+        cy.chooseClient()
     })
 
     context('Com entrega/processo 9890 - caminho feliz', () => {
