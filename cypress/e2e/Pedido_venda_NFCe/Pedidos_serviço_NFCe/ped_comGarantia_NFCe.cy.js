@@ -27,7 +27,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -50,7 +50,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -58,7 +58,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Service.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Service.clickOKServiceLinked() //SERVIÇOS
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -80,7 +80,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('3. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -103,7 +103,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('4. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -111,7 +111,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Service.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Service.clickOKServiceLinked() //SERVIÇOS
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -133,7 +133,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -156,7 +156,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -164,7 +164,7 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Service.garantiaSepTituloProcDif() //Marcar Garantia separa titulo em um processo diferente
             Service.clickOKServiceLinked() //SERVIÇOS
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

@@ -30,7 +30,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('1. Ped venda: produto 1860 0 0, inclusão 3881, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -53,7 +53,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('2. Ped venda: produto 1860 0 0 e 1870 0 0, inclusão 3881 e 3860, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -61,7 +61,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -87,7 +87,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('3. Ped venda: produto 1922 0 0 (promo a prazo 171), inclusão 3881, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
     
             Product.termFisrtPrestAbatVF() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promotion.selectFirstPromoProduct()
@@ -112,7 +112,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('4. Ped venda: produto 1923 0 0 + garantia Não separa (promo a prazo 172 - isentar juros serviços), inclusão 3881, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
 
             Product.termSecondPrestAbatVF() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promotion.selectFirstPromoProduct()
@@ -138,7 +138,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('5. Ped venda: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3882, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
 
             Product.prazoPrestTercAbatVF() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promotion.selectFirstPromoProduct()

@@ -26,7 +26,7 @@ describe('Gerar pedido de venda com desconto', () => {
         it('1. Ped venda: produto 1912 0 0 com desconto Sub (-) / R$', () => {
 
             Product.discountNumber() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -49,7 +49,7 @@ describe('Gerar pedido de venda com desconto', () => {
         it('2. Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
 
             Product.discountPercentage() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -72,7 +72,7 @@ describe('Gerar pedido de venda com desconto', () => {
         it('3. Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
 
             Product.discountValueFixed() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

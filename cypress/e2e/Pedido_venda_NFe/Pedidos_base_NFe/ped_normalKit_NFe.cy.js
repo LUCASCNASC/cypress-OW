@@ -26,7 +26,7 @@ describe('Gerar pedido normal', () => {
         it('1. Ped venda: kit 1862 0 0', () => {
                       
             Product.kitFirst()
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeneralOrder.compositionKit()
@@ -50,7 +50,7 @@ describe('Gerar pedido normal', () => {
         it('2. Ped venda: kit 1862 0 0', () => {
               
             Product.kitFirst()
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeralPedido.compositionKit()

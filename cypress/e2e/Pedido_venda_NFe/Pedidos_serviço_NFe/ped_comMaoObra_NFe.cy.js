@@ -27,7 +27,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('1. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -48,7 +48,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('2. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -57,7 +57,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
             ThrowDelivery.freightFirst() //ENTREGA
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -77,7 +77,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('3. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -98,7 +98,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('4. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -107,7 +107,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
             ThrowDelivery.freightFirst() //ENTREGA
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -127,7 +127,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('5. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
 
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -148,7 +148,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('6. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -157,7 +157,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepProcDif()
             ThrowDelivery.freightFirst() //ENTREGA
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -180,7 +180,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('7. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -201,7 +201,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('8. Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -209,7 +209,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -229,7 +229,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('9. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -250,7 +250,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('10. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -258,7 +258,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -278,7 +278,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('11. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -299,7 +299,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         it('12. Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -307,7 +307,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepProcDif()
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

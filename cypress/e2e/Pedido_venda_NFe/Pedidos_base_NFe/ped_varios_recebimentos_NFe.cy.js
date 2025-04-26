@@ -26,7 +26,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('1. Ped venda: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
 
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -51,7 +51,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('2. Ped venda: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
 
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -73,7 +73,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('3. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
 
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -99,7 +99,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('4. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
 
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -125,7 +125,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('5. Ped venda: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
 
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()

@@ -26,7 +26,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         it('1. Ped venda: produto 1860 0 0 - arredondar para baixo', () => {
 
             Product.roundUpDown() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -50,7 +50,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         it('2. Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
 
             Product.roundUpDown() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()

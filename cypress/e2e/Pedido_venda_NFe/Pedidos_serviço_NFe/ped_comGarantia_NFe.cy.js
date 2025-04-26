@@ -27,7 +27,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -48,7 +48,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -57,7 +57,7 @@ describe('Gerar pedidos com Garantia', () => {
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
             ThrowDelivery.freightFirst() //ENTREGA
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -77,7 +77,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('3. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -98,7 +98,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('4. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -107,7 +107,7 @@ describe('Gerar pedidos com Garantia', () => {
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             ThrowDelivery.freightFirst() //ENTREGA
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -127,7 +127,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -148,7 +148,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -157,7 +157,7 @@ describe('Gerar pedidos com Garantia', () => {
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif()
             ThrowDelivery.freightFirst() //ENTREGA
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -180,7 +180,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('7. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -201,7 +201,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('8. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -209,7 +209,7 @@ describe('Gerar pedidos com Garantia', () => {
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -229,7 +229,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('9. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -250,7 +250,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('10. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -258,7 +258,7 @@ describe('Gerar pedidos com Garantia', () => {
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -278,7 +278,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('11. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -299,7 +299,7 @@ describe('Gerar pedidos com Garantia', () => {
         it('12. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -307,7 +307,7 @@ describe('Gerar pedidos com Garantia', () => {
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif()
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()

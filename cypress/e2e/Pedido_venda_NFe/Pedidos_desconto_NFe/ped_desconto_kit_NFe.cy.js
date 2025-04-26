@@ -27,7 +27,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         it('1. Ped venda: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
     
             Product.kitDiscount() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeneralOrder.compositionKit()

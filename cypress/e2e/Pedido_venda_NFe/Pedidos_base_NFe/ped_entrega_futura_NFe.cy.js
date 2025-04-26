@@ -25,7 +25,7 @@ describe('Gerar pedido de entrega futura', () => {
         it('1. Ped venda: produto 1860 0 0', () => {
                       
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -45,7 +45,7 @@ describe('Gerar pedido de entrega futura', () => {
         it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
               
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -53,7 +53,7 @@ describe('Gerar pedido de entrega futura', () => {
             clicarOKServVinServico.clickOKServiceLinked()
             ThrowDelivery.freightFirst() //ENTREGA PRODUTO
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -76,7 +76,7 @@ describe('Gerar pedido de entrega futura', () => {
         it('3. Ped venda: produto 1860 0 0', () => {
              
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -96,14 +96,14 @@ describe('Gerar pedido de entrega futura', () => {
         it('4. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                    
             Product.fisrt() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
             Product.second() //PRODUTO
-            ValidateBalance.withBalance()
+            ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
