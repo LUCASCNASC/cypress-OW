@@ -17,7 +17,7 @@ describe('Gerar pedido normal', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
 

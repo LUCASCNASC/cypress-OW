@@ -20,7 +20,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })   
 

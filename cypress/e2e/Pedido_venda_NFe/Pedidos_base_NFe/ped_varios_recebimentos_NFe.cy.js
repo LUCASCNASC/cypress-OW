@@ -17,7 +17,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
 

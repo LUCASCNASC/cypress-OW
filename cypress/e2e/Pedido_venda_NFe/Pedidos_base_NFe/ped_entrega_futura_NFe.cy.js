@@ -16,7 +16,7 @@ describe('Gerar pedido de entrega futura', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.deliveryFutureNFe()
+        ProcessSale.deliveryFutureNFe() //processo entrega futura
         cy.chooseClient()
     })
 

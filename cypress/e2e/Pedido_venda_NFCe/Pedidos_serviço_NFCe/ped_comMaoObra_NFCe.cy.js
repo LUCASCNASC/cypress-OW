@@ -18,7 +18,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFCe()
+        ProcessSale.NFCe() //processo normal
         cy.chooseClient()
     })
 

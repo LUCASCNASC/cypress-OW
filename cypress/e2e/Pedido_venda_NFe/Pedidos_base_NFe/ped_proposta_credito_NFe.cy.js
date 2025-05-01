@@ -17,7 +17,7 @@ describe('Gerar pedido com proposta de crédito', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
 

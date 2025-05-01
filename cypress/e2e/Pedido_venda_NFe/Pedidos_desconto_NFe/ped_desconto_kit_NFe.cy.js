@@ -18,7 +18,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         cy.login(); 
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
   

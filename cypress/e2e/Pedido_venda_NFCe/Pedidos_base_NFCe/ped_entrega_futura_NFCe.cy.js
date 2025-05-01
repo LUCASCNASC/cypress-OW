@@ -18,7 +18,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.deliveryFutureNFCe()
+        ProcessSale.deliveryFutureNFCe() //processo entrega futura
         cy.chooseClient()
     })
     

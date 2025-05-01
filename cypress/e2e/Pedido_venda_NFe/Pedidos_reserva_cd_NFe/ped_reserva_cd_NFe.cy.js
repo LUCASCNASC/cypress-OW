@@ -16,7 +16,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
 

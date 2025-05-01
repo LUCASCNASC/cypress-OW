@@ -17,7 +17,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.login();
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.financePaymentNFe()
+        ProcessSale.financePaymentNFe() //processo financeiro na baixa
         cy.chooseClient()
     })
   

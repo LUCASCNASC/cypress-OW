@@ -17,7 +17,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessSale.NFCe()
+        ProcessSale.NFCe() //processo normal
         cy.chooseClient()
     })
 

@@ -19,7 +19,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
   

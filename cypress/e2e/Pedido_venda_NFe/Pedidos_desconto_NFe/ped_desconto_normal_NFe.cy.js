@@ -17,7 +17,7 @@ describe('Gerar pedido de venda com desconto', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
 

@@ -17,7 +17,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
 

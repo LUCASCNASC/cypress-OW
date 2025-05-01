@@ -23,7 +23,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })   
 

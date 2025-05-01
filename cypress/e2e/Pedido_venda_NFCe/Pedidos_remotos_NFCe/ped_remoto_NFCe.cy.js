@@ -18,7 +18,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessSale.NFCe()
+        ProcessSale.NFCe() //processo normal
         cy.chooseClient()
     })
   

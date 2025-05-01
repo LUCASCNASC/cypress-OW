@@ -10,7 +10,7 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe()
+        ProcessSale.NFe() //processo normal
         cy.chooseClient()
     })
 
