@@ -44,7 +44,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -66,7 +66,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -92,7 +92,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             ChooseInstallmentReceipt.one()
             GroupReceipt.notGroupReleases()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -118,7 +118,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             ChooseInstallmentReceipt.one()
             GroupReceipt.groupReleases()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -146,7 +146,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GroupReceipt.selectReleasesGroup()
             GroupReceipt.clickGroup()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

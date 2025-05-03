@@ -38,7 +38,7 @@ describe('Gerar pedido de entrega futura', () => {
             Receipt.main() //PROCESSO INCLUSÃO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
         
@@ -66,7 +66,7 @@ describe('Gerar pedido de entrega futura', () => {
             Receipt.main() //PROCESSO INCLUSÃO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final() 
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })
@@ -89,7 +89,7 @@ describe('Gerar pedido de entrega futura', () => {
             Receipt.main() //PROCESSO INCLUSÃO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })    
         
@@ -116,7 +116,7 @@ describe('Gerar pedido de entrega futura', () => {
             Receipt.main() //PROCESSO INCLUSÃO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final() 
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })  
     })

@@ -44,7 +44,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

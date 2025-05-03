@@ -34,7 +34,7 @@ describe('Venda de serviço avulso Host - 104', () => {
             Receipt.main()
             ChooseInstallmentReceipt.one()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

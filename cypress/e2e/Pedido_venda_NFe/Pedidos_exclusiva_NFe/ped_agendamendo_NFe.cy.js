@@ -50,7 +50,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -77,7 +77,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })
@@ -102,7 +102,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -139,7 +139,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

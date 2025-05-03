@@ -42,7 +42,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             ReceiptPromotion.pagPrincipal()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })    
         
@@ -71,7 +71,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final() 
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })  
     })

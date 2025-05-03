@@ -43,7 +43,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Receipt.main()
             EscolherParcelaReceb.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
         
@@ -73,7 +73,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Receipt.main()
             EscolherParcelaReceb.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -96,7 +96,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Receipt.main()
             EscolherParcelaReceb.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -126,7 +126,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Receipt.main()
             EscolherParcelaReceb.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -149,7 +149,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Receipt.main()
             EscolherParcelaReceb.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })   
 
@@ -179,7 +179,7 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Receipt.main()
             EscolherParcelaReceb.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

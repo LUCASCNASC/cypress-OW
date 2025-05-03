@@ -41,7 +41,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -70,7 +70,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             Receipt.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
-            cy.clickFinishOrder() //RESUMO
+            cy.clickFinishOrder() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })
