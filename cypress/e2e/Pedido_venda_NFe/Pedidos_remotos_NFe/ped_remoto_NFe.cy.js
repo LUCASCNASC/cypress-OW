@@ -141,7 +141,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
                 .and('be.visible')
                 .and('have.text','Este produto não possui saldo na filial selecionada, será permitido apenas a simulação da venda.')
                 .invoke('css', 'color') // Obtém a cor do elemento
-                .should('equal', 'rgb(244, 67, 54)') 
+                .should('equal', 'rgb(244, 67, 54)')  
 
             //Validando botão Adicionar para Simulação
             cy.get('.md-primary.btn-rounded.md-raised.btn-block')
