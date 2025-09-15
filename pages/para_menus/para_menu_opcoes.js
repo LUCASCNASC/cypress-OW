@@ -1,322 +1,220 @@
 export class MenuOpcoes {
-
-    constructor(page) {
-        this.page = page
-    }
-
-    //Validar e clicar no menu de opções
-    async iconeMenuOpcoes (selector) {
-
-        //Ícone do menu de opções
-        cy.get('[aria-label="Menu de opções"] > .ng-binding')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-                
-        //Clicar ni ícone do menu de opções
-        cy.get('[aria-label="Menu de opções"] > .ng-binding')
-            .click({force:true})
-    }
-
-    //validando topo da página - parte colorida
-    async topoPagina (selector) {
-
-        //Topo da página - parte colorida
-        cy.get('.topo > .md-toolbar-tools')
-            .should('be.visible')
-    }
-
-    async imageMenu (selector) {
-
-        //Validando imagem no início do modal menu
-        cy.get('.md-primary > .logo > .md-default-theme > img')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-    }
-
-    //Ícone do computador para validar se realmente saiu do pedido web
-    async iconeComputadorLogin (selector) {
-
-        //Ícone do computador
-        cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Validando campo Buscar produto
-        cy.get('#searchText')
-            .should('be.visible')
-            .and('not.be.disabled')
-
-        //Validando campo Buscar produto - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="searchText"]')
-            .should('have.text', 'Buscar produtos')
-    }
-
-    //Validando opção Ínicio, do menu de opções
-    async inicioOpcaoMenu (selector) {
-
-        //ícone Início 
-        cy.get('md-icon[md-svg-src="images/icons/home.svg"]')
-            .scrollIntoView()
-            .wait(300)
-            .should('be.visible')
-
-        //Opção Início no menu de opções
-        cy.get('a[aria-label="Início"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Início no menu de opções
-        cy.get('a[aria-label="Início"]')
-            .should('have.attr', 'aria-label', 'Início')
-            .click({force:true})
-    }
-
-    //Validando opção Departamentos, do menu de opções
-    async departamentoOpcaoMenu (selector) {
-
-        //ícone Departamentos 
-        cy.get('md-icon[md-svg-src="images/icons/departamentos.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Departamentos no menu de opções
-        cy.get('a[aria-label="Departamentos"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Departamentos no menu de opções
-        cy.get('a[aria-label="Departamentos"]')
-            .should('have.attr', 'aria-label', 'Departamentos')
-            .click({force:true})
-
-        //validando se entrou no Departamentos
-        cy.get('.breadcrumbDepartamentos')
-            .should('be.visible')
-            .and('contain', 'Departamentos')
-    }
-
-    //Validando opção Serviços, do menu de opções
-    async servicosOpcaoMenu (selector) {
-
-        //ícone Serviços 
-        cy.get('md-icon[md-svg-src="images/icons/services.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Serviços no menu de opções
-        cy.get('a[aria-label="Serviços"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Serviços no menu de opções
-        cy.get('a[aria-label="Serviços"]')
-            .should('have.attr', 'aria-label', 'Serviços')
-            .click({force:true})
-
-        //validando se entrou no Serviços
-        cy.get('[ng-click="alterarOrdenacaoPorDescricao()"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-    }
-
-    //Validando opção Pedidos Pendentes, do menu de opções
-    async pedidosPendentesOpcaoMenu (selector) {
-
-        //ícone Pedidos pendentes 
-        cy.get('md-icon[md-svg-src="images/icons/pedido.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Pedidos pendentes no menu de opções
-        cy.get('a[aria-label="Pedidos pendentes"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Pedidos pendentes no menu de opções
-        cy.get('a[aria-label="Pedidos pendentes"]')
-            .should('have.attr', 'aria-label', 'Pedidos pendentes')
-            .click({force:true})
-
-        //validando se entrou no Pedidos pendentes
-        cy.get('.header')
-            .should('exist')
-            .and('contain', 'PEDIDOS PENDENTES')
-    }
-
-    //Validando opção Cliente, do menu de opções
-    async clienteOpcaoMenu (selector) {
-
-        //ícone Cliente
-        cy.get('md-icon[md-svg-src="images/icons/cliente.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Cliente no menu de opções
-        cy.get('a[aria-label="Cliente"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Cliente no menu de opções
-        cy.get('a[aria-label="Cliente"]')
-            .should('have.attr', 'aria-label', 'Cliente')
-            .click({force:true})
-
-        //validando se entrou no Cliente
-        cy.get('.md-default')
-            .should('exist')
-            .and('not.have.attr', 'disabled')
-    }
-
-    //Validando opção Cliente Completo, do menu de opções
-    async clienteCompletoOpcaoMenu (selector) {
-
-        //ícone Cliente completo
-        cy.get('md-icon[md-svg-src="images/icons/cliente_completo.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Cliente completo no menu de opções
-        cy.get('a[aria-label="Cliente completo"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Cliente completo no menu de opções
-        cy.get('a[aria-label="Cliente completo"]')
-            .should('have.attr', 'aria-label', 'Cliente completo')
-            .click({force:true})
-
-        //validando se entrou no Cliente completo
-        cy.get('#menu_items_pri > .on')
-            .should('exist')
-            .and('not.have.attr', 'disabled')
-    }
-
-    //Validando opção Pós Venda, do menu de opções
-    async posVendaOpcaoMenu (selector) {
-
-        //ícone Pós-venda 
-        cy.get('md-icon[md-svg-src="images/icons/pos-venda.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Pós-venda no menu de opções
-        cy.get('a[aria-label="Pós-venda"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Pós-venda no menu de opções
-        cy.get('a[aria-label="Pós-venda"]')
-            .should('have.attr', 'aria-label', 'Pós-venda')
-            .click({force:true})
-
-        //validando se entrou no Pos venda
-        cy.get('.header')
-            .should('be.visible')
-    }
-
-    //Validando opção Intenção de compra, do menu de opções
-    async intencaoCompraOpcaoMenu (selector) {
-
-        //ícone Intenção de compra 
-        cy.get('md-icon[md-svg-src="images/icons/intencao.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Intenção de compra no menu de opções
-        cy.get('button[aria-label="Intenção de compra"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Intenção de compra no menu de opções
-        cy.get('button[aria-label="Intenção de compra"]')
-            .should('have.attr', 'aria-label', 'Intenção de compra')
-            .click({force:true})
-
-        //validando se entrou no Intenção compra
-        cy.get('.header')
-            .should('be.visible')
-    }
-
-    //Validando opção Propósta de crédito, do menu de opções
-    async propostaCreditoOpcaoMenu (selector) {
-
-        //ícone Proposta de crédito 
-        cy.get('md-icon[md-svg-src="images/icons/aprovacao_credito.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Proposta de crédito no menu de opções
-        cy.get('a[aria-label="Proposta de crédito"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Proposta de crédito no menu de opções
-        cy.get('a[aria-label="Proposta de crédito"]')
-            .should('have.attr', 'aria-label', 'Proposta de crédito')
-            .click({force:true})
-
-        //validando se entrou no Proposta de crédito
-        cy.get('.header')
-            .should('be.visible')
-    }
-
-    //Validando opção Configurações, do menu de opções
-    async configuracoesOpcaoMenu (selector) {
-
-        //ícone Configurações
-        cy.get('md-icon[md-svg-src="images/icons/settings.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Configurações no menu de opções
-        cy.get('a[aria-label="Configurações"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Configurações no menu de opções
-        cy.get('a[aria-label="Configurações"]')
-            .should('have.attr', 'aria-label', 'Configurações')
-            .click({force:true})
-
-        //validando se entrou no Configurações
-        cy.get('ui-view.ng-scope > :nth-child(2)')
-            .should('be.visible')
-    }
-
-    //Validando opção Minha performance, do menu de opções
-    async minhaPerformanceOpcaoMenu (selector) {
-
-        //ícone Minha performance
-        cy.get('md-icon[md-svg-src="images/icons/performance.svg"]')
-            .scrollIntoView()
-            .should('be.visible')
-
-        //Opção Minha performance no menu de opções
-        cy.get('a[aria-label="Minha performance"]')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Minha performance no menu de opções
-        cy.get('a[aria-label="Minha performance"]')
-            .should('have.attr', 'aria-label', 'Minha performance')
-            .click({force:true})
-
-        //validando se entrou no Minha performance
-        cy.get('.header')
-            .should('be.visible')
-    }
-
-    //validando opção Sair, já fora da opção menu de opções
-    async botaoSair (selector) {
-
-        //Opção Minha performance no menu de opções
-        cy.get('.rodape > ._md-button-wrap > div.md-button > .md-no-style')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Opção Minha performance no menu de opções
-        cy.get('.rodape > ._md-button-wrap > div.md-button > .md-no-style')
-            .should('have.attr', 'aria-label', 'Sair')
-            .click({force:true})
-    }
+  /**
+   * Valida e clica no menu de opções.
+   */
+  static iconeMenuOpcoes() {
+    cy.get('[aria-label="Menu de opções"] > .ng-binding')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled');
+    cy.get('[aria-label="Menu de opções"] > .ng-binding').click({ force: true });
+  }
+
+  /**
+   * Valida o topo colorido da página.
+   */
+  static topoPagina() {
+    cy.get('.topo > .md-toolbar-tools').should('be.visible');
+  }
+
+  /**
+   * Valida imagem no início do modal menu.
+   */
+  static imageMenu() {
+    cy.get('.md-primary > .logo > .md-default-theme > img')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled');
+  }
+
+  /**
+   * Valida ícone do computador e busca produto após sair do pedido web.
+   */
+  static iconeComputadorLogin() {
+    cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+  }
+
+  /**
+   * Valida e clica na opção Início do menu de opções.
+   */
+  static inicioOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/home.svg"]')
+      .scrollIntoView()
+      .wait(300)
+      .should('be.visible');
+    cy.get('a[aria-label="Início"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Início')
+      .click({ force: true });
+  }
+
+  /**
+   * Valida e clica na opção Departamentos do menu de opções.
+   */
+  static departamentoOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/departamentos.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Departamentos"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Departamentos')
+      .click({ force: true });
+    cy.get('.breadcrumbDepartamentos')
+      .should('be.visible')
+      .and('contain', 'Departamentos');
+  }
+
+  /**
+   * Valida e clica na opção Serviços do menu de opções.
+   */
+  static servicosOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/services.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Serviços"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Serviços')
+      .click({ force: true });
+    cy.get('[ng-click="alterarOrdenacaoPorDescricao()"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled');
+  }
+
+  /**
+   * Valida e clica na opção Pedidos Pendentes do menu de opções.
+   */
+  static pedidosPendentesOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/pedido.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Pedidos pendentes"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Pedidos pendentes')
+      .click({ force: true });
+    cy.get('.header')
+      .should('exist')
+      .and('contain', 'PEDIDOS PENDENTES');
+  }
+
+  /**
+   * Valida e clica na opção Cliente do menu de opções.
+   */
+  static clienteOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/cliente.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Cliente"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Cliente')
+      .click({ force: true });
+    cy.get('.md-default').should('exist').and('not.have.attr', 'disabled');
+  }
+
+  /**
+   * Valida e clica na opção Cliente Completo do menu de opções.
+   */
+  static clienteCompletoOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/cliente_completo.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Cliente completo"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Cliente completo')
+      .click({ force: true });
+    cy.get('#menu_items_pri > .on').should('exist').and('not.have.attr', 'disabled');
+  }
+
+  /**
+   * Valida e clica na opção Pós Venda do menu de opções.
+   */
+  static posVendaOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/pos-venda.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Pós-venda"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Pós-venda')
+      .click({ force: true });
+    cy.get('.header').should('be.visible');
+  }
+
+  /**
+   * Valida e clica na opção Intenção de compra do menu de opções.
+   */
+  static intencaoCompraOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/intencao.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('button[aria-label="Intenção de compra"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Intenção de compra')
+      .click({ force: true });
+    cy.get('.header').should('be.visible');
+  }
+
+  /**
+   * Valida e clica na opção Proposta de crédito do menu de opções.
+   */
+  static propostaCreditoOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/aprovacao_credito.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Proposta de crédito"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Proposta de crédito')
+      .click({ force: true });
+    cy.get('.header').should('be.visible');
+  }
+
+  /**
+   * Valida e clica na opção Configurações do menu de opções.
+   */
+  static configuracoesOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/settings.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Configurações"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Configurações')
+      .click({ force: true });
+    cy.get('ui-view.ng-scope > :nth-child(2)').should('be.visible');
+  }
+
+  /**
+   * Valida e clica na opção Minha performance do menu de opções.
+   */
+  static minhaPerformanceOpcaoMenu() {
+    cy.get('md-icon[md-svg-src="images/icons/performance.svg"]')
+      .scrollIntoView()
+      .should('be.visible');
+    cy.get('a[aria-label="Minha performance"]')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Minha performance')
+      .click({ force: true });
+    cy.get('.header').should('be.visible');
+  }
+
+  /**
+   * Valida e clica na opção Sair (fora do menu de opções).
+   */
+  static botaoSair() {
+    cy.get('.rodape > ._md-button-wrap > div.md-button > .md-no-style')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled')
+      .and('have.attr', 'aria-label', 'Sair')
+      .click({ force: true });
+  }
 }

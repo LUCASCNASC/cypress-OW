@@ -1,49 +1,40 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarRelacionamento }  from '../../../../gerarDados';
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX'
+import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarRelacionamento } from '../../../../gerarDados';
+import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX';
 
+/**
+ * Page Object para preenchimento dos campos de Referência Pessoal.
+ * Todos os métodos são estáticos para facilitar o uso direto.
+ */
 export class FillRefGuys {
+  /**
+   * Preenche o campo Nome.
+   */
+  static name() {
+    const Nome = gerarNomeAleatorio();
+    cy.get('#txtNomeRefPes').type(Nome);
+  }
 
-    constructor(page) {
-        this.page = page
-    }
+  /**
+   * Preenche o campo Email.
+   */
+  static email() {
+    const email = gerarEmailAleatorio();
+    cy.get('#txtEmailRefPes').type(email);
+  }
 
-    //referencia pessoal - escolher Nome 
-    async name (selector) {
+  /**
+   * Preenche o campo Telefone.
+   */
+  static phone() {
+    const numero_telefone = gerarTelefoneAleatorio();
+    cy.get('#txtTelefoneRefPes').type(numero_telefone);
+  }
 
-        const Nome = gerarNomeAleatorio(); 
-
-        //clicar para abrir as opções
-        cy.get('#txtNomeRefPes')
-            .type(Nome)
-    }
-
-    //referencia pessoal - escolher Email
-    async email (selector) {
-
-        const email = gerarEmailAleatorio();
-
-        //clicar para abrir as opções
-        cy.get('#txtEmailRefPes')
-            .type(email)
-    }
-
-    //referencia pessoal - escolher Telefone
-    async phone (selector) {
-
-        const numero_telefone = gerarTelefoneAleatorio();
-
-        //clicar para abrir as opções
-        cy.get('#txtTelefoneRefPes')
-            .type(numero_telefone)
-    }
-
-    //referencia pessoal - escolher Relacionamento
-    async relationship (selector) {
-
-        const relacionamento = gerarRelacionamento();
-
-        //clicar para abrir as opções
-        cy.get('#txtRelacionamentoRefPes')
-            .type(relacionamento)
-    }
+  /**
+   * Preenche o campo Relacionamento.
+   */
+  static relationship() {
+    const relacionamento = gerarRelacionamento();
+    cy.get('#txtRelacionamentoRefPes').type(relacionamento);
+  }
 }

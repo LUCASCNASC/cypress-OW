@@ -1,114 +1,52 @@
 export class ValidateBalance {
+  /**
+   * Valida produto com saldo disponível local.
+   */
+  static withBalance() {
+    cy.get('.resultado-imagem').should('be.visible');
+    cy.get('.label')
+      .should('be.visible')
+      .and('have.text', 'Saldo disponivel')
+      .invoke('css', 'background-color')
+      .should('equal', 'rgb(92, 184, 92)');
+    cy.get('.md-resultado-titulo').should('be.visible');
+    cy.get('.badge-saldo.ng-binding').should('be.visible');
+    cy.get('sup').should('be.visible').and('have.text', 'R$');
+    cy.get('.valor-busca').should('be.visible');
+    // cy.get('.expandeIcone').should('be.visible'); // Uncomment if needed
+  }
 
-    constructor(page) {
-        this.page = page
-    }
+  /**
+   * Valida produto com saldo disponível no CD.
+   */
+  static withBalanceCD() {
+    cy.get('.resultado-imagem').should('be.visible');
+    cy.get('.label')
+      .should('be.visible')
+      .and('have.text', 'Saldo disponivel')
+      .invoke('css', 'background-color')
+      .should('equal', 'rgb(240, 173, 78)');
+    cy.get('.md-resultado-titulo').should('be.visible');
+    cy.get('.badge-saldo.ng-binding').should('be.visible');
+    cy.get('sup').should('be.visible').and('have.text', 'R$');
+    cy.get('.valor-busca').should('be.visible');
+    // cy.get('.expandeIcone').should('be.visible'); // Uncomment if needed
+  }
 
-    //Validando produto com saldo disponível local
-    async withBalance (selector) {
-        
-        //Validando imagem
-        cy.get('.resultado-imagem')
-            .should('be.visible')
-
-        //Validando "Saldo disponivel"
-        cy.get('.label')
-            .should('be.visible')
-            .and('have.text','Saldo disponivel')
-            .invoke('css', 'background-color') // Obtém a cor do elemento
-            .should('equal', 'rgb(92, 184, 92)')
-
-        //Validando nome do produto dentro card
-        cy.get('.md-resultado-titulo')
-            .should('be.visible')
-
-        //Validado código do produto dentro do card
-        cy.get('.badge-saldo.ng-binding')
-            .should('be.visible')
-
-        //Validando R$ dentro do card
-        cy.get('sup')
-            .should('be.visible')
-            .and('have.text','R$')
-
-        //Validando valor do produto dentro do card
-        cy.get('.valor-busca')
-            .should('be.visible')
-
-        //Validando check box dentro do card
-        // cy.get('.expandeIcone')
-        //     .should('be.visible')
-    }
-
-    //Validando produto com saldo disponível no CD 
-    async withBalanceCD (selector) {
-        
-        //Validando imagem
-        cy.get('.resultado-imagem')
-            .should('be.visible')
-
-        //Validando "Saldo disponivel"
-        cy.get('.label')
-            .should('be.visible')
-            .and('have.text','Saldo disponivel')
-            .invoke('css', 'background-color') // Obtém a cor do elemento
-            .should('equal', 'rgb(240, 173, 78)')
-
-        //Validando nome do produto dentro card
-        cy.get('.md-resultado-titulo')
-            .should('be.visible')
-
-        //Validado código do produto dentro do card
-        cy.get('.badge-saldo.ng-binding')
-            .should('be.visible')
-
-        //Validando R$ dentro do card
-        cy.get('sup')
-            .should('be.visible')
-            .and('have.text','R$')
-
-        //Validando valor do produto dentro do card
-        cy.get('.valor-busca')
-            .should('be.visible')
-
-        //Validando check box dentro do card
-        // cy.get('.expandeIcone')
-        //     .should('be.visible')
-    }
-
-    //Validando produto com saldo indisponível
-    async withoutBalance (selector) {
-        
-        //Validando imagem
-        cy.get('.resultado-imagem')
-            .should('be.visible')
-
-        //Validando "Saldo indisponivel"
-        cy.get('.label')
-            .should('be.visible')
-            .and('have.text','Saldo indisponivel')
-            .invoke('css', 'background-color') // Obtém a cor do elemento
-            .should('equal', 'rgb(217, 83, 79)')
-
-        //Validando nome do produto dentro card
-        cy.get('.md-resultado-titulo')
-            .should('be.visible')
-
-        //Validado código do produto dentro do card
-        cy.get('.badge-saldo.ng-binding')
-            .should('be.visible')
-
-        //Validando R$ dentro do card
-        cy.get('sup')
-            .should('be.visible')
-            .and('have.text','R$')
-
-        //Validando valor do produto dentro do card
-        cy.get('.valor-busca')
-            .should('be.visible')
-
-        //Validando check box dentro do card
-        // cy.get('.expandeIcone')
-        //     .should('be.visible')
-    }
-} 
+  /**
+   * Valida produto com saldo indisponível.
+   */
+  static withoutBalance() {
+    cy.get('.resultado-imagem').should('be.visible');
+    cy.get('.label')
+      .should('be.visible')
+      .and('have.text', 'Saldo indisponivel')
+      .invoke('css', 'background-color')
+      .should('equal', 'rgb(217, 83, 79)');
+    cy.get('.md-resultado-titulo').should('be.visible');
+    cy.get('.badge-saldo.ng-binding').should('be.visible');
+    cy.get('sup').should('be.visible').and('have.text', 'R$');
+    cy.get('.valor-busca').should('be.visible');
+    // cy.get('.expandeIcone').should('be.visible'); // Uncomment if needed
+  }
+}

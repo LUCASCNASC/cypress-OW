@@ -1,70 +1,51 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../../gerarDados';
-import { gerarChavePixTelefone } from '../../gerarDadosPIX'
+import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa } from '../../gerarDados';
+import { gerarChavePixTelefone } from '../../gerarDadosPIX';
 
+/**
+ * Page Object para validações e ações do cadastro de cliente completo.
+ * Todos os métodos são estáticos para facilitar o uso direto.
+ */
 export class GeneralClientComplete {
+  /**
+   * Valida botão salvar desabilitado antes de preencher campos obrigatórios.
+   */
+  static buttonSaveDisabled() {
+    cy.get('#btnModalAddEndereco')
+      .should('be.visible')
+      .and('not.have.attr', 'not.disabled');
+  }
 
-    constructor(page) {
-        this.page = page
-    }
+  /**
+   * Clica para salvar cadastro de cliente completo.
+   */
+  static clickSaveClientComplete() {
+    cy.get('.btn > .ng-scope').click({ force: true });
+  }
 
-    //validar botão salvar sem ter os campos obrigatórios, ou seja, tem que estar desabilitado
-    async buttonSaveDisabled (selector) {
+  /**
+   * Valida mensagem de alerta para endereço obrigatório ao tentar salvar sem endereço.
+   */
+  static messAlertAdressMandatory() {
+    cy.get('.toast').should('be.visible');
+    cy.get('.toast-title').should('be.visible').and('have.text', 'Alerta');
+    cy.get('.toast-message').should('be.visible').and('have.text', 'Um endereço do tipo padrão é obrigatório.');
+  }
 
-        //Validando botão SALVAR, antes de preencher os campos obrigatórios
-        cy.get('#btnModalAddEndereco')
-            .should('be.visible')
-            .and('not.have.attr', 'not.disabled')
-    }
+  /**
+   * Valida modal de "Aguarde carregando..." após clicar para salvar.
+   */
+  static modalWaitingLoading() {
+    cy.get('.layout-align-center-center > h3')
+      .should('be.visible')
+      .and('have.text', 'Aguarde carregando...');
+  }
 
-    //clicar para salvar cadastro de cliente completo
-    async clickSaveClientComplete (selector) {
-
-        cy.get('.btn > .ng-scope')
-            .click({force:true})
-    }
-
-    //validar menssagem Um endereço do tipo padrão é obrigatório, quanto tento salvar cadastro sem informar endereço
-    async messAlertAdressMandatory (selector) {
-
-        //Card Um endereço do tipo padrão é obrigatório
-        cy.get('.toast')
-            .should('be.visible')
-
-        //Card Um endereço do tipo padrão é obrigatório - Alerta
-        cy.get('.toast-title')
-            .should('be.visible')
-            .and('have.text', 'Alerta')
-
-        //Card Um endereço do tipo padrão é obrigatório - Um endereço do tipo padrão é obrigatório.
-        cy.get('.toast-message')
-            .should('be.visible')
-            .and('have.text', 'Um endereço do tipo padrão é obrigatório.')
-    }
-
-    //validando modal de Aguarde carregando.. - após clicar para salvar o cadastro 
-    async modalWaitingLoading (selector) {
-
-        //Modal Aguarde carregando...
-        cy.get('.layout-align-center-center > h3')
-            .should('be.visible')
-            .and('have.text', 'Aguarde carregando...')
-    }
-
-    //validando mensagem Registro salvo com sucesso! - após clicar para salvar o cadastro 
-    async messRegisterSaveSucess (selector) {
-
-        //Mensagem Registro salvo com sucesso!
-        cy.get('.toast-success')
-            .should('be.visible')
-
-        //Mensagem Registro salvo com sucesso! - Aviso
-        cy.get(':nth-child(1) > .toast-title')
-            .should('be.visible')
-            .and('have.text', 'Aviso')
-
-        //Mensagem Registro salvo com sucesso! - Registro salvo com sucesso!
-        cy.get('.toast-success > .toast-message')
-            .should('be.visible')
-            .and('have.text', 'Registro salvo com sucesso!')
-    }
+  /**
+   * Valida mensagem "Registro salvo com sucesso!" após salvar cadastro.
+   */
+  static messRegisterSaveSucess() {
+    cy.get('.toast-success').should('be.visible');
+    cy.get(':nth-child(1) > .toast-title').should('be.visible').and('have.text', 'Aviso');
+    cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Registro salvo com sucesso!');
+  }
 }

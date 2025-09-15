@@ -1,84 +1,117 @@
-//Corretas
+/**
+ * Utilitários para geração de chaves PIX válidas e inválidas para testes.
+ * Mantém toda a funcionalidade original com melhor organização, padronização e documentação.
+ */
 
-function gerarChavePixTelefone(ddd = 44) {
-    // Gerar o número de celular começando com '9' seguido por 8 dígitos aleatórios
-    const numero = '9' + Array.from({ length: 8 }, () => Math.floor(Math.random() * 10)).join('');
-  
-    // Retornar o telefone no formato DDD + número gerado
-    return `${ddd}${numero.slice(0, 1)}${numero.slice(1, 5)}${numero.slice(5)}`;
+// -------- CHAVES PIX CORRETAS --------
+
+/**
+ * Gera uma chave PIX de telefone válida (sem formatação, apenas números).
+ * @param {number} ddd - DDD do telefone (default: 44)
+ * @returns {string}
+ */
+function generatePixPhoneKey(ddd = 44) {
+  const number = '9' + Array.from({ length: 8 }, () => Math.floor(Math.random() * 10)).join('');
+  return `${ddd}${number.slice(0, 1)}${number.slice(1, 5)}${number.slice(5)}`;
 }
 
-function gerarChavePixEmail() {
-  const caracteres = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  let nomeUsuario = '';
-
-  // Gerar um nome de usuário aleatório com 10 caracteres
+/**
+ * Gera uma chave PIX de email válida.
+ * @returns {string}
+ */
+function generatePixEmailKey() {
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let username = '';
   for (let i = 0; i < 10; i++) {
-    const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
-    nomeUsuario += caracteres[indiceAleatorio];
+    const idx = Math.floor(Math.random() * chars.length);
+    username += chars[idx];
   }
-
-  // Retorna o e-mail aleatório com o domínio @gmail.com
-  return nomeUsuario + '@gmail.com';
+  return username + '@gmail.com';
 }
 
-function gerarChavePixCPF() {
+/**
+ * Gera uma chave PIX de CPF válida (apenas dígitos).
+ * @returns {string}
+ */
+function generatePixCPFKey() {
   const randomDigits = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10));
-  const d1 = calcularDigito(randomDigits);
-  const d2 = calcularDigito([...randomDigits, d1]);
+  const d1 = calculateDigit(randomDigits);
+  const d2 = calculateDigit([...randomDigits, d1]);
   return [...randomDigits, d1, d2].join('');
 
-  function calcularDigito(digits) {
-      const soma = digits.reduce((acc, val, index) => acc + val * (digits.length + 1 - index), 0);
-      const resto = soma % 11;
-      return resto < 2 ? 0 : 11 - resto;
+  function calculateDigit(digits) {
+    const sum = digits.reduce((acc, val, index) => acc + val * (digits.length + 1 - index), 0);
+    const rest = sum % 11;
+    return rest < 2 ? 0 : 11 - rest;
   }
 }
 
-function gerarChavePixAleatoria() {
-  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let chavePix = '';
-
-  // Gera a chave de 32 caracteres alfanuméricos, com 4 grupos de 8 caracteres
+/**
+ * Gera uma chave PIX aleatória válida (alfanumérica, 4 grupos de 8 caracteres separados por '-').
+ * @returns {string}
+ */
+function generatePixRandomKey() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let key = '';
   for (let i = 0; i < 4; i++) {
-    let grupo = '';
+    let group = '';
     for (let j = 0; j < 8; j++) {
-      const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
-      grupo += caracteres.charAt(indiceAleatorio);
+      const idx = Math.floor(Math.random() * chars.length);
+      group += chars.charAt(idx);
     }
-    chavePix += grupo;
-    if (i < 3) chavePix += '-'; // Adiciona o traço separador, exceto no último grupo
+    key += group;
+    if (i < 3) key += '-';
   }
-
-  return chavePix;
+  return key;
 }
 
-//Incorretas
+// -------- CHAVES PIX INCORRETAS --------
 
-function gerarChavePixTelefoneErrada() {
-  const numero = Math.floor(1000000000 + Math.random() * 9000000000); // Gera um número aleatório de 10 dígitos
-  return numero.toString(); // Retorna o número como string
+/**
+ * Gera uma chave PIX de telefone inválida (formato incorreto).
+ * @returns {string}
+ */
+function generateWrongPixPhoneKey() {
+  // Número aleatório de 10 dígitos, sem DDD ou padrão de celular
+  const number = Math.floor(1000000000 + Math.random() * 9000000000);
+  return number.toString();
 }
 
-function gerarChavePixEmailErrada() {
-  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let resultado = '';
+/**
+ * Gera uma chave PIX de email inválida (sem domínio).
+ * @returns {string}
+ */
+function generateWrongPixEmailKey() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
   for (let i = 0; i < 16; i++) {
-      const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
-      resultado += caracteres[indiceAleatorio];
+    const idx = Math.floor(Math.random() * chars.length);
+    result += chars[idx];
   }
-  return resultado + '@';
+  return result + '@';
 }
 
-function gerarChavePixCpfCnpjErrada() {
-  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let resultado = '';
+/**
+ * Gera uma chave PIX de CPF/CNPJ inválida (formato aleatório).
+ * @returns {string}
+ */
+function generateWrongPixCpfCnpjKey() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
   for (let i = 0; i < 16; i++) {
-      const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
-      resultado += caracteres[indiceAleatorio];
+    const idx = Math.floor(Math.random() * chars.length);
+    result += chars[idx];
   }
-  return resultado + '@';
+  return result + '@';
 }
 
-export { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada,
-         gerarChavePixEmail, gerarChavePixCPF, gerarChavePixAleatoria }; 
+// Exportação padronizada em inglês para consistência
+export {
+  generatePixPhoneKey,
+  generateWrongPixPhoneKey,
+  generateWrongPixEmailKey,
+  generateWrongPixCpfCnpjKey,
+  generatePixEmailKey,
+  generatePixCPFKey,
+  generatePixRandomKey
+};

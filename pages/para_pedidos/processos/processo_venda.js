@@ -1,221 +1,81 @@
 export class ProcessSale {
+  /**
+   * Seleciona processo de venda 9860 NFe
+   */
+  static NFe() {
+    cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
+    cy.get('#select_listbox_12').should('be.visible').scrollTo('center');
+    cy.get('.md-text.ng-binding').contains('9860 - T.A. Pedido Negociável - NFe').click({ force: true });
+    cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
+  }
 
-    constructor(page) {
-        this.page = page
-    }
+  /**
+   * Seleciona processo de venda 9869 Exclusiva NFe
+   */
+  static exclusive() {
+    cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
+    cy.get('#select_listbox_12').should('be.visible').scrollTo('center');
+    cy.get('.md-text.ng-binding').contains('9869 - T.A. Pedido Negociável Exclusiva').click({ force: true });
+    cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
+  }
 
-    //------------------- PROCESSOS NFe ------
+  /**
+   * Seleciona processo de venda entrega futura 9862 normal - NFe
+   */
+  static deliveryFutureNFe() {
+    cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
+    cy.get('#select_listbox_12').should('be.visible').scrollTo('center');
+    cy.get('.md-text.ng-binding').contains('9862 - T.A. Pedido Entrega Futura NFe').click({ force: true });
+    cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
+  }
 
-    //Para escolher processo de venda 9860 NFe
-    async NFe (selector) {
+  /**
+   * Seleciona processo de venda financeiro baixa 9863 normal - NFe
+   */
+  static financePaymentNFe() {
+    cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
+    cy.get('#select_listbox_12').should('be.visible').scrollTo('center');
+    cy.get('.md-text.ng-binding').contains('9863 - T.A.Pedido Financeiro Baixa NFe').click({ force: true });
+    cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
+  }
 
-        //clicar para aparecer as opções de processo
-        cy.get('#select_value_label_4 > .md-select-icon')
-            .should('be.visible')
-            .and('not.be.disabled')
-            .click()
+  /**
+   * Seleciona processo de venda 9888 - serviços avulsos NFe
+   */
+  static saleServiceLoose() {
+    cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
+    cy.get('#select_listbox_12').should('be.visible').scrollTo('bottom').wait(200);
+    cy.get('.md-text.ng-binding').contains('9888 - T.A. Venda de serviço avulso').click({ force: true });
+    cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
+  }
 
-        //rolar para o meio das opções de processo
-        cy.get('#select_listbox_12')
-            .should('be.visible')
-            .scrollTo('center')
+  /**
+   * Seleciona processo de venda 9890 - Negociável NFCe
+   */
+  static NFCe() {
+    cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
+    cy.get('#select_listbox_12').should('be.visible').scrollTo('bottom');
+    cy.get('.md-text.ng-binding').contains('9890 - T.A. Pedido Negociável - NFCe').click({ force: true });
+    cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
+  }
 
-        //selecionar processo de venda "9860"
-        cy.get('.md-text.ng-binding')
-            .contains('9860 - T.A. Pedido Negociável - NFe')
-            .click({force:true})
+  /**
+   * Seleciona processo de venda entrega futura 9891 normal - NFCe
+   */
+  static deliveryFutureNFCe() {
+    cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
+    cy.get('#select_listbox_12').should('be.visible').scrollTo('bottom').wait(200);
+    cy.get('.md-text.ng-binding').contains('9891 - T.A. Pedido Entrega Futura NFCe').click({ force: true });
+    cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
+  }
 
-        //fechar modal de processos
-        cy.get('.md-select-backdrop')
-            .wait(200)
-            .dblclick()
-            .wait(200) 
-    }
-
-    //Para escolher processo de venda 9869 para exclusiva NFe
-    async exclusive (selector) {
-
-        //clicar para aparecer as opções de processo
-        cy.get('#select_value_label_4 > .md-select-icon')
-            .should('be.visible')
-            .and('not.be.disabled')
-            .click()
-
-        //rolar para o meio das opções de processo
-        cy.get('#select_listbox_12')
-            .should('be.visible')
-            .scrollTo('center')
-
-        //selecionar processo de venda "9869"
-        cy.get('.md-text.ng-binding')
-            .contains('9869 - T.A. Pedido Negociável Exclusiva')
-            .click({force:true})
-
-        //fechar modal de processos
-        cy.get('.md-select-backdrop')
-            .wait(200)
-            .dblclick()
-            .wait(200)
-    }
-
-    //Para escolher processo de venda entrega futura 9862 normal - NFe
-    async deliveryFutureNFe (selector) {
-
-        //clicar para aparecer as opções de processo
-        cy.get('#select_value_label_4 > .md-select-icon')
-            .should('be.visible')
-            .and('not.be.disabled')
-            .click()
-    
-        //rolar para o meio das opções de processo
-        cy.get('#select_listbox_12')
-            .should('be.visible')
-            .scrollTo('center')
-    
-        //selecionar processo de venda "9862"
-        cy.get('.md-text.ng-binding')
-            .contains('9862 - T.A. Pedido Entrega Futura NFe')
-            .click({force:true})
-    
-        //fechar modal de processos
-        cy.get('.md-select-backdrop')
-            .wait(200)
-            .dblclick()
-            .wait(200)
-    }
-
-    //Para escolher processo de venda financeiro baixa 9863 normal - NFe
-    async financePaymentNFe (selector) {
-
-        //clicar para aparecer as opções de processo
-        cy.get('#select_value_label_4 > .md-select-icon')
-            .should('be.visible')
-            .and('not.be.disabled')
-            .click()
-
-        //rolar para o meio das opções de processo
-        cy.get('#select_listbox_12')
-            .should('be.visible')
-            .scrollTo('center')
-
-        //selecionar processo de venda "9863"
-        cy.get('.md-text.ng-binding')
-            .contains('9863 - T.A.Pedido Financeiro Baixa NFe')
-            .click({force:true})
-
-        //fechar modal de processos
-        cy.get('.md-select-backdrop')
-            .wait(200)
-            .dblclick()
-            .wait(200)
-    }
-
-    //Para escolher processo de venda 9888 - serviços avulsos - quando já temos uma nota de venda de produto e quando vamos vender igual produto - NFe
-    async saleServiceLoose (selector) {
-
-        //clicar para aparecer as opções de processo
-        cy.get('#select_value_label_4 > .md-select-icon')
-            .should('be.visible')
-            .and('not.be.disabled')
-            .click()
-
-        //rolar para o meio das opções de processo
-        cy.get('#select_listbox_12')
-            .should('be.visible')
-            .scrollTo('bottom')
-            .wait(200)
-
-        //escolher processo 9888
-        cy.get('.md-text.ng-binding')
-            .contains('9888 - T.A. Venda de serviço avulso')
-            .click({force:true})
-
-        //fechar modal de processos
-        cy.get('.md-select-backdrop')
-            .wait(200)
-            .dblclick()
-            .wait(200)
-    }
-
-    //------------------- PROCESSOS NFCe ------
-
-    //Para escolher processo de venda 9860 NFCe
-    async NFCe (selector) {
-
-        //clicar para aparecer as opções de processo
-        cy.get('#select_value_label_4 > .md-select-icon')
-            .should('be.visible')
-            .and('not.be.disabled')
-            .click()
-
-        //rolar para o meio das opções de processo
-        cy.get('#select_listbox_12')
-            .should('be.visible')
-            .scrollTo('bottom')
-
-        //selecionar processo de venda "9860"
-        cy.get('.md-text.ng-binding')
-            .contains('9890 - T.A. Pedido Negociável - NFCe')
-            .click({force:true})
-
-        //fechar modal de processos
-        cy.get('.md-select-backdrop')
-            .wait(200)
-            .dblclick()
-            .wait(200) 
-    }
-
-    //Para escolher processo de venda entrega futura 9891 normal - NFCe
-    async deliveryFutureNFCe (selector) {
-
-        //clicar para aparecer as opções de processo
-        cy.get('#select_value_label_4 > .md-select-icon')
-            .should('be.visible')
-            .and('not.be.disabled')
-            .click()
-
-        //rolar para o meio das opções de processo
-        cy.get('#select_listbox_12')
-            .should('be.visible')
-            .scrollTo('bottom')
-            .wait(200)
-
-        //escolher processo 9891
-        cy.get('.md-text.ng-binding')
-            .contains('9891 - T.A. Pedido Entrega Futura NFCe')
-            .click({force:true})
-
-        //fechar modal de processos
-        cy.get('.md-select-backdrop')
-            .wait(200)
-            .dblclick()
-            .wait(200)
-    }
-
-    //Para escolher processo de venda financeiro baixa 9892 normal - NFCe
-    async financePaymentNFCe (selector) {
-
-        //clicar para aparecer as opções de processo
-        cy.get('#select_value_label_4 > .md-select-icon')
-            .should('be.visible')
-            .and('not.be.disabled')
-            .click()
-
-        //rolar para o meio das opções de processo
-        cy.get('#select_listbox_12')
-            .should('be.visible')
-            .scrollTo('bottom')
-            .wait(200)
-
-        //escolher processo 9892
-        cy.get('.md-text.ng-binding')
-            .contains('9892 - T.A.Pedido Financeiro Baixa NFCe')
-            .click({force:true})
-
-        //fechar modal de processos
-        cy.get('.md-select-backdrop')
-            .wait(200)
-            .dblclick()
-            .wait(200)
-    }
+  /**
+   * Seleciona processo de venda financeiro baixa 9892 normal - NFCe
+   */
+  static financePaymentNFCe() {
+    cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
+    cy.get('#select_listbox_12').should('be.visible').scrollTo('bottom').wait(200);
+    cy.get('.md-text.ng-binding').contains('9892 - T.A.Pedido Financeiro Baixa NFCe').click({ force: true });
+    cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
+  }
 }

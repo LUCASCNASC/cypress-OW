@@ -1,42 +1,32 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../../../gerarDados';
-import { gerarChavePixTelefone } from '../../../gerarDadosPIX'
+import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa } from '../../../gerarDados';
+import { gerarChavePixTelefone } from '../../../gerarDadosPIX';
 
+/**
+ * Page Object para preenchimento dos campos de Telefone.
+ * Todos os métodos são estáticos para facilitar o uso direto.
+ */
 export class FillRefPhone {
+  /**
+   * Seleciona o tipo de telefone "Padrão".
+   */
+  static typePhone() {
+    cy.get('#txtTpTel').click({ force: true });
+    cy.get('.md-text.ng-binding').contains('Padrão').click({ force: true });
+  }
 
-    constructor(page) {
-        this.page = page
-    }
+  /**
+   * Preenche o campo Número no cadastro de telefone.
+   */
+  static numberPhone() {
+    const numero_telefone = gerarTelefoneAleatorio();
+    cy.get('#txtNumTel').type(numero_telefone);
+  }
 
-    //selecionar tipo de telefone na aba telefone
-    async typePhone (selector) {
-
-        //Card Telefone - campo tipo de telefone
-        cy.get('#txtTpTel')
-            .click({force:true})
-        
-        //Card Telefone - escolher tipo de telefone
-        cy.get('.md-text.ng-binding')
-            .contains('Padrão')
-            .click({force:true})
-    }
-
-    //preencher campo Numero, no cadastro de telefone
-    async numberPhone (selector) {
-
-        const numero_telefone = gerarTelefoneAleatorio();
-
-        //Card Telefone - preencher campo número
-        cy.get('#txtNumTel')
-            .type(numero_telefone)
-    }
-
-    //preencher campo Ramal, no cadastro de telefone
-    async ramalPhone (selector) {
-
-        const ramal_telefone = "435"
-
-        //Card Telefone - preencher campo ramal
-        cy.get('#txtRamalTel')
-            .type(ramal_telefone)
-    }
+  /**
+   * Preenche o campo Ramal no cadastro de telefone.
+   */
+  static ramalPhone() {
+    const ramal_telefone = "435";
+    cy.get('#txtRamalTel').type(ramal_telefone);
+  }
 }

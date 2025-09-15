@@ -1,15 +1,14 @@
+/**
+ * Page Object para anexar arquivos no cadastro de cliente completo.
+ * Todos os métodos são estáticos para facilitar o uso sem instanciação.
+ */
 export class FillFieldAnexo {
-
-    constructor(page) {
-        this.page = page
-    }
-
-    //função para anexar arquivo dentro do cadastro de cliente completo
-    async filePDF (selector) {
-
-        const caminhoDoArquivo = 'cypress\fixtures\anexo_cadastro_cliente_completo.pdf';
-
-        //cy.get('#clienteBotaoUploadDeArquivo').selectFile('anexo_cadastro_cliente_completo.pdf')
-        cy.get("[type='file']").selectFile('anexo_cadastro_cliente_completo.pdf', {force:true})
-    }
+  /**
+   * Anexa um arquivo PDF (anexo_cadastro_cliente_completo.pdf) no campo de upload.
+   * O caminho do arquivo é relativo à pasta fixtures do Cypress.
+   */
+  static filePDF() {
+    const filePath = 'anexo_cadastro_cliente_completo.pdf';
+    cy.get("[type='file']").selectFile(filePath, { force: true });
+  }
 }

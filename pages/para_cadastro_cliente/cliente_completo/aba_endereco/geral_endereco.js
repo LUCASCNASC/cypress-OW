@@ -1,189 +1,120 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa }  from '../../../gerarDados';
-import { gerarChavePixTelefone } from '../../../gerarDadosPIX'
+import {
+  gerarCpf,
+  gerarNomeAleatorio,
+  gerarEmailAleatorio,
+  gerarCNPJ,
+  gerarTelefoneAleatorio,
+  gerarNomeEmpresa,
+} from '../../../gerarDados';
+import { gerarChavePixTelefone } from '../../../gerarDadosPIX';
 
+/**
+ * Page Object para operações e validações relacionadas à aba de Endereço.
+ * Todos os métodos são estáticos para facilitar o uso sem instanciação.
+ */
 export class GeneralAdress {
+  /**
+   * Valida e clica na aba Endereço.
+   */
+  static clickAbaAdress() {
+    cy.get('#menu_items_pri > :nth-child(2)')
+      .should('be.visible')
+      .and('have.text', 'Endereço');
+    cy.intercept('GET', '/services/v3/dados_tabela/tipoendereco').as('api_cliente_completo_endereco');
+    cy.get('#menu_items_pri > :nth-child(2)').scrollIntoView().click({ force: true });
+    cy.wait('@api_cliente_completo_endereco', { timeout: 40000 });
+  }
 
-    constructor(page) {
-        this.page = page
-    }
+  /**
+   * Valida mensagem de sucesso após incluir endereço.
+   */
+  static messAdressAddedSucess() {
+    cy.get('.toast-success').should('be.visible');
+    cy.get('.toast-success > .toast-title').should('be.visible').and('have.text', 'Aviso');
+    cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Endereço incluído com sucesso.');
+  }
 
-    //Validar e clicar na aba ENDEREÇO
-    async clickAbaAdress (selector) {
+  /**
+   * Clica no botão "+" para adicionar novo endereço.
+   */
+  static clickAddNewAdress() {
+    cy.get('.layout-align-end-end > .md-fab')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled');
+    cy.intercept('GET', '/views/cliente/ModalClienteEndereco.html').as('api_ModalClienteEndereco');
+    cy.get('.layout-align-end-end > .md-fab').click();
+    cy.wait('@api_ModalClienteEndereco', { timeout: 40000 });
+  }
 
-        //Aba Endereço
-        cy.get('#menu_items_pri > :nth-child(2)')
-            .should('be.visible')
-            .and('have.text', 'Endereço')
+  /**
+   * Valida os campos do modal de endereço quando está vazio.
+   */
+  static modalAdressEmptyValidade() {
+    cy.get('label[for="txtCepEndereco"]').should('have.text', 'CEP');
+    cy.get('#txtCepEndereco').should('be.visible').and('have.value', '');
 
-        cy.intercept('GET', '/services/v3/dados_tabela/tipoendereco').as('api_cliente_completo_endereco')
-        //Clicar na aba Endereço
-        cy.get('#menu_items_pri > :nth-child(2)')
-            .scrollIntoView()
-            .click({force:true})
-        cy.wait('@api_cliente_completo_endereco', { timeout: 40000 })
-    }
+    cy.get('label[for="txtRuaEndereco"]').should('have.text', 'Endereço');
+    cy.get('#txtRuaEndereco').should('be.visible').and('have.value', '');
 
-    // validando mensagem Endereço Incluído com sucesso, após incluírmos o endereço no cadastro
-    async messAdressAddedSucess (selector) {
+    cy.get('label[for="txtNumEndereco"]').should('have.text', 'Número');
+    cy.get('#txtNumEndereco').should('be.visible').and('have.value', '');
 
-        //Card Endereço incluído com sucesso.
-        cy.get('.toast-success')
-            .should('be.visible')
+    cy.get('label[for="txtComplEndereco"]').should('have.text', 'Complemento');
+    cy.get('#txtComplEndereco').should('be.visible').and('have.value', '');
 
-        //Card Endereço incluído com sucesso. - Aviso
-        cy.get('.toast-success > .toast-title')
-            .should('be.visible')
-            .and('have.text', 'Aviso')
+    cy.get('label[for="txtBairroEndereco"]').should('have.text', 'Bairro');
+    cy.get('#txtBairroEndereco').should('be.visible').and('have.value', '');
 
-        //Card Endereço incluído com sucesso. - Endereço incluído com sucesso.
-        cy.get('.toast-success > .toast-message')
-            .should('be.visible')
-            .and('have.text', 'Endereço incluído com sucesso.')
-    }
+    cy.get('label[for="txtCxPostEndereco"]').should('have.text', 'Caixa Postal');
+    cy.get('#txtCxPostEndereco').should('be.visible').and('have.value', '');
 
-    //botão + para adicionar um novo endereço
-    async clickAddNewAdress (selector) {
+    cy.get('label[for="txtUfEndereco"]').should('have.text', 'Estado');
+    cy.get('#txtUfEndereco').should('be.visible').and('have.value', '');
 
-        //Botão +, para adicionar um novo endereço
-        cy.get('.layout-align-end-end > .md-fab')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
+    cy.get('label[for="txtCidEndereco"]').should('have.text', 'Cidade');
+    cy.get('#txtCidEndereco').should('be.visible').and('have.value', '');
+  }
 
-        cy.intercept('GET', '/views/cliente/ModalClienteEndereco.html').as('api_ModalClienteEndereco')
-        //Clicar no botão +, para adicionar um novo endereço
-        cy.get('.layout-align-end-end > .md-fab')
-            .click()
-        cy.wait('@api_ModalClienteEndereco', { timeout: 40000 })
-    }
+  /**
+   * Clica para abrir as opções de tipo de endereço.
+   */
+  static clickOpenTypeAdress() {
+    cy.get('#txtTpEndereco').click({ force: true });
+  }
 
-    //validar informações do modal Endereço enquanto ainda está vazio
-    async modalAdressEmptyValidade (selector) {
+  /**
+   * Valida informações que foram adicionadas no endereço.
+   */
+  static infoAdressAdded() {
+    cy.get('.md-whiteframe-2dp')
+      .should('be.visible')
+      .and('contain', 'Padrão')
+      .and('contain', 'RUA PETÚNIA - 66 - PARQUE INDUSTRIAL')
+      .and('contain', '87065-300');
+  }
 
-        //Campo CEP - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtCepEndereco"]')
-            .should('have.text', 'CEP') 
+  /**
+   * Clica no botão salvar endereço.
+   */
+  static clickSaveAdress() {
+    cy.get('#btnModalAddEndereco').click();
+  }
 
-        //Validando campo vazio - CEP
-        cy.get('#txtCepEndereco')
-            .should('be.visible')
-            .and('have.value', '')
+  /**
+   * Valida card do modal endereço vazio antes de preencher os campos.
+   */
+  static cardAdressEmptyValidate() {
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
+      .should('be.visible')
+      .and('have.text', 'Endereço');
 
-        //Campo Endereço - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtRuaEndereco"]')
-            .should('have.text', 'Endereço') 
+    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
+      .should('be.visible')
+      .and('not.have.attr', 'disabled');
 
-        //Validando campo vazio - Endereço
-        cy.get('#txtRuaEndereco')
-            .should('be.visible')
-            .and('have.value', '')
+    cy.get('#btnModalAddEndereco').should('be.visible').should('not.have.attr', 'not.disabled');
 
-        //Campo Número - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtNumEndereco"]')
-            .should('have.text', 'Número') 
-
-        //Validando campo vazio - Número
-        cy.get('#txtNumEndereco')
-            .should('be.visible')
-            .and('have.value', '')
-
-        //Campo Complemento - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtComplEndereco"]')
-            .should('have.text', 'Complemento') 
-
-        //Validando campo vazio - Complemento
-        cy.get('#txtComplEndereco')
-            .should('be.visible')
-            .and('have.value', '')
-
-        //Campo Bairro - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtBairroEndereco"]')
-            .should('have.text', 'Bairro') 
-
-        //Validando campo vazio - Bairro
-        cy.get('#txtBairroEndereco')
-            .should('be.visible')
-            .and('have.value', '')
-
-        //Campo Caixa Postal - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtCxPostEndereco"]')
-            .should('have.text', 'Caixa Postal')
-
-        //Validando campo vazio - Caixa Postal
-        cy.get('#txtCxPostEndereco')
-            .should('be.visible')
-            .and('have.value', '')
-
-        //Campo Estado - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtUfEndereco"]')
-            .should('have.text', 'Estado')
-
-        //Validando campo vazio - Estado
-        cy.get('#txtUfEndereco')
-            .should('be.visible')
-            .and('have.value', '')
-
-        //Campo Cidade - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtCidEndereco"]')
-            .should('have.text', 'Cidade')
-
-        //Validando campo vazio - Cidade
-        cy.get('#txtCidEndereco')
-            .should('be.visible')
-            .and('have.value', '')
-    }
-
-    //clicar para abrir opções de tipo endereço
-    async clickOpenTypeAdress (selector) {
-
-        //Clicar para aparecer as opções do Tipo de Endereço
-        cy.get('#txtTpEndereco')
-            .click({force:true})
-    }
-
-    //validando informações que foram adicionadas no endereço
-    async infoAdressAdded (selector) {
-
-        //Card de endereço adicionado
-        cy.get('.md-whiteframe-2dp')
-            .should('be.visible')
-            .and('contain', 'Padrão')
-            .and('contain', 'RUA PETÚNIA - 66 - PARQUE INDUSTRIAL')
-            .and('contain', '87065-300')
-    }
-
-    //clicar no botão salvar endereço
-    async clickSaveAdress (selector) {
-
-        //Clicar no botão SALVAR, para adicionar endereço
-        cy.get('#btnModalAddEndereco')
-            .click()
-    }
-
-    //validando card endereço antes de preencher os campos
-    async cardAdressEmptyValidate (selector) {
-
-        //Card Endereço - validando título Endereço
-        cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-            .should('be.visible')
-            .and('have.text', 'Endereço')
-
-        //Validando botão X
-        cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
-            .should('be.visible')
-            .and('not.have.attr', 'disabled')
-
-        //Tentar adicionar endereço sem passar as informações necessárias - não deve deixar
-        cy.get('#btnModalAddEndereco')
-            .should('be.visible')
-            .and('not.have.attr', 'not.disabled')
-
-        //Campo Tipo de Endereço - validando mensagem dentro do campo antes de preencher
-        cy.get('label[for="txtTpEndereco"]')
-            .should('have.text', 'Tipo de Endereço') 
-
-        //Validando campo vazio - Tipo de Endereço
-        cy.get('#txtTpEndereco')
-            .should('be.visible')
-            .and('have.value', '')
-    }
+    cy.get('label[for="txtTpEndereco"]').should('have.text', 'Tipo de Endereço');
+    cy.get('#txtTpEndereco').should('be.visible').and('have.value', '');
+  }
 }

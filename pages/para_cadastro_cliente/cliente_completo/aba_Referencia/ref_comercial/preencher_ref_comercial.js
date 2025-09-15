@@ -1,61 +1,51 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa,
-         gerarRelacionamento, gerarObservação }  from '../../../../gerarDados';
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX'
+import {
+  gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa,
+  gerarRelacionamento, gerarObservação
+} from '../../../../gerarDados';
+import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX';
 
-
+/**
+ * Page Object para preenchimento dos campos de Referência Comercial.
+ * Todos os métodos são estáticos para facilitar o uso direto.
+ */
 export class FillRefCommercial {
+  /**
+   * Preenche o campo Empresa.
+   */
+  static enterprise() {
+    const empresa = gerarNomeEmpresa();
+    cy.get('#txtEmpresaRefCom').type(empresa);
+  }
 
-    constructor(page) {
-        this.page = page
-    }
+  /**
+   * Preenche o campo Contato.
+   */
+  static contact() {
+    const contato = gerarTelefoneAleatorio();
+    cy.get('#txtContatoRefCom').type(contato);
+  }
 
-    //referencia Comercial - escolher Agencia
-    async enterprise (selector) {
+  /**
+   * Preenche o campo Telefone.
+   */
+  static phone() {
+    const telefone = gerarTelefoneAleatorio();
+    cy.get('#txtTelefoneRefCom').type(telefone);
+  }
 
-        const empresa = gerarNomeEmpresa()
+  /**
+   * Preenche o campo Email.
+   */
+  static email() {
+    const email = gerarEmailAleatorio();
+    cy.get('#txtEmailRefCom').type(email);
+  }
 
-        //inserir dados
-        cy.get('#txtEmpresaRefCom')
-            .type(empresa)
-    }
-
-    //referencia Comercial - escolher Contato
-    async contact (selector) {
-
-        const contato = gerarTelefoneAleatorio()
-
-        //inserir dados
-        cy.get('#txtContatoRefCom')
-            .type(contato)
-    }
-
-    //referencia Comercial - escolher Telefone
-    async phone (selector) {
-
-        const telefone = gerarTelefoneAleatorio()
-
-        //inserir dados
-        cy.get('#txtTelefoneRefCom')
-            .type(telefone)
-    }
-
-    //referencia Comercial - escolher Email
-    async email (selector) {
-
-        const email = gerarEmailAleatorio()
-
-        //inserir dados
-        cy.get('#txtEmailRefCom')
-            .type(email)
-    }
-
-    //referencia Comercial - escolher Observação
-    async observation (selector) {
-
-        const observacao = gerarObservação()
-
-        //inserir dados
-        cy.get('#txtObsRefCom')
-            .type(observacao)
-    }
+  /**
+   * Preenche o campo Observação.
+   */
+  static observation() {
+    const observacao = gerarObservação();
+    cy.get('#txtObsRefCom').type(observacao);
+  }
 }
