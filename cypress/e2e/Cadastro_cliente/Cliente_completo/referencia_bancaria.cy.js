@@ -1,0 +1,591 @@
+import { GeneralClientComplete } from '../../../../pages/para_cadastro_cliente/cliente_completo/geral_cliente_completo';
+import { ClickClientComplete } from '../../../../pages/para_cadastro_cliente/cliente_completo/clicar_cliente_completo';
+import { FillPerson } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/preencher_pessoa';
+import { GeneralRefBanking } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/geral_ref_bancaria';
+import { FillRefBanking } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/preencher_ref_bancaria';
+import { GeneralRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/geral_rota';
+import { FillRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/preencher_rota';
+import { GeneralRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/geral_telefone';
+import { FillRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/preencher_telefone';
+import { GeneralAdress } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/geral_endereco';
+import { FillAdress } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/preencher_endereco';
+
+
+describe('Cadastrar cliente completo', () => {
+
+    beforeEach(() => {
+        cy.visit('/')
+        cy.clearAllSessionStorage()
+        cy.login()
+        cy.urlAposLogin()
+        cy.tituloPagina()
+    })
+
+    context('Cadastro de cliente completo - incluindo referencia bancária', () => {
+
+        it('1. Cliente completo CPF - tipo de chave PIX Telefone correto', () => {
+
+            GeneralClientComplete.iconMenuOptions()
+            GeneralClientComplete.optionClientComplete() 
+            FillPerson.cpfClient()
+            FillPerson.nameComplete()
+            FillPerson.nameSocial()
+            FillPerson.dateBirth()
+            FillPerson.sexClient()
+            ClickClientComplete.saveClient()
+            
+            GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
+            GeneralAdress.clickAddNewAdress()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalAdressEmptyValidade()
+            GeneralAdress.clickOpenTypeAdress()
+            FillAdress.typeAdress()
+            FillAdress.cepAdress()
+            FillAdress.numberAdress()
+
+            GeneralClientComplete.buttonSaveDisabled()
+            GeneralAdress.clickSaveAdress()
+            GeneralAdress.infoAdressAdded()
+
+            GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
+            GeneralRefRoute.clickAddedNewRoute()
+            GeneralRefRoute.modalRouteEmptyValidade()
+            FillRefRoute.typeAdressRoute()
+            FillRefRoute.routaComplete()
+            FillRefRoute.infoRouteAdded()
+
+            GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clickAddedNewPhone()
+            GeneralRefPhone.modalPhoneEmptyValidade()
+            FillRefPhone.typePhone()
+            FillRefPhone.numberPhone()
+            FillRefPhone.ramalPhone()
+            GeneralRefPhone.clickSavePhone()
+            GeneralRefPhone.infoPhoneAdded()
+            GeneralRefPhone.messPhoneAddedSucess()
+
+            ClickClientComplete.abaReferences() //REFERENCIA
+            GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validateAbaRefBankingEmpty()
+            GeneralRefBanking.clickAddNewRefBanking()
+            GeneralRefBanking.modalRefBankingEmpty()
+            FillRefBanking.bank()
+            FillRefBanking.agency()
+            FillRefBanking.account()
+            FillRefBanking.dateOpening()
+            FillRefBanking.phone()
+            FillRefBanking.manager()
+            FillRefBanking.email()
+            FillRefBanking.cpfAccountHolder()
+            FillRefBanking.nameAccountHolder()
+            FillRefBanking.typeAccount()
+            FillRefBanking.operation()
+            FillRefBanking.formPayment()
+
+            FillRefBanking.typeKeyPixPhone()
+            FillRefBanking.keyPixPhone()
+            GeneralRefBanking.clickSaveRefBanking()
+            GeneralRefBanking.messRefBankingAddedSucess()
+            GeneralRefBanking.infoRefBankingAdded()
+            ClickClientComplete.saveClient()
+            GeneralClientComplete.modalWaitingLoading()
+            GeneralClientComplete.messRegisterSaveSucess()
+        })  
+
+        it('2. Cliente completo CPF - tipo de chave PIX Email correto', () => {
+
+            GeneralClientComplete.iconMenuOptions()
+            GeneralClientComplete.optionClientComplete() 
+            FillPerson.cpfClient()
+            FillPerson.nameComplete()
+            FillPerson.nameSocial()
+            FillPerson.dateBirth()
+            FillPerson.sexClient()
+            ClickClientComplete.saveClient()
+            
+            GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
+            GeneralAdress.clickAddNewAdress()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalAdressEmptyValidade()
+            GeneralAdress.clickOpenTypeAdress()
+            FillAdress.typeAdress()
+            FillAdress.cepAdress()
+            FillAdress.numberAdress()
+
+            GeneralClientComplete.buttonSaveDisabled()
+            GeneralAdress.clickSaveAdress()
+            GeneralAdress.infoAdressAdded()
+
+            GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
+            GeneralRefRoute.clickAddedNewRoute()
+            GeneralRefRoute.modalRouteEmptyValidade()
+            FillRefRoute.typeAdressRoute()
+            FillRefRoute.routaComplete()
+            FillRefRoute.infoRouteAdded()
+
+            GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clickAddedNewPhone()
+            GeneralRefPhone.modalPhoneEmptyValidade()
+            FillRefPhone.typePhone()
+            FillRefPhone.numberPhone()
+            FillRefPhone.ramalPhone()
+            GeneralRefPhone.clickSavePhone()
+            GeneralRefPhone.infoPhoneAdded()
+            GeneralRefPhone.messPhoneAddedSucess()
+
+            ClickClientComplete.abaReferences() //REFERENCIA
+            GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validateAbaRefBankingEmpty()
+            GeneralRefBanking.clickAddNewRefBanking()
+            GeneralRefBanking.modalRefBankingEmpty()
+            FillRefBanking.bank()
+            FillRefBanking.agency()
+            FillRefBanking.account()
+            FillRefBanking.dateOpening()
+            FillRefBanking.phone()
+            FillRefBanking.manager()
+            FillRefBanking.email()
+            FillRefBanking.cpfAccountHolder()
+            FillRefBanking.nameAccountHolder()
+            FillRefBanking.typeAccount()
+            FillRefBanking.operation()
+            FillRefBanking.formPayment()
+
+            FillRefBanking.typeKeyPixEmail()
+            FillRefBanking.keyPixEmail()
+            GeneralRefBanking.clickSaveRefBanking()
+            GeneralRefBanking.messRefBankingAddedSucess()
+            GeneralRefBanking.infoRefBankingAdded()
+            ClickClientComplete.saveClient()
+            GeneralClientComplete.modalWaitingLoading()
+            GeneralClientComplete.messRegisterSaveSucess()
+        }) 
+
+        it('3. Cliente completo CPF - tipo de chave PIX CPF CNPJ correto', () => {
+
+            GeneralClientComplete.iconMenuOptions()
+            GeneralClientComplete.optionClientComplete() 
+            FillPerson.cpfClient()
+            FillPerson.nameComplete()
+            FillPerson.nameSocial()
+            FillPerson.dateBirth()
+            FillPerson.sexClient()
+            ClickClientComplete.saveClient()
+            
+            GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
+            GeneralAdress.clickAddNewAdress()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalAdressEmptyValidade()
+            GeneralAdress.clickOpenTypeAdress()
+            FillAdress.typeAdress()
+            FillAdress.cepAdress()
+            FillAdress.numberAdress()
+
+            GeneralClientComplete.buttonSaveDisabled()
+            GeneralAdress.clickSaveAdress()
+            GeneralAdress.infoAdressAdded()
+
+            GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
+            GeneralRefRoute.clickAddedNewRoute()
+            GeneralRefRoute.modalRouteEmptyValidade()
+            FillRefRoute.typeAdressRoute()
+            FillRefRoute.routaComplete()
+            FillRefRoute.infoRouteAdded()
+
+            GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clickAddedNewPhone()
+            GeneralRefPhone.modalPhoneEmptyValidade()
+            FillRefPhone.typePhone()
+            FillRefPhone.numberPhone()
+            FillRefPhone.ramalPhone()
+            GeneralRefPhone.clickSavePhone()
+            GeneralRefPhone.infoPhoneAdded()
+            GeneralRefPhone.messPhoneAddedSucess()
+
+            ClickClientComplete.abaReferences() //REFERENCIA
+            GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validateAbaRefBankingEmpty()
+            GeneralRefBanking.clickAddNewRefBanking()
+            GeneralRefBanking.modalRefBankingEmpty()
+            FillRefBanking.bank()
+            FillRefBanking.agency()
+            FillRefBanking.account()
+            FillRefBanking.dateOpening()
+            FillRefBanking.phone()
+            FillRefBanking.manager()
+            FillRefBanking.email()
+            FillRefBanking.cpfAccountHolder()
+            FillRefBanking.nameAccountHolder()
+            FillRefBanking.typeAccount()
+            FillRefBanking.operation()
+            FillRefBanking.formPayment()
+
+            FillRefBanking.typeKeyPixCpfCnpj()
+            FillRefBanking.keyPixCPF()
+            GeneralRefBanking.clicarSalvarRefBanclickSaveRefBankingcaria()
+            GeneralRefBanking.messRefBankingAddedSucess()
+            GeneralRefBanking.infoRefBankingAdded()
+            ClickClientComplete.saveClient()
+            GeneralClientComplete.modalWaitingLoading()
+            GeneralClientComplete.messRegisterSaveSucess()
+        }) 
+
+        it('4. Cliente completo CPF - tipo de chave PIX CPF CNPJ correto', () => {
+
+            GeneralClientComplete.iconMenuOptions()
+            GeneralClientComplete.optionClientComplete() 
+            FillPerson.cpfClient()
+            FillPerson.nameComplete()
+            FillPerson.nameSocial()
+            FillPerson.dateBirth()
+            FillPerson.sexClient()
+            ClickClientComplete.saveClient()
+            
+            GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
+            GeneralAdress.clickAddNewAdress()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalAdressEmptyValidade()
+            GeneralAdress.clickOpenTypeAdress()
+            FillAdress.typeAdress()
+            FillAdress.cepAdress()
+            FillAdress.numberAdress()
+
+            GeneralClientComplete.buttonSaveDisabled()
+            GeneralAdress.clickSaveAdress()
+            GeneralAdress.infoAdressAdded()
+
+            GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
+            GeneralRefRoute.clickAddedNewRoute()
+            GeneralRefRoute.modalRouteEmptyValidade()
+            FillRefRoute.typeAdressRoute()
+            FillRefRoute.routaComplete()
+            FillRefRoute.infoRouteAdded()
+
+            GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clickAddedNewPhone()
+            GeneralRefPhone.modalPhoneEmptyValidade()
+            FillRefPhone.typePhone()
+            FillRefPhone.numberPhone()
+            FillRefPhone.ramalPhone()
+            GeneralRefPhone.clickSavePhone()
+            GeneralRefPhone.infoPhoneAdded()
+            GeneralRefPhone.messPhoneAddedSucess()
+
+            ClickClientComplete.abaReferences() //REFERENCIA
+            GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validateAbaRefBankingEmpty()
+            GeneralRefBanking.clickAddNewRefBanking()
+            GeneralRefBanking.modalRefBankingEmpty()
+            FillRefBanking.bank()
+            FillRefBanking.agency()
+            FillRefBanking.account()
+            FillRefBanking.dateOpening()
+            FillRefBanking.phone()
+            FillRefBanking.manager()
+            FillRefBanking.email()
+            FillRefBanking.cpfAccountHolder()
+            FillRefBanking.nameAccountHolder()
+            FillRefBanking.typeAccount()
+            FillRefBanking.operation()
+            FillRefBanking.formPayment()
+
+            FillRefBanking.typeKeyPixRandom()
+            FillRefBanking.keyPixRandom()
+            GeneralRefBanking.clickSaveRefBanking()
+            GeneralRefBanking.messRefBankingAddedSucess()
+            GeneralRefBanking.infoRefBankingAdded()
+            ClickClientComplete.saveClient()
+            GeneralClientComplete.modalWaitingLoading()
+            GeneralClientComplete.messRegisterSaveSucess()
+        }) 
+
+        it('5. Cliente completo CPF - validar tipo de chave PIX Telefone incorreto ', () => {
+
+            GeneralClientComplete.iconMenuOptions()
+            GeneralClientComplete.optionClientComplete()
+            FillPerson.cpfClient()
+            FillPerson.nameComplete()
+            FillPerson.nameSocial()
+            FillPerson.dateBirth()
+            FillPerson.sexClient()
+            ClickClientComplete.saveClient()
+            
+            GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
+            GeneralAdress.clickAddNewAdress()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalAdressEmptyValidade()
+            GeneralAdress.clickOpenTypeAdress()
+            FillAdress.typeAdress()
+            FillAdress.cepAdress()
+            FillAdress.numberAdress()
+
+            GeneralClientComplete.buttonSaveDisabled()
+            GeneralAdress.clickSaveAdress()
+            GeneralAdress.infoAdressAdded()
+
+            GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
+            GeneralRefRoute.clickAddedNewRoute()
+            GeneralRefRoute.modalRouteEmptyValidade()
+            FillRefRoute.typeAdressRoute()
+            FillRefRoute.routaComplete()
+            FillRefRoute.infoRouteAdded()
+
+            GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clickAddedNewPhone()
+            GeneralRefPhone.modalPhoneEmptyValidade()
+            FillRefPhone.typePhone()
+            FillRefPhone.numberPhone()
+            FillRefPhone.ramalPhone()
+            GeneralRefPhone.clickSavePhone()
+            GeneralRefPhone.infoPhoneAdded()
+            GeneralRefPhone.messPhoneAddedSucess()
+
+            ClickClientComplete.abaReferences() //REFERENCIA
+            GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validateAbaRefBankingEmpty()
+            GeneralRefBanking.clickAddNewRefBanking()
+            GeneralRefBanking.modalRefBankingEmpty()
+            FillRefBanking.bank()
+            FillRefBanking.agency()
+            FillRefBanking.account()
+            FillRefBanking.dateOpening()
+            FillRefBanking.phone()
+            FillRefBanking.manager()
+            FillRefBanking.email()
+            FillRefBanking.cpfAccountHolder()
+            FillRefBanking.nameAccountHolder()
+            FillRefBanking.typeAccount()
+            FillRefBanking.operation()
+            FillRefBanking.formPayment()
+
+            FillRefBanking.typeKeyPixPhone()
+            FillRefBanking.keyPixPhoneWrong()
+            GeneralRefBanking.clickSaveRefBanking()
+            GeneralRefBanking.messRefBankingAddedSucess()
+            GeneralRefBanking.infoRefBankingAdded()
+            ClickClientComplete.saveClient()
+            GeneralRefBanking.messRefBankingKeyPixPhoneInvalid()
+        })  
+
+        it('6. Cliente completo CPF - validar tipo de chave PIX Email incorreto ', () => {
+
+            GeneralClientComplete.iconMenuOptions()
+            GeneralClientComplete.optionClientComplete()
+            FillPerson.cpfClient()
+            FillPerson.nameComplete()
+            FillPerson.nameSocial()
+            FillPerson.dateBirth()
+            FillPerson.sexClient()
+            ClickClientComplete.saveClient()
+            
+            GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
+            GeneralAdress.clickAddNewAdress()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalAdressEmptyValidade()
+            GeneralAdress.clickOpenTypeAdress()
+            FillAdress.typeAdress()
+            FillAdress.cepAdress()
+            FillAdress.numberAdress()
+
+            GeneralClientComplete.buttonSaveDisabled()
+            GeneralAdress.clickSaveAdress()
+            GeneralAdress.infoAdressAdded()
+
+            GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
+            GeneralRefRoute.clickAddedNewRoute()
+            GeneralRefRoute.modalRouteEmptyValidade()
+            FillRefRoute.typeAdressRoute()
+            FillRefRoute.routaComplete()
+            FillRefRoute.infoRouteAdded()
+
+            GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clickAddedNewPhone()
+            GeneralRefPhone.modalPhoneEmptyValidade()
+            FillRefPhone.typePhone()
+            FillRefPhone.numberPhone()
+            FillRefPhone.ramalPhone()
+            GeneralRefPhone.clickSavePhone()
+            GeneralRefPhone.infoPhoneAdded()
+            GeneralRefPhone.messPhoneAddedSucess()
+
+            ClickClientComplete.abaReferences() //REFERENCIA
+            GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validateAbaRefBankingEmpty()
+            GeneralRefBanking.clickAddNewRefBanking()
+            GeneralRefBanking.modalRefBankingEmpty()
+            FillRefBanking.bank()
+            FillRefBanking.agency()
+            FillRefBanking.account()
+            FillRefBanking.dateOpening()
+            FillRefBanking.phone()
+            FillRefBanking.manager()
+            FillRefBanking.email()
+            FillRefBanking.cpfAccountHolder()
+            FillRefBanking.nameAccountHolder()
+            FillRefBanking.typeAccount()
+            FillRefBanking.operation()
+            FillRefBanking.formPayment()
+
+            FillRefBanking.typeKeyPixEmail()
+            FillRefBanking.keyPixEmailWrong()
+            GeneralRefBanking.clickSaveRefBanking()
+            GeneralRefBanking.messRefBankingAddedSucess()
+            GeneralRefBanking.infoRefBankingAdded()
+            ClickClientComplete.saveClient()
+            GeneralRefBanking.messRefBankingKeyPixEmailInvalid()
+        })  
+
+        it('7.Cliente completo CPF - validar tipo de chave CPF CNPJ incorreto ', () => {
+
+            GeneralClientComplete.iconMenuOptions()
+            GeneralClientComplete.optionClientComplete()
+            FillPerson.cpfClient()
+            FillPerson.nameComplete()
+            FillPerson.nameSocial()
+            FillPerson.dateBirth()
+            FillPerson.sexClient()
+            ClickClientComplete.saveClient()
+            
+            GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
+            GeneralAdress.clickAddNewAdress()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalAdressEmptyValidade()
+            GeneralAdress.clickOpenTypeAdress()
+            FillAdress.typeAdress()
+            FillAdress.cepAdress()
+            FillAdress.numberAdress()
+
+            GeneralClientComplete.buttonSaveDisabled()
+            GeneralAdress.clickSaveAdress()
+            GeneralAdress.infoAdressAdded()
+
+            GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
+            GeneralRefRoute.clickAddedNewRoute()
+            GeneralRefRoute.modalRouteEmptyValidade()
+            FillRefRoute.typeAdressRoute()
+            FillRefRoute.routaComplete()
+            FillRefRoute.infoRouteAdded()
+
+            GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clickAddedNewPhone()
+            GeneralRefPhone.modalPhoneEmptyValidade()
+            FillRefPhone.typePhone()
+            FillRefPhone.numberPhone()
+            FillRefPhone.ramalPhone()
+            GeneralRefPhone.clickSavePhone()
+            GeneralRefPhone.infoPhoneAdded()
+            GeneralRefPhone.messPhoneAddedSucess()
+
+            ClickClientComplete.abaReferences() //REFERENCIA
+            GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validateAbaRefBankingEmpty()
+            GeneralRefBanking.clickAddNewRefBanking()
+            GeneralRefBanking.modalRefBankingEmpty()
+            FillRefBanking.bank()
+            FillRefBanking.agency()
+            FillRefBanking.account()
+            FillRefBanking.dateOpening()
+            FillRefBanking.phone()
+            FillRefBanking.manager()
+            FillRefBanking.email()
+            FillRefBanking.cpfAccountHolder()
+            FillRefBanking.nameAccountHolder()
+            FillRefBanking.typeAccount()
+            FillRefBanking.operation()
+            FillRefBanking.formPayment()
+
+            FillRefBanking.typeKeyPixCpfCnpj()
+            FillRefBanking.typeKeyPixRandom()
+            GeneralRefBanking.clickSaveRefBanking()
+            GeneralRefBanking.messRefBankingAddedSucess()
+            GeneralRefBanking.infoRefBankingAdded()
+            ClickClientComplete.saveClient()
+            GeneralRefBanking.messRefBankingKeyPixCpfCnpjInvalid()
+        })  
+
+        it('8.Cliente completo CPF - validar tipo de chave Aleatória incorreto ', () => {
+
+            GeneralClientComplete.iconMenuOptions()
+            GeneralClientComplete.optionClientComplete()
+            FillPerson.cpfClient()
+            FillPerson.nameComplete()
+            FillPerson.nameSocial()
+            FillPerson.dateBirth()
+            FillPerson.sexClient()
+            ClickClientComplete.saveClient()
+            
+            GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+
+            GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
+            GeneralAdress.clickAddNewAdress()
+            GeneralAdress.tipoEndereco()
+            GeneralAdress.modalAdressEmptyValidade()
+            GeneralAdress.clickOpenTypeAdress()
+            FillAdress.typeAdress()
+            FillAdress.cepAdress()
+            FillAdress.numberAdress()
+
+            GeneralClientComplete.buttonSaveDisabled()
+            GeneralAdress.clickSaveAdress()
+            GeneralAdress.infoAdressAdded()
+
+            GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
+            GeneralRefRoute.clickAddedNewRoute()
+            GeneralRefRoute.modalRouteEmptyValidade()
+            FillRefRoute.typeAdressRoute()
+            FillRefRoute.routaComplete()
+            FillRefRoute.infoRouteAdded()
+
+            GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
+            GeneralRefPhone.clickAddedNewPhone()
+            GeneralRefPhone.modalPhoneEmptyValidade()
+            FillRefPhone.typePhone()
+            FillRefPhone.numberPhone()
+            FillRefPhone.ramalPhone()
+            GeneralRefPhone.clickSavePhone()
+            GeneralRefPhone.infoPhoneAdded()
+            GeneralRefPhone.messPhoneAddedSucess()
+
+            ClickClientComplete.abaReferences() //REFERENCIA
+            GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
+            GeneralRefBanking.validateAbaRefBankingEmpty()
+            GeneralRefBanking.clickAddNewRefBanking()
+            GeneralRefBanking.modalRefBankingEmpty()
+            FillRefBanking.bank()
+            FillRefBanking.agency()
+            FillRefBanking.account()
+            FillRefBanking.dateOpening()
+            FillRefBanking.phone()
+            FillRefBanking.manager()
+            FillRefBanking.email()
+            FillRefBanking.cpfAccountHolder()
+            FillRefBanking.nameAccountHolder()
+            FillRefBanking.typeAccount()
+            FillRefBanking.operation()
+            FillRefBanking.formPayment()
+
+            FillRefBanking.typeKeyPixRandom()
+            GeneralRefBanking.clickSaveRefBanking()
+            GeneralRefBanking.messRefBankingAddedSucess()
+            GeneralRefBanking.infoRefBankingAdded()
+            ClickClientComplete.saveClient()
+            GeneralRefBanking.messRefBankingKeyPixRandomInvalid()
+        })  
+    })
+
+    
+})
