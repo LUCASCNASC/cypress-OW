@@ -1,4 +1,4 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio,, gerarTelefoneAleatorio } from '../../../../gerarDados';
+import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarTelefoneAleatorio } from '../../../../gerarDados';
 import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada,
   gerarChavePixEmail, gerarChavePixCPF, gerarChavePixAleatoria} from '../../../../gerarDadosPIX';
 
