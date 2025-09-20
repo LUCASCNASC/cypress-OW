@@ -1,21 +1,7 @@
-import {
-  gerarCpf,
-  gerarNomeAleatorio,
-  gerarEmailAleatorio,
-  gerarCNPJ,
-  gerarTelefoneAleatorio,
-  gerarNomeEmpresa,
-} from '../../../gerarDados';
-import { gerarChavePixTelefone } from '../../../gerarDadosPIX';
-
-/**
- * Page Object para operações e validações relacionadas à aba de anexos.
- * Todos os métodos são estáticos para facilitar o uso sem instanciação.
- */
+//Page Object para operações e validações relacionadas à aba de anexos.
+//Todos os métodos são estáticos para facilitar o uso sem instanciação.
 export class GeneralAnexo {
-  /**
-   * Valida e clica na aba Anexos.
-   */
+  //Valida e clica na aba Anexos.
   static clickAbaAttachment() {
     cy.get('#menu_mais_pri > :nth-child(4)')
       .should('be.visible')
@@ -25,9 +11,7 @@ export class GeneralAnexo {
     cy.wait('@api_tipoanexo', { timeout: 40000 });
   }
 
-  /**
-   * Valida os elementos da tela de anexos antes de fazer upload.
-   */
+  //Valida os elementos da tela de anexos antes de fazer upload.
   static validateAbaAttachmentEmpty() {
     cy.get('[ng-controller="ListaDeAnexosController"] > :nth-child(1)')
       .should('be.visible')
@@ -39,17 +23,13 @@ export class GeneralAnexo {
     cy.get('.btn').should('be.visible').and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Seleciona a primeira opção de tipo de anexo.
-   */
+  //Seleciona a primeira opção de tipo de anexo.
   static selectFirstTypeAttachment() {
     cy.get('#ComboTipoAnexo').click();
     cy.contains('div.md-text.ng-binding', 'Assinatura do Termo de Adesão do Titular').click();
   }
 
-  /**
-   * Confirma o envio de arquivo no modal.
-   */
+  //Confirma o envio de arquivo no modal.
   static confirmSendFile() {
     cy.get('.md-title')
       .should('be.visible')
@@ -59,18 +39,14 @@ export class GeneralAnexo {
     cy.get('.md-confirm-button').click();
   }
 
-  /**
-   * Valida mensagem de sucesso de anexo adicionado.
-   */
+  //Valida mensagem de sucesso de anexo adicionado.
   static messAttachmentAddSucess() {
     cy.get('.toast').should('be.visible');
     cy.get('.toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-message').should('be.visible').and('have.text', 'Anexo cadastrado com sucesso!');
   }
 
-  /**
-   * Valida que o anexo foi realmente adicionado (data do dia).
-   */
+  //Valida que o anexo foi realmente adicionado (data do dia).
   static validateAttachmentAdded() {
     const hoje = new Date();
     const dataAtual = hoje.toLocaleDateString('pt-BR');

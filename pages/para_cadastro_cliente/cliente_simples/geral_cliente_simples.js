@@ -1,13 +1,9 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa } from '../gerarDados';
 
-/**
- * Page Object para operações de interação no cadastro de cliente simples.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para operações de interação no cadastro de cliente simples.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class GeneralClientSimple {
-  /**
-   * Valida e clica no menu de opções.
-   */
+  //Valida e clica no menu de opções.
   static iconMenuOptions() {
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
       .should('be.visible')
@@ -15,18 +11,14 @@ export class GeneralClientSimple {
     cy.get('[aria-label="Menu de opções"] > .ng-binding').click({ force: true });
   }
 
-  /**
-   * Escolhe a opção "Cliente" no menu de opções.
-   */
+  //Escolhe a opção "Cliente" no menu de opções.
   static optionClientSimple() {
     cy.get('a[aria-label="Cliente"]')
       .should('have.attr', 'aria-label', 'Cliente');
     cy.get('a[aria-label="Cliente"]').scrollIntoView().click({ force: true });
   }
 
-  /**
-   * Clica no botão SALVAR do cliente simples.
-   */
+  //Clica no botão SALVAR do cliente simples.
   static saveClientSimple() {
     cy.get('.layout-align-end-center > .md-raised')
       .scrollIntoView()
@@ -35,9 +27,7 @@ export class GeneralClientSimple {
     cy.get('.layout-align-end-center > .md-raised').click({ force: true });
   }
 
-  /**
-   * Arrasta/clica para selecionar Pessoa Jurídica.
-   */
+  //Arrasta/clica para selecionar Pessoa Jurídica.
   static dragPersonLegal() {
     cy.get('.flex-md-100 > .md-auto-horizontal-margin > .md-label')
       .should('be.visible')
@@ -45,18 +35,14 @@ export class GeneralClientSimple {
     cy.get('.flex-md-100 > .md-auto-horizontal-margin > .md-label').click({ force: true });
   }
 
-  /**
-   * Valida mensagem de "Registro salvo com sucesso!".
-   */
+  //Valida mensagem de "Registro salvo com sucesso!".
   static messFirstRegistSaveSucess() {
     cy.get('.toast').should('be.visible');
     cy.get('.toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-message').should('be.visible').and('have.text', 'Registro salvo com sucesso!');
   }
 
-  /**
-   * Realiza login novamente no sistema.
-   */
+  //Realiza login novamente no sistema.
   static loginAgain() {
     const usuario = 'sabium.automacao';
     const senha = '123.automacao';
@@ -68,16 +54,12 @@ export class GeneralClientSimple {
     cy.wait('@api_entrar_sistema', { timeout: 40000 });
   }
 
-  /**
-   * Clica para sair do sistema.
-   */
+  //Clica para sair do sistema.
   static clickOutSystem() {
     cy.get('.rodape > ._md-button-wrap > div.md-button > .md-no-style').click({ force: true });
   }
 
-  /**
-   * Valida e clica em SIM na mensagem "Deseja visualizar este cadastro?".
-   */
+  //Valida e clica em SIM na mensagem "Deseja visualizar este cadastro?".
   static desireSeeRegister() {
     cy.get('.md-title')
       .should('be.visible')
@@ -88,9 +70,7 @@ export class GeneralClientSimple {
     cy.get('.md-confirm-button').click({ force: true });
   }
 
-  /**
-   * Autoriza o trial para alteração da data de nascimento.
-   */
+  //Autoriza o trial para alteração da data de nascimento.
   static authorizeTrialDateBirth() {
     const idSupervisorTrial = "393";
     const nomeSupervidorTrial = "T.A. USUÁRIO AUTOMAÇÃO";

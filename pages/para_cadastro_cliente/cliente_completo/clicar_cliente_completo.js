@@ -1,14 +1,10 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa } from '../../gerarDados';
 import { gerarChavePixTelefone } from '../../gerarDadosPIX';
 
-/**
- * Page Object para operações de interação no cadastro de cliente completo.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para operações de interação no cadastro de cliente completo.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class ClickClientComplete {
-  /**
-   * Valida e clica no menu de opções.
-   */
+  //Valida e clica no menu de opções.
   static iconMenuOptions() {
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
       .should('be.visible')
@@ -16,9 +12,7 @@ export class ClickClientComplete {
     cy.get('[aria-label="Menu de opções"] > .ng-binding').click({ force: true });
   }
 
-  /**
-   * Escolhe a opção "Cliente completo" no menu de opções.
-   */
+  //Escolhe a opção "Cliente completo" no menu de opções.
   static optionClientComplete() {
     cy.get('a[aria-label="Cliente completo"]')
       .should('be.visible')
@@ -27,9 +21,7 @@ export class ClickClientComplete {
     cy.get('a[aria-label="Cliente completo"]').scrollIntoView().click({ force: true });
   }
 
-  /**
-   * Valida e clica no botão para salvar cadastro de cliente.
-   */
+  //Valida e clica no botão para salvar cadastro de cliente.
   static saveClient() {
     cy.get('.btn')
       .scrollIntoView()
@@ -39,16 +31,12 @@ export class ClickClientComplete {
     cy.get('.btn').click({ force: true });
   }
 
-  /**
-   * Clica para salvar cadastro de cliente completo.
-   */
+  //Clica para salvar cadastro de cliente completo.
   static saveClientComplete() {
     cy.get('.btn > .ng-scope').click({ force: true });
   }
 
-  /**
-   * Dentro do cadastro de cliente completo, clica no menu interno para mostrar opções.
-   */
+  //Dentro do cadastro de cliente completo, clica no menu interno para mostrar opções.
   static menuRegisterClientComplete() {
     cy.get('#menu_click_pri')
       .should('be.visible')
@@ -56,9 +44,7 @@ export class ClickClientComplete {
     cy.get('#menu_click_pri').click();
   }
 
-  /**
-   * Valida e clica na aba Referências.
-   */
+  //Valida e clica na aba Referências.
   static abaReferences() {
     cy.get('#menu_items_pri > :nth-child(5)')
       .should('be.visible')

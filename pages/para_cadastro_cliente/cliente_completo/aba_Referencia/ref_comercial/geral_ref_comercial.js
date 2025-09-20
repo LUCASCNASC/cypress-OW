@@ -1,17 +1,7 @@
-import {
-  gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa,
-  gerarRelacionamento, gerarObservação
-} from '../../../../gerarDados';
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX';
-
-/**
- * Page Object para operações e validações relacionadas à aba Referência Comercial.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para operações e validações relacionadas à aba Referência Comercial.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class GeneralRefCommercial {
-  /**
-   * Valida e clica na aba Comercial em Referências.
-   */
+  //Valida e clica na aba Comercial em Referências.
   static clickAbaRefCommercial() {
     cy.get('#menu_items_sec > .on')
       .should('be.visible')
@@ -21,9 +11,7 @@ export class GeneralRefCommercial {
     cy.wait('@api_ref_comercial', { timeout: 40000 });
   }
 
-  /**
-   * Valida tela vazia antes de adicionar referência comercial.
-   */
+  //Valida tela vazia antes de adicionar referência comercial.
   static validadeRefCommercialEmpty() {
     cy.get('h3').should('be.visible').and('have.text', 'Referências / Comercial');
     cy.get('.layout-align-end-end > .md-fab').should('be.visible').and('not.have.attr', 'disabled');
@@ -31,18 +19,14 @@ export class GeneralRefCommercial {
     cy.get('.btn').should('be.visible').and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Clica no botão para adicionar nova referência comercial.
-   */
+  //Clica no botão para adicionar nova referência comercial.
   static clickAddNewRefCommercial() {
     cy.intercept('GET', '/views/cliente/modalClienteRefComercial.html').as('api_modal_referencia_comercial');
     cy.get('.layout-align-end-end > .md-fab').click();
     cy.wait('@api_modal_referencia_comercial', { timeout: 40000 });
   }
 
-  /**
-   * Valida campos do modal de referência comercial vazio.
-   */
+  //Valida campos do modal de referência comercial vazio.
   static modalRefCommercialEmpty() {
     cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -63,27 +47,21 @@ export class GeneralRefCommercial {
     cy.get('#btnModalAddRefPessoal').should('be.visible').should('have.attr', 'disabled');
   }
 
-  /**
-   * Clica para salvar Referência Comercial.
-   */
+  //Clica para salvar Referência Comercial.
   static clickSaveRefCommercial() {
     cy.contains('button', 'Salvar').should('be.visible');
     cy.get('#btnModalAddRefPessoal').should('be.visible').and('not.have.attr', 'disabled');
     cy.get('#btnModalAddRefPessoal').click();
   }
 
-  /**
-   * Valida mensagem de sucesso após adicionar Referência Comercial.
-   */
+  //Valida mensagem de sucesso após adicionar Referência Comercial.
   static messRefCommercialAddedSucess() {
     cy.get('.toast-success').should('be.visible');
     cy.get('.toast-success > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Referência Comercial incluída com sucesso.');
   }
 
-  /**
-   * Valida informações adicionadas no cadastro de referência comercial.
-   */
+  //Valida informações adicionadas no cadastro de referência comercial.
   static infoRefCommercialAdded() {
     cy.get('.md-whiteframe-2dp > .ng-scope > :nth-child(1) > .ng-binding').should('be.visible');
     cy.get('[ng-show="(item.contato)"]').should('be.visible');

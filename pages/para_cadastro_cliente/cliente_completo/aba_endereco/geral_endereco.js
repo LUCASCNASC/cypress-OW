@@ -1,21 +1,7 @@
-import {
-  gerarCpf,
-  gerarNomeAleatorio,
-  gerarEmailAleatorio,
-  gerarCNPJ,
-  gerarTelefoneAleatorio,
-  gerarNomeEmpresa,
-} from '../../../gerarDados';
-import { gerarChavePixTelefone } from '../../../gerarDadosPIX';
-
-/**
- * Page Object para operações e validações relacionadas à aba de Endereço.
- * Todos os métodos são estáticos para facilitar o uso sem instanciação.
- */
+//Page Object para operações e validações relacionadas à aba de Endereço.
+//Todos os métodos são estáticos para facilitar o uso sem instanciação.
 export class GeneralAdress {
-  /**
-   * Valida e clica na aba Endereço.
-   */
+  //Valida e clica na aba Endereço.
   static clickAbaAdress() {
     cy.get('#menu_items_pri > :nth-child(2)')
       .should('be.visible')
@@ -25,18 +11,14 @@ export class GeneralAdress {
     cy.wait('@api_cliente_completo_endereco', { timeout: 40000 });
   }
 
-  /**
-   * Valida mensagem de sucesso após incluir endereço.
-   */
+  //Valida mensagem de sucesso após incluir endereço.
   static messAdressAddedSucess() {
     cy.get('.toast-success').should('be.visible');
     cy.get('.toast-success > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Endereço incluído com sucesso.');
   }
 
-  /**
-   * Clica no botão "+" para adicionar novo endereço.
-   */
+  //Clica no botão "+" para adicionar novo endereço.
   static clickAddNewAdress() {
     cy.get('.layout-align-end-end > .md-fab')
       .should('be.visible')
@@ -46,9 +28,7 @@ export class GeneralAdress {
     cy.wait('@api_ModalClienteEndereco', { timeout: 40000 });
   }
 
-  /**
-   * Valida os campos do modal de endereço quando está vazio.
-   */
+  //Valida os campos do modal de endereço quando está vazio.
   static modalAdressEmptyValidade() {
     cy.get('label[for="txtCepEndereco"]').should('have.text', 'CEP');
     cy.get('#txtCepEndereco').should('be.visible').and('have.value', '');
@@ -75,16 +55,12 @@ export class GeneralAdress {
     cy.get('#txtCidEndereco').should('be.visible').and('have.value', '');
   }
 
-  /**
-   * Clica para abrir as opções de tipo de endereço.
-   */
+  //Clica para abrir as opções de tipo de endereço.
   static clickOpenTypeAdress() {
     cy.get('#txtTpEndereco').click({ force: true });
   }
 
-  /**
-   * Valida informações que foram adicionadas no endereço.
-   */
+  //Valida informações que foram adicionadas no endereço.
   static infoAdressAdded() {
     cy.get('.md-whiteframe-2dp')
       .should('be.visible')
@@ -93,16 +69,12 @@ export class GeneralAdress {
       .and('contain', '87065-300');
   }
 
-  /**
-   * Clica no botão salvar endereço.
-   */
+  //Clica no botão salvar endereço.
   static clickSaveAdress() {
     cy.get('#btnModalAddEndereco').click();
   }
 
-  /**
-   * Valida card do modal endereço vazio antes de preencher os campos.
-   */
+  //Valida card do modal endereço vazio antes de preencher os campos.
   static cardAdressEmptyValidate() {
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
       .should('be.visible')

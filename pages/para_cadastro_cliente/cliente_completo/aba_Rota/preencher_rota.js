@@ -1,11 +1,7 @@
-/**
- * Page Object para preenchimento dos campos de Rota.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para preenchimento dos campos de Rota.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class FillRefRoute {
-  /**
-   * Preenche o fluxo completo de cadastro de rota e seleciona opções.
-   */
+  //Preenche o fluxo completo de cadastro de rota e seleciona opções.
   static routaComplete() {
     const rota_cadastro = "560";
     cy.get('label[for="txtRota"]').should('have.text', 'Rota');
@@ -25,9 +21,7 @@ export class FillRefRoute {
     cy.wait('@api_local_entrega_560', { timeout: 40000 });
   }
 
-  /**
-   * Seleciona o tipo de endereço "Padrão" no modal de rota.
-   */
+  //Seleciona o tipo de endereço "Padrão" no modal de rota.
   static typeAdressRoute() {
     cy.get('#txtTpEnderecoRota').click({ force: true });
     cy.get('.md-text.ng-binding').contains('Padrão').click({ force: true });

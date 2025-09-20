@@ -1,11 +1,7 @@
-/**
- * Page Object para operações e validações relacionadas à aba Empregatício.
- * Todos os métodos são estáticos para facilitar o uso direto sem instanciação.
- */
+//Page Object para operações e validações relacionadas à aba Empregatício.
+//Todos os métodos são estáticos para facilitar o uso direto sem instanciação.
 export class GeneralEmployment {
-  /**
-   * Valida e clica na aba Empregatício.
-   */
+  //Valida e clica na aba Empregatício.
   static clickAbaEmployment() {
     cy.get('#menu_items_pri > :nth-child(6)')
       .should('be.visible')
@@ -15,9 +11,7 @@ export class GeneralEmployment {
     cy.wait('@api_aba_empregaticio', { timeout: 40000 });
   }
 
-  /**
-   * Valida os elementos da tela de Empregatício quando vazia (nenhum registro adicionado).
-   */
+  //Valida os elementos da tela de Empregatício quando vazia (nenhum registro adicionado).
   static validateAbaEmploymentEmpty() {
     cy.get('h3').should('be.visible').and('have.text', 'Empregatício');
     cy.get('.layout-align-end-end > .md-fab').should('be.visible').and('not.have.attr', 'disabled');
@@ -25,18 +19,14 @@ export class GeneralEmployment {
     cy.get('.btn').should('be.visible').and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Clica no botão "+" para adicionar um novo vínculo empregatício.
-   */
+  //Clica no botão "+" para adicionar um novo vínculo empregatício.
   static clickAddNewEmployment() {
     cy.intercept('GET', '/services/v3/dados_tabela/tipocomprovanterenda').as('api_modal_empregaticio');
     cy.get('.layout-align-end-end > .md-fab').click();
     cy.wait('@api_modal_empregaticio', { timeout: 40000 });
   }
 
-  /**
-   * Valida todos os campos e elementos do modal Empregatício antes de preencher.
-   */
+  //Valida todos os campos e elementos do modal Empregatício antes de preencher.
   static modalEmploymentEmpty() {
     cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
       .should('be.visible')

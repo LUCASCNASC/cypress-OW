@@ -1,14 +1,10 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa } from '../../../gerarDados';
 import { gerarChavePixTelefone } from '../../../gerarDadosPIX';
 
-/**
- * Page Object para operações e validações relacionadas à aba Telefone.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para operações e validações relacionadas à aba Telefone.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class GeneralRefPhone {
-  /**
-   * Valida e clica na aba Telefone.
-   */
+  //Valida e clica na aba Telefone.
   static clickAbaPhone() {
     cy.get('#menu_items_pri > :nth-child(4)')
       .should('be.visible')
@@ -18,9 +14,7 @@ export class GeneralRefPhone {
     cy.wait('@api_cliente_completo_telefones', { timeout: 40000 });
   }
 
-  /**
-   * Clica no botão "+" para adicionar novo telefone.
-   */
+  //Clica no botão "+" para adicionar novo telefone.
   static clickAddedNewPhone() {
     cy.get('.layout-align-end-end > .md-fab')
       .should('be.visible')
@@ -30,9 +24,7 @@ export class GeneralRefPhone {
     cy.wait('@api_ModalClienteTelefone', { timeout: 40000 });
   }
 
-  /**
-   * Valida campos do modal Telefone enquanto está vazio.
-   */
+ //Valida campos do modal Telefone enquanto está vazio.
   static modalPhoneEmptyValidade() {
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -49,9 +41,7 @@ export class GeneralRefPhone {
     cy.get('#btnModalAddTel').should('be.visible').and('not.have.attr', 'not.disabled');
   }
 
-  /**
-   * Clica no botão salvar telefone.
-   */
+  //Clica no botão salvar telefone.
   static clickSavePhone() {
     cy.get('#btnModalAddTel')
       .should('be.visible')
@@ -59,9 +49,7 @@ export class GeneralRefPhone {
     cy.get('#btnModalAddTel').click({ force: true });
   }
 
-  /**
-   * Valida informações adicionadas no cadastro de telefone.
-   */
+  //Valida informações adicionadas no cadastro de telefone.
   static infoPhoneAdded() {
     cy.get('.md-whiteframe-2dp')
       .should('be.visible')
@@ -70,9 +58,7 @@ export class GeneralRefPhone {
       .and('contain', '435');
   }
 
-  /**
-   * Valida mensagem de telefone incluído com sucesso.
-   */
+  //Valida mensagem de telefone incluído com sucesso.
   static messPhoneAddedSucess() {
     cy.get('.toast-success').should('be.visible');
     cy.get(':nth-child(1) > .toast-title').should('be.visible').and('have.text', 'Aviso');

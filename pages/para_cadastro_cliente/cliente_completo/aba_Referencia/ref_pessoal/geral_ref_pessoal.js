@@ -1,10 +1,5 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarRelacionamento } from '../../../../gerarDados';
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX';
-
-/**
- * Page Object para operações e validações relacionadas à aba Referência Pessoal.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para operações e validações relacionadas à aba Referência Pessoal.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class GeneralRefGuys {
   /**
    * Valida e clica na aba Pessoal em Referências.
@@ -18,9 +13,7 @@ export class GeneralRefGuys {
     cy.wait('@api_ref_pessoal', { timeout: 40000 });
   }
 
-  /**
-   * Valida tela vazia antes de adicionar referência pessoal.
-   */
+  //Valida tela vazia antes de adicionar referência pessoal.
   static validateAbaEmpty() {
     cy.get('h3').should('be.visible').and('have.text', 'Referências / Pessoal');
     cy.get('.layout-align-end-end > .md-fab').should('be.visible').and('not.have.attr', 'disabled');
@@ -28,18 +21,14 @@ export class GeneralRefGuys {
     cy.get('.btn').should('be.visible').and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Clica no botão para adicionar nova referência pessoal.
-   */
+  //Clica no botão para adicionar nova referência pessoal.
   static clickAddNew() {
     cy.intercept('GET', '/views/cliente/modalClienteRefPessoal.html').as('api_modal_referencia_pessoal');
     cy.get('.layout-align-end-end > .md-fab').click();
     cy.wait('@api_modal_referencia_pessoal', { timeout: 40000 });
   }
 
-  /**
-   * Valida campos do modal de referência pessoal vazio.
-   */
+  //Valida campos do modal de referência pessoal vazio.
   static modalEmpty() {
     cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -60,27 +49,21 @@ export class GeneralRefGuys {
     cy.get('#btnModalAddRefPessoal').should('be.visible').should('have.attr', 'disabled');
   }
 
-  /**
-   * Clica para salvar Referência Pessoal.
-   */
+  //Clica para salvar Referência Pessoal.
   static clickSave() {
     cy.contains('button', 'Salvar').should('be.visible');
     cy.get('#btnModalAddRefPessoal').should('be.visible').and('not.have.attr', 'disabled');
     cy.get('#btnModalAddRefPessoal').click();
   }
 
-  /**
-   * Valida mensagem de sucesso após adicionar Referência Pessoal.
-   */
+  //Valida mensagem de sucesso após adicionar Referência Pessoal.
   static messRefGuysAddedSucess() {
     cy.get('.toast-success').should('be.visible');
     cy.get('.toast-success > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Referência Pessoal incluída com sucesso.');
   }
 
-  /**
-   * Valida informações adicionadas no cadastro de referência pessoal.
-   */
+  //Valida informações adicionadas no cadastro de referência pessoal.
   static infoAdded() {
     const hoje = new Date();
     const dataAtual = hoje.toLocaleDateString('pt-BR');
@@ -92,9 +75,7 @@ export class GeneralRefGuys {
     cy.get('.layout-align-gt-sm-center-end > .list-title').should('be.visible').and('contain', dataAtual);
   }
 
-  /**
-   * Valida campos do modal de referência pessoal vazio (duplicado).
-   */
+  //Valida campos do modal de referência pessoal vazio (duplicado).
   static modalRefGuysEmpty() {
     // Esta função é idêntica a modalEmpty, mantida por compatibilidade.
     GeneralRefGuys.modalEmpty();

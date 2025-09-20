@@ -1,9 +1,3 @@
-import {
-  gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa,
-  gerarRelacionamento, gerarObservação
-} from '../../../../gerarDados';
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX'
-
 //------referencia financeira - funções de geração de dados
 
 //Início exp. crédito
@@ -25,14 +19,10 @@ function gerarValorDuasCasasAposVirgula() {
   return valorFinal;
 }
 
-/**
- * Page Object para operações e validações relacionadas à aba Referência Financeira.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para operações e validações relacionadas à aba Referência Financeira.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class GeneralRefFinance {
-  /**
-   * Valida e clica na aba Financeira em Referências.
-   */
+  //Valida e clica na aba Financeira em Referências.
   static clickEmpty() {
     cy.get('#menu_items_sec > .on').should('be.visible').and('not.have.attr', 'disabled');
     cy.intercept('GET', '/views/cliente/refEtapaFinanceiraLista.html').as('api_ref_financeira');
@@ -40,9 +30,7 @@ export class GeneralRefFinance {
     cy.wait('@api_ref_financeira', { timeout: 40000 });
   }
 
-  /**
-   * Valida tela vazia antes de adicionar referência financeira.
-   */
+  //Valida tela vazia antes de adicionar referência financeira.
   static validateAbaEmpty() {
     cy.get('h3').should('be.visible').and('have.text', 'Referências / Financeira');
     cy.get('.layout-align-end-end > .md-fab').should('be.visible').and('not.have.attr', 'disabled');
@@ -50,18 +38,14 @@ export class GeneralRefFinance {
     cy.get('.btn').should('be.visible').and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Clica no botão para adicionar nova referência Financeira.
-   */
+  //Clica no botão para adicionar nova referência Financeira.
   static clickAddNew() {
     cy.intercept('GET', '/views/cliente/modalClienteRefFinanc.html').as('api_modal_referencia_financeira');
     cy.get('.layout-align-end-end > .md-fab').click();
     cy.wait('@api_modal_referencia_financeira', { timeout: 40000 });
   }
 
-  /**
-   * Valida campos do modal de referência financeira vazio.
-   */
+  //Valida campos do modal de referência financeira vazio.
   static modalEmpty() {
     cy.get('.md-dialog-fullscreen > ._md > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -82,27 +66,21 @@ export class GeneralRefFinance {
     cy.get('#btnModalAddRefPessoal').should('be.visible').and('have.attr', 'disabled');
   }
 
-  /**
-   * Clica para salvar Referência Financeira.
-   */
+  //Clica para salvar Referência Financeira.
   static clickSave() {
     cy.contains('button', 'Salvar').should('be.visible');
     cy.get('#btnModalAddRefPessoal').should('be.visible').and('not.have.attr', 'disabled');
     cy.get('#btnModalAddRefPessoal').click();
   }
 
-  /**
-   * Valida mensagem de sucesso após adicionar Referência Financeira.
-   */
+  //Valida mensagem de sucesso após adicionar Referência Financeira.
   static messRefFinanceAddedSucess() {
     cy.get('.toast-success').should('be.visible');
     cy.get('.toast-success > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Referência Financeira incluída com sucesso.');
   }
 
-  /**
-   * Valida informações adicionadas no cadastro de referência financeira.
-   */
+  //Valida informações adicionadas no cadastro de referência financeira.
   static infoRefFinanceAdded() {
     cy.get('.flex-gt-sm-70 > :nth-child(1) > .ng-binding').should('be.visible');
     cy.get('[ng-show="(item.planoexperiencia)"]').should('be.visible');

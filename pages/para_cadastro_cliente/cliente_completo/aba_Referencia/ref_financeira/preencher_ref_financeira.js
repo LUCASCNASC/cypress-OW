@@ -1,8 +1,5 @@
-import {
-  gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa,
-  gerarRelacionamento, gerarObservação
-} from '../../../../gerarDados';
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX'
+import {gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa,
+  gerarRelacionamento, gerarObservação} from '../../../../gerarDados';
 
 //Início exp. crédito
 function gerarDataReferenciaFinanceira() {
@@ -23,38 +20,28 @@ function gerarValorDuasCasasAposVirgula() {
   return valorFinal;
 }
 
-/**
- * Page Object para preenchimento dos campos de Referência Financeira.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para preenchimento dos campos de Referência Financeira.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class FillRefFinance {
-  /**
-   * Preenche o campo Início exp. crédito.
-   */
+  //Preenche o campo Início exp. crédito.
   static dateStart() {
     const data_inicio = gerarDataReferenciaFinanceira();
     cy.contains('Início exp. crédito').parent().find('input').type(data_inicio);
   }
 
-  /**
-   * Preenche o campo Local Experiência.
-   */
+  //Preenche o campo Local Experiência.
   static localExp() {
     const local_experiencia = gerarNomeEmpresa();
     cy.get('#txtLocExp').type(local_experiencia);
   }
 
-  /**
-   * Preenche o campo Plano experiência.
-   */
+  //Preenche o campo Plano experiência.
   static flatExp() {
     const plano_experiencia = '444';
     cy.get('#txtPlExp').type(plano_experiencia);
   }
 
-  /**
-   * Preenche o campo Valor prestação.
-   */
+  //Preenche o campo Valor prestação.
   static valuePrest() {
     const valor_prestacao = gerarValorDuasCasasAposVirgula();
     cy.get('#txtVlrPrest').type(valor_prestacao);

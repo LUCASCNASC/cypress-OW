@@ -1,13 +1,9 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarEmailAleatorio, gerarNomeEmpresa } from '../../gerarDados';
 
-/**
- * Page Object para preenchimento de campos do cliente simples.
- * Todos os métodos são estáticos para facilitar o uso direto.
- */
+//Page Object para preenchimento de campos do cliente simples.
+//Todos os métodos são estáticos para facilitar o uso direto.
 export class FillClientSimple {
-  /**
-   * Valida e preenche o campo Data de Nascimento.
-   */
+  //Valida e preenche o campo Data de Nascimento.
   static dateBirth() {
     cy.get(':nth-child(3) > .layout-xs-column > .md-block > .validaData > .md-datepicker-button')
       .should('be.visible')
@@ -17,45 +13,35 @@ export class FillClientSimple {
     cy.contains('Data de nascimento').parent().find('input').type("30/09/1998", { force: true });
   }
 
-  /**
-   * Preenche campo CPF.
-   */
+  //Preenche campo CPF.
   static cpfClient() {
     const cpf = gerarCpf();
     cy.get('label[for="txtCpf"]').should('have.text', 'CPF');
     cy.get('#txtCpf').should('be.visible').and('have.value', '').type(cpf, { force: true });
   }
 
-  /**
-   * Preenche campo CNPJ.
-   */
+  //Preenche campo CNPJ.
   static cnpjClient() {
     const cnpj = gerarCNPJ();
     cy.get('label[for="txtCNPJ"]').should('have.text', 'CNPJ');
     cy.get('#txtCNPJ').should('be.visible').and('have.value', '').type(cnpj, { force: true });
   }
 
-  /**
-   * Preenche campo Nome Completo para cliente CPF.
-   */
+  //Preenche campo Nome Completo para cliente CPF.
   static nameCompleteCPF() {
     const nomeCompleto = gerarNomeAleatorio();
     cy.get('label[for="txtNomeCompleto"]').should('have.text', 'Nome Completo');
     cy.get('#txtNomeCompleto').should('be.visible').and('have.value', '').type(nomeCompleto, { force: true });
   }
 
-  /**
-   * Preenche campo Nome Completo para cliente CNPJ.
-   */
+  //Preenche campo Nome Completo para cliente CNPJ.
   static nameCompleteCNPJ() {
     const nomeCompletoEmpresa = gerarNomeEmpresa();
     cy.get('label[for="txtNomeCompleto"]').should('have.text', 'Nome Completo');
     cy.get('#txtNomeCompleto').should('be.visible').and('have.value', '').wait(200).type(nomeCompletoEmpresa, { force: true });
   }
 
-  /**
-   * Seleciona sexo da pessoa física.
-   */
+  //Seleciona sexo da pessoa física.
   static sexPersonPhysical() {
     cy.get('.md-default-theme[ng-model="cliente.idtiposexo"]')
       .scrollIntoView()
@@ -65,9 +51,7 @@ export class FillClientSimple {
     cy.get('.md-text.ng-binding').contains('Masculino').click({ force: true });
   }
 
-  /**
-   * Preenche e pesquisa campo CEP.
-   */
+  //Preenche e pesquisa campo CEP.
   static searchCEP() {
     const CEPcadastro = "87065300";
     cy.get('label[for="txtCep"]').should('have.text', 'CEP');
@@ -78,18 +62,14 @@ export class FillClientSimple {
     cy.wait('@api_cidade_rota', { timeout: 40000 });
   }
 
-  /**
-   * Preenche campo Número do endereço.
-   */
+  //Preenche campo Número do endereço.
   static numberAdress() {
     const numero_rendereco = '66';
     cy.get('label[for="txtNumero"]').should('have.text', 'Número');
     cy.get('#txtNumero').should('be.visible').and('have.value', '').type(numero_rendereco, { force: true });
   }
 
-  /**
-   * Preenche o fluxo de rota no cadastro do cliente.
-   */
+  //Preenche o fluxo de rota no cadastro do cliente.
   static routeClient() {
     const rota = '560';
     cy.get('label[for="codigo_rota"]').should('have.text', 'Código da rota');
