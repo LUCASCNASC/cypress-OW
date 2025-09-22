@@ -1,7 +1,5 @@
 export class GroupReceipt {
-  /**
-   * Clica para NÃO agrupar lançamentos com o mesmo processo de recebimento.
-   */
+  //Clica para NÃO agrupar lançamentos com o mesmo processo de recebimento.
   static notGroupReleases() {
     cy.get('.md-title')
       .should('be.visible')
@@ -24,9 +22,7 @@ export class GroupReceipt {
     cy.get('.md-cancel-button').click();
   }
 
-  /**
-   * Clica para SIM agrupar lançamentos com o mesmo processo de recebimento.
-   */
+  //Clica para SIM agrupar lançamentos com o mesmo processo de recebimento.
   static groupReleases() {
     cy.get('.md-title')
       .should('be.visible')
@@ -45,9 +41,7 @@ export class GroupReceipt {
     cy.get('.md-confirm-button').click();
   }
 
-  /**
-   * Seleciona dois lançamentos com o mesmo processo de recebimento para clicar depois em AGRUPAR.
-   */
+  //Seleciona dois lançamentos com o mesmo processo de recebimento para clicar depois em AGRUPAR.
   static selectReleasesGroup() {
     // Primeiro lançamento
     cy.get('[ng-show="parcelamentoAutomaticoDisponivel"] > .md-subheader-inner > .md-subheader-content')
@@ -110,9 +104,7 @@ export class GroupReceipt {
       .click();
   }
 
-  /**
-   * Clica no botão AGRUPAR.
-   */
+  //Clica no botão AGRUPAR.
   static clickGroup() {
     cy.get('.layout-align-center-end > .flex-gt-sm-50 > .md-primary')
       .should('be.visible')
@@ -120,9 +112,7 @@ export class GroupReceipt {
       .click();
   }
 
-  /**
-   * Coloca o valor da primeira forma de pagamento no campo valor a parcelar.
-   */
+  //Coloca o valor da primeira forma de pagamento no campo valor a parcelar.
   static firstValueInstallment() {
     cy.contains('label', 'Valor a parcelar').should('be.visible');
     cy.get('.campoMoeda_valorAparcelar').clear().wait(200).type('40000');

@@ -1,9 +1,5 @@
-import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../gerarDados'
-
 export class Receipt {
-  /**
-   * Escolhe forma de pagamento 3860 (A Receber Futuro) do pedido de venda.
-   */
+  //Escolhe forma de pagamento 3860 (A Receber Futuro) do pedido de venda.
   static main() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('exist')
@@ -19,9 +15,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherFormaPagamentoPrincipal', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3862 (A Receber CDCI).
-   */
+  //Escolhe forma de pagamento 3862 (A Receber CDCI).
   static secondForm() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('exist')
@@ -37,9 +31,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherSegundaFormaPagamento', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3861 (A Receber À Vista).
-   */
+  //Escolhe forma de pagamento 3861 (A Receber À Vista).
   static cash() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('exist')
@@ -55,9 +47,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebAVista', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3865 (A Receber Futuro - Proposta).
-   */
+  //Escolhe forma de pagamento 3865 (A Receber Futuro - Proposta).
   static proposalCredit() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -73,9 +63,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherFormaPagaPropCredito', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3866 (A Receber Prestamista).
-   */
+  //Escolhe forma de pagamento 3866 (A Receber Prestamista).
   static withMoneylender() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -91,9 +79,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebComPrestamista', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3867 (A Receber Contrato Financeira).
-   */
+  //Escolhe forma de pagamento 3867 (A Receber Contrato Financeira).
   static contractFinance() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -109,9 +95,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebContratoFinanceira', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3868 (PIX TEF).
-   */
+  //Escolhe forma de pagamento 3868 (PIX TEF).
   static pixTEF() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -127,9 +111,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebPixTEF', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3870 (Crédito TEF).
-   */
+  //Escolhe forma de pagamento 3870 (Crédito TEF).
   static creditTEF() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -145,9 +127,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebCreditoTEF', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3871 (Débito POS).
-   */
+  //Escolhe forma de pagamento 3871 (Débito POS).
   static debitTEF() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -163,9 +143,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebDebitoPOS', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3872 (Crédito POS).
-   */
+  //Escolhe forma de pagamento 3872 (Crédito POS).
   static creditPOS() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -181,9 +159,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebCreditoPOS', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3873 (Cheque).
-   */
+  //Escolhe forma de pagamento 3873 (Cheque).
   static check() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -201,9 +177,7 @@ export class Receipt {
 
   // Prestamista Abatimento %
 
-  /**
-   * Escolhe forma de pagamento 3874 (Futuro Prestamista com juros).
-   */
+  //Escolhe forma de pagamento 3874 (Futuro Prestamista com juros).
   static futMoneyWithFees() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -220,9 +194,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaComJuros', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3875 (Presente CDCI Prestamista).
-   */
+  //Escolhe forma de pagamento 3875 (Presente CDCI Prestamista).
   static presentMoney() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -239,9 +211,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebPresentePrestamista', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3876 (Futuro Prestamista sem juros).
-   */
+  //Escolhe forma de pagamento 3876 (Futuro Prestamista sem juros).
   static futMoneyWithoutFees() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -260,9 +230,7 @@ export class Receipt {
 
   // Prestamista Valor Fixo
 
-  /**
-   * Escolhe forma de pagamento 3880 (Futuro com juros - Prestamista Valor Fixo).
-   */
+  //Escolhe forma de pagamento 3880 (Futuro com juros - Prestamista Valor Fixo).
   static futWithFeesMoneyRebVF() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -279,9 +247,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3878 (Presente CDCI - Prestamista Valor Fixo).
-   */
+  //Escolhe forma de pagamento 3878 (Presente CDCI - Prestamista Valor Fixo).
   static presentMoneyRebVF() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -298,9 +264,7 @@ export class Receipt {
     cy.wait('@api_pedido_forma_pagamento_escolherRecebFuturoPrestamistaSemJuros', { timeout: 40000 });
   }
 
-  /**
-   * Escolhe forma de pagamento 3879 (Futuro sem juros - Prestamista Valor Fixo).
-   */
+  //Escolhe forma de pagamento 3879 (Futuro sem juros - Prestamista Valor Fixo).
   static futWithoutRebVF() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -319,9 +283,7 @@ export class Receipt {
 
   // Prestamista Valor Fixo - Origem Produto
 
-  /**
-   * Escolhe forma de pagamento 3881 (Futuro com juros - Prestamista Origem Produto).
-   */
+  //Escolhe forma de pagamento 3881 (Futuro com juros - Prestamista Origem Produto).
   static futWithoutFeesRebOriginPrd() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')

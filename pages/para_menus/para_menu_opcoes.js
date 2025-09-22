@@ -1,7 +1,5 @@
 export class MenuOpcoes {
-  /**
-   * Valida e clica no menu de opções.
-   */
+  //Valida e clica no menu de opções.
   static iconeMenuOpcoes() {
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
       .should('be.visible')
@@ -9,25 +7,19 @@ export class MenuOpcoes {
     cy.get('[aria-label="Menu de opções"] > .ng-binding').click({ force: true });
   }
 
-  /**
-   * Valida o topo colorido da página.
-   */
+  //Valida o topo colorido da página.
   static topoPagina() {
     cy.get('.topo > .md-toolbar-tools').should('be.visible');
   }
 
-  /**
-   * Valida imagem no início do modal menu.
-   */
+  //Valida imagem no início do modal menu.
   static imageMenu() {
     cy.get('.md-primary > .logo > .md-default-theme > img')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Valida ícone do computador e busca produto após sair do pedido web.
-   */
+  //Valida ícone do computador e busca produto após sair do pedido web.
   static iconeComputadorLogin() {
     cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
       .should('be.visible')
@@ -36,9 +28,7 @@ export class MenuOpcoes {
     cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
   }
 
-  /**
-   * Valida e clica na opção Início do menu de opções.
-   */
+  //Valida e clica na opção Início do menu de opções.
   static inicioOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/home.svg"]')
       .scrollIntoView()
@@ -51,9 +41,7 @@ export class MenuOpcoes {
       .click({ force: true });
   }
 
-  /**
-   * Valida e clica na opção Departamentos do menu de opções.
-   */
+  //Valida e clica na opção Departamentos do menu de opções.
   static departamentoOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/departamentos.svg"]')
       .scrollIntoView()
@@ -68,9 +56,7 @@ export class MenuOpcoes {
       .and('contain', 'Departamentos');
   }
 
-  /**
-   * Valida e clica na opção Serviços do menu de opções.
-   */
+  //Valida e clica na opção Serviços do menu de opções.
   static servicosOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/services.svg"]')
       .scrollIntoView()
@@ -85,9 +71,7 @@ export class MenuOpcoes {
       .and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Valida e clica na opção Pedidos Pendentes do menu de opções.
-   */
+  //Valida e clica na opção Pedidos Pendentes do menu de opções.
   static pedidosPendentesOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/pedido.svg"]')
       .scrollIntoView()
@@ -102,9 +86,7 @@ export class MenuOpcoes {
       .and('contain', 'PEDIDOS PENDENTES');
   }
 
-  /**
-   * Valida e clica na opção Cliente do menu de opções.
-   */
+  //Valida e clica na opção Cliente do menu de opções.
   static clienteOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/cliente.svg"]')
       .scrollIntoView()
@@ -117,9 +99,7 @@ export class MenuOpcoes {
     cy.get('.md-default').should('exist').and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Valida e clica na opção Cliente Completo do menu de opções.
-   */
+  //Valida e clica na opção Cliente Completo do menu de opções.
   static clienteCompletoOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/cliente_completo.svg"]')
       .scrollIntoView()
@@ -132,9 +112,7 @@ export class MenuOpcoes {
     cy.get('#menu_items_pri > .on').should('exist').and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Valida e clica na opção Pós Venda do menu de opções.
-   */
+  //Valida e clica na opção Pós Venda do menu de opções.
   static posVendaOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/pos-venda.svg"]')
       .scrollIntoView()
@@ -147,9 +125,7 @@ export class MenuOpcoes {
     cy.get('.header').should('be.visible');
   }
 
-  /**
-   * Valida e clica na opção Intenção de compra do menu de opções.
-   */
+  //Valida e clica na opção Intenção de compra do menu de opções.
   static intencaoCompraOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/intencao.svg"]')
       .scrollIntoView()
@@ -162,9 +138,7 @@ export class MenuOpcoes {
     cy.get('.header').should('be.visible');
   }
 
-  /**
-   * Valida e clica na opção Proposta de crédito do menu de opções.
-   */
+  //Valida e clica na opção Proposta de crédito do menu de opções.
   static propostaCreditoOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/aprovacao_credito.svg"]')
       .scrollIntoView()
@@ -177,9 +151,7 @@ export class MenuOpcoes {
     cy.get('.header').should('be.visible');
   }
 
-  /**
-   * Valida e clica na opção Configurações do menu de opções.
-   */
+  //Valida e clica na opção Configurações do menu de opções.
   static configuracoesOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/settings.svg"]')
       .scrollIntoView()
@@ -192,9 +164,7 @@ export class MenuOpcoes {
     cy.get('ui-view.ng-scope > :nth-child(2)').should('be.visible');
   }
 
-  /**
-   * Valida e clica na opção Minha performance do menu de opções.
-   */
+  //Valida e clica na opção Minha performance do menu de opções.
   static minhaPerformanceOpcaoMenu() {
     cy.get('md-icon[md-svg-src="images/icons/performance.svg"]')
       .scrollIntoView()
@@ -207,9 +177,7 @@ export class MenuOpcoes {
     cy.get('.header').should('be.visible');
   }
 
-  /**
-   * Valida e clica na opção Sair (fora do menu de opções).
-   */
+  //Valida e clica na opção Sair (fora do menu de opções).
   static botaoSair() {
     cy.get('.rodape > ._md-button-wrap > div.md-button > .md-no-style')
       .should('be.visible')

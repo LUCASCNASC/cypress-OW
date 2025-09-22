@@ -1,7 +1,5 @@
 export class ThrowDelivery {
-  /**
-   * Arrasta botão de Retirada / Entrega do primeiro produto.
-   */
+  //Arrasta botão de Retirada / Entrega do primeiro produto.
   static freightFirst() {
     cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-container')
       .scrollIntoView()
@@ -18,9 +16,7 @@ export class ThrowDelivery {
       .click({ force: true });
   }
 
-  /**
-   * Arrasta botão de Retirada / Entrega do segundo produto.
-   */
+  //Arrasta botão de Retirada / Entrega do segundo produto.
   static freightSecond() {
     cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
       .scrollIntoView()
@@ -31,9 +27,7 @@ export class ThrowDelivery {
       .click({ force: true });
   }
 
-  /**
-   * Arrasta botão de Retirada / Entrega do terceiro produto.
-   */
+  //Arrasta botão de Retirada / Entrega do terceiro produto.
   static freightThird() {
     cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-label')
       .scrollIntoView()

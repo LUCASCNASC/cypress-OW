@@ -1,7 +1,5 @@
 export class ThrowAssembly {
-  /**
-   * Arrasta botão de Montagem do primeiro produto.
-   */
+  //Arrasta botão de Montagem do primeiro produto.
   static fisrt() {
     cy.get('.produto-nome > .valor > .md-auto-horizontal-margin > .md-container > .md-bar')
       .scrollIntoView()
@@ -18,9 +16,7 @@ export class ThrowAssembly {
       .click({ force: true });
   }
 
-  /**
-   * Arrasta botão de Montagem do segundo produto.
-   */
+  //Arrasta botão de Montagem do segundo produto.
   static second() {
     cy.get(':nth-child(3) > .md-whiteframe-2dp > :nth-child(3) > .produto-nome > .valor > .md-auto-horizontal-margin > .md-container > .md-bar')
       .scrollIntoView()

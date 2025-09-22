@@ -1,7 +1,5 @@
 export class ProcessSale {
-  /**
-   * Seleciona processo de venda 9860 NFe
-   */
+  //Seleciona processo de venda 9860 NFe
   static NFe() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
     cy.get('#select_listbox_12').should('be.visible').scrollTo('center');
@@ -9,9 +7,7 @@ export class ProcessSale {
     cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
   }
 
-  /**
-   * Seleciona processo de venda 9869 Exclusiva NFe
-   */
+  //Seleciona processo de venda 9869 Exclusiva NFe
   static exclusive() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
     cy.get('#select_listbox_12').should('be.visible').scrollTo('center');
@@ -19,9 +15,7 @@ export class ProcessSale {
     cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
   }
 
-  /**
-   * Seleciona processo de venda entrega futura 9862 normal - NFe
-   */
+  //Seleciona processo de venda entrega futura 9862 normal - NFe
   static deliveryFutureNFe() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
     cy.get('#select_listbox_12').should('be.visible').scrollTo('center');
@@ -29,9 +23,7 @@ export class ProcessSale {
     cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
   }
 
-  /**
-   * Seleciona processo de venda financeiro baixa 9863 normal - NFe
-   */
+  //Seleciona processo de venda financeiro baixa 9863 normal - NFe
   static financePaymentNFe() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
     cy.get('#select_listbox_12').should('be.visible').scrollTo('center');
@@ -39,9 +31,7 @@ export class ProcessSale {
     cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
   }
 
-  /**
-   * Seleciona processo de venda 9888 - serviços avulsos NFe
-   */
+  //Seleciona processo de venda 9888 - serviços avulsos NFe
   static saleServiceLoose() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
     cy.get('#select_listbox_12').should('be.visible').scrollTo('bottom').wait(200);
@@ -49,9 +39,7 @@ export class ProcessSale {
     cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
   }
 
-  /**
-   * Seleciona processo de venda 9890 - Negociável NFCe
-   */
+  //Seleciona processo de venda 9890 - Negociável NFCe
   static NFCe() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
     cy.get('#select_listbox_12').should('be.visible').scrollTo('bottom');
@@ -59,9 +47,7 @@ export class ProcessSale {
     cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
   }
 
-  /**
-   * Seleciona processo de venda entrega futura 9891 normal - NFCe
-   */
+  //Seleciona processo de venda entrega futura 9891 normal - NFCe
   static deliveryFutureNFCe() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
     cy.get('#select_listbox_12').should('be.visible').scrollTo('bottom').wait(200);
@@ -69,9 +55,7 @@ export class ProcessSale {
     cy.get('.md-select-backdrop').wait(200).dblclick().wait(200);
   }
 
-  /**
-   * Seleciona processo de venda financeiro baixa 9892 normal - NFCe
-   */
+  //Seleciona processo de venda financeiro baixa 9892 normal - NFCe
   static financePaymentNFCe() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();
     cy.get('#select_listbox_12').should('be.visible').scrollTo('bottom').wait(200);

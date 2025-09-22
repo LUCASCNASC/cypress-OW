@@ -1,9 +1,7 @@
 import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../gerarDados'
 
 export class GeneralPayment {
-  /**
-   * Carregamento do modal Forma de pagamento.
-   */
+  //Carregamento do modal Forma de pagamento.
   static loadingFormPayment() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -13,9 +11,7 @@ export class GeneralPayment {
       .and('not.be.disabled');
   }
 
-  /**
-   * Clica no botão "GERAR PARCELAS".
-   */
+  //Clica no botão "GERAR PARCELAS".
   static clickGenerateInstallments() {
     cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista');
     cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento');
@@ -29,17 +25,13 @@ export class GeneralPayment {
     cy.wait('@api_modal_forma_pagamento', { timeout: 40000 });
   }
 
-  /**
-   * Clica no botão "GERAR PARCELAS" ao alterar a data de vencimento.
-   */
+  //Clica no botão "GERAR PARCELAS" ao alterar a data de vencimento.
   static clickGenerateInstallAlterDue() {
     cy.wait(2000);
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({ force: true });
   }
 
-  /**
-   * Preenche pagamento de entrada.
-   */
+  //Preenche pagamento de entrada.
   static chooseEntryFormPayment() {
     cy.get('[ng-show="carrinho.getValorParcelamento() > 0"] > .btn-rounded > .layout-wrap > :nth-child(1) > md-list.md-default-theme > .padding-0 > .md-list-item-text > p')
       .should('exist')
@@ -70,9 +62,7 @@ export class GeneralPayment {
       .click({ force: true });
   }
 
-  /**
-   * Clica no botão "GERAR PAGAMENTO".
-   */
+  //Clica no botão "GERAR PAGAMENTO".
   static clickGeneratePayment() {
     cy.get('.white > .layout-align-center-center > .md-primary')
       .should('be.visible')
@@ -81,9 +71,7 @@ export class GeneralPayment {
       .click({ force: true });
   }
 
-  /**
-   * No campo 1º vencimento, coloca o dia de amanhã.
-   */
+  //No campo 1º vencimento, coloca o dia de amanhã.
   static insertDateTomorrow1Due() {
     const data_hoje = umDiaAposHoje();
     cy.get('.gerar-parcelas > .layout-wrap')
@@ -95,9 +83,7 @@ export class GeneralPayment {
       .type(data_hoje);
   }
 
-  /**
-   * No campo 1º vencimento, coloca 31 dias após hoje.
-   */
+  //No campo 1º vencimento, coloca 31 dias após hoje.
   static insertDate31Days1Due() {
     const data_31_dias = trintaUmDiasAposHoje();
     cy.get('.gerar-parcelas > .layout-wrap')

@@ -1,16 +1,12 @@
 export class GeneralDelivery {
-  /**
-   * Clica no campo transportadora e escolhe a transportadora.
-   */
+  //Clica no campo transportadora e escolhe a transportadora.
   static chooseTransporter() {
     cy.get('.progressbar').scrollIntoView().wait(200);
     cy.get('[name="transportadora"]').click({ force: true }).wait(300);
     cy.get('span[md-highlight-text="transpAutoCompleteSearchText"]').contains('1').click();
   }
 
-  /**
-   * Escolhe rota completa, rota maringá.
-   */
+  //Escolhe rota completa, rota maringá.
   static chooseRoute() {
     cy.get('.rota-frete > .md-icon-right > .ng-binding').scrollIntoView().click({ force: true });
     cy.wait(400);
@@ -22,9 +18,7 @@ export class GeneralDelivery {
     cy.wait(200);
   }
 
-  /**
-   * Valida modal de inconsistências - rota e transportadora.
-   */
+  //Valida modal de inconsistências - rota e transportadora.
   static modalInconsRouteTransporter() {
     cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -52,9 +46,7 @@ export class GeneralDelivery {
       .click({ force: true });
   }
 
-  /**
-   * Valida modal de inconsistências - apenas transportadora.
-   */
+  //Valida modal de inconsistências - apenas transportadora.
   static modalInconsOnlyTransporter() {
     cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -78,9 +70,7 @@ export class GeneralDelivery {
       .click({ force: true });
   }
 
-  /**
-   * Valida modal de inconsistências - apenas rota.
-   */
+  //Valida modal de inconsistências - apenas rota.
   static modalInconsOnlyRoute() {
     cy.get('.md-dialog-fullscreen > :nth-child(1) > .md-toolbar-tools > .flex')
       .should('be.visible')
