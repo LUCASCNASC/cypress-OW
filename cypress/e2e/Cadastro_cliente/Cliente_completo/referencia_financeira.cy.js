@@ -23,7 +23,7 @@ describe('Cadastrar cliente completo', () => {
 
     context('Cadastro de cliente completo - incluindo referencia financeira', () => {
 
-        it('15. Cliente completo CPF - caminho feliz', () => {
+        it('1. Cliente completo CPF - caminho feliz', () => {
 
             GeneralClientComplete.iconMenuOptions()
             GeneralClientComplete.optionClientComplete()
@@ -33,9 +33,7 @@ describe('Cadastrar cliente completo', () => {
             FillPerson.dataNascimento()
             FillPerson.sexClient()
             ClickClientComplete.saveClient()
-            
             GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
-
             GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
             GeneralAdress.clickAddNewAdress()
             GeneralAdress.tipoEndereco()
@@ -44,18 +42,15 @@ describe('Cadastrar cliente completo', () => {
             FillAdress.typeAdress()
             FillAdress.cepAdress()
             FillAdress.numberAdress()
-
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
             GeneralRefRoute.modalRouteEmptyValidade()
             FillRefRoute.typeAdressRoute()
             FillRefRoute.routaComplete()
             FillRefRoute.infoRouteAdded()
-
             GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
             GeneralRefPhone.clickAddedNewPhone()
             GeneralRefPhone.modalPhoneEmptyValidade()
@@ -65,7 +60,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefPhone.clickSavePhone()
             GeneralRefPhone.infoPhoneAdded()
             GeneralRefPhone.messPhoneAddedSucess()
-
             ClickClientComplete.abaReferences() //REFERENCIA
             GeneralRefFinance.clickEmpty() //CADASTRAR REFERENCIA FINANCEIRA
             GeneralRefFinance.validateAbaEmpty()

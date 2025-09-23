@@ -33,9 +33,7 @@ describe('Cadastrar cliente completo', () => {
             FillPerson.dateBirth()
             FillPerson.sexClient()
             ClickClientComplete.saveClient()
-            
             GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
-
             GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
             GeneralAdress.clickAddNewAdress()
             GeneralAdress.modalAdressEmptyValidade()
@@ -45,14 +43,12 @@ describe('Cadastrar cliente completo', () => {
             FillAdress.numberAdress()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
             GeneralRefRoute.modalRouteEmptyValidade()
             FillRefRoute.typeAdressRoute()
             FillRefRoute.routaComplete()
             FillRefRoute.infoRouteAdded()
-
             GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
             GeneralRefPhone.clickAddedNewPhone()
             GeneralRefPhone.modalPhoneEmptyValidade()
@@ -62,7 +58,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefPhone.clickSavePhone()
             GeneralRefPhone.infoPhoneAdded()
             GeneralRefPhone.messPhoneAddedSucess()
-
             ClickClientComplete.saveClient()
             GeneralClientComplete.modalWaitingLoading()
             GeneralClientComplete.messRegisterSaveSucess()
@@ -74,16 +69,13 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.optionClientComplete()
             ClickClientComplete.saveClient() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
             GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
-
             FillPerson.cpfClient()
             FillPerson.nameComplete()
             FillPerson.nameSocial()
             FillPerson.dateBirth()
             FillPerson.sexClient()
-
             ClickClientComplete.saveClient() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
             ClickClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
-
             GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
             GeneralAdress.clickAddNewAdress()
             GeneralAdress.clickOpenTypeAdress()
@@ -94,18 +86,15 @@ describe('Cadastrar cliente completo', () => {
             FillAdress.typeAdress()
             FillAdress.cepAdress()
             FillAdress.numberAdress()
-
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
             GeneralRefRoute.modalRouteEmptyValidade()
             FillRefRoute.typeAdressRoute()
             FillRefRoute.routaComplete()
             FillRefRoute.infoRouteAdded()
-
             GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
             GeneralRefPhone.clickAddedNewPhone()
             GeneralRefPhone.modalPhoneEmptyValidade()
@@ -115,7 +104,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefPhone.clickSavePhone()
             GeneralRefPhone.infoPhoneAdded()
             GeneralRefPhone.messPhoneAddedSucess()
-
             ClickClientComplete.saveClient()
             GeneralClientComplete.modalWaitingLoading()
             GeneralClientComplete.messRegisterSaveSucess()
@@ -128,10 +116,8 @@ describe('Cadastrar cliente completo', () => {
             FillPerson.cnpjClient() //PESSOA
             FillPerson.nameCNPJ()
             FillPerson.nameFantasyCNPJ()
-
             ClickClientComplete.saveClient() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
             GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
-
             GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
             GeneralAdress.clickAddNewAdress()
             GeneralAdress.tipoEndereco()
@@ -141,18 +127,15 @@ describe('Cadastrar cliente completo', () => {
             FillAdress.typeAdress()
             FillAdress.cepAdress()
             FillAdress.numberAdress()
-
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
             GeneralRefRoute.modalRouteEmptyValidade()
             FillRefRoute.typeAdressRoute()
             FillRefRoute.routaComplete()
             FillRefRoute.infoRouteAdded()
-
             GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
             GeneralRefPhone.clickAddedNewPhone()
             GeneralRefPhone.modalPhoneEmptyValidade()
@@ -162,7 +145,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefPhone.clickSavePhone()
             GeneralRefPhone.infoPhoneAdded()
             GeneralRefPhone.messPhoneAddedSucess()
-
             ClickClientComplete.saveClient()
             GeneralClientComplete.modalWaitingLoading()
             GeneralClientComplete.messRegisterSaveSucess()
@@ -181,7 +163,6 @@ describe('Cadastrar cliente completo', () => {
             FillPerson.dateBirth()
             FillPerson.sexClient()
             ClickClientComplete.saveClient()
-
             GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
             GeneralAdress.clickAddNewAdress()
             GeneralAdress.tipoEndereco()
@@ -190,18 +171,15 @@ describe('Cadastrar cliente completo', () => {
             FillAdress.typeAdress()
             FillAdress.cepAdress()
             FillAdress.numberAdress()
-
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
             GeneralRefRoute.modalRouteEmptyValidade()
             FillRefRoute.typeAdressRoute()
             FillRefRoute.routaComplete()
             FillRefRoute.infoRouteAdded()
-
             GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
             GeneralRefPhone.clickAddedNewPhone()
             GeneralRefPhone.modalPhoneEmptyValidade()
@@ -211,11 +189,9 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefPhone.clickSavePhone()
             GeneralRefPhone.infoPhoneAdded()
             GeneralRefPhone.messPhoneAddedSucess()
-
             ClickClientComplete.saveClient()
             GeneralClientComplete.modalWaitingLoading()
             GeneralClientComplete.messRegisterSaveSucess()
-
             ClickClientComplete.menuRegisterClientComplete()
             GeneralAnexo.clickAbaAttachment() //CADASTRAR ANEXO 
             GeneralAnexo.validateAbaAttachmentEmpty()
@@ -224,7 +200,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralAnexo.confirmSendFile()
             GeneralAnexo.messAttachmentAddSucess()
             GeneralAnexo.validateAttachmentAdded()
-            
             ClickClientComplete.saveClient()
             GeneralClientComplete.messRegisterSaveSucess()
         })

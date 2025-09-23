@@ -46,7 +46,6 @@ describe('Cadastrar cliente simples', () => {
             FillClientSimple.routeClient()
             GeneralClientSimple.saveClientSimple()
             GeneralClientSimple.messFirstRegistSaveSucess()
-
             GeneralClientSimple.iconMenuOptions() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             GeneralClientSimple.optionClientSimple()
 
@@ -90,7 +89,6 @@ describe('Cadastrar cliente simples', () => {
             FillClientSimple.routeClient()
             GeneralClientSimple.saveClientSimple()
             GeneralClientSimple.messFirstRegistSaveSucess()
-            
             GeneralClientSimple.iconMenuOptions() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             GeneralClientSimple.optionClientSimple()
 
@@ -141,10 +139,8 @@ describe('Cadastrar cliente simples', () => {
             FillClientSimple.routeClient()
             GeneralClientSimple.saveClientSimple()
             GeneralClientSimple.messFirstRegistSaveSucess()
-
             GeneralClientSimple.iconMenuOptions()
             GeneralClientSimple.clickOutSystem()
-
             GeneralClientSimple.loginAgain()
             GeneralClientSimple.iconMenuOptions()
             GeneralClientSimple.optionClientSimple()

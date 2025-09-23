@@ -32,9 +32,7 @@ describe('Cadastrar cliente completo', () => {
             FillPerson.dateBirth()
             FillPerson.sexClient()
             ClickClientComplete.saveClient()
-            
             GeneralClientComplete.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
-
             GeneralAdress.clickAbaAdress() //CADASTRAR ENDEREÇO
             GeneralAdress.clickAddNewAdress()
             GeneralAdress.tipoEndereco()
@@ -43,19 +41,16 @@ describe('Cadastrar cliente completo', () => {
             FillAdress.typeAdress()
             FillAdress.cepAdress()
             FillAdress.numberAdress()
-
             GeneralClientComplete.buttonSaveDisabled()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.clickSaveAdress()
             GeneralAdress.infoAdressAdded()
-
             GeneralRefRoute.clickAbaRoute() //CADASTRAR ROTA
             GeneralRefRoute.clickAddedNewRoute()
             GeneralRefRoute.modalRouteEmptyValidade()
             FillRefRoute.typeAdressRoute()
             FillRefRoute.routaComplete()
             FillRefRoute.infoRouteAdded()
-
             GeneralRefPhone.clickAbaPhone() //CADASTRAR TELEFONE
             GeneralRefPhone.clickAddedNewPhone()
             GeneralRefPhone.modalPhoneEmptyValidade()
@@ -65,7 +60,6 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefPhone.clickSavePhone()
             GeneralRefPhone.infoPhoneAdded()
             GeneralRefPhone.messPhoneAddedSucess()
-
             GeneralEmployment.clickAbaEmployment() //CADASTRAR EMPREGATÍCIO
             GeneralEmployment.validateAbaEmploymentEmpty()
             GeneralEmployment.clickAddNewEmployment()
