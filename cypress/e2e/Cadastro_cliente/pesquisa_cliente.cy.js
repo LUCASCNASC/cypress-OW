@@ -12,7 +12,7 @@ describe('Cadastrar cliente', () => {
 
     context('Pesquisa cliente por número', () => {
 
-        it('1-Pesquisa por número CPF', () => {
+        it('Pesquisa por número CPF', () => {
     
             SearchClient.fillCPF()
             SearchClient.clickGlassSearchClient()
@@ -23,7 +23,7 @@ describe('Cadastrar cliente', () => {
             SearchClient.numberDescripCPFSearch()
         }) 
 
-        it('2-Pesquisa por número CNPJ', () => {
+        it('Pesquisa por número CNPJ', () => {
 
             SearchClient.fillCNPJ()
             SearchClient.clickGlassSearchClient()
@@ -38,7 +38,7 @@ describe('Cadastrar cliente', () => {
 
     context('Pesquisa cliente por descrição', () => {
 
-        it('3-Pesquisa por descrição CPF', () => {
+        it('Pesquisa por descrição CPF', () => {
 
             SearchClient.fillDescripCPF()
             SearchClient.clickGlassSearchClient()
@@ -49,7 +49,7 @@ describe('Cadastrar cliente', () => {
             SearchClient.numberDescripCPFSearch()
         }) 
 
-        it('4-Pesquisa por descrição CNPJ', () => {
+        it('Pesquisa por descrição CNPJ', () => {
 
             SearchClient.typeAgainDescriptCNPJ()
             SearchClient.clickGlassSearchClient()
