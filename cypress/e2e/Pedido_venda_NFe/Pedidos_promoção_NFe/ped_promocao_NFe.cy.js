@@ -24,7 +24,7 @@ describe('Gerar pedidos com promoção', () => {
   
     context('Sem entrega/ com promoção/ processo 9860 - caminho feliz', () => {
 
-        it('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it('Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             Product.promoMatch() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -44,7 +44,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.validateOrderGenerated()
         })
     
-        it('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it('Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             Product.promoDeadlineEntry() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -70,7 +70,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.validateOrderGenerated()
         })
     
-        it('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it('Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             Product.promoDeadlineInstallment() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -93,7 +93,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Sem entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
 
-        it('4. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             Product.promoMatch() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -128,7 +128,7 @@ describe('Gerar pedidos com promoção', () => {
             // cy.validateOrderGenerated()
         })
 
-        it('5. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             Product.promoDeadlineEntry() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -164,7 +164,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Com entrega /com promoção/ processo 9860 - caminho feliz', () => {
 
-        it('6. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it('Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             Product.promoMatch() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -188,7 +188,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.validateOrderGenerated()
         })
     
-        it('7. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it('Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             Product.promoDeadlineEntry() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -226,7 +226,7 @@ describe('Gerar pedidos com promoção', () => {
             // cy.validateOrderGenerated()
         })
 
-        it('8. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it('Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             Product.promoDeadlineInstallment() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -254,7 +254,7 @@ describe('Gerar pedidos com promoção', () => {
 
     context('Com entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
 
-        it('9. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             Product.promoMatch() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

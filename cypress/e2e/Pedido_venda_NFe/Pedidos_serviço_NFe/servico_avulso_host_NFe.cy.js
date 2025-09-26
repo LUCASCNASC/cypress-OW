@@ -20,7 +20,7 @@ describe('Venda de serviço avulso Host - 104', () => {
 
     context('Processo 9888 - caminho feliz', () => {
 
-        it('1. Venda de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
+        it('Venda de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
             OrderServiceLoose.iconMenuOptions()
             OrderServiceLoose.clickServiceMenu()

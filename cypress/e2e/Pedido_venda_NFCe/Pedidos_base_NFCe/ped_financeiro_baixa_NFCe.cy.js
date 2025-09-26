@@ -23,7 +23,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
     
     context('Com entrega/ processo 9892 - caminho feliz', () => {
 
-        it('1. Ped venda: produto 1860 0 0', () => {
+        it('Ped venda: produto 1860 0 0', () => {
                       
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -45,7 +45,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             cy.validateOrderGenerated()
         })
 
-        it('2. Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
                 
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

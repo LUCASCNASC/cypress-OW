@@ -24,7 +24,7 @@ describe('Gerar pedidos com Garantia', () => {
 
     context('Sem entrega/processo 9860 - caminho feliz', () => {
 
-        it('1. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -45,7 +45,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('2. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -74,7 +74,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
     
-        it('3. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -95,7 +95,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('4. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -124,7 +124,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
     
-        it('5. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -145,7 +145,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('6. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -177,7 +177,7 @@ describe('Gerar pedidos com Garantia', () => {
 
     context('Com entrega/processo 9860 - caminho feliz', () => {
 
-        it('7. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -198,7 +198,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('8. Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -226,7 +226,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('9. Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que não separa título)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -247,7 +247,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('10. Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -275,7 +275,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('11. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -296,7 +296,7 @@ describe('Gerar pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('12. Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('Ped venda: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
