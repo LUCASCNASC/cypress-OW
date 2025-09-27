@@ -23,7 +23,7 @@ describe('Cadastrar cliente completo', () => {
 
     context('Cadastro de cliente completo - básico ', () => {
 
-        it('Cliente completo CPF', () => {
+        it('1.Cliente completo CPF', () => {
 
             GeneralClientComplete.iconMenuOptions() //PESSOA
             GeneralClientComplete.optionClientComplete()
@@ -63,7 +63,7 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.messRegisterSaveSucess()
         })  
 
-        it('Cliente completo CPF - mensagem de campos obrigatórios', () => {
+        it('2.Cliente completo CPF - mensagem de campos obrigatórios', () => {
     
             GeneralClientComplete.iconMenuOptions()
             GeneralClientComplete.optionClientComplete()
@@ -109,7 +109,7 @@ describe('Cadastrar cliente completo', () => {
             GeneralClientComplete.messRegisterSaveSucess()
         })  
 
-        it('Cliente completo CNPJ', () => {
+        it('3.Cliente completo CNPJ', () => {
     
             GeneralClientComplete.iconMenuOptions()
             GeneralClientComplete.optionClientComplete() 
@@ -153,7 +153,7 @@ describe('Cadastrar cliente completo', () => {
 
     context('Cadastro de cliente completo - incluindo anexo após salvar o cadastro de cliente', () => {
 
-        it('Cliente completo CPF - caminho feliz', () => {
+        it('4.Cliente completo CPF - caminho feliz', () => {
 
             GeneralClientComplete.iconMenuOptions()
             GeneralClientComplete.optionClientComplete() 

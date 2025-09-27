@@ -15,7 +15,7 @@ describe('Logar com novo usuário', () => {
         Login.userTextIcon()
     })
 
-    it('Novo usuário - clicar em Fechar, não alterando a senha', () => {
+    it('1.Novo usuário - clicar em Fechar, não alterando a senha', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')
@@ -206,7 +206,7 @@ describe('Logar com novo usuário', () => {
         Login.iconComputerLogin() //Validando que não entrou no sistema
     })
 
-    it('Novo usuário - clicar em CONFIRMAR, alterando a senha', () => {
+    it('2.Novo usuário - clicar em CONFIRMAR, alterando a senha', () => {
     
         //Validando campo "informe seu usuário"
         cy.get('#txtusername')

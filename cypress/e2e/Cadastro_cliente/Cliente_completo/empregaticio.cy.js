@@ -22,7 +22,7 @@ describe('Cadastrar cliente completo', () => {
 
     context('Cadastro de cliente completo - incluindo Empregatício', () => {
 
-        it('Cliente completo CPF - caminho feliz', () => {
+        it('1.Cliente completo CPF - caminho feliz', () => {
 
             GeneralClientComplete.iconMenuOptions()
             GeneralClientComplete.optionClientComplete()
