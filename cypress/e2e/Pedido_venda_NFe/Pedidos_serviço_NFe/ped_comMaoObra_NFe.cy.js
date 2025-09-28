@@ -24,7 +24,7 @@ describe('Gerar pedidos com Mão de obra', () => {
   
     context('Sem entrega/processo 9860 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título', () => {
+        it('1.Pedido: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -45,7 +45,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('2.Pedido: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -74,7 +74,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
     
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
+        it('3.Pedido: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -95,7 +95,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('4.Pedido: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -124,7 +124,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
     
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
+        it('5.Pedido: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
 
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -145,7 +145,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('6.Pedido: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -177,7 +177,7 @@ describe('Gerar pedidos com Mão de obra', () => {
 
     context('Com entrega/processo 9860 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título)', () => {
+        it('7.Pedido: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -198,7 +198,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
         
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('8.Pedido: produto 1860 0 0 (com Mão de Obra que Destaca e Não separa título) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -226,7 +226,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
+        it('9.Pedido: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -247,7 +247,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('10.Pedido: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título no Mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -275,7 +275,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
+        it('11.Pedido: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -296,7 +296,7 @@ describe('Gerar pedidos com Mão de obra', () => {
             cy.validarPedvalidateOrderGeneratedGerado()
         })
 
-        it('Ped venda: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('12.Pedido: produto 1860 0 0 (com Mão de Obra que Não destaca e Separa título em processo Diferente) e produto 1870 0 0 (sem serviço)', () => {
     
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

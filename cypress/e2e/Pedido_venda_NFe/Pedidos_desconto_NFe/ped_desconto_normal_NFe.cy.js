@@ -23,7 +23,7 @@ describe('Gerar pedido de venda com desconto', () => {
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('Ped venda: produto 1912 0 0 com desconto Sub (-) / R$', () => {
+        it('1.Pedido: produto 1912 0 0 com desconto Sub (-) / R$', () => {
 
             Product.discountNumber() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -46,7 +46,7 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
+        it('2.Pedido: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
 
             Product.discountPercentage() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -69,7 +69,7 @@ describe('Gerar pedido de venda com desconto', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
+        it('3.Pedido: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
 
             Product.discountValueFixed() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

@@ -22,7 +22,7 @@ describe('Gerar pedido de entrega futura', () => {
 
     context('Sem entrega/ processo 9862 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0', () => {
+        it('1.Pedido: produto 1860 0 0', () => {
                       
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -42,7 +42,7 @@ describe('Gerar pedido de entrega futura', () => {
             cy.validateOrderGenerated()
         })
         
-        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
               
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -73,7 +73,7 @@ describe('Gerar pedido de entrega futura', () => {
     
     context('Com entrega/ processo 9862 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0', () => {
+        it('3.Pedido: produto 1860 0 0', () => {
              
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -93,7 +93,7 @@ describe('Gerar pedido de entrega futura', () => {
             cy.validateOrderGenerated()
         })    
         
-        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('4.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                    
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

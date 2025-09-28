@@ -23,7 +23,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
   
     context('Sem entrega/ processo 9863 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0', () => {
+        it('1.Pedido: produto 1860 0 0', () => {
                  
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -43,7 +43,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
               
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -74,7 +74,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
     
     context('Com entrega/ processo 9863 - caminho feliz', () => {
 
-        it('Ped venda: produto 1860 0 0', () => {
+        it('3.Pedido: produto 1860 0 0', () => {
                 
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -94,7 +94,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produtos 1860 0 0 e 1870 0 0', () => {
+        it('4.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                  
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

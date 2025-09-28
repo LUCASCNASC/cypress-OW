@@ -23,7 +23,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
 
     context('Com entrega/ processo 9890 - caminho feliz', () => {
 
-        it('Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
+        it('1.Pedido: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
             Product.cdFirst() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -45,7 +45,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
+        it('2.Pedido: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
             
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

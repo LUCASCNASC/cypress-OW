@@ -19,7 +19,7 @@ describe('Venda de serviço avulso', () => {
 
     context('Processo 9888 - caminho feliz', () => {
 
-        it('Venda de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
+        it('1.Pedido de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
             OrderServiceLoose.productServiceLoose() //PRODUTO
             OrderServiceLoose.chooseServiceSearch()

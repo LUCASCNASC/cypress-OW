@@ -22,7 +22,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {
 
-        it('Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
+        it('1.Pedido: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
 
             Product.cdFirst() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -42,7 +42,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
+        it('2.Pedido: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
 
             Product.cdFirst() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -73,7 +73,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
 
     context('Com entrega/ processo 9860 - caminho feliz', () => {
 
-        it('Ped venda: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
+        it('3.Pedido: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
             
             Product.cdFirst() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -93,7 +93,7 @@ describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Pa
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
+        it('4.Pedido: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
             
             Product.fisrt() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

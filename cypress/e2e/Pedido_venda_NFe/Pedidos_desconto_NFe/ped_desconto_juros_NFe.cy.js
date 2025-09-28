@@ -23,7 +23,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
     context('Sem entrega/ processo 9860 - caminho feliz - processo de inclusão 3860', () => {
 
-        it('Ped venda: produto 1860 0 0 - arredondar para baixo', () => {
+        it('1.Pedido: produto 1860 0 0 - arredondar para baixo', () => {
 
             Product.roundUpDown() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
@@ -47,7 +47,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             cy.validateOrderGenerated()
         })
 
-        it('Ped venda: produtos 1860 0 0 - arredondar para cima', () => {
+        it('2.Pedido: produtos 1860 0 0 - arredondar para cima', () => {
 
             Product.roundUpDown() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO

@@ -24,7 +24,7 @@ describe('Gerar pedido normal com entrega', () => {
     
     context('Com entrega/processo 9890 - caminho feliz', () => {
         
-        it('Ped venda: kit 1862 0 0', () => {
+        it('1.Pedido: kit 1862 0 0', () => {
                 
             Product.kitFirst()
             ValidateBalance.withBalance() //VALIDAR SALDO
