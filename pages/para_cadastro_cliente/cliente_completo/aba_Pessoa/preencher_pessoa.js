@@ -1,4 +1,4 @@
-import {gerarCpf,gerarNomeAleatorio,gerarCNPJ,gerarNomeEmpresa} from '../../../gerarDados';
+import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa } from '../../../gerarDados';
 
 //Page Object para preenchimento do cadastro de pessoa.
 //Todos os métodos são estáticos para facilitar o uso direto sem instanciação.

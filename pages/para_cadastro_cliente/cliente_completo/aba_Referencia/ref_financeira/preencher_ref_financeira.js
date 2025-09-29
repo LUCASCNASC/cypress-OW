@@ -1,5 +1,4 @@
-import {gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa,
-  gerarRelacionamento, gerarObservação} from '../../../../gerarDados';
+import { gerarNomeEmpresa } from '../../../../gerarDados';
 
 //Início exp. crédito
 function gerarDataReferenciaFinanceira() {

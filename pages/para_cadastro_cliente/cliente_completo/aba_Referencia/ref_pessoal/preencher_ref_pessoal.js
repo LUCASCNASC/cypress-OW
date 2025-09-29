@@ -1,5 +1,3 @@
-import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada } from '../../../../gerarDadosPIX';
-
 //Page Object para preenchimento dos campos de Referência Pessoal.
 //Todos os métodos são estáticos para facilitar o uso direto.
 export class FillRefGuys {

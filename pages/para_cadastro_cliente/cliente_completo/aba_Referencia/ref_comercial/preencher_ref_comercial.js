@@ -1,4 +1,4 @@
-import {gerarEmailAleatorio, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarObservação} from '../../../../gerarDados';
+import { gerarEmailAleatorio, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarObservação } from '../../../../gerarDados';
 
 //Page Object para preenchimento dos campos de Referência Comercial.
 //Todos os métodos são estáticos para facilitar o uso direto.

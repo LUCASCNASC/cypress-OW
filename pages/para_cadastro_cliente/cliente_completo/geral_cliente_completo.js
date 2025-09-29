@@ -1,6 +1,3 @@
-import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarCNPJ, gerarTelefoneAleatorio, gerarNomeEmpresa } from '../../gerarDados';
-import { gerarChavePixTelefone } from '../../gerarDadosPIX';
-
 //Page Object para validações e ações do cadastro de cliente completo.
 //Todos os métodos são estáticos para facilitar o uso direto.
 export class GeneralClientComplete {
