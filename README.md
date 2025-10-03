@@ -62,3 +62,5 @@ Este projeto está sob a licença MIT.
 ---
 
 > Feito com 💚 por [LUCASCNASC](https://github.com/LUCASCNASC)
+
+Juntar todos os pages de serviços em apenas um arquivo.
