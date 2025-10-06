@@ -1,11 +1,10 @@
 import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { Service } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 import { OrderServiceLoose } from '../../../../pages/para_pedidos/para_servicos_avulsos.js'
-import { Service } from '../../../../pages/para_pedidos/servicos/apenas_servicos.js'
+import { Service, ValidateService } from '../../../../pages/para_pedidos/servicos/servicos.js'
 
 
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
