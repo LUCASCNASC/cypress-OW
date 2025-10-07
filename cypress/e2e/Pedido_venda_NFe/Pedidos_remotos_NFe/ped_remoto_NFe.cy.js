@@ -2,7 +2,7 @@ import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_v
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Product } from '../../../../pages/produtos/prd_normal.js'
 import { Service, ValidateService } from '../../../../pages/para_pedidos/servicos/servicos.js'
-import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
+import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar_normal.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
 import { GeneralOrder } from '../../../../pages/para_pedidos/gerais_pedidos.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'

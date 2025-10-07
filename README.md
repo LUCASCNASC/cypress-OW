@@ -61,6 +61,6 @@ Este projeto está sob a licença MIT.
 
 ---
 
-> Feito com 💚 por [LUCASCNASC](https://github.com/LUCASCNASC)
+> Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
 
 - Melhorar a performance dos testes, deixando-os mais leves.
