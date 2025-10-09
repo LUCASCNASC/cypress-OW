@@ -64,3 +64,4 @@ Este projeto está sob a licença MIT.
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
 
 - Melhorar a performance dos testes, deixando-os mais leves.
+- Otimizar cenários de teste.
