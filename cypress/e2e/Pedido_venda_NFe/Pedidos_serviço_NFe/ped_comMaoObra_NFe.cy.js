@@ -1,6 +1,6 @@
 import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
-import { Product } from '../../../../pages/produtos/prd_normal.js'
+import { Product } from '../../../../pages/produtos/produtos.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar_normal.js'
 import { ThrowDelivery, ThrowAssembly } from '../../../../pages/para_pedidos/entrega/tirar_entrega_montagem.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'

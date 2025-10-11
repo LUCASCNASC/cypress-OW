@@ -1,4 +1,56 @@
 /**
+ * Page Object para testes de produtos exclusivos (produtos especiais no fluxo de venda).
+ */
+export class ProductExclusiva {
+  static firstNormal() {
+    const produto = '1896';
+    cy.intercept('GET', /\/consultaprodutos\/.*1896.*/).as('apiConsultaProdutos_primeiroPrdNormalExclusiva');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_primeiroPrdNormalExclusiva', { timeout: 40000 });
+  }
+
+  static kitWithoutBalanceScheduling() {
+    const produto = '1900';
+    cy.intercept('GET', /\/consultaprodutos\/.*1900.*/).as('apiConsultaProdutos_kitSemSaldoAgendamento');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('have.value', '').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_kitSemSaldoAgendamento', { timeout: 40000 });
+  }
+
+  static kitVolumes() {
+    const produto = '1903';
+    cy.intercept('GET', /\/consultaprodutos\/.*1903.*/).as('apiConsultaProdutos_kitVolumes');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('have.value', '').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_kitVolumes', { timeout: 40000 });
+  }
+
+  static balanceReceive() {
+    const produto = '1905';
+    cy.intercept('GET', /\/consultaprodutos\/.*1905.*/).as('apiConsultaProdutos_produtoSaldoReceber');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_produtoSaldoReceber', { timeout: 40000 });
+  }
+
+  static balanceReceiveTwoLines() {
+    const produto = '1906';
+    cy.intercept('GET', /\/consultaprodutos\/.*1906.*/).as('apiConsultaProdutos_prdSaldoReceberDuasLinhas');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_prdSaldoReceberDuasLinhas', { timeout: 40000 });
+  }
+}
+
+/**
  * Page Object para testes de produtos normais.
  */
 export class Product {
@@ -192,5 +244,80 @@ export class Product {
     cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
     cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
     cy.wait('@apiConsultaProdutos_prd4PrazoParcela', { timeout: 40000 });
+  }
+}
+
+/**
+ * Page Object para testes de produtos com promoção prestamista (abatimento).
+ */
+export class ProductPromo {
+  static termInstallmentPrest() {
+    const produto = '1918';
+    cy.intercept('GET', /\/consultaprodutos\/.*1918.*/).as('apiConsultaProdutos_PromoPrazoParcelaPrest');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_PromoPrazoParcelaPrest', { timeout: 40000 });
+  }
+
+  static secondTermInstallmentPrest() {
+    const produto = '1919';
+    cy.intercept('GET', /\/consultaprodutos\/.*1919.*/).as('apiConsultaProdutos_SegPromoPrazoParcelaPrest');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_SegPromoPrazoParcelaPrest', { timeout: 40000 });
+  }
+
+  static matchPrest() {
+    const produto = '1920';
+    cy.intercept('GET', /\/consultaprodutos\/.*1920.*/).as('apiConsultaProdutos_PromoPartidaPrest');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_PromoPartidaPrest', { timeout: 40000 });
+  }
+
+  static thirdTermInstallmentPrest() {
+    const produto = '1921';
+    cy.intercept('GET', /\/consultaprodutos\/.*1921.*/).as('apiConsultaProdutos_TerPromoPrazoParcelaPrest');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_TerPromoPrazoParcelaPrest', { timeout: 40000 });
+  }
+
+  static termFisrtPrestAbatVF() {
+    const produto = '1922';
+    cy.intercept('GET', /\/consultaprodutos\/.*1922.*/).as('apiConsultaProdutos_PromoPrazoPrestPrimeiroAbatVF');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_PromoPrazoPrestPrimeiroAbatVF', { timeout: 40000 });
+  }
+
+  static termSecondPrestAbatVF() {
+    const produto = '1923';
+    cy.intercept('GET', /\/consultaprodutos\/.*1923.*/).as('apiConsultaProdutos_PromoPrazoPrestSegAbatVF');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_PromoPrazoPrestSegAbatVF', { timeout: 40000 });
+  }
+
+  static termThirdPrestAbatVF() {
+    const produto = '1924';
+    cy.intercept('GET', /\/consultaprodutos\/.*1924.*/).as('apiConsultaProdutos_PromoPrazoPrestTercAbatVF');
+    cy.get('#searchText').clear().wait(100).should('have.value', '');
+    cy.get('#searchText').should('be.visible').and('not.be.disabled');
+    cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
+    cy.get('#searchText').type(produto).wait(100).should('have.value', produto);
+    cy.wait('@apiConsultaProdutos_PromoPrazoPrestTercAbatVF', { timeout: 40000 });
   }
 }

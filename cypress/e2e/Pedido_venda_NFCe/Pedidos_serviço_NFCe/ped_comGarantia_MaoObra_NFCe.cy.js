@@ -1,6 +1,6 @@
 import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { ChooseClient } from '../../../../pages/para_pedidos/cliente/cliente.js'
-import { Product } from '../../../../pages/produtos/prd_normal.js'
+import { Product } from '../../../../pages/produtos/produtos.js'
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar_normal.js'
 import { GeneralDelivery } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
