@@ -1,4 +1,4 @@
-import { FillClientSimple, GeneralClientSimple } from '../../../pages/para_cadastro_cliente/cliente_simples/cliente_simples';
+import { FillClientSimple, GeneralClientSimple } from '../../../pages/para_cadastro_cliente/cliente_simples';
 import { gerarCpf }  from '../../support/gerarDados';
 
 const Numeroalteracao = '113'
