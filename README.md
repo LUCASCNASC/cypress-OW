@@ -62,3 +62,5 @@ Este projeto está sob a licença MIT.
 ---
 
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
+
+Propor melhorias em relação a performance.
