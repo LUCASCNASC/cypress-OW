@@ -60,5 +60,4 @@ Fique à vontade para abrir issues, sugerir melhorias ou enviar pull requests.
 Este projeto está sob a licença MIT.
 
 ---
-
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
