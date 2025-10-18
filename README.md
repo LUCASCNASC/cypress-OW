@@ -62,5 +62,3 @@ Este projeto está sob a licença MIT.
 ---
 
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
-
-- Criar métodos para melhorar a performance
