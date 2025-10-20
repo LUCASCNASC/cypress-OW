@@ -50,7 +50,6 @@ cypress-OW/
   ```bash
   npx cypress run
   ```
-
 ## 📝 Contribuição
 
 Fique à vontade para abrir issues, sugerir melhorias ou enviar pull requests.
