@@ -25,7 +25,6 @@ cypress-OW/
 ├── package.json            # Dependências e scripts do projeto
 └── README.md               # Este arquivo
 ```
-
 ## ⚙️ Instalação
 
 1. **Clone o repositório:**
@@ -33,19 +32,16 @@ cypress-OW/
    git clone https://github.com/LUCASCNASC/cypress-OW.git
    cd cypress-OW
    ```
-
 2. **Instale as dependências:**
    ```bash
    npm install
    ```
-
 ## 🧪 Executando os Testes
 
 - **Abrir o Cypress em modo interativo:**
   ```bash
   npx cypress open
   ```
-
 - **Executar os testes em modo headless:**
   ```bash
   npx cypress run
