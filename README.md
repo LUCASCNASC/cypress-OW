@@ -56,3 +56,5 @@ Este projeto está sob a licença MIT.
 
 ---
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
+
+- It's necessary to update packages.
