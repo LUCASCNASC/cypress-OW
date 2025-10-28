@@ -29,6 +29,6 @@ cypress/videos
 cypress/screenshots
 js/*.js
 cypress.config.js
-
+.env
 
 cypress/fixtures/local.json

@@ -1,5 +1,6 @@
-/* eslint-disale no unused-vars */
-/* eslint-disale no unudef */
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const { defineConfig } = require("cypress");
 
@@ -13,7 +14,7 @@ module.exports = defineConfig({
     logging: true,
     uploadAttachments: true
   },
-   baseUrl: 'http://confidencial.com/',
+   baseUrl: process.env.BASE_URL || 'http://default-url.com',
     setupNodeEvents(on, config) {
       //; implement node event listeners here
     },
