@@ -1,5 +1,5 @@
 import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { AdvanceNormal } from '../../../../pages/para_pedidos/botoes/avancar_normal.js'
+import { AdvanceNormal } from '../../../../pages/para_pedidos/avancar_normal.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
