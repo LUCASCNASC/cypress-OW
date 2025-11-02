@@ -1,4 +1,4 @@
-import { Login } from '../../../pages/para_logins/para_login'
+import { Login } from '../../pages/LoginPage.js';
 
 const usunovo = "testtest"; //494
 const senhausunovo = "!MV87gsp";

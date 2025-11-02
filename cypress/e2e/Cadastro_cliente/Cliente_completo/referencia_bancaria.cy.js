@@ -1,4 +1,4 @@
-import { GeneralClientComplete, ClickClientComplete } from '../../../../pages/para_cadastro_cliente/cliente_completo/cliente_completo';
+import { GeneralClientComplete, ClickClientComplete } from '../../../pages/para_cadastro_cliente/cliente_completo/ClienteCompletoPage.js';
 import { FillPerson } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/preencher_pessoa';
 import { GeneralRefBanking } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/geral_ref_bancaria';
 import { FillRefBanking } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_bancaria/preencher_ref_bancaria';

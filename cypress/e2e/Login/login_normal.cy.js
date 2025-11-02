@@ -1,4 +1,4 @@
-import { Login } from '../../pages/LoginPage'
+import { Login } from '../../pages/LoginPage.js';
 
 const usuSabiumAutomacao = "sabium.automacao"; //usuário ERP Sabium (contexto 1)
 const senhaautomacao = "123.automacao"; //senha usuário ERP Sabium (contexto 1)
