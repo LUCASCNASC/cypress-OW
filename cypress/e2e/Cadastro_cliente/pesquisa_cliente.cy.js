@@ -1,4 +1,4 @@
-import { SearchClient } from '../../pages/para_cadastro_cliente/PesquisaClientePage.js'
+import { SearchClient } from '../../pages/cadastro_cliente/PesquisaClientePage.js'
 
 describe('Cadastrar cliente', () => {
 

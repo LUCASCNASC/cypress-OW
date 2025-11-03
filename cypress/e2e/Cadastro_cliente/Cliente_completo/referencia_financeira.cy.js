@@ -1,5 +1,5 @@
-import { GeneralClientComplete, ClickClientComplete } from '../../../pages/para_cadastro_cliente/cliente_completo/ClienteCompletoPage.js';
-import { FillPerson } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Pessoa/preencher_pessoa';
+import { GeneralClientComplete, ClickClientComplete } from '../../../pages/cadastro_cliente/cliente_completo/ClienteCompletoPage.js';
+import { FillPerson } from '../../../pages/cadastro_cliente/cliente_completo/aba_Pessoa/PessoaPage.js';
 import { GeneralRefFinance } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/geral_ref_financeira';
 import { FillRefFinance } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/preencher_ref_financeira';
 import { GeneralRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/geral_rota';

@@ -56,3 +56,7 @@ Este projeto está sob a licença MIT.
 
 ---
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
+
+Necessário ajustar arquivos de PageObject de cliente completo e os caminhos nos arquivos de teste.
+- ClienteCompletoPage OK
+- aba_Pessoa          OK
