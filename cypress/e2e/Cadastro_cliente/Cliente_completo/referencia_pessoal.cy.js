@@ -6,9 +6,7 @@ import { GeneralRefRoute } from '../../../../pages/para_cadastro_cliente/cliente
 import { FillRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/preencher_rota';
 import { GeneralRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/geral_telefone';
 import { FillRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/preencher_telefone';
-import { GeneralAdress } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/geral_endereco';
-import { FillAdress } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/preencher_endereco';
-
+import { GeneralAdress, FillAdress } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
 describe('Cadastrar cliente completo', () => {
 

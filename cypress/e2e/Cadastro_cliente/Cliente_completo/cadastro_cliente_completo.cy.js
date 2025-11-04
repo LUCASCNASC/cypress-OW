@@ -1,13 +1,11 @@
 import { GeneralClientComplete, ClickClientComplete } from '../../../pages/cadastro_cliente/cliente_completo/ClienteCompletoPage.js';
-import { GeneralAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/geral_anexo';
-import { FillFieldAnexo } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Anexo/preencher_anexo';
+import { GeneralAnexo, FillFieldAnexo } from '../../../pages/cadastro_cliente/cliente_completo/aba_Anexo/AnexoPage.js';
 import { FillPerson } from '../../../pages/cadastro_cliente/cliente_completo/aba_Pessoa/PessoaPage.js';
 import { GeneralRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/geral_rota';
 import { FillRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/preencher_rota';
 import { GeneralRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/geral_telefone';
 import { FillRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/preencher_telefone';
-import { GeneralAdress } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/geral_endereco';
-import { FillAdress } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_endereco/preencher_endereco';
+import { GeneralAdress, FillAdress } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
 
 describe('Cadastrar cliente completo', () => {

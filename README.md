@@ -60,3 +60,5 @@ Este projeto está sob a licença MIT.
 Necessário ajustar arquivos de PageObject de cliente completo e os caminhos nos arquivos de teste.
 - ClienteCompletoPage OK
 - aba_Pessoa          OK
+- aba_Anexo           OK
+- aba_Endereco        OK
