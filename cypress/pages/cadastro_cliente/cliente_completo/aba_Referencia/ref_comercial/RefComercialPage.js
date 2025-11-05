@@ -1,5 +1,4 @@
-//Page Object para operações e validações relacionadas à aba Referência Comercial.
-//Todos os métodos são estáticos para facilitar o uso direto.
+import { gerarEmailAleatorio, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarObservação } from '../../../../gerarDados';
 export class GeneralRefCommercial {
   //Valida e clica na aba Comercial em Referências.
   static clickAbaRefCommercial() {
@@ -67,5 +66,37 @@ export class GeneralRefCommercial {
     cy.get('[ng-show="(item.contato)"]').should('be.visible');
     cy.get('[ng-show="(item.telefone)"]').should('be.visible');
     cy.get('[ng-show="(item.email)"]').should('be.visible');
+  }
+}
+
+export class FillRefCommercial {
+  //Preenche o campo Empresa.
+  static enterprise() {
+    const empresa = gerarNomeEmpresa();
+    cy.get('#txtEmpresaRefCom').type(empresa);
+  }
+
+  //Preenche o campo Contato.
+  static contact() {
+    const contato = gerarTelefoneAleatorio();
+    cy.get('#txtContatoRefCom').type(contato);
+  }
+
+  //Preenche o campo Telefone.
+  static phone() {
+    const telefone = gerarTelefoneAleatorio();
+    cy.get('#txtTelefoneRefCom').type(telefone);
+  }
+
+  //Preenche o campo Email.
+  static email() {
+    const email = gerarEmailAleatorio();
+    cy.get('#txtEmailRefCom').type(email);
+  }
+
+  //Preenche o campo Observação.
+  static observation() {
+    const observacao = gerarObservação();
+    cy.get('#txtObsRefCom').type(observacao);
   }
 }

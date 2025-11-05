@@ -1,11 +1,8 @@
 import { GeneralClientComplete, ClickClientComplete } from '../../../pages/cadastro_cliente/cliente_completo/ClienteCompletoPage.js';
 import { FillPerson } from '../../../pages/cadastro_cliente/cliente_completo/aba_Pessoa/PessoaPage.js';
-import { GeneralRefFinance } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/geral_ref_financeira';
-import { FillRefFinance } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/preencher_ref_financeira';
-import { GeneralRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/geral_rota';
-import { FillRefRoute } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Rota/preencher_rota';
-import { GeneralRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/geral_telefone';
-import { FillRefPhone } from '../../../../pages/para_cadastro_cliente/cliente_completo/aba_Telefone/preencher_telefone';
+import { GeneralRefFinance, FillRefFinance } from '../../../pages/cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/RefFinanceiraPage.js';
+import { GeneralRefRoute, FillRefRoute } from '../../../pages/cadastro_cliente/cliente_completo/aba_Rota/RotaPage.js';
+import { GeneralRefPhone, FillRefPhone } from '../../../pages/cadastro_cliente/cliente_completo/aba_Telefone/TelefonePage.js';
 import { GeneralAdress, FillAdress } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
 describe('Cadastrar cliente completo', () => {

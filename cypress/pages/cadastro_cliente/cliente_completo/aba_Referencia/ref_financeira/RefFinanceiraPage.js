@@ -1,4 +1,4 @@
-//------referencia financeira - funções de geração de dados
+import { gerarNomeEmpresa } from '../../../../gerarDados';
 
 //Início exp. crédito
 function gerarDataReferenciaFinanceira() {
@@ -87,5 +87,31 @@ export class GeneralRefFinance {
     cy.get('[ng-show="(item.localexperiencia)"]').should('be.visible');
     cy.get('.layout-align-gt-sm-center-end > .list-title > b').should('be.visible');
     cy.get('.layout-align-gt-sm-center-end > .list-title').should('be.visible');
+  }
+}
+
+export class FillRefFinance {
+  //Preenche o campo Início exp. crédito.
+  static dateStart() {
+    const data_inicio = gerarDataReferenciaFinanceira();
+    cy.contains('Início exp. crédito').parent().find('input').type(data_inicio);
+  }
+
+  //Preenche o campo Local Experiência.
+  static localExp() {
+    const local_experiencia = gerarNomeEmpresa();
+    cy.get('#txtLocExp').type(local_experiencia);
+  }
+
+  //Preenche o campo Plano experiência.
+  static flatExp() {
+    const plano_experiencia = '444';
+    cy.get('#txtPlExp').type(plano_experiencia);
+  }
+
+  //Preenche o campo Valor prestação.
+  static valuePrest() {
+    const valor_prestacao = gerarValorDuasCasasAposVirgula();
+    cy.get('#txtVlrPrest').type(valor_prestacao);
   }
 }

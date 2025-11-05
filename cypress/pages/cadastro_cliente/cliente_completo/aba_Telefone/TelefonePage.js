@@ -1,5 +1,4 @@
-//Page Object para operações e validações relacionadas à aba Telefone.
-//Todos os métodos são estáticos para facilitar o uso direto.
+import { gerarTelefoneAleatorio } from '../../../gerarDados';
 export class GeneralRefPhone {
   //Valida e clica na aba Telefone.
   static clickAbaPhone() {
@@ -60,5 +59,25 @@ export class GeneralRefPhone {
     cy.get('.toast-success').should('be.visible');
     cy.get(':nth-child(1) > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Telefone incluído com sucesso.');
+  }
+}
+
+export class FillRefPhone {
+  //Seleciona o tipo de telefone "Padrão".
+  static typePhone() {
+    cy.get('#txtTpTel').click({ force: true });
+    cy.get('.md-text.ng-binding').contains('Padrão').click({ force: true });
+  }
+
+  //Preenche o campo Número no cadastro de telefone.
+  static numberPhone() {
+    const numero_telefone = gerarTelefoneAleatorio();
+    cy.get('#txtNumTel').type(numero_telefone);
+  }
+
+  //Preenche o campo Ramal no cadastro de telefone.
+  static ramalPhone() {
+    const ramal_telefone = "435";
+    cy.get('#txtRamalTel').type(ramal_telefone);
   }
 }
