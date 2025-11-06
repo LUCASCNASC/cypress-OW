@@ -58,7 +58,5 @@ Este projeto está sob a licença MIT.
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
 
 Necessário ajustar arquivos de PageObject de cliente completo e os caminhos nos arquivos de teste.
-- ClienteCompletoPage OK
-- aba_Pessoa          OK
-- aba_Anexo           OK
-- aba_Endereco        OK
+Falta apenas os Pedidos
+- geral_entrega e tirar_entrega_montagem foi colcodo no EntregaPage
