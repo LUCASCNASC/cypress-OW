@@ -60,3 +60,4 @@ Este projeto está sob a licença MIT.
 Necessário ajustar arquivos de PageObject de cliente completo e os caminhos nos arquivos de teste.
 Falta apenas os Pedidos
 - geral_entrega e tirar_entrega_montagem foi colcodo no EntregaPage
+- Ajustar caminhis de EntregaPage, PromocaoPage e ServicosPage.
