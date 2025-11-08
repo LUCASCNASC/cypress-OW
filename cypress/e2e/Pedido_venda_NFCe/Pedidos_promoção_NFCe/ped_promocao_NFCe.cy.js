@@ -4,7 +4,7 @@ import { Product } from '../../../../pages/produtos/produtos.js'
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Service, ValidateService } from '../../../../pages/para_pedidos/servicos/servicos.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/avancar_normal.js'
-import { GeneralDelivery } from '../../../../pages/para_pedidos/entrega/geral_entrega.js'
+import { GeneralDelivery } from '../../../pages/para_pedidos/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { Promotion } from '../../../../pages/para_pedidos/promocao/promocao.js'
 

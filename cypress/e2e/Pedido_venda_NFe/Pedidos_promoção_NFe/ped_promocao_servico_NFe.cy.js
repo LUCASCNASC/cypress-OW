@@ -3,7 +3,7 @@ import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_sa
 import { Product } from '../../../../pages/produtos/produtos.js'
 import { Service, ValidateService } from '../../../../pages/para_pedidos/servicos/servicos.js'
 import { AdvanceNormal } from '../../../../pages/para_pedidos/avancar_normal.js'
-import { ThrowDelivery, ThrowAssembly } from '../../../../pages/para_pedidos/entrega/tirar_entrega_montagem.js'
+import { GeneralDelivery, ThrowDelivery, ThrowAssembly } from '../../../pages/para_pedidos/EntregaPage.js'
 import { ReceiptPromotion } from '../../../../pages/para_pedidos/processos/processo_recebimento_promo.js'
 import { Promotion } from '../../../../pages/para_pedidos/promocao/promocao.js'
 import { TicketPrestamista } from '../../../../pages/para_pedidos/validar_tela/prestamista.js'
