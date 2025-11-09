@@ -6,7 +6,7 @@ import { GeneralDelivery, ThrowDelivery, ThrowAssembly } from '../../../pages/pa
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { Service, ValidateService } from '../../../../pages/para_pedidos/servicos/servicos.js'
+import { Service, ValidateService } from '../../../pages/para_pedidos/ServicosPage.js'
 
 describe('Gerar pedidos com Garantia e Mão de Obra', () => {
 
