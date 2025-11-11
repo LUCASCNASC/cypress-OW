@@ -6,7 +6,7 @@ import { Service, ValidateService } from '../../../pages/para_pedidos/ServicosPa
 import { AdvanceNormal } from '../../../pages/para_pedidos/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/para_pedidos/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
-import { Promotion } from '../../../../pages/para_pedidos/promocao/promocao.js'
+import { Promotion } from '../../../pages/para_pedidos/PromocaoPage.js'
 
 describe('Gerar pedidos com promoção com entrega', () => {
 

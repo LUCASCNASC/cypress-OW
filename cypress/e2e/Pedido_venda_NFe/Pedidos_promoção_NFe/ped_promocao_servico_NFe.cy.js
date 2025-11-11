@@ -8,7 +8,7 @@ import { ReceiptPromotion } from '../../../../pages/para_pedidos/processos/proce
 import { Promotion } from '../../../../pages/para_pedidos/promocao/promocao.js'
 import { TicketPrestamista } from '../../../../pages/para_pedidos/validar_tela/prestamista.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { Promotion } from '../../../../pages/para_pedidos/promocao/promocao.js'
+import { Promotion } from '../../../pages/para_pedidos/PromocaoPage.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
 
