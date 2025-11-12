@@ -4,9 +4,9 @@ import { GeneralDelivery, ThrowDelivery, ThrowAssembly } from '../../../pages/pa
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { PedExclusiva } from '../../../../pages/para_pedidos/para_pedidos_exclusiva.js'
+import { PedExclusiva } from '../../../pages/para_pedidos/PedidoExclusivaPage.js'
 import { Product, ProductExclusiva } from '../../../../pages/produtos/produtos.js'
-import { GeneralOrder } from '../../../../pages/para_pedidos/gerais_pedidos.js'
+import { GeneralOrder } from '../../../pages/para_pedidos/GeraisPedidosPage.js'
 import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Service, ValidateService } from '../../../pages/para_pedidos/ServicosPage.js'
 

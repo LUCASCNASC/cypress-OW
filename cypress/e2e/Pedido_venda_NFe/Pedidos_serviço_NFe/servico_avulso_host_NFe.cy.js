@@ -3,7 +3,7 @@ import { AdvanceNormal } from '../../../pages/para_pedidos/AvancarPage.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { OrderServiceLoose } from '../../../../pages/para_pedidos/para_servicos_avulsos.js'
+import { OrderServiceLoose } from '../../../pages/para_pedidos/ServicosAvulsosPage.js'
 
 //Para este cenário, é necessário fazer update na coluna dataultimaatualizacao, da tabela glb.servicofaixavalorfixo
 describe('Venda de serviço avulso Host - 104', () => {

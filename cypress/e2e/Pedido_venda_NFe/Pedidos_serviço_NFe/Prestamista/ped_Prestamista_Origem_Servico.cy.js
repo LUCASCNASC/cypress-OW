@@ -9,7 +9,8 @@ import { ReceiptPromotion } from '../../../../../pages/para_pedidos/processos/pr
 import { Service, ValidateService } from '../../../../pages/para_pedidos/ServicosPage.js'
 import { Promotion } from '../../../../pages/para_pedidos/PromocaoPage.js'
 import { TicketPrestamista } from '../../../../../pages/para_pedidos/validar_tela/prestamista.js'
-import { GeneralOrder } from '../../../../pages/para_pedidos/gerais_pedidos.js'
+import { GeneralOrder } from '../../../../pages/para_pedidos/GeraisPedidosPage.js'
+
 
 describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem Serviço (162)', () => {
 

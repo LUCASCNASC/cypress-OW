@@ -8,7 +8,7 @@ import { GeneralDelivery } from '../../../pages/para_pedidos/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { GeneralOrder } from '../../../../pages/para_pedidos/gerais_pedidos.js'
+import { GeneralOrder } from '../../../pages/para_pedidos/GeraisPedidosPage.js'
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
