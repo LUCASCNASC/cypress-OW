@@ -1,6 +1,6 @@
-import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
+import { ProcessSale } from '../../../../pages/pedido/processos/processo_venda.js'
 import { Product } from '../../../../pages/produtos/produtos.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { ValidarSaldo } from '../../../../pages/pedido/saldo/validar_saldo.js'
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 

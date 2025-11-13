@@ -1,12 +1,12 @@
-import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { ValidateBalance } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+import { ProcessSale } from '../../../../pages/pedido/processos/processo_venda.js'
+import { ValidateBalance } from '../../../../pages/pedido/saldo/validar_saldo.js'
 import { Product } from '../../../../pages/produtos/produtos.js'
-import { Service, ValidateService } from '../../../pages/para_pedidos/ServicosPage.js'
-import { AdvanceNormal } from '../../../pages/para_pedidos/AvancarPage.js'
-import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { GeneralOrder } from '../../../pages/para_pedidos/GeraisPedidosPage.js'
-import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
-import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
+import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
+import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
+import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
+import { GeneralOrder } from '../../../pages/pedido/GeraisPedidosPage.js'
+import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
+import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
 
 //verificar todos
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {

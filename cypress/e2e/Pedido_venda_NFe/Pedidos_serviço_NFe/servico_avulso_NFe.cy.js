@@ -1,9 +1,9 @@
-import { ProcessSale } from '../../../../pages/para_pedidos/processos/processo_venda.js'
-import { AdvanceNormal } from '../../../pages/para_pedidos/AvancarPage.js'
-import { GeneralPayment } from '../../../../pages/para_pedidos/pagamento/geral_pagamento.js'
-import { ChooseInstallmentReceipt } from '../../../../pages/para_pedidos/pagamento/parcelas.js'
-import { Receipt } from '../../../../pages/para_pedidos/processos/processo_recebimento.js'
-import { OrderServiceLoose } from '../../../pages/para_pedidos/ServicosAvulsosPage.js'
+import { ProcessSale } from '../../../../pages/pedido/processos/processo_venda.js'
+import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
+import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
+import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
+import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
+import { OrderServiceLoose } from '../../../pages/pedido/ServicosAvulsosPage.js'
 
 describe('Venda de serviço avulso', () => {
 
