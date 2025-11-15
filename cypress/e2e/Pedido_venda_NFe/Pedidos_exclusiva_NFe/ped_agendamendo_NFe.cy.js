@@ -1,14 +1,14 @@
 import { ProcessSale } from '../../../../pages/pedido/processos/processo_venda.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
-import { GeneralDelivery, ThrowDelivery, ThrowAssembly } from '../../../pages/pedido/EntregaPage.js'
+import { GeneralDelivery, ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
 import { PedExclusiva } from '../../../pages/pedido/PedidoExclusivaPage.js'
-import { Product, ProductExclusiva } from '../../../../pages/produtos/produtos.js'
+import { ProductExclusiva } from '../../../pages/ProdutoPage'
 import { GeneralOrder } from '../../../pages/pedido/GeraisPedidosPage.js'
 import { ValidateBalance } from '../../../../pages/pedido/saldo/validar_saldo.js'
-import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
+import { Service } from '../../../pages/pedido/ServicosPage.js'
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {

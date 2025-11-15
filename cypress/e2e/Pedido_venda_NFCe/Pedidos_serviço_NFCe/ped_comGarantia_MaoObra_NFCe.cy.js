@@ -1,13 +1,12 @@
 import { ProcessSale } from '../../../../pages/pedido/processos/processo_venda.js'
-import { ChooseClient } from '../../../../pages/pedido/cliente/cliente.js'
-import { Product } from '../../../../pages/produtos/produtos.js'
+import { Product } from '../../../pages/ProdutoPage'
 import { ValidateBalance } from '../../../../pages/pedido/saldo/validar_saldo.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
-import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
+import { Service } from '../../../pages/pedido/ServicosPage.js'
 
 describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
 
