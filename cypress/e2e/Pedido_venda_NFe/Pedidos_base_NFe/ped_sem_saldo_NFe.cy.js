@@ -1,6 +1,5 @@
-import { ProcessSale } from '../../../../pages/pedido/processos/processo_venda.js'
-import { Product } from '../../../pages/ProdutoPage'
-import { ValidarSaldo } from '../../../../pages/pedido/saldo/validar_saldo.js'
+import { ProcessSale } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
+import { Product, ValidateBalance } from '../../../pages/ProdutoPage'
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -19,7 +18,7 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
         it('1.Pedido: produto 1869 0 0 (Venda local de produto sem saldo - sem entrega)', () => {
             
             Product.withoutBalance() //PRODUTO
-            ValidarSaldo.comSaldo() //VALIDAR SALDO
+            ValidateBalance.withoutBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
 
