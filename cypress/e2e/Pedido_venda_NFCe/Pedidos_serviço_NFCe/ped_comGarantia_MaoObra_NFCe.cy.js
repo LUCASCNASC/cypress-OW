@@ -1,5 +1,5 @@
-import { ProcessSale } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/ProdutoPage'
+import { ProcessSale } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'

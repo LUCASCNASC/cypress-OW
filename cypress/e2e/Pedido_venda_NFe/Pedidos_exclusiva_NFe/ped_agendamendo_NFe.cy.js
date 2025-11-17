@@ -1,11 +1,11 @@
-import { ProcessSale } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
+import { ProcessSale } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery, ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
 import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
 import { PedExclusiva } from '../../../pages/pedido/PedidoExclusivaPage.js'
-import { ProductExclusiva, ValidateBalance } from '../../../pages/ProdutoPage'
+import { ProductExclusiva, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { GeneralOrder } from '../../../pages/pedido/GeraisPedidosPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
 
