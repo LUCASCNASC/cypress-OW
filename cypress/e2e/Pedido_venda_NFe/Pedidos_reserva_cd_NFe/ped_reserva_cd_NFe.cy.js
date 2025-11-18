@@ -5,7 +5,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
-import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
+import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Gerar pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 

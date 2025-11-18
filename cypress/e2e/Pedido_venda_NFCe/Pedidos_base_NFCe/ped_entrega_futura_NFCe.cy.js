@@ -5,8 +5,8 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
-import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
-import { ReceiptPromotion } from '../../../../pages/pedido/processos/processo_recebimento_promo.js'
+import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ReceiptPromotion } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 
 describe('Gerar pedido de entrega futura com entrega', () => {
 

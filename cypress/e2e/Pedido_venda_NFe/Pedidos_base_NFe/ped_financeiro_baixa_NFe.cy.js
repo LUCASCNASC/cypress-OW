@@ -6,7 +6,7 @@ import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
-import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
+import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Gerar pedido com financeiro na baixa', () => {
 

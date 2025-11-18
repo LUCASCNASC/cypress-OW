@@ -3,10 +3,10 @@ import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
-import { ReceiptPromotion } from '../../../../pages/pedido/processos/processo_recebimento_promo.js'
+import { ReceiptPromotion } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { Promotion } from '../../../../pages/pedido/promocao/promocao.js'
 import { TicketPrestamista } from '../../../../pages/pedido/validar_tela/prestamista.js'
-import { Receipt } from '../../../../pages/pedido/processos/processo_recebimento.js'
+import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { Promotion } from '../../../pages/pedido/PromocaoPage.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
