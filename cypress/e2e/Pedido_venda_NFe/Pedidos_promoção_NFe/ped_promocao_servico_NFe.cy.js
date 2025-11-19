@@ -5,7 +5,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { ReceiptPromotion } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { Promotion } from '../../../../pages/pedido/promocao/promocao.js'
-import { TicketPrestamista } from '../../../../pages/pedido/validar_tela/prestamista.js'
+import { TicketPrestamista } from '../../../pages/pedido/ValidadePrestamistaPage.js'
 import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { Promotion } from '../../../pages/pedido/PromocaoPage.js'
 

@@ -7,7 +7,7 @@ import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { ReceiptPromotion } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.js'
 import { Promotion } from '../../../../pages/pedido/PromocaoPage.js'
-import { TicketPrestamista } from '../../../../../pages/pedido/validar_tela/prestamista.js'
+import { TicketPrestamista } from '../../../../pages/pedido/ValidadePrestamistaPage.js'
 import { GeneralOrder } from '../../../../pages/pedido/GeraisPedidosPage.js'
 
 
