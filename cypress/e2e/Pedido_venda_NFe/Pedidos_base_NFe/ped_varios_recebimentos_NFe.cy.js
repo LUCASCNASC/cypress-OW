@@ -5,7 +5,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { GroupReceipt } from '../../../../pages/pedido/pagamento/agrupar_recebimento.js'
+import { GroupReceipt } from '../../../pages/pedido/pagamento/AgruparRecebPage.js'
 import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Gerar pedido com mais de uma forma de pagamento', () => {
