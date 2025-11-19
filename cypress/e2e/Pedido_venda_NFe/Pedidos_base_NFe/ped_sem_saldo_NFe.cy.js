@@ -1,4 +1,4 @@
-import { ProcessSale } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 
 describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -9,7 +9,7 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe() //processo normal
+        ProcessoVendaPage.NFe() //processo normal
         cy.chooseClient()
     })
 

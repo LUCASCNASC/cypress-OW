@@ -1,4 +1,4 @@
-import { ProcessSale } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
@@ -16,7 +16,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessSale.NFe() //processo normal
+        ProcessoVendaPage.NFe() //processo normal
         cy.chooseClient()
     })
   

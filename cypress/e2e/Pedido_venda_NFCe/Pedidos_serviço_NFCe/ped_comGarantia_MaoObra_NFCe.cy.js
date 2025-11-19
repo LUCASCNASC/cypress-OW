@@ -1,4 +1,4 @@
-import { ProcessSale } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
@@ -15,7 +15,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessSale.NFCe() //processo normal
+        ProcessoVendaPage.NFCe() //processo normal
         cy.chooseClient()
     })
 

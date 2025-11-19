@@ -1,4 +1,4 @@
-import { ProcessSale } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
@@ -14,7 +14,7 @@ describe('Venda de serviço avulso Host - 104', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.saleServiceLoose() //processo serviço avulso
+        ProcessoVendaPage.saleServiceLoose() //processo serviço avulso
         cy.chooseClient()
     })
 

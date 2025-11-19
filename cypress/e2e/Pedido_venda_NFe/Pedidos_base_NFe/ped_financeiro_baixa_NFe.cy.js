@@ -1,4 +1,4 @@
-import { ProcessSale } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
@@ -16,7 +16,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.login();
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.financePaymentNFe() //processo financeiro na baixa
+        ProcessoVendaPage.financePaymentNFe() //processo financeiro na baixa
         cy.chooseClient()
     })
   

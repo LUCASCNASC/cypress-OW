@@ -1,4 +1,4 @@
-import { ProcessSale } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedidos/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
@@ -16,7 +16,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.deliveryFutureNFCe() //processo entrega futura
+        ProcessoVendaPage.deliveryFutureNFCe() //processo entrega futura
         cy.chooseClient()
     })
     

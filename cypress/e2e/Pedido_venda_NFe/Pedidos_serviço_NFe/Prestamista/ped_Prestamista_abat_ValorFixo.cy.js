@@ -1,4 +1,4 @@
-import { ProcessSale } from '../../../../pages/pedidos/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../../pages/pedidos/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../../pages/pedido/ProdutoPage.js'
 import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.js'
 import { AdvanceNormal } from '../../../../pages/pedido/AvancarPage.js'
@@ -18,7 +18,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessSale.NFe() //processo normal
+        ProcessoVendaPage.NFe() //processo normal
         cy.chooseClient()
     })   
 

@@ -1,4 +1,4 @@
-import { ProcessSale } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery, ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
@@ -18,7 +18,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessSale.NFe() //processo normal
+        ProcessoVendaPage.NFe() //processo normal
         cy.chooseClient()
     })
 
