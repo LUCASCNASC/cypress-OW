@@ -3,8 +3,8 @@ import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
-import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
-import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/parcelas.js'
+import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {

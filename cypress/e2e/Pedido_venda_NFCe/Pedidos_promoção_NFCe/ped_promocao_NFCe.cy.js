@@ -3,7 +3,7 @@ import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
-import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
+import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { Promotion } from '../../../pages/pedido/PromocaoPage.js'
 
 describe('Gerar pedidos com promoção com entrega', () => {
