@@ -1,10 +1,10 @@
 import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
-import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
-import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
+import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 
@@ -34,14 +34,14 @@ describe('Gerar pedido de venda com desconto', () => {
             OrderDiscount.clickButtonDiscount() //DESCONTO
             OrderDiscount.validateModalSub()
             OrderDiscount.applyDiscountR$()
-            ThrowDelivery.freightFirst() //ENTREGA
-            AdvanceNormal.toInstallments()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            TirarEntrega.freightFirst() //ENTREGA
+            AvancarPage.toInstallments()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.one()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.one()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -57,14 +57,14 @@ describe('Gerar pedido de venda com desconto', () => {
             OrderDiscount.clickButtonDiscount() //DESCONTO
             OrderDiscount.validateModalSub()
             OrderDiscount.applyDiscountPencentage()
-            ThrowDelivery.freightFirst() //ENTREGA
-            AdvanceNormal.toInstallments()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            TirarEntrega.freightFirst() //ENTREGA
+            AvancarPage.toInstallments()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.one()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.one()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -80,14 +80,14 @@ describe('Gerar pedido de venda com desconto', () => {
             OrderDiscount.clickButtonDiscount() //DESCONTO
             OrderDiscount.validateModalSub()
             OrderDiscount.applyDiscountVF()
-            ThrowDelivery.freightFirst()() //ENTREGA
-            AdvanceNormal.toInstallments()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            TirarEntrega.freightFirst()() //ENTREGA
+            AvancarPage.toInstallments()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.one()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.one()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

@@ -1,6 +1,6 @@
 //Page Object para operações e validações relacionadas à aba Empregatício.
 //Todos os métodos são estáticos para facilitar o uso direto sem instanciação.
-export class GeneralEmployment {
+export class EmpregaticioPage {
   //Valida e clica na aba Empregatício.
   static clickAbaEmployment() {
     cy.get('#menu_items_pri > :nth-child(6)')

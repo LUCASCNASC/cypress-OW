@@ -1,4 +1,4 @@
-import { SearchClient } from '../../pages/cadastro_cliente/PesquisaClientePage.js'
+import { PesquisaClientePage } from '../../pages/cadastro_cliente/PesquisaClientePage.js'
 
 describe('Cadastrar cliente', () => {
 
@@ -14,25 +14,25 @@ describe('Cadastrar cliente', () => {
 
         it('1.Pesquisa por número CPF', () => {
     
-            SearchClient.fillCPF()
-            SearchClient.clickGlassSearchClient()
-            SearchClient.cardClientValidate()
-            SearchClient.typeAgainCPF()
-            SearchClient.clickCPFSearch()
-            SearchClient.messWaitLoading()
-            SearchClient.numberDescripCPFSearch()
+            PesquisaClientePage.fillCPF()
+            PesquisaClientePage.clickGlassPesquisaClientePage()
+            PesquisaClientePage.cardClientValidate()
+            PesquisaClientePage.typeAgainCPF()
+            PesquisaClientePage.clickCPFSearch()
+            PesquisaClientePage.messWaitLoading()
+            PesquisaClientePage.numberDescripCPFSearch()
         }) 
 
         it('2.Pesquisa por número CNPJ', () => {
 
-            SearchClient.fillCNPJ()
-            SearchClient.clickGlassSearchClient()
-            SearchClient.cardClientValidate()
-            SearchClient.typeAgainCNPJ()
-            SearchClient.clickGlassSearchClient()
-            SearchClient.clickCNPJSearch()
-            SearchClient.messWaitLoading()
-            SearchClient.numberDescripCNPJSearch()
+            PesquisaClientePage.fillCNPJ()
+            PesquisaClientePage.clickGlassPesquisaClientePage()
+            PesquisaClientePage.cardClientValidate()
+            PesquisaClientePage.typeAgainCNPJ()
+            PesquisaClientePage.clickGlassPesquisaClientePage()
+            PesquisaClientePage.clickCNPJSearch()
+            PesquisaClientePage.messWaitLoading()
+            PesquisaClientePage.numberDescripCNPJSearch()
         }) 
     })
 
@@ -40,24 +40,24 @@ describe('Cadastrar cliente', () => {
 
         it('3.Pesquisa por descrição CPF', () => {
 
-            SearchClient.fillDescripCPF()
-            SearchClient.clickGlassSearchClient()
-            SearchClient.cardClientValidate()
-            SearchClient.typeAgainCPF()
-            SearchClient.clickCPFSearch()
-            SearchClient.messWaitLoading()
-            SearchClient.numberDescripCPFSearch()
+            PesquisaClientePage.fillDescripCPF()
+            PesquisaClientePage.clickGlassPesquisaClientePage()
+            PesquisaClientePage.cardClientValidate()
+            PesquisaClientePage.typeAgainCPF()
+            PesquisaClientePage.clickCPFSearch()
+            PesquisaClientePage.messWaitLoading()
+            PesquisaClientePage.numberDescripCPFSearch()
         }) 
 
         it('4.Pesquisa por descrição CNPJ', () => {
 
-            SearchClient.typeAgainDescriptCNPJ()
-            SearchClient.clickGlassSearchClient()
-            SearchClient.cardClientValidate()
-            SearchClient.typeAgainCNPJ()
-            SearchClient.clickCNPJSearch()
-            SearchClient.messWaitLoading()
-            SearchClient.numberDescripCNPJSearch()
+            PesquisaClientePage.typeAgainDescriptCNPJ()
+            PesquisaClientePage.clickGlassPesquisaClientePage()
+            PesquisaClientePage.cardClientValidate()
+            PesquisaClientePage.typeAgainCNPJ()
+            PesquisaClientePage.clickCNPJSearch()
+            PesquisaClientePage.messWaitLoading()
+            PesquisaClientePage.numberDescripCNPJSearch()
         }) 
     })
 })

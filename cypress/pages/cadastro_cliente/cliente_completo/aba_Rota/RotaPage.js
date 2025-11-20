@@ -1,6 +1,6 @@
 ///Page Object para operações e validações relacionadas à aba Rota.
 //Todos os métodos são estáticos para facilitar o uso direto.
-export class GeneralRefRoute {
+export class RotaPage {
   //Valida e clica na aba Rota.
   static clickAbaRoute() {
     cy.get('#menu_items_pri > :nth-child(3)')
@@ -45,9 +45,7 @@ export class GeneralRefRoute {
     cy.get('.md-whiteframe-2dp').should('be.visible');
     // Adicione validações específicas aqui se necessário
   }
-}
 
-export class FillRefRoute {
   //Preenche o fluxo completo de cadastro de rota e seleciona opções.
   static routaComplete() {
     const rota_cadastro = "560";

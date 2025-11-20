@@ -1,4 +1,4 @@
-export class GroupReceipt {
+export class AgruparRecebPage {
   //Clica para NÃO agrupar lançamentos com o mesmo processo de recebimento.
   static notGroupReleases() {
     cy.get('.md-title')

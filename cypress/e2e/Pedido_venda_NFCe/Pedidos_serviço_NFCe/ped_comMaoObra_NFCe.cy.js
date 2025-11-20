@@ -1,9 +1,9 @@
 import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
-import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
-import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
+import { EntregaPage } from '../../../pages/pedido/EntregaPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { EscolherParcelaReceb } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
@@ -31,16 +31,16 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Service.validateModalServLinked() //SERVICOS
             Service.garantiaNaoSep()  //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery() 
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment() 
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery() 
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             EscolherParcelaReceb.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
         
@@ -61,16 +61,16 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS //SERVIÇOS - SEGUNDO PRODUTO
             Service.clickOKServiceLinked() //SERVIÇOS
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment() 
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             EscolherParcelaReceb.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -84,16 +84,16 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Service.validateModalServLinked() //SERVICOS
             Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery() 
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment() 
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery() 
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             EscolherParcelaReceb.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -114,16 +114,16 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment() 
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             EscolherParcelaReceb.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -137,16 +137,16 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             Service.validateModalServLinked() //SERVICOS
             Service.garantiaSepTituloProcDif() //Marcar Mão de obra que não destaca e separa título em processo diferente
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery() 
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment() 
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery() 
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             EscolherParcelaReceb.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })   
 
@@ -167,16 +167,16 @@ describe('Gerar pedidos com Mão de obra e com entrega', () => {
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()  
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment() 
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()  
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             EscolherParcelaReceb.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

@@ -1,4 +1,4 @@
-export class ChooseInstallmentReceipt {
+export class ParcelasPage {
   //Seleciona 1 parcela (1X) da forma de pagamento escolhida.
   static one() {
     cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding')

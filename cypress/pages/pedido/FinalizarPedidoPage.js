@@ -1,4 +1,4 @@
-export class FinishOrder {
+export class FinalizarPedidoPage {
   /**
    * Valida modal de proposta de crédito gerada.
    */
@@ -49,7 +49,7 @@ export class FinishOrder {
   /**
    * Botão para finalizar o pedido.
    */
-  static clickFinishOrder() {
+  static clickFinalizarPedidoPage() {
     cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar');
     cy.get('button.md-primary.btn-rounded.md-raised.btn-block.md-default-theme.md-ink-ripple[type="button"][ng-click="confirmarPedido()"]')
       .scrollIntoView()

@@ -74,7 +74,7 @@ Cypress.Commands.add('clickAddProduct', () => {
 /**
  * Finaliza o pedido, verifica todos os elementos do card de finalização.
  */
-Cypress.Commands.add('clickFinishOrder', () => {
+Cypress.Commands.add('clickFinalizarPedidoPage', () => {
   cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados');
   cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar');
 

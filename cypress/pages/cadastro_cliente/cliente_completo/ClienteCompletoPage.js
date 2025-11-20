@@ -1,7 +1,5 @@
-//Page Object para operações de interação no cadastro de cliente completo.
-
 //Todos os métodos são estáticos para facilitar o uso direto.
-export class ClickClientComplete {
+export class ClienteCompletoPage {
   //Valida e clica no menu de opções.
   static iconMenuOptions() {
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
@@ -51,10 +49,7 @@ export class ClickClientComplete {
     cy.get('#menu_items_pri > :nth-child(5)').click();
     cy.wait('@api_referencias', { timeout: 40000 });
   }
-}
 
-//Todos os métodos são estáticos para facilitar o uso direto.
-export class GeneralClientComplete {
   //Valida botão salvar desabilitado antes de preencher campos obrigatórios.
   static buttonSaveDisabled() {
     cy.get('#btnModalAddEndereco')

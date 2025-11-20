@@ -1,5 +1,5 @@
 import { gerarEmailAleatorio, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarObservação } from '../../../../gerarDados';
-export class GeneralRefCommercial {
+export class RefFinanceiraPage {
   //Valida e clica na aba Comercial em Referências.
   static clickAbaRefCommercial() {
     cy.get('#menu_items_sec > .on')
@@ -67,9 +67,7 @@ export class GeneralRefCommercial {
     cy.get('[ng-show="(item.telefone)"]').should('be.visible');
     cy.get('[ng-show="(item.email)"]').should('be.visible');
   }
-}
 
-export class FillRefCommercial {
   //Preenche o campo Empresa.
   static enterprise() {
     const empresa = gerarNomeEmpresa();

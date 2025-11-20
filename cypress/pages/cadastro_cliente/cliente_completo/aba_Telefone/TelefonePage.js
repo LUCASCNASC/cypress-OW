@@ -1,5 +1,5 @@
 import { gerarTelefoneAleatorio } from '../../../gerarDados';
-export class GeneralRefPhone {
+export class TelefonePage {
   //Valida e clica na aba Telefone.
   static clickAbaPhone() {
     cy.get('#menu_items_pri > :nth-child(4)')
@@ -60,10 +60,8 @@ export class GeneralRefPhone {
     cy.get(':nth-child(1) > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Telefone incluído com sucesso.');
   }
-}
 
-export class FillRefPhone {
-  //Seleciona o tipo de telefone "Padrão".
+   //Seleciona o tipo de telefone "Padrão".
   static typePhone() {
     cy.get('#txtTpTel').click({ force: true });
     cy.get('.md-text.ng-binding').contains('Padrão').click({ force: true });

@@ -1,4 +1,4 @@
-export class OrderServiceLoose {
+export class ServicosAvulsosPage {
   /**
    * Escolher cliente CPF para gerar pedido de venda.
    */

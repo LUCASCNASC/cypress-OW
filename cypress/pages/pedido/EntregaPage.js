@@ -1,4 +1,4 @@
-export class GeneralDelivery {
+export class EntregaPage {
   //Clica no campo transportadora e escolhe a transportadora.
   static chooseTransporter() {
     cy.get('.progressbar').scrollIntoView().wait(200);
@@ -92,7 +92,7 @@ export class GeneralDelivery {
   }
 }
 
-export class ThrowDelivery {
+export class TirarEntrega {
   //Arrasta botão de Retirada / Entrega do primeiro produto.
   static freightFirst() {
     cy.get('.valor.flex-gt-sm-50 > .md-checked > .md-container')
@@ -133,7 +133,7 @@ export class ThrowDelivery {
   }
 }
 
-export class ThrowAssembly {
+export class TirarMontagem {
   //Arrasta botão de Montagem do primeiro produto.
   static fisrt() {
     cy.get('.produto-nome > .valor > .md-auto-horizontal-margin > .md-container > .md-bar')

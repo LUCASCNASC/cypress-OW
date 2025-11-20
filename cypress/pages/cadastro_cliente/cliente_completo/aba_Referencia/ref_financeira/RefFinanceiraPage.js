@@ -21,7 +21,7 @@ function gerarValorDuasCasasAposVirgula() {
 
 //Page Object para operações e validações relacionadas à aba Referência Financeira.
 //Todos os métodos são estáticos para facilitar o uso direto.
-export class GeneralRefFinance {
+export class RefFinanceiraPage {
   //Valida e clica na aba Financeira em Referências.
   static clickEmpty() {
     cy.get('#menu_items_sec > .on').should('be.visible').and('not.have.attr', 'disabled');
@@ -88,9 +88,7 @@ export class GeneralRefFinance {
     cy.get('.layout-align-gt-sm-center-end > .list-title > b').should('be.visible');
     cy.get('.layout-align-gt-sm-center-end > .list-title').should('be.visible');
   }
-}
 
-export class FillRefFinance {
   //Preenche o campo Início exp. crédito.
   static dateStart() {
     const data_inicio = gerarDataReferenciaFinanceira();

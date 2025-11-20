@@ -1,12 +1,12 @@
 import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
-import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
-import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
+import { EntregaPage } from '../../../pages/pedido/EntregaPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
-import { GeneralOrder } from '../../../pages/pedido/GeraisPedidosPage.js'
+import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
@@ -28,19 +28,19 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeneralOrder.changeBranchInvoicing()
+            GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            AvancarPage.toTransporter()
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -50,7 +50,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeneralOrder.changeBranchInvoicing()
+            GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
@@ -58,19 +58,19 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeneralOrder.changeBranchInvoicing()
+            GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            AvancarPage.toTransporter()
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
         
@@ -80,20 +80,20 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeneralOrder.changeBranchInvoicing()
-            GeneralOrder.composicaoDesteKit()
+            GeralPedidosPage.changeBranchInvoicing()
+            GeralPedidosPage.composicaoDesteKit()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            AvancarPage.toTransporter()
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })
@@ -106,19 +106,19 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeneralOrder.changeBranchInvoicing()
+            GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            AvancarPage.toTransporter()
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })    
         
@@ -128,7 +128,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeneralOrder.changeBranchInvoicing()
+            GeralPedidosPage.changeBranchInvoicing()
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
             cy.get('[ng-if=""][style=""] > p')

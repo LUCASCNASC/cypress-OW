@@ -1,9 +1,9 @@
 import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
-import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
-import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
-import { OrderServiceLoose } from '../../../pages/pedido/ServicosAvulsosPage.js'
+import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js'
 
 describe('Venda de serviço avulso', () => {
 
@@ -21,18 +21,18 @@ describe('Venda de serviço avulso', () => {
 
         it('1.Pedido de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
-            OrderServiceLoose.productServiceLoose() //PRODUTO
-            OrderServiceLoose.chooseServiceSearch()
-            OrderServiceLoose.messItemAddedSucess()
-            OrderServiceLoose.clickCartShopping() //CARRINHO COMPRAS
-            OrderServiceLoose.serviceAddedCart()
-            OrderServiceLoose.buttonAdvanceOrder()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            ServicosAvulsosPage.productServiceLoose() //PRODUTO
+            ServicosAvulsosPage.chooseServiceSearch()
+            ServicosAvulsosPage.messItemAddedSucess()
+            ServicosAvulsosPage.clickCartShopping() //CARRINHO COMPRAS
+            ServicosAvulsosPage.serviceAddedCart()
+            ServicosAvulsosPage.buttonAdvanceOrder()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

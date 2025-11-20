@@ -60,3 +60,5 @@ Este projeto está sob a licença MIT.
 Ajustar PageObjects com o nome do próprio arquivo:
 - ProcessoRecebPage
 - ProcessoVendaPage
+- ProcessoRecebPromoPage
+- ProcessoRecebPrestamistaPage

@@ -1,4 +1,4 @@
-export class ProcessReceiptPrest {
+export class ProcessoRecebPrestamistaPage {
   //3874 - Futuro Prestamista com juros (%)
   static futWithFeesAbatPercentage() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex').should('be.visible').and('have.text', 'Forma de pagamento');

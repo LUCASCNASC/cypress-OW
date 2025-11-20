@@ -1,6 +1,6 @@
 //Page Object para operações e validações relacionadas à aba de Endereço.
 //Todos os métodos são estáticos para facilitar o uso sem instanciação.
-export class GeneralAdress {
+export class EnderecoPage {
   //Valida e clica na aba Endereço.
   static clickAbaAdress() {
     cy.get('#menu_items_pri > :nth-child(2)')
@@ -89,9 +89,7 @@ export class GeneralAdress {
     cy.get('label[for="txtTpEndereco"]').should('have.text', 'Tipo de Endereço');
     cy.get('#txtTpEndereco').should('be.visible').and('have.value', '');
   }
-}
 
-export class FillAdress {
   //Seleciona o tipo de endereço "Padrão".
   static typeAdress() {
     cy.get('.md-text.ng-binding').contains('Padrão').click({ force: true });

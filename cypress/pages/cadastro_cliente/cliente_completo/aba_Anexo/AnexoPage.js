@@ -1,6 +1,6 @@
 //Page Object para operações e validações relacionadas à aba de anexos.
 //Todos os métodos são estáticos para facilitar o uso sem instanciação.
-export class GeneralAnexo {
+export class AnexoPage {
   //Valida e clica na aba Anexos.
   static clickAbaAttachment() {
     cy.get('#menu_mais_pri > :nth-child(4)')
@@ -56,9 +56,7 @@ export class GeneralAnexo {
       .and('include.text', 'Anexo inserido em')
       .and('include.text', dataAtual);
   }
-}
 
-export class FillFieldAnexo {
   //Anexa um arquivo PDF (anexo_cadastro_cliente_completo.pdf) no campo de upload.
   //O caminho do arquivo é relativo à pasta fixtures do Cypress.
   static filePDF() {

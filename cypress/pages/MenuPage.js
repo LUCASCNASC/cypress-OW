@@ -1,6 +1,6 @@
-export class MenuOpcoes {
+export class MenuPage {
   //Valida e clica no menu de opções.
-  static iconeMenuOpcoes() {
+  static iconeMenuPage() {
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
       .should('be.visible')
       .and('not.have.attr', 'disabled');

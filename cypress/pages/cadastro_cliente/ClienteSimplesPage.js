@@ -3,7 +3,7 @@ import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa } from '../..
 //Page Object para preenchimento de campos do cliente simples.
 
 //Todos os métodos são estáticos para facilitar o uso direto.
-export class FillClientSimple {
+export class ClienteSimplesPage {
   //Valida e preenche o campo Data de Nascimento.
   static dateBirth() {
     cy.get(':nth-child(3) > .layout-xs-column > .md-block > .validaData > .md-datepicker-button')
@@ -89,10 +89,7 @@ export class FillClientSimple {
     cy.contains('560 - T.A. CIDADE AUTOMAÇÃO').click();
     cy.wait('@api_local_entrega_560', { timeout: 40000 });
   }
-}
 
-//Todos os métodos são estáticos para facilitar o uso direto.
-export class GeneralClientSimple {
   //Valida e clica no menu de opções.
   static iconMenuOptions() {
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
@@ -189,5 +186,6 @@ export class GeneralClientSimple {
       .and('have.value', '')
       .type(senhaSupervisor);
     cy.contains('button', 'Confirmar').click();
-  }
+}
+
 }

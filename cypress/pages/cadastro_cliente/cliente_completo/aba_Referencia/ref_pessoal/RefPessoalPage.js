@@ -1,6 +1,6 @@
 //Page Object para operações e validações relacionadas à aba Referência Pessoal.
 //Todos os métodos são estáticos para facilitar o uso direto.
-export class GeneralRefGuys {
+export class RefPessoalPage {
   /**
    * Valida e clica na aba Pessoal em Referências.
    */
@@ -78,11 +78,9 @@ export class GeneralRefGuys {
   //Valida campos do modal de referência pessoal vazio (duplicado).
   static modalRefGuysEmpty() {
     // Esta função é idêntica a modalEmpty, mantida por compatibilidade.
-    GeneralRefGuys.modalEmpty();
+    RefPessoalPage.modalEmpty();
   }
-}
 
-export class FillRefGuys {
   //Preenche o campo Nome.
   static name() {
     const Nome = gerarNomeAleatorio();

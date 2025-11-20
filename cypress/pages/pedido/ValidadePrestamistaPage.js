@@ -1,4 +1,4 @@
-export class TicketPrestamista {
+export class ValidadePrestamistaPage {
   /**
    * Valida adição do serviço prestamista após clicar para adicionar.
    */

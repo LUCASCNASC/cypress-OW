@@ -1,4 +1,4 @@
-import { Login } from '../../pages/LoginPage.js';
+import { LoginPage } from '../../pages/LoginPage.js';
 
 const usuSabiumAutomacao = "usu.inativo"; //usuário 416
 const senhaautomacao = "123.automacao";
@@ -9,9 +9,9 @@ describe('Usuário inativo', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        Login.logoEnterpriseLogin()
-        Login.iconComputerLogin()
-        Login.userTextIcon()
+        LoginPage.logoEnterpriseLogin()
+        LoginPage.iconComputerLogin()
+        LoginPage.userTextIcon()
     })
 
     it('1.Tentar logar com usuário inativo', () => {
@@ -24,7 +24,7 @@ describe('Usuário inativo', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        Login.passwordTextIcon()
+        LoginPage.passwordTextIcon()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -34,10 +34,10 @@ describe('Usuário inativo', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconEyesPassword()
-        Login.buttonForgotPassword()
-        Login.buttonEnterEnabled()
-        Login.clickButtonEnter()
+        LoginPage.iconEyesPassword()
+        LoginPage.buttonForgotPassword()
+        LoginPage.buttonEnterEnabled()
+        LoginPage.clickButtonEnter()
 
         //Card de mensagem 
         cy.get('.toast')
@@ -58,6 +58,6 @@ describe('Usuário inativo', () => {
         cy.get('.toast-close-button')
             .should('be.visible')
 
-        Login.iconComputerLogin() //Validando que não entrou no sistema
+        LoginPage.iconComputerLogin() //Validando que não entrou no sistema
     })
 })

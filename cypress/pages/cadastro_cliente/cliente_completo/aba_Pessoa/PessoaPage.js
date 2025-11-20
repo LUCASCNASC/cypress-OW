@@ -2,7 +2,7 @@ import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa } from '../..
 
 //Page Object para preenchimento do cadastro de pessoa.
 //Todos os métodos são estáticos para facilitar o uso direto sem instanciação.
-export class FillPerson {
+export class PessoaPage {
   //Valida e preenche o campo Data Nascimento.
   static dateBirth() {
     cy.get('#txtDataNasc > .md-datepicker-button')

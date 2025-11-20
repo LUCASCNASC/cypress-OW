@@ -1,12 +1,12 @@
 import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
-import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
-import { GeneralDelivery, ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
-import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
+import { EntregaPage, TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { PedExclusiva } from '../../../pages/pedido/PedidoExclusivaPage.js'
 import { ProductExclusiva, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { GeneralOrder } from '../../../pages/pedido/GeraisPedidosPage.js'
+import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
 
 //Para testarmos esses cenários, é necessário mudar para a versão da exclusiva e criar um agendamento na filial que está sendo usada
@@ -37,18 +37,18 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             ValidateBalance.withoutBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            GeneralOrder.trocarFilialFaturamento()
+            GeralPedidosPage.trocarFilialFaturamento()
             cy.clickAddProduct()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsApenasTransp()
-            GeneralDelivery.escolherTransportadora()
-            AdvanceNormal.toInstallments()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.carregandoFormaPagamento()
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsApenasTransp()
+            EntregaPage.escolherTransportadora()
+            AvancarPage.toInstallments()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -66,16 +66,16 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsApenasTransp()
-            GeneralDelivery.escolherTransportadora()
-            AdvanceNormal.toInstallments()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.carregandoFormaPagamento()
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsApenasTransp()
+            EntregaPage.escolherTransportadora()
+            AvancarPage.toInstallments()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })
@@ -91,16 +91,16 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsApenasTransp()
-            GeneralDelivery.escolherTransportadora()
-            AdvanceNormal.toInstallments()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.carregandoFormaPagamento()
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsApenasTransp()
+            EntregaPage.escolherTransportadora()
+            AvancarPage.toInstallments()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
 
@@ -110,14 +110,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             PedExclusiva.balanceRemoteReceive()
             cy.clickVoltageProduct()
             cy.clickAddProduc() 
-            GeneralOrder.trocarFilialFaturamento()
+            GeralPedidosPage.trocarFilialFaturamento()
             PedExclusiva.increaseAmountSaleFive()
             cy.selectProductSearch()
             ProductExclusiva.balanceReceiveTwoLines() //SEGUNDO PRODUTO
             PedExclusiva.balanceRemoteReceive()
             cy.clickVoltageProduct() 
             cy.clickAddProduct()
-            GeneralOrder.trocarFilialFaturamento()
+            GeralPedidosPage.trocarFilialFaturamento()
             PedExclusiva.increaseAmountSaleTen()
         })
 
@@ -130,14 +130,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            ThrowDelivery.freightFirst() //ENTREGA
-            AdvanceNormal.toInstallments()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            TirarEntrega.freightFirst() //ENTREGA
+            AvancarPage.toInstallments()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

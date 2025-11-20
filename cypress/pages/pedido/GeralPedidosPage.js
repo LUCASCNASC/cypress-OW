@@ -1,4 +1,4 @@
-export class GeneralOrder {
+export class GeralPedidosPage {
   /**
    * Trocar filial de faturamento - faturamento remoto da filial 50 para 6.
    */

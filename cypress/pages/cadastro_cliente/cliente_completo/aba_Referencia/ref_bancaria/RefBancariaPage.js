@@ -1,7 +1,7 @@
 import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarTelefoneAleatorio } from '../../../../gerarDados';
 import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada,
   gerarChavePixEmail, gerarChavePixCPF, gerarChavePixAleatoria} from '../../../../gerarDadosPIX';
-export class GeneralRefBanking {
+export class RefBancariaPage {
   //Valida e clica na aba Bancária em Referências.
   static clickAbaRefBanking() {
     cy.get('#menu_items_sec > :nth-child(3)')
@@ -129,9 +129,7 @@ export class GeneralRefBanking {
     cy.intercept('GET', '/services/v3/forma_pagamento').as('api_modal_referencia_bancaria');
     cy.wait('@api_modal_referencia_bancaria', { timeout: 40000 });
   }
-}
 
-export class FillRefBanking {
   //Seleciona o banco "aaa".
   static bank() {
     cy.get('#txtBancoRefBanc').click();

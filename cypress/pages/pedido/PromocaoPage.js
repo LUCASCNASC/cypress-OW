@@ -1,4 +1,4 @@
-export class Promotion {
+export class PromocaoPage {
   /**
    * Seleciona a primeira promoção do produto.
    */
@@ -13,7 +13,7 @@ export class Promotion {
   /**
    * Valida produtos com etiqueta "PROMOÇÃO" (ticket vermelho).
    */
-  static ticketPromotion() {
+  static ticketPromocaoPage() {
     cy.get('.md-secondary-container > div > .ng-scope').should('be.visible').and('not.be.disabled');
     cy.get('span[ng-if="(gradeAtual.tempromocao)"]').should('have.text', 'PROMOÇÃO').and('be.visible');
     cy.get('span[ng-if="(gradeAtual.tempromocao)"]')

@@ -1,4 +1,4 @@
-import { Login } from '../../pages/LoginPage.js';
+import { LoginPage } from '../../pages/LoginPage.js';
 
 const usuSabiumAutomacao = "usu.expiradosistema"; //usuário 496
 const senhaautomacao = "123.automacao";
@@ -10,9 +10,9 @@ describe('Senha do usuário expirada', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        Login.logoEnterpriseLogin()
-        Login.iconComputerLogin()
-        Login.userTextIcon()
+        LoginPage.logoEnterpriseLogin()
+        LoginPage.iconComputerLogin()
+        LoginPage.userTextIcon()
     })
 
     it('1.Tentar logar com usuário com senha do usuário expirada', () => {
@@ -25,7 +25,7 @@ describe('Senha do usuário expirada', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
-        Login.passwordTextIcon()
+        LoginPage.passwordTextIcon()
 
         //Campo Informe sua senha
         cy.get('#txtpassword')
@@ -35,11 +35,11 @@ describe('Senha do usuário expirada', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconEyesPassword()
-        Login.buttonForgotPassword()
-        Login.buttonEnterEnabled()
-        Login.clickButtonEnter()
-        Login.messageOpeningSystem()
+        LoginPage.iconEyesPassword()
+        LoginPage.buttonForgotPassword()
+        LoginPage.buttonEnterEnabled()
+        LoginPage.clickButtonEnter()
+        LoginPage.messageOpeningSystem()
 
         //Mensagem "Seu acesso ao sistema expirou."
         cy.get('.md-dialog-content-body')
@@ -56,6 +56,6 @@ describe('Senha do usuário expirada', () => {
         cy.get('md-dialog-actions > .md-primary')
             .click()
 
-        Login.iconComputerLogin() //Validando que não entrou no sistema
+        LoginPage.iconComputerLogin() //Validando que não entrou no sistema
     })
 })

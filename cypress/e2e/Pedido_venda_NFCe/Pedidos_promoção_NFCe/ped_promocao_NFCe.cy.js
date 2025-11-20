@@ -1,10 +1,10 @@
 import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
-import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
-import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { Promotion } from '../../../pages/pedido/PromocaoPage.js'
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
+import { EntregaPage } from '../../../pages/pedido/EntregaPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
 describe('Gerar pedidos com promoção com entrega', () => {
 
@@ -24,25 +24,25 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             Product.promoMatch() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
-            cy.selectProductSearch() ; Promotion.ticketPromotion() 
+            cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage() 
             cy.clickVoltageProduct()
-            Promotion.selectFirstPromoProduct()
+            PromocaoPage.selectFirstPromoProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked() 
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher "Forma de pagamento"
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click()
             //Escolher parcelamento
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
 
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     
@@ -50,16 +50,16 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             Product.promoDeadlineEntry() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
-            cy.selectProductSearch() ; Promotion.ticketPromotion() 
+            cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage() 
             cy.clickVoltageProduct()
-            Promotion.selectFirstPromoProduct() //PROMOÇÃO
+            PromocaoPage.selectFirstPromoProduct() //PROMOÇÃO
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
 
             //"GERAR PAGAMENTO"
             cy.get('.layout-wrap > .md-primary').scrollTo('top').wait(200)
@@ -67,12 +67,12 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // cy.get('.white > :nth-child(3)').click({force:true})
             // cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
 
-            // GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            // GeneralPayment.loadingFormPayment()
+            // GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            // GeralPagamentoPage.loadingFormPayment()
             // Receipt.main()
-            // ChooseInstallmentReceipt.two()
-            // AdvanceNormal.final()
-            // cy.clickFinishOrder() //FINALIZAR PEDIDO
+            // ParcelasPage.two()
+            // AvancarPage.final()
+            // cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             // cy.validateOrderGenerated()
         })
 
@@ -80,24 +80,24 @@ describe('Gerar pedidos com promoção com entrega', () => {
     
             Product.promoDeadlineInstallment() //PRODUTO
             ValidateBalance.withBalance() //VALIDAR SALDO
-            cy.selectProductSearch() ; Promotion.ticketPromotion()
+            cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage()
             cy.clickVoltageProduct()
-            Promotion.selectFirstPromoProduct() //PROMOÇÃO
+            PromocaoPage.selectFirstPromoProduct() //PROMOÇÃO
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            AdvanceNormal.toTransporter()
-            GeneralDelivery.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
-            GeneralDelivery.chooseTransporter()
-            AdvanceNormal.installmentDelivery()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
+            AvancarPage.toTransporter()
+            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.chooseTransporter()
+            AvancarPage.installmentDelivery()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })  
     })

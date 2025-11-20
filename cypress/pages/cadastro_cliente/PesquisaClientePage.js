@@ -1,4 +1,4 @@
-export class SearchClient {
+export class PesquisaClientePage {
    //Valida mensagem "Aguarde carregando...".
   static messWaitLoading() {
     cy.get('.md-dialog-fullscreen > .carregando')
@@ -7,7 +7,7 @@ export class SearchClient {
   }
 
   //Clica na lupa de pesquisa de cliente.
-  static clickGlassSearchClient() {
+  static clickGlassPesquisaClientePage() {
     cy.intercept('GET', '/views/cliente/modalClientes.html').as('api_cliente_modalClientes');
     cy.get('.md-block > .ng-binding').should('be.visible').click({ force: true });
     cy.wait('@api_cliente_modalClientes', { timeout: 40000 });

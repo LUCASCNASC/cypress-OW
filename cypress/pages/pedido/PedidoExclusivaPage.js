@@ -1,4 +1,4 @@
-export class OrderExclusiva {
+export class PedidoExclusivaPage {
   /**
    * Aumentar quantidade a ser vendida para 5 unidades.
    */

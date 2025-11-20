@@ -1,4 +1,4 @@
-export class OrderExclusiva {
+export class PedidoDecontoPage {
   /**
    * Clicar e validar botão % (desconto).
    */

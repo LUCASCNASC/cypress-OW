@@ -1,9 +1,9 @@
 import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
-import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
-import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
-import { OrderServiceLoose } from '../../../pages/pedido/ServicosAvulsosPage.js'
+import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js'
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 
 
@@ -25,11 +25,11 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
             const numero_pedido = '8605'
             
-            OrderServiceLoose.iconMenuOptions()
-            OrderServiceLoose.clientCompleteOptionMenu()
-            OrderServiceLoose.clickMenuClientComplete()
-            OrderServiceLoose.clicarOpcaoSeclickOptionServicesrvicos()
-            OrderServiceLoose.waitLoadingService()
+            ServicosAvulsosPage.iconMenuOptions()
+            ServicosAvulsosPage.clientCompleteOptionMenu()
+            ServicosAvulsosPage.clickMenuClientComplete()
+            ServicosAvulsosPage.clicarOpcaoSeclickOptionServicesrvicos()
+            ServicosAvulsosPage.waitLoadingService()
 
             //Validando campo
             cy.get('form.ng-pristine > .ng-pristine')
@@ -45,26 +45,26 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > h3 > .ng-binding')
                 .should('have.text', numero_pedido)
 
-            OrderServiceLoose.buttonAddMaoObra()
-            OrderServiceLoose.buttonAddGarantias()
-            OrderServiceLoose.clickAddGarantias()
-            OrderServiceLoose.modalGarantiasServicesLinked()
+            ServicosAvulsosPage.buttonAddMaoObra()
+            ServicosAvulsosPage.buttonAddGarantias()
+            ServicosAvulsosPage.clickAddGarantias()
+            ServicosAvulsosPage.modalGarantiasServicesLinked()
             Service.garantiaSepMesmoProc() //clicar na primeira garantia - Garantia Separa Mesmo Processo
             Service.clickOKServiceLinked()()
-            OrderServiceLoose.messLinkedAddedSucess()
-            OrderServiceLoose.buttonSaveService()
-            OrderServiceLoose.messWaitLoading()
-            OrderServiceLoose.messResgistrationSaveSucess()
-            OrderServiceLoose.clickAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
-            OrderServiceLoose.messGarantiaAdded() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
-            OrderServiceLoose.clickCartShopping()
-            OrderServiceLoose.buttonAdvanceOrder()
-            GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
-            GeneralPayment.loadingFormPayment()
+            ServicosAvulsosPage.messLinkedAddedSucess()
+            ServicosAvulsosPage.buttonSaveService()
+            ServicosAvulsosPage.messWaitLoading()
+            ServicosAvulsosPage.messResgistrationSaveSucess()
+            ServicosAvulsosPage.clickAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
+            ServicosAvulsosPage.messGarantiaAdded() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
+            ServicosAvulsosPage.clickCartShopping()
+            ServicosAvulsosPage.buttonAdvanceOrder()
+            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
-            ChooseInstallmentReceipt.two()
-            AdvanceNormal.final()
-            cy.clickFinishOrder() //FINALIZAR PEDIDO
+            ParcelasPage.two()
+            AvancarPage.final()
+            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
             cy.validateOrderGenerated()
         })
     })

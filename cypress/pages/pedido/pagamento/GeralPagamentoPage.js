@@ -1,6 +1,6 @@
 import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../gerarDados'
 
-export class GeneralPayment {
+export class GeralPagamentoPage {
   //Carregamento do modal Forma de pagamento.
   static loadingFormPayment() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
