@@ -4,7 +4,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 
 describe('Gerar pedidos com Garantia e Mão de Obra', () => {
@@ -37,7 +37,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -68,7 +68,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -90,7 +90,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -119,7 +119,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -141,7 +141,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -170,7 +170,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -192,7 +192,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -222,7 +222,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -244,7 +244,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -274,7 +274,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -296,7 +296,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -326,7 +326,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -348,7 +348,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -378,7 +378,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -400,7 +400,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -430,7 +430,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()  
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -452,7 +452,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -482,7 +482,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -507,7 +507,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()  
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -536,7 +536,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -558,7 +558,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -587,7 +587,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -609,7 +609,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -638,7 +638,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -660,7 +660,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -689,7 +689,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -711,7 +711,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -740,7 +740,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -762,7 +762,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -791,7 +791,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -813,7 +813,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -841,7 +841,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -863,7 +863,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -892,7 +892,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -914,7 +914,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -943,7 +943,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO

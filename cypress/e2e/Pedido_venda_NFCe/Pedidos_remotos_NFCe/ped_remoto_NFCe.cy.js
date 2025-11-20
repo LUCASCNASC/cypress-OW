@@ -5,7 +5,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { GeneralOrder } from '../../../pages/pedido/GeraisPedidosPage.js'
 
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
@@ -37,7 +37,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AdvanceNormal.installmentDelivery()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -67,7 +67,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AdvanceNormal.installmentDelivery()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -90,7 +90,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AdvanceNormal.installmentDelivery()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -115,7 +115,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             AdvanceNormal.installmentDelivery()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO

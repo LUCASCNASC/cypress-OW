@@ -3,7 +3,7 @@ import { Product, ValidateBalance } from '../../../../pages/pedido/ProdutoPage.j
 import { AdvanceNormal } from '../../../../pages/pedido/AvancarPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { ReceiptPromotion } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.js'
 import { Promotion } from '../../../../pages/pedido/PromocaoPage.js'
@@ -38,7 +38,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.futComJurosPrestAbatOrigemPrd()
+            ProcessoRecebPage.futComJurosPrestAbatOrigemPrd()
             ChooseInstallmentReceipt.for()
             ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -69,7 +69,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.futComJurosPrestAbatOrigemPrd()
+            ProcessoRecebPage.futComJurosPrestAbatOrigemPrd()
             ChooseInstallmentReceipt.for()
             ValidateService.okInsurancePrest()
             TicketPrestamista.added()

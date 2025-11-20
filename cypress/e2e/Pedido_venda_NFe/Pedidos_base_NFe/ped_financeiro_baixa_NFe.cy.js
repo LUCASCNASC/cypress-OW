@@ -6,7 +6,7 @@ import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Gerar pedido com financeiro na baixa', () => {
 
@@ -35,7 +35,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -63,7 +63,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -86,7 +86,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -113,7 +113,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO

@@ -5,7 +5,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { ReceiptPromotion } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { Promotion } from '../../../pages/pedido/PromocaoPage.js'
 
@@ -207,22 +207,6 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({force:true})
             Receipt.main()
             ChooseInstallmentReceipt.one()
-
-            // //"GERAR PAGAMENTO"
-            // cy.get('.white > :nth-child(3)').scrollIntoView().wait(300)
-            // cy.get('.white > :nth-child(3)').click({force:true})
-            // cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
-            // cy.get('.white > .layout-align-center-center > .md-primary').click({force:true})
-            // cy.get('.md-select-backdrop').click({force:true})
-
-            // GeneralPayment.insertDateTomorrow1Due()
-            // GeneralPayment.clicarGerarParcAlterarVenc()
-            // cy.wait(3000)
-            // Receipt.main()
-            // ChooseInstallmentReceipt.two()
-            // AdvanceNormal.final()
-            // cy.clickFinishOrder() //FINALIZAR PEDIDO
-            // cy.validateOrderGenerated()
         })
 
         it('8.Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {

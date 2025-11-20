@@ -1,4 +1,4 @@
-export class Receipt {
+export class ProcessoRecebPage {
   //Escolhe forma de pagamento 3860 (A Receber Futuro) do pedido de venda.
   static main() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')

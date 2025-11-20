@@ -3,7 +3,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery, ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { PedExclusiva } from '../../../pages/pedido/PedidoExclusivaPage.js'
 import { ProductExclusiva, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { GeneralOrder } from '../../../pages/pedido/GeraisPedidosPage.js'
@@ -45,7 +45,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -72,7 +72,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -97,7 +97,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -134,7 +134,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO

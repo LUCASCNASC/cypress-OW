@@ -6,7 +6,7 @@ import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { ReceiptPromotion } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { Promotion } from '../../../../pages/pedido/promocao/promocao.js'
 import { TicketPrestamista } from '../../../pages/pedido/ValidadePrestamistaPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { Promotion } from '../../../pages/pedido/PromocaoPage.js'
 
 describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
@@ -94,7 +94,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Promotion.selectFirstPromoProduct()
-            Receipt.withMoneylender()
+            ProcessoRecebPage.withMoneylender()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
@@ -119,7 +119,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.clickAddProduc()
             Promotion.typeServiceFreeValidate()
             Promotion.selectFirstPromoProduct()
-            Receipt.withMoneylender()
+            ProcessoRecebPage.withMoneylender()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"

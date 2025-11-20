@@ -5,7 +5,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Gerar pedido com financeiro na baixa com entrega', () => {
 
@@ -36,7 +36,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             AdvanceNormal.installmentDelivery()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -65,7 +65,7 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
             AdvanceNormal.installmentDelivery()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO

@@ -5,7 +5,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Gerar pedido de entrega futura', () => {
 
@@ -34,7 +34,7 @@ describe('Gerar pedido de entrega futura', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main() //PROCESSO INCLUSÃO
+            ProcessoRecebPage.main() //PROCESSO INCLUSÃO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -62,7 +62,7 @@ describe('Gerar pedido de entrega futura', () => {
             AdvanceNormal.clickGenerateInstallments()
             GeneralPayment.clicarGerarParcelas() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main() //PROCESSO INCLUSÃO
+            ProcessoRecebPage.main() //PROCESSO INCLUSÃO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final() 
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -85,7 +85,7 @@ describe('Gerar pedido de entrega futura', () => {
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main() //PROCESSO INCLUSÃO
+            ProcessoRecebPage.main() //PROCESSO INCLUSÃO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -112,7 +112,7 @@ describe('Gerar pedido de entrega futura', () => {
             AdvanceNormal.toInstallments() 
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment() 
-            Receipt.main() //PROCESSO INCLUSÃO
+            ProcessoRecebPage.main() //PROCESSO INCLUSÃO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final() 
             cy.clickFinishOrder() //FINALIZAR PEDIDO

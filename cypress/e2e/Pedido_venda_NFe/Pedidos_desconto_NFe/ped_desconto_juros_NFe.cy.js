@@ -5,7 +5,7 @@ import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 
 describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
@@ -35,7 +35,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.one()
             OrderDiscount.dragFormPayment() //DESCONTO
             OrderDiscount.clickChangeValue()
@@ -59,7 +59,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.one()
             OrderDiscount.dragFormPayment() //DESCONTO
             OrderDiscount.clickChangeValue()

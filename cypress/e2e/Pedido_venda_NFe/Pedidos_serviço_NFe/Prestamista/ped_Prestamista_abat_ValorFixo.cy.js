@@ -4,7 +4,7 @@ import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.
 import { AdvanceNormal } from '../../../../pages/pedido/AvancarPage.js'
 import { GeneralPayment } from '../../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { ReceiptPromotion } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { Promotion } from '../../../../pages/pedido/PromocaoPage.js'
 import { TicketPrestamista } from '../../../../pages/pedido/ValidadePrestamistaPage.js'
@@ -37,7 +37,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.futWithoutRebVF()
+            ProcessoRecebPage.futWithoutRebVF()
             ChooseInstallmentReceipt.for()
             ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista
@@ -68,7 +68,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.futWithoutRebVF()
+            ProcessoRecebPage.futWithoutRebVF()
             ChooseInstallmentReceipt.for()
             ValidateService.okInsurancePrest()
             TicketPrestamista.added()
@@ -176,7 +176,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
             AdvanceNormal.toInstallments()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.presentMoneyRebVF()
+            ProcessoRecebPage.presentMoneyRebVF()
             ChooseInstallmentReceipt.for()
             ValidateService.okInsurancePrest()
             TicketPrestamista.added() //Validando adição do prestamista

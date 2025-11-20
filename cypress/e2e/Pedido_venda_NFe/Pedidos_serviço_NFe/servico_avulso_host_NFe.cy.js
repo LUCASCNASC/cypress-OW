@@ -2,7 +2,7 @@ import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVend
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { OrderServiceLoose } from '../../../pages/pedido/ServicosAvulsosPage.js'
 
 //Para este cenário, é necessário fazer update na coluna dataultimaatualizacao, da tabela glb.servicofaixavalorfixo
@@ -31,7 +31,7 @@ describe('Venda de serviço avulso Host - 104', () => {
             OrderServiceLoose.buttonAdvanceOrder()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.one()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO

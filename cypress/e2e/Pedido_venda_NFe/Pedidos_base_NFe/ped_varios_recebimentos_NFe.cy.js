@@ -6,7 +6,7 @@ import { ThrowDelivery } from '../../../pages/pedido/EntregaPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { GroupReceipt } from '../../../pages/pedido/pagamento/AgruparRecebPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Gerar pedido com mais de uma forma de pagamento', () => {
 
@@ -36,11 +36,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GroupReceipt.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.debitTEF()
+            ProcessoRecebPage.debitTEF()
             ChooseInstallmentReceipt.one()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -62,7 +62,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GeneralPayment.clicarGerarPagamento()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
@@ -83,11 +83,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GroupReceipt.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.one()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.one()
             GroupReceipt.notGroupReleases()
             AdvanceNormal.final()
@@ -109,11 +109,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GroupReceipt.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.one()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.one()
             GroupReceipt.groupReleases()
             AdvanceNormal.final()
@@ -135,11 +135,11 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
             GroupReceipt.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.one()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
             GeneralPayment.carregandoFormaPagamento()
-            Receipt.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
             ChooseInstallmentReceipt.one()
             GroupReceipt.notGroupReleases()
             GroupReceipt.selectReleasesGroup()

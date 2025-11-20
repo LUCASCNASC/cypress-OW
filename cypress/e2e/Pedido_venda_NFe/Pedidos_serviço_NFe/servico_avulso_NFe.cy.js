@@ -2,7 +2,7 @@ import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVend
 import { AdvanceNormal } from '../../../pages/pedido/AvancarPage.js'
 import { GeneralPayment } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ChooseInstallmentReceipt } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { Receipt } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { OrderServiceLoose } from '../../../pages/pedido/ServicosAvulsosPage.js'
 
 describe('Venda de serviço avulso', () => {
@@ -29,7 +29,7 @@ describe('Venda de serviço avulso', () => {
             OrderServiceLoose.buttonAdvanceOrder()
             GeneralPayment.clickGenerateInstallments() //GERAR PARCELAS
             GeneralPayment.loadingFormPayment()
-            Receipt.main()
+            ProcessoRecebPage.main()
             ChooseInstallmentReceipt.two()
             AdvanceNormal.final()
             cy.clickFinishOrder() //FINALIZAR PEDIDO
