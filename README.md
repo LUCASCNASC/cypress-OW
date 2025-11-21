@@ -57,8 +57,4 @@ Este projeto está sob a licença MIT.
 ---
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
 
-Ajustar PageObjects com o nome do próprio arquivo:
-- ProcessoRecebPage
-- ProcessoVendaPage
-- ProcessoRecebPromoPage
-- ProcessoRecebPrestamistaPage
+Ajustar arquivos de teste.
