@@ -19,7 +19,7 @@ describe('Cadastrar cliente simples', () => {
 
         it('1.Cliente simples CPF', () => {
 
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
             ClienteSimplesPage.cpfClient()
             ClienteSimplesPage.nameCompleteCPF()
@@ -34,7 +34,7 @@ describe('Cadastrar cliente simples', () => {
 
         it('2.Cliente simples CPF - alterar Endereço logo após cadastrar', () => {
     
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
             ClienteSimplesPage.cpfClient()
             ClienteSimplesPage.nameCompleteCPF()
@@ -45,7 +45,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.routeClient()
             ClienteSimplesPage.saveClientSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.iconMenuOptions() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            ClienteSimplesPage.clickMenuOpcoes() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             ClienteSimplesPage.optionClientSimple()
 
             //Campo CEP - alterar
@@ -77,7 +77,7 @@ describe('Cadastrar cliente simples', () => {
 
         it('3.Cliente simples CPF - alterar data de nascimento logo após cadastrar', () => {
     
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
             ClienteSimplesPage.cpfClient()
             ClienteSimplesPage.nameCompleteCPF()
@@ -88,7 +88,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.routeClient()
             ClienteSimplesPage.saveClientSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.iconMenuOptions() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            ClienteSimplesPage.clickMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             ClienteSimplesPage.optionClientSimple()
 
             cy.contains('Data de nascimento').parent().find('input')
@@ -110,7 +110,7 @@ describe('Cadastrar cliente simples', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
     
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
 
             //Campo CPF - validando mensagem dentro do campo antes de preencher
@@ -138,10 +138,10 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.routeClient()
             ClienteSimplesPage.saveClientSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.clickOutSystem()
             ClienteSimplesPage.loginAgain()
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
 
             //Preencher campo CPF - para alterar o cadastro que acabamos de gerar
@@ -178,7 +178,7 @@ describe('Cadastrar cliente simples', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
 
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
 
             //Campo CPF - validando mensagem dentro do campo antes de preencher
@@ -206,10 +206,10 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.routeClient()
             ClienteSimplesPage.saveClientSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
             ClienteSimplesPage.loginAgain() 
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
 
             //Preencher campo CPF - para alterar o cadastro que acabamos de gerar
@@ -239,13 +239,13 @@ describe('Cadastrar cliente simples', () => {
             cy.get('.date-picker.flex-md-100 > .validaData > .md-datepicker-input-container > .md-datepicker-triangle-button')
                 .click()
 
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
         })
 
         it('6.Cliente simples CNPJ', () => {
     
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
             ClienteSimplesPage.arrastarPessoaJuridica()
             ClienteSimplesPage.cnpjClient()
@@ -259,7 +259,7 @@ describe('Cadastrar cliente simples', () => {
 
         it('7.Cliente simples CNPJ - alterar Endereço', () => {
 
-            ClienteSimplesPage.iconMenuOptions()
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
             ClienteSimplesPage.arrastarPessoaJuridica()
             ClienteSimplesPage.cnpjClient()
@@ -270,7 +270,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.saveClientSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
             
-            ClienteSimplesPage.iconMenuOptions() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            ClienteSimplesPage.clickMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             ClienteSimplesPage.optionClientSimple()
 
             //Campo CEP - alterar

@@ -15,7 +15,7 @@ export class ServicosAvulsosPage {
   /**
    * Validar e clicar no menu de opções.
    */
-  static iconMenuOptions() {
+  static clickMenuOpcoes() {
     cy.get('[aria-label="Menu de opções"] > .ng-binding').should('be.visible').and('not.have.attr', 'disabled').click({ force: true });
   }
 

@@ -22,7 +22,7 @@ describe('Venda de serviço avulso Host - 104', () => {
 
         it('1.Pedido de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
-            ServicosAvulsosPage.iconMenuOptions()
+            ServicosAvulsosPage.clickMenuOpcoes()
             ServicosAvulsosPage.clickServiceMenu()
             ServicosAvulsosPage.productServiceHost() //PRODUTO
             ServicosAvulsosPage.chooseServiceSearch()

@@ -25,7 +25,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
             const numero_pedido = '8605'
             
-            ServicosAvulsosPage.iconMenuOptions()
+            ServicosAvulsosPage.clickMenuOpcoes()
             ServicosAvulsosPage.clientCompleteOptionMenu()
             ServicosAvulsosPage.clickMenuClientComplete()
             ServicosAvulsosPage.clicarOpcaoSeclickOptionServicesrvicos()

@@ -1,7 +1,7 @@
 //Todos os métodos são estáticos para facilitar o uso direto.
 export class ClienteCompletoPage {
   //Valida e clica no menu de opções.
-  static iconMenuOptions() {
+  static clickMenuOpcoes() {
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
       .should('be.visible')
       .and('not.have.attr', 'disabled');

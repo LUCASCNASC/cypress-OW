@@ -19,7 +19,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('1.Cliente completo CPF - tipo chave PIX Telefone correto', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
@@ -83,7 +83,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('2.Cliente completo CPF - tipo chave PIX Email correto', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
@@ -147,7 +147,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('3.Cliente completo CPF - tipo chave PIX CPF CNPJ correto', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
@@ -211,7 +211,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('4.Cliente completo CPF - tipo chave PIX CPF CNPJ correto', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
@@ -275,7 +275,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('5.Cliente completo CPF - validar tipo de chave PIX Telefone incorreto ', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
@@ -338,7 +338,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('6.Cliente completo CPF - validar tipo de chave PIX Email incorreto ', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
@@ -401,7 +401,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('7.Cliente completo CPF - validar tipo de chave CPF CNPJ incorreto ', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
@@ -464,7 +464,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('8.Cliente completo CPF - validar tipo de chave Aleatória incorreto ', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()

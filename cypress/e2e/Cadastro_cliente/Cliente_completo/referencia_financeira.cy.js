@@ -19,7 +19,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('1.Cliente completo CPF - caminho feliz', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()

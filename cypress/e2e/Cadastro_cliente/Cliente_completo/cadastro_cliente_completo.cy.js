@@ -5,7 +5,6 @@ import { RotaPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_R
 import { TelefonePage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Telefone/TelefonePage.js';
 import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
-
 describe('Cadastrar cliente completo', () => {
 
     beforeEach(() => {
@@ -19,8 +18,8 @@ describe('Cadastrar cliente completo', () => {
     context('Cadastro de cliente completo - básico ', () => {
 
         it('1.Cliente completo CPF', () => {
-
-            ClienteCompletoPage.iconMenuOptions() //PESSOA
+            
+            ClienteCompletoPage.clickMenuOpcoes() //PESSOA
             ClienteCompletoPage.optionClientComplete()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
@@ -60,7 +59,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('2.Cliente completo CPF - mensagem de campos obrigatórios', () => {
     
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete()
             ClienteCompletoPage.saveClient() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
             ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
@@ -106,7 +105,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('3.Cliente completo CNPJ', () => {
     
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete() 
             PessoaPage.cnpjClient() //PESSOA
             PessoaPage.nameCNPJ()
@@ -150,7 +149,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('4.Cliente completo CPF - caminho feliz', () => {
 
-            ClienteCompletoPage.iconMenuOptions()
+            ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.optionClientComplete() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
