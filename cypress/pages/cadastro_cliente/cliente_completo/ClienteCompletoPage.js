@@ -9,7 +9,7 @@ export class ClienteCompletoPage {
   }
 
   //Escolhe a opção "Cliente completo" no menu de opções.
-  static optionClientComplete() {
+  static clickOpcaoClienteCompleto() {
     cy.get('a[aria-label="Cliente completo"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -18,7 +18,7 @@ export class ClienteCompletoPage {
   }
 
   //Valida e clica no botão para salvar cadastro de cliente.
-  static saveClient() {
+  static clickSalvarCliente() {
     cy.get('.btn')
       .scrollIntoView()
       .wait(200)
@@ -27,13 +27,8 @@ export class ClienteCompletoPage {
     cy.get('.btn').click({ force: true });
   }
 
-  //Clica para salvar cadastro de cliente completo.
-  static saveClientComplete() {
-    cy.get('.btn > .ng-scope').click({ force: true });
-  }
-
   //Dentro do cadastro de cliente completo, clica no menu interno para mostrar opções.
-  static menuRegisterClientComplete() {
+  static clickMenuCadastrarClienteCompleto() {
     cy.get('#menu_click_pri')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -41,7 +36,7 @@ export class ClienteCompletoPage {
   }
 
   //Valida e clica na aba Referências.
-  static abaReferences() {
+  static ClickAbaReferencias() {
     cy.get('#menu_items_pri > :nth-child(5)')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -51,33 +46,28 @@ export class ClienteCompletoPage {
   }
 
   //Valida botão salvar desabilitado antes de preencher campos obrigatórios.
-  static buttonSaveDisabled() {
+  static validarBotaoSalvarDesabilitado() {
     cy.get('#btnModalAddEndereco')
       .should('be.visible')
       .and('not.have.attr', 'not.disabled');
   }
 
-  //Clica para salvar cadastro de cliente completo.
-  static clickSaveClientComplete() {
-    cy.get('.btn > .ng-scope').click({ force: true });
-  }
-
   //Valida mensagem de alerta para endereço obrigatório ao tentar salvar sem endereço.
-  static messAlertAdressMandatory() {
+  static validateMessageEnderecoObrigatorio() {
     cy.get('.toast').should('be.visible');
     cy.get('.toast-title').should('be.visible').and('have.text', 'Alerta');
     cy.get('.toast-message').should('be.visible').and('have.text', 'Um endereço do tipo padrão é obrigatório.');
   }
 
   //Valida modal de "Aguarde carregando..." após clicar para salvar.
-  static modalWaitingLoading() {
+  static validateModalAguardeCarregando() {
     cy.get('.layout-align-center-center > h3')
       .should('be.visible')
       .and('have.text', 'Aguarde carregando...');
   }
 
   //Valida mensagem "Registro salvo com sucesso!" após salvar cadastro.
-  static messRegisterSaveSucess() {
+  static validateMessageSalvoSucesso() {
     cy.get('.toast-success').should('be.visible');
     cy.get(':nth-child(1) > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Registro salvo com sucesso!');

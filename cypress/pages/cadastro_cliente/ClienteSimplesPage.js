@@ -106,7 +106,7 @@ export class ClienteSimplesPage {
   }
 
   //Clica no botão SALVAR do cliente simples.
-  static saveClientSimple() {
+  static clickSalvarClienteCompletoSimple() {
     cy.get('.layout-align-end-center > .md-raised')
       .scrollIntoView()
       .should('be.visible')

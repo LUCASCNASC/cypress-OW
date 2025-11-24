@@ -20,14 +20,14 @@ describe('Cadastrar cliente completo', () => {
         it('1.Cliente completo CPF - caminho feliz', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete()
+            ClienteCompletoPage.clickOpcaoClienteCompleto()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -36,7 +36,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -54,7 +54,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             RefPessoalPage.clickAbaRefGuys()
             RefPessoalPage.validateAbaEmpty() //CADASTRAR REFERENCIA PESSOAL
             RefPessoalPage.clickAddNew()
@@ -66,9 +66,9 @@ describe('Cadastrar cliente completo', () => {
             RefPessoalPage.clickSave()
             RefPessoalPage.messRefGuysAddedSucess()
             RefPessoalPage.infoAdded()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         }) 
     })
 

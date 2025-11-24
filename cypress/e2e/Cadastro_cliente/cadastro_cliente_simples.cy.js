@@ -28,7 +28,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
         })  
 
@@ -43,7 +43,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
             ClienteSimplesPage.clickMenuOpcoes() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             ClienteSimplesPage.optionClientSimple()
@@ -71,7 +71,7 @@ describe('Cadastrar cliente simples', () => {
                 .and('have.value','')
                 .type(Numeroalteracao, {force:true})
 
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
         })
 
@@ -86,7 +86,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
             ClienteSimplesPage.clickMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
             ClienteSimplesPage.optionClientSimple()
@@ -102,7 +102,7 @@ describe('Cadastrar cliente simples', () => {
                 .should('have.value','')
                 .type("10/10/1990", {force:true})
 
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
         })  
 
@@ -136,7 +136,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
             ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.clickOutSystem()
@@ -167,7 +167,7 @@ describe('Cadastrar cliente simples', () => {
                 .wait(4000)
 
             cy.intercept('/views/cliente/modalClienteAutorizacao**').as('api_modalClienteAutorizacao')
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             cy.wait('@api_modalClienteAutorizacao', { timeout: 40000 })
 
             ClienteSimplesPage.authorizeTrialDateBirth()
@@ -204,7 +204,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
             ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
@@ -253,7 +253,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
         })
 
@@ -267,7 +267,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
             
             ClienteSimplesPage.clickMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
@@ -296,7 +296,7 @@ describe('Cadastrar cliente simples', () => {
                 .and('have.value','')
                 .type(Numeroalteracao, {force:true})
 
-            ClienteSimplesPage.saveClientSimple()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
         })
     })

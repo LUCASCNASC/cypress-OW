@@ -20,14 +20,14 @@ describe('Cadastrar cliente completo', () => {
         it('1.Cliente completo CPF - tipo chave PIX Telefone correto', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete() 
+            ClienteCompletoPage.clickOpcaoClienteCompleto() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -36,7 +36,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -54,7 +54,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
             GeneralRefBanking.validateAbaRefBankingEmpty()
             GeneralRefBanking.clickAddNewRefBanking()
@@ -76,22 +76,22 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefBanking.clickSaveRefBanking()
             GeneralRefBanking.messRefBankingAddedSucess()
             GeneralRefBanking.infoRefBankingAdded()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         })  
 
         it('2.Cliente completo CPF - tipo chave PIX Email correto', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete() 
+            ClienteCompletoPage.clickOpcaoClienteCompleto() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -100,7 +100,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -118,7 +118,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
             GeneralRefBanking.validateAbaRefBankingEmpty()
             GeneralRefBanking.clickAddNewRefBanking()
@@ -140,22 +140,22 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefBanking.clickSaveRefBanking()
             GeneralRefBanking.messRefBankingAddedSucess()
             GeneralRefBanking.infoRefBankingAdded()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         }) 
 
         it('3.Cliente completo CPF - tipo chave PIX CPF CNPJ correto', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete() 
+            ClienteCompletoPage.clickOpcaoClienteCompleto() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -164,7 +164,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -182,7 +182,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
             GeneralRefBanking.validateAbaRefBankingEmpty()
             GeneralRefBanking.clickAddNewRefBanking()
@@ -204,22 +204,22 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefBanking.clicarSalvarRefBanclickSaveRefBankingcaria()
             GeneralRefBanking.messRefBankingAddedSucess()
             GeneralRefBanking.infoRefBankingAdded()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         }) 
 
         it('4.Cliente completo CPF - tipo chave PIX CPF CNPJ correto', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete() 
+            ClienteCompletoPage.clickOpcaoClienteCompleto() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -228,7 +228,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -246,7 +246,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
             GeneralRefBanking.validateAbaRefBankingEmpty()
             GeneralRefBanking.clickAddNewRefBanking()
@@ -268,22 +268,22 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefBanking.clickSaveRefBanking()
             GeneralRefBanking.messRefBankingAddedSucess()
             GeneralRefBanking.infoRefBankingAdded()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         }) 
 
         it('5.Cliente completo CPF - validar tipo de chave PIX Telefone incorreto ', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete()
+            ClienteCompletoPage.clickOpcaoClienteCompleto()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -292,7 +292,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -310,7 +310,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
             GeneralRefBanking.validateAbaRefBankingEmpty()
             GeneralRefBanking.clickAddNewRefBanking()
@@ -332,21 +332,21 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefBanking.clickSaveRefBanking()
             GeneralRefBanking.messRefBankingAddedSucess()
             GeneralRefBanking.infoRefBankingAdded()
-            ClienteCompletoPage.saveClient()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
             GeneralRefBanking.messRefBankingKeyPixPhoneInvalid()
         })  
 
         it('6.Cliente completo CPF - validar tipo de chave PIX Email incorreto ', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete()
+            ClienteCompletoPage.clickOpcaoClienteCompleto()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -355,7 +355,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -373,7 +373,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
             GeneralRefBanking.validateAbaRefBankingEmpty()
             GeneralRefBanking.clickAddNewRefBanking()
@@ -395,21 +395,21 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefBanking.clickSaveRefBanking()
             GeneralRefBanking.messRefBankingAddedSucess()
             GeneralRefBanking.infoRefBankingAdded()
-            ClienteCompletoPage.saveClient()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
             GeneralRefBanking.messRefBankingKeyPixEmailInvalid()
         })  
 
         it('7.Cliente completo CPF - validar tipo de chave CPF CNPJ incorreto ', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete()
+            ClienteCompletoPage.clickOpcaoClienteCompleto()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -418,7 +418,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -436,7 +436,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
             GeneralRefBanking.validateAbaRefBankingEmpty()
             GeneralRefBanking.clickAddNewRefBanking()
@@ -458,21 +458,21 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefBanking.clickSaveRefBanking()
             GeneralRefBanking.messRefBankingAddedSucess()
             GeneralRefBanking.infoRefBankingAdded()
-            ClienteCompletoPage.saveClient()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
             GeneralRefBanking.messRefBankingKeyPixCpfCnpjInvalid()
         })  
 
         it('8.Cliente completo CPF - validar tipo de chave Aleatória incorreto ', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete()
+            ClienteCompletoPage.clickOpcaoClienteCompleto()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -481,7 +481,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -499,7 +499,7 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.abaReferences() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             GeneralRefBanking.clickAbaRefBanking() //CADASTRAR REFERENCIA BANCÁRIA
             GeneralRefBanking.validateAbaRefBankingEmpty()
             GeneralRefBanking.clickAddNewRefBanking()
@@ -520,7 +520,7 @@ describe('Cadastrar cliente completo', () => {
             GeneralRefBanking.clickSaveRefBanking()
             GeneralRefBanking.messRefBankingAddedSucess()
             GeneralRefBanking.infoRefBankingAdded()
-            ClienteCompletoPage.saveClient()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
             GeneralRefBanking.messRefBankingKeyPixRandomInvalid()
         })  
     })

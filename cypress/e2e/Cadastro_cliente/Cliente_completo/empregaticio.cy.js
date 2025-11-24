@@ -20,14 +20,14 @@ describe('Cadastrar cliente completo', () => {
         it('1.Cliente completo CPF - caminho feliz', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete()
+            ClienteCompletoPage.clickOpcaoClienteCompleto()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -36,7 +36,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()

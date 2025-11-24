@@ -20,14 +20,14 @@ describe('Cadastrar cliente completo', () => {
         it('1.Cliente completo CPF', () => {
             
             ClienteCompletoPage.clickMenuOpcoes() //PESSOA
-            ClienteCompletoPage.optionClientComplete()
+            ClienteCompletoPage.clickOpcaoClienteCompleto()
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.modalAdressEmptyValidade()
@@ -52,35 +52,35 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         })  
 
         it('2.Cliente completo CPF - mensagem de campos obrigatórios', () => {
     
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete()
-            ClienteCompletoPage.saveClient() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            ClienteCompletoPage.clickOpcaoClienteCompleto()
+            ClienteCompletoPage.clickSalvarClienteCompleto() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.clickOpenTypeAdress()
             EnderecoPage.tipoEndereco()
             EnderecoPage.modalAdressEmptyValidade()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickOpenTypeAdress()
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -98,30 +98,30 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         })  
 
         it('3.Cliente completo CNPJ', () => {
     
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete() 
+            ClienteCompletoPage.clickOpcaoClienteCompleto() 
             PessoaPage.cnpjClient() //PESSOA
             PessoaPage.nameCNPJ()
             PessoaPage.nameFantasyCNPJ()
-            ClienteCompletoPage.saveClient() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            ClienteCompletoPage.messAlertAdressMandatory() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            ClienteCompletoPage.clickSalvarClienteCompleto() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
             EnderecoPage.modalAdressEmptyValidade()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickOpenTypeAdress()
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -139,9 +139,9 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         }) 
     })
 
@@ -150,13 +150,13 @@ describe('Cadastrar cliente completo', () => {
         it('4.Cliente completo CPF - caminho feliz', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.optionClientComplete() 
+            ClienteCompletoPage.clickOpcaoClienteCompleto() 
             PessoaPage.cpfClient()
             PessoaPage.nameComplete()
             PessoaPage.nameSocial()
             PessoaPage.dateBirth()
             PessoaPage.sexClient()
-            ClienteCompletoPage.saveClient()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
             EnderecoPage.clickAddNewAdress()
             EnderecoPage.tipoEndereco()
@@ -165,7 +165,7 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.typeAdress()
             EnderecoPage.cepAdress()
             EnderecoPage.numberAdress()
-            ClienteCompletoPage.buttonSaveDisabled()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSaveAdress()
             EnderecoPage.infoAdressAdded()
             RotaPage.clickAbaRoute() //CADASTRAR ROTA
@@ -183,10 +183,10 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSavePhone()
             TelefonePage.infoPhoneAdded()
             TelefonePage.messPhoneAddedSucess()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.modalWaitingLoading()
-            ClienteCompletoPage.messRegisterSaveSucess()
-            ClienteCompletoPage.menuRegisterClientComplete()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateModalAguardeCarregando()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
+            ClienteCompletoPage.clickMenuCadastrarClienteCompleto()
             AnexoPage.clickAbaAttachment() //CADASTRAR ANEXO 
             AnexoPage.validateAbaAttachmentEmpty()
             AnexoPage.selectFirstTypeAttachment()
@@ -194,8 +194,8 @@ describe('Cadastrar cliente completo', () => {
             AnexoPage.confirmSendFile()
             AnexoPage.messAttachmentAddSucess()
             AnexoPage.validateAttachmentAdded()
-            ClienteCompletoPage.saveClient()
-            ClienteCompletoPage.messRegisterSaveSucess()
+            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.validateMessageSalvoSucesso()
         })
     })
 })
