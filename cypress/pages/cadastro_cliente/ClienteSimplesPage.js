@@ -5,7 +5,7 @@ import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa } from '../..
 //Todos os métodos são estáticos para facilitar o uso direto.
 export class ClienteSimplesPage {
   //Valida e preenche o campo Data de Nascimento.
-  static dateBirth() {
+  static fillDataNascimento() {
     cy.get(':nth-child(3) > .layout-xs-column > .md-block > .validaData > .md-datepicker-button')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -15,28 +15,28 @@ export class ClienteSimplesPage {
   }
 
   //Preenche campo CPF.
-  static cpfClient() {
+  static fillCPFCliente() {
     const cpf = gerarCpf();
     cy.get('label[for="txtCpf"]').should('have.text', 'CPF');
     cy.get('#txtCpf').should('be.visible').and('have.value', '').type(cpf, { force: true });
   }
 
   //Preenche campo CNPJ.
-  static cnpjClient() {
+  static fillCNPJCliente() {
     const cnpj = gerarCNPJ();
     cy.get('label[for="txtCNPJ"]').should('have.text', 'CNPJ');
     cy.get('#txtCNPJ').should('be.visible').and('have.value', '').type(cnpj, { force: true });
   }
 
   //Preenche campo Nome Completo para cliente CPF.
-  static nameCompleteCPF() {
+  static fillNomeCompletoCPF() {
     const nomeCompleto = gerarNomeAleatorio();
     cy.get('label[for="txtNomeCompleto"]').should('have.text', 'Nome Completo');
     cy.get('#txtNomeCompleto').should('be.visible').and('have.value', '').type(nomeCompleto, { force: true });
   }
 
   //Preenche campo Nome Completo para cliente CNPJ.
-  static nameCompleteCNPJ() {
+  static fillNomeCompletoCNPJ() {
     const nomeCompletoEmpresa = gerarNomeEmpresa();
     cy.get('label[for="txtNomeCompleto"]').should('have.text', 'Nome Completo');
     cy.get('#txtNomeCompleto').should('be.visible').and('have.value', '').wait(200).type(nomeCompletoEmpresa, { force: true });
@@ -158,7 +158,7 @@ export class ClienteSimplesPage {
   }
 
   //Autoriza o trial para alteração da data de nascimento.
-  static authorizeTrialDateBirth() {
+  static authorizeTrialfillDataNascimento() {
     const idSupervisorTrial = "393";
     const nomeSupervidorTrial = "T.A. USUÁRIO AUTOMAÇÃO";
     const senhaSupervisor = "123.automacao";

@@ -4,7 +4,7 @@ import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa } from '../..
 //Todos os métodos são estáticos para facilitar o uso direto sem instanciação.
 export class PessoaPage {
   //Valida e preenche o campo Data Nascimento.
-  static dateBirth() {
+  static fillDataNascimento() {
     cy.get('#txtDataNasc > .md-datepicker-button')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -14,14 +14,14 @@ export class PessoaPage {
   }
 
   //Valida e preenche o campo Nome Completo (CPF).
-  static nameComplete() {
+  static fillNomeCompleto() {
     const NomeCompleto = gerarNomeAleatorio();
     cy.get('label[for="txtRazaoSocial"]').should('have.text', 'Nome Completo');
     cy.get('#txtRazaoSocial').should('be.visible').and('have.value', '').type(NomeCompleto);
   }
 
   //Valida e preenche o campo Razão Social (CNPJ).
-  static nameCNPJ() {
+  static fillNomeCNPJ() {
     const razaoSocial = gerarNomeEmpresa();
     cy.get('#txtRazaoSocial').click();
     cy.get('label[for="txtRazaoSocial"]').should('have.text', 'Razão Social');
@@ -29,35 +29,35 @@ export class PessoaPage {
   }
 
   //Valida e preenche o campo CPF.
-  static cpfClient() {
+  static fillfillCPFClientee() {
     const cpf = gerarCpf();
     cy.get('label[for="txtCpfCnpj"]').should('have.text', 'CPF');
     cy.get('#txtCpfCnpj').should('be.visible').and('have.value', '').type(cpf, { force: true });
   }
 
   //Valida e preenche o campo CNPJ.
-  static cnpjClient() {
+  static fillfillCNPJClientee() {
     const cnpj = gerarCNPJ();
     cy.get('label[for="txtCpfCnpj"]').should('have.text', 'CPF');
     cy.get('#txtCpfCnpj').should('be.visible').and('have.value', '').type(cnpj, { force: true });
   }
 
   //Valida e preenche o campo Nome Fantasia (CNPJ).
-  static nameFantasyCNPJ() {
+  static fillNomeFantasiaCliente() {
     const nomeClienteCNPJ = "Novo cadastro cliente CNPJ";
     cy.get('label[for="txtNomeFantasia"]').should('have.text', 'Nome Social');
     cy.get('#txtNomeFantasia').should('be.visible').and('have.value', '').type(nomeClienteCNPJ, { force: true });
   }
 
   //Valida e preenche o campo Nome Social (CPF).
-  static nameSocial() {
+  static fillNomeSocial() {
     const NomeSocial = gerarNomeAleatorio();
     cy.get('label[for="txtNomeFantasia"]').should('have.text', 'Nome Social');
     cy.get('#txtNomeFantasia').should('be.visible').and('have.value', '').type(NomeSocial);
   }
 
   //Valida e seleciona o sexo da pessoa como Masculino.
-  static sexClient() {
+  static chooseSexoCliente() {
     cy.get('label[for="txtSexo"]').should('have.text', 'Sexo');
     cy.get('#txtSexo').should('be.visible');
     cy.get('#txtSexo').click({ force: true });

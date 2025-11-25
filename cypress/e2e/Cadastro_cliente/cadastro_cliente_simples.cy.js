@@ -21,9 +21,9 @@ describe('Cadastrar cliente simples', () => {
 
             ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.cpfClient()
-            ClienteSimplesPage.nameCompleteCPF()
-            ClienteSimplesPage.dateBirth()
+            ClienteSimplesPage.fillCPFCliente()
+            ClienteSimplesPage.fillNomeCompletoCPF()
+            ClienteSimplesPage.fillDataNascimento()
             ClienteSimplesPage.sexPersonPhysical()
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
@@ -36,9 +36,9 @@ describe('Cadastrar cliente simples', () => {
     
             ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.cpfClient()
-            ClienteSimplesPage.nameCompleteCPF()
-            ClienteSimplesPage.dateBirth()
+            ClienteSimplesPage.fillCPFCliente()
+            ClienteSimplesPage.fillNomeCompletoCPF()
+            ClienteSimplesPage.fillDataNascimento()
             ClienteSimplesPage.sexPersonPhysical()
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
@@ -79,9 +79,9 @@ describe('Cadastrar cliente simples', () => {
     
             ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.cpfClient()
-            ClienteSimplesPage.nameCompleteCPF()
-            ClienteSimplesPage.dateBirth()
+            ClienteSimplesPage.fillCPFCliente()
+            ClienteSimplesPage.fillNomeCompletoCPF()
+            ClienteSimplesPage.fillDataNascimento()
             ClienteSimplesPage.sexPersonPhysical()
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
@@ -130,8 +130,8 @@ describe('Cadastrar cliente simples', () => {
                     // Aqui você pode usar 'value' como precisar
                 });
 
-            ClienteSimplesPage.nameCompleteCPF()
-            ClienteSimplesPage.dateBirth()
+            ClienteSimplesPage.fillNomeCompletoCPF()
+            ClienteSimplesPage.fillDataNascimento()
             ClienteSimplesPage.sexPersonPhysical()
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
@@ -170,7 +170,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             cy.wait('@api_modalClienteAutorizacao', { timeout: 40000 })
 
-            ClienteSimplesPage.authorizeTrialDateBirth()
+            ClienteSimplesPage.authorizeTrialfillDataNascimento()
             ClienteSimplesPage.messFirstRegistSaveSucess()
         })
 
@@ -198,8 +198,8 @@ describe('Cadastrar cliente simples', () => {
                     // Aqui você pode usar 'value' como precisar
                 });
 
-            ClienteSimplesPage.nameCompleteCPF()
-            ClienteSimplesPage.dateBirth()
+            ClienteSimplesPage.fillNomeCompletoCPF()
+            ClienteSimplesPage.fillDataNascimento()
             ClienteSimplesPage.sexPersonPhysical()
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
@@ -248,8 +248,8 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
             ClienteSimplesPage.arrastarPessoaJuridica()
-            ClienteSimplesPage.cnpjClient()
-            ClienteSimplesPage.nameCompleteCNPJ()
+            ClienteSimplesPage.fillCNPJCliente()
+            ClienteSimplesPage.fillNomeCompletoCNPJ()
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()
@@ -262,8 +262,8 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
             ClienteSimplesPage.arrastarPessoaJuridica()
-            ClienteSimplesPage.cnpjClient()
-            ClienteSimplesPage.nameCompleteCNPJ()
+            ClienteSimplesPage.fillCNPJCliente()
+            ClienteSimplesPage.fillNomeCompletoCNPJ()
             ClienteSimplesPage.searchCEP()
             ClienteSimplesPage.numberAdress()
             ClienteSimplesPage.routeClient()

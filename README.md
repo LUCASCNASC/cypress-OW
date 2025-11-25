@@ -57,5 +57,4 @@ Este projeto está sob a licença MIT.
 ---
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
 
-Ajustar static dos arquivos Page e teste. Estou no arquivo:
-- cadastro_cliente_completo.cy
+Definida base_url: http://confidencial.com/

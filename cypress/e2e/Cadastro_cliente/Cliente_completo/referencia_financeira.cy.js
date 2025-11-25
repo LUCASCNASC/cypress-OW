@@ -21,11 +21,11 @@ describe('Cadastrar cliente completo', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.clickOpcaoClienteCompleto()
-            PessoaPage.cpfClient()
-            PessoaPage.nameComplete()
-            PessoaPage.nameSocial()
+            PessoaPage.fillCPFCliente()
+            PessoaPage.fillNomeCompleto()
+            PessoaPage.fillNomeSocial()
             PessoaPage.dataNascimento()
-            PessoaPage.sexClient()
+            PessoaPage.chooseSexoCliente()
             ClienteCompletoPage.clickSalvarClienteCompleto()
             ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
             EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO

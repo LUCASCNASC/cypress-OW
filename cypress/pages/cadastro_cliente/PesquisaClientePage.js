@@ -36,13 +36,13 @@ export class PesquisaClientePage {
 
   //Valida número e descrição do cliente CPF selecionado.
   static numberDescripCPFSearch() {
-    cy.get('#lblCpfClienteSelecionado').should('be.visible');
+    cy.get('#lblfillCPFClienteeSelecionado').should('be.visible');
     cy.get('#lblNomeClienteSelecionado').should('be.visible');
   }
 
   //Valida número e descrição do cliente CNPJ selecionado.
   static numberDescripCNPJSearch() {
-    cy.get('#lblCpfClienteSelecionado').should('be.visible');
+    cy.get('#lblfillCPFClienteeSelecionado').should('be.visible');
     cy.get('#lblNomeClienteSelecionado').should('be.visible');
   }
 
