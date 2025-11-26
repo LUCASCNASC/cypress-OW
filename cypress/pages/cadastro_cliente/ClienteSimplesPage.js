@@ -64,7 +64,7 @@ export class ClienteSimplesPage {
   }
 
   //Preenche campo Número do endereço.
-  static numberAdress() {
+  static fillNumeroEndereco() {
     const numero_rendereco = '66';
     cy.get('label[for="txtNumero"]').should('have.text', 'Número');
     cy.get('#txtNumero').should('be.visible').and('have.value', '').type(numero_rendereco, { force: true });

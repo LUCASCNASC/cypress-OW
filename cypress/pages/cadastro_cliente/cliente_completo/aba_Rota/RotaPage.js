@@ -2,7 +2,7 @@
 //Todos os métodos são estáticos para facilitar o uso direto.
 export class RotaPage {
   //Valida e clica na aba Rota.
-  static clickAbaRoute() {
+  static clickAbaRota() {
     cy.get('#menu_items_pri > :nth-child(3)')
       .should('be.visible')
       .and('have.text', 'Rotas');
@@ -12,7 +12,7 @@ export class RotaPage {
   }
 
   //Clica no botão "+" para adicionar uma nova Rota.
-  static clickAddedNewRoute() {
+  static clickAdicionarNovaRota() {
     cy.get('.layout-align-end-end > .md-fab')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -20,7 +20,7 @@ export class RotaPage {
   }
 
   //Valida campos do modal de rota enquanto está vazio.
-  static modalRouteEmptyValidade() {
+  static validateRotaVazia() {
     cy.get('.md-dialog-fullscreen > .md-primary > .md-toolbar-tools > .flex')
       .should('be.visible')
       .and('have.text', 'Rotas');
@@ -33,21 +33,14 @@ export class RotaPage {
     cy.get('.layout-gt-sm-column > .md-block > .ng-binding').should('be.visible');
   }
 
-  //Valida mensagem de sucesso de rota incluída.
-  static messRouteAddedSucess() {
-    cy.get('#toast-container > :nth-child(1)').should('be.visible');
-    cy.get(':nth-child(1) > .toast-title').should('be.visible').and('have.text', 'Aviso');
-    cy.get(':nth-child(1) > .toast-message').should('be.visible').and('have.text', 'Rota incluída com sucesso.');
-  }
-
   //Valida informações da rota adicionada.
-  static infoRouteAdded() {
+  static validadeRotaAdicionada() {
     cy.get('.md-whiteframe-2dp').should('be.visible');
     // Adicione validações específicas aqui se necessário
   }
 
   //Preenche o fluxo completo de cadastro de rota e seleciona opções.
-  static routaComplete() {
+  static addRotaCompleta() {
     const rota_cadastro = "560";
     cy.get('label[for="txtRota"]').should('have.text', 'Rota');
     cy.get('#txtRota').type(rota_cadastro);
@@ -67,7 +60,7 @@ export class RotaPage {
   }
 
   //Seleciona o tipo de endereço "Padrão" no modal de rota.
-  static typeAdressRoute() {
+  static chooseTipoEnderecoRota() {
     cy.get('#txtTpEnderecoRota').click({ force: true });
     cy.get('.md-text.ng-binding').contains('Padrão').click({ force: true });
   }

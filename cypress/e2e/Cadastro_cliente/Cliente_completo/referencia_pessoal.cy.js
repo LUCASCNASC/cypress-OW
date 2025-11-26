@@ -28,23 +28,23 @@ describe('Cadastrar cliente completo', () => {
             PessoaPage.chooseSexoCliente()
             ClienteCompletoPage.clickSalvarClienteCompleto()
             ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
-            EnderecoPage.clickAbaAdress() //CADASTRAR ENDEREÇO
-            EnderecoPage.clickAddNewAdress()
+            EnderecoPage.clickAbaEndereco() //CADASTRAR ENDEREÇO
+            EnderecoPage.clickAdicionarNovoEndereco()
             EnderecoPage.tipoEndereco()
-            EnderecoPage.modalAdressEmptyValidade()
-            EnderecoPage.clickOpenTypeAdress()
-            EnderecoPage.typeAdress()
-            EnderecoPage.cepAdress()
-            EnderecoPage.numberAdress()
+            EnderecoPage.validateEnderecoVazio()
+            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.chooseTipoEndereco()
+            EnderecoPage.fillCEPEndereco()
+            EnderecoPage.fillNumeroEndereco()
             ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSaveAdress()
-            EnderecoPage.infoAdressAdded()
-            RotaPage.clickAbaRoute() //CADASTRAR ROTA
-            RotaPage.clickAddedNewRoute()
-            RotaPage.modalRouteEmptyValidade()
-            RotaPage.typeAdressRoute()
-            RotaPage.routaComplete()
-            RotaPage.infoRouteAdded()
+            EnderecoPage.clickSalvarEndereco()
+            EnderecoPage.infoEnderecoAdicionado()
+            RotaPage.clickAbaRota() //CADASTRAR ROTA
+            RotaPage.clickAdicionarNovaRota()
+            RotaPage.validateRotaVazia()
+            RotaPage.chooseTipoEnderecoRota()
+            RotaPage.addRotaCompleta()
+            RotaPage.validadeRotaAdicionada()
             TelefonePage.clickAbaPhone() //CADASTRAR TELEFONE
             TelefonePage.clickAddedNewPhone()
             TelefonePage.modalPhoneEmptyValidade()

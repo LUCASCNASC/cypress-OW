@@ -2,7 +2,7 @@
 //Todos os métodos são estáticos para facilitar o uso sem instanciação.
 export class EnderecoPage {
   //Valida e clica na aba Endereço.
-  static clickAbaAdress() {
+  static clickAbaEndereco() {
     cy.get('#menu_items_pri > :nth-child(2)')
       .should('be.visible')
       .and('have.text', 'Endereço');
@@ -12,14 +12,14 @@ export class EnderecoPage {
   }
 
   //Valida mensagem de sucesso após incluir endereço.
-  static messAdressAddedSucess() {
+  static messEnderecoAdicionadoSucesso() {
     cy.get('.toast-success').should('be.visible');
     cy.get('.toast-success > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Endereço incluído com sucesso.');
   }
 
   //Clica no botão "+" para adicionar novo endereço.
-  static clickAddNewAdress() {
+  static clickAdicionarNovoEndereco() {
     cy.get('.layout-align-end-end > .md-fab')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -29,7 +29,7 @@ export class EnderecoPage {
   }
 
   //Valida os campos do modal de endereço quando está vazio.
-  static modalAdressEmptyValidade() {
+  static validateEnderecoVazio() {
     cy.get('label[for="txtCepEndereco"]').should('have.text', 'CEP');
     cy.get('#txtCepEndereco').should('be.visible').and('have.value', '');
 
@@ -56,12 +56,12 @@ export class EnderecoPage {
   }
 
   //Clica para abrir as opções de tipo de endereço.
-  static clickOpenTypeAdress() {
+  static clickAbrirTipoEndereco() {
     cy.get('#txtTpEndereco').click({ force: true });
   }
 
   //Valida informações que foram adicionadas no endereço.
-  static infoAdressAdded() {
+  static infoEnderecoAdicionado() {
     cy.get('.md-whiteframe-2dp')
       .should('be.visible')
       .and('contain', 'Padrão')
@@ -70,33 +70,17 @@ export class EnderecoPage {
   }
 
   //Clica no botão salvar endereço.
-  static clickSaveAdress() {
+  static clickSalvarEndereco() {
     cy.get('#btnModalAddEndereco').click();
   }
 
-  //Valida card do modal endereço vazio antes de preencher os campos.
-  static cardAdressEmptyValidate() {
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
-      .should('be.visible')
-      .and('have.text', 'Endereço');
-
-    cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
-      .should('be.visible')
-      .and('not.have.attr', 'disabled');
-
-    cy.get('#btnModalAddEndereco').should('be.visible').should('not.have.attr', 'not.disabled');
-
-    cy.get('label[for="txtTpEndereco"]').should('have.text', 'Tipo de Endereço');
-    cy.get('#txtTpEndereco').should('be.visible').and('have.value', '');
-  }
-
   //Seleciona o tipo de endereço "Padrão".
-  static typeAdress() {
+  static chooseTipoEndereco() {
     cy.get('.md-text.ng-binding').contains('Padrão').click({ force: true });
   }
 
   //Preenche o campo CEP no cadastro de endereço e pesquisa.
-  static cepAdress() {
+  static fillCEPEndereco() {
     const CEPcadastro = "87065300";
     cy.get('#txtCepEndereco').type(CEPcadastro, { force: true });
     cy.get('.md-icon-float > .ng-binding').should('be.visible');
@@ -106,7 +90,7 @@ export class EnderecoPage {
   }
 
   //Preenche o campo Número no cadastro de endereço.
-  static numberAdress() {
+  static fillNumeroEndereco() {
     const numero_endereco = "66";
     cy.get('#txtNumEndereco').type(numero_endereco, { force: true });
   }
