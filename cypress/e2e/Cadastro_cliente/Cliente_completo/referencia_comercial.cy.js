@@ -45,15 +45,15 @@ describe('Cadastrar cliente completo', () => {
             RotaPage.chooseTipoEnderecoRota()
             RotaPage.addRotaCompleta()
             RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaPhone() //CADASTRAR TELEFONE
-            TelefonePage.clickAddedNewPhone()
-            TelefonePage.modalPhoneEmptyValidade()
-            TelefonePage.typePhone()
-            TelefonePage.numberPhone()
-            TelefonePage.ramalPhone()
-            TelefonePage.clickSavePhone()
-            TelefonePage.infoPhoneAdded()
-            TelefonePage.messPhoneAddedSucess()
+            TelefonePage.clickAbaTelefone() //CADASTRAR TELEFONE
+            TelefonePage.clickAdicionarNovoTelefone()
+            TelefonePage.validateTelefoneVazio()
+            TelefonePage.chooseTipoTelefone()
+            TelefonePage.fillNumeroTelefone()
+            TelefonePage.fillRamalTelefone()
+            TelefonePage.clickSalvarTelefone()
+            TelefonePage.validateTelefoneAdicionado()
+            TelefonePage.validateMessageTelefoneAdicionado()
             ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
             RefComercialPage.clickAbaRefCommercial() //CADASTRAR REFERENCIA COMERCIAL
             RefComercialPage.validadeRefCommercialEmpty()

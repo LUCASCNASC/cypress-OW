@@ -1,7 +1,7 @@
 import { gerarTelefoneAleatorio } from '../../../gerarDados';
 export class TelefonePage {
   //Valida e clica na aba Telefone.
-  static clickAbaPhone() {
+  static clickAbaTelefone() {
     cy.get('#menu_items_pri > :nth-child(4)')
       .should('be.visible')
       .and('have.text', 'Telefones');
@@ -11,7 +11,7 @@ export class TelefonePage {
   }
 
   //Clica no botão "+" para adicionar novo telefone.
-  static clickAddedNewPhone() {
+  static clickAdicionarNovoTelefone() {
     cy.get('.layout-align-end-end > .md-fab')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -21,7 +21,7 @@ export class TelefonePage {
   }
 
  //Valida campos do modal Telefone enquanto está vazio.
-  static modalPhoneEmptyValidade() {
+  static validateTelefoneVazio() {
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
       .should('be.visible')
       .and('have.text', 'Telefone');
@@ -38,7 +38,7 @@ export class TelefonePage {
   }
 
   //Clica no botão salvar telefone.
-  static clickSavePhone() {
+  static clickSalvarTelefone() {
     cy.get('#btnModalAddTel')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -46,7 +46,7 @@ export class TelefonePage {
   }
 
   //Valida informações adicionadas no cadastro de telefone.
-  static infoPhoneAdded() {
+  static validateTelefoneAdicionado() {
     cy.get('.md-whiteframe-2dp')
       .should('be.visible')
       .and('contain', 'Padrão')
@@ -55,26 +55,26 @@ export class TelefonePage {
   }
 
   //Valida mensagem de telefone incluído com sucesso.
-  static messPhoneAddedSucess() {
+  static validateMessageTelefoneAdicionado() {
     cy.get('.toast-success').should('be.visible');
     cy.get(':nth-child(1) > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Telefone incluído com sucesso.');
   }
 
    //Seleciona o tipo de telefone "Padrão".
-  static typePhone() {
+  static chooseTipoTelefone() {
     cy.get('#txtTpTel').click({ force: true });
     cy.get('.md-text.ng-binding').contains('Padrão').click({ force: true });
   }
 
   //Preenche o campo Número no cadastro de telefone.
-  static numberPhone() {
+  static fillNumeroTelefone() {
     const numero_telefone = gerarTelefoneAleatorio();
     cy.get('#txtNumTel').type(numero_telefone);
   }
 
   //Preenche o campo Ramal no cadastro de telefone.
-  static ramalPhone() {
+  static fillRamalTelefone() {
     const ramal_telefone = "435";
     cy.get('#txtRamalTel').type(ramal_telefone);
   }
