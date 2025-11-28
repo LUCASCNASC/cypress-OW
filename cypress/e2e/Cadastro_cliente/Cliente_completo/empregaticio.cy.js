@@ -55,9 +55,9 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSalvarTelefone()
             TelefonePage.validateTelefoneAdicionado()
             TelefonePage.validateMessageTelefoneAdicionado()
-            EmpregaticioPage.clickAbaEmployment() //CADASTRAR EMPREGATÍCIO
-            EmpregaticioPage.validateAbaEmploymentEmpty()
-            EmpregaticioPage.clickAddNewEmployment()
+            EmpregaticioPage.clickAbaEmpregaticio() //CADASTRAR EMPREGATÍCIO
+            EmpregaticioPage.validateAbaEmpregaticioVazio()
+            EmpregaticioPage.clickAdicionarNovoEmpregaticio()
         }) 
     })
 })

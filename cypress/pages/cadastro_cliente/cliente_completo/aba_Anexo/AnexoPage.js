@@ -2,7 +2,7 @@
 //Todos os métodos são estáticos para facilitar o uso sem instanciação.
 export class AnexoPage {
   //Valida e clica na aba Anexos.
-  static clickAbaAttachment() {
+  static clickAbaAnexo() {
     cy.get('#menu_mais_pri > :nth-child(4)')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -12,7 +12,7 @@ export class AnexoPage {
   }
 
   //Valida os elementos da tela de anexos antes de fazer upload.
-  static validateAbaAttachmentEmpty() {
+  static validateAbaAnexoVazio() {
     cy.get('[ng-controller="ListaDeAnexosController"] > :nth-child(1)')
       .should('be.visible')
       .and('have.text', 'Anexos');
@@ -24,13 +24,13 @@ export class AnexoPage {
   }
 
   //Seleciona a primeira opção de tipo de anexo.
-  static selectFirstTypeAttachment() {
+  static selectPrimeiroTipoAnexo() {
     cy.get('#ComboTipoAnexo').click();
     cy.contains('div.md-text.ng-binding', 'Assinatura do Termo de Adesão do Titular').click();
   }
 
   //Confirma o envio de arquivo no modal.
-  static confirmSendFile() {
+  static confirmEnvioArquivo() {
     cy.get('.md-title')
       .should('be.visible')
       .and('have.text', 'Deseja enviar o arquivo selecionado?');
@@ -40,14 +40,14 @@ export class AnexoPage {
   }
 
   //Valida mensagem de sucesso de anexo adicionado.
-  static messAttachmentAddSucess() {
+  static validateMessageAnexoAdicionado() {
     cy.get('.toast').should('be.visible');
     cy.get('.toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-message').should('be.visible').and('have.text', 'Anexo cadastrado com sucesso!');
   }
 
   //Valida que o anexo foi realmente adicionado (data do dia).
-  static validateAttachmentAdded() {
+  static validateAnexoAdicionado() {
     const hoje = new Date();
     const dataAtual = hoje.toLocaleDateString('pt-BR');
     cy.get('.md-whiteframe-2dp').should('be.visible');
