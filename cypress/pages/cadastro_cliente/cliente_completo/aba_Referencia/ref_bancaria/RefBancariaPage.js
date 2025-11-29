@@ -3,7 +3,7 @@ import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailE
   gerarChavePixEmail, gerarChavePixCPF, gerarChavePixAleatoria} from '../../../../gerarDadosPIX';
 export class RefBancariaPage {
   //Valida e clica na aba Bancária em Referências.
-  static clickAbaRefBanking() {
+  static clickAbaReferenciaBancaria() {
     cy.get('#menu_items_sec > :nth-child(3)')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -13,7 +13,7 @@ export class RefBancariaPage {
   }
 
   //Valida tela vazia antes de adicionar referência bancária.
-  static validateAbaRefBankingEmpty() {
+  static validateAbaReferenciaBancariaVazia() {
     cy.get('h3').should('be.visible').and('have.text', 'Referências / Bancária');
     cy.get('.layout-align-end-end > .md-fab').should('be.visible').and('not.have.attr', 'disabled');
     cy.get('.text-align-center').should('be.visible').and('have.text', 'Não foi encontrado nenhum registro');
@@ -21,14 +21,14 @@ export class RefBancariaPage {
   }
 
   //Clica no botão para adicionar nova referência bancária.
-  static clickAddNewRefBanking() {
+  static clickAddNovaReferenciaBancaria() {
     cy.intercept('GET', '/views/cliente/modalClienteRefBancaria.html').as('api_modal_referencia_bancaria');
     cy.get('.layout-align-end-end > .md-fab').click();
     cy.wait('@api_modal_referencia_bancaria', { timeout: 40000 });
   }
 
   //Valida campos do modal de referência bancária vazio.
-  static modalRefBankingEmpty() {
+  static modalReferenciaBancariaVazia() {
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
       .should('be.visible')
       .and('have.text', 'Referência bancária');
@@ -69,21 +69,21 @@ export class RefBancariaPage {
   }
 
   //Clica para salvar Referência Bancária.
-  static clickSaveRefBanking() {
+  static clickSalvarReferenciaBancaria() {
     cy.contains('button', 'Salvar').should('be.visible');
     cy.get('#btnModalAddRefPessoal').should('be.visible').and('not.have.attr', 'disabled');
     cy.get('#btnModalAddRefPessoal').click();
   }
 
   //Valida mensagem de sucesso após adicionar Referência Bancária.
-  static messRefBankingAddedSucess() {
+  static messageReferenciaBancariaAdicionadaSucesso() {
     cy.get('.toast-success').should('be.visible');
     cy.get('.toast-success > .toast-title').should('be.visible').and('have.text', 'Aviso');
     cy.get('.toast-success > .toast-message').should('be.visible').and('have.text', 'Referência Bancária incluída com sucesso.');
   }
 
   //Valida informações adicionadas no cadastro de referência bancária.
-  static infoRefBankingAdded() {
+  static infoReferenciaBancariaAdicionada() {
     cy.get('.md-whiteframe-2dp').should('be.visible').and('contain', 'aaa').and('contain', 'Agencia:').and('contain', 'Conta:');
   }
 
@@ -131,46 +131,46 @@ export class RefBancariaPage {
   }
 
   //Seleciona o banco "aaa".
-  static bank() {
+  static fillBanco() {
     cy.get('#txtBancoRefBanc').click();
     cy.contains('aaa').click();
   }
 
   //Preenche o campo Agência.
-  static agency() {
+  static fillAgencia() {
     cy.get('#txtAgenciaRefBanc').type('341');
   }
 
   //Preenche o campo Conta.
-  static account() {
+  static fillConta() {
     cy.get('#txtContaRefBanc').type('12345-1');
   }
 
   //Preenche o campo Data Abertura.
-  static dateOpening() {
+  static fillDataAbertura() {
     cy.get('input.md-datepicker-input.md-input').type('30/09/2024');
   }
 
   //Seleciona "Sim" para boleto.
-  static ticket() {
+  static fillTicket() {
     cy.get('#txtBoletoRefBanc').click();
     cy.contains('Sim').click({ force: true });
   }
 
   //Preenche o campo Telefone.
-  static phone() {
+  static fillTelefone() {
     const numero_telefone = gerarTelefoneAleatorio();
     cy.get('#txtTelefoneRefBanc').type(numero_telefone);
   }
 
   //Preenche o campo Gerente.
-  static manager() {
+  static fillGerente() {
     const NomeGerente = gerarNomeAleatorio();
     cy.get('#txtGerente').type(NomeGerente);
   }
 
   //Preenche o campo Email.
-  static email() {
+  static fillEmail() {
     const emailAleatorio = gerarEmailAleatorio();
     cy.get('#txtEmailRefBanc').type(emailAleatorio);
   }
