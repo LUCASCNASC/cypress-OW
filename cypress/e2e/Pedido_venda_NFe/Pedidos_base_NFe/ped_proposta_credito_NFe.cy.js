@@ -17,7 +17,7 @@ describe('Gerar pedido com proposta de crédito', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVendaPage.NFe() //processo normal
-        cy.chooseClient()
+        cy.chooseCliente()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz', () => {

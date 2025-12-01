@@ -18,7 +18,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVendaPage.NFe() //processo normal
-        cy.chooseClient()
+        cy.chooseCliente()
     })
   
     context('Sem entrega/ com promoção/ com serviço processo 9860 - caminho feliz', () => {

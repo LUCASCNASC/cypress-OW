@@ -16,7 +16,7 @@ describe('Gerar pedidos com Mão de obra', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVendaPage.NFe() //processo normal
-        cy.chooseClient()
+        cy.chooseCliente()
     })
   
     context('Sem entrega/processo 9860 - caminho feliz', () => {

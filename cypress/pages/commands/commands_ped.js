@@ -162,7 +162,7 @@ Cypress.Commands.add('validateOrderGenerated', () => {
  * Escolhe um cliente com rota, preenchendo o CPF/CNPJ,
  * pesquisando e selecionando o cliente na lista.
  */
-Cypress.Commands.add('chooseClient', () => {
+Cypress.Commands.add('chooseCliente', () => {
   cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
     .wait(500)
     .type('48976249089 {downArrow}');

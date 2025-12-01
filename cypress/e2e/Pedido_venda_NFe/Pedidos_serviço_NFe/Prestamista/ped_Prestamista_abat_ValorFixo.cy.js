@@ -19,7 +19,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', (
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVendaPage.NFe() //processo normal
-        cy.chooseClient()
+        cy.chooseCliente()
     })   
 
     context('Com entrega / Produtos sem promoção - Prestamista com abatimento Valor Fixo', () => {

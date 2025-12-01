@@ -16,7 +16,7 @@ describe('Gerar pedido com reserva no CD (com entrega) - Regra de saldo Parâmet
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVendaPage.NFCe() //processo normal
-        cy.chooseClient()
+        cy.chooseCliente()
     })
 
     context('Com entrega/ processo 9890 - caminho feliz', () => {

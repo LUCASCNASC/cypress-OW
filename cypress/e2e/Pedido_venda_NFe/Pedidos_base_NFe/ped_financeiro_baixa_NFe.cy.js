@@ -17,7 +17,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVendaPage.financePaymentNFe() //processo financeiro na baixa
-        cy.chooseClient()
+        cy.chooseCliente()
     })
   
     context('Sem entrega/ processo 9863 - caminho feliz', () => {

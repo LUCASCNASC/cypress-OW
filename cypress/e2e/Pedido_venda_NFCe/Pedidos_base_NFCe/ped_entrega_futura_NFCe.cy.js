@@ -17,7 +17,7 @@ describe('Gerar pedido de entrega futura com entrega', () => {
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVendaPage.deliveryFutureNFCe() //processo entrega futura
-        cy.chooseClient()
+        cy.chooseCliente()
     })
     
     context('Com entrega/ processo 9891 - caminho feliz', () => {

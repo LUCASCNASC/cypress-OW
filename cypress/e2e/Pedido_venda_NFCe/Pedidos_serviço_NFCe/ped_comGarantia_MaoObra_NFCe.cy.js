@@ -16,7 +16,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra com entrega', () => {
         cy.urlAposLogin()
         cy.tituloPagina() 
         ProcessoVendaPage.NFCe() //processo normal
-        cy.chooseClient()
+        cy.chooseCliente()
     })
 
     context('Com entrega/processo 9890 - caminho feliz', () => {

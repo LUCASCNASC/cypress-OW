@@ -17,7 +17,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.urlAposLogin()
         cy.tituloPagina()
         ProcessoVendaPage.NFe() //processo normal
-        cy.chooseClient()
+        cy.chooseCliente()
     })
 
     context('Sem entrega/ processo 9860 - caminho feliz - processo de inclusão 3860', () => {
