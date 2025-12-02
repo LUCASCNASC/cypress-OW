@@ -27,8 +27,8 @@ describe('Cadastrar cliente completo', () => {
             PessoaPage.fillDataNascimento()
             PessoaPage.chooseSexoCliente()
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
-            EnderecoPage.clickAbaEndereco() //CADASTRAR ENDEREÇO
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
+            EnderecoPage.clickAbaEndereco() 
             EnderecoPage.clickAdicionarNovoEndereco()
             EnderecoPage.tipoEndereco()
             EnderecoPage.validateEnderecoVazio()
@@ -39,13 +39,13 @@ describe('Cadastrar cliente completo', () => {
             ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSalvarEndereco()
             EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() //CADASTRAR ROTA
+            RotaPage.clickAbaRota() 
             RotaPage.clickAdicionarNovaRota()
             RotaPage.validateRotaVazia()
             RotaPage.chooseTipoEnderecoRota()
             RotaPage.addRotaCompleta()
             RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() //CADASTRAR TELEFONE
+            TelefonePage.clickAbaTelefone() 
             TelefonePage.clickAdicionarNovoTelefone()
             TelefonePage.validateTelefoneVazio()
             TelefonePage.chooseTipoTelefone()
@@ -54,9 +54,9 @@ describe('Cadastrar cliente completo', () => {
             TelefonePage.clickSalvarTelefone()
             TelefonePage.validateTelefoneAdicionado()
             TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() //REFERENCIA
+            ClienteCompletoPage.ClickAbaReferencias() 
             RefPessoalPage.clickAbaRefGuys()
-            RefPessoalPage.validateAbaEmpty() //CADASTRAR REFERENCIA PESSOAL
+            RefPessoalPage.validateAbaEmpty()
             RefPessoalPage.clickAddNew()
             RefPessoalPage.modalEmpty()
             RefPessoalPage.name()

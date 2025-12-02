@@ -27,8 +27,8 @@ describe('Cadastrar cliente completo', () => {
             PessoaPage.fillDataNascimento()
             PessoaPage.chooseSexoCliente()
             ClienteCompletoPage.clickSalvarCliente()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar sem adicionar um endereço
-            EnderecoPage.clickAbaEndereco() //CADASTRAR ENDEREÇO
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio()
+            EnderecoPage.clickAbaEndereco()
             EnderecoPage.clickAdicionarNovoEndereco()
             EnderecoPage.validateEnderecoVazio()
             EnderecoPage.clickAbrirTipoEndereco()
@@ -37,13 +37,13 @@ describe('Cadastrar cliente completo', () => {
             EnderecoPage.fillNumeroEndereco()
             EnderecoPage.clickSalvarEndereco()
             EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() //CADASTRAR ROTA
+            RotaPage.clickAbaRota()
             RotaPage.clickAdicionarNovaRota()
             RotaPage.validateRotaVazia()
             RotaPage.chooseTipoEnderecoRota()
             RotaPage.addRotaCompleta()
             RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() //CADASTRAR TELEFONE
+            TelefonePage.clickAbaTelefone() 
             TelefonePage.clickAdicionarNovoTelefone()
             TelefonePage.validateTelefoneVazio()
             TelefonePage.chooseTipoTelefone()
@@ -61,16 +61,16 @@ describe('Cadastrar cliente completo', () => {
     
             ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.clickOpcaoClienteCompleto()
-            ClienteCompletoPage.clickSalvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
+            ClienteCompletoPage.clickSalvarCliente()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
             PessoaPage.fillCPFCliente()
             PessoaPage.fillNomeCompleto()
             PessoaPage.fillNomeSocial()
             PessoaPage.fillDataNascimento()
             PessoaPage.chooseSexoCliente()
-            ClienteCompletoPage.clickSalvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
-            EnderecoPage.clickAbaEndereco() //CADASTRAR ENDEREÇO
+            ClienteCompletoPage.clickSalvarCliente() 
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
+            EnderecoPage.clickAbaEndereco() 
             EnderecoPage.clickAdicionarNovoEndereco()
             EnderecoPage.clickAbrirTipoEndereco()
             EnderecoPage.tipoEndereco()
@@ -83,13 +83,13 @@ describe('Cadastrar cliente completo', () => {
             ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSalvarEndereco()
             EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() //CADASTRAR ROTA
+            RotaPage.clickAbaRota()
             RotaPage.clickAdicionarNovaRota()
             RotaPage.validateRotaVazia()
             RotaPage.chooseTipoEnderecoRota()
             RotaPage.addRotaCompleta()
             RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() //CADASTRAR TELEFONE
+            TelefonePage.clickAbaTelefone()
             TelefonePage.clickAdicionarNovoTelefone()
             TelefonePage.validateTelefoneVazio()
             TelefonePage.chooseTipoTelefone()
@@ -107,12 +107,12 @@ describe('Cadastrar cliente completo', () => {
     
             ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.clickOpcaoClienteCompleto() 
-            PessoaPage.fillCNPJCliente() //PESSOA
+            PessoaPage.fillCNPJCliente()
             PessoaPage.fillNomeCNPJ()
             PessoaPage.fillNomeFantasiaCliente()
-            ClienteCompletoPage.clickSalvarCliente() //tentar salvar cadastro, mas não deve permitir, pois ainda tem campo obrigatórios
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() //mensagem de endereço obrigatório após tentar salvar em adicionar um endereço
-            EnderecoPage.clickAbaEndereco() //CADASTRAR ENDEREÇO
+            ClienteCompletoPage.clickSalvarCliente() 
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
+            EnderecoPage.clickAbaEndereco()
             EnderecoPage.clickAdicionarNovoEndereco()
             EnderecoPage.tipoEndereco()
             EnderecoPage.validateEnderecoVazio()
@@ -124,13 +124,13 @@ describe('Cadastrar cliente completo', () => {
             ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSalvarEndereco()
             EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() //CADASTRAR ROTA
+            RotaPage.clickAbaRota()
             RotaPage.clickAdicionarNovaRota()
             RotaPage.validateRotaVazia()
             RotaPage.chooseTipoEnderecoRota()
             RotaPage.addRotaCompleta()
             RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() //CADASTRAR TELEFONE
+            TelefonePage.clickAbaTelefone()
             TelefonePage.clickAdicionarNovoTelefone()
             TelefonePage.validateTelefoneVazio()
             TelefonePage.chooseTipoTelefone()
@@ -157,7 +157,7 @@ describe('Cadastrar cliente completo', () => {
             PessoaPage.fillDataNascimento()
             PessoaPage.chooseSexoCliente()
             ClienteCompletoPage.clickSalvarCliente()
-            EnderecoPage.clickAbaEndereco() //CADASTRAR ENDEREÇO
+            EnderecoPage.clickAbaEndereco()
             EnderecoPage.clickAdicionarNovoEndereco()
             EnderecoPage.tipoEndereco()
             EnderecoPage.validateEnderecoVazio()
@@ -168,13 +168,13 @@ describe('Cadastrar cliente completo', () => {
             ClienteCompletoPage.validarBotaoSalvarDesabilitado()
             EnderecoPage.clickSalvarEndereco()
             EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() //CADASTRAR ROTA
+            RotaPage.clickAbaRota()
             RotaPage.clickAdicionarNovaRota()
             RotaPage.validateRotaVazia()
             RotaPage.chooseTipoEnderecoRota()
             RotaPage.addRotaCompleta()
             RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() //CADASTRAR TELEFONE
+            TelefonePage.clickAbaTelefone()
             TelefonePage.clickAdicionarNovoTelefone()
             TelefonePage.validateTelefoneVazio()
             TelefonePage.chooseTipoTelefone()
@@ -187,7 +187,7 @@ describe('Cadastrar cliente completo', () => {
             ClienteCompletoPage.validateModalAguardeCarregando()
             ClienteCompletoPage.validateMessageSalvoSucesso()
             ClienteCompletoPage.clickMenuCadastrarClienteCompleto()
-            AnexoPage.clickAbaAnexo() //CADASTRAR ANEXO 
+            AnexoPage.clickAbaAnexo()
             AnexoPage.validateAbaAnexoVazio()
             AnexoPage.selectPrimeiroTipoAnexo()
             AnexoPage.filePDF()

@@ -45,7 +45,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.routeClient()
             ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.clickMenuOpcoes() // ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            ClienteSimplesPage.clickMenuOpcoes() 
             ClienteSimplesPage.optionClientSimple()
 
             //Campo CEP - alterar
@@ -88,7 +88,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.routeClient()
             ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.clickMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            ClienteSimplesPage.clickMenuOpcoes()
             ClienteSimplesPage.optionClientSimple()
 
             cy.contains('Data de nascimento').parent().find('input')
@@ -270,7 +270,7 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
             
-            ClienteSimplesPage.clickMenuOpcoes() //ALTERAÇÃO DE CLIENTE SIMPLES - CPF
+            ClienteSimplesPage.clickMenuOpcoes() 
             ClienteSimplesPage.optionClientSimple()
 
             //Campo CEP - alterar
