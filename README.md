@@ -58,3 +58,4 @@ Este projeto está sob a licença MIT.
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
 
 It is necessary to develop and specify the scenarios.
+- Integrate IA with project.
