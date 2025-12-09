@@ -1,8 +1,6 @@
 import { LoginPage } from '../../pages/LoginPage.js';
+import users from '../../e2e/users.json';
 
-const usuSabiumAutomacao = "usu.expiradosenha"; //usuário 415
-const senhaautomacao = "123.automacao";
-const novasenha = "123.novasenha";
 describe('Senha do usuário expirada', () => {
 
     beforeEach(() => {
@@ -23,7 +21,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
-                .type((usuSabiumAutomacao))
+                .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
 
@@ -33,7 +31,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
-                .type((senhaautomacao))
+                .type(users.userSabium.password)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
 
@@ -56,7 +54,7 @@ describe('Senha do usuário expirada', () => {
             //Card Altere Sua Senha Temporária - campo para preenchimento "Usuário"
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
-                .and('have.value', usuSabiumAutomacao)
+                .and('have.value', users.userSabium.login)
 
             //Card Altere Sua Senha Temporária - texto "Senha Atual"
             cy.get('.senha_nova > :nth-child(4)')
@@ -67,7 +65,7 @@ describe('Senha do usuário expirada', () => {
             cy.get(':nth-child(5) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type(senhaautomacao, {force:true})
+                .type(users.userSabium.password, {force:true})
 
             //Card Altere Sua Senha Temporária - olhos "Senha Atual"
             cy.get('md-icon[ng-click="showPasswordToggle()"]')
@@ -89,7 +87,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('input[name="password_new"]')
                 .should('be.visible')
                 .and('have.value','')
-                .type(novasenha)
+                .type(users.userSabiumNovo.newPassword)
 
             //Card Altere Sua Senha Temporária - olhos "Nova Senha"
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
@@ -112,7 +110,7 @@ describe('Senha do usuário expirada', () => {
             cy.get(':nth-child(11) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type((novasenha))
+                .type(users.userSabiumNovo.newPassword)
 
             //Validar a sexta Regras para a Nova Senha (depois de preencher campo Repetir Nova Senha) - Texto As novas senhas informadas são iguais.
             cy.contains('span', 'As novas senhas informadas são iguais.')
@@ -147,7 +145,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
-                .type((usuSabiumAutomacao))
+                .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
 
@@ -157,7 +155,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
-                .type((senhaautomacao))
+                .type(users.userSabium.password)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
 
@@ -180,7 +178,7 @@ describe('Senha do usuário expirada', () => {
             //Card Altere Sua Senha Temporária - campo para preenchimento "Usuário"
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
-                .and('have.value', usuSabiumAutomacao)
+                .and('have.value', users.userSabium.login)
 
             //Card Altere Sua Senha Temporária - texto "Senha Atual"
             cy.get('.senha_nova > :nth-child(4)')
@@ -191,7 +189,7 @@ describe('Senha do usuário expirada', () => {
             cy.get(':nth-child(5) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type(senhaautomacao, {force:true})
+                .type(users.userSabium.password, {force:true})
 
             //Card Altere Sua Senha Temporária - olhos "Senha Atual"
             cy.get('md-icon[ng-click="showPasswordToggle()"]')
@@ -213,7 +211,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('input[name="password_new"]')
                 .should('be.visible')
                 .and('have.value','')
-                .type(novasenha)
+                .type(users.userSabiumNovo.newPassword)
 
             //Card Altere Sua Senha Temporária - olhos "Nova Senha"
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
@@ -236,7 +234,7 @@ describe('Senha do usuário expirada', () => {
             cy.get(':nth-child(11) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type((novasenha))
+                .type(users.userSabiumNovo.newPassword)
 
             //Validar a sexta Regras para a Nova Senha (depois de preencher campo Repetir Nova Senha) - Texto As novas senhas informadas são iguais.
             cy.contains('span', 'As novas senhas informadas são iguais.')
@@ -285,7 +283,7 @@ describe('Senha do usuário expirada', () => {
                 cy.get('#txtusername')
                     .should('be.visible')
                     .and('have.value','')
-                    .type(usuSabiumAutomacao)
+                    .type(users.userSabium.login)
                     .invoke('attr', 'placeholder')
                     .should('equal', 'Informe seu usuário')
         
@@ -295,7 +293,7 @@ describe('Senha do usuário expirada', () => {
                 cy.get('#txtpassword')
                     .should('be.visible')
                     .and('have.value','')
-                    .type(novasenha)
+                    .type(users.userSabiumNovo.newPassword)
                     .invoke('attr', 'placeholder')
                     .should('equal', 'Informe sua senha')
         
@@ -321,7 +319,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
-                .type(usuSabiumAutomacao)
+                .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
     
@@ -331,7 +329,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
-                .type(novasenha)
+                .type(users.userSabiumNovo.newPassword)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
     
@@ -356,7 +354,7 @@ describe('Senha do usuário expirada', () => {
             //Card Altere Sua Senha Temporária - campo para preenchimento "Usuário"
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
-                .and('have.value', usuSabiumAutomacao)
+                .and('have.value', users.userSabium.login)
     
             //Card Altere Sua Senha Temporária - texto "Senha Atual"
             cy.get('.senha_nova > :nth-child(4)')
@@ -367,7 +365,7 @@ describe('Senha do usuário expirada', () => {
             cy.get(':nth-child(5) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type(novasenha, {force:true})
+                .type(users.userSabiumNovo.newPassword, {force:true})
     
             //Card Altere Sua Senha Temporária - olhos "Senha Atual"
             cy.get('md-icon[ng-click="showPasswordToggle()"]')
@@ -389,7 +387,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('input[name="password_new"]')
                 .should('be.visible')
                 .and('have.value','')
-                .type(senhaautomacao)
+                .type(users.userSabium.password)
     
             //Card Altere Sua Senha Temporária - olhos "Nova Senha"
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
@@ -412,7 +410,7 @@ describe('Senha do usuário expirada', () => {
             cy.get(':nth-child(11) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type((senhaautomacao))
+                .type((users.userSabium.password))
     
             //Validar a sexta Regras para a Nova Senha (depois de preencher campo Repetir Nova Senha) - Texto As novas senhas informadas são iguais.
             cy.contains('span', 'As novas senhas informadas são iguais.')
@@ -447,7 +445,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
-                .type(usuSabiumAutomacao)
+                .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu usuário')
     
@@ -457,7 +455,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
-                .type(novasenha)
+                .type(users.userSabiumNovo.newPassword)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
     
@@ -482,7 +480,7 @@ describe('Senha do usuário expirada', () => {
             //Card Altere Sua Senha Temporária - campo para preenchimento "Usuário"
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
-                .and('have.value', usuSabiumAutomacao)
+                .and('have.value', users.userSabium.login)
     
             //Card Altere Sua Senha Temporária - texto "Senha Atual"
             cy.get('.senha_nova > :nth-child(4)')
@@ -493,7 +491,7 @@ describe('Senha do usuário expirada', () => {
             cy.get(':nth-child(5) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type(novasenha, {force:true})
+                .type(users.userSabiumNovo.newPassword, {force:true})
     
             //Card Altere Sua Senha Temporária - olhos "Senha Atual"
             cy.get('md-icon[ng-click="showPasswordToggle()"]')
@@ -515,7 +513,7 @@ describe('Senha do usuário expirada', () => {
             cy.get('input[name="password_new"]')
                 .should('be.visible')
                 .and('have.value','')
-                .type(senhaautomacao)
+                .type(users.userSabium.password)
     
             //Card Altere Sua Senha Temporária - olhos "Nova Senha"
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
@@ -538,7 +536,7 @@ describe('Senha do usuário expirada', () => {
             cy.get(':nth-child(11) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type((senhaautomacao))
+                .type(users.userSabium.password)
     
             //Validar a sexta Regras para a Nova Senha (depois de preencher campo Repetir Nova Senha) - Texto As novas senhas informadas são iguais.
             cy.contains('span', 'As novas senhas informadas são iguais.')

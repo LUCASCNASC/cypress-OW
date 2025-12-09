@@ -1,7 +1,5 @@
 import { LoginPage } from '../../pages/LoginPage.js';
-
-const usuSabiumAutomacao = "usu.expiradosistema"; //usuário 496
-const senhaautomacao = "123.automacao";
+import users from '../../e2e/users.json';
 
 describe('Senha do usuário expirada', () => {
 
@@ -21,7 +19,7 @@ describe('Senha do usuário expirada', () => {
         cy.get('#txtusername')
             .should('be.visible')
             .and('have.value','')
-            .type((usuSabiumAutomacao))
+            .type(users.userSabium.login)
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
@@ -31,7 +29,7 @@ describe('Senha do usuário expirada', () => {
         cy.get('#txtpassword')
             .should('be.visible')
             .and('have.value','')
-            .type((senhaautomacao))
+            .type(users.userSabium.password)
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 

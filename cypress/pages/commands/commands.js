@@ -1,5 +1,6 @@
 import '@testing-library/cypress/add-commands'
 import 'cypress-file-upload';
+import users from '../../e2e/users.json';
 
 // cypress/support/commands.js
 
@@ -7,8 +8,8 @@ import 'cypress-file-upload';
 Cypress.Commands.add('login', (username, password) => {
   
   cy.visit('/');
-  cy.get('#txtusername').type('sabium.automacao'); //login
-  cy.get('#txtpassword').type('123.automacao'); //senha
+  cy.get('#txtusername').type(users.userSabium.login); //login
+  cy.get('#txtpassword').type(users.userSabium.password); //senha
   cy.intercept('GET', '/images/icons/discount.svg').as('api_discount')
   cy.get('.test_btnSalvarCliente').click(); //botão entrar
   cy.get('.ng-scope > .ng-binding').should('contain','Entrando no sistema') //Validando mensagem "Entrando no sistema" 

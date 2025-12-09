@@ -1,7 +1,6 @@
 import { LoginPage } from '../../pages/LoginPage.js';
+import users from '../../e2e/users.json';
 
-const usuSabiumAutomacao = "usu.inativo"; //usuário 416
-const senhaautomacao = "123.automacao";
 describe('Usuário inativo', () => {
 
     beforeEach(() => {
@@ -20,7 +19,7 @@ describe('Usuário inativo', () => {
         cy.get('#txtusername')
             .should('be.visible')
             .and('have.value','')
-            .type((usuSabiumAutomacao))
+            .type((users.userSabium.login))
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu usuário')
 
@@ -30,7 +29,7 @@ describe('Usuário inativo', () => {
         cy.get('#txtpassword')
             .should('be.visible')
             .and('have.value','')
-            .type((senhaautomacao))
+            .type(users.userSabium.password)
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
