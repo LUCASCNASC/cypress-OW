@@ -29,7 +29,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('1.Pedido: produtos 1860 0 0 e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -37,7 +37,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Service.validateModalServLinked()
             Service.clickOKServiceLinked() //SERVIÇOS
             TirarEntrega.freightFirst()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -54,13 +54,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('2.Pedido: produtos 1860 0 0 e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -68,7 +68,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -85,7 +85,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -94,14 +94,14 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('3.Pedido: produtos 1860 0 0 e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -118,13 +118,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('4.Pedido: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -133,7 +133,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.garantiaSepMesmoProc()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -150,13 +150,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('5.Pedido: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -165,7 +165,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.garantiaSepMesmoProc()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -182,13 +182,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('6.Pedido: produtos 1860 0 0 (com garantia não separa) e 1870 0 0, inclusão 3875, prestamista 158, 4 parcelas no recebimento Presente sem juros.', () => {
     
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -197,7 +197,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.garantiaSepMesmoProc()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -214,7 +214,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -223,7 +223,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('7.Pedido: produto 1918 0 0 (promoção a prazo 167), inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -242,13 +242,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('8.Pedido: produto 1918 0 0 (promoção a prazo 167), inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -267,13 +267,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('9.Pedido: produto 1918 0 0 (promoção a prazo 167), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -293,7 +293,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -302,7 +302,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('10.Pedido: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -327,13 +327,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.finalarFinal()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('11.Pedido: produto 1919 0 0 (promoção a prazo 168), com garantia Não separa, inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
 
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -359,13 +359,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
         
         it('12.Pedido: produto 1920 0 0 (promoção partida 169), com garantia Não separa, inclusão 3876, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -386,7 +386,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -395,7 +395,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('13.Pedido: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -405,7 +405,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Service.validateModalServLinked()
             Service.clickOKServiceLinked() //SERVIÇOS
             TirarEntrega.primeiro()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -426,13 +426,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ParcelasPage.one()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('14.Pedido: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -442,7 +442,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Service.validateModalServLinked()
             Service.clickOKServiceLinked() //SERVIÇOS
             TirarEntrega.freightFirst()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -467,13 +467,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPedidosPage.adicionadoRecebAgrupado()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('15.Pedido: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -483,7 +483,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Service.validateModalServLinked()
             Service.clickOKServiceLinked() //SERVIÇOS
             TirarEntrega.freightFirst()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -504,13 +504,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ParcelasPage.one()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('16.Pedido: produto 1918 0 0 (promo a prazo 167) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -520,7 +520,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             Service.validateModalServLinked()
             Service.clickOKServiceLinked() //SERVIÇOS
             TirarEntrega.freightFirst()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -547,13 +547,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPedidosPage.adicionadoRecebAgrupado()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('17.Pedido: produto 1921 0 0 (promo a prazo 170), inclusão 3874, prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -572,7 +572,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidadePrestamistaPage.added() //Validando adição do prestamista
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -581,7 +581,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
 
         it('18.Pedido: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -592,7 +592,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -615,13 +615,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ParcelasPage.one()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('19.Pedido: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3874 (outro recebimento 3874 agrupar), prestamista 158, 4 parcelas no recebimento Futuro com juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -632,7 +632,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -659,13 +659,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPedidosPage.adicionadoRecebAgrupado()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('20.Pedido: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3860), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
 
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -676,7 +676,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -699,13 +699,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ParcelasPage.one()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('21.Pedido: produto 1918 0 0 (promo a prazo 167) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3876 (outro recebimento 3876 agrupar), prestamista 158, 4 parcelas no recebimento Futuro sem juros.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -716,7 +716,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS)
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -744,13 +744,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPedidosPage.adicionadoRecebAgrupado()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('22.Pedido: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3874), prestamista 158, 4 parcelas no recebimento Presente.', () => {
 
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -761,7 +761,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS
             ValidateService.servLinked() ; ValidateService.garantiaNaoSep()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -785,13 +785,13 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ParcelasPage.one()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('23.Pedido: produto 1920 0 0 (promo a prazo 169) (com garantia não separa) e 1860 0 0 (sem promoção), inclusão 3875 (outro recebimento 3875 agrupar), prestamista 158, 4 parcelas no recebimento Presente.', () => {
     
-            Product.termInstallmentPrest() //PRODUTO
+            Product.termInstallmentPrest()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -802,7 +802,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked() //SERVIÇOS)
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.comSwithBalancealdo()
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -831,7 +831,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
             GeralPedidosPage.adicionadoRecebAgrupado()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

@@ -21,7 +21,7 @@ describe('Venda de serviço avulso', () => {
 
         it('1.Pedido de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
 
-            ServicosAvulsosPage.productServiceLoose() //PRODUTO
+            ServicosAvulsosPage.productServiceLoose()
             ServicosAvulsosPage.chooseServiceSearch()
             ServicosAvulsosPage.messItemAddedSucess()
             ServicosAvulsosPage.clickCartShopping() //CARRINHO COMPRAS
@@ -32,7 +32,7 @@ describe('Venda de serviço avulso', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

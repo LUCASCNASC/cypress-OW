@@ -25,7 +25,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
 
         it('1.Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
     
-            Product.firstInstallmentDeadline() //PRODUTO
+            Product.firstInstallmentDeadline()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -42,13 +42,13 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     
         it('2.Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
     
-            Product.secondInstallmentDeadline() //PRODUTO
+            Product.secondInstallmentDeadline()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -89,7 +89,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
     
         it('3.Pedido com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
     
-            Product.thirdInstallmentDeadline() //PRODUTO
+            Product.thirdInstallmentDeadline()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -107,13 +107,13 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             ValidadePrestamistaPage.added()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('4.Pedido com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
     
-            Product.fourthInstallmentDeadline() //PRODUTO
+            Product.fourthInstallmentDeadline()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -133,7 +133,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
             ValidadePrestamistaPage.added()
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

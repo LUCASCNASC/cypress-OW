@@ -24,7 +24,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('1.Pedido: produto 1860 0 0', () => {
                  
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
@@ -38,13 +38,13 @@ describe('Gerar pedido com financeiro na baixa', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
               
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
@@ -52,7 +52,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -66,7 +66,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -75,7 +75,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
 
         it('3.Pedido: produto 1860 0 0', () => {
                 
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
@@ -89,20 +89,20 @@ describe('Gerar pedido com financeiro na baixa', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('4.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                  
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -116,7 +116,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

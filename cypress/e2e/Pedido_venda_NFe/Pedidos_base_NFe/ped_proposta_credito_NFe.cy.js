@@ -24,7 +24,7 @@ describe('Gerar pedido com proposta de crédito', () => {
 
         it('1.Pedido: produto 1860 0 0 - (Pedido de venda sem entrega, com proposta de crédito.)', () => {
 
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -38,7 +38,7 @@ describe('Gerar pedido com proposta de crédito', () => {
             ProcessoRecebPage.proposalCredit()
             ParcelasPage.one()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             FinalizarPedidoPage.validatePropCreditGenerated()
             cy.validateOrderGenerated()
         })

@@ -24,7 +24,7 @@ describe('Gerar pedido normal', () => {
 
         it('1.Pedido: produto 1860 0 0 - (Venda local de produto com saldo - sem entrega)', () => {
 
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -38,13 +38,13 @@ describe('Gerar pedido normal', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -52,7 +52,7 @@ describe('Gerar pedido normal', () => {
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -66,13 +66,13 @@ describe('Gerar pedido normal', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('3.Pedido: produto 1860 0 0 - (Pedido de venda sem entrega. Com Entrada + parcelamento.)', () => {
 
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -88,7 +88,7 @@ describe('Gerar pedido normal', () => {
             ProcessoRecebPage.main()
             ParcelasPage.one()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -97,7 +97,7 @@ describe('Gerar pedido normal', () => {
 
         it('4.Pedido: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                       
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -111,20 +111,20 @@ describe('Gerar pedido normal', () => {
             ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('5.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                   
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -138,13 +138,13 @@ describe('Gerar pedido normal', () => {
             ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('6.Pedido: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -160,7 +160,7 @@ describe('Gerar pedido normal', () => {
             ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

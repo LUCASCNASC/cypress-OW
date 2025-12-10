@@ -24,7 +24,7 @@ describe('Gerar pedido de venda com desconto', () => {
 
         it('1.Pedido: produto 1912 0 0 com desconto Sub (-) / R$', () => {
 
-            Product.discountNumber() //PRODUTO
+            Product.discountNumber()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -41,13 +41,13 @@ describe('Gerar pedido de venda com desconto', () => {
             ProcessoRecebPage.main()
             ParcelasPage.one()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('2.Pedido: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
 
-            Product.discountPercentage() //PRODUTO
+            Product.discountPercentage()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -64,13 +64,13 @@ describe('Gerar pedido de venda com desconto', () => {
             ProcessoRecebPage.main()
             ParcelasPage.one()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('3.Pedido: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
 
-            Product.discountValueFixed() //PRODUTO
+            Product.discountValueFixed()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -87,7 +87,7 @@ describe('Gerar pedido de venda com desconto', () => {
             ProcessoRecebPage.main()
             ParcelasPage.one()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

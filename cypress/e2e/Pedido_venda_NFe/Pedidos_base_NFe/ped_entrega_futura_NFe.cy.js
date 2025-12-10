@@ -23,7 +23,7 @@ describe('Gerar pedido de entrega futura', () => {
 
         it('1.Pedido: produto 1860 0 0', () => {
                       
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
@@ -37,13 +37,13 @@ describe('Gerar pedido de entrega futura', () => {
             ProcessoRecebPage.main() //PROCESSO INCLUSÃO
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
         
         it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
               
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
@@ -51,7 +51,7 @@ describe('Gerar pedido de entrega futura', () => {
             Service.validateModalServLinked() //SERVICOS
             clicarOKServVinServico.clickOKServiceLinked()
             TirarEntrega.freightFirst() //ENTREGA PRODUTO
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -65,7 +65,7 @@ describe('Gerar pedido de entrega futura', () => {
             ProcessoRecebPage.main() //PROCESSO INCLUSÃO
             ParcelasPage.two()
             AvancarPage.final() 
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -74,7 +74,7 @@ describe('Gerar pedido de entrega futura', () => {
 
         it('3.Pedido: produto 1860 0 0', () => {
              
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
@@ -88,20 +88,20 @@ describe('Gerar pedido de entrega futura', () => {
             ProcessoRecebPage.main() //PROCESSO INCLUSÃO
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })    
         
         it('4.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                    
-            Product.fisrt() //PRODUTO
+            Product.fisrt()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            Product.second() //PRODUTO
+            Product.second()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -115,7 +115,7 @@ describe('Gerar pedido de entrega futura', () => {
             ProcessoRecebPage.main() //PROCESSO INCLUSÃO
             ParcelasPage.two()
             AvancarPage.final() 
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })  
     })

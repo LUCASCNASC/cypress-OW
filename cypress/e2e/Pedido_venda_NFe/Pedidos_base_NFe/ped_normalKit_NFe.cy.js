@@ -39,7 +39,7 @@ describe('Gerar pedido normal', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -63,7 +63,7 @@ describe('Gerar pedido normal', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

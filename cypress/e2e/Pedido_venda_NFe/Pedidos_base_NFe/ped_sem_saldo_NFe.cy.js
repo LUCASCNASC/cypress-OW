@@ -17,7 +17,7 @@ describe('Tentar gerar pedido de venda com produto sem saldo - Regra de saldo Pa
 
         it('1.Pedido: produto 1869 0 0 (Venda local de produto sem saldo - sem entrega)', () => {
             
-            Product.withoutBalance() //PRODUTO
+            Product.withoutBalance()
             ValidateBalance.withoutBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()

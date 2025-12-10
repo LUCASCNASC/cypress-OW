@@ -26,14 +26,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
         it('1.Pedido: produto normal (com saldo e com entrega, 15 dias) e um kit remoto (2 composições, sem saldo e sem a receber, 20 dias).', () => {
 
-            ProductExclusiva.firstNormal() //PRODUTO EXCLUSIVA
+            ProductExclusiva.firstNormal() EXCLUSIVA
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            ProductExclusiva.kitWithoutBalanceScheduling() //PRODUTO KIT
+            ProductExclusiva.kitWithoutBalanceScheduling() KIT
             ValidateBalance.withoutBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickAddProduc()
@@ -48,20 +48,20 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('2.Pedido: produto normal (com saldo e com entrega) e um kit com composição 6 volumes (data atual + parametro 552/ 5 dias).', () => {
 
-            ProductExclusiva.firstNormal() //PRODUTO
+            ProductExclusiva.firstNormal()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked() //SERVICOS
             Service.clickOKServiceLinked()
-            ProductExclusiva.kitVolumes() //PRODUTO KIT
+            ProductExclusiva.kitVolumes() KIT
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -75,7 +75,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })
@@ -84,7 +84,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
         it('3.Pedido: produto (sem saldo e com saldo a receber para 10 dias, e com entrega), e ter um agendamento para a data de previsão.', () => {
 
-            ProductExclusiva.balanceReceive() //PRODUTO
+            ProductExclusiva.balanceReceive()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -100,13 +100,13 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('4.Pedido: produto em duas linhas (um com 5 unidades a receber e 10 para solicitar compra), e ter um agendamento para a data de previsão para a receber.', () => {
 
-            ProductExclusiva.balanceReceiveTwoLines() //PRODUTO
+            ProductExclusiva.balanceReceiveTwoLines()
             PedExclusiva.balanceRemoteReceive()
             cy.clickVoltageProduct()
             cy.clickAddProduc() 
@@ -123,7 +123,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
         it('5.Pedido: venda normal: produto 1896 0 0 (sem entrega)', () => {
     
-            ProductExclusiva.firstNormal() //PRODUTO EXCLUSIVA
+            ProductExclusiva.firstNormal() EXCLUSIVA
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -137,7 +137,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

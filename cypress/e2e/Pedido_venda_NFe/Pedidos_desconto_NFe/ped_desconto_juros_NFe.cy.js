@@ -24,7 +24,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
 
         it('1.Pedido: produto 1860 0 0 - arredondar para baixo', () => {
 
-            Product.roundUpDown() //PRODUTO
+            Product.roundUpDown()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
@@ -42,13 +42,13 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             OrderDiscount.modalChangeValue()
             OrderDiscount.changeValueToLow()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
 
         it('2.Pedido: produtos 1860 0 0 - arredondar para cima', () => {
 
-            Product.roundUpDown() //PRODUTO
+            Product.roundUpDown()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
@@ -66,7 +66,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
             OrderDiscount.modalChangeValue()
             OrderDiscount.changeValueToTop()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

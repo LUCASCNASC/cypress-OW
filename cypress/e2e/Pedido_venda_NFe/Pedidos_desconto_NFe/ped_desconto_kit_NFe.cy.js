@@ -25,7 +25,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         
         it('1.Pedido: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
     
-            Product.kitDiscount() //PRODUTO
+            Product.kitDiscount()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch()
             cy.clickVoltageProduct()
@@ -43,7 +43,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
             ProcessoRecebPage.main()
             ParcelasPage.two()
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     })

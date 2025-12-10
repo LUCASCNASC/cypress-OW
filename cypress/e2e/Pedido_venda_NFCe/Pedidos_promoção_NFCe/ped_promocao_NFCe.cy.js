@@ -22,7 +22,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
 
         it('1.Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
     
-            Product.promoMatch() //PRODUTO
+            Product.promoMatch()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage() 
             cy.clickVoltageProduct()
@@ -42,13 +42,13 @@ describe('Gerar pedidos com promoção com entrega', () => {
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
 
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
     
         it('2.Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
-            Product.promoDeadlineEntry() //PRODUTO
+            Product.promoDeadlineEntry()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage() 
             cy.clickVoltageProduct()
@@ -72,13 +72,13 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // Receipt.main()
             // ParcelasPage.two()
             // AvancarPage.final()
-            // cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            // cy.clickFinalizarPedidoPage()
             // cy.validateOrderGenerated()
         })
 
         it('3.Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
-            Product.promoDeadlineInstallment() //PRODUTO
+            Product.promoDeadlineInstallment()
             ValidateBalance.withBalance() //VALIDAR SALDO
             cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage()
             cy.clickVoltageProduct()
@@ -97,7 +97,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
             AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //FINALIZAR PEDIDO
+            cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })  
     })
