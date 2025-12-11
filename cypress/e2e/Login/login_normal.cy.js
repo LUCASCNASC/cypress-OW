@@ -17,7 +17,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
 
         it('1.Login - caminho feliz', () => {
 
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -26,8 +25,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('equal', 'Informe seu usuário')
     
             LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
+
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -44,8 +42,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         })
     
         it('2.Login - passar usuário errado (deve dar mensagem de Login ou Senha do usuário está incorreto.)', () => {
-        
-            //Validando campo "informe seu usuário"
+
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -54,8 +51,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('equal', 'Informe seu usuário')
     
             LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
+
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -68,12 +64,11 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonEnterEnabled()
             LoginPage.clickButtonEnter()
             LoginPage.messLoginPasswordIncorrect() 
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })
     
         it('3.Login - passar senha errada (deve dar mensagem de Login ou Senha do usuário está incorreto.)', () => {
-        
-            //Validando campo "informe seu usuário"
+
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -82,8 +77,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('equal', 'Informe seu usuário')
     
             LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
+
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -96,12 +90,11 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonEnterEnabled()
             LoginPage.clickButtonEnter()
             LoginPage.messLoginPasswordIncorrect()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })
     
         it('4.Login - passar somente login (botão ENTRAR deve ficar desabilitado)', () => {
-        
-            //Validando campo "informe seu usuário"
+
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -110,7 +103,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             LoginPage.passwordTextIcon()
     
-            //Campo Informe sua senha
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -122,12 +114,11 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonForgotPassword()
             LoginPage.buttonEnterDisabled()
             LoginPage.clickButtonEnter()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })
     
         it('5.Login - passar somente login (botão ENTRAR deve ficar desabilitado)', () => {
-        
-            //Validando campo "informe seu usuário"
+
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -136,8 +127,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('equal', 'Informe seu usuário')
     
             LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
+
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -148,12 +138,11 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonForgotPassword()
             LoginPage.buttonEnterDisabled()
             LoginPage.clickButtonEnter()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })  
     
         it('6.Login - sem passar login e senha (botão ENTRAR deve ficar desabilitado)', () => {
-        
-            //Validando campo "informe seu usuário"
+
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -161,8 +150,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('equal', 'Informe seu usuário')
     
             LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
+
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -173,7 +161,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonForgotPassword()
             LoginPage.buttonEnterDisabled()
             LoginPage.clickButtonEnter()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })
     })
 
@@ -181,7 +169,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
 
         it('7.Login - caminho feliz', () => {
         
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -191,7 +178,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             LoginPage.passwordTextIcon()
     
-            //Campo Informe sua senha
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -209,7 +195,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
         it('8.Login - passar usuário errado (deve dar mensagem de Login ou Senha do usuário está incorreto.)', () => {
         
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -218,8 +203,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('equal', 'Informe seu usuário')
     
             LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
+
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -232,12 +216,11 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonEnterEnabled()
             LoginPage.clickButtonEnter()
             LoginPage.messLoginPasswordIncorrect()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })
     
         it('9.Login - passar senha errada (deve dar mensagem de Login ou Senha do usuário está incorreto.)', () => {
         
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -246,8 +229,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('equal', 'Informe seu usuário')
     
             LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
+
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -260,12 +242,11 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonEnterEnabled()
             LoginPage.clickButtonEnter()
             LoginPage.messLoginPasswordIncorrect()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })
     
         it('10.Login - passar somente login (botão ENTRAR deve ficar desabilitado)', () => {
         
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -273,8 +254,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('equal', 'Informe seu usuário')
     
             LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
+
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -286,12 +266,11 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonForgotPassword()
             LoginPage.buttonEnterDisabled()
             LoginPage.clickButtonEnter()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })
     
         it('11.Login - passar somente senha (botão ENTRAR deve ficar desabilitado)', () => {
         
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -301,7 +280,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             LoginPage.passwordTextIcon()
     
-            //Campo Informe sua senha
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -312,12 +290,11 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonForgotPassword()
             LoginPage.buttonEnterDisabled()
             LoginPage.clickButtonEnter()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })  
     
         it('12.Login - sem passar login e senha (botão ENTRAR deve ficar desabilitado)', () => {
         
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -326,7 +303,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
     
             LoginPage.passwordTextIcon()
     
-            //Campo Informe sua senha
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -337,7 +313,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonForgotPassword()
             LoginPage.buttonEnterDisabled()
             LoginPage.clickButtonEnter()
-            LoginPage.iconComputerLogin() //Validando que não entrou no sistema
+            LoginPage.iconComputerLogin()
         })
     })
 })

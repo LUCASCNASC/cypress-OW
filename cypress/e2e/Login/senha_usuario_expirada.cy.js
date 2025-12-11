@@ -17,7 +17,6 @@ describe('Senha do usuário expirada', () => {
 
         it('1.Tentar logar com usuário com senha do usuário expirada - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
         
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -27,7 +26,6 @@ describe('Senha do usuário expirada', () => {
 
             LoginPage.passwordTextIcon()
 
-            //Campo Informe sua senha
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -41,107 +39,88 @@ describe('Senha do usuário expirada', () => {
             LoginPage.clickButtonEnter()
             LoginPage.messPasswordUserExpired()
 
-            //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
             cy.get('p')
                 .contains('Altere Sua Senha Temporária')
                 .should('be.visible')
 
-            //Card Altere Sua Senha Temporária - texto "Usuário"
             cy.get('.senha_nova > :nth-child(1)')
                 .should('be.visible')
                 .and('have.text','Usuário')
 
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Usuário"
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value', users.userSabium.login)
 
-            //Card Altere Sua Senha Temporária - texto "Senha Atual"
             cy.get('.senha_nova > :nth-child(4)')
                 .should('be.visible')
                 .and('have.text','Senha Atual')
 
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Senha Atual"
             cy.get(':nth-child(5) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabium.password, {force:true})
 
-            //Card Altere Sua Senha Temporária - olhos "Senha Atual"
             cy.get('md-icon[ng-click="showPasswordToggle()"]')
                 .should('be.visible')
 
-            //Card Altere Sua Senha Temporária - botão "Gerar uma Nova Senha"
             cy.get('a[ng-click="gerarNovaSenha($event)"]')
                 .should('be.visible')
                 .and('not.have.attr', 'disabled')
 
-            //Card Altere Sua Senha Temporária - título "Regras para a Nova Senha"
             cy.get('p')
                 .contains('Regras para a Nova Senha')
                 .should('be.visible')
 
             LoginPage.rulesNewPasswordBefore()
 
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
             cy.get('input[name="password_new"]')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabiumNovo.newPassword)
 
-            //Card Altere Sua Senha Temporária - olhos "Nova Senha"
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
                 .should('be.visible')
 
             LoginPage.rulesrulesNewPasswordAfter()
 
-            //Card Altere Sua Senha Temporária - botão CONFIRMAR antes de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')
                 .should('be.visible')
                 .and('have.text','Confirmar')
                 .and('not.have.attr', 'not.disabled')
 
-            //Card Altere Sua Senha Temporária - texto "Repetir Nova Senha"
             cy.get('.senha_nova > :nth-child(10)')
                 .should('be.visible')
                 .and('have.text','Repetir Nova Senha')
 
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Repetir Nova Senha"
             cy.get(':nth-child(11) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabiumNovo.newPassword)
 
-            //Validar a sexta Regras para a Nova Senha (depois de preencher campo Repetir Nova Senha) - Texto As novas senhas informadas são iguais.
             cy.contains('span', 'As novas senhas informadas são iguais.')
                 .should('be.visible')
                 .and('have.css', 'color', 'rgb(0, 100, 0)')
 
-            //Card Altere Sua Senha Temporária - botão CONFIRMAR depois de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')
                 .should('be.visible')
                 .and('have.text','Confirmar')
                 .and('not.have.attr', 'disabled')
                     
-            //Card Altere Sua Senha Temporária - botão Fechar 
             cy.get('[ng-show="!loading"] > a')
                 .should('be.visible')
                 .and('have.text','Fechar')
                 .and('not.have.attr', 'disabled')
                 
-            //Card Altere Sua Senha Temporária - clicar no botão Fechar 
             cy.get('[ng-show="!loading"] > a')
                 .click()
 
-            //Ícone do computador - validar se realmente se voltou para a tela de login
             cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
                 .should('be.visible')
                 .and('not.have.attr', 'disabled')
         })
 
         it('2.Tentar logar com usuário com senha do usuário expirada - clicar em NÃO atualizar senha - clicar em Fechar a redefinição de senha', () => {
-        
-            //Validando campo "informe seu usuário"
+
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -151,7 +130,6 @@ describe('Senha do usuário expirada', () => {
 
             LoginPage.passwordTextIcon()
 
-            //Campo Informe sua senha
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -165,83 +143,68 @@ describe('Senha do usuário expirada', () => {
             LoginPage.clickButtonEnter()
             LoginPage.messPasswordUserExpired()
 
-            //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
             cy.get('p')
                 .contains('Altere Sua Senha Temporária')
                 .should('be.visible')
 
-            //Card Altere Sua Senha Temporária - texto "Usuário"
             cy.get('.senha_nova > :nth-child(1)')
                 .should('be.visible')
                 .and('have.text','Usuário')
 
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Usuário"
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value', users.userSabium.login)
 
-            //Card Altere Sua Senha Temporária - texto "Senha Atual"
             cy.get('.senha_nova > :nth-child(4)')
                 .should('be.visible')
                 .and('have.text','Senha Atual')
 
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Senha Atual"
             cy.get(':nth-child(5) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabium.password, {force:true})
 
-            //Card Altere Sua Senha Temporária - olhos "Senha Atual"
             cy.get('md-icon[ng-click="showPasswordToggle()"]')
                 .should('be.visible')
 
-            //Card Altere Sua Senha Temporária - botão "Gerar uma Nova Senha"
             cy.get('a[ng-click="gerarNovaSenha($event)"]')
                 .should('be.visible')
                 .and('not.have.attr', 'disabled')
 
-            //Card Altere Sua Senha Temporária - título "Regras para a Nova Senha"
             cy.get('p')
                 .contains('Regras para a Nova Senha')
                 .should('be.visible')
 
             LoginPage.rulesNewPasswordBefore()
 
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
             cy.get('input[name="password_new"]')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabiumNovo.newPassword)
 
-            //Card Altere Sua Senha Temporária - olhos "Nova Senha"
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
                 .should('be.visible')
 
             LoginPage.rulesrulesNewPasswordAfter()
 
-            //Card Altere Sua Senha Temporária - botão CONFIRMAR antes de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')
                 .should('be.visible')
                 .and('have.text','Confirmar')
                 .and('not.have.attr', 'not.disabled')
 
-            //Card Altere Sua Senha Temporária - texto "Repetir Nova Senha"
             cy.get('.senha_nova > :nth-child(10)')
                 .should('be.visible')
                 .and('have.text','Repetir Nova Senha')
 
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Repetir Nova Senha"
             cy.get(':nth-child(11) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabiumNovo.newPassword)
 
-            //Validar a sexta Regras para a Nova Senha (depois de preencher campo Repetir Nova Senha) - Texto As novas senhas informadas são iguais.
             cy.contains('span', 'As novas senhas informadas são iguais.')
                 .should('be.visible')
                 .and('have.css', 'color', 'rgb(0, 100, 0)')
 
-            //Card Altere Sua Senha Temporária - botão CONFIRMAR depois de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')
                 .should('be.visible')
                 .and('have.text','Confirmar')
@@ -249,26 +212,21 @@ describe('Senha do usuário expirada', () => {
 
             scrollTo()
                     
-            //Card Altere Sua Senha Temporária - botão Fechar 
             cy.get('[ng-show="!loading"] > a')
                 .should('be.visible')
                 .and('have.text','Fechar')
                 .and('not.have.attr', 'disabled')
                 
-            //Card Altere Sua Senha Temporária - clicar no botão CONFIRMAR
             cy.get(':nth-child(5) > .md-raised')
                 .click()
 
-            //Card de Senha alterada com sucesso
             cy.get('.toast')
                 .should('be.visible')
-            
-            //Card de Senha alterada com sucesso - Aviso
+
             cy.get('.toast-title')
                 .should('be.visible')
                 .and('have.text','Aviso')
 
-            //Card de Senha alterada com sucesso - Senha alterada com sucesso
             cy.get('.toast-message')
                 .should('be.visible')
                 .and('have.text','Senha alterada com sucesso')
@@ -279,7 +237,6 @@ describe('Senha do usuário expirada', () => {
 
         it('3.Login - clicar em NÃO atualizar senha', () => {
         
-                //Validando campo "informe seu usuário"
                 cy.get('#txtusername')
                     .should('be.visible')
                     .and('have.value','')
@@ -289,7 +246,6 @@ describe('Senha do usuário expirada', () => {
         
                 LoginPage.passwordTextIcon()
         
-                //Campo Informe sua senha
                 cy.get('#txtpassword')
                     .should('be.visible')
                     .and('have.value','')
@@ -302,20 +258,17 @@ describe('Senha do usuário expirada', () => {
                 LoginPage.buttonEnterEnabled()
                 LoginPage.clickButtonEnter()
                 LoginPage.messageOpeningSystem()
-                LoginPage.expiresAcessCardValidate() //APÓS LOGAR
+                LoginPage.expiresAcessCardValidate()
         
-                //Card de expira acesso - clicar em NÃO
                 cy.get('.md-cancel-button')
                     .click()
         
-                //Validando botão INICIAR ATENDIMENTO, para ver se logou
                 cy.get('.md-raised > .truncate')
                     .should('be.visible')
         })
         
         it('4.Login - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
         
-            //Validando campo "informe seu usuário"
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
@@ -325,133 +278,6 @@ describe('Senha do usuário expirada', () => {
     
             LoginPage.passwordTextIcon()
     
-            //Campo Informe sua senha
-            cy.get('#txtpassword')
-                .should('be.visible')
-                .and('have.value','')
-                .type(users.userSabiumNovo.newPassword)
-                .invoke('attr', 'placeholder')
-                .should('equal', 'Informe sua senha')
-    
-            LoginPage.iconEyesPassword()
-            LoginPage.buttonForgotPassword()
-            LoginPage.buttonEnterEnabled()
-            LoginPage.clickButtonEnter()
-            LoginPage.messageOpeningSystem()
-            LoginPage.expiresAcessCardValidate() //APÓS LOGAR
-            LoginPage.clickSIMExpires() //clicar SIM 
-    
-            //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
-            cy.get('p')
-                .contains('Altere Sua Senha Temporária')
-                .should('be.visible')
-    
-            //Card Altere Sua Senha Temporária - texto "Usuário"
-            cy.get('.senha_nova > :nth-child(1)')
-                .should('be.visible')
-                .and('have.text','Usuário')
-    
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Usuário"
-            cy.get(':nth-child(2) > .ng-pristine')
-                .should('be.visible')
-                .and('have.value', users.userSabium.login)
-    
-            //Card Altere Sua Senha Temporária - texto "Senha Atual"
-            cy.get('.senha_nova > :nth-child(4)')
-                .should('be.visible')
-                .and('have.text','Senha Atual')
-    
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Senha Atual"
-            cy.get(':nth-child(5) > .ng-pristine')
-                .should('be.visible')
-                .and('have.value','')
-                .type(users.userSabiumNovo.newPassword, {force:true})
-    
-            //Card Altere Sua Senha Temporária - olhos "Senha Atual"
-            cy.get('md-icon[ng-click="showPasswordToggle()"]')
-                .should('be.visible')
-    
-            //Card Altere Sua Senha Temporária - botão "Gerar uma Nova Senha"
-            cy.get('a[ng-click="gerarNovaSenha($event)"]')
-                .should('be.visible')
-                .and('not.have.attr', 'disabled')
-    
-            //Card Altere Sua Senha Temporária - título "Regras para a Nova Senha"
-            cy.get('p')
-                .contains('Regras para a Nova Senha')
-                .should('be.visible')
-    
-            LoginPage.rulesNewPasswordBefore()
-    
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
-            cy.get('input[name="password_new"]')
-                .should('be.visible')
-                .and('have.value','')
-                .type(users.userSabium.password)
-    
-            //Card Altere Sua Senha Temporária - olhos "Nova Senha"
-            cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
-                .should('be.visible')
-    
-            LoginPage.rulesrulesNewPasswordAfter()
-    
-            //Card Altere Sua Senha Temporária - botão CONFIRMAR antes de todas as regras estarem certas
-            cy.get(':nth-child(5) > .md-raised')
-                .should('be.visible')
-                .and('have.text','Confirmar')
-                .and('not.have.attr', 'not.disabled')
-    
-            //Card Altere Sua Senha Temporária - texto "Repetir Nova Senha"
-            cy.get('.senha_nova > :nth-child(10)')
-                .should('be.visible')
-                .and('have.text','Repetir Nova Senha')
-    
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Repetir Nova Senha"
-            cy.get(':nth-child(11) > .ng-pristine')
-                .should('be.visible')
-                .and('have.value','')
-                .type((users.userSabium.password))
-    
-            //Validar a sexta Regras para a Nova Senha (depois de preencher campo Repetir Nova Senha) - Texto As novas senhas informadas são iguais.
-            cy.contains('span', 'As novas senhas informadas são iguais.')
-                .should('be.visible')
-                .and('have.css', 'color', 'rgb(0, 100, 0)')
-    
-            //Card Altere Sua Senha Temporária - botão CONFIRMAR depois de todas as regras estarem certas
-            cy.get(':nth-child(5) > .md-raised')
-                .should('be.visible')
-                .and('have.text','Confirmar')
-                .and('not.have.attr', 'disabled')
-                    
-            //Card Altere Sua Senha Temporária - botão Fechar 
-            cy.get('[ng-show="!loading"] > a')
-                .should('be.visible')
-                .and('have.text','Fechar')
-                .and('not.have.attr', 'disabled')
-                
-            //Card Altere Sua Senha Temporária - clicar no botão Fechar 
-            cy.get('[ng-show="!loading"] > a')
-                .click()
-    
-            //Ícone do computador - validar se realmente se voltou para a tela de login
-            cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
-                .should('be.visible')
-                .and('not.have.attr', 'disabled')
-        })
-    
-        it('5.Login - clicar em SIM atualizar senha - clicar em CONFIRMAR a redefinição de senha', () => {
-        
-            //Validando campo "informe seu usuário"
-            cy.get('#txtusername')
-                .should('be.visible')
-                .and('have.value','')
-                .type(users.userSabium.login)
-                .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
-    
-            LoginPage.passwordTextIcon()
-    
-            //Campo Informe sua senha
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
@@ -465,110 +291,196 @@ describe('Senha do usuário expirada', () => {
             LoginPage.clickButtonEnter()
             LoginPage.messageOpeningSystem()
             LoginPage.expiresAcessCardValidate()
-            LoginPage.clickSIMExpires() //clicar SIM 
-    
-            //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
+            LoginPage.clickSIMExpires()
+
             cy.get('p')
                 .contains('Altere Sua Senha Temporária')
                 .should('be.visible')
     
-            //Card Altere Sua Senha Temporária - texto "Usuário"
             cy.get('.senha_nova > :nth-child(1)')
                 .should('be.visible')
                 .and('have.text','Usuário')
     
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Usuário"
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value', users.userSabium.login)
     
-            //Card Altere Sua Senha Temporária - texto "Senha Atual"
             cy.get('.senha_nova > :nth-child(4)')
                 .should('be.visible')
                 .and('have.text','Senha Atual')
-    
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Senha Atual"
+
             cy.get(':nth-child(5) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabiumNovo.newPassword, {force:true})
     
-            //Card Altere Sua Senha Temporária - olhos "Senha Atual"
             cy.get('md-icon[ng-click="showPasswordToggle()"]')
-                .should('exist')
+                .should('be.visible')
     
-            //Card Altere Sua Senha Temporária - botão "Gerar uma Nova Senha"
             cy.get('a[ng-click="gerarNovaSenha($event)"]')
                 .should('be.visible')
                 .and('not.have.attr', 'disabled')
-    
-            //Card Altere Sua Senha Temporária - título "Regras para a Nova Senha"
+
             cy.get('p')
                 .contains('Regras para a Nova Senha')
                 .should('be.visible')
     
             LoginPage.rulesNewPasswordBefore()
-    
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Nova Senha"
+
             cy.get('input[name="password_new"]')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabium.password)
-    
-            //Card Altere Sua Senha Temporária - olhos "Nova Senha"
+
             cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
                 .should('be.visible')
     
             LoginPage.rulesrulesNewPasswordAfter()
-    
-            //Card Altere Sua Senha Temporária - botão CONFIRMAR antes de todas as regras estarem certas
+
             cy.get(':nth-child(5) > .md-raised')
                 .should('be.visible')
                 .and('have.text','Confirmar')
                 .and('not.have.attr', 'not.disabled')
     
-            //Card Altere Sua Senha Temporária - texto "Repetir Nova Senha"
             cy.get('.senha_nova > :nth-child(10)')
                 .should('be.visible')
                 .and('have.text','Repetir Nova Senha')
     
-            //Card Altere Sua Senha Temporária - campo para preenchimento "Repetir Nova Senha"
             cy.get(':nth-child(11) > .ng-pristine')
                 .should('be.visible')
                 .and('have.value','')
-                .type(users.userSabium.password)
-    
-            //Validar a sexta Regras para a Nova Senha (depois de preencher campo Repetir Nova Senha) - Texto As novas senhas informadas são iguais.
+                .type((users.userSabium.password))
+
             cy.contains('span', 'As novas senhas informadas são iguais.')
                 .should('be.visible')
                 .and('have.css', 'color', 'rgb(0, 100, 0)')
     
-            //Card Altere Sua Senha Temporária - botão CONFIRMAR depois de todas as regras estarem certas
             cy.get(':nth-child(5) > .md-raised')
                 .should('be.visible')
                 .and('have.text','Confirmar')
                 .and('not.have.attr', 'disabled')
                     
-            //Card Altere Sua Senha Temporária - botão Fechar 
             cy.get('[ng-show="!loading"] > a')
                 .should('be.visible')
                 .and('have.text','Fechar')
                 .and('not.have.attr', 'disabled')
-                
-            //Card Altere Sua Senha Temporária - clicar no botão CONFIRMAR
-            cy.get(':nth-child(5) > .md-raised')
+
+            cy.get('[ng-show="!loading"] > a')
                 .click()
     
-            //Card de Senha alterada com sucesso
+            cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
+                .should('be.visible')
+                .and('not.have.attr', 'disabled')
+        })
+    
+        it('5.Login - clicar em SIM atualizar senha - clicar em CONFIRMAR a redefinição de senha', () => {
+        
+            cy.get('#txtusername')
+                .should('be.visible')
+                .and('have.value','')
+                .type(users.userSabium.login)
+                .invoke('attr', 'placeholder')
+                .should('equal', 'Informe seu usuário')
+    
+            LoginPage.passwordTextIcon()
+    
+            cy.get('#txtpassword')
+                .should('be.visible')
+                .and('have.value','')
+                .type(users.userSabiumNovo.newPassword)
+                .invoke('attr', 'placeholder')
+                .should('equal', 'Informe sua senha')
+    
+            LoginPage.iconEyesPassword()
+            LoginPage.buttonForgotPassword()
+            LoginPage.buttonEnterEnabled()
+            LoginPage.clickButtonEnter()
+            LoginPage.messageOpeningSystem()
+            LoginPage.expiresAcessCardValidate()
+            LoginPage.clickSIMExpires()
+    
+            cy.get('p')
+                .contains('Altere Sua Senha Temporária')
+                .should('be.visible')
+    
+            cy.get('.senha_nova > :nth-child(1)')
+                .should('be.visible')
+                .and('have.text','Usuário')
+    
+            cy.get(':nth-child(2) > .ng-pristine')
+                .should('be.visible')
+                .and('have.value', users.userSabium.login)
+    
+            cy.get('.senha_nova > :nth-child(4)')
+                .should('be.visible')
+                .and('have.text','Senha Atual')
+    
+            cy.get(':nth-child(5) > .ng-pristine')
+                .should('be.visible')
+                .and('have.value','')
+                .type(users.userSabiumNovo.newPassword, {force:true})
+
+            cy.get('md-icon[ng-click="showPasswordToggle()"]')
+                .should('exist')
+
+            cy.get('a[ng-click="gerarNovaSenha($event)"]')
+                .should('be.visible')
+                .and('not.have.attr', 'disabled')
+
+            cy.get('p')
+                .contains('Regras para a Nova Senha')
+                .should('be.visible')
+    
+            LoginPage.rulesNewPasswordBefore()
+
+            cy.get('input[name="password_new"]')
+                .should('be.visible')
+                .and('have.value','')
+                .type(users.userSabium.password)
+    
+            cy.get('md-icon[ng-click="showPasswordToggle(true)"]')
+                .should('be.visible')
+    
+            LoginPage.rulesrulesNewPasswordAfter()
+
+            cy.get(':nth-child(5) > .md-raised')
+                .should('be.visible')
+                .and('have.text','Confirmar')
+                .and('not.have.attr', 'not.disabled')
+    
+            cy.get('.senha_nova > :nth-child(10)')
+                .should('be.visible')
+                .and('have.text','Repetir Nova Senha')
+    
+            cy.get(':nth-child(11) > .ng-pristine')
+                .should('be.visible')
+                .and('have.value','')
+                .type(users.userSabium.password)
+    
+            cy.contains('span', 'As novas senhas informadas são iguais.')
+                .should('be.visible')
+                .and('have.css', 'color', 'rgb(0, 100, 0)')
+
+            cy.get(':nth-child(5) > .md-raised')
+                .should('be.visible')
+                .and('have.text','Confirmar')
+                .and('not.have.attr', 'disabled')
+
+            cy.get('[ng-show="!loading"] > a')
+                .should('be.visible')
+                .and('have.text','Fechar')
+                .and('not.have.attr', 'disabled')
+
+            cy.get(':nth-child(5) > .md-raised')
+                .click()
+
             cy.get('.toast')
                 .should('be.visible')
-            
-            //Card de Senha alterada com sucesso - Aviso
+
             cy.get('.toast-title')
                 .should('be.visible')
                 .and('have.text','Aviso')
-    
-            //Card de Senha alterada com sucesso - Senha alterada com sucesso
+
             cy.get('.toast-message')
                 .should('be.visible')
                 .and('have.text','Senha alterada com sucesso')
