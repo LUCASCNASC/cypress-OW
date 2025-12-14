@@ -14,7 +14,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFCe() //processo normal
+        ProcessoVendaPage.NFCe() 
         cy.chooseCliente()
     })
 
@@ -23,18 +23,18 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it('1.Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             Product.promoMatch()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage() 
             cy.clickVoltageProduct()
             PromocaoPage.selectFirstPromoProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
 
             //Escolher "Forma de pagamento"
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click()
@@ -49,48 +49,38 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it('2.Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             Product.promoDeadlineEntry()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage() 
             cy.clickVoltageProduct()
-            PromocaoPage.selectFirstPromoProduct() //PROMOÇÃO
+            PromocaoPage.selectFirstPromoProduct() 
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
 
             //"GERAR PAGAMENTO"
             cy.get('.layout-wrap > .md-primary').scrollTo('top').wait(200)
             cy.contains('.md-select-value', 'Forma de pagamento').click()
-            // cy.get('.white > :nth-child(3)').click({force:true})
-            // cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
-
-            // GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
-            // GeralPagamentoPage.loadingFormPayment()
-            // Receipt.main()
-            // ParcelasPage.two()
-            // AvancarPage.final()
-            // cy.clickFinalizarPedidoPage()
-            // cy.validateOrderGenerated()
         })
 
         it('3.Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             Product.promoDeadlineInstallment()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage()
             cy.clickVoltageProduct()
-            PromocaoPage.selectFirstPromoProduct() //PROMOÇÃO
+            PromocaoPage.selectFirstPromoProduct() 
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})

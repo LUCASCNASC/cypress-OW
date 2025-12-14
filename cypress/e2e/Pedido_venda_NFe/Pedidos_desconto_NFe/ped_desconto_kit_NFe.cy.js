@@ -17,7 +17,7 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         cy.login(); 
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
   
@@ -26,19 +26,19 @@ describe('Gerar pedido de venda Kit com desconto', () => {
         it('1.Pedido: kit 1862 0 0 com desconto Sub (-) / VALOR FIXO', () => {
     
             Product.kitDiscount()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeralPedidosPage.compositionKit()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            OrderDiscount.clickButtonDiscount() //DESCONTO
+            OrderDiscount.clickButtonDiscount() 
             OrderDiscount.validateModalSub()
             OrderDiscount.aplicarDescontoValorFixo()
             TirarEntrega.freightFirst()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()

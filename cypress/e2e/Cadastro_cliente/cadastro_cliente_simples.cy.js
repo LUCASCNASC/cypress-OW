@@ -269,7 +269,6 @@ describe('Cadastrar cliente simples', () => {
             ClienteSimplesPage.routeClient()
             ClienteSimplesPage.clickSalvarClienteCompletoSimple()
             ClienteSimplesPage.messFirstRegistSaveSucess()
-            
             ClienteSimplesPage.clickMenuOpcoes() 
             ClienteSimplesPage.optionClientSimple()
 

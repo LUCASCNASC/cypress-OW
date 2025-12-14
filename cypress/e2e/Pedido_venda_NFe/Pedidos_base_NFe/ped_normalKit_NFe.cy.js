@@ -16,7 +16,7 @@ describe('Gerar pedido normal', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
   
@@ -25,16 +25,16 @@ describe('Gerar pedido normal', () => {
         it('1.Pedido: kit 1862 0 0', () => {
                       
             Product.kitFirst()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeralPedidosPage.compositionKit()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -49,16 +49,16 @@ describe('Gerar pedido normal', () => {
         it('2.Pedido: kit 1862 0 0', () => {
               
             Product.kitFirst()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeralPedido.compositionKit()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()

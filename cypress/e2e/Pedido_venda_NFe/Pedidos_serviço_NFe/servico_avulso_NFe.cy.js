@@ -13,7 +13,7 @@ describe('Venda de serviço avulso', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessoVendaPage.saleServiceLoose() //processo serviço avulso
+        ProcessoVendaPage.saleServiceLoose()
         cy.chooseCliente()
     })
 
@@ -24,10 +24,10 @@ describe('Venda de serviço avulso', () => {
             ServicosAvulsosPage.productServiceLoose()
             ServicosAvulsosPage.chooseServiceSearch()
             ServicosAvulsosPage.messItemAddedSucess()
-            ServicosAvulsosPage.clickCartShopping() //CARRINHO COMPRAS
+            ServicosAvulsosPage.clickCartShopping() 
             ServicosAvulsosPage.serviceAddedCart()
             ServicosAvulsosPage.buttonAdvanceOrder()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()

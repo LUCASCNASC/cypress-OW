@@ -16,7 +16,7 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
 
@@ -25,19 +25,19 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         it('1.Pedido: produto 1860 0 0 - arredondar para baixo', () => {
 
             Product.roundUpDown()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.one()
-            OrderDiscount.dragFormPayment() //DESCONTO
+            OrderDiscount.dragFormPayment() 
             OrderDiscount.clickChangeValue()
             OrderDiscount.modalChangeValue()
             OrderDiscount.changeValueToLow()
@@ -49,19 +49,19 @@ describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 defi
         it('2.Pedido: produtos 1860 0 0 - arredondar para cima', () => {
 
             Product.roundUpDown()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.one()
-            OrderDiscount.dragFormPayment() //DESCONTO
+            OrderDiscount.dragFormPayment() 
             OrderDiscount.clickChangeValue()
             OrderDiscount.modalChangeValue()
             OrderDiscount.changeValueToTop()

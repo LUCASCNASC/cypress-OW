@@ -16,7 +16,7 @@ describe('Gerar pedido com financeiro na baixa', () => {
         cy.login();
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.financePaymentNFe() //processo financeiro na baixa
+        ProcessoVendaPage.financePaymentNFe() 
         cy.chooseCliente()
     })
   
@@ -25,15 +25,15 @@ describe('Gerar pedido com financeiro na baixa', () => {
         it('1.Pedido: produto 1860 0 0', () => {
                  
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -45,23 +45,23 @@ describe('Gerar pedido com financeiro na baixa', () => {
         it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
               
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -76,15 +76,15 @@ describe('Gerar pedido com financeiro na baixa', () => {
         it('3.Pedido: produto 1860 0 0', () => {
                 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -96,22 +96,22 @@ describe('Gerar pedido com financeiro na baixa', () => {
         it('4.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                  
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()

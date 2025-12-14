@@ -15,7 +15,7 @@ describe('Gerar pedido de entrega futura', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.deliveryFutureNFe() //processo entrega futura
+        ProcessoVendaPage.deliveryFutureNFe() 
         cy.chooseCliente()
     })
 
@@ -24,17 +24,17 @@ describe('Gerar pedido de entrega futura', () => {
         it('1.Pedido: produto 1860 0 0', () => {
                       
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA PRODUTO
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main() //PROCESSO INCLUSÃO
+            ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final()
             cy.clickFinalizarPedidoPage()
@@ -44,25 +44,25 @@ describe('Gerar pedido de entrega futura', () => {
         it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
               
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             clicarOKServVinServico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA PRODUTO
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() 
             AvancarPage.clickGenerateInstallments()
-            GeralPagamentoPage.clicarGerarParcelas() //GERAR PARCELAS
+            GeralPagamentoPage.clicarGerarParcelas() 
             GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main() //PROCESSO INCLUSÃO
+            ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final() 
             cy.clickFinalizarPedidoPage()
@@ -75,17 +75,17 @@ describe('Gerar pedido de entrega futura', () => {
         it('3.Pedido: produto 1860 0 0', () => {
              
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main() //PROCESSO INCLUSÃO
+            ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final()
             cy.clickFinalizarPedidoPage()
@@ -95,24 +95,24 @@ describe('Gerar pedido de entrega futura', () => {
         it('4.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                    
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            AvancarPage.toTransporter() //TRANSPORTADORA
+            AvancarPage.toTransporter() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
-            ProcessoRecebPage.main() //PROCESSO INCLUSÃO
+            ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final() 
             cy.clickFinalizarPedidoPage()

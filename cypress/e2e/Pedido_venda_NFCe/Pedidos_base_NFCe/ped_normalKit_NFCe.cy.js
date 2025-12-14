@@ -16,7 +16,7 @@ describe('Gerar pedido normal com entrega', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFCe() //processo normal
+        ProcessoVendaPage.NFCe() 
         cy.chooseCliente()
     })
     
@@ -25,18 +25,18 @@ describe('Gerar pedido normal com entrega', () => {
         it('1.Pedido: kit 1862 0 0', () => {
                 
             Product.kitFirst()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             GeralPedidosPage.compositionKit()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             EntregaPage.modalInconsOnlyTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()

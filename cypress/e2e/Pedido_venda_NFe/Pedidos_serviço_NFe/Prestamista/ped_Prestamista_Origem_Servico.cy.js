@@ -21,7 +21,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })   
 
@@ -30,20 +30,20 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('1.Pedido: produto 1860 0 0, inclusão 3881, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.futComJurosPrestAbatOrigemPrd()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.added() //Validando adição do prestamista
+            ValidadePrestamistaPage.added() 
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
             cy.clickFinalizarPedidoPage()
@@ -53,15 +53,15 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('2.Pedido: produto 1860 0 0 e 1870 0 0, inclusão 3881 e 3860, prestamista 162 (99,30), 4 parcelas no recebimento Futuro com juros.', () => {
     
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked()
             ValidateService.garantiaNaoSep()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -69,7 +69,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.futComJurosPrestAbatOrigemPrd()
             ParcelasPage.for()
@@ -87,14 +87,14 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('3.Pedido: produto 1922 0 0 (promo a prazo 171), inclusão 3881, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
     
             Product.termFisrtPrestAbatVF()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPromoPage.termFutWithFeesPrestAbatVF()
             cy.clickAddProduct()
             Service.validateModalServLinked()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
@@ -102,7 +102,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralPedidosPage.clickEditInstallments()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.added() //Validando adição do prestamista
+            ValidadePrestamistaPage.added() 
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
             cy.clickFinalizarPedidoPage()
@@ -112,14 +112,14 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('4.Pedido: produto 1923 0 0 + garantia Não separa (promo a prazo 172 - isentar juros serviços), inclusão 3881, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
 
             Product.termSecondPrestAbatVF()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             PromocaoPage.selectFirstPromoProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked()
             ValidateService.garantiaNaoSep()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
@@ -128,7 +128,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralPedidosPage.clickEditInstallments()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.added() //Validando adição do prestamista
+            ValidadePrestamistaPage.added() 
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
             cy.clickFinalizarPedidoPage()
@@ -138,7 +138,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
         it('5.Pedido: produto 1924 0 0 + garantia Não separa (promo a prazo 173 - isentar juros garantia), inclusão 3882, prestamista 162, 4 parcelas no recebimento Futuro com juros', () => {
 
             Product.prazoPrestTercAbatVF()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             PromocaoPage.selectFirstPromoProduct()
@@ -146,7 +146,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             cy.clickAddProduct()
             Service.validateModalServLinked()
             ValidateService.garantiaNaoSep()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             AvancarPage.toTransporter()
             AvancarPage.paraPatoInstallmentsrcelas()
@@ -155,7 +155,7 @@ describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo - Origem 
             GeralPedidosPage.clickEditInstallments()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.pageFinal() //Validando adição do prestamista
+            ValidadePrestamistaPage.pageFinal() 
             AvancarPage.final()
             ValidadePrestamistaPage.pageFinal()
             cy.clickFinalizarPedidoPage()

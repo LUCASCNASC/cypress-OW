@@ -16,7 +16,7 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
 
@@ -25,22 +25,22 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('1.Pedido: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            AgruparRecebPage.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            AgruparRecebPage.firstValueInstallment() 
+            GeralPagamentoPage.clickGenerateInstallments()  
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.debitTEF()
             ParcelasPage.one()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamentoPage.clickGenerateInstallments()  
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final()
             cy.clickFinalizarPedidoPage()
@@ -50,19 +50,19 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('2.Pedido: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.chooseEntryFormPayment()
             GeralPagamentoPage.clicarGerarPagamento()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamentoPage.clickGenerateInstallments()  
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main() 
             ParcelasPage.two()
             AvancarPage.final()
             cy.clickFinalizarPedidoPage()
@@ -72,22 +72,22 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('3.Pedido: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            AgruparRecebPage.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            AgruparRecebPage.firstValueInstallment() 
+            GeralPagamentoPage.clickGenerateInstallments()  
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
             ParcelasPage.one()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamentoPage.clickGenerateInstallments()  
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main() 
             ParcelasPage.one()
             AgruparRecebPage.notGroupReleases()
             AvancarPage.final()
@@ -98,22 +98,22 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('4.Pedido: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            AgruparRecebPage.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            AgruparRecebPage.firstValueInstallment()
+            GeralPagamentoPage.clickGenerateInstallments()
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
             ParcelasPage.one()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamentoPage.clickGenerateInstallments()
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
+            ProcessoRecebPage.main()
             ParcelasPage.one()
             AgruparRecebPage.groupReleases()
             AvancarPage.final()
@@ -124,23 +124,22 @@ describe('Gerar pedido com mais de uma forma de pagamento', () => {
         it('5.Pedido: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            AgruparRecebPage.firstValueInstallment() //COLOCAR VALOR DA PRIMEIRA FORMA DE PAGAMENTO
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - PRIMEIRA FORMA DE PAGAMENTO
+            AgruparRecebPage.firstValueInstallment()
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
             ParcelasPage.one()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS - SEGUNDA FORMA DE PAGAMENTO
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() //SEGUNDA FORMA DE PAGAMENTO
-            ParcelasPage.one()
+            ProcessoRecebPage.main() 
             AgruparRecebPage.notGroupReleases()
             AgruparRecebPage.selectReleasesGroup()
             AgruparRecebPage.clickGroup()

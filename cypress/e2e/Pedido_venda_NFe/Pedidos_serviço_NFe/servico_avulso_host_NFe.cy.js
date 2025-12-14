@@ -14,7 +14,7 @@ describe('Venda de serviço avulso Host - 104', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.saleServiceLoose() //processo serviço avulso
+        ProcessoVendaPage.saleServiceLoose()
         cy.chooseCliente()
     })
 
@@ -27,9 +27,9 @@ describe('Venda de serviço avulso Host - 104', () => {
             ServicosAvulsosPage.productServiceHost()
             ServicosAvulsosPage.chooseServiceSearch()
             ServicosAvulsosPage.chooseValueRecharge()
-            ServicosAvulsosPage.clickCartShopping() //CARRINHO COMPRAS
+            ServicosAvulsosPage.clickCartShopping()
             ServicosAvulsosPage.buttonAdvanceOrder()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.one()

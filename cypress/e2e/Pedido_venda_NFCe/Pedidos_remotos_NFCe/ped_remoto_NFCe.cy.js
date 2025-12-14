@@ -16,7 +16,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessoVendaPage.NFCe() //processo normal
+        ProcessoVendaPage.NFCe() 
         cy.chooseCliente()
     })
   
@@ -25,17 +25,17 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it('1.Pedido remoto: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -47,25 +47,25 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it('2.Pedido remota: produtos 1860 0 0 e 1870 0 0', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -77,18 +77,18 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it('3.Pedido remoto: kit 1877 0 0', () => {
 
             Product.kitRemote()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
             GeralPedidosPage.composicaoDesteKit()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -103,17 +103,17 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it('4.Pedido remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto (1883 0 0) sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
 
             Product.remoteWithCD()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -125,7 +125,7 @@ describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it('5.Pedido remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto (1882 0 0) sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
             Product.remoteWithoutCD()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()

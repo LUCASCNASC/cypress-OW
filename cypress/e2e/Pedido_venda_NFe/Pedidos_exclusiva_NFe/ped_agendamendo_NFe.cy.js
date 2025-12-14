@@ -18,7 +18,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
 
@@ -26,15 +26,15 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
         it('1.Pedido: produto normal (com saldo e com entrega, 15 dias) e um kit remoto (2 composições, sem saldo e sem a receber, 20 dias).', () => {
 
-            ProductExclusiva.firstNormal() EXCLUSIVA
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ProductExclusiva.firstNormal()
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            ProductExclusiva.kitWithoutBalanceScheduling() KIT
-            ValidateBalance.withoutBalance() //VALIDAR SALDO
+            ProductExclusiva.kitWithoutBalanceScheduling() 
+            ValidateBalance.withoutBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             GeralPedidosPage.trocarFilialFaturamento()
@@ -43,7 +43,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             EntregaPage.modalInconsApenasTransp()
             EntregaPage.escolherTransportadora()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -55,14 +55,14 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it('2.Pedido: produto normal (com saldo e com entrega) e um kit com composição 6 volumes (data atual + parametro 552/ 5 dias).', () => {
 
             ProductExclusiva.firstNormal()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            ProductExclusiva.kitVolumes() KIT
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ProductExclusiva.kitVolumes() 
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
@@ -70,7 +70,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             EntregaPage.modalInconsApenasTransp()
             EntregaPage.escolherTransportadora()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -85,17 +85,17 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
         it('3.Pedido: produto (sem saldo e com saldo a receber para 10 dias, e com entrega), e ter um agendamento para a data de previsão.', () => {
 
             ProductExclusiva.balanceReceive()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             EntregaPage.modalInconsApenasTransp()
             EntregaPage.escolherTransportadora()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -113,7 +113,7 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
             GeralPedidosPage.trocarFilialFaturamento()
             PedExclusiva.increaseAmountSaleFive()
             cy.selectProductSearch()
-            ProductExclusiva.balanceReceiveTwoLines() //SEGUNDO PRODUTO
+            ProductExclusiva.balanceReceiveTwoLines() 
             PedExclusiva.balanceRemoteReceive()
             cy.clickVoltageProduct() 
             cy.clickAddProduct()
@@ -123,16 +123,16 @@ describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
         it('5.Pedido: venda normal: produto 1896 0 0 (sem entrega)', () => {
     
-            ProductExclusiva.firstNormal() EXCLUSIVA
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ProductExclusiva.firstNormal() 
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()

@@ -15,7 +15,7 @@ describe('Gerar pedido normal com entrega', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFCe() //processo normal
+        ProcessoVendaPage.NFCe() 
         cy.chooseCliente()
     })
 
@@ -24,17 +24,17 @@ describe('Gerar pedido normal com entrega', () => {
         it('1.Pedido: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
                   
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -46,24 +46,24 @@ describe('Gerar pedido normal com entrega', () => {
         it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
                 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            Product.second() //SEGUNDO PRODUTO
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            Product.second() 
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -75,17 +75,17 @@ describe('Gerar pedido normal com entrega', () => {
         it('3.Pedido: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
                   
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduc()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() //ESCOLHER TRANSPORTADORA
+            EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.chooseEntryFormPayment() //GERAR PARCELAS
+            GeralPagamentoPage.chooseEntryFormPayment() 
             GeralPagamentoPage.clickGeneratePayment()
             GeralPagamentoPage.clickGenerateInstallments()
             GeralPagamentoPage.loadingFormPayment()

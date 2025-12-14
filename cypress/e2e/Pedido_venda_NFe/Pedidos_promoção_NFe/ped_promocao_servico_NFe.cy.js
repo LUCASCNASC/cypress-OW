@@ -17,7 +17,7 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
   
@@ -26,18 +26,18 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('1.Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
     
             Product.firstInstallmentDeadline()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             PromocaoPage.typeServiceFreeValidate()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPromoPage.pagPrincipal()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
-            Service.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Service.validateModalServLinked() 
+            Service.garantiaSepMesmoProc() 
             Service.clickOKServiceLinked()
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
@@ -49,18 +49,18 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('2.Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
     
             Product.secondInstallmentDeadline()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             PromocaoPage.typeServiceFreeValidate()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPromoPage.pagPrincipal()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
-            Service.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Service.validateModalServLinked() 
+            Service.garantiaSepMesmoProc() 
             Service.clickOKServiceLinked()
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
@@ -90,16 +90,16 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('3.Pedido com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
     
             Product.thirdInstallmentDeadline()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPage.withMoneylender()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
@@ -114,18 +114,18 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
         it('4.Pedido com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
     
             Product.fourthInstallmentDeadline()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
             cy.clickAddProduc()
             PromocaoPage.typeServiceFreeValidate()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPage.withMoneylender()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
-            Service.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
+            Service.validateModalServLinked() 
+            Service.garantiaSepMesmoProc() 
             Service.clickOKServiceLinked()
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })

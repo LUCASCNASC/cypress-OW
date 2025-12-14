@@ -15,7 +15,7 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessoVendaPage.saleServiceLoose() //processo serviço avulso
+        ProcessoVendaPage.saleServiceLoose()
         cy.chooseCliente()
     })
 
@@ -49,17 +49,17 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             ServicosAvulsosPage.buttonAddGarantias()
             ServicosAvulsosPage.clickAddGarantias()
             ServicosAvulsosPage.modalGarantiasServicesLinked()
-            Service.garantiaSepMesmoProc() //clicar na primeira garantia - Garantia Separa Mesmo Processo
-            Service.clickOKServiceLinked()()
+            Service.garantiaSepMesmoProc()
+            Service.clickOKServiceLinked()
             ServicosAvulsosPage.messLinkedAddedSucess()
             ServicosAvulsosPage.buttonSaveService()
             ServicosAvulsosPage.messWaitLoading()
             ServicosAvulsosPage.messResgistrationSaveSucess()
-            ServicosAvulsosPage.clickAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
-            ServicosAvulsosPage.messGarantiaAdded() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
+            ServicosAvulsosPage.clickAddGarantias() 
+            ServicosAvulsosPage.messGarantiaAdded()
             ServicosAvulsosPage.clickCartShopping()
             ServicosAvulsosPage.buttonAdvanceOrder()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.two()

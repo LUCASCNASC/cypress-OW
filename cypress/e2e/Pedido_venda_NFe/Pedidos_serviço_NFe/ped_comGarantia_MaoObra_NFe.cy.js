@@ -15,7 +15,7 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina() 
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
 
@@ -24,18 +24,18 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('1.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa)', () => {
             
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaNaoSep() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMODestNãoSepara()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -47,26 +47,26 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('2.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
             Service.validateModalServLinked()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaNaoSep() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMODestNãoSepara()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
+            Service.validateModalServLinked()  
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -78,17 +78,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('3.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -100,24 +100,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('4.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Servico.clickOKServiceLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            Servico.clickOKServiceLinked()  
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -129,17 +129,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('5.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepTituloProcDif() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMONaoDestSepProcDif()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -151,24 +151,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('6.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepTituloProcDif() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMONaoDestSepProcDif()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.clickOKServiceLinked() //SERVIÇOS
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            Service.clickOKServiceLinked() 
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -180,17 +180,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('7.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaNaoSep()
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMODestNãoSepara()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -202,25 +202,25 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('8.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaNaoSep()
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMODestNãoSepara()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -232,17 +232,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('9.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -254,25 +254,25 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('10.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
+            Service.validateModalServLinked()  
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -284,17 +284,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('11.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaSepTituloProcDif() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMONaoDestSepProcDif()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -306,25 +306,25 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('12.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaSepTituloProcDif() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMONaoDestSepProcDif()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
+            Service.validateModalServLinked()  
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -336,17 +336,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('13.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
-            Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaNaoSep() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMODestNãoSepara()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -358,25 +358,25 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('14.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
-            Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaNaoSep() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMODestNãoSepara()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
+            Service.validateModalServLinked()  
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -388,17 +388,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('15.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -410,25 +410,25 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('16.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
+            Service.validateModalServLinked()  
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments()  
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -440,17 +440,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('17.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
+            Service.maoObraNaoDestSepaProcDif()
             Service.garantiaSepTituloProcDif()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMONaoDestSepProcDif()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -462,25 +462,25 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('18.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
+            Service.maoObraNaoDestSepaProcDif()
             Service.garantiaSepTituloProcDif()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMONaoDestSepProcDif()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
+            Service.validateModalServLinked()  
             Service.clickOKServiceLinked()
-            TirarEntrega.freightSecond() //ENTREGA - SEGUNDO PRODUTO
+            TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -495,17 +495,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('19.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaNaoSep() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMODestNãoSepara()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()  
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -517,24 +517,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('20.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaNaoSep() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMODestNãoSepara()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()  
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -546,17 +546,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('21.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMONaoDestSepMesmoProc()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -568,24 +568,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('22.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMONaoDestSepMesmoProc()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()  
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -597,17 +597,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('23.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepTituloProcDif() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMONaoDestSepProcDif()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -619,24 +619,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('24.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
-            Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepTituloProcDif() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc() ; ValidateService.addMONaoDestSepProcDif()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()  
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -648,17 +648,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('25.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaNaoSep()
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMODestNãoSepara()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -670,24 +670,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('26.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaNaoSep()//Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaNaoSep()
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMODestNãoSepara()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()  
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -699,17 +699,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('27.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMONaoDestSepMesmoProc()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -721,24 +721,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('28.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMONaoDestSepMesmoProc()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()  
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -750,17 +750,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('29.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaSepTituloProcDif() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMONaoDestSepProcDif()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -772,24 +772,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('30.Pedido: produto 1860 0 0 (com Garantia que não separa e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraDestNãoSep() //Marcar garantia "T.A. Garantia Não Separa"
-            Service.garantiaSepTituloProcDif() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Processo Diferente" 
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraDestNãoSep() 
+            Service.garantiaSepTituloProcDif() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep() ; ValidateService.addMONaoDestSepProcDif()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()  
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -801,17 +801,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('31.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
-            Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaNaoSep() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMODestNãoSepara()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -823,23 +823,23 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('32.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra que destaca e não separa) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
-            Service.garantiaNaoSep() //Marcar Mão de Obra "T.A. MO Destaca e Não Separa"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaNaoSep() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMODestNãoSepara()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -851,17 +851,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('33.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMONaoDestSepMesmoProc()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -873,24 +873,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('34.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
-            Service.garantiaSepMesmoProc() //Marcar Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo"
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMONaoDestSepMesmoProc()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()  
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -902,17 +902,17 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('35.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif() //Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
+            Service.maoObraNaoDestSepaProcDif() 
             Service.garantiaSepTituloProcDif()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMONaoDestSepProcDif()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()
@@ -924,24 +924,24 @@ describe('Gerar pedidos com Garantia e Mão de Obra', () => {
         it('36.Pedido: produto 1860 0 0 (com Garantia que separa em processo diferente e Mão de Obra não destaca e separa em outro processo) e produto 1870 0 0 (sem serviço)', () => {
 
             Product.fisrt()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.maoObraNaoDestSepaProcDif()//Marcar garantia "T.A. MO Não Destaca e Separa Processo Diferente"
+            Service.maoObraNaoDestSepaProcDif()
             Service.garantiaSepTituloProcDif()
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.clickOKServiceLinked() 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif() ; ValidateService.addMONaoDestSepProcDif()
             Product.second()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVIÇOS - SEGUNDO PRODUTO
-            Service.clickOKServiceLinked() //SERVIÇOS
+            Service.validateModalServLinked()  
+            Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment() 
             ProcessoRecebPage.main()
             ParcelasPage.two()

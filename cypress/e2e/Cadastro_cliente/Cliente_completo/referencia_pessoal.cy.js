@@ -71,5 +71,4 @@ describe('Cadastrar cliente completo', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso()
         }) 
     })
-
 })

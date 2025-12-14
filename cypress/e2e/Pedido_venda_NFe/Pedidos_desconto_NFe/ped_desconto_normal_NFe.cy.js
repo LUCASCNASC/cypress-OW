@@ -16,7 +16,7 @@ describe('Gerar pedido de venda com desconto', () => {
         cy.login()
         cy.urlAposLogin()
         cy.tituloPagina()
-        ProcessoVendaPage.NFe() //processo normal
+        ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
 
@@ -25,18 +25,18 @@ describe('Gerar pedido de venda com desconto', () => {
         it('1.Pedido: produto 1912 0 0 com desconto Sub (-) / R$', () => {
 
             Product.discountNumber()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            OrderDiscount.clickButtonDiscount() //DESCONTO
+            OrderDiscount.clickButtonDiscount() 
             OrderDiscount.validateModalSub()
             OrderDiscount.applyDiscountR$()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.one()
@@ -48,18 +48,18 @@ describe('Gerar pedido de venda com desconto', () => {
         it('2.Pedido: produto 1913 0 0 com desconto Sub (-) / % (Porcentagem)', () => {
 
             Product.discountPercentage()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            OrderDiscount.clickButtonDiscount() //DESCONTO
+            OrderDiscount.clickButtonDiscount() 
             OrderDiscount.validateModalSub()
             OrderDiscount.applyDiscountPencentage()
-            TirarEntrega.freightFirst() //ENTREGA
+            TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.one()
@@ -71,18 +71,18 @@ describe('Gerar pedido de venda com desconto', () => {
         it('3.Pedido: produto 1914 0 0 com desconto Sub (-) / VALOR FIXO', () => {
 
             Product.discountValueFixed()
-            ValidateBalance.withBalance() //VALIDAR SALDO
+            ValidateBalance.withBalance() 
             cy.selectProductSearch()
             cy.clickVoltageProduct()
             cy.clickAddProduct()
-            Service.validateModalServLinked() //SERVICOS
+            Service.validateModalServLinked() 
             Service.clickOKServiceLinked()
-            OrderDiscount.clickButtonDiscount() //DESCONTO
+            OrderDiscount.clickButtonDiscount() 
             OrderDiscount.validateModalSub()
             OrderDiscount.applyDiscountVF()
-            TirarEntrega.freightFirst()() //ENTREGA
+            TirarEntrega.freightFirst()() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() //GERAR PARCELAS
+            GeralPagamentoPage.clickGenerateInstallments() 
             GeralPagamentoPage.loadingFormPayment()
             ProcessoRecebPage.main()
             ParcelasPage.one()
