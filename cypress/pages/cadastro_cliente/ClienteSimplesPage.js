@@ -1,7 +1,5 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa } from '../../gerarDados';
 
-//Page Object para preenchimento de campos do cliente simples.
-
 //Todos os métodos são estáticos para facilitar o uso direto.
 export class ClienteSimplesPage {
   //Valida e preenche o campo Data de Nascimento.
@@ -186,6 +184,5 @@ export class ClienteSimplesPage {
       .and('have.value', '')
       .type(senhaSupervisor);
     cy.contains('button', 'Confirmar').click();
-}
-
+  }
 }
