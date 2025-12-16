@@ -1,12 +1,3 @@
-/**
- * Comandos customizados para validação de URLs de menus específicos.
- * Boas práticas:
- * - Removidos parâmetros desnecessários.
- * - Padronização dos nomes dos comandos para inglês.
- * - Comentários explicativos.
- * - Sugestão: caso queira um comando único, consulte ao final do arquivo.
- */
-
 // Valida URL do menu Departamentos
 Cypress.Commands.add('validateUrlDepartments', () => {
   cy.url().should('include', '/#!/departamentos//');
@@ -51,13 +42,3 @@ Cypress.Commands.add('validateUrlSettings', () => {
 Cypress.Commands.add('validateUrlMyPerformance', () => {
   cy.url().should('include', '/#!/vendedor');
 });
-
-/**
- * Sugestão alternativa: comando único e flexível para validação de URL de menu.
- * 
- * Exemplo de uso:
- * cy.validateMenuUrl('/#!/servicos');
- */
-// Cypress.Commands.add('validateMenuUrl', (expectedPath) => {
-//   cy.url().should('include', expectedPath);
-// });

@@ -1,6 +1,5 @@
 import { gerarNomeEmpresa } from '../../../../gerarDados';
 
-//Início exp. crédito
 function gerarDataReferenciaFinanceira() {
   const dataInicio = new Date('2000-01-01');
   const dataAtual = new Date();
@@ -11,7 +10,6 @@ function gerarDataReferenciaFinanceira() {
   return `${dia}/${mes}/${ano}`;
 }
 
-//Valor prestação
 function gerarValorDuasCasasAposVirgula() {
   const valorInteiro = Math.floor(Math.random() * 900) + 100;
   const valorDecimal = (Math.random()).toFixed(2).substring(2);
@@ -19,8 +17,6 @@ function gerarValorDuasCasasAposVirgula() {
   return valorFinal;
 }
 
-//Page Object para operações e validações relacionadas à aba Referência Financeira.
-//Todos os métodos são estáticos para facilitar o uso direto.
 export class RefFinanceiraPage {
   //Valida e clica na aba Financeira em Referências.
   static clickEmpty() {

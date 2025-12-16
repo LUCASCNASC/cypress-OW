@@ -1,8 +1,3 @@
-/**
- * Utilitários para geração de chaves PIX válidas e inválidas para testes.
- * Mantém toda a funcionalidade original com melhor organização, padronização e documentação.
- */
-
 // -------- CHAVES PIX CORRETAS --------
 
 /**

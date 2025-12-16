@@ -1,5 +1,3 @@
-//Page Object para operações e validações relacionadas à aba Referência Pessoal.
-//Todos os métodos são estáticos para facilitar o uso direto.
 export class RefPessoalPage {
   /**
    * Valida e clica na aba Pessoal em Referências.

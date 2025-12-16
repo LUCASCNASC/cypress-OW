@@ -1,7 +1,6 @@
 export class PromocaoPage {
-  /**
-   * Seleciona a primeira promoção do produto.
-   */
+  
+  //Seleciona a primeira promoção do produto.
   static selectFirstPromoProduct() {
     cy.get('[ng-click="modalSaldo()"] > .ng-binding').should('be.visible').and('not.be.disabled');
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex').should('be.visible').and('contain', 'Promoções');
@@ -10,9 +9,7 @@ export class PromocaoPage {
     cy.get('.md-3-line > div.md-button > .md-no-style').should('be.visible').and('not.be.disabled').click();
   }
 
-  /**
-   * Valida produtos com etiqueta "PROMOÇÃO" (ticket vermelho).
-   */
+  //Valida produtos com etiqueta "PROMOÇÃO" (ticket vermelho).
   static ticketPromocaoPage() {
     cy.get('.md-secondary-container > div > .ng-scope').should('be.visible').and('not.be.disabled');
     cy.get('span[ng-if="(gradeAtual.tempromocao)"]').should('have.text', 'PROMOÇÃO').and('be.visible');
@@ -21,17 +18,13 @@ export class PromocaoPage {
       .and('have.css', 'color', 'rgb(255, 255, 255)');
   }
 
-  /**
-   * Valida modal de carregamento "Adicionando produtos/serviços...".
-   */
+  //Valida modal de carregamento "Adicionando produtos/serviços...".
   static messAddProductsServices() {
     cy.get('.conteudo > .layout-align-center-center > .md-accent').should('be.visible');
     cy.get('h3').should('be.visible').and('have.text', 'Adicionando produtos/serviços...');
   }
 
-  /**
-   * Valida e adiciona serviço prestamista.
-   */
+  //Valida e adiciona serviço prestamista.
   static addPrestamista() {
     cy.get('.btn-remove-item-list > :nth-child(2) > .md-raised > .ng-scope').should('be.visible').and('not.be.disabled');
     cy.get('.btn-remove-item-list > :nth-child(2) > .md-raised').should('be.visible').and('not.be.disabled').click({ force: true });
@@ -47,9 +40,7 @@ export class PromocaoPage {
     cy.get('md-dialog-actions.layout-row > .md-primary').should('be.visible').and('not.be.disabled').and('have.text', ' Ok ').click({ force: true });
   }
 
-  /**
-   * Valida "Tipo(s) Serviço(s) Isento(s):" dentro do modal Promoções.
-   */
+  //Valida "Tipo(s) Serviço(s) Isento(s):" dentro do modal Promoções.
   static typeServiceFreeValidate() {
     cy.contains('Tipo(s) Serviço(s) Isento(s):').should('be.visible');
     cy.contains('Garantias').should('be.visible');

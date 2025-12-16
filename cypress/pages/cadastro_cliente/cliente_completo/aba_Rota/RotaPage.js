@@ -1,5 +1,3 @@
-///Page Object para operações e validações relacionadas à aba Rota.
-//Todos os métodos são estáticos para facilitar o uso direto.
 export class RotaPage {
   //Valida e clica na aba Rota.
   static clickAbaRota() {

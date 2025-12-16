@@ -2,8 +2,6 @@ import '@testing-library/cypress/add-commands'
 import 'cypress-file-upload';
 import users from '../../e2e/users.json';
 
-// cypress/support/commands.js
-
 //fazer login no pedido web, com o usuário 393
 Cypress.Commands.add('login', (username, password) => {
   
@@ -29,14 +27,12 @@ Cypress.Commands.add('tituloPagina', (username, password) => {
   
   cy.title()
     .should('eq', 'Sabium Mobile') //Validando título da página
-});import '@testing-library/cypress/add-commands';
+});
+
+import '@testing-library/cypress/add-commands';
 import 'cypress-file-upload';
 
-/**
- * Faz login no sistema Pedido Web.
- * Usuário e senha estão fixos (recomendado migrar para uso de variáveis de ambiente futuramente).
- * Valida se o login foi realizado com sucesso.
- */
+//Faz login no sistema Pedido Web.
 Cypress.Commands.add('login', () => {
   cy.visit('/');
   cy.get('#txtusername').type('sabium.automacao'); // Login fixo
@@ -48,18 +44,12 @@ Cypress.Commands.add('login', () => {
   cy.get('.click-cliente > .informe-o-cliente > .cliente-header').should('contain','Cliente'); // Valida login
 });
 
-/**
- * Valida URL após login no Pedido Web.
- * Certifica-se que a URL contém '/' após o login.
- */
+//Valida URL após login no Pedido Web.
 Cypress.Commands.add('validateUrlAfterLogin', () => {
   cy.url().should('include', '/');
 });
 
-/**
- * Valida o título da página após login no Pedido Web.
- * Verifica se o título do navegador está correto.
- */
+//Valida o título da página após login no Pedido Web.
 Cypress.Commands.add('validatePageTitle', () => {
   cy.title().should('eq', 'Sabium Mobile');
 });

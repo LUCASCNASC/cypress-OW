@@ -1,49 +1,36 @@
 export class Service {
-  /**
-   * Marca garantia "T.A. Garantia Separa Mesmo Processo" - 139
-   */
+
+  //Marca garantia "T.A. Garantia Separa Mesmo Processo" - 139
   static garantiaSepMesmoProc() {
     cy.get('#checkbox-139-0 > .md-container').should('not.be.disabled').click();
   }
 
-  /**
-   * Marca garantia "T.A. Garantia Não Separa" - 140
-   */
+  //Marca garantia "T.A. Garantia Não Separa" - 140
   static garantiaNaoSep() {
     cy.get('#checkbox-140-1 > .md-container').should('exist').and('not.be.disabled').click();
   }
 
-  /**
-   * Marca Garantia separa título em um processo diferente - 141
-   */
+  //Marca Garantia separa título em um processo diferente - 141
   static garantiaSepTituloProcDif() {
     cy.get('#checkbox-141-2 > .md-container').should('exist').and('not.be.disabled').click();
   }
 
-  /**
-   * Marca Mão de Obra "T.A. MO Destaca e Não Separa" - 142
-   */
+  //Marca Mão de Obra "T.A. MO Destaca e Não Separa" - 142
   static maoObraDestNaoSep() {
     cy.get('#checkbox-142-0 > .md-container').should('exist').and('not.be.disabled').click();
   }
 
-  /**
-   * Marca Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo" - 143
-   */
+  //Marca Mão de Obra "T.A. MO Não Destaca e Separa Mesmo Processo" - 143
   static maoObraNaoDestSepMesmoProc() {
     cy.get('#checkbox-143-1 > .md-container').should('exist').and('not.be.disabled').click();
   }
 
-  /**
-   * Marca Mão de obra que não destaca e separa título em processo diferente - 144
-   */
+  //Marca Mão de obra que não destaca e separa título em processo diferente - 144
   static maoObraNaoDestSepaProcDif() {
     cy.get('#checkbox-144-2 > .md-container').should('not.be.disabled').click();
   }
 
-  /**
-   * Validações card de serviços vinculados.
-   */
+  //Validações card de serviços vinculados.
   static validateModalServLinked() {
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex').should('be.visible').and('contain', 'Serviços Vinculados');
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding').should('be.visible').and('not.be.disabled');
@@ -54,9 +41,7 @@ export class Service {
     cy.get('p.ng-binding').contains('Mão de Obra').scrollIntoView().wait(200).should('be.visible');
   }
 
-  /**
-   * Clica no botão OK do modal Serviços Vinculados - com intercept.
-   */
+  //Clica no botão OK do modal Serviços Vinculados - com intercept.
   static clickOKServiceLinked() {
     cy.intercept('POST', '/services/v3/pedido_calcular_frete').as('api_pedido_calcular_frete');
     cy.get('button[ng-click="salvar()"]').should('be.visible').and('not.be.disabled').and('have.text', ' Ok ');
@@ -64,17 +49,13 @@ export class Service {
     cy.wait('@api_pedido_calcular_frete', { timeout: 40000 });
   }
 
-  /**
-   * Clica no botão OK do modal Serviços Vinculados de pedidos remotos.
-   */
+  //Clica no botão OK do modal Serviços Vinculados de pedidos remotos.
   static clickOKServiceLinkedRemote() {
     cy.get('button[ng-click="salvar()"]').should('be.visible').and('not.be.disabled').and('have.text', ' Ok ');
     cy.get('button[ng-click="salvar()"]').click({ force: true });
   }
 
-  /**
-   * Valida modal de seguro prestamista e clica em OK.
-   */
+  //Valida modal de seguro prestamista e clica em OK.
   static okInsurancePrest() {
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex').should('be.visible');
     cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding').should('be.visible').and('not.be.disabled');
@@ -90,9 +71,7 @@ export class Service {
     cy.get('md-dialog-actions.layout-row > .md-primary').click();
   }
 
-  /**
-   * Valida mensagem de remoção do prestamista por agrupamento.
-   */
+  //Valida mensagem de remoção do prestamista por agrupamento.
   static messPrestRemoved() {
     cy.get('.toast').should('be.visible');
     cy.get('.toast-title').should('be.visible').and('have.text', 'Atenção');
@@ -119,52 +98,39 @@ export class Service {
 }
 
 export class ValidateService {
-  /**
-   * Valida título de "Serviços vinculados" para pedido com um produto.
-   */
+
+  //Valida título de "Serviços vinculados" para pedido com um produto.
   static servLinked() {
     cy.get('.md-subheader-inner').scrollIntoView().wait(200).should('be.visible');
     cy.get('.md-subheader-content').should('be.visible').and('have.text', 'Serviços vinculados');
   }
 
-  /**
-   * Valida Garantia "139 - T.A. Garantia Separa Mesmo Processo".
-   */
+  //Valida Garantia "139 - T.A. Garantia Separa Mesmo Processo".
   static addGarantSepMesmoProc() {
     cy.contains('139 - T.A. Garantia Separa Mesmo Processo').scrollIntoView().wait(200).should('be.visible');
   }
 
-  /**
-   * Valida Garantia "140 - T.A. Garantia Não Separa".
-   */
+  //Valida Garantia "140 - T.A. Garantia Não Separa".
   static addGarantNaoSep() {
     cy.contains('140 - T.A. Garantia Não Separa').scrollIntoView().wait(200).should('be.visible');
   }
 
-  /**
-   * Valida Garantia "141 - T.A. Garantia Separa Processo Diferente".
-   */
+  //Valida Garantia "141 - T.A. Garantia Separa Processo Diferente".
   static addGarantSepTituloProcDif() {
     cy.contains('141 - T.A. Garantia Separa Processo Diferente').scrollIntoView().wait(200).should('be.visible');
   }
 
-  /**
-   * Valida Mão de Obra "142 - T.A. MO Destaca e Não Separa".
-   */
+  //Valida Mão de Obra "142 - T.A. MO Destaca e Não Separa".
   static addMODestNaoSepara() {
     cy.contains('142 - T.A. MO Destaca e Não Separa').scrollIntoView().wait(200).should('be.visible');
   }
 
-  /**
-   * Valida Mão de Obra "143 - T.A. MO Não Destaca e Separa Mesmo Processo".
-   */
+  //Valida Mão de Obra "143 - T.A. MO Não Destaca e Separa Mesmo Processo".
   static addMONaoDestSepMesmoProc() {
     cy.contains('143 - T.A. MO Não Destaca e Separa Mesmo Processo').scrollIntoView().wait(200).should('be.visible');
   }
 
-  /**
-   * Valida Mão de Obra "144 - T.A. MO Não Destaca e Separa Processo Diferente".
-   */
+  //Valida Mão de Obra "144 - T.A. MO Não Destaca e Separa Processo Diferente".
   static addMONaoDestSepProcDif() {
     cy.contains('144 - T.A. MO Não Destaca e Separa Processo Diferente').scrollIntoView().wait(200).should('be.visible');
   }

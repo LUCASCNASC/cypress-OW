@@ -1,5 +1,3 @@
-//Page Object para operações e validações relacionadas à aba de Endereço.
-//Todos os métodos são estáticos para facilitar o uso sem instanciação.
 export class EnderecoPage {
   //Valida e clica na aba Endereço.
   static clickAbaEndereco() {

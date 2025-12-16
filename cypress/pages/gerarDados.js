@@ -3,10 +3,7 @@
  * Padronizado para facilitar manutenção e reuso.
  */
 
-/**
- * Gera um CNPJ válido e formatado.
- * @returns {string}
- */
+//@returns {string}
 const generateCNPJ = () => {
   const randomDigits = () => Math.floor(Math.random() * 10);
 
@@ -37,7 +34,7 @@ const generateCNPJ = () => {
 
 /**
  * Gera um CPF válido (apenas dígitos).
- * @returns {string}
+//@returns {string}
  */
 function generateCPF() {
   const randomDigits = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10));

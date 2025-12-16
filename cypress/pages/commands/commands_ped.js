@@ -1,10 +1,7 @@
 import '@testing-library/cypress/add-commands';
 import 'cypress-file-upload';
 
-/**
- * Seleciona um produto na busca e adiciona ao pedido.
- * Garante que todos os elementos relevantes do produto estejam visíveis antes do clique.
- */
+//Seleciona um produto na busca e adiciona ao pedido.
 Cypress.Commands.add('selectProductSearch', () => {
   cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram');
 
@@ -21,10 +18,7 @@ Cypress.Commands.add('selectProductSearch', () => {
   cy.wait('@api_produto_tambem_compraram', { timeout: 40000 });
 });
 
-/**
- * Seleciona a voltagem do produto para adicionar ao pedido.
- * Garante visibilidade e habilitação dos elementos antes da ação.
- */
+//Seleciona a voltagem do produto para adicionar ao pedido.
 Cypress.Commands.add('clickVoltageProduct', () => {
   cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista');
 
@@ -53,10 +47,7 @@ Cypress.Commands.add('clickVoltageProduct', () => {
   cy.wait('@api_produto_relacionado_lista', { timeout: 40000 });
 });
 
-/**
- * Clica no botão de adicionar produto após seleção de voltagem.
- * Garante visibilidade e habilitação antes do clique.
- */
+//Clica no botão de adicionar produto após seleção de voltagem.
 Cypress.Commands.add('clickAddProduct', () => {
   cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados');
 
@@ -71,9 +62,7 @@ Cypress.Commands.add('clickAddProduct', () => {
   cy.wait('@api_servicos_vinculados', { timeout: 40000 });
 });
 
-/**
- * Finaliza o pedido, verifica todos os elementos do card de finalização.
- */
+//Finaliza o pedido, verifica todos os elementos do card de finalização.
 Cypress.Commands.add('clickFinalizarPedidoPage', () => {
   cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados');
   cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar');
@@ -114,10 +103,7 @@ Cypress.Commands.add('clickFinalizarPedidoPage', () => {
   cy.wait('@api_pedido_finalizar', { timeout: 40000 });
 });
 
-/**
- * Valida o card de pedido concluído após finalizar o pedido.
- * Repete o fluxo de finalização e checa todos os elementos.
- */
+//Valida o card de pedido concluído após finalizar o pedido.
 Cypress.Commands.add('validateOrderGenerated', () => {
   cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados');
   cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar');
@@ -158,10 +144,7 @@ Cypress.Commands.add('validateOrderGenerated', () => {
   cy.wait('@api_pedido_finalizar', { timeout: 40000 });
 });
 
-/**
- * Escolhe um cliente com rota, preenchendo o CPF/CNPJ,
- * pesquisando e selecionando o cliente na lista.
- */
+//Escolhe um cliente com rota, preenchendo o CPF/CNPJ.
 Cypress.Commands.add('chooseCliente', () => {
   cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
     .wait(500)

@@ -1,11 +1,7 @@
-/**
- * Page Object para interações gerais com produtos no fluxo de pedidos.
- * Todos os métodos são estáticos para facilitar o uso sem instanciação.
- */
+//Page Object para interações gerais com produtos no fluxo de pedidos.
 export class GeneralProduct {
-  /**
-   * Seleciona um produto na busca e adiciona ao pedido.
-   */
+
+  //Seleciona um produto na busca e adiciona ao pedido.
   static chooseProductSearch() {
     cy.intercept('GET', '/services/v3/produto_tambem_compraram**').as('api_produto_tambem_compraram');
 
@@ -21,9 +17,7 @@ export class GeneralProduct {
     cy.wait('@api_produto_tambem_compraram', { timeout: 40000 });
   }
 
-  /**
-   * Seleciona a voltagem do produto para adicionar ao pedido.
-   */
+  //Seleciona a voltagem do produto para adicionar ao pedido.
   static clickVoltageProduct() {
     cy.intercept('GET', '/services/v3/produto_relacionado**').as('api_produto_relacionado_lista');
 
@@ -45,9 +39,7 @@ export class GeneralProduct {
     cy.wait('@api_produto_relacionado_lista', { timeout: 40000 });
   }
 
-  /**
-   * Clica no botão "Adicionar" para incluir o produto selecionado.
-   */
+  //Clica no botão "Adicionar" para incluir o produto selecionado.
   static clickAddProduct() {
     cy.intercept('GET', '/services/v3/produto_servico_vinculado**').as('api_servicos_vinculados');
 
@@ -63,9 +55,7 @@ export class GeneralProduct {
   }
 }
 
-/**
- * Page Object para testes de produtos exclusivos (produtos especiais no fluxo de venda).
- */
+//Page Object para testes de produtos exclusivos (produtos especiais no fluxo de venda).
 export class ProductExclusiva {
   static firstNormal() {
     const produto = '1896';
@@ -115,11 +105,8 @@ export class ProductExclusiva {
   }
 }
 
-/**
- * Page Object para testes de produtos normais.
- */
+//Page Object para testes de produtos normais.
 export class Product {
-  // Métodos estáticos para não depender de instanciação
 
   static fisrt() {
     const produto = '1860';
@@ -312,9 +299,7 @@ export class Product {
   }
 }
 
-/**
- * Page Object para testes de produtos com promoção prestamista (abatimento).
- */
+//Page Object para testes de produtos com promoção prestamista (abatimento).
 export class ProductPromo {
   static termInstallmentPrest() {
     const produto = '1918';
@@ -388,9 +373,8 @@ export class ProductPromo {
 }
 
 export class ValidateBalance {
-  /**
-   * Valida produto com saldo disponível local.
-   */
+
+  //Valida produto com saldo disponível local.
   static withBalance() {
     cy.get('.resultado-imagem').should('be.visible');
     cy.get('.label')
@@ -405,9 +389,7 @@ export class ValidateBalance {
     // cy.get('.expandeIcone').should('be.visible'); // Uncomment if needed
   }
 
-  /**
-   * Valida produto com saldo disponível no CD.
-   */
+  //Valida produto com saldo disponível no CD.
   static withBalanceCD() {
     cy.get('.resultado-imagem').should('be.visible');
     cy.get('.label')
@@ -422,9 +404,7 @@ export class ValidateBalance {
     // cy.get('.expandeIcone').should('be.visible'); // Uncomment if needed
   }
 
-  /**
-   * Valida produto com saldo indisponível.
-   */
+  //Valida produto com saldo indisponível.
   static withoutBalance() {
     cy.get('.resultado-imagem').should('be.visible');
     cy.get('.label')

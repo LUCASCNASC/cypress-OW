@@ -1,4 +1,3 @@
-//Todos os métodos são estáticos para facilitar o uso direto.
 export class ClienteCompletoPage {
   //Valida e clica no menu de opções.
   static clickMenuOpcoes() {

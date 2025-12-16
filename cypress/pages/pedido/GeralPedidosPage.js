@@ -1,7 +1,6 @@
 export class GeralPedidosPage {
-  /**
-   * Trocar filial de faturamento - faturamento remoto da filial 50 para 6.
-   */
+
+  //Trocar filial de faturamento - faturamento remoto da filial 50 para 6.
   static changeBranchInvoicing() {
     const filial_local = '50 - PR - EMISSÃO NFe/NFCe';
     const filial_remota = '6 - GAZIN - IND. E COM. DE MÓVEIS E ELETROD. LTDA.';
@@ -20,9 +19,7 @@ export class GeralPedidosPage {
     cy.get('.white > md-list.md-default-theme > :nth-child(2) > div.md-button > .md-no-style').click();
   }
 
-  /**
-   * Validando composição deste KIT.
-   */
+  //Validando composição deste KIT.
   static compositionKit() {
     cy.get('.is-expanded > v-pane-header.ng-scope > div')
       .scrollIntoView()
@@ -31,16 +28,12 @@ export class GeralPedidosPage {
       .and('contain', 'Composição deste KIT');
   }
 
-  /**
-   * Clicar no botão editar parcelas da forma de pagamento.
-   */
+  //Clicar no botão editar parcelas da forma de pagamento.
   static clickEditInstallments() {
     cy.get('.btn-remove-item-list > :nth-child(3) > .md-raised').click({ force: true });
   }
 
-  /**
-   * Comparar valores Subtotal e Total Financeiro.
-   */
+  //Comparar valores Subtotal e Total Financeiro.
   static compareSubtotalTotalFinancial(span1, span2) {
     cy.get(span1)
       .invoke('text')

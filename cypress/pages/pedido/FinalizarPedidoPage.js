@@ -1,7 +1,6 @@
 export class FinalizarPedidoPage {
-  /**
-   * Valida modal de proposta de crédito gerada.
-   */
+
+  //Valida modal de proposta de crédito gerada.
   static validatePropCreditGenerated() {
     cy.get(':nth-child(5) > .md-transition-in > ._md > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -22,9 +21,7 @@ export class FinalizarPedidoPage {
       .click({ force: true });
   }
 
-  /**
-   * Valida card de Pedido Concluído - alterado com sucesso.
-   */
+  //Valida card de Pedido Concluído - alterado com sucesso.
   static validateOrderChangedSucess() {
     cy.get('.md-toolbar-tools h2.flex').should('be.visible').and('contain', 'Pedido Concluído');
     cy.get('.md-content-overflow > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')
@@ -46,9 +43,7 @@ export class FinalizarPedidoPage {
       .and('not.have.attr', 'disabled');
   }
 
-  /**
-   * Botão para finalizar o pedido.
-   */
+  //Botão para finalizar o pedido.
   static clickFinalizarPedidoPage() {
     cy.intercept('POST', '/services/v3/pedido_finalizar').as('api_pedido_finalizar');
     cy.get('button.md-primary.btn-rounded.md-raised.btn-block.md-default-theme.md-ink-ripple[type="button"][ng-click="confirmarPedido()"]')
@@ -75,9 +70,7 @@ export class FinalizarPedidoPage {
     cy.wait('@api_pedido_finalizar', { timeout: 40000 });
   }
 
-  /**
-   * Valida card de Pedido Concluído - gravado com sucesso.
-   */
+  //Valida card de Pedido Concluído - gravado com sucesso.
   static validateOrderGenerated() {
     cy.get('.md-toolbar-tools h2.flex').should('be.visible').and('contain', 'Pedido Concluído');
     cy.get('.md-content-overflow > :nth-child(1) > .md-toolbar-tools > .md-icon-button > .ng-binding')

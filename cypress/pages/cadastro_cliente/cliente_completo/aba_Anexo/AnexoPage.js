@@ -1,5 +1,3 @@
-//Page Object para operações e validações relacionadas à aba de anexos.
-//Todos os métodos são estáticos para facilitar o uso sem instanciação.
 export class AnexoPage {
   //Valida e clica na aba Anexos.
   static clickAbaAnexo() {

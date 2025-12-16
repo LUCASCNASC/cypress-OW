@@ -1,6 +1,5 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa } from '../../gerarDados';
 
-//Todos os métodos são estáticos para facilitar o uso direto.
 export class ClienteSimplesPage {
   //Valida e preenche o campo Data de Nascimento.
   static fillDataNascimento() {

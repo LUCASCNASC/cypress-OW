@@ -1,7 +1,6 @@
 export class PedidoExclusivaPage {
-  /**
-   * Aumentar quantidade a ser vendida para 5 unidades.
-   */
+
+  //Aumentar quantidade a ser vendida para 5 unidades.
   static increaseAmountSaleFive() {
     cy.get('[ng-click="delItem()"]').should('be.visible').and('not.be.disabled');
     cy.get('[ng-model="quantidadeShow"]').should('be.visible').and('be.disabled').and('have.value', '1');
@@ -11,9 +10,7 @@ export class PedidoExclusivaPage {
     }
   }
 
-  /**
-   * Aumentar quantidade a ser vendida para 10 unidades.
-   */
+  //Aumentar quantidade a ser vendida para 10 unidades.
   static increaseAmountSaleTen() {
     cy.get('[ng-click="delItem()"]').should('be.visible').and('not.be.disabled');
     cy.get('[ng-model="quantidadeShow"]').should('be.visible').and('be.disabled').and('have.value', '1');
@@ -23,9 +20,7 @@ export class PedidoExclusivaPage {
     }
   }
 
-  /**
-   * Validando produto com saldo indisponível (remoto).
-   */
+  //Validando produto com saldo indisponível (remoto).
   static balanceRemoteReceive() {
     cy.get('.resultado-imagem').should('be.visible');
     cy.get('.label')

@@ -1,7 +1,6 @@
 export class PedidoDecontoPage {
-  /**
-   * Clicar e validar botão % (desconto).
-   */
+
+  //Clicar e validar botão % (desconto).
   static clicarBotaoDesconto() {
     cy.get('[ng-click="abrirModalDescontoProduto($index)"]')
       .scrollIntoView()
@@ -16,9 +15,7 @@ export class PedidoDecontoPage {
       .click({ force: true });
   }
 
-  /**
-   * Validar modal Sub/Sobre.
-   */
+  //Validar modal Sub/Sobre.
   static validateModalSub() {
     cy.get('.md-transition-in > ._md > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -37,9 +34,7 @@ export class PedidoDecontoPage {
     cy.get('button[ng-click="aplicarSubSobre()"]').should('be.visible').and('contain', 'Aplicar').and('not.be.disabled');
   }
 
-  /**
-   * Arrastar forma de pagamento escolhida para aparecer desconto.
-   */
+  //Arrastar forma de pagamento escolhida para aparecer desconto.
   static dragFormPayment() {
     cy.get('.md-whiteframe-2dp')
       .trigger('mousedown', { which: 1 })
@@ -47,9 +42,7 @@ export class PedidoDecontoPage {
       .trigger('mouseup');
   }
 
-  /**
-   * Clicar no botão R$.
-   */
+  //Clicar no botão R$.
   static clickChangeValue() {
     cy.get('.btn-remove-item-list > :nth-child(1) > .md-raised')
       .should('be.visible')
@@ -60,9 +53,7 @@ export class PedidoDecontoPage {
       .click({ force: true });
   }
 
-  /**
-   * Validar modal Alterar o valor.
-   */
+  //Validar modal Alterar o valor.
   static modalChangeValue() {
     cy.get('.md-transition-in > ._md > .md-toolbar-tools > .flex')
       .should('be.visible')
@@ -79,27 +70,21 @@ export class PedidoDecontoPage {
     cy.get('button.md-raised.md-primary').should('be.visible').and('contain', ' Aplicar ');
   }
 
-  /**
-   * Alterar valor para baixo.
-   */
+  //Alterar valor para baixo.
   static changeValueToLow() {
     cy.get('[ng-model="formaPgtoValor"]').clear().wait(200).type('136000');
     cy.get('[ng-model="formaPgtoSubtotal"]').clear().wait(200).type('136000');
     cy.get('button[ng-click="aplicarAlterarValor()"]').click({ force: true });
   }
 
-  /**
-   * Alterar valor para cima.
-   */
+  //Alterar valor para cima.
   static changeValueToTop() {
     cy.get('[ng-model="formaPgtoValor"]').clear().wait(200).type('137000');
     cy.get('[ng-model="formaPgtoSubtotal"]').clear().wait(200).type('137000');
     cy.get('button[ng-click="aplicarAlterarValor()"]').click({ force: true });
   }
 
-  /**
-   * Aplicar desconto Sub(-) com R$.
-   */
+  //Aplicar desconto Sub(-) com R$.
   static applyDiscountR$() {
     const valor_desconto_R$ = '1000';
     cy.contains('button', 'R$').click({ force: true });
@@ -107,9 +92,7 @@ export class PedidoDecontoPage {
     cy.get('button[ng-click="aplicarSubSobre()"]').click({ force: true });
   }
 
-  /**
-   * Aplicar desconto Sub(-) com %.
-   */
+  //Aplicar desconto Sub(-) com %.
   static applyDiscountPencentage() {
     const valor_desconto_porcentagem = '2';
     cy.contains('button', '%').click({ force: true });
@@ -117,9 +100,7 @@ export class PedidoDecontoPage {
     cy.get('button[ng-click="aplicarSubSobre()"]').click({ force: true });
   }
 
-  /**
-   * Aplicar desconto Sub(-) com VALOR FIXO.
-   */
+  //Aplicar desconto Sub(-) com VALOR FIXO.
   static applyDiscountVF() {
     const valor_desconto_valorFixo = '280000';
     cy.contains('button', 'VALOR FIXO').click({ force: true });
