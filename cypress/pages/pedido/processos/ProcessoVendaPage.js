@@ -1,4 +1,5 @@
 export class ProcessoVendaPage {
+  
   //Seleciona processo de venda 9860 NFe
   static NFe() {
     cy.get('#select_value_label_4 > .md-select-icon').should('be.visible').and('not.be.disabled').click();

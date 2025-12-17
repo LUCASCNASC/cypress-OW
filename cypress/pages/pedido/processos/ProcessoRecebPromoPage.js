@@ -1,4 +1,5 @@
 export class ProcessoRecebPromoPage {
+  
   //Seleciona "3860 - T.A. A Receber Futuro" da promoção.
   static pagPrincipal() {
     cy.get('.md-toolbar-tools > [ng-click="modalPromocao()"] > .ng-binding').should('be.visible').and('not.be.disabled');

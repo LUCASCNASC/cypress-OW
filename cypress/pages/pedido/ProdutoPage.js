@@ -1,4 +1,3 @@
-//Page Object para interações gerais com produtos no fluxo de pedidos.
 export class GeneralProduct {
 
   //Seleciona um produto na busca e adiciona ao pedido.
@@ -301,6 +300,7 @@ export class Product {
 
 //Page Object para testes de produtos com promoção prestamista (abatimento).
 export class ProductPromo {
+
   static termInstallmentPrest() {
     const produto = '1918';
     cy.intercept('GET', /\/consultaprodutos\/.*1918.*/).as('apiConsultaProdutos_PromoPrazoParcelaPrest');

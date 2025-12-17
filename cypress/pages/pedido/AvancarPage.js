@@ -1,4 +1,5 @@
 export class AvancarPage {
+  
    //Botão para avançar para a tela de Gerar parcelas - com intercept
   static toInstallments() {
     cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento');

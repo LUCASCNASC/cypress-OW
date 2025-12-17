@@ -1,8 +1,3 @@
-/**
- * Utilitários para geração de dados aleatórios para testes.
- * Padronizado para facilitar manutenção e reuso.
- */
-
 //@returns {string}
 const generateCNPJ = () => {
   const randomDigits = () => Math.floor(Math.random() * 10);
@@ -162,15 +157,6 @@ function thirtyOneDaysAfterToday() {
 }
 
 // Exporte padronizado (nomes em inglês para consistência)
-export {
-  generateCPF,
-  generateRandomPhone,
-  generateRandomEmail,
-  generateRandomName,
-  generateCNPJ,
-  generateCompanyName,
-  generateRelationship,
-  generateObservation,
-  oneDayAfterToday,
-  thirtyOneDaysAfterToday
+export { generateCPF, generateRandomPhone, generateRandomEmail, generateRandomName, generateCNPJ,
+  generateCompanyName, generateRelationship, generateObservation, oneDayAfterToday, thirtyOneDaysAfterToday
 };

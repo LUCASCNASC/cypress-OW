@@ -1,4 +1,5 @@
 export class LoginPage {
+  
   //Valida o logo da empresa.
   static logoEnterpriseLogin() {
     cy.get('.logo').should('be.visible');
