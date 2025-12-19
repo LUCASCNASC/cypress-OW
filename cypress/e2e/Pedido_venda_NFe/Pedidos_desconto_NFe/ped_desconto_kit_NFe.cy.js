@@ -9,7 +9,7 @@ import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoReceb
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 import { GeralPedidosPage } from '../../../../pages/pedido/gerais_pedidos.js'
 
-describe('Gerar pedido de venda Kit com desconto', () => {
+describe('Pedido de venda Kit com desconto', () => {
 
     beforeEach(() => {
         cy.visit('/');

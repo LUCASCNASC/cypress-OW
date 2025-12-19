@@ -1,6 +1,6 @@
 export class AvancarPage {
   
-   //Botão para avançar para a tela de Gerar parcelas - com intercept
+   //Botão para avançar para a tela de Parcelas - com intercept
   static toInstallments() {
     cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento');
     cy.get('.flex-gt-sm-50 > .md-primary')
@@ -29,7 +29,7 @@ export class AvancarPage {
     cy.wait('@apiCidade', { timeout: 40000 });
   }
 
-  //Botão para avançar para a tela de Gerar parcelas (entrega) - com intercept
+  //Botão para avançar para a tela de Parcelas (entrega) - com intercept
   static installmentDelivery() {
     cy.intercept('GET', '/views/list-action-buttons.html').as('api_tela_pagamento');
     cy.get('.layout-align-end-end > :nth-child(2) > .md-primary')

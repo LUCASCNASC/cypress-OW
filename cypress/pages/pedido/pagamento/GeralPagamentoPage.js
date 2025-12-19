@@ -12,7 +12,7 @@ export class GeralPagamentoPage {
       .and('not.be.disabled');
   }
 
-  //Clica no botão "GERAR PARCELAS".
+  //Clica no botão "PARCELAS".
   static clickGenerateInstallments() {
     cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista');
     cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento');
@@ -20,13 +20,13 @@ export class GeralPagamentoPage {
       .scrollIntoView()
       .wait(200)
       .should('exist')
-      .and('have.text', 'Gerar parcelas');
+      .and('have.text', 'Parcelas');
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({ force: true });
     cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 });
     cy.wait('@api_modal_forma_pagamento', { timeout: 40000 });
   }
 
-  //Clica no botão "GERAR PARCELAS" ao alterar a data de vencimento.
+  //Clica no botão "PARCELAS" ao alterar a data de vencimento.
   static clickGenerateInstallAlterDue() {
     cy.wait(2000);
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({ force: true });
@@ -63,12 +63,12 @@ export class GeralPagamentoPage {
       .click({ force: true });
   }
 
-  //Clica no botão "GERAR PAGAMENTO".
+  //Clica no botão "PAGAMENTO".
   static clickGeneratePayment() {
     cy.get('.white > .layout-align-center-center > .md-primary')
       .should('be.visible')
       .and('not.be.disabled')
-      .and('have.text', 'Gerar pagamento')
+      .and('have.text', 'Pagamento')
       .click({ force: true });
   }
 

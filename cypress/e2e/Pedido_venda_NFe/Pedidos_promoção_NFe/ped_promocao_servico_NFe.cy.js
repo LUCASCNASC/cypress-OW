@@ -9,7 +9,7 @@ import { ValidadePrestamistaPage } from '../../../pages/pedido/ValidadePrestamis
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
-describe('Gerar pedidos com promoção e serviços com isenção de juros', () => {
+describe('Pedidos com promoção e serviços com isenção de juros', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -75,11 +75,11 @@ describe('Gerar pedidos com promoção e serviços com isenção de juros', () =
                 .should('be.visible')
                 .click({force:true})
 
-            //Clicando no botão GERAR PAGAMENTO da entrada
+            //Clicando no botão PAGAMENTO da entrada
             cy.get('.white > .layout-align-center-center > .md-primary')
                 .should('be.visible')
                 .and('not.be.disabled')
-                .and('contain','Gerar pagamento')
+                .and('contain','Pagamento')
                 .click({force:true})
 
             AvancarPage.final()

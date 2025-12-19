@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { ProcessoRecebPromoPage } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 
-describe('Gerar pedido de entrega futura com entrega', () => {
+describe('Pedido de entrega futura com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/')

@@ -13,7 +13,7 @@ import { ValidadePrestamistaPage } from '../../../../pages/pedido/ValidadePresta
 import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
 
 
-describe('Gerar pedidos com serviço Prestamista Abatimento % (158)', () => {
+describe('Pedidos com serviço Prestamista Abatimento % (158)', () => {
 
     beforeEach(() => {
         cy.visit('/')

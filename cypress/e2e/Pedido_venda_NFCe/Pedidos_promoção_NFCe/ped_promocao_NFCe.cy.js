@@ -6,7 +6,7 @@ import { EntregaPage } from '../../../pages/pedido/EntregaPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
-describe('Gerar pedidos com promoção com entrega', () => {
+describe('Pedidos com promoção com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -61,7 +61,7 @@ describe('Gerar pedidos com promoção com entrega', () => {
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
 
-            //"GERAR PAGAMENTO"
+            //"PAGAMENTO"
             cy.get('.layout-wrap > .md-primary').scrollTo('top').wait(200)
             cy.contains('.md-select-value', 'Forma de pagamento').click()
         })

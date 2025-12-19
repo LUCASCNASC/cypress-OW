@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { GeralPagamentoPage } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
-describe('Gerar pedido com financeiro na baixa', () => {
+describe('Pedido com financeiro na baixa', () => {
 
     beforeEach(() => {
         cy.visit('/');

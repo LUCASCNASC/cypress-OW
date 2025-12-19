@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 
-describe('Gerar pedido normal com entrega', () => {
+describe('Pedido normal com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/')

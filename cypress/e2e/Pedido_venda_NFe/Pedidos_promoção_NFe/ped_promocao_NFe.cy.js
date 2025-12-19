@@ -9,7 +9,7 @@ import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoReceb
 import { ProcessoRecebPromoPage } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
-describe('Gerar pedidos com promoção', () => {
+describe('Pedidos com promoção', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -61,7 +61,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.white > :nth-child(3)').click()
             cy.contains('3861 - T.A. A Receber A Vista').click()
     
-            //Botão "GERAR PAGAMENTO"
+            //Botão "PAGAMENTO"
             cy.get('.white > .layout-align-center-center > .md-primary').click()
     
             AvancarPage.final() 
@@ -153,7 +153,7 @@ describe('Gerar pedidos com promoção', () => {
             cy.get('.layout-row.flex-100 > :nth-child(1) > .md-fab').should('be.visible').click({force:true})
             cy.get('.white > :nth-child(3)').click({force:true})
             cy.contains('div.md-text', '3861 - T.A. A Receber A Vista').click({force:true}) //Escolher forma de pagamento entrada
-            cy.get('.white > .layout-align-center-center > .md-primary').click({force:true}) //clicar GERAR PAGAMENTO
+            cy.get('.white > .layout-align-center-center > .md-primary').click({force:true}) //clicar PAGAMENTO
     
             AvancarPage.final()
             cy.clickFinalizarPedidoPage()

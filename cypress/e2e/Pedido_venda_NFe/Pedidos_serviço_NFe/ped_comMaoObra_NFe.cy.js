@@ -7,7 +7,7 @@ import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 
-describe('Gerar pedidos com Mão de obra', () => {
+describe('Pedidos com Mão de obra', () => {
 
     beforeEach(() => {
         cy.visit('/')

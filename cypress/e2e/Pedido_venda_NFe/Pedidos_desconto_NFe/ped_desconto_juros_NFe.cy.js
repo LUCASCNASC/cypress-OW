@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 
-describe('Gerar pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
+describe('Pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
 
     beforeEach(() => {
         cy.visit('/')

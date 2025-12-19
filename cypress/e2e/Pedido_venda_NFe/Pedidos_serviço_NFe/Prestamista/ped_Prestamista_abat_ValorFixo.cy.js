@@ -10,7 +10,7 @@ import { PromocaoPage } from '../../../../pages/pedido/PromocaoPage.js'
 import { ValidadePrestamistaPage } from '../../../../pages/pedido/ValidadePrestamistaPage.js'
 import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
 
-describe('Gerar pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
+describe('Pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
 
     beforeEach(() => {
         cy.visit('/')

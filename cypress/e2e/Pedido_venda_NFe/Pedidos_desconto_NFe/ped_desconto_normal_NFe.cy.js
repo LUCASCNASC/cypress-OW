@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 
-describe('Gerar pedido de venda com desconto', () => {
+describe('Pedido de venda com desconto', () => {
 
     beforeEach(() => {
         cy.visit('/')

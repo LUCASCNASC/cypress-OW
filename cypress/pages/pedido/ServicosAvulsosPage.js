@@ -1,6 +1,6 @@
 export class ServicosAvulsosPage {
 
-  //Escolher cliente CPF para gerar pedido de venda.
+  //Escolher cliente CPF para Pedido de venda.
   static chooseClientOrder() {
     cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
       .wait(500)
@@ -140,13 +140,13 @@ export class ServicosAvulsosPage {
     cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 });
   }
 
-  //Botão "GERAR PARCELAS".
+  //Botão "PARCELAS".
   static buttonGenerateInstallmentsServices() {
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary')
       .scrollIntoView()
       .wait(200)
       .should('exist')
-      .and('have.text', 'Gerar parcelas');
+      .and('have.text', 'Parcelas');
     cy.intercept('GET', '/views/carrinho/modalFormasPgto.html').as('api_modal_forma_pagamento');
     cy.get('.gerar-parcelas > .layout-wrap > [style="padding: 0 5px"] > .md-primary').click({ force: true });
     cy.wait('@api_modal_forma_pagamento', { timeout: 40000 });

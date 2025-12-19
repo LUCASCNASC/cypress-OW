@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { AgruparRecebPage } from '../../../pages/pedido/pagamento/AgruparRecebPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
-describe('Gerar pedido com mais de uma forma de pagamento', () => {
+describe('Pedido com mais de uma forma de pagamento', () => {
 
     beforeEach(() => {
         cy.visit('/')

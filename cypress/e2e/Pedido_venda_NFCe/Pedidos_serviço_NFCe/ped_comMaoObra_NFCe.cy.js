@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamen
 import { EscolherParcelaReceb } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
-describe('Gerar pedidos com Mão de obra e com entrega', () => {
+describe('Pedidos com Mão de obra e com entrega', () => {
 
     beforeEach(() => {
         cy.visit('/')
