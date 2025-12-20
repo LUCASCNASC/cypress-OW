@@ -5,6 +5,7 @@ export class MenuPage {
     cy.get('[aria-label="Menu de opções"] > .ng-binding')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
+
     cy.get('[aria-label="Menu de opções"] > .ng-binding').click({ force: true });
   }
 
@@ -25,7 +26,9 @@ export class MenuPage {
     cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
+
     cy.get('#searchText').should('be.visible').and('not.be.disabled');
+
     cy.get('label[for="searchText"]').should('have.text', 'Buscar produtos');
   }
 
@@ -35,6 +38,7 @@ export class MenuPage {
       .scrollIntoView()
       .wait(300)
       .should('be.visible');
+
     cy.get('a[aria-label="Início"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
@@ -47,11 +51,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/departamentos.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('a[aria-label="Departamentos"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Departamentos')
       .click({ force: true });
+
     cy.get('.breadcrumbDepartamentos')
       .should('be.visible')
       .and('contain', 'Departamentos');
@@ -62,11 +68,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/services.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('a[aria-label="Serviços"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Serviços')
       .click({ force: true });
+
     cy.get('[ng-click="alterarOrdenacaoPorDescricao()"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled');
@@ -77,11 +85,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/pedido.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('a[aria-label="Pedidos pendentes"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Pedidos pendentes')
       .click({ force: true });
+
     cy.get('.header')
       .should('exist')
       .and('contain', 'PEDIDOS PENDENTES');
@@ -92,11 +102,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/cliente.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('a[aria-label="Cliente"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Cliente')
       .click({ force: true });
+
     cy.get('.md-default').should('exist').and('not.have.attr', 'disabled');
   }
 
@@ -105,11 +117,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/cliente_completo.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('a[aria-label="Cliente completo"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Cliente completo')
       .click({ force: true });
+
     cy.get('#menu_items_pri > .on').should('exist').and('not.have.attr', 'disabled');
   }
 
@@ -118,11 +132,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/pos-venda.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('a[aria-label="Pós-venda"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Pós-venda')
       .click({ force: true });
+
     cy.get('.header').should('be.visible');
   }
 
@@ -131,11 +147,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/intencao.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('button[aria-label="Intenção de compra"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Intenção de compra')
       .click({ force: true });
+
     cy.get('.header').should('be.visible');
   }
 
@@ -144,11 +162,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/aprovacao_credito.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('a[aria-label="Proposta de crédito"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Proposta de crédito')
       .click({ force: true });
+
     cy.get('.header').should('be.visible');
   }
 
@@ -157,11 +177,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/settings.svg"]')
       .scrollIntoView()
       .should('be.visible');
+
     cy.get('a[aria-label="Configurações"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Configurações')
       .click({ force: true });
+
     cy.get('ui-view.ng-scope > :nth-child(2)').should('be.visible');
   }
 
@@ -170,11 +192,13 @@ export class MenuPage {
     cy.get('md-icon[md-svg-src="images/icons/performance.svg"]')
       .scrollIntoView()
       .should('be.visible');
+      
     cy.get('a[aria-label="Minha performance"]')
       .should('be.visible')
       .and('not.have.attr', 'disabled')
       .and('have.attr', 'aria-label', 'Minha performance')
       .click({ force: true });
+
     cy.get('.header').should('be.visible');
   }
 

@@ -19,7 +19,7 @@ describe('Cadastrar cliente completo', () => {
 
         it('1.Cliente completo CPF', () => {
             
-            ClienteCompletoPage.clickMenuOpcoes() //PESSOA
+            ClienteCompletoPage.clickMenuOpcoes() 
             ClienteCompletoPage.clickOpcaoClienteCompleto()
             PessoaPage.fillCPFCliente()
             PessoaPage.fillNomeCompleto()
