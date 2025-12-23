@@ -2,6 +2,7 @@ import { gerarCpf, gerarNomeAleatorio, gerarEmailAleatorio, gerarTelefoneAleator
 import { gerarChavePixTelefone, gerarChavePixTelefoneErrada, gerarChavePixEmailErrada, gerarChavePixCpfCnpjErrada,
   gerarChavePixEmail, gerarChavePixCPF, gerarChavePixAleatoria} from '../../../../gerarDadosPIX';
 export class RefBancariaPage {
+  
   //Valida e clica na aba Bancária em Referências.
   static clickAbaReferenciaBancaria() {
     cy.get('#menu_items_sec > :nth-child(3)')

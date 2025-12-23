@@ -1,4 +1,5 @@
 export class PesquisaClientePage {
+  
    //Valida mensagem "Aguarde carregando...".
   static messWaitLoading() {
     cy.get('.md-dialog-fullscreen > .carregando')

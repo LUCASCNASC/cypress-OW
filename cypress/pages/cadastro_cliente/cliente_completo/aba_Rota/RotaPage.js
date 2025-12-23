@@ -1,4 +1,5 @@
 export class RotaPage {
+  
   //Valida e clica na aba Rota.
   static clickAbaRota() {
     cy.get('#menu_items_pri > :nth-child(3)')

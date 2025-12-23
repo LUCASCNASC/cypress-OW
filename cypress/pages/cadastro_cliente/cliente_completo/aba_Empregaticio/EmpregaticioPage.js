@@ -1,4 +1,5 @@
 export class EmpregaticioPage {
+  
   //Valida e clica na aba Empregatício.
   static clickAbaEmpregaticio() {
     cy.get('#menu_items_pri > :nth-child(6)')

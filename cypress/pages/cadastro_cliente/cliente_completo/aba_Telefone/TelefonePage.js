@@ -1,5 +1,6 @@
 import { gerarTelefoneAleatorio } from '../../../gerarDados';
 export class TelefonePage {
+  
   //Valida e clica na aba Telefone.
   static clickAbaTelefone() {
     cy.get('#menu_items_pri > :nth-child(4)')

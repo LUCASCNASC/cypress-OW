@@ -56,6 +56,7 @@ export class GeneralProduct {
 
 //Page Object para testes de produtos exclusivos (produtos especiais no fluxo de venda).
 export class ProductExclusiva {
+  
   static firstNormal() {
     const produto = '1896';
     cy.intercept('GET', /\/consultaprodutos\/.*1896.*/).as('apiConsultaProdutos_primeiroPrdNormalExclusiva');

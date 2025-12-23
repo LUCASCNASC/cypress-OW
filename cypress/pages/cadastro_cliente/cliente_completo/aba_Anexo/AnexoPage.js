@@ -1,4 +1,5 @@
 export class AnexoPage {
+  
   //Valida e clica na aba Anexos.
   static clickAbaAnexo() {
     cy.get('#menu_mais_pri > :nth-child(4)')

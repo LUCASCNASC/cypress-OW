@@ -1,4 +1,5 @@
 export class EnderecoPage {
+  
   //Valida e clica na aba Endereço.
   static clickAbaEndereco() {
     cy.get('#menu_items_pri > :nth-child(2)')

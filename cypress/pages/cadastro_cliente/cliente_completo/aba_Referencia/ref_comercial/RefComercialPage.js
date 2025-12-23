@@ -1,5 +1,6 @@
 import { gerarEmailAleatorio, gerarTelefoneAleatorio, gerarNomeEmpresa, gerarObservação } from '../../../../gerarDados';
 export class RefFinanceiraPage {
+  
   //Valida e clica na aba Comercial em Referências.
   static clickAbaRefCommercial() {
     cy.get('#menu_items_sec > .on')

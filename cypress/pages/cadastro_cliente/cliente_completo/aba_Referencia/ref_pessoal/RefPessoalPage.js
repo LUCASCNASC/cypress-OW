@@ -1,7 +1,6 @@
 export class RefPessoalPage {
-  /**
-   * Valida e clica na aba Pessoal em Referências.
-   */
+
+  //Valida e clica na aba Pessoal em Referências.
   static clickAbaRefGuys() {
     cy.get('#menu_items_sec > .on')
       .should('be.visible')

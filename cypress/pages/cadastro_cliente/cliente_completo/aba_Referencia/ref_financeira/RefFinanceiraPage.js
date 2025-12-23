@@ -18,6 +18,7 @@ function gerarValorDuasCasasAposVirgula() {
 }
 
 export class RefFinanceiraPage {
+  
   //Valida e clica na aba Financeira em Referências.
   static clickEmpty() {
     cy.get('#menu_items_sec > .on').should('be.visible').and('not.have.attr', 'disabled');

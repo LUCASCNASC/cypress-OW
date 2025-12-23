@@ -1,6 +1,7 @@
 import { gerarCpf, gerarNomeAleatorio, gerarCNPJ, gerarNomeEmpresa } from '../../gerarDados';
 
 export class ClienteSimplesPage {
+  
   //Valida e preenche o campo Data de Nascimento.
   static fillDataNascimento() {
     cy.get(':nth-child(3) > .layout-xs-column > .md-block > .validaData > .md-datepicker-button')
