@@ -4,6 +4,7 @@ import users from '../../e2e/users.json';
 describe('Senha do usuário expirada', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.urlAposLogin()

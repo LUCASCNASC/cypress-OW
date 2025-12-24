@@ -11,6 +11,7 @@ import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoReceb
 describe('Pedido com financeiro na baixa', () => {
 
     beforeEach(() => {
+
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();

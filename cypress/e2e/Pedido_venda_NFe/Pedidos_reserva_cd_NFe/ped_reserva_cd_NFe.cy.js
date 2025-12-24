@@ -10,6 +10,7 @@ import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoReceb
 describe('Pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

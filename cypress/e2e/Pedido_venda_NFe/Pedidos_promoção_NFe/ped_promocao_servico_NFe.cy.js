@@ -12,6 +12,7 @@ import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 describe('Pedidos com promoção e serviços com isenção de juros', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

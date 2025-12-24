@@ -10,6 +10,7 @@ import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

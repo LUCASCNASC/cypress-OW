@@ -10,6 +10,7 @@ import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoReceb
 describe('Pedidos com Garantia e com entrega', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

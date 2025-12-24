@@ -10,6 +10,7 @@ import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 describe('Pedidos com Garantia', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

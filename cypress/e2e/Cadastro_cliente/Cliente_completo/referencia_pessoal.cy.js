@@ -8,6 +8,7 @@ import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/a
 describe('Cadastrar cliente completo', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

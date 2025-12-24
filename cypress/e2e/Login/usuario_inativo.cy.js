@@ -4,6 +4,7 @@ import users from '../../e2e/users.json';
 describe('Usuário inativo', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.urlAposLogin()

@@ -12,6 +12,7 @@ import { GeralPedidosPage } from '../../../../pages/pedido/gerais_pedidos.js'
 describe('Pedido de venda Kit com desconto', () => {
 
     beforeEach(() => {
+
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login(); 

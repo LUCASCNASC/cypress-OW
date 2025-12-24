@@ -4,6 +4,7 @@ import users from '../../e2e/users.json';
 describe('Login caminho feliz - usuário normal senha liberada', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.urlAposLogin()

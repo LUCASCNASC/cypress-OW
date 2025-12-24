@@ -16,6 +16,7 @@ import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
 describe('Pedidos com serviço Prestamista Abatimento % (158)', () => {
 
     beforeEach(() => {
+
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()
