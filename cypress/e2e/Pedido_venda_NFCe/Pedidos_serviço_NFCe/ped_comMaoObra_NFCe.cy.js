@@ -10,7 +10,6 @@ import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoReceb
 describe('Pedidos com Mão de obra e com entrega', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

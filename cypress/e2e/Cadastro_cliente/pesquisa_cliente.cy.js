@@ -3,7 +3,6 @@ import { PesquisaClientePage } from '../../pages/cadastro_cliente/PesquisaClient
 describe('Cadastrar cliente', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

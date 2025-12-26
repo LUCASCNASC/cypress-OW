@@ -13,7 +13,6 @@ import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
 describe('Pedidos com serviço Prestamista Abatimento Valor Fixo (161)', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

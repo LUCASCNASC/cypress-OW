@@ -11,7 +11,6 @@ import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 describe('Remoto/processo 9890 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

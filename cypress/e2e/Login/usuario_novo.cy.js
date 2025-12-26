@@ -4,7 +4,6 @@ import users from '../../e2e/users.json';
 describe('Logar com novo usuário', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.urlAposLogin()

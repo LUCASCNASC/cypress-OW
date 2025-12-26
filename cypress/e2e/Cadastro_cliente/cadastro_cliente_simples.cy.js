@@ -8,7 +8,6 @@ const numeroCPF = "117.415.410-18" //usado apenas no teste de adicionar pelo bot
 describe('Cadastrar cliente simples', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

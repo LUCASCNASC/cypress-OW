@@ -9,7 +9,6 @@ import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.j
 describe('Venda de serviço avulso Host - 104', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

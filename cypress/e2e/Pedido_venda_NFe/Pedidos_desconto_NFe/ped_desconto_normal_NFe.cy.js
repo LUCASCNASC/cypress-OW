@@ -11,7 +11,6 @@ import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 describe('Pedido de venda com desconto', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

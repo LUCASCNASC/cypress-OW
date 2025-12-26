@@ -11,7 +11,6 @@ import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 describe('Pedido normal', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

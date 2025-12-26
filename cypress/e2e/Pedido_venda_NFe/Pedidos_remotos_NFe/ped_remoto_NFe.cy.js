@@ -11,7 +11,6 @@ import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

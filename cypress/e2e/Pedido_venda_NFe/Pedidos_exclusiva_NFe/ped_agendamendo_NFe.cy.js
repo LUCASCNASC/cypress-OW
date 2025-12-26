@@ -13,7 +13,6 @@ import { Service } from '../../../pages/pedido/ServicosPage.js'
 describe('Pedidos Exclusiva - Parâmetro de empresa 1019 marcado', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

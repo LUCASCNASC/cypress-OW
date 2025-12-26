@@ -11,7 +11,6 @@ import { ProcessoRecebPromoPage } from '../../../pages/pedido/processos/Processo
 describe('Pedido de entrega futura com entrega', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

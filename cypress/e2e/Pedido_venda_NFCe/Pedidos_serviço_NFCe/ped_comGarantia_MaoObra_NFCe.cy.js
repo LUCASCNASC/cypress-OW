@@ -10,7 +10,6 @@ import { Service } from '../../../pages/pedido/ServicosPage.js'
 describe('Pedidos com Garantia e Mão de Obra com entrega', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

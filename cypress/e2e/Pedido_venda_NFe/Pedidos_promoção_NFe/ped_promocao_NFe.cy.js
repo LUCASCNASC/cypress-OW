@@ -12,7 +12,6 @@ import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 describe('Pedidos com promoção', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()

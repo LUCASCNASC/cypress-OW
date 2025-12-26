@@ -11,7 +11,6 @@ import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 describe('Pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
 
     beforeEach(() => {
-
         cy.visit('/')
         cy.clearAllSessionStorage()
         cy.login()
