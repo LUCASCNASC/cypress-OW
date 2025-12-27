@@ -5,7 +5,7 @@ import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
 import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
-import { AgruparRecebPage } from '../../../pages/pedido/pagamento/AgruparRecebPage.js'
+import { AgruparRecebPage } from '../../../pages/pedido/AgruparRecebPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
 
 describe('Pedido com mais de uma forma de pagamento', () => {
