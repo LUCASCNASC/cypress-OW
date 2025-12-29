@@ -6,7 +6,7 @@ import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
 import { GeralPagamentoPage } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
 describe('Pedido com financeiro na baixa', () => {
 

@@ -6,7 +6,7 @@ import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
 import { ProcessoRecebPromoPage } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
 import { PromocaoPage } from '../../../../pages/pedido/promocao/promocao.js'
 import { ValidadePrestamistaPage } from '../../../pages/pedido/ValidadePrestamistaPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/processos/ProcessoRecebPage.js'
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
 describe('Pedidos com promoção e serviços com isenção de juros', () => {
