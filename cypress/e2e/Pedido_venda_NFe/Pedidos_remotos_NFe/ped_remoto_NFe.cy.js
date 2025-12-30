@@ -5,7 +5,7 @@ import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
+import { ParcelasPage } from '../../../pages/ParcelasPage.js'
 
 //verificar todos
 describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {

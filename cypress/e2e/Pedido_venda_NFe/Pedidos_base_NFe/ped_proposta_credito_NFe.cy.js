@@ -5,7 +5,7 @@ import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
 import { FinalizarPedidoPage } from '../../../../pages/pedido/finalizar_pedido.js'
 import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/pagamento/ParcelasPage.js'
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
 describe('Pedido com proposta de crédito', () => {

@@ -4,7 +4,7 @@ import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.
 import { AvancarPage } from '../../../../pages/pedido/AvancarPage.js'
 import { TirarEntrega } from '../../../../pages/pedido/EntregaPage.js'
 import { GeralPagamentoPage } from '../../../../pages/pedido/pagamento/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../../pages/pedido/pagamento/ParcelasPage.js'
+import { ParcelasPage } from '../../../../pages/pedido/ParcelasPage.js'
 import { AgruparRecebPage } from '../../../../pages/pedido/AgruparRecebPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { ProcessoRecebPromoPage } from '../../../pages/pedido/processos/ProcessoRecebPromoPage.js'
