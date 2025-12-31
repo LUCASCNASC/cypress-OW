@@ -1,6 +1,6 @@
 import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
 import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js'

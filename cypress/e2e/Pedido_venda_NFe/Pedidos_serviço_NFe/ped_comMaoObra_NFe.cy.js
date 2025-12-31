@@ -2,7 +2,7 @@ import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVend
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
 import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'

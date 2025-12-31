@@ -4,7 +4,7 @@ import { Service } from '../../../pages/pedido/ServicosPage.js'
 import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/ParcelasPage.js'
 
 //verificar todos

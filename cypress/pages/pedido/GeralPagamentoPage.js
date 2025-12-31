@@ -1,4 +1,4 @@
-import { umDiaAposHoje, trintaUmDiasAposHoje } from '../../gerarDados'
+import { umDiaAposHoje, trintaUmDiasAposHoje } from '../gerarDados'
 
 export class GeralPagamentoPage {
   

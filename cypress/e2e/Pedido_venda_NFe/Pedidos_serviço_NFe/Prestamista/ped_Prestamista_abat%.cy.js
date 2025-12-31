@@ -3,7 +3,7 @@ import { Product, ValidateBalance } from '../../../../pages/pedido/ProdutoPage.j
 import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.js'
 import { AvancarPage } from '../../../../pages/pedido/AvancarPage.js'
 import { TirarEntrega } from '../../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { GeralPagamentoPage } from '../../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../../pages/pedido/ParcelasPage.js'
 import { AgruparRecebPage } from '../../../../pages/pedido/AgruparRecebPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'

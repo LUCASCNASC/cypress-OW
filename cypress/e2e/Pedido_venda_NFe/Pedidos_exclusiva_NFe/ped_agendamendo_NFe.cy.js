@@ -1,7 +1,7 @@
 import { ProcessoVendaPage } from '../../../pages/pedido/processos/ProcessoVendaPage.js'
 import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
 import { EntregaPage, TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/pagamento/GeralPagamentoPage.js'
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { PedExclusiva } from '../../../pages/pedido/PedidoExclusivaPage.js'
