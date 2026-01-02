@@ -1,4 +1,4 @@
-import { ProcessoVendaPage } from '../../../pages/pedidos/processos/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedidos/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
 import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
