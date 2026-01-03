@@ -6,7 +6,7 @@ import { EntregaPage } from '../../../pages/pedido/EntregaPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
-import { ProcessoRecebPromoPage } from '../../../pages/pedido/processos/ProcessoRecebPagePromoPage.js'
+import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPagePromoPage.js'
 
 describe('Pedido de entrega futura com entrega', () => {
 
