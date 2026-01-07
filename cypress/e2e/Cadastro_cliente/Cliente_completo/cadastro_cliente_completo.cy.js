@@ -15,7 +15,7 @@ describe('Cadastrar cliente completo', () => {
         cy.tituloPagina()
     })
 
-    context('Cadastro de cliente completo - básico ', () => {
+    context('Register cliente completo - básico ', () => {
 
         it('1.Cliente completo CPF', () => {
             
@@ -145,7 +145,7 @@ describe('Cadastrar cliente completo', () => {
         }) 
     })
 
-    context('Cadastro de cliente completo - incluindo anexo após salvar o cadastro de cliente', () => {
+    context('Register cliente completo - incluindo anexo após salvar o cadastro de cliente', () => {
 
         it('4.Cliente completo CPF - caminho feliz', () => {
 

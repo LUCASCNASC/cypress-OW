@@ -15,7 +15,7 @@ describe('Cadastrar cliente completo', () => {
         cy.tituloPagina()
     })
 
-    context('Cadastro de cliente completo - incluindo referencia bancária', () => {
+    context('Register cliente completo - incluindo referencia bancária', () => {
 
         it('1.Cliente completo CPF - tipo chave PIX Telefone correto', () => {
 

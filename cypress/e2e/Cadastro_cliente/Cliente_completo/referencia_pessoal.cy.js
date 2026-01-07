@@ -15,7 +15,7 @@ describe('Cadastrar cliente completo', () => {
         cy.tituloPagina()
     })
 
-    context('Cadastro de cliente completo - incluindo referencia pessoal', () => {
+    context('Register cliente completo - incluindo referencia pessoal', () => {
 
         it('1.Cliente completo CPF - caminho feliz', () => {
 

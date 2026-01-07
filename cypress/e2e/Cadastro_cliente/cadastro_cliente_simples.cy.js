@@ -15,7 +15,7 @@ describe('Cadastrar cliente simples', () => {
         cy.tituloPagina()
     })
   
-    context('Cadastro de cliente simples', () => {
+    context('Register cliente simples', () => {
 
         it('1.Cliente simples CPF', () => {
 
