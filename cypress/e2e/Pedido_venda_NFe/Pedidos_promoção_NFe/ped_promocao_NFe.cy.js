@@ -5,8 +5,7 @@ import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
 import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
-import { ProcessoRecebPromoPage } from '../../../pages/pedido
-/ProcessoRecebPagePromoPage.js'
+import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPagePromoPage.js'
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
 describe('Pedidos com promoção', () => {
