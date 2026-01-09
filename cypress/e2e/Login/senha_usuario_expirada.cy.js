@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../../e2e/users.json';
 
-describe('Senha do usuário expirada', () => {
+describe('Senha do user expirada', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -15,14 +15,14 @@ describe('Senha do usuário expirada', () => {
 
     context('Tentar login quando a senha já está expirada', () => {
 
-        it('1.Tentar logar com usuário com senha do usuário expirada - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
+        it('1.Tentar logar com user com senha do user expirada - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
 
             LoginPage.passwordTextIcon()
 
@@ -45,7 +45,7 @@ describe('Senha do usuário expirada', () => {
 
             cy.get('.senha_nova > :nth-child(1)')
                 .should('be.visible')
-                .and('have.text','Usuário')
+                .and('have.text','user')
 
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
@@ -119,14 +119,14 @@ describe('Senha do usuário expirada', () => {
                 .and('not.have.attr', 'disabled')
         })
 
-        it('2.Tentar logar com usuário com senha do usuário expirada - clicar em NÃO atualizar senha - clicar em Fechar a redefinição de senha', () => {
+        it('2.Tentar logar com user com senha do user expirada - clicar em NÃO atualizar senha - clicar em Fechar a redefinição de senha', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
 
             LoginPage.passwordTextIcon()
 
@@ -149,7 +149,7 @@ describe('Senha do usuário expirada', () => {
 
             cy.get('.senha_nova > :nth-child(1)')
                 .should('be.visible')
-                .and('have.text','Usuário')
+                .and('have.text','user')
 
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
@@ -233,7 +233,7 @@ describe('Senha do usuário expirada', () => {
         })
     })
 
-    context('Login quando a senha foi trocada e falta 1 dia para expirar, como foi definido no grupo deste usuário', () => {
+    context('Login quando a senha foi trocada e falta 1 dia para expirar, como foi definido no grupo deste user', () => {
 
         it('3.Login - clicar em NÃO atualizar senha', () => {
         
@@ -242,7 +242,7 @@ describe('Senha do usuário expirada', () => {
                     .and('have.value','')
                     .type(users.userSabium.login)
                     .invoke('attr', 'placeholder')
-                    .should('equal', 'Informe seu usuário')
+                    .should('equal', 'Informe seu user')
         
                 LoginPage.passwordTextIcon()
         
@@ -274,7 +274,7 @@ describe('Senha do usuário expirada', () => {
                 .and('have.value','')
                 .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
     
@@ -299,7 +299,7 @@ describe('Senha do usuário expirada', () => {
     
             cy.get('.senha_nova > :nth-child(1)')
                 .should('be.visible')
-                .and('have.text','Usuário')
+                .and('have.text','user')
     
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')
@@ -380,7 +380,7 @@ describe('Senha do usuário expirada', () => {
                 .and('have.value','')
                 .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
     
@@ -405,7 +405,7 @@ describe('Senha do usuário expirada', () => {
     
             cy.get('.senha_nova > :nth-child(1)')
                 .should('be.visible')
-                .and('have.text','Usuário')
+                .and('have.text','user')
     
             cy.get(':nth-child(2) > .ng-pristine')
                 .should('be.visible')

@@ -12,11 +12,11 @@ export class LoginPage {
       .and('not.have.attr', 'disabled');
   }
 
-  //Valida texto e ícone do usuário.
+  //Valida texto e ícone do user.
   static userTextIcon() {
     cy.get('label[for="txtusername"]')
       .should('be.visible')
-      .and('have.text', 'Usuário');
+      .and('have.text', 'user');
       
     cy.get(':nth-child(3) > .name').should('be.visible');
   }
@@ -89,7 +89,7 @@ export class LoginPage {
 
     cy.get('.toast-message')
       .should('be.visible')
-      .and('have.text', 'Login ou Senha do usuário está incorreto.')
+      .and('have.text', 'Login ou Senha do user está incorreto.')
       .and('not.have.attr', 'disabled');
 
     cy.get('.toast-close-button').should('be.visible');

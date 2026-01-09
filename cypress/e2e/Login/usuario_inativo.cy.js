@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../../e2e/users.json';
 
-describe('Usuário inativo', () => {
+describe('user inativo', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -13,14 +13,14 @@ describe('Usuário inativo', () => {
         LoginPage.userTextIcon()
     })
 
-    it('1.Tentar logar com usuário inativo', () => {
+    it('1.Tentar logar com user inativo', () => {
     
         cy.get('#txtusername')
             .should('be.visible')
             .and('have.value','')
             .type((users.userSabium.login))
             .invoke('attr', 'placeholder')
-            .should('equal', 'Informe seu usuário')
+            .should('equal', 'Informe seu user')
 
         LoginPage.passwordTextIcon()
 
@@ -45,7 +45,7 @@ describe('Usuário inativo', () => {
 
         cy.get('.toast-message')
             .should('be.visible')
-            .and('have.text','Usuário não está ativo.')
+            .and('have.text','user não está ativo.')
 
         cy.get('.toast-close-button')
             .should('be.visible')

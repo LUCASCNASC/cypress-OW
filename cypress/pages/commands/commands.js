@@ -4,7 +4,7 @@ import users from '../../e2e/users.json';
 import '@testing-library/cypress/add-commands';
 import 'cypress-file-upload';
 
-//fazer login no pedido web, com o usuário 393
+//fazer login no pedido web, com o user 393
 Cypress.Commands.add('login', (username, password) => {
   cy.visit('/');
   cy.get('#txtusername').type(users.userSabium.login);

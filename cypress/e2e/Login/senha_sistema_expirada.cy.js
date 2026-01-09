@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../../e2e/users.json';
 
-describe('Senha do usuário expirada', () => {
+describe('Senha do user expirada', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -13,14 +13,14 @@ describe('Senha do usuário expirada', () => {
         LoginPage.userTextIcon()
     })
 
-    it('1.Tentar logar com usuário com senha do usuário expirada', () => {
+    it('1.Tentar logar com user com senha do user expirada', () => {
     
         cy.get('#txtusername')
             .should('be.visible')
             .and('have.value','')
             .type(users.userSabium.login)
             .invoke('attr', 'placeholder')
-            .should('equal', 'Informe seu usuário')
+            .should('equal', 'Informe seu user')
 
         LoginPage.passwordTextIcon()
 

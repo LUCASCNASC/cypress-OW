@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../../e2e/users.json';
 
-describe('Login caminho feliz - usuário normal senha liberada', () => {
+describe('Login happy path - regular user with password enabled', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -13,7 +13,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         LoginPage.userTextIcon()
     })
 
-    context('Usuário contexto 1', () => {
+    context('user context 1', () => {
 
         it('1.Login - caminho feliz', () => {
 
@@ -22,7 +22,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .and('have.value','')
                 .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
 
@@ -41,14 +41,14 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonInitService()
         })
     
-        it('2.Login - passar usuário errado (deve dar mensagem de Login ou Senha do usuário está incorreto.)', () => {
+        it('2.Login - passar user errado (deve dar mensagem de Login ou Senha do user está incorreto.)', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
                 .type('sabium.123')
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
 
@@ -67,14 +67,14 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.iconComputerLogin()
         })
     
-        it('3.Login - passar senha errada (deve dar mensagem de Login ou Senha do usuário está incorreto.)', () => {
+        it('3.Login - pass password errada (deve dar mensagem de Login ou Senha do user está incorreto.)', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
 
@@ -99,7 +99,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
     
@@ -124,7 +124,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .and('have.value','')
                 .type('sabium.automacao')
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
 
@@ -147,7 +147,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
 
@@ -165,7 +165,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         })
     })
 
-    context('Usuário contexto 3', () => {
+    context('user contexto 3', () => {
 
         it('7.Login - caminho feliz', () => {
         
@@ -174,7 +174,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .and('have.value','')
                 .type(users.userSBX.login)
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
     
@@ -193,14 +193,14 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.buttonInitService()
         })
     
-        it('8.Login - passar usuário errado (deve dar mensagem de Login ou Senha do usuário está incorreto.)', () => {
+        it('8.Login - passar user errado (deve dar mensagem de Login ou Senha do user está incorreto.)', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
                 .type('sabium.123')
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
 
@@ -219,14 +219,14 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
             LoginPage.iconComputerLogin()
         })
     
-        it('9.Login - passar senha errada (deve dar mensagem de Login ou Senha do usuário está incorreto.)', () => {
+        it('9.Login - pass password errada (deve dar mensagem de Login ou Senha do user está incorreto.)', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
                 .and('have.value','')
                 .type(users.userSBX.login)
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
 
@@ -251,7 +251,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
 
@@ -276,7 +276,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .and('have.value','')
                 .type('sabium.automacao')
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
     
@@ -299,7 +299,7 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
                 .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
-                .should('equal', 'Informe seu usuário')
+                .should('equal', 'Informe seu user')
     
             LoginPage.passwordTextIcon()
     

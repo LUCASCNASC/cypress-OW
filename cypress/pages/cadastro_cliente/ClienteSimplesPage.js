@@ -158,7 +158,7 @@ export class ClienteSimplesPage {
   //Autoriza o trial para alteração da data de nascimento.
   static authorizeTrialfillDataNascimento() {
     const idSupervisorTrial = "393";
-    const nomeSupervidorTrial = "T.A. USUÁRIO AUTOMAÇÃO";
+    const nomeSupervidorTrial = "T.A. user AUTOMAÇÃO";
     const senhaSupervisor = "123.automacao";
 
     cy.get('.md-toolbar-tools > .ng-binding')
@@ -173,7 +173,7 @@ export class ClienteSimplesPage {
       .should('be.visible')
       .and('have.text', 'Pendente')
       .and('have.css', 'background-color', 'rgb(234, 7, 7)');
-    cy.get('thead > tr > :nth-child(4)').should('be.visible').and('have.text', 'Permissão / Usuário');
+    cy.get('thead > tr > :nth-child(4)').should('be.visible').and('have.text', 'Permissão / user');
     cy.get('tbody > .ng-scope > :nth-child(4)').should('be.visible').and('have.text', 'Sim');
     cy.get('tbody > :nth-child(2) > .ng-binding').should('be.visible').and('have.text', 'Supervisor');
     cy.get('[ng-model="idUsuario"]').should('be.visible').and('have.value', idSupervisorTrial);

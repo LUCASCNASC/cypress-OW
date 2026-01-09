@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../../e2e/users.json';
 
-describe('Logar com novo usuário', () => {
+describe('Logar com novo user', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -13,14 +13,14 @@ describe('Logar com novo usuário', () => {
         LoginPage.userTextIcon()
     })
 
-    it('1.Novo usuário - clicar em Fechar, não alterando a senha', () => {
+    it('1.Novo user - clicar em Fechar, não alterando a senha', () => {
     
         cy.get('#txtusername')
             .should('be.visible')
             .and('have.value','')
             .type(users.userSabiumNovo.login)
             .invoke('attr', 'placeholder')
-            .should('equal', 'Informe seu usuário')
+            .should('equal', 'Informe seu user')
 
         LoginPage.passwordTextIcon()
 
@@ -54,7 +54,7 @@ describe('Logar com novo usuário', () => {
 
         cy.get('.senha_nova > :nth-child(1)')
             .should('be.visible')
-            .and('have.text','Usuário')
+            .and('have.text','user')
 
         cy.get(':nth-child(2) > .ng-pristine')
             .should('be.visible')
@@ -170,14 +170,14 @@ describe('Logar com novo usuário', () => {
         LoginPage.iconComputerLogin() 
     })
 
-    it('2.Novo usuário - clicar em CONFIRMAR, alterando a senha', () => {
+    it('2.Novo user - clicar em CONFIRMAR, alterando a senha', () => {
     
         cy.get('#txtusername')
             .should('be.visible')
             .and('have.value','')
             .type(users.userSabiumNovo.login)
             .invoke('attr', 'placeholder')
-            .should('equal', 'Informe seu usuário')
+            .should('equal', 'Informe seu user')
 
         LoginPage.passwordTextIcon()
 
@@ -211,7 +211,7 @@ describe('Logar com novo usuário', () => {
 
         cy.get('.senha_nova > :nth-child(1)')
             .should('be.visible')
-            .and('have.text','Usuário')
+            .and('have.text','user')
 
         cy.get(':nth-child(2) > .ng-pristine')
             .should('be.visible')
