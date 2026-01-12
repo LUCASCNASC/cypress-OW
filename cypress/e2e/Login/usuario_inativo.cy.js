@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../../e2e/users.json';
 
-describe('user inativo', () => {
+describe('User inative', () => {
 
     beforeEach(() => {
         cy.visit('/')

@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../../e2e/users.json';
 
-describe('Senha do user expirada', () => {
+describe('User with expired password', () => {
 
     beforeEach(() => {
         cy.visit('/')

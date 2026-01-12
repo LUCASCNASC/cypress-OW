@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../../e2e/users.json';
 
-describe('Senha do user expirada', () => {
+describe('User with expired password system', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -13,7 +13,7 @@ describe('Senha do user expirada', () => {
         LoginPage.userTextIcon()
     })
 
-    it('1.Tentar logar com user com senha do user expirada', () => {
+    it('1.TTry to Login with user with password expired user', () => {
     
         cy.get('#txtusername')
             .should('be.visible')
