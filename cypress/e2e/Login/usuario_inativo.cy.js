@@ -13,7 +13,7 @@ describe('User inative', () => {
         LoginPage.userTextIcon()
     })
 
-    it('1.Tentar logar com user inativo', () => {
+    it('1.Attempting to log in with an inactive user', () => {
     
         cy.get('#txtusername')
             .should('be.visible')

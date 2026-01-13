@@ -13,9 +13,9 @@ describe('User with expired password', () => {
         LoginPage.userTextIcon()
     })
 
-    context('Tentar login quando a senha já está expirada', () => {
+    context('Attempting to log in when the password has already expired', () => {
 
-        it('1.Tentar logar com user com senha do user expirada - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
+        it('1.Try logging in with a user whose password has expired - click YES to update password - click Close password reset', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
@@ -119,7 +119,7 @@ describe('User with expired password', () => {
                 .and('not.have.attr', 'disabled')
         })
 
-        it('2.Tentar logar com user com senha do user expirada - clicar em NÃO atualizar senha - clicar em Fechar a redefinição de senha', () => {
+        it('2.Try logging in with a user whose password has expired - click DO NOT update password - click Close password reset', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
@@ -233,9 +233,9 @@ describe('User with expired password', () => {
         })
     })
 
-    context('Login quando a senha foi trocada e falta 1 dia para expirar, como foi definido no grupo deste user', () => {
+    context('Log in when the password has been changed and there is 1 day left before it expires, as defined in this users group', () => {
 
-        it('3.Login - clicar em NÃO atualizar senha', () => {
+        it('3.Login - click on DO NOT update password', () => {
         
                 cy.get('#txtusername')
                     .should('be.visible')
@@ -267,7 +267,7 @@ describe('User with expired password', () => {
                     .should('be.visible')
         })
         
-        it('4.Login - clicar em SIM atualizar senha - clicar em Fechar a redefinição de senha', () => {
+        it('4.Login - click YES to update password - click Close password reset', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
@@ -373,7 +373,7 @@ describe('User with expired password', () => {
                 .and('not.have.attr', 'disabled')
         })
     
-        it('5.Login - clicar em SIM atualizar senha - clicar em CONFIRMAR a redefinição de senha', () => {
+        it('5.Login - click YES to update password - click CONFIRM to reset password', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')

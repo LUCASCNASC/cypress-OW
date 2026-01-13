@@ -1,6 +1,6 @@
 import { PesquisaClientePage } from '../../pages/cadastro_cliente/PesquisaClientePage.js'
 
-describe('Cadastrar cliente', () => {
+describe('Register customer', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -10,9 +10,9 @@ describe('Cadastrar cliente', () => {
         cy.tituloPagina()
     })
 
-    context('Pesquisa cliente por número', () => {
+    context('Search customer by number', () => {
 
-        it('1.Pesquisa por número CPF', () => {
+        it('1.Search by CPF number', () => {
     
             PesquisaClientePage.fillCPF()
             PesquisaClientePage.clickGlassPesquisaClientePage()
@@ -23,7 +23,7 @@ describe('Cadastrar cliente', () => {
             PesquisaClientePage.numberDescripCPFSearch()
         }) 
 
-        it('2.Pesquisa por número CNPJ', () => {
+        it('2.Search by CNPJ number', () => {
 
             PesquisaClientePage.fillCNPJ()
             PesquisaClientePage.clickGlassPesquisaClientePage()
@@ -36,9 +36,9 @@ describe('Cadastrar cliente', () => {
         }) 
     })
 
-    context('Pesquisa cliente por descrição', () => {
+    context('Search customer by description', () => {
 
-        it('3.Pesquisa por descrição CPF', () => {
+        it('3.Search by CPF description', () => {
 
             PesquisaClientePage.fillDescripCPF()
             PesquisaClientePage.clickGlassPesquisaClientePage()
@@ -49,7 +49,7 @@ describe('Cadastrar cliente', () => {
             PesquisaClientePage.numberDescripCPFSearch()
         }) 
 
-        it('4.Pesquisa por descrição CNPJ', () => {
+        it('4.Search by CNPJ description', () => {
 
             PesquisaClientePage.typeAgainDescriptCNPJ()
             PesquisaClientePage.clickGlassPesquisaClientePage()

@@ -13,7 +13,7 @@ describe('Login happy path - regular user with password enabled', () => {
         LoginPage.userTextIcon()
     })
 
-    context('user context 1', () => {
+    context('User context 1', () => {
 
         it('1.Login - happy path', () => {
 
@@ -41,7 +41,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.buttonInitService()
         })
     
-        it('2.Login - pass user strong (deve dar mensagem de Login ou Senha do user está incorreto.)', () => {
+        it('2.Login - pass user strong (should display a message saying "User login or password is incorrect.")', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
@@ -67,7 +67,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.iconComputerLogin()
         })
     
-        it('3.Login - pass password strong (deve dar mensagem de Login ou Senha do user está incorreto.)', () => {
+        it('3.Login - pass password strong (should display a message saying "User login or password is incorrect.")', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
@@ -93,7 +93,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.iconComputerLogin()
         })
     
-        it('4.Login - pass only login (botão ENTRAR deve ficar desabilitado)', () => {
+        it('4.Login - pass-only login (the ENTER button should be disabled)', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
@@ -117,7 +117,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.iconComputerLogin()
         })
     
-        it('5.Login - pass only login (botão ENTRAR deve ficar desabilitado)', () => {
+        it('5.Login - pass-only login (the ENTER button should be disabled)', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
@@ -141,7 +141,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.iconComputerLogin()
         })  
     
-        it('6.Login - without pass login and password (botão ENTRAR deve ficar desabilitado)', () => {
+        it('6.Login - without pass login and password (the ENTER button should be disabled)', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
@@ -165,7 +165,7 @@ describe('Login happy path - regular user with password enabled', () => {
         })
     })
 
-    context('user context 3', () => {
+    context('User context 3', () => {
 
         it('7.Login - happy path', () => {
         
@@ -193,7 +193,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.buttonInitService()
         })
     
-        it('8.Login - pass user strong (deve dar mensagem de Login ou Senha do user está incorreto.)', () => {
+        it('8.Login - pass user strong (should display a message saying "User login or password is incorrect.")', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
@@ -219,7 +219,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.iconComputerLogin()
         })
     
-        it('9.Login - pass password strong (deve dar mensagem de Login ou Senha do user está incorreto.)', () => {
+        it('9.Login - pass password strong (should display a message saying "User login or password is incorrect.")', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
@@ -245,7 +245,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.iconComputerLogin()
         })
     
-        it('10.Login - pass only login (botão ENTRAR deve ficar desabilitado)', () => {
+        it('10.Login - pass-only login (the ENTER button should be disabled)', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
@@ -269,7 +269,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.iconComputerLogin()
         })
     
-        it('11.Login - pass only password (botão ENTRAR deve ficar desabilitado)', () => {
+        it('11.Login - pass only password (the ENTER button should be disabled)', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
@@ -293,7 +293,7 @@ describe('Login happy path - regular user with password enabled', () => {
             LoginPage.iconComputerLogin()
         })  
     
-        it('12.Login - withput pass login and password (botão ENTRAR deve ficar desabilitado)', () => {
+        it('12.Login - with input login and password (the ENTER button should be disabled)', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')

@@ -5,7 +5,7 @@ import { RotaPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_R
 import { TelefonePage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Telefone/TelefonePage.js';
 import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
-describe('Cadastrar cliente completo', () => {
+describe('Register complete client', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -15,9 +15,9 @@ describe('Cadastrar cliente completo', () => {
         cy.tituloPagina()
     })
 
-    context('Register cliente completo - incluindo Empregatício', () => {
+    context('Complete client registration - including Employment', () => {
 
-        it('1.Cliente completo CPF - caminho feliz', () => {
+        it('1.Complete customer CPF - happy path', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.clickOpcaoClienteCompleto()

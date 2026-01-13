@@ -13,7 +13,7 @@ describe('Login with new user', () => {
         LoginPage.userTextIcon()
     })
 
-    it('1.Novo user - clicar em Fechar, não alterando a senha', () => {
+    it('1.New user - click Close, without changing the password', () => {
     
         cy.get('#txtusername')
             .should('be.visible')
@@ -170,7 +170,7 @@ describe('Login with new user', () => {
         LoginPage.iconComputerLogin() 
     })
 
-    it('2.Novo user - clicar em CONFIRMAR, alterando a senha', () => {
+    it('2.New user - click CONFIRM, change the password', () => {
     
         cy.get('#txtusername')
             .should('be.visible')

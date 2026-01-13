@@ -13,7 +13,7 @@ describe('User with expired password system', () => {
         LoginPage.userTextIcon()
     })
 
-    it('1.TTry to Login with user with password expired user', () => {
+    it('1.Try to Login with user with password expired user', () => {
     
         cy.get('#txtusername')
             .should('be.visible')

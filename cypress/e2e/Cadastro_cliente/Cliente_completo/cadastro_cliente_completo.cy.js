@@ -5,7 +5,7 @@ import { RotaPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_R
 import { TelefonePage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Telefone/TelefonePage.js';
 import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
-describe('Cadastrar cliente completo', () => {
+describe('Register complete client', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -15,9 +15,9 @@ describe('Cadastrar cliente completo', () => {
         cy.tituloPagina()
     })
 
-    context('Register cliente completo - básico ', () => {
+    context('Complete customer registration - basic', () => {
 
-        it('1.Cliente completo CPF', () => {
+        it('1.Full customer CPF', () => {
             
             ClienteCompletoPage.clickMenuOpcoes() 
             ClienteCompletoPage.clickOpcaoClienteCompleto()
@@ -57,7 +57,7 @@ describe('Cadastrar cliente completo', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso()
         })  
 
-        it('2.Cliente completo CPF - mensagem de campos obrigatórios', () => {
+        it('2.Customer full CPF - required fields message', () => {
     
             ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.clickOpcaoClienteCompleto()
@@ -103,7 +103,7 @@ describe('Cadastrar cliente completo', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso()
         })  
 
-        it('3.Cliente completo CNPJ', () => {
+        it('3.Complete customer CNPJ', () => {
     
             ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.clickOpcaoClienteCompleto() 
@@ -145,9 +145,9 @@ describe('Cadastrar cliente completo', () => {
         }) 
     })
 
-    context('Register cliente completo - incluindo anexo após salvar o cadastro de cliente', () => {
+    context('Complete customer registration - including attachment after saving the customer registration', () => {
 
-        it('4.Cliente completo CPF - caminho feliz', () => {
+        it('4.Complete customer CPF - happy path', () => {
 
             ClienteCompletoPage.clickMenuOpcoes()
             ClienteCompletoPage.clickOpcaoClienteCompleto() 
