@@ -6,7 +6,7 @@ import { EntregaPage } from '../../../pages/pedido/EntregaPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
-describe('Pedidos com promoção com entrega', () => {
+describe('Orders with promotional delivery', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -18,9 +18,9 @@ describe('Pedidos com promoção com entrega', () => {
         cy.chooseCliente()
     })
 
-    context('Com entrega /com promoção/ processo 9890 - caminho feliz', () => {
+    context('With delivery / with promotion / process 9890 - happy path', () => {
 
-        it('1.Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it('1.Order with promotional offer (promotion 152): product 1868 0 0', () => {
     
             Product.promoMatch()
             ValidateBalance.withBalance() 
@@ -46,7 +46,7 @@ describe('Pedidos com promoção com entrega', () => {
             cy.validateOrderGenerated()
         })
     
-        it('2.Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
+        it('2.Order with installment payment promotion with down payment (promotion 150): product 1866 0 0', () => {
     
             Product.promoDeadlineEntry()
             ValidateBalance.withBalance() 
@@ -66,7 +66,7 @@ describe('Pedidos com promoção com entrega', () => {
             cy.contains('.md-select-value', 'Forma de pagamento').click()
         })
 
-        it('3.Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it('3.Order with installment payment promotion (promotion 151): product 1867 0 0', () => {
     
             Product.promoDeadlineInstallment()
             ValidateBalance.withBalance() 

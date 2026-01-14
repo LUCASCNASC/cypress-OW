@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
-describe('Pedido com financeiro na baixa com entrega', () => {
+describe('Order with financial details on file with delivery.', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('Pedido com financeiro na baixa com entrega', () => {
         cy.chooseCliente()
     })
     
-    context('Com entrega/ processo 9892 - caminho feliz', () => {
+    context('With delivery/process 9892 - happy path', () => {
 
-        it('1.Pedido: produto 1860 0 0', () => {
+        it('1.Order: product 1860 0 0', () => {
                       
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -43,7 +43,7 @@ describe('Pedido com financeiro na baixa com entrega', () => {
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2.Order: products 1860 0 0 e 1870 0 0', () => {
                 
             Product.fisrt()
             ValidateBalance.withBalance() 

@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
-describe('Pedido com reserva no CD (com entrega) - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
+describe('Order with reservation at the distribution center (with delivery) - Balance rule: Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -19,9 +19,9 @@ describe('Pedido com reserva no CD (com entrega) - Regra de saldo Parâmetro 36 
         cy.chooseCliente()
     })
 
-    context('Com entrega/ processo 9890 - caminho feliz', () => {
+    context('With delivery/process 9890 - happy path', () => {
 
-        it('1.Pedido: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
+        it('1.Order: product 1880 0 0 - (Local sale of product with stock only at the distribution center - with delivery)', () => {
             
             Product.cdFirst()
             ValidateBalance.withBalance() 
@@ -43,7 +43,7 @@ describe('Pedido com reserva no CD (com entrega) - Regra de saldo Parâmetro 36 
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
+        it('2.Order: products 1880 0 0 (CD reservation) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in the CD - with delivery)', () => {
             
             Product.fisrt()
             ValidateBalance.withBalance() 

@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPagePromoPage.js'
 
-describe('Pedido de entrega futura com entrega', () => {
+describe('Future delivery request with delivery', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -20,9 +20,9 @@ describe('Pedido de entrega futura com entrega', () => {
         cy.chooseCliente()
     })
     
-    context('Com entrega/ processo 9891 - caminho feliz', () => {
+    context('With delivery/process 9891 - happy path', () => {
 
-        it('1.Pedido: produto 1860 0 0', () => {
+        it('1.Order: product 1860 0 0', () => {
                       
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -44,7 +44,7 @@ describe('Pedido de entrega futura com entrega', () => {
             cy.validateOrderGenerated()
         })    
         
-        it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2.Order: product 1860 0 0 e 1870 0 0', () => {
               
             Product.fisrt()
             ValidateBalance.withBalance() 

@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
-describe('Pedido normal com entrega', () => {
+describe('Normal order with delivery', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -19,9 +19,9 @@ describe('Pedido normal com entrega', () => {
         cy.chooseCliente()
     })
 
-    context('Com entrega/ processo 9890 - caminho feliz', () => {
+    context('With delivery/process 9890 - happy path', () => {
 
-        it('1.Pedido: produto 1860 0 0 - (Venda local de produto com saldo - com entrega)', () => {
+        it('1.Order: product 1860 0 0 - (Local sale of stock item - with delivery)', () => {
                   
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -43,7 +43,7 @@ describe('Pedido normal com entrega', () => {
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2.Order: products 1860 0 0 and 1870 0 0', () => {
                 
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -72,7 +72,7 @@ describe('Pedido normal com entrega', () => {
             cy.validateOrderGenerated()
         })
 
-        it('3.Pedido: produto 1860 0 0 - (Pedido de venda com entrega. Com Entrada + parcelamento.)', () => {
+        it('3.Order: product 1860 0 0 - (Sales order with delivery. With down payment + installments.)', () => {
                   
             Product.fisrt()
             ValidateBalance.withBalance() 
