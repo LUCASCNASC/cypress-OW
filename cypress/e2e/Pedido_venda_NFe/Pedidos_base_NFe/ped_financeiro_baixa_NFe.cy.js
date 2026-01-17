@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { GeralPagamentoPage } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
-describe('Pedido com financeiro na baixa', () => {
+describe('Order with finances in the low', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,10 +19,10 @@ describe('Pedido com financeiro na baixa', () => {
         ProcessoVendaPage.financePaymentNFe() 
         cy.chooseCliente()
     })
-  
-    context('Sem entrega/ processo 9863 - caminho feliz', () => {
 
-        it('1.Pedido: produto 1860 0 0', () => {
+    context('No delivery/ process 9863 - happy path', () => {
+
+        it('1.Order: product 1860 0 0', () => {
                  
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -42,7 +42,7 @@ describe('Pedido com financeiro na baixa', () => {
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2.Order: products 1860 0 0 and 1870 0 0', () => {
               
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -70,10 +70,10 @@ describe('Pedido com financeiro na baixa', () => {
             cy.validateOrderGenerated()
         })
     })
-    
-    context('Com entrega/ processo 9863 - caminho feliz', () => {
 
-        it('3.Pedido: produto 1860 0 0', () => {
+    context('With delivery/ process 9863 - happy path', () => {
+
+        it('3.Order: product 1860 0 0', () => {
                 
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -93,7 +93,7 @@ describe('Pedido com financeiro na baixa', () => {
             cy.validateOrderGenerated()
         })
 
-        it('4.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
+        it('4.Order: products 1860 0 0 and 1870 0 0', () => {
                  
             Product.fisrt()
             ValidateBalance.withBalance() 

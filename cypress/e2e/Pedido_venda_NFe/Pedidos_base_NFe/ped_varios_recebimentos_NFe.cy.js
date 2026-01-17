@@ -1,5 +1,4 @@
-import { ProcessoVendaPage } from '../../../pages/pedido
-/ProcessoVendaPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 import { Service } from '../../../pages/pedido/ServicosPage.js'
 import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
@@ -9,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { AgruparRecebPage } from '../../../pages/pedido/AgruparRecebPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
-describe('Pedido com mais de uma forma de pagamento', () => {
+describe('Order with more than one payment method', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -21,9 +20,9 @@ describe('Pedido com mais de uma forma de pagamento', () => {
         cy.chooseCliente()
     })
 
-    context('Sem entrega/ processo 9860 - caminho feliz', () => {
+    context('No delivery/ process 9860 - happy path', () => {
 
-        it('1.Pedido: produto 1860 0 0 - duas formas de pagamento 3871 e 3860', () => {
+        it('1.Order: product 1860 0 0 - two payment methods 3871 and 3860', () => {
 
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -48,7 +47,7 @@ describe('Pedido com mais de uma forma de pagamento', () => {
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido: produto 1860 0 0 - com entrada (3861) e outra forma de pagamento (3860)', () => {
+        it('2.Order: product 1860 0 0 - with entry (3861) and another payment method (3860)', () => {
 
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -70,7 +69,7 @@ describe('Pedido com mais de uma forma de pagamento', () => {
             cy.validateOrderGenerated()
         })
 
-        it('3.Pedido: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar', () => {
+        it('3.Order: product 1860 0 0 - two payment methods (3860) - click to NOT group', () => {
 
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -96,7 +95,7 @@ describe('Pedido com mais de uma forma de pagamento', () => {
             cy.validateOrderGenerated()
         })
 
-        it('4.Pedido: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para SIM agrupar', () => {
+        it('4.Order: product 1860 0 0 - two identical payment methods (3860) - click to group YES', () => {
 
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -122,7 +121,7 @@ describe('Pedido com mais de uma forma de pagamento', () => {
             cy.validateOrderGenerated()
         })
 
-        it('5.Pedido: produto 1860 0 0 - duas formas de pagamento iguais (3860) - clicar para NÃO agrupar, mas logo em seguida agrupar selecionando os dois.', () => {
+        it('5.Order: product 1860 0 0 - two identical payment methods (3860) - click to NOT group, but then group by selecting both.', () => {
 
             Product.fisrt()
             ValidateBalance.withBalance() 

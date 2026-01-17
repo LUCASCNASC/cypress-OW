@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/pagento/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
-describe('Pedido de entrega futura', () => {
+describe('Future delivery order', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -19,9 +19,9 @@ describe('Pedido de entrega futura', () => {
         cy.chooseCliente()
     })
 
-    context('Sem entrega/ processo 9862 - caminho feliz', () => {
+    context('No delivery/ process 9862 - happy path', () => {
 
-        it('1.Pedido: produto 1860 0 0', () => {
+        it('1.Order: product 1860 0 0', () => {
                       
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -40,8 +40,8 @@ describe('Pedido de entrega futura', () => {
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
-        
-        it('2.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
+
+        it('2.Order: products 1860 0 0 and 1870 0 0', () => {
               
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -69,10 +69,10 @@ describe('Pedido de entrega futura', () => {
             cy.validateOrderGenerated()
         })
     })
-    
-    context('Com entrega/ processo 9862 - caminho feliz', () => {
 
-        it('3.Pedido: produto 1860 0 0', () => {
+    context('With delivery/ process 9862 - happy path', () => {
+
+        it('3.Order: product 1860 0 0', () => {
              
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -91,8 +91,8 @@ describe('Pedido de entrega futura', () => {
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })    
-        
-        it('4.Pedido: produtos 1860 0 0 e 1870 0 0', () => {
+
+        it('4.Order: products 1860 0 0 and 1870 0 0', () => {
                    
             Product.fisrt()
             ValidateBalance.withBalance() 

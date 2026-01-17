@@ -8,7 +8,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
-describe('Pedido com proposta de crédito', () => {
+describe('Application with credit proposal', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -20,9 +20,9 @@ describe('Pedido com proposta de crédito', () => {
         cy.chooseCliente()
     })
 
-    context('Sem entrega/ processo 9860 - caminho feliz', () => {
+    context('No delivery/ process 9860 - happy path', () => {
 
-        it('1.Pedido: produto 1860 0 0 - (Pedido de venda sem entrega, com proposta de crédito.)', () => {
+        it('1.Order: product 1860 0 0 - (Sales order without delivery, with credit proposal.)', () => {
 
             Product.fisrt()
             ValidateBalance.withBalance() 
