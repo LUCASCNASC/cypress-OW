@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 
-describe('Pedido normal com desconto nos juros - parametros 243 e 244 definidos no processo de inclusão', () => {
+describe('PStandard order with interest discount - parameters 243 and 244 defined in the inclusion process', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -20,9 +20,9 @@ describe('Pedido normal com desconto nos juros - parametros 243 e 244 definidos 
         cy.chooseCliente()
     })
 
-    context('Sem entrega/ processo 9860 - caminho feliz - processo de inclusão 3860', () => {
+    context('Without delivery/ process 9860 - happy path - inclusion process 3860', () => {
 
-        it('1.Pedido: produto 1860 0 0 - arredondar para baixo', () => {
+        it('1.Pedido: product 1860 0 0 - round down', () => {
 
             Product.roundUpDown()
             ValidateBalance.withBalance() 
@@ -46,7 +46,7 @@ describe('Pedido normal com desconto nos juros - parametros 243 e 244 definidos 
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido: produtos 1860 0 0 - arredondar para cima', () => {
+        it('2.Order: products 1860 0 0 - round up', () => {
 
             Product.roundUpDown()
             ValidateBalance.withBalance() 

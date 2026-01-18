@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPagePromoPage.js'
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
-describe('Pedidos com promoção', () => {
+describe('Orders with promotion', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -19,10 +19,10 @@ describe('Pedidos com promoção', () => {
         ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
-  
-    context('Sem entrega/ com promoção/ processo 9860 - caminho feliz', () => {
 
-        it('1.Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
+    context('Without delivery/ with promotion/ process 9860 - happy path', () => {
+
+        it('1.Order with promotion match (promotion 152): product 1868 0 0', () => {
     
             Product.promoMatch()
             ValidateBalance.withBalance() 
@@ -41,9 +41,9 @@ describe('Pedidos com promoção', () => {
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
-    
-        it('2.Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
-    
+
+        it('2.Order with promotion deadline with entry (promotion 150): product 1866 0 0', () => {
+
             Product.promoDeadlineEntry()
             ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
@@ -67,9 +67,9 @@ describe('Pedidos com promoção', () => {
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
-    
-        it('3.Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
-    
+
+        it('3.Order with promotion deadline installment (promotion 151): product 1867 0 0', () => {
+
             Product.promoDeadlineInstallment()
             ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
@@ -89,9 +89,9 @@ describe('Pedidos com promoção', () => {
         })
     })
 
-    context('Sem entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
+    context('Without delivery/ with promotion and without promotion/ process 9860 - happy path', () => {
 
-        it('4.Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('4.Order with promotion match (promotion 152): product 1868 0 0 and product 1870 0 0 (without promotion)', () => {
     
             Product.promoMatch()
             ValidateBalance.withBalance() 
@@ -126,7 +126,7 @@ describe('Pedidos com promoção', () => {
             // cy.validateOrderGenerated()
         })
 
-        it('5.Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('5.Order with promotion deadline with entry (promotion 150): product 1866 0 0 and product 1870 0 0 (without promotion)', () => {
     
             Product.promoDeadlineEntry()
             ValidateBalance.withBalance() 
@@ -160,9 +160,9 @@ describe('Pedidos com promoção', () => {
         })
     })
 
-    context('Com entrega /com promoção/ processo 9860 - caminho feliz', () => {
+    context('With delivery / with promotion / process 9860 - happy path', () => {
 
-        it('6.Pedido com promoção partida (promoção 152): produto 1868 0 0', () => {
+        it('6.Order with promotion match (promotion 152): product 1868 0 0', () => {
     
             Product.promoMatch()
             ValidateBalance.withBalance() 
@@ -185,9 +185,9 @@ describe('Pedidos com promoção', () => {
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
-    
-        it('7.Pedido com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
-    
+
+        it('7.Order with promotion deadline with entry (promotion 150): product 1866 0 0', () => {
+
             Product.promoDeadlineEntry()
             ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
@@ -208,7 +208,7 @@ describe('Pedidos com promoção', () => {
             ParcelasPage.one()
         })
 
-        it('8.Pedido com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
+        it('8.Order with promotion deadline installment (promotion 151): product 1867 0 0', () => {
     
             Product.promoDeadlineInstallment()
             ValidateBalance.withBalance() 
@@ -234,9 +234,9 @@ describe('Pedidos com promoção', () => {
         })  
     }) 
 
-    context('Com entrega/ com promoção e sem promoção/ processo 9860 - caminho feliz', () => {
+    context('With delivery/ with promotion and without promotion/ process 9860 - happy path', () => {
 
-        it('9.Pedido com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
+        it('9.Order with promotion match (promotion 152): product 1868 0 0 and product 1870 0 0 (without promotion)', () => {
     
             Product.promoMatch()
             ValidateBalance.withBalance() 

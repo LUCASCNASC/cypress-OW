@@ -9,7 +9,7 @@ import { ValidadePrestamistaPage } from '../../../pages/pedido/ValidadePrestamis
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 
-describe('Pedidos com promoção e serviços com isenção de juros', () => {
+describe('Orders with promotions and interest-free services', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -20,10 +20,10 @@ describe('Pedidos com promoção e serviços com isenção de juros', () => {
         ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
-  
-    context('Sem entrega/ com promoção/ com serviço processo 9860 - caminho feliz', () => {
 
-        it('1.Pedido com promoção a prazo/parcelas (promoção 159): produto 1891 0 0 com garantia (isenta de juros)', () => {
+    context('Without delivery/ with promotion/ with service process 9860 - happy path', () => {
+
+        it('1.Order with promotion deadline installment (promotion 159): product 1891 0 0 with guarantee (interest-free)', () => {
     
             Product.firstInstallmentDeadline()
             ValidateBalance.withBalance() 
@@ -45,9 +45,9 @@ describe('Pedidos com promoção e serviços com isenção de juros', () => {
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
-    
-        it('2.Pedido com promoção a prazo/entrada + parcelas (promoção 158): produto 1895 0 0 com garantia (isenta de juros)', () => {
-    
+
+        it('2.Order with promotion deadline with entry + installments (promotion 158): product 1895 0 0 with guarantee (interest-free)', () => {
+
             Product.secondInstallmentDeadline()
             ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
@@ -86,9 +86,9 @@ describe('Pedidos com promoção e serviços com isenção de juros', () => {
             cy.clickFinalizarPedidoPage() //RESUMO
             cy.validateOrderGenerated()
         })
-    
-        it('3.Pedido com promoção a partida (promoção 161): produto 1893 0 0 com prestamista (isento de juros)', () => {
-    
+
+        it('3.Order with promotion deadline installment (promotion 161): product 1893 0 0 with moneylender (interest-free)', () => {
+
             Product.thirdInstallmentDeadline()
             ValidateBalance.withBalance() 
             cy.clickVoltageProduct()
@@ -111,7 +111,7 @@ describe('Pedidos com promoção e serviços com isenção de juros', () => {
             cy.validateOrderGenerated()
         })
 
-        it('4.Pedido com promoção a prazo/parcelas (promoção 162): produto 1894 0 0 com garantia (isenta de juros) e prestamista (com juros)', () => {
+        it('4.Order with promotion deadline installment (promotion 162): product 1894 0 0 with guarantee (interest-free) and moneylender (with interest)', () => {
     
             Product.fourthInstallmentDeadline()
             ValidateBalance.withBalance() 

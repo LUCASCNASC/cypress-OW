@@ -7,8 +7,7 @@ import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/ParcelasPage.js'
 
-//verificar todos
-describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
+describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -19,10 +18,10 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         ProcessoVendaPage.NFe() 
         cy.chooseCliente()
     })
-  
-    context('Pedido de venda remoto normal', () => {
 
-        it('1.Pedido remoto: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
+    context('Remote order normal', () => {
+
+        it('1.Remote order: product 1860 0 0 - (Remote sale of product with balance in the invoicing branch)', () => {
 
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -43,7 +42,7 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido remoto: produtos 1860 0 0 e 1870 0 0', () => {
+        it('2.Remote order: products 1860 0 0 and 1870 0 0', () => {
 
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -71,8 +70,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
-        
-        it('3.Pedido remoto: kit 1877 0 0', () => {
+
+        it('3.Remote order: kit 1877 0 0', () => {
 
             Product.kitRemote()
             ValidateBalance.withBalance()
@@ -94,10 +93,10 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.validateOrderGenerated()
         })
     })
-    
-    context('Pedido de venda remoto sem saldo remoto, pegar CD', () => {
 
-        it('4.Pedido remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
+    context('Remote order without remote balance, get CD', () => {
+
+        it('4.Remote order - with balance in CD (branch 1) - should allow making the order - (Remote sale of product without balance in the invoicing branch, but with balance in the invoicing branch CD - with delivery)', () => {
 
             Product.remoteWithCD()
             ValidateBalance.withBalance() 
@@ -117,8 +116,8 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })    
-        
-        it('5.Pedido remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
+
+        it('5.Remote order - without balance in CD (branch 1) - should NOT allow making the order - (Remote sale of product without balance in the invoicing branch, without balance of the invoicing branch CD)', () => {
 
             Product.remoteWithoutCD()
             ValidateBalance.withoutBalance() 

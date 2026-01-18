@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 
-describe('Pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmetro 139 = 4 - Trial 653 não configurado', () => {
+describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -19,9 +19,9 @@ describe('Pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmet
         cy.chooseCliente()
     })
 
-    context('Sem entrega/ processo 9860 - caminho feliz', () => {
+    context('Without delivery/ process 9860 - happy path', () => {
 
-        it('1.Pedido: produto 1880 0 0 - (Venda local de produto com saldo só no CD - sem entrega)', () => {
+        it('1.Order: product 1880 0 0 - (Local sale of product with balance only in CD - without delivery)', () => {
 
             Product.cdFirst()
             ValidateBalance.withBalance() 
@@ -41,7 +41,7 @@ describe('Pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmet
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - sem entrega)', () => {
+        it('2.Order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - without delivery)', () => {
 
             Product.cdFirst()
             ValidateBalance.withBalance() 
@@ -70,9 +70,9 @@ describe('Pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmet
         })
     })
 
-    context('Com entrega/ processo 9860 - caminho feliz', () => {
+    context('With delivery/ process 9860 - happy path', () => {
 
-        it('3.Pedido: produto 1880 0 0 - (Venda local de produto com saldo só no CD - com entrega)', () => {
+        it('3.Order: product 1880 0 0 - (Local sale of product with balance only in CD - with delivery)', () => {
             
             Product.cdFirst()
             ValidateBalance.withBalance() 
@@ -92,7 +92,7 @@ describe('Pedido com reserva no CD - Regra de saldo Parâmetro 36 = 4 - Parâmet
             cy.validateOrderGenerated()
         })
 
-        it('4.Pedido: produtos 1880 0 0 (reserva CD) e 1870 0 0 (saldo local) - (Venda local de 1 produto com saldo local + 1 produto com saldo no CD - com entrega)', () => {
+        it('4.Order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - with delivery)', () => {
             
             Product.fisrt()
             ValidateBalance.withBalance() 
