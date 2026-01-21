@@ -5,7 +5,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js'
 
-describe('Venda de serviço avulso', () => {
+describe('Sale of individual services', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -17,9 +17,9 @@ describe('Venda de serviço avulso', () => {
         cy.chooseCliente()
     })
 
-    context('Processo 9888 - caminho feliz', () => {
+    context('Process 9888 - happy path', () => {
 
-        it('1.Pedido de Mão de obra - 144 (T.A. MO Não Destaca e Separa Processo Diferente)', () => {
+        it('1.Labor Request - 144 (T.A. MO Does Not Highlight and Separate Different Process)', () => {
 
             ServicosAvulsosPage.productServiceLoose()
             ServicosAvulsosPage.chooseServiceSearch()

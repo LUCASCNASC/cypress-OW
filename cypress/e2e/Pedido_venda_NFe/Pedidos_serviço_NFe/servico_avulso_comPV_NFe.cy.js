@@ -6,8 +6,7 @@ import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js'
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 
-
-describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
+describe('Sale of individual services, with product order already downloaded', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -19,9 +18,9 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
         cy.chooseCliente()
     })
 
-    context('Processo 9888 - caminho feliz', () => {
+    context('Process 9888 - happy path', () => {
 
-        it('1.Pedido de garantia - 139 (T.A. Garantia Separa Mesmo Processo)', () => {
+        it('1.Labor Request - 139 (T.A. Guarantee Separates Same Process)', () => {
 
             const numero_pedido = '8605'
             

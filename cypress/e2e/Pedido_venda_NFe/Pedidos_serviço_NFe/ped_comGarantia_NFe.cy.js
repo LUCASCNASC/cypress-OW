@@ -7,7 +7,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 
-describe('Pedidos com Garantia', () => {
+describe('Orders with Guarantee', () => {
 
     beforeEach(() => {
         cy.visit('/')
@@ -19,9 +19,9 @@ describe('Pedidos com Garantia', () => {
         cy.chooseCliente()
     })   
 
-    context('Sem entrega/processo 9860 - caminho feliz', () => {
+    context('Without delivery/process 9860 - happy path', () => {
 
-        it('1.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it('1.Order: product 1860 0 0 (with Guarantee that separates title in the same process)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -42,7 +42,7 @@ describe('Pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('2.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('2.Order: product 1860 0 0 (with Guarantee that separates title in the same process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -70,9 +70,9 @@ describe('Pedidos com Garantia', () => {
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
-    
-        it('3.Pedido: produto 1860 0 0 (com Garantia que não separa título)', () => {
-    
+
+        it('3.Order: product 1860 0 0 (with Guarantee that does not separate title)', () => {
+
             Product.fisrt()
             ValidateBalance.withBalance() 
             cy.selectProductSearch()
@@ -92,7 +92,7 @@ describe('Pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('4.Pedido: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('4.Order: product 1860 0 0 (with Guarantee that does not separate title) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -120,9 +120,9 @@ describe('Pedidos com Garantia', () => {
             cy.clickFinalizarPedidoPage()
             cy.validateOrderGenerated()
         })
-    
-        it('5.Pedido: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
-    
+
+        it('5.Order: product 1860 0 0 (with Guarantee that separates title in a different process)', () => {
+
             Product.fisrt()
             ValidateBalance.withBalance() 
             cy.selectProductSearch()
@@ -142,7 +142,7 @@ describe('Pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('6.Pedido: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('6.Order: product 1860 0 0 (with Guarantee that separates title in a different process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -172,9 +172,9 @@ describe('Pedidos com Garantia', () => {
         })
     })
 
-    context('Com entrega/processo 9860 - caminho feliz', () => {
+    context('With delivery/process 9860 - happy path', () => {
 
-        it('7.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo)', () => {
+        it('7.Order: product 1860 0 0 (with Guarantee that separates title in the same process)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -195,7 +195,7 @@ describe('Pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('8.Pedido: produto 1860 0 0 (com Garantia que separa título no mesmo processo) e produto 1870 0 0 (sem serviço)', () => {
+        it('8.Order: product 1860 0 0 (with Guarantee that separates title in the same process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -223,7 +223,7 @@ describe('Pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('9.Pedido: produto 1860 0 0 (com Garantia que não separa título)', () => {
+        it('9.Order: product 1860 0 0 (with Guarantee that does not separate title)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -244,7 +244,7 @@ describe('Pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('10.Pedido: produto 1860 0 0 (com Garantia que não separa título) e produto 1870 0 0 (sem serviço)', () => {
+        it('10.Order: product 1860 0 0 (with Guarantee that does not separate title) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -272,7 +272,7 @@ describe('Pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('11.Pedido: produto 1860 0 0 (com Garantia que separa título em um processo diferente)', () => {
+        it('11.Order: product 1860 0 0 (with Guarantee that separates title in a different process)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
@@ -293,7 +293,7 @@ describe('Pedidos com Garantia', () => {
             cy.validateOrderGenerated()
         })
 
-        it('12.Pedido: produto 1860 0 0 (com Garantia que separa título em um processo diferente) e produto 1870 0 0 (sem serviço)', () => {
+        it('12.Order: product 1860 0 0 (with Guarantee that separates title in a different process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt()
             ValidateBalance.withBalance() 
