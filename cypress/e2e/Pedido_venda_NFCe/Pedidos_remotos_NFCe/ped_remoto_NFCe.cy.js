@@ -11,13 +11,13 @@ import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina() 
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina(); 
         ProcessoVendaPage.NFCe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
   
     context('Standard remote sales orderl', () => {
@@ -35,13 +35,13 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             AvancarPage.toTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Remote order: products 1860 0 0 and 1870 0 0', () => {
@@ -65,13 +65,13 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             AvancarPage.toTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
         
         it('3.Remote order: kit 1877 0 0', () => {
@@ -88,13 +88,13 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             AvancarPage.toTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
     
@@ -113,13 +113,13 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             AvancarPage.toTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })    
         
         it('5.Remote order - NO balance in CD (branch 1) - DO NOT allow order to be placed - (Remote sale of product (1882 0 0) without balance in the billing branch, no balance in the billing CD)', () => {

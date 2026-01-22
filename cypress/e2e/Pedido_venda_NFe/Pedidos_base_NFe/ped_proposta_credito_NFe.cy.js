@@ -11,13 +11,13 @@ import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 describe('Application with credit proposal', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('No delivery/ process 9860 - happy path', () => {
@@ -33,14 +33,14 @@ describe('Application with credit proposal', () => {
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.proposalCredit()
             ParcelasPage.one()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
             FinalizarPedidoPage.validatePropCreditGenerated()
-            cy.validateOrderGenerated()
+            cy.validateOrderGenerated();
         })
     })
 })

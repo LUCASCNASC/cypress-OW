@@ -11,13 +11,13 @@ import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 describe('Order with finances in the low', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login();
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');;
+        cy.clearAllSessionStorage();;
+        cy.login();;
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.financePaymentNFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('No delivery/ process 9863 - happy path', () => {
@@ -33,13 +33,13 @@ describe('Order with finances in the low', () => {
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment() 
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order: products 1860 0 0 and 1870 0 0', () => {
@@ -61,13 +61,13 @@ describe('Order with finances in the low', () => {
             Service.clickOKServiceLinked()
             TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -84,13 +84,13 @@ describe('Order with finances in the low', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment() 
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('4.Order: products 1860 0 0 and 1870 0 0', () => {
@@ -111,13 +111,13 @@ describe('Order with finances in the low', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

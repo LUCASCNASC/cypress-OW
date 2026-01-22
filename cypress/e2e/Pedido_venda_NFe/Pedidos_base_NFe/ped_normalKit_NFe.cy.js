@@ -11,13 +11,13 @@ import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
 describe('Normal order', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('No delivery/ process 9860 - happy path', () => {
@@ -34,13 +34,13 @@ describe('Normal order', () => {
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -58,13 +58,13 @@ describe('Normal order', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

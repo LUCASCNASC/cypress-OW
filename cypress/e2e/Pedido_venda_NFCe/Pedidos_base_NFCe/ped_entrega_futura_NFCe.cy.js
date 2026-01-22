@@ -11,13 +11,13 @@ import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPageP
 describe('Future delivery request with delivery', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.deliveryFutureNFCe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
     
     context('With delivery/process 9891 - happy path', () => {
@@ -35,13 +35,13 @@ describe('Future delivery request with delivery', () => {
             EntregaPage.modalInconsOnlyTransporter()
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPromoPage.pagPrincipal()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })    
         
         it('2.Order: product 1860 0 0 e 1870 0 0', () => {
@@ -64,13 +64,13 @@ describe('Future delivery request with delivery', () => {
             EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery() 
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final() 
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final(); 
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })  
     })
 })

@@ -12,13 +12,13 @@ import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 describe('Orders with promotions and interest-free services', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('Without delivery/ with promotion/ with service process 9860 - happy path', () => {
@@ -41,9 +41,9 @@ describe('Orders with promotions and interest-free services', () => {
             AvancarPage.toInstallments()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order with promotion deadline with entry + installments (promotion 158): product 1895 0 0 with guarantee (interest-free)', () => {
@@ -82,9 +82,9 @@ describe('Orders with promotions and interest-free services', () => {
                 .and('contain','Pagamento')
                 .click({force:true})
 
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage() //RESUMO
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage(); //RESUMO
+            cy.validateOrderGenerated();
         })
 
         it('3.Order with promotion deadline installment (promotion 161): product 1893 0 0 with moneylender (interest-free)', () => {
@@ -105,10 +105,10 @@ describe('Orders with promotions and interest-free services', () => {
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             PromocaoPage.addPrestamista()
             ValidadePrestamistaPage.added()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('4.Order with promotion deadline installment (promotion 162): product 1894 0 0 with guarantee (interest-free) and moneylender (with interest)', () => {
@@ -131,10 +131,10 @@ describe('Orders with promotions and interest-free services', () => {
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             PromocaoPage.addPrestamista()
             ValidadePrestamistaPage.added()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
  })

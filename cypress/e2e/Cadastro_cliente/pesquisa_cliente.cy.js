@@ -3,11 +3,11 @@ import { PesquisaClientePage } from '../../pages/cadastro_cliente/PesquisaClient
 describe('Register customer', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
     })
 
     context('Search customer by number', () => {

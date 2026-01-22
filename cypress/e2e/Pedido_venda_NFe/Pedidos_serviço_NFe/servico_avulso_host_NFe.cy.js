@@ -8,13 +8,13 @@ import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.j
 describe('Sale of individual services Host - 104', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
-        ProcessoVendaPage.saleServiceLoose()
-        cy.chooseCliente()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
+        ProcessoVendaPage.saleServiceLoose();
+        cy.chooseCliente();
     })
 
     context('Process 9888 - happy path', () => {
@@ -24,17 +24,17 @@ describe('Sale of individual services Host - 104', () => {
             ServicosAvulsosPage.clickMenuOpcoes()
             ServicosAvulsosPage.clickServiceMenu()
             ServicosAvulsosPage.productServiceHost()
-            ServicosAvulsosPage.chooseServiceSearch()
+            ServicosAvulsosPage.chooseServiceSearch();
             ServicosAvulsosPage.chooseValueRecharge()
             ServicosAvulsosPage.clickCartShopping()
-            ServicosAvulsosPage.buttonAdvanceOrder()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
+            ServicosAvulsosPage.buttonAdvanceOrder();
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
             ParcelasPage.one()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

@@ -12,13 +12,13 @@ import { Service } from '../../../pages/pedido/ServicosPage.js'
 describe('Exclusive Orders - Company parameter 1019 checked', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('Process configuration - Exclusive: 36 = 2; 139 = 6; 552 = 5 days', () => {
@@ -42,13 +42,13 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
             EntregaPage.modalInconsApenasTransp()
             EntregaPage.escolherTransportadora()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
+            GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order: normal product (with balance and with delivery) and a kit with 6 compositions (current date + parameter 552/ 5 days).', () => {
@@ -69,13 +69,13 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
             EntregaPage.modalInconsApenasTransp()
             EntregaPage.escolherTransportadora()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
+            GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -94,13 +94,13 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
             EntregaPage.modalInconsApenasTransp()
             EntregaPage.escolherTransportadora()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
+            GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('4.Order: product in two lines (one with 5 units to receive and 10 to request purchase), and have an appointment for the forecast date to receive.', () => {
@@ -131,13 +131,13 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

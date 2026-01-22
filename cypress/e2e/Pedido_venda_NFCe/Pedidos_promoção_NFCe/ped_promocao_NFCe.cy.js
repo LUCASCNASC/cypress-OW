@@ -9,13 +9,13 @@ import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
 describe('Orders with promotional delivery', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFCe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('With delivery / with promotion / process 9890 - happy path', () => {
@@ -34,16 +34,16 @@ describe('Orders with promotional delivery', () => {
             EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() 
+            GeralPagamentoPage.clickGenerateInstallments(); 
 
             //Escolher "Forma de pagamento"
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click()
             //Escolher parcelamento
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
 
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     
         it('2.Order with installment payment promotion with down payment (promotion 150): product 1866 0 0', () => {
@@ -80,15 +80,15 @@ describe('Orders with promotional delivery', () => {
             EntregaPage.modalInconsOnlyTransporter() 
             EntregaPage.chooseTransporter()
             AvancarPage.installmentDelivery()
-            GeralPagamentoPage.clickGenerateInstallments() 
+            GeralPagamentoPage.clickGenerateInstallments(); 
 
             //Escolher a forma de pagamento
             cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
             //Escolher a forma de pagamento/parcelas
             cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })  
     })
 })

@@ -14,13 +14,13 @@ import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
 describe('Orders with Fixed Value Discount Service - Service Origin (162)', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina() 
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina(); 
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })   
 
     context('With delivery / Products without promotion - Lender with fixed discount - Service Origin (162)', () => {
@@ -36,16 +36,16 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             Service.clickOKServiceLinked() 
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.futComJurosPrestAbatOrigemPrd()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order: product 1860 0 0 and 1870 0 0, inclusion 3881 and 3860, lender 162 (99,30), 4 installments upon receipt Future with interest.', () => {
@@ -67,16 +67,16 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.futComJurosPrestAbatOrigemPrd()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -101,10 +101,10 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('4.Order: product 1923 0 0 + warranty. Does not separate (promo on term 172 - exempt interest on services), inclusion 3881, lender 162, 4 installments upon receipt. Future with interest', () => {
@@ -127,10 +127,10 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('5.Order: product 1924 0 0 + warranty. Does not separate (promo on term 173 - exempt interest on warranty), inclusion 3882, lender 162, 4 installments upon receipt Future with interest', () => {
@@ -154,10 +154,10 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.pageFinal() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

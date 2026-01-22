@@ -8,11 +8,11 @@ import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/a
 describe('Register complete client', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
     })
 
     context('Complete customer record - including business references', () => {

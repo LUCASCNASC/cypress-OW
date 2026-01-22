@@ -4,10 +4,10 @@ import users from '../../e2e/users.json';
 describe('Login happy path - regular user with password enabled', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         LoginPage.logoEnterpriseLogin()
         LoginPage.iconComputerLogin()
         LoginPage.userTextIcon()

@@ -16,13 +16,13 @@ import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
 describe('Orders with Lender Service Discount % (158)', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina() 
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina(); 
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })   
 
     context('Without delivery / Products without promotion - Lender with discount %', () => {
@@ -46,16 +46,16 @@ describe('Orders with Lender Service Discount % (158)', () => {
             Service.clickOKServiceLinked()
             TirarEntrega.freightSecond()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.futMoneyWithFees()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order: products 1860 0 0 and 1870 0 0, inclusion 3875, lender 158, 4 installments upon receipt Present.', () => {
@@ -77,16 +77,16 @@ describe('Orders with Lender Service Discount % (158)', () => {
             Service.clickOKServiceLinked()
             TirarEntrega.freightSecond()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.presentMoney()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -110,16 +110,16 @@ describe('Orders with Lender Service Discount % (158)', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.futMoneyWithoutFees()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('4.Order: products 1860 0 0 (with warranty, not separate) and 1870 0 0, inclusion 3874, lender 158, 4 installments upon receipt. Future with interest.', () => {
@@ -142,16 +142,16 @@ describe('Orders with Lender Service Discount % (158)', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.futMoneyWithFees()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('5.Order: products 1860 0 0 (with warranty does not separate) and 1870 0 0, inclusion 3876, lender 158, 4 installments upon receipt Future without interest.', () => {
@@ -174,16 +174,16 @@ describe('Orders with Lender Service Discount % (158)', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.futMoneyWithoutFees()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('6.Order: products 1860 0 0 (with warranty does not separate) and 1870 0 0, inclusion 3875, lender 158, 4 installments upon receipt Present without interest.', () => {
@@ -206,16 +206,16 @@ describe('Orders with Lender Service Discount % (158)', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.presentMoney()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -240,10 +240,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('8.Order: product 1918 0 0 (promotion on credit 167), inclusion 3876, lender 158, 4 installments upon receipt Future without interest.', () => {
@@ -265,10 +265,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('9.Order: product 1918 0 0 (promotion on credit 167), with warranty. No separation, inclusion 3876, lender 158, 4 installments upon receipt. Future without interest.', () => {
@@ -291,10 +291,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -327,8 +327,8 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ValidadePrestamistaPage.added() 
             AvancarPage.finalarFinal()
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('11.Order: product 1919 0 0 (promo on credit 168), with insurance does not separate, inclusion 3874, lender 158, 4 installments upon receipt Future with interest.', () => {
@@ -357,10 +357,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ParcelasPage.one()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('12.Order: product 1920 0 0 (promo on entry 169), with insurance does not separate, inclusion 3876, lender 158, 4 installments upon receipt Future with interest.', () => {
@@ -384,10 +384,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -422,12 +422,12 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ValidadePrestamistaPage.added() 
             GeralPagamentoPage.insertDateTomorrow1Due()
             GeralPagamentoPage.clicarGerarParcAlterarVenc()
-            ProcessoRecebPage.main()
+            ProcessoRecebPage.main();
             ParcelasPage.one()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('14.Order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3874 (other receipt 3874 to be grouped), lender 158, 4 installments on future receipt with interest.', () => {
@@ -465,10 +465,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ValidateService.messPrestRemoved()
             ValidateService.addInsurancePrest()
             GeralPedidosPage.adicionadoRecebAgrupado()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('15.Order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3860), lender 158, 4 installments upon receipt Future without interest.', () => {
@@ -500,12 +500,12 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ValidadePrestamistaPage.added() 
             GeralPagamentoPage.insertDateTomorrow1Due()
             GeralPagamentoPage.clicarGerarParcAlterarVenc()
-            ProcessoRecebPage.main()
+            ProcessoRecebPage.main();
             ParcelasPage.one()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('16.Order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3876 group), lender 158, 4 installments on future receipt without interest.', () => {
@@ -545,10 +545,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ValidateService.messPrestRemoved()
             ValidateService.addInsurancePrest()
             GeralPedidosPage.adicionadoRecebAgrupado()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('17.Order: product 1921 0 0 (promo on credit 170), inclusion 3874, lender 158, 4 installments upon receipt Future with interest.', () => {
@@ -570,10 +570,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -611,12 +611,12 @@ describe('Orders with Lender Service Discount % (158)', () => {
             GeralPagamentoPage.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            ProcessoRecebPage.main()
+            ProcessoRecebPage.main();
             ParcelasPage.one()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('19.Order: product 1918 0 0 (promo on credit 167) (with warranty, do not separate) and 1860 0 0 (without promotion), inclusion 3874 (another receipt 3874 to be grouped), lender 158, 4 installments on future receipt with interest.', () => {
@@ -657,10 +657,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ValidateService.messPrestRemoved()
             ValidateService.addInsurancePrest()
             GeralPedidosPage.adicionadoRecebAgrupado()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('20.Order: product 1918 0 0 (promo a prazo 167) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3860), lender 158, 4 installments upon receipt Future without interest.', () => {
@@ -695,12 +695,12 @@ describe('Orders with Lender Service Discount % (158)', () => {
             GeralPagamentoPage.clicarGerarParcAlterarVenc()
             cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            ProcessoRecebPage.main()
+            ProcessoRecebPage.main();
             ParcelasPage.one()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('21.Order: product 1918 0 0 (promo a prazo 167) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3876 group), lender 158, 4 installments upon receipt Future without interest.', () => {
@@ -742,10 +742,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ValidateService.messPrestRemoved()
             ValidateService.addInsurancePrest()
             GeralPedidosPage.adicionadoRecebAgrupado()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('22.Order: product 1920 0 0 (promo a prazo 169) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3875 (other receipt 3874), lender 158, 4 installments upon receipt Present.', () => {
@@ -783,10 +783,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
             ProcessoRecebPage.secondForm()
             ParcelasPage.one()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('23.Order: product 1920 0 0 (promo a prazo 169) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3875 (other receipt 3875 group), lender 158, 4 installments upon receipt Present.', () => {
@@ -829,10 +829,10 @@ describe('Orders with Lender Service Discount % (158)', () => {
             ValidateService.messPrestRemoved()
             ValidateService.addInsurancePrest()
             GeralPedidosPage.adicionadoRecebAgrupado()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

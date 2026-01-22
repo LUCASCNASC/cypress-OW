@@ -10,13 +10,13 @@ import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 describe('Future delivery order', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.deliveryFutureNFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('No delivery/ process 9862 - happy path', () => {
@@ -32,13 +32,13 @@ describe('Future delivery order', () => {
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main() 
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main(); 
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order: products 1860 0 0 and 1870 0 0', () => {
@@ -61,12 +61,12 @@ describe('Future delivery order', () => {
             TirarEntrega.freightSecond() 
             AvancarPage.clickGenerateInstallments()
             GeralPagamentoPage.clicarGerarParcelas() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main() 
-            ParcelasPage.two()
-            AvancarPage.final() 
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main(); 
+            ParcelasPage.two();
+            AvancarPage.final(); 
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -83,13 +83,13 @@ describe('Future delivery order', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main() 
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main(); 
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })    
 
         it('4.Order: products 1860 0 0 and 1870 0 0', () => {
@@ -110,13 +110,13 @@ describe('Future delivery order', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter() 
             AvancarPage.toInstallments() 
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment() 
-            ProcessoRecebPage.main() 
-            ParcelasPage.two()
-            AvancarPage.final() 
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main(); 
+            ParcelasPage.two();
+            AvancarPage.final(); 
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })  
     })
 })

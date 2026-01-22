@@ -13,13 +13,13 @@ import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
 describe('Orders with Lender Service Fixed Value Discount (161)', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina() 
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina(); 
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })   
 
     context('With delivery / Products without promotion - Lender with discount Fixed Value', () => {
@@ -35,16 +35,16 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.futWithoutRebVF()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order: product 1860 0 0 e 1870 0 0, inclusion 3880, lender 161 (55.90), 4 installments upon receipt Future with interest.', () => {
@@ -66,16 +66,16 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.futWithoutRebVF()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added()
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -100,10 +100,10 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('4.Order: product 1923 0 0 + insurance does not separate (promo a prazo 172 - isentar juros serviços), inclusion 3880 (other receipt 3860), lender 161, 4 installments upon receipt Future with interest', () => {
@@ -127,10 +127,10 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('5.Order: product 1924 0 0 + insurance does not separate (promo a prazo 173 - isentar juros garantia), inclusion 3880 (other receipt 3860), lender 161, 4 installments upon receipt Future with interest', () => {
@@ -154,10 +154,10 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 
@@ -174,16 +174,16 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             Service.clickOKServiceLinked()
             AvancarPage.toTransporter()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.presentMoneyRebVF()
             ParcelasPage.for()
             ValidateService.okInsurancePrest()
             ValidadePrestamistaPage.added() 
-            AvancarPage.final()
+            AvancarPage.final();
             ValidadePrestamistaPage.pageFinal()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

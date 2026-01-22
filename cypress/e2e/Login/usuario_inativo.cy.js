@@ -4,10 +4,10 @@ import users from '../../e2e/users.json';
 describe('User inative', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         LoginPage.logoEnterpriseLogin()
         LoginPage.iconComputerLogin()
         LoginPage.userTextIcon()

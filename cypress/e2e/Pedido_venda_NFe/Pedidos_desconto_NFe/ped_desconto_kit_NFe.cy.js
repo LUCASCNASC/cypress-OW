@@ -12,13 +12,13 @@ import { GeralPedidosPage } from '../../../../pages/pedido/gerais_pedidos.js'
 describe('Order for a discounted kit', () => {
 
     beforeEach(() => {
-        cy.visit('/');
-        cy.clearAllSessionStorage();
-        cy.login(); 
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');;
+        cy.clearAllSessionStorage();;
+        cy.login();; 
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('Without delivery/ process 9862 - happy path', () => {
@@ -38,13 +38,13 @@ describe('Order for a discounted kit', () => {
             OrderDiscount.aplicarDescontoValorFixo()
             TirarEntrega.freightFirst()
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

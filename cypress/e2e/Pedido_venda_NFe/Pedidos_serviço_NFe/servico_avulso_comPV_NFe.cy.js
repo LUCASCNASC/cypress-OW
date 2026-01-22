@@ -9,13 +9,13 @@ import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
 describe('Sale of individual services, with product order already downloaded', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina() 
-        ProcessoVendaPage.saleServiceLoose()
-        cy.chooseCliente()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina(); 
+        ProcessoVendaPage.saleServiceLoose();
+        cy.chooseCliente();
     })
 
     context('Process 9888 - happy path', () => {
@@ -57,14 +57,14 @@ describe('Sale of individual services, with product order already downloaded', (
             ServicosAvulsosPage.clickAddGarantias() 
             ServicosAvulsosPage.messGarantiaAdded()
             ServicosAvulsosPage.clickCartShopping()
-            ServicosAvulsosPage.buttonAdvanceOrder()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            ServicosAvulsosPage.buttonAdvanceOrder();
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

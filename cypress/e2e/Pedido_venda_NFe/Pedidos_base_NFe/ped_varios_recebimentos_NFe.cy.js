@@ -11,13 +11,13 @@ import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 describe('Order with more than one payment method', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('No delivery/ process 9860 - happy path', () => {
@@ -34,17 +34,17 @@ describe('Order with more than one payment method', () => {
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             AgruparRecebPage.firstValueInstallment() 
-            GeralPagamentoPage.clickGenerateInstallments()  
+            GeralPagamentoPage.clickGenerateInstallments();  
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.debitTEF()
             ParcelasPage.one()
-            GeralPagamentoPage.clickGenerateInstallments()  
+            GeralPagamentoPage.clickGenerateInstallments();  
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() 
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            ProcessoRecebPage.main(); 
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order: product 1860 0 0 - with entry (3861) and another payment method (3860)', () => {
@@ -60,13 +60,13 @@ describe('Order with more than one payment method', () => {
             AvancarPage.toInstallments()
             GeralPagamentoPage.chooseEntryFormPayment()
             GeralPagamentoPage.clicarGerarPagamento()
-            GeralPagamentoPage.clickGenerateInstallments()  
+            GeralPagamentoPage.clickGenerateInstallments();  
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() 
-            ParcelasPage.two()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            ProcessoRecebPage.main(); 
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('3.Order: product 1860 0 0 - two payment methods (3860) - click to NOT group', () => {
@@ -81,18 +81,18 @@ describe('Order with more than one payment method', () => {
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             AgruparRecebPage.firstValueInstallment() 
-            GeralPagamentoPage.clickGenerateInstallments()  
+            GeralPagamentoPage.clickGenerateInstallments();  
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main()
+            ProcessoRecebPage.main();
             ParcelasPage.one()
-            GeralPagamentoPage.clickGenerateInstallments()  
+            GeralPagamentoPage.clickGenerateInstallments();  
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() 
+            ProcessoRecebPage.main(); 
             ParcelasPage.one()
             AgruparRecebPage.notGroupReleases()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('4.Order: product 1860 0 0 - two identical payment methods (3860) - click to group YES', () => {
@@ -107,18 +107,18 @@ describe('Order with more than one payment method', () => {
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             AgruparRecebPage.firstValueInstallment()
-            GeralPagamentoPage.clickGenerateInstallments()
+            GeralPagamentoPage.clickGenerateInstallments();
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main()
+            ProcessoRecebPage.main();
             ParcelasPage.one()
-            GeralPagamentoPage.clickGenerateInstallments()
+            GeralPagamentoPage.clickGenerateInstallments();
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main()
+            ProcessoRecebPage.main();
             ParcelasPage.one()
             AgruparRecebPage.groupReleases()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('5.Order: product 1860 0 0 - two identical payment methods (3860) - click to NOT group, but then group by selecting both.', () => {
@@ -133,19 +133,19 @@ describe('Order with more than one payment method', () => {
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             AgruparRecebPage.firstValueInstallment()
-            GeralPagamentoPage.clickGenerateInstallments() 
+            GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main()
+            ProcessoRecebPage.main();
             ParcelasPage.one()
-            GeralPagamentoPage.clickGenerateInstallments() 
+            GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.main() 
+            ProcessoRecebPage.main(); 
             AgruparRecebPage.notGroupReleases()
             AgruparRecebPage.selectReleasesGroup()
             AgruparRecebPage.clickGroup()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })

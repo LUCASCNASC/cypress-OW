@@ -4,13 +4,13 @@ import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
 describe('Attempting a sales order with an out-of-stock product - Stock rule: Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
         context('Process 9860 - do not allow sale - warning messages should appear when adding a product', () => {

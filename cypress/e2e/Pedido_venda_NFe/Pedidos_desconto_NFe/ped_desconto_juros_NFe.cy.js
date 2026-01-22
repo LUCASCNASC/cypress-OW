@@ -11,13 +11,13 @@ import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
 describe('PStandard order with interest discount - parameters 243 and 244 defined in the inclusion process', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.clearAllSessionStorage()
-        cy.login()
-        cy.urlAposLogin()
-        cy.tituloPagina()
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.urlAposLogin();
+        cy.tituloPagina();
         ProcessoVendaPage.NFe() 
-        cy.chooseCliente()
+        cy.chooseCliente();
     })
 
     context('Without delivery/ process 9860 - happy path - inclusion process 3860', () => {
@@ -33,17 +33,17 @@ describe('PStandard order with interest discount - parameters 243 and 244 define
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
             ParcelasPage.one()
             OrderDiscount.dragFormPayment() 
             OrderDiscount.clickChangeValue()
             OrderDiscount.modalChangeValue()
             OrderDiscount.changeValueToLow()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
 
         it('2.Order: products 1860 0 0 - round up', () => {
@@ -57,17 +57,17 @@ describe('PStandard order with interest discount - parameters 243 and 244 define
             Service.clickOKServiceLinked()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
-            GeralPagamentoPage.clickGenerateInstallments() 
-            GeralPagamentoPage.loadingFormPayment()
-            ProcessoRecebPage.main()
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
             ParcelasPage.one()
             OrderDiscount.dragFormPayment() 
             OrderDiscount.clickChangeValue()
             OrderDiscount.modalChangeValue()
             OrderDiscount.changeValueToTop()
-            AvancarPage.final()
-            cy.clickFinalizarPedidoPage()
-            cy.validateOrderGenerated()
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
         })
     })
 })
