@@ -19,20 +19,20 @@ describe('Register complete client', () => {
 
         it('1.Complete customer CPF - happy path', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto()
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto();
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()

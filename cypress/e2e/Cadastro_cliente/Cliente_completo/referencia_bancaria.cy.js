@@ -19,20 +19,20 @@ describe('Register complete client', () => {
 
         it('1.Full customer CPF - PIX key type Correct phone number', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto() 
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto(); 
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()
@@ -83,20 +83,20 @@ describe('Register complete client', () => {
 
         it('2.Full customer CPF - PIX key type Correct email', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto() 
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto(); 
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()
@@ -147,20 +147,20 @@ describe('Register complete client', () => {
 
         it('3.Full customer CPF - PIX key type CPF CNPJ correct', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto() 
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto(); 
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()
@@ -211,20 +211,20 @@ describe('Register complete client', () => {
 
         it('4.Full customer CPF - PIX key type CPF CNPJ correct', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto() 
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto(); 
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()
@@ -275,20 +275,20 @@ describe('Register complete client', () => {
 
         it('5.Full customer CPF - validate PIX key type Incorrect phone number', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto()
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto();
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()
@@ -338,20 +338,20 @@ describe('Register complete client', () => {
 
         it('6.Full customer CPF - validate PIX key type. Incorrect email', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto()
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto();
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()
@@ -401,20 +401,20 @@ describe('Register complete client', () => {
 
         it('7.Full customer CPF - validate CPF key type. Incorrect CNPJ', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto()
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto();
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()
@@ -464,20 +464,20 @@ describe('Register complete client', () => {
 
         it('8.Full customer CPF - validate incorrect random key type', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes()
-            ClienteCompletoPage.clickOpcaoClienteCompleto()
-            PessoaPage.fillCPFCliente()
-            PessoaPage.fillNomeCompleto()
-            PessoaPage.fillNomeSocial()
-            PessoaPage.fillDataNascimento()
-            PessoaPage.chooseSexoCliente()
+            ClienteCompletoPage.clickMenuOpcoes();
+            ClienteCompletoPage.clickOpcaoClienteCompleto();
+            PessoaPage.fillCPFCliente();
+            PessoaPage.fillNomeCompleto();
+            PessoaPage.fillNomeSocial();
+            PessoaPage.fillDataNascimento();
+            PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateMessageEnderecoObrigatorio() 
-            EnderecoPage.clickAbaEndereco() 
-            EnderecoPage.clickAdicionarNovoEndereco()
+            ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
+            EnderecoPage.clickAbaEndereco(); 
+            EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.tipoEndereco()
-            EnderecoPage.validateEnderecoVazio()
-            EnderecoPage.clickAbrirTipoEndereco()
+            EnderecoPage.validateEnderecoVazio();
+            EnderecoPage.clickAbrirTipoEndereco();
             EnderecoPage.chooseTipoEndereco()
             EnderecoPage.fillCEPEndereco()
             EnderecoPage.fillNumeroEndereco()
