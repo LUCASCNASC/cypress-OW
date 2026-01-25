@@ -32,29 +32,29 @@ describe('Register complete client', () => {
             EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota()
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota();
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
             ClienteCompletoPage.clickSalvarCliente();
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         })  
 
         it('2.Customer full CPF - required fields message', () => {
@@ -73,75 +73,75 @@ describe('Register complete client', () => {
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota()
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone()
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota();
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone();
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
             ClienteCompletoPage.clickSalvarCliente();
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         })  
 
         it('3.Complete customer CNPJ', () => {
     
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto(); 
-            PessoaPage.fillCNPJCliente()
-            PessoaPage.fillNomeCNPJ()
-            PessoaPage.fillNomeFantasiaCliente()
+            PessoaPage.fillCNPJCliente();
+            PessoaPage.fillNomeCNPJ();
+            PessoaPage.fillNomeFantasiaCliente();
             ClienteCompletoPage.clickSalvarCliente(); 
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco();
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota()
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone()
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota();
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone();
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
             ClienteCompletoPage.clickSalvarCliente();
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
     })
 
@@ -159,43 +159,43 @@ describe('Register complete client', () => {
             ClienteCompletoPage.clickSalvarCliente();
             EnderecoPage.clickAbaEndereco();
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota()
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone()
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota();
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone();
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
             ClienteCompletoPage.clickSalvarCliente();
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
             ClienteCompletoPage.clickMenuCadastrarClienteCompleto()
-            AnexoPage.clickAbaAnexo()
-            AnexoPage.validateAbaAnexoVazio()
-            AnexoPage.selectPrimeiroTipoAnexo()
-            AnexoPage.filePDF()
-            AnexoPage.confirmEnvioArquivo()
-            AnexoPage.validateMessageAnexoAdicionado()
-            AnexoPage.validateAnexoAdicionado()
+            AnexoPage.clickAbaAnexo();
+            AnexoPage.validateAbaAnexoVazio();
+            AnexoPage.selectPrimeiroTipoAnexo();
+            AnexoPage.filePDF();
+            AnexoPage.confirmEnvioArquivo();
+            AnexoPage.validateMessageAnexoAdicionado();
+            AnexoPage.validateAnexoAdicionado();
             ClienteCompletoPage.clickSalvarCliente();
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         })
     })
 })

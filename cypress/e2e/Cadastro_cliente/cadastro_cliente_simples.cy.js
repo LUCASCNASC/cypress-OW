@@ -19,109 +19,109 @@ describe('Register a simple customer', () => {
 
         it('1.Simple customer CPF', () => {
 
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.fillCPFCliente()
-            ClienteSimplesPage.fillNomeCompletoCPF()
-            ClienteSimplesPage.fillDataNascimento()
-            ClienteSimplesPage.sexPersonPhysical()
-            ClienteSimplesPage.searchCEP()
-            ClienteSimplesPage.fillNumeroEndereco()
-            ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
+            ClienteSimplesPage.fillCPFCliente();
+            ClienteSimplesPage.fillNomeCompletoCPF();
+            ClienteSimplesPage.fillDataNascimento();
+            ClienteSimplesPage.sexPersonPhysical();
+            ClienteSimplesPage.searchCEP();
+            ClienteSimplesPage.fillNumeroEndereco();
+            ClienteSimplesPage.routeClient();
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
         })  
 
         it('2.Simple customer CPF - change address immediately after registering', () => {
     
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.fillCPFCliente()
-            ClienteSimplesPage.fillNomeCompletoCPF()
-            ClienteSimplesPage.fillDataNascimento()
-            ClienteSimplesPage.sexPersonPhysical()
-            ClienteSimplesPage.searchCEP()
-            ClienteSimplesPage.fillNumeroEndereco()
-            ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.clickMenuOpcoes() 
-            ClienteSimplesPage.optionClientSimple()
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
+            ClienteSimplesPage.fillCPFCliente();
+            ClienteSimplesPage.fillNomeCompletoCPF();
+            ClienteSimplesPage.fillDataNascimento();
+            ClienteSimplesPage.sexPersonPhysical();
+            ClienteSimplesPage.searchCEP();
+            ClienteSimplesPage.fillNumeroEndereco();
+            ClienteSimplesPage.routeClient();
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
 
             //Campo CEP - alterar
             cy.get('#txtCep')
                 .should('be.visible')
                 .clear({force:true})
                 .and('have.value','')
-                .type(CEPalteracao, {force:true})
+                .type(CEPalteracao, {force:true});
 
             //Lupa de pesquisa do CEP
             cy.get('.md-icon-float > .ng-binding')
                 .should('be.visible')
-                .and('not.have.attr', 'disabled')
+                .and('not.have.attr', 'disabled');
 
             //Clicar na lupa de pesquisa do CEP
             cy.get('.md-icon-float > .ng-binding')
-                .click({force:true})
+                .click({force:true});
 
             //Campo Número, do endereço
             cy.get('#txtNumero')
                 .should('be.visible')
                 .clear({force:true})
                 .and('have.value','')
-                .type(Numeroalteracao, {force:true})
+                .type(Numeroalteracao, {force:true});
 
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
         })
 
         it('3.Simple customer CPF - change date of birth immediately after registering', () => {
     
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.fillCPFCliente()
-            ClienteSimplesPage.fillNomeCompletoCPF()
-            ClienteSimplesPage.fillDataNascimento()
-            ClienteSimplesPage.sexPersonPhysical()
-            ClienteSimplesPage.searchCEP()
-            ClienteSimplesPage.fillNumeroEndereco()
-            ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
+            ClienteSimplesPage.fillCPFCliente();
+            ClienteSimplesPage.fillNomeCompletoCPF();
+            ClienteSimplesPage.fillDataNascimento();
+            ClienteSimplesPage.sexPersonPhysical();
+            ClienteSimplesPage.searchCEP();
+            ClienteSimplesPage.fillNumeroEndereco();
+            ClienteSimplesPage.routeClient();
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
 
             cy.contains('Data de nascimento').parent().find('input')
                 .scrollIntoView()
-                .wait(200)
+                .wait(200);
 
             //Alteração - Campo data de nascimento
             cy.contains('Data de nascimento').parent().find('input')
                 .should('be.visible')
                 .clear()
                 .should('have.value','')
-                .type("10/10/1990", {force:true})
+                .type("10/10/1990", {force:true});
 
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
         })  
 
         it('4.Simple CPF customer - change date of birth (must request a trial)', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
     
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
 
             //Campo CPF - validando mensagem dentro do campo antes de preencher
             cy.get('label[for="txtCpf"]')
-                .should('have.text', 'CPF')
+                .should('have.text', 'CPF');
 
             //Campo CPF 
             cy.get('#txtCpf')
                 .should('be.visible')
                 .and('have.value','')
-                .type(cpf, {force: true})
+                .type(cpf, {force: true});
 
             //Copiar cpf colocado no campo
             cy.get('#txtCpf')
@@ -130,19 +130,19 @@ describe('Register a simple customer', () => {
                     // Aqui você pode usar 'value' como precisar
                 });
 
-            ClienteSimplesPage.fillNomeCompletoCPF()
-            ClienteSimplesPage.fillDataNascimento()
-            ClienteSimplesPage.sexPersonPhysical()
-            ClienteSimplesPage.searchCEP()
-            ClienteSimplesPage.fillNumeroEndereco()
-            ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.clickOutSystem()
-            ClienteSimplesPage.loginAgain()
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
+            ClienteSimplesPage.fillNomeCompletoCPF();
+            ClienteSimplesPage.fillDataNascimento();
+            ClienteSimplesPage.sexPersonPhysical();
+            ClienteSimplesPage.searchCEP();
+            ClienteSimplesPage.fillNumeroEndereco();
+            ClienteSimplesPage.routeClient();
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.clickOutSystem();
+            ClienteSimplesPage.loginAgain();
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
 
             //Preencher campo CPF - para alterar o cadastro que acabamos de gerar
             cy.get('#txtCpf')
@@ -178,18 +178,18 @@ describe('Register a simple customer', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
 
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
 
             //Campo CPF - validando mensagem dentro do campo antes de preencher
             cy.get('label[for="txtCpf"]')
-                .should('have.text', 'CPF')
+                .should('have.text', 'CPF');
 
             //Campo CPF 
             cy.get('#txtCpf')
                 .should('be.visible')
                 .and('have.value','')
-                .type(cpf, {force: true})
+                .type(cpf, {force: true});
 
             //Copiar cpf colocado no campo
             cy.get('#txtCpf')
@@ -198,19 +198,19 @@ describe('Register a simple customer', () => {
                     // Aqui você pode usar 'value' como precisar
                 });
 
-            ClienteSimplesPage.fillNomeCompletoCPF()
-            ClienteSimplesPage.fillDataNascimento()
-            ClienteSimplesPage.sexPersonPhysical()
-            ClienteSimplesPage.searchCEP()
-            ClienteSimplesPage.fillNumeroEndereco()
-            ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.loginAgain() 
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
+            ClienteSimplesPage.fillNomeCompletoCPF();
+            ClienteSimplesPage.fillDataNascimento();
+            ClienteSimplesPage.sexPersonPhysical();
+            ClienteSimplesPage.searchCEP();
+            ClienteSimplesPage.fillNumeroEndereco();
+            ClienteSimplesPage.routeClient();
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
+            ClienteSimplesPage.loginAgain();
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
 
             //Preencher campo CPF - para alterar o cadastro que acabamos de gerar
             cy.get('#txtCpf')
@@ -245,58 +245,58 @@ describe('Register a simple customer', () => {
 
         it('6.Simple customer CNPJ', () => {
     
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.arrastarPessoaJuridica()
-            ClienteSimplesPage.fillCNPJCliente()
-            ClienteSimplesPage.fillNomeCompletoCNPJ()
-            ClienteSimplesPage.searchCEP()
-            ClienteSimplesPage.fillNumeroEndereco()
-            ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
+            ClienteSimplesPage.arrastarPessoaJuridica();
+            ClienteSimplesPage.fillCNPJCliente();
+            ClienteSimplesPage.fillNomeCompletoCNPJ();
+            ClienteSimplesPage.searchCEP();
+            ClienteSimplesPage.fillNumeroEndereco();
+            ClienteSimplesPage.routeClient();
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
         })
 
         it('7.Simple Customer CNPJ - Change Address', () => {
 
-            ClienteSimplesPage.clickMenuOpcoes()
-            ClienteSimplesPage.optionClientSimple()
-            ClienteSimplesPage.arrastarPessoaJuridica()
-            ClienteSimplesPage.fillCNPJCliente()
-            ClienteSimplesPage.fillNomeCompletoCNPJ()
-            ClienteSimplesPage.searchCEP()
-            ClienteSimplesPage.fillNumeroEndereco()
-            ClienteSimplesPage.routeClient()
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
-            ClienteSimplesPage.clickMenuOpcoes() 
-            ClienteSimplesPage.optionClientSimple()
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
+            ClienteSimplesPage.arrastarPessoaJuridica();
+            ClienteSimplesPage.fillCNPJCliente();
+            ClienteSimplesPage.fillNomeCompletoCNPJ();
+            ClienteSimplesPage.searchCEP();
+            ClienteSimplesPage.fillNumeroEndereco();
+            ClienteSimplesPage.routeClient();
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
+            ClienteSimplesPage.clickMenuOpcoes();
+            ClienteSimplesPage.optionClientSimple();
 
             //Campo CEP - alterar
             cy.get('#txtCep')
                 .should('be.visible')
                 .clear({force:true})
                 .and('have.value','')
-                .type(CEPalteracao, {force:true})
+                .type(CEPalteracao, {force:true});
 
             //Lupa de pesquisa do CEP
             cy.get('.md-icon-float > .ng-binding')
                 .should('be.visible')
-                .and('not.have.attr', 'disabled')
+                .and('not.have.attr', 'disabled');
 
             //Clicar na lupa de pesquisa do CEP
             cy.get('.md-icon-float > .ng-binding')
-                .click({force:true})
+                .click({force:true});
 
             //Campo Número, do endereço
             cy.get('#txtNumero')
                 .should('be.visible')
                 .clear({force:true})
                 .and('have.value','')
-                .type(Numeroalteracao, {force:true})
+                .type(Numeroalteracao, {force:true});
 
-            ClienteSimplesPage.clickSalvarClienteCompletoSimple()
-            ClienteSimplesPage.messFirstRegistSaveSucess()
+            ClienteSimplesPage.clickSalvarClienteCompletoSimple();
+            ClienteSimplesPage.messFirstRegistSaveSucess();
         })
     })
 
@@ -307,58 +307,58 @@ describe('Register a simple customer', () => {
             //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
             cy.get('.click-cliente > .informe-o-cliente > .cliente-header')
                 .wait(800)
-                .type(numeroCPF,'{downArrow}')
+                .type(numeroCPF,'{downArrow}');
 
             //clicar na lupa de pesquisa de clientes
             cy.get('.md-block > .ng-binding')
                 .should('be.visible')
-                .click()
+                .click();
 
-            cy.wait(2000)
+            cy.wait(2000);
 
             //Card inteiro de Clientes
             cy.get('.md-dialog-fullscreen')
-                .should('be.visible')
+                .should('be.visible');
 
             //Card de clientes - Título Clientes
             cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .flex')
                 .should('be.visible')
-                .and('have.text', 'Clientes')
+                .and('have.text', 'Clientes');
 
             //Card de clientes - Botão X
             cy.get('.md-dialog-fullscreen > ._md-toolbar-transitions > .md-toolbar-tools > .md-icon-button > .ng-binding')
                 .should('be.visible')
-                .and('not.have.attr', 'disabled')
+                .and('not.have.attr', 'disabled');
 
                 //Card de clientes - Texto Digite o nome ou o CPF do cliente para busca
             cy.get('label[for="txtBuscaClienteModal"]')
                 .should('have.text', 'Digite o nome ou o CPF do cliente para busca')
-                .and('be.visible')
+                .and('be.visible');
 
             //Card de clientes - Botão de cadastrar novo cliente
             cy.get('[ng-click="novoCliente()"] > .ng-binding')
                 .should('be.visible')
-                .and('not.have.attr', 'disabled')
+                .and('not.have.attr', 'disabled');
 
             //Card de clientes - Botão comando de voz
             cy.get('[ng-click="capturarVozCliente()"] > .ng-binding')
                 .should('be.visible')
-                .and('not.have.attr', 'disabled')
+                .and('not.have.attr', 'disabled');
 
             //Card de clientes - campo para digitar cliente
             cy.get('#txtBuscaClienteModal')
                 .should('be.visible')
                 .invoke('val')
-                .should('not.be.empty')
+                .should('not.be.empty');
 
             //Card de clientes - Clicar no botão de cadastrar novo cliente
             cy.get('[ng-click="novoCliente()"] > .ng-binding')
-                .click({force:true})
+                .click({force:true});
 
             //Tela de Cadastro de Cliente - botão CLIENTE - validar se realmente redirecionou para lá
             cy.get('.md-default')
                 .should('be.visible')
-                .and('not.have.attr', 'disabled')
+                .and('not.have.attr', 'disabled');
         })
     })
 })

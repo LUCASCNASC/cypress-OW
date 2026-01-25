@@ -30,46 +30,46 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
-            RefComercialPage.clickAbaRefCommercial()
-            RefComercialPage.validadeRefCommercialEmpty()
-            RefComercialPage.clickAddNewRefCommercial()
-            RefComercialPage.modalRefCommercialEmpty()
-            RefComercialPage.enterprise()
-            RefComercialPage.contact()
-            RefComercialPage.phone()
-            RefComercialPage.email()
-            RefComercialPage.observation()
-            RefComercialPage.clickSaveRefCommercial()
-            RefComercialPage.infoRefCommercialAdded()
-            RefComercialPage.messRefCommercialAddedSucess()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias() ;
+            RefComercialPage.clickAbaRefCommercial();
+            RefComercialPage.validadeRefCommercialEmpty();
+            RefComercialPage.clickAddNewRefCommercial();
+            RefComercialPage.modalRefCommercialEmpty();
+            RefComercialPage.enterprise();
+            RefComercialPage.contact();
+            RefComercialPage.phone();
+            RefComercialPage.email();
+            RefComercialPage.observation();
+            RefComercialPage.clickSaveRefCommercial();
+            RefComercialPage.infoRefCommercialAdded();
+            RefComercialPage.messRefCommercialAddedSucess();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
     })
 })

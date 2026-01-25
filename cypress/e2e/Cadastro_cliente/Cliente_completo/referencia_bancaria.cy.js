@@ -26,59 +26,59 @@ describe('Register complete client', () => {
             PessoaPage.fillNomeSocial();
             PessoaPage.fillDataNascimento();
             PessoaPage.chooseSexoCliente();
-            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.clickSalvarClienteCompleto();
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
-            GeneralRefBanking.clickAbaReferenciaBancaria()
-            GeneralRefBanking.validateAbaReferenciaBancariaVazia()
-            GeneralRefBanking.clickAddNovaReferenciaBancaria()
-            GeneralRefBanking.modalReferenciaBancariaVazia()
-            RefBancariaPage.fillBanco()
-            RefBancariaPage.fillAgencia()
-            RefBancariaPage.fillConta()
-            RefBancariaPage.fillDataAbertura()
-            RefBancariaPage.fillTelefone()
-            RefBancariaPage.fillGerente()
-            RefBancariaPage.fillEmail()
-            RefBancariaPage.cpfAccountHolder()
-            RefBancariaPage.nameAccountHolder()
-            RefBancariaPage.typeAccount()
-            RefBancariaPage.operation()
-            RefBancariaPage.formPayment()
-            RefBancariaPage.typeKeyPixPhone()
-            RefBancariaPage.keyPixPhone()
-            GeneralRefBanking.clickSalvarReferenciaBancaria()
-            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso()
-            GeneralRefBanking.infoReferenciaBancariaAdicionada()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias();
+            GeneralRefBanking.clickAbaReferenciaBancaria();
+            GeneralRefBanking.validateAbaReferenciaBancariaVazia();
+            GeneralRefBanking.clickAddNovaReferenciaBancaria();
+            GeneralRefBanking.modalReferenciaBancariaVazia();
+            RefBancariaPage.fillBanco();
+            RefBancariaPage.fillAgencia();
+            RefBancariaPage.fillConta();
+            RefBancariaPage.fillDataAbertura();
+            RefBancariaPage.fillTelefone();
+            RefBancariaPage.fillGerente();
+            RefBancariaPage.fillEmail();
+            RefBancariaPage.cpfAccountHolder();
+            RefBancariaPage.nameAccountHolder();
+            RefBancariaPage.typeAccount();
+            RefBancariaPage.operation();
+            RefBancariaPage.formPayment();
+            RefBancariaPage.typeKeyPixPhone();
+            RefBancariaPage.keyPixPhone();
+            GeneralRefBanking.clickSalvarReferenciaBancaria();
+            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso();
+            GeneralRefBanking.infoReferenciaBancariaAdicionada();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         })  
 
         it('2.Full customer CPF - PIX key type Correct email', () => {
@@ -90,59 +90,59 @@ describe('Register complete client', () => {
             PessoaPage.fillNomeSocial();
             PessoaPage.fillDataNascimento();
             PessoaPage.chooseSexoCliente();
-            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.clickSalvarClienteCompleto();
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias() ;
             GeneralRefBanking.clickAbaReferenciaBancaria()
-            GeneralRefBanking.validateAbaReferenciaBancariaVazia()
-            GeneralRefBanking.clickAddNovaReferenciaBancaria()
-            GeneralRefBanking.modalReferenciaBancariaVazia()
-            RefBancariaPage.fillBanco()
-            RefBancariaPage.fillAgencia()
-            RefBancariaPage.fillConta()
-            RefBancariaPage.fillDataAbertura()
-            RefBancariaPage.fillTelefone()
-            RefBancariaPage.fillGerente()
-            RefBancariaPage.fillEmail()
-            RefBancariaPage.cpfAccountHolder()
-            RefBancariaPage.nameAccountHolder()
-            RefBancariaPage.typeAccount()
-            RefBancariaPage.operation()
-            RefBancariaPage.formPayment()
-            RefBancariaPage.typeKeyPixEmail()
-            RefBancariaPage.keyPixEmail()
-            GeneralRefBanking.clickSalvarReferenciaBancaria()
-            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso()
-            GeneralRefBanking.infoReferenciaBancariaAdicionada()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            GeneralRefBanking.validateAbaReferenciaBancariaVazia();
+            GeneralRefBanking.clickAddNovaReferenciaBancaria();
+            GeneralRefBanking.modalReferenciaBancariaVazia();
+            RefBancariaPage.fillBanco();
+            RefBancariaPage.fillAgencia();
+            RefBancariaPage.fillConta();
+            RefBancariaPage.fillDataAbertura();
+            RefBancariaPage.fillTelefone();
+            RefBancariaPage.fillGerente();
+            RefBancariaPage.fillEmail();
+            RefBancariaPage.cpfAccountHolder();
+            RefBancariaPage.nameAccountHolder();
+            RefBancariaPage.typeAccount();
+            RefBancariaPage.operation();
+            RefBancariaPage.formPayment();
+            RefBancariaPage.typeKeyPixEmail();
+            RefBancariaPage.keyPixEmail();
+            GeneralRefBanking.clickSalvarReferenciaBancaria();
+            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso();
+            GeneralRefBanking.infoReferenciaBancariaAdicionada();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
 
         it('3.Full customer CPF - PIX key type CPF CNPJ correct', () => {
@@ -158,55 +158,55 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
-            GeneralRefBanking.clickAbaReferenciaBancaria()
-            GeneralRefBanking.validateAbaReferenciaBancariaVazia()
-            GeneralRefBanking.clickAddNovaReferenciaBancaria()
-            GeneralRefBanking.modalReferenciaBancariaVazia()
-            RefBancariaPage.fillBanco()
-            RefBancariaPage.fillAgencia()
-            RefBancariaPage.fillConta()
-            RefBancariaPage.fillDataAbertura()
-            RefBancariaPage.fillTelefone()
-            RefBancariaPage.fillGerente()
-            RefBancariaPage.fillEmail()
-            RefBancariaPage.cpfAccountHolder()
-            RefBancariaPage.nameAccountHolder()
-            RefBancariaPage.typeAccount()
-            RefBancariaPage.operation()
-            RefBancariaPage.formPayment()
-            RefBancariaPage.typeKeyPixCpfCnpj()
-            RefBancariaPage.keyPixCPF()
-            GeneralRefBanking.clicarSalvarRefBanclickSalvarReferenciaBancariacaria()
-            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso()
-            GeneralRefBanking.infoReferenciaBancariaAdicionada()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias();
+            GeneralRefBanking.clickAbaReferenciaBancaria();
+            GeneralRefBanking.validateAbaReferenciaBancariaVazia();
+            GeneralRefBanking.clickAddNovaReferenciaBancaria();
+            GeneralRefBanking.modalReferenciaBancariaVazia();
+            RefBancariaPage.fillBanco();
+            RefBancariaPage.fillAgencia();
+            RefBancariaPage.fillConta();
+            RefBancariaPage.fillDataAbertura();
+            RefBancariaPage.fillTelefone();
+            RefBancariaPage.fillGerente();
+            RefBancariaPage.fillEmail();
+            RefBancariaPage.cpfAccountHolder();
+            RefBancariaPage.nameAccountHolder();
+            RefBancariaPage.typeAccount();
+            RefBancariaPage.operation();
+            RefBancariaPage.formPayment();
+            RefBancariaPage.typeKeyPixCpfCnpj();
+            RefBancariaPage.keyPixCPF();
+            GeneralRefBanking.clicarSalvarRefBanclickSalvarReferenciaBancariacaria();
+            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso();
+            GeneralRefBanking.infoReferenciaBancariaAdicionada();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
 
         it('4.Full customer CPF - PIX key type CPF CNPJ correct', () => {
@@ -222,55 +222,55 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
-            GeneralRefBanking.clickAbaReferenciaBancaria()
-            GeneralRefBanking.validateAbaReferenciaBancariaVazia()
-            GeneralRefBanking.clickAddNovaReferenciaBancaria()
-            GeneralRefBanking.modalReferenciaBancariaVazia()
-            RefBancariaPage.fillBanco()
-            RefBancariaPage.fillAgencia()
-            RefBancariaPage.fillConta()
-            RefBancariaPage.fillDataAbertura()
-            RefBancariaPage.fillTelefone()
-            RefBancariaPage.fillGerente()
-            RefBancariaPage.fillEmail()
-            RefBancariaPage.cpfAccountHolder()
-            RefBancariaPage.nameAccountHolder()
-            RefBancariaPage.typeAccount()
-            RefBancariaPage.operation()
-            RefBancariaPage.formPayment()
-            RefBancariaPage.typeKeyPixRandom()
-            RefBancariaPage.keyPixRandom()
-            GeneralRefBanking.clickSalvarReferenciaBancaria()
-            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso()
-            GeneralRefBanking.infoReferenciaBancariaAdicionada()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            ClienteCompletoPage.validateModalAguardeCarregando()
-            ClienteCompletoPage.validateMessageSalvoSucesso()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias();
+            GeneralRefBanking.clickAbaReferenciaBancaria();
+            GeneralRefBanking.validateAbaReferenciaBancariaVazia();
+            GeneralRefBanking.clickAddNovaReferenciaBancaria();
+            GeneralRefBanking.modalReferenciaBancariaVazia();
+            RefBancariaPage.fillBanco();
+            RefBancariaPage.fillAgencia();
+            RefBancariaPage.fillConta();
+            RefBancariaPage.fillDataAbertura();
+            RefBancariaPage.fillTelefone();
+            RefBancariaPage.fillGerente();
+            RefBancariaPage.fillEmail();
+            RefBancariaPage.cpfAccountHolder();
+            RefBancariaPage.nameAccountHolder();
+            RefBancariaPage.typeAccount();
+            RefBancariaPage.operation();
+            RefBancariaPage.formPayment();
+            RefBancariaPage.typeKeyPixRandom();
+            RefBancariaPage.keyPixRandom();
+            GeneralRefBanking.clickSalvarReferenciaBancaria();
+            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso();
+            GeneralRefBanking.infoReferenciaBancariaAdicionada();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
 
         it('5.Full customer CPF - validate PIX key type Incorrect phone number', () => {
@@ -286,54 +286,54 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
-            GeneralRefBanking.clickAbaReferenciaBancaria()
-            GeneralRefBanking.validateAbaReferenciaBancariaVazia()
-            GeneralRefBanking.clickAddNovaReferenciaBancaria()
-            GeneralRefBanking.modalReferenciaBancariaVazia()
-            RefBancariaPage.fillBanco()
-            RefBancariaPage.fillAgencia()
-            RefBancariaPage.fillConta()
-            RefBancariaPage.fillDataAbertura()
-            RefBancariaPage.fillTelefone()
-            RefBancariaPage.fillGerente()
-            RefBancariaPage.fillEmail()
-            RefBancariaPage.cpfAccountHolder()
-            RefBancariaPage.nameAccountHolder()
-            RefBancariaPage.typeAccount()
-            RefBancariaPage.operation()
-            RefBancariaPage.formPayment()
-            RefBancariaPage.typeKeyPixPhone()
-            RefBancariaPage.keyPixPhoneWrong()
-            GeneralRefBanking.clickSalvarReferenciaBancaria()
-            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso()
-            GeneralRefBanking.infoReferenciaBancariaAdicionada()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            GeneralRefBanking.messRefBankingKeyPixPhoneInvalid()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias() ;
+            GeneralRefBanking.clickAbaReferenciaBancaria();
+            GeneralRefBanking.validateAbaReferenciaBancariaVazia();
+            GeneralRefBanking.clickAddNovaReferenciaBancaria();
+            GeneralRefBanking.modalReferenciaBancariaVazia();
+            RefBancariaPage.fillBanco();
+            RefBancariaPage.fillAgencia();
+            RefBancariaPage.fillConta();
+            RefBancariaPage.fillDataAbertura();
+            RefBancariaPage.fillTelefone();
+            RefBancariaPage.fillGerente();
+            RefBancariaPage.fillEmail();
+            RefBancariaPage.cpfAccountHolder();
+            RefBancariaPage.nameAccountHolder();
+            RefBancariaPage.typeAccount();
+            RefBancariaPage.operation();
+            RefBancariaPage.formPayment();
+            RefBancariaPage.typeKeyPixPhone();
+            RefBancariaPage.keyPixPhoneWrong();
+            GeneralRefBanking.clickSalvarReferenciaBancaria();
+            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso();
+            GeneralRefBanking.infoReferenciaBancariaAdicionada();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            GeneralRefBanking.messRefBankingKeyPixPhoneInvalid();
         })  
 
         it('6.Full customer CPF - validate PIX key type. Incorrect email', () => {
@@ -349,54 +349,54 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
-            GeneralRefBanking.clickAbaReferenciaBancaria()
-            GeneralRefBanking.validateAbaReferenciaBancariaVazia()
-            GeneralRefBanking.clickAddNovaReferenciaBancaria()
-            GeneralRefBanking.modalReferenciaBancariaVazia()
-            RefBancariaPage.fillBanco()
-            RefBancariaPage.fillAgencia()
-            RefBancariaPage.fillConta()
-            RefBancariaPage.fillDataAbertura()
-            RefBancariaPage.fillTelefone()
-            RefBancariaPage.fillGerente()
-            RefBancariaPage.fillEmail()
-            RefBancariaPage.cpfAccountHolder()
-            RefBancariaPage.nameAccountHolder()
-            RefBancariaPage.typeAccount()
-            RefBancariaPage.operation()
-            RefBancariaPage.formPayment()
-            RefBancariaPage.typeKeyPixEmail()
-            RefBancariaPage.keyPixEmailWrong()
-            GeneralRefBanking.clickSalvarReferenciaBancaria()
-            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso()
-            GeneralRefBanking.infoReferenciaBancariaAdicionada()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            GeneralRefBanking.messRefBankingKeyPixEmailInvalid()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias();
+            GeneralRefBanking.clickAbaReferenciaBancaria();
+            GeneralRefBanking.validateAbaReferenciaBancariaVazia();
+            GeneralRefBanking.clickAddNovaReferenciaBancaria();
+            GeneralRefBanking.modalReferenciaBancariaVazia();
+            RefBancariaPage.fillBanco();
+            RefBancariaPage.fillAgencia();
+            RefBancariaPage.fillConta();
+            RefBancariaPage.fillDataAbertura();
+            RefBancariaPage.fillTelefone();
+            RefBancariaPage.fillGerente();
+            RefBancariaPage.fillEmail();
+            RefBancariaPage.cpfAccountHolder();
+            RefBancariaPage.nameAccountHolder();
+            RefBancariaPage.typeAccount();
+            RefBancariaPage.operation();
+            RefBancariaPage.formPayment();
+            RefBancariaPage.typeKeyPixEmail();
+            RefBancariaPage.keyPixEmailWrong();
+            GeneralRefBanking.clickSalvarReferenciaBancaria();
+            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso();
+            GeneralRefBanking.infoReferenciaBancariaAdicionada();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            GeneralRefBanking.messRefBankingKeyPixEmailInvalid();
         })  
 
         it('7.Full customer CPF - validate CPF key type. Incorrect CNPJ', () => {
@@ -412,54 +412,54 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
-            GeneralRefBanking.clickAbaReferenciaBancaria()
-            GeneralRefBanking.validateAbaReferenciaBancariaVazia()
-            GeneralRefBanking.clickAddNovaReferenciaBancaria()
-            GeneralRefBanking.modalReferenciaBancariaVazia()
-            RefBancariaPage.fillBanco()
-            RefBancariaPage.fillAgencia()
-            RefBancariaPage.fillConta()
-            RefBancariaPage.fillDataAbertura()
-            RefBancariaPage.fillTelefone()
-            RefBancariaPage.fillGerente()
-            RefBancariaPage.fillEmail()
-            RefBancariaPage.cpfAccountHolder()
-            RefBancariaPage.nameAccountHolder()
-            RefBancariaPage.typeAccount()
-            RefBancariaPage.operation()
-            RefBancariaPage.formPayment()
-            RefBancariaPage.typeKeyPixCpfCnpj()
-            RefBancariaPage.typeKeyPixRandom()
-            GeneralRefBanking.clickSalvarReferenciaBancaria()
-            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso()
-            GeneralRefBanking.infoReferenciaBancariaAdicionada()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            GeneralRefBanking.messRefBankingKeyPixCpfCnpjInvalid()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias() ;
+            GeneralRefBanking.clickAbaReferenciaBancaria();
+            GeneralRefBanking.validateAbaReferenciaBancariaVazia();
+            GeneralRefBanking.clickAddNovaReferenciaBancaria();
+            GeneralRefBanking.modalReferenciaBancariaVazia();
+            RefBancariaPage.fillBanco();
+            RefBancariaPage.fillAgencia();
+            RefBancariaPage.fillConta();
+            RefBancariaPage.fillDataAbertura();
+            RefBancariaPage.fillTelefone();
+            RefBancariaPage.fillGerente();
+            RefBancariaPage.fillEmail();
+            RefBancariaPage.cpfAccountHolder();
+            RefBancariaPage.nameAccountHolder();
+            RefBancariaPage.typeAccount();
+            RefBancariaPage.operation();
+            RefBancariaPage.formPayment();
+            RefBancariaPage.typeKeyPixCpfCnpj();
+            RefBancariaPage.typeKeyPixRandom();
+            GeneralRefBanking.clickSalvarReferenciaBancaria();
+            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso();
+            GeneralRefBanking.infoReferenciaBancariaAdicionada();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            GeneralRefBanking.messRefBankingKeyPixCpfCnpjInvalid();
         })  
 
         it('8.Full customer CPF - validate incorrect random key type', () => {
@@ -475,53 +475,53 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota() 
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone() 
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            ClienteCompletoPage.ClickAbaReferencias() 
-            GeneralRefBanking.clickAbaReferenciaBancaria()
-            GeneralRefBanking.validateAbaReferenciaBancariaVazia()
-            GeneralRefBanking.clickAddNovaReferenciaBancaria()
-            GeneralRefBanking.modalReferenciaBancariaVazia()
-            RefBancariaPage.fillBanco()
-            RefBancariaPage.fillAgencia()
-            RefBancariaPage.fillConta()
-            RefBancariaPage.fillDataAbertura()
-            RefBancariaPage.fillTelefone()
-            RefBancariaPage.fillGerente()
-            RefBancariaPage.fillEmail()
-            RefBancariaPage.cpfAccountHolder()
-            RefBancariaPage.nameAccountHolder()
-            RefBancariaPage.typeAccount()
-            RefBancariaPage.operation()
-            RefBancariaPage.formPayment()
-            RefBancariaPage.typeKeyPixRandom()
-            GeneralRefBanking.clickSalvarReferenciaBancaria()
-            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso()
-            GeneralRefBanking.infoReferenciaBancariaAdicionada()
-            ClienteCompletoPage.clickSalvarClienteCompleto()
-            GeneralRefBanking.messRefBankingKeyPixRandomInvalid()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota(); 
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone(); 
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            ClienteCompletoPage.ClickAbaReferencias();
+            GeneralRefBanking.clickAbaReferenciaBancaria();
+            GeneralRefBanking.validateAbaReferenciaBancariaVazia();
+            GeneralRefBanking.clickAddNovaReferenciaBancaria();
+            GeneralRefBanking.modalReferenciaBancariaVazia();
+            RefBancariaPage.fillBanco();
+            RefBancariaPage.fillAgencia();
+            RefBancariaPage.fillConta();
+            RefBancariaPage.fillDataAbertura();
+            RefBancariaPage.fillTelefone();
+            RefBancariaPage.fillGerente();
+            RefBancariaPage.fillEmail();
+            RefBancariaPage.cpfAccountHolder();
+            RefBancariaPage.nameAccountHolder();
+            RefBancariaPage.typeAccount();
+            RefBancariaPage.operation();
+            RefBancariaPage.formPayment();
+            RefBancariaPage.typeKeyPixRandom();
+            GeneralRefBanking.clickSalvarReferenciaBancaria();
+            GeneralRefBanking.messageReferenciaBancariaAdicionadaSucesso();
+            GeneralRefBanking.infoReferenciaBancariaAdicionada();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            GeneralRefBanking.messRefBankingKeyPixRandomInvalid();
         })  
     })
 })

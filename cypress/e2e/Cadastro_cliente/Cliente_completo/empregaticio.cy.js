@@ -26,38 +26,38 @@ describe('Register complete client', () => {
             PessoaPage.fillNomeSocial();
             PessoaPage.fillDataNascimento();
             PessoaPage.chooseSexoCliente();
-            ClienteCompletoPage.clickSalvarClienteCompleto()
+            ClienteCompletoPage.clickSalvarClienteCompleto();
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco()
+            EnderecoPage.tipoEndereco();
             EnderecoPage.validateEnderecoVazio();
             EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco()
-            EnderecoPage.fillCEPEndereco()
-            EnderecoPage.fillNumeroEndereco()
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.clickSalvarEndereco()
-            EnderecoPage.infoEnderecoAdicionado()
-            RotaPage.clickAbaRota()
-            RotaPage.clickAdicionarNovaRota()
-            RotaPage.validateRotaVazia()
-            RotaPage.chooseTipoEnderecoRota()
-            RotaPage.addRotaCompleta()
-            RotaPage.validadeRotaAdicionada()
-            TelefonePage.clickAbaTelefone()
-            TelefonePage.clickAdicionarNovoTelefone()
-            TelefonePage.validateTelefoneVazio()
-            TelefonePage.chooseTipoTelefone()
-            TelefonePage.fillNumeroTelefone()
-            TelefonePage.fillRamalTelefone()
-            TelefonePage.clickSalvarTelefone()
-            TelefonePage.validateTelefoneAdicionado()
-            TelefonePage.validateMessageTelefoneAdicionado()
-            EmpregaticioPage.clickAbaEmpregaticio()
-            EmpregaticioPage.validateAbaEmpregaticioVazio()
-            EmpregaticioPage.clickAdicionarNovoEmpregaticio()
+            EnderecoPage.chooseTipoEndereco();
+            EnderecoPage.fillCEPEndereco();
+            EnderecoPage.fillNumeroEndereco();
+            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.clickSalvarEndereco();
+            EnderecoPage.infoEnderecoAdicionado();
+            RotaPage.clickAbaRota();
+            RotaPage.clickAdicionarNovaRota();
+            RotaPage.validateRotaVazia();
+            RotaPage.chooseTipoEnderecoRota();
+            RotaPage.addRotaCompleta();
+            RotaPage.validadeRotaAdicionada();
+            TelefonePage.clickAbaTelefone();
+            TelefonePage.clickAdicionarNovoTelefone();
+            TelefonePage.validateTelefoneVazio();
+            TelefonePage.chooseTipoTelefone();
+            TelefonePage.fillNumeroTelefone();
+            TelefonePage.fillRamalTelefone();
+            TelefonePage.clickSalvarTelefone();
+            TelefonePage.validateTelefoneAdicionado();
+            TelefonePage.validateMessageTelefoneAdicionado();
+            EmpregaticioPage.clickAbaEmpregaticio();
+            EmpregaticioPage.validateAbaEmpregaticioVazio();
+            EmpregaticioPage.clickAdicionarNovoEmpregaticio();
         }) 
     })
 })
