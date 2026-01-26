@@ -49,7 +49,7 @@ describe('Sale of individual services, with product order already downloaded', (
             ServicosAvulsosPage.clickAddGarantias()
             ServicosAvulsosPage.modalGarantiasServicesLinked()
             Service.garantiaSepMesmoProc()
-            Service.clickOKServiceLinked()
+            Service.clickOKServiceLinked();
             ServicosAvulsosPage.messLinkedAddedSucess()
             ServicosAvulsosPage.buttonSaveService()
             ServicosAvulsosPage.messWaitLoading()

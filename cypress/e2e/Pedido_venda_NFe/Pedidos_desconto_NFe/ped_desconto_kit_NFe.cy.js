@@ -12,9 +12,9 @@ import { GeralPedidosPage } from '../../../../pages/pedido/gerais_pedidos.js'
 describe('Order for a discounted kit', () => {
 
     beforeEach(() => {
-        cy.visit('/');;
-        cy.clearAllSessionStorage();;
-        cy.login();; 
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login(); 
         cy.urlAposLogin();
         cy.tituloPagina();
         ProcessoVendaPage.NFe() 
@@ -26,13 +26,13 @@ describe('Order for a discounted kit', () => {
         it('1.Order: kit 1862 0 0 with discount Sub (-) / FIXED PRICE', () => {
     
             Product.kitDiscount()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             GeralPedidosPage.compositionKit()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             OrderDiscount.clickButtonDiscount() 
             OrderDiscount.validateModalSub()
             OrderDiscount.aplicarDescontoValorFixo()

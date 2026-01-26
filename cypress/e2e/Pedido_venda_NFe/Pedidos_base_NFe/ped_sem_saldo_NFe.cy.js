@@ -19,7 +19,7 @@ describe('Attempting a sales order with an out-of-stock product - Stock rule: Pa
                 
                 Product.withoutBalance()
                 ValidateBalance.withoutBalance() 
-                cy.clickVoltageProduct()
+                cy.clickVoltageProduct();
                 cy.clickAddProduc()
 
                 //Validando mensagem "Este produto não possui saldo na filial selecionada."

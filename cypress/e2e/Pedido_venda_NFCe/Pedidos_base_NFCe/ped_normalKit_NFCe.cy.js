@@ -16,7 +16,7 @@ describe('Normal order with delivery', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.NFCe() 
+        ProcessoVendaPage.NFCe();
         cy.chooseCliente();
     })
     
@@ -24,18 +24,18 @@ describe('Normal order with delivery', () => {
         
         it('1.Order: kit 1862 0 0', () => {
                 
-            Product.kitFirst()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            GeralPedidosPage.compositionKit()
-            cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter()
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            Product.kitFirst();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            GeralPedidosPage.compositionKit();
+            cy.clickAddProduc();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter();
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();

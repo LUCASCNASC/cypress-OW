@@ -24,13 +24,13 @@ describe('Normal order', () => {
 
         it('1.Order: product 1860 0 0 - (Local sale of product with balance - no delivery)', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -44,21 +44,21 @@ describe('Normal order', () => {
 
         it('2.Order: products 1860 0 0 and 1870 0 0', () => {
                
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightSecond() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -72,13 +72,13 @@ describe('Normal order', () => {
 
         it('3.Order: product 1860 0 0 - (Sales order without delivery. With down payment + installments.)', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.chooseEntryFormPayment() 
@@ -97,14 +97,14 @@ describe('Normal order', () => {
 
         it('4.Order: product 1860 0 0 - (Local sale of product with balance - with delivery)', () => {
                       
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
@@ -117,21 +117,21 @@ describe('Normal order', () => {
 
         it('5.Order: products 1860 0 0 and 1870 0 0', () => {
                   
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
@@ -144,14 +144,14 @@ describe('Normal order', () => {
 
         it('6.Order: product 1860 0 0 - (Sales order with delivery. With down payment + installments.)', () => {
                
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.chooseEntryFormPayment() 
             GeralPagamentoPage.clickGeneratePayment()

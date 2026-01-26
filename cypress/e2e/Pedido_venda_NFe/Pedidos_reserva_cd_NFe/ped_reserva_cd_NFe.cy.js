@@ -24,12 +24,12 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
         it('1.Order: product 1880 0 0 - (Local sale of product with balance only in CD - without delivery)', () => {
 
             Product.cdFirst()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -44,20 +44,20 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
         it('2.Order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - without delivery)', () => {
 
             Product.cdFirst()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightSecond() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -75,13 +75,13 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
         it('3.Order: product 1880 0 0 - (Local sale of product with balance only in CD - with delivery)', () => {
             
             Product.cdFirst()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
@@ -94,21 +94,21 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
 
         it('4.Order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - with delivery)', () => {
             
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();

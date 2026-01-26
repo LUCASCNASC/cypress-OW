@@ -26,16 +26,16 @@ describe('Orders with promotions and interest-free services', () => {
         it('1.Order with promotion deadline installment (promotion 159): product 1891 0 0 with guarantee (interest-free)', () => {
     
             Product.firstInstallmentDeadline()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             PromocaoPage.typeServiceFreeValidate()
             PromocaoPage.selectFirstPromoProduct()
-            ProcessoRecebPromoPage.pagPrincipal()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
+            ProcessoRecebPromoPage.pagPrincipal();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
             Service.garantiaSepMesmoProc() 
-            Service.clickOKServiceLinked()
+            Service.clickOKServiceLinked();
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
@@ -49,16 +49,16 @@ describe('Orders with promotions and interest-free services', () => {
         it('2.Order with promotion deadline with entry + installments (promotion 158): product 1895 0 0 with guarantee (interest-free)', () => {
 
             Product.secondInstallmentDeadline()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             PromocaoPage.typeServiceFreeValidate()
             PromocaoPage.selectFirstPromoProduct()
-            ProcessoRecebPromoPage.pagPrincipal()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
+            ProcessoRecebPromoPage.pagPrincipal();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
             Service.garantiaSepMesmoProc() 
-            Service.clickOKServiceLinked()
+            Service.clickOKServiceLinked();
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
@@ -90,14 +90,14 @@ describe('Orders with promotions and interest-free services', () => {
         it('3.Order with promotion deadline installment (promotion 161): product 1893 0 0 with moneylender (interest-free)', () => {
 
             Product.thirdInstallmentDeadline()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPage.withMoneylender()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
@@ -114,16 +114,16 @@ describe('Orders with promotions and interest-free services', () => {
         it('4.Order with promotion deadline installment (promotion 162): product 1894 0 0 with guarantee (interest-free) and moneylender (with interest)', () => {
     
             Product.fourthInstallmentDeadline()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             PromocaoPage.typeServiceFreeValidate()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPage.withMoneylender()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
             Service.garantiaSepMesmoProc() 
-            Service.clickOKServiceLinked()
+            Service.clickOKServiceLinked();
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()

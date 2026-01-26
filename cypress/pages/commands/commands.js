@@ -6,7 +6,7 @@ import 'cypress-file-upload';
 
 //fazer login no pedido web, com o user 393
 Cypress.Commands.add('login', (username, password) => {
-  cy.visit('/');;
+  cy.visit('/');
   cy.get('#txtusername').type(users.userSabium.login);
   cy.get('#txtpassword').type(users.userSabium.password);
   cy.intercept('GET', '/images/icons/discount.svg').as('api_discount');
@@ -29,7 +29,7 @@ Cypress.Commands.add('tituloPagina', (username, password) => {
 
 //Faz login no sistema Pedido Web.
 Cypress.Commands.add('login', () => {
-  cy.visit('/');;
+  cy.visit('/');
   cy.get('#txtusername').type('sabium.automacao');
   cy.get('#txtpassword').type('123.automacao');
   cy.intercept('GET', '/images/icons/discount.svg').as('api_discount');

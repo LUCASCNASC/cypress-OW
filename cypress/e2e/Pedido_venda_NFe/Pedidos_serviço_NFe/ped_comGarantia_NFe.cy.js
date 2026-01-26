@@ -23,13 +23,13 @@ describe('Orders with Guarantee', () => {
 
         it('1.Order: product 1860 0 0 (with Guarantee that separates title in the same process)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraNaoDestSepMesmoProc() 
-            Service.clickOKServiceLinked()  
+            Service.clickOKServiceLinked();  
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
@@ -44,22 +44,22 @@ describe('Orders with Guarantee', () => {
 
         it('2.Order: product 1860 0 0 (with Guarantee that separates title in the same process) and product 1870 0 0 (without service)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraNaoDestSepMesmoProc() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
             TirarEntrega.freightFirst() 
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()  
-            Service.clickOKServiceLinked()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked();  
+            Service.clickOKServiceLinked();
             TirarEntrega.freightSecond() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -73,13 +73,13 @@ describe('Orders with Guarantee', () => {
 
         it('3.Order: product 1860 0 0 (with Guarantee that does not separate title)', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraDestNãoSep() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
@@ -94,22 +94,22 @@ describe('Orders with Guarantee', () => {
 
         it('4.Order: product 1860 0 0 (with Guarantee that does not separate title) and product 1870 0 0 (without service)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraDestNãoSep() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
             TirarEntrega.freightFirst() 
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()  
-            Service.clickOKServiceLinked()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked();  
+            Service.clickOKServiceLinked();
             TirarEntrega.freightSecond() 
             AvancarPage.toInstallments() 
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -123,13 +123,13 @@ describe('Orders with Guarantee', () => {
 
         it('5.Order: product 1860 0 0 (with Guarantee that separates title in a different process)', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraNaoDestSepaProcDif() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif()
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments() 
@@ -144,22 +144,22 @@ describe('Orders with Guarantee', () => {
 
         it('6.Order: product 1860 0 0 (with Guarantee that separates title in a different process) and product 1870 0 0 (without service)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraNaoDestSepaProcDif() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif()
             TirarEntrega.freightFirst() 
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()  
-            Service.clickOKServiceLinked()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked();  
+            Service.clickOKServiceLinked();
             TirarEntrega.freightSecond() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -176,15 +176,15 @@ describe('Orders with Guarantee', () => {
 
         it('7.Order: product 1860 0 0 (with Guarantee that separates title in the same process)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraNaoDestSepMesmoProc() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
-            AvancarPage.toTransporter()
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
@@ -197,22 +197,22 @@ describe('Orders with Guarantee', () => {
 
         it('8.Order: product 1860 0 0 (with Guarantee that separates title in the same process) and product 1870 0 0 (without service)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraNaoDestSepMesmoProc() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()  
-            Service.clickOKServiceLinked() 
-            AvancarPage.toTransporter()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked();  
+            Service.clickOKServiceLinked(); 
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
@@ -225,15 +225,15 @@ describe('Orders with Guarantee', () => {
 
         it('9.Order: product 1860 0 0 (with Guarantee that does not separate title)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraDestNãoSep() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            AvancarPage.toTransporter()
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
@@ -246,22 +246,22 @@ describe('Orders with Guarantee', () => {
 
         it('10.Order: product 1860 0 0 (with Guarantee that does not separate title) and product 1870 0 0 (without service)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraDestNãoSep() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()  
-            Service.clickOKServiceLinked() 
-            AvancarPage.toTransporter()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked();  
+            Service.clickOKServiceLinked(); 
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
@@ -274,15 +274,15 @@ describe('Orders with Guarantee', () => {
 
         it('11.Order: product 1860 0 0 (with Guarantee that separates title in a different process)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraNaoDestSepaProcDif() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif()
-            AvancarPage.toTransporter()
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments() 
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
@@ -295,21 +295,21 @@ describe('Orders with Guarantee', () => {
 
         it('12.Order: product 1860 0 0 (with Guarantee that separates title in a different process) and product 1870 0 0 (without service)', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
             Service.maoObraNaoDestSepaProcDif() 
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantSepTituloProcDif()
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.clickOKServiceLinked() 
-            AvancarPage.toTransporter()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.clickOKServiceLinked(); 
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 

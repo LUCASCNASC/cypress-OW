@@ -25,12 +25,12 @@ describe('PStandard order with interest discount - parameters 243 and 244 define
         it('1.Pedido: product 1860 0 0 - round down', () => {
 
             Product.roundUpDown()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -49,12 +49,12 @@ describe('PStandard order with interest discount - parameters 243 and 244 define
         it('2.Order: products 1860 0 0 - round up', () => {
 
             Product.roundUpDown()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 

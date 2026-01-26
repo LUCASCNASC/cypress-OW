@@ -8,9 +8,9 @@ describe('User inative', () => {
         cy.clearAllSessionStorage();
         cy.urlAposLogin();
         cy.tituloPagina();
-        LoginPage.logoEnterpriseLogin()
-        LoginPage.iconComputerLogin()
-        LoginPage.userTextIcon()
+        LoginPage.logoEnterpriseLogin();
+        LoginPage.iconComputerLogin();
+        LoginPage.userTextIcon();
     })
 
     it('1.Attempting to log in with an inactive user', () => {
@@ -20,36 +20,36 @@ describe('User inative', () => {
             .and('have.value','')
             .type((users.userSabium.login))
             .invoke('attr', 'placeholder')
-            .should('equal', 'Informe seu user')
+            .should('equal', 'Informe seu user');
 
-        LoginPage.passwordTextIcon()
+        LoginPage.passwordTextIcon();
 
         cy.get('#txtpassword')
             .should('be.visible')
             .and('have.value','')
             .type(users.userSabium.password)
             .invoke('attr', 'placeholder')
-            .should('equal', 'Informe sua senha')
+            .should('equal', 'Informe sua senha');
 
-        LoginPage.iconEyesPassword()
-        LoginPage.buttonForgotPassword()
-        LoginPage.buttonEnterEnabled()
-        LoginPage.clickButtonEnter()
+        LoginPage.iconEyesPassword();
+        LoginPage.buttonForgotPassword();
+        LoginPage.buttonEnterEnabled();
+        LoginPage.clickButtonEnter();
         cy.get('.toast')
             .should('be.visible')
-            .and('have.css', 'background-color', 'rgb(248, 148, 6)')
+            .and('have.css', 'background-color', 'rgb(248, 148, 6)');
 
         cy.get('.toast-title')
             .should('be.visible')
-            .and('have.text','Atenção')
+            .and('have.text','Atenção');
 
         cy.get('.toast-message')
             .should('be.visible')
-            .and('have.text','user não está ativo.')
+            .and('have.text','user não está ativo.');
 
         cy.get('.toast-close-button')
-            .should('be.visible')
+            .should('be.visible');
 
-        LoginPage.iconComputerLogin()
+        LoginPage.iconComputerLogin();
     })
 })

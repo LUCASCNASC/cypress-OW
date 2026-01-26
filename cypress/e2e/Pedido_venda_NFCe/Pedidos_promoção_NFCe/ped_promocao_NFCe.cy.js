@@ -14,7 +14,7 @@ describe('Orders with promotional delivery', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.NFCe() 
+        ProcessoVendaPage.NFCe();
         cy.chooseCliente();
     })
 
@@ -22,24 +22,24 @@ describe('Orders with promotional delivery', () => {
 
         it('1.Order with promotional offer (promotion 152): product 1868 0 0', () => {
     
-            Product.promoMatch()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage() 
-            cy.clickVoltageProduct()
+            Product.promoMatch();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch(); ; PromocaoPage.ticketPromocaoPage() 
+            cy.clickVoltageProduct();
             PromocaoPage.selectFirstPromoProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked() 
-            AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() 
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked(); 
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
 
             //Escolher "Forma de pagamento"
-            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click()
+            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click();
             //Escolher parcelamento
-            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click()
+            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click();
 
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
@@ -49,17 +49,17 @@ describe('Orders with promotional delivery', () => {
         it('2.Order with installment payment promotion with down payment (promotion 150): product 1866 0 0', () => {
     
             Product.promoDeadlineEntry()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.selectProductSearch(); ; PromocaoPage.ticketPromocaoPage() 
+            cy.clickVoltageProduct();
             PromocaoPage.selectFirstPromoProduct() 
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() 
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
 
             //"PAGAMENTO"
             cy.get('.layout-wrap > .md-primary').scrollTo('top').wait(200)
@@ -68,24 +68,24 @@ describe('Orders with promotional delivery', () => {
 
         it('3.Order with installment payment promotion (promotion 151): product 1867 0 0', () => {
     
-            Product.promoDeadlineInstallment()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch() ; PromocaoPage.ticketPromocaoPage()
-            cy.clickVoltageProduct()
-            PromocaoPage.selectFirstPromoProduct() 
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter() 
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            Product.promoDeadlineInstallment();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch(); ; PromocaoPage.ticketPromocaoPage()
+            cy.clickVoltageProduct();
+            PromocaoPage.selectFirstPromoProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
 
             //Escolher a forma de pagamento
-            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true})
+            cy.get('[style=""] > md-collapsible-header.layout-row > .md-collapsible-tools > .ng-scope').click({force:true});
             //Escolher a forma de pagamento/parcelas
-            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true})
+            cy.get('.active > md-collapsible-body > .layout-column > [style="position: relative"] > :nth-child(1) > div.ng-binding').click({force:true});
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();

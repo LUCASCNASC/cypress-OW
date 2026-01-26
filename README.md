@@ -56,3 +56,5 @@ Este projeto está sob a licença MIT.
 
 ---
 > Feito por [LUCASCNASC](https://github.com/LUCASCNASC)
+
+Ajustado até documento "Pedidos_promoção_NFCe";

@@ -27,14 +27,14 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
 
         it('1.Order: product 1860 0 0, inclusion 3881, lender 162 (99,30), 4 installments upon receipt Future with interest.', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()
-            Service.clickOKServiceLinked() 
-            AvancarPage.toTransporter()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked();
+            Service.clickOKServiceLinked(); 
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
@@ -50,22 +50,22 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
 
         it('2.Order: product 1860 0 0 and 1870 0 0, inclusion 3881 and 3860, lender 162 (99,30), 4 installments upon receipt Future with interest.', () => {
     
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked();
             ValidateService.garantiaNaoSep()
-            Service.clickOKServiceLinked() 
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
+            Service.clickOKServiceLinked(); 
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked();
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
@@ -85,15 +85,15 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
         it('3.Order: product 1922 0 0 (promo a prazo 171), inclusion 3881, lender 162, 4 installments upon receipt Future with interest', () => {
     
             Product.termFisrtPrestAbatVF()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPromoPage.termFutWithFeesPrestAbatVF()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()
-            Service.clickOKServiceLinked() 
-            AvancarPage.toTransporter()
+            cy.clickAddProduct();
+            Service.validateModalServLinked();
+            Service.clickOKServiceLinked(); 
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -110,16 +110,16 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
         it('4.Order: product 1923 0 0 + warranty. Does not separate (promo on term 172 - exempt interest on services), inclusion 3881, lender 162, 4 installments upon receipt. Future with interest', () => {
 
             Product.termSecondPrestAbatVF()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             PromocaoPage.selectFirstPromoProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()
+            cy.clickAddProduct();
+            Service.validateModalServLinked();
             ValidateService.garantiaNaoSep()
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            AvancarPage.toTransporter()
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })
@@ -136,17 +136,17 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
         it('5.Order: product 1924 0 0 + warranty. Does not separate (promo on term 173 - exempt interest on warranty), inclusion 3882, lender 162, 4 installments upon receipt Future with interest', () => {
 
             Product.prazoPrestTercAbatVF()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             PromocaoPage.selectFirstPromoProduct()
             ProcessoRecebPromoPage.termPresentWithFeesPrestAbatVFOS()
-            cy.clickAddProduct()
-            Service.validateModalServLinked()
+            cy.clickAddProduct();
+            Service.validateModalServLinked();
             ValidateService.garantiaNaoSep()
-            Service.clickOKServiceLinked() 
+            Service.clickOKServiceLinked(); 
             ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
-            AvancarPage.toTransporter()
+            AvancarPage.toTransporter();
             AvancarPage.paraPatoInstallmentsrcelas()
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
             cy.wait('@api_icons', { timeout: 40000 })

@@ -24,17 +24,17 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
 
         it('1.Remote order: product 1860 0 0 - (Remote sale of product with stock available at the billing branch)', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
@@ -46,25 +46,25 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
 
         it('2.Remote order: products 1860 0 0 and 1870 0 0', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
@@ -77,17 +77,17 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
         it('3.Remote order: kit 1877 0 0', () => {
 
             Product.kitRemote()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
             GeralPedidosPage.composicaoDesteKit()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
@@ -103,16 +103,16 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
         it('4.Remote order - with balance in CD (branch 1) - allow ordering - (Remote sale of product (1883 0 0) without balance in the billing branch, but with balance in the billing CD - with delivery)', () => {
 
             Product.remoteWithCD()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
@@ -125,8 +125,8 @@ describe('Remote/process 9890 - Balance rule Parameter 36 = 4 - Parameter 139 = 
         it('5.Remote order - NO balance in CD (branch 1) - DO NOT allow order to be placed - (Remote sale of product (1882 0 0) without balance in the billing branch, no balance in the billing CD)', () => {
 
             Product.remoteWithoutCD()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
             GeralPedidosPage.changeBranchInvoicing()
 

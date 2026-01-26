@@ -24,13 +24,13 @@ describe('Order with more than one payment method', () => {
 
         it('1.Order: product 1860 0 0 - two payment methods 3871 and 3860', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             AgruparRecebPage.firstValueInstallment() 
@@ -49,13 +49,13 @@ describe('Order with more than one payment method', () => {
 
         it('2.Order: product 1860 0 0 - with entry (3861) and another payment method (3860)', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.chooseEntryFormPayment()
@@ -71,13 +71,13 @@ describe('Order with more than one payment method', () => {
 
         it('3.Order: product 1860 0 0 - two payment methods (3860) - click to NOT group', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             AgruparRecebPage.firstValueInstallment() 
@@ -97,13 +97,13 @@ describe('Order with more than one payment method', () => {
 
         it('4.Order: product 1860 0 0 - two identical payment methods (3860) - click to group YES', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             AgruparRecebPage.firstValueInstallment()
@@ -123,13 +123,13 @@ describe('Order with more than one payment method', () => {
 
         it('5.Order: product 1860 0 0 - two identical payment methods (3860) - click to NOT group, but then group by selecting both.', () => {
 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             AgruparRecebPage.firstValueInstallment()

@@ -10,9 +10,9 @@ import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
 describe('Order with financial details on file with delivery.', () => {
 
     beforeEach(() => {
-        cy.visit('/');;
-        cy.clearAllSessionStorage();;
-        cy.login();;
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
         ProcessoVendaPage.financePaymentNFCe() 
@@ -23,17 +23,17 @@ describe('Order with financial details on file with delivery.', () => {
 
         it('1.Order: product 1860 0 0', () => {
                       
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
-            EntregaPage.modalInconsOnlyTransporter()
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter();
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -45,24 +45,24 @@ describe('Order with financial details on file with delivery.', () => {
 
         it('2.Order: products 1860 0 0 e 1870 0 0', () => {
                 
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            Product.second() 
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            cy.selectProductSearch()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter() 
-            EntregaPage.modalInconsOnlyTransporter()
-            EntregaPage.chooseTransporter()
-            AvancarPage.installmentDelivery()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            Product.second(); 
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            cy.selectProductSearch();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter(); 
+            EntregaPage.modalInconsOnlyTransporter();
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();

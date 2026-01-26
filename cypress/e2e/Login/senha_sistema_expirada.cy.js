@@ -8,9 +8,9 @@ describe('User with expired password system', () => {
         cy.clearAllSessionStorage();
         cy.urlAposLogin();
         cy.tituloPagina();
-        LoginPage.logoEnterpriseLogin()
-        LoginPage.iconComputerLogin()
-        LoginPage.userTextIcon()
+        LoginPage.logoEnterpriseLogin();
+        LoginPage.iconComputerLogin();
+        LoginPage.userTextIcon();
     })
 
     it('1.Try to Login with user with password expired user', () => {
@@ -20,35 +20,35 @@ describe('User with expired password system', () => {
             .and('have.value','')
             .type(users.userSabium.login)
             .invoke('attr', 'placeholder')
-            .should('equal', 'Informe seu user')
+            .should('equal', 'Informe seu user');
 
-        LoginPage.passwordTextIcon()
+        LoginPage.passwordTextIcon();
 
         cy.get('#txtpassword')
             .should('be.visible')
             .and('have.value','')
             .type(users.userSabium.password)
             .invoke('attr', 'placeholder')
-            .should('equal', 'Informe sua senha')
+            .should('equal', 'Informe sua senha');
 
-        LoginPage.iconEyesPassword()
-        LoginPage.buttonForgotPassword()
-        LoginPage.buttonEnterEnabled()
-        LoginPage.clickButtonEnter()
-        LoginPage.messageOpeningSystem()
+        LoginPage.iconEyesPassword();
+        LoginPage.buttonForgotPassword();
+        LoginPage.buttonEnterEnabled();
+        LoginPage.clickButtonEnter();
+        LoginPage.messageOpeningSystem();
 
         cy.get('.md-dialog-content-body')
             .should('be.visible')
-            .and('have.text','Seu acesso ao sistema expirou.')
+            .and('have.text','Seu acesso ao sistema expirou.');
 
         cy.get('md-dialog-actions > .md-primary')
             .should('be.visible')
             .and('have.text','Ok')
-            .and('not.have.attr', 'disabled')
+            .and('not.have.attr', 'disabled');
 
         cy.get('md-dialog-actions > .md-primary')
-            .click()
+            .click();
 
-        LoginPage.iconComputerLogin()
+        LoginPage.iconComputerLogin();
     })
 })

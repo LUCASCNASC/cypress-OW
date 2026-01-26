@@ -23,13 +23,13 @@ describe('Future delivery order', () => {
 
         it('1.Order: product 1860 0 0', () => {
                       
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightFirst() 
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
@@ -43,21 +43,21 @@ describe('Future delivery order', () => {
 
         it('2.Order: products 1860 0 0 and 1870 0 0', () => {
               
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
+            Service.validateModalServLinked(); 
             clicarOKServVinServico.clickOKServiceLinked()
             TirarEntrega.freightFirst() 
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
             TirarEntrega.freightSecond() 
             AvancarPage.clickGenerateInstallments()
             GeralPagamentoPage.clicarGerarParcelas() 
@@ -74,14 +74,14 @@ describe('Future delivery order', () => {
 
         it('3.Order: product 1860 0 0', () => {
              
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter()
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
             AvancarPage.toInstallments()
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
@@ -94,21 +94,21 @@ describe('Future delivery order', () => {
 
         it('4.Order: products 1860 0 0 and 1870 0 0', () => {
                    
-            Product.fisrt()
-            ValidateBalance.withBalance() 
-            cy.clickVoltageProduct()
-            cy.clickVoltageProduct()
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.clickVoltageProduct();
+            cy.clickVoltageProduct();
             cy.clickAddProduc()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            Product.second()
-            ValidateBalance.withBalance() 
-            cy.selectProductSearch()
-            cy.clickVoltageProduct()
-            cy.clickAddProduct()
-            Service.validateModalServLinked() 
-            Service.clickOKServiceLinked()
-            AvancarPage.toTransporter() 
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter(); 
             AvancarPage.toInstallments() 
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
