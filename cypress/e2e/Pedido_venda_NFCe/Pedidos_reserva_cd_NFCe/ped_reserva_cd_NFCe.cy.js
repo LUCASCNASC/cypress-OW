@@ -15,7 +15,7 @@ describe('Order with reservation at the distribution center (with delivery) - Ba
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina(); 
-        ProcessoVendaPage.NFCe() 
+        ProcessoVendaPage.NFCe();
         cy.chooseCliente();
     })
 
@@ -23,7 +23,7 @@ describe('Order with reservation at the distribution center (with delivery) - Ba
 
         it('1.Order: product 1880 0 0 - (Local sale of product with stock only at the distribution center - with delivery)', () => {
             
-            Product.cdFirst()
+            Product.cdFirst();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();

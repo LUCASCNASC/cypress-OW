@@ -15,7 +15,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina(); 
-        ProcessoVendaPage.NFCe() 
+        ProcessoVendaPage.NFCe();
         cy.chooseCliente();
     })
 
@@ -29,8 +29,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepMesmoProc() 
-            Service.maoObraDestNãoSep() 
+            Service.garantiaSepMesmoProc();
+            Service.maoObraDestNãoSep();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -53,8 +53,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepMesmoProc() 
-            Service.maoObraDestNãoSep() 
+            Service.garantiaSepMesmoProc();
+            Service.maoObraDestNãoSep();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -84,8 +84,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepMesmoProc() 
-            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepMesmoProc();
+            Service.maoObraNaoDestSepMesmoProc();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -108,8 +108,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepMesmoProc() 
-            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepMesmoProc();
+            Service.maoObraNaoDestSepMesmoProc();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -139,8 +139,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepMesmoProc() 
-            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaSepMesmoProc();
+            Service.maoObraNaoDestSepaProcDif();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -163,12 +163,12 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepMesmoProc() 
-            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaSepMesmoProc();
+            Service.maoObraNaoDestSepaProcDif();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
-            cy.withBalance()
+            cy.withBalance();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
@@ -194,8 +194,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaNaoSep() 
-            Service.maoObraDestNãoSep()
+            Service.garantiaNaoSep();
+            Service.maoObraDestNãoSep();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -218,8 +218,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaNaoSep() 
-            Service.maoObraDestNãoSep()
+            Service.garantiaNaoSep();
+            Service.maoObraDestNãoSep();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -249,8 +249,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaNaoSep() 
-            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaNaoSep();
+            Service.maoObraNaoDestSepMesmoProc();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -273,8 +273,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaNaoSep() 
-            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaNaoSep();
+            Service.maoObraNaoDestSepMesmoProc();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -304,8 +304,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaNaoSep() 
-            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaNaoSep();
+            Service.maoObraNaoDestSepaProcDif();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -328,8 +328,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaNaoSep() 
-            Service.maoObraNaoDestSepaProcDif() 
+            Service.garantiaNaoSep();
+            Service.maoObraNaoDestSepaProcDif();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -359,8 +359,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepTituloProcDif() 
-            Service.maoObraDestNãoSep() 
+            Service.garantiaSepTituloProcDif();
+            Service.maoObraDestNãoSep();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -383,8 +383,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepTituloProcDif() 
-            Service.maoObraDestNãoSep() 
+            Service.garantiaSepTituloProcDif();
+            Service.maoObraDestNãoSep();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -413,8 +413,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepTituloProcDif() 
-            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepTituloProcDif();
+            Service.maoObraNaoDestSepMesmoProc();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -437,8 +437,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepTituloProcDif() 
-            Service.maoObraNaoDestSepMesmoProc() 
+            Service.garantiaSepTituloProcDif();
+            Service.maoObraNaoDestSepMesmoProc();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -468,8 +468,8 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepTituloProcDif() 
-            Service.maoObraNaoDestSepaProcDif()
+            Service.garantiaSepTituloProcDif();
+            Service.maoObraNaoDestSepaProcDif();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -492,15 +492,15 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            Service.garantiaSepTituloProcDif()
-            Service.maoObraNaoDestSepaProcDif()
+            Service.garantiaSepTituloProcDif();
+            Service.maoObraNaoDestSepaProcDif();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            ServiServiceco.validateModalServLinked() 
+            ServiServiceco.validateModalServLinked();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 

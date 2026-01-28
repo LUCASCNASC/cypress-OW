@@ -15,7 +15,7 @@ describe('Orders with labor and delivery', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.NFCe() 
+        ProcessoVendaPage.NFCe();
         cy.chooseCliente();
     })
 
@@ -29,7 +29,7 @@ describe('Orders with labor and delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaNaoSep()  
+            Service.garantiaNaoSep();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -38,7 +38,7 @@ describe('Orders with labor and delivery', () => {
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
-            EscolherParcelaReceb.two()
+            EscolherParcelaReceb.two();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -52,7 +52,7 @@ describe('Orders with labor and delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaNaoSep()  
+            Service.garantiaNaoSep();
             Service.clickOKServiceLinked(); 
             Product.second(); 
             ValidateBalance.withBalance();
@@ -68,7 +68,7 @@ describe('Orders with labor and delivery', () => {
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
-            EscolherParcelaReceb.two()
+            EscolherParcelaReceb.two();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -82,7 +82,7 @@ describe('Orders with labor and delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaSepMesmoProc() 
+            Service.garantiaSepMesmoProc();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -91,7 +91,7 @@ describe('Orders with labor and delivery', () => {
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
-            EscolherParcelaReceb.two()
+            EscolherParcelaReceb.two();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -105,7 +105,7 @@ describe('Orders with labor and delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaSepMesmoProc() 
+            Service.garantiaSepMesmoProc();
             Service.clickOKServiceLinked();
             Product.second(); 
             ValidateBalance.withBalance();
@@ -121,7 +121,7 @@ describe('Orders with labor and delivery', () => {
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
-            EscolherParcelaReceb.two()
+            EscolherParcelaReceb.two();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -135,7 +135,7 @@ describe('Orders with labor and delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaSepTituloProcDif() 
+            Service.garantiaSepTituloProcDif();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -144,7 +144,7 @@ describe('Orders with labor and delivery', () => {
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
-            EscolherParcelaReceb.two()
+            EscolherParcelaReceb.two();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -158,7 +158,7 @@ describe('Orders with labor and delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaSepTituloProcDif() 
+            Service.garantiaSepTituloProcDif();
             Service.clickOKServiceLinked();
             Product.second(); 
             ValidateBalance.withBalance();
@@ -174,7 +174,7 @@ describe('Orders with labor and delivery', () => {
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
-            EscolherParcelaReceb.two()
+            EscolherParcelaReceb.two();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();

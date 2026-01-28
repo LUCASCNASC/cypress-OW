@@ -15,7 +15,7 @@ describe('Orders with Guarantee and Delivery', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina(); 
-        ProcessoVendaPage.NFCe() 
+        ProcessoVendaPage.NFCe();
         cy.chooseCliente();
     })   
 
@@ -82,7 +82,7 @@ describe('Orders with Guarantee and Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaNaoSep() 
+            Service.garantiaNaoSep();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -105,7 +105,7 @@ describe('Orders with Guarantee and Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaNaoSep() 
+            Service.garantiaNaoSep();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -135,7 +135,7 @@ describe('Orders with Guarantee and Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaSepTituloProcDif() 
+            Service.garantiaSepTituloProcDif();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
             EntregaPage.modalInconsOnlyTransporter(); 
@@ -158,7 +158,7 @@ describe('Orders with Guarantee and Delivery', () => {
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaSepTituloProcDif() 
+            Service.garantiaSepTituloProcDif();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
