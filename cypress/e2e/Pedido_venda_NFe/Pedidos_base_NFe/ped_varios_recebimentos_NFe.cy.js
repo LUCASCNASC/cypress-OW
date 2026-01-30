@@ -1,12 +1,12 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
-import { AgruparRecebPage } from '../../../pages/pedido/AgruparRecebPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { AgruparRecebPage } from '../../../pages/pedido/AgruparRecebPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
 describe('Order with more than one payment method', () => {
 
@@ -16,7 +16,7 @@ describe('Order with more than one payment method', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })
 
@@ -28,18 +28,18 @@ describe('Order with more than one payment method', () => {
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
-            AgruparRecebPage.firstValueInstallment() 
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
+            AgruparRecebPage.firstValueInstallment();
             GeralPagamentoPage.clickGenerateInstallments();  
-            GeralPagamentoPage.carregandoFormaPagamento()
-            ProcessoRecebPage.debitTEF()
-            ParcelasPage.one()
+            GeralPagamentoPage.carregandoFormaPagamento();
+            ProcessoRecebPage.debitTEF();
+            ParcelasPage.one();
             GeralPagamentoPage.clickGenerateInstallments();  
-            GeralPagamentoPage.carregandoFormaPagamento()
+            GeralPagamentoPage.carregandoFormaPagamento();
             ProcessoRecebPage.main(); 
             ParcelasPage.two();
             AvancarPage.final();
@@ -53,13 +53,13 @@ describe('Order with more than one payment method', () => {
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
-            GeralPagamentoPage.chooseEntryFormPayment()
-            GeralPagamentoPage.clicarGerarPagamento()
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
+            GeralPagamentoPage.chooseEntryFormPayment();
+            GeralPagamentoPage.clicarGerarPagamento();
             GeralPagamentoPage.clickGenerateInstallments();  
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main(); 
@@ -75,21 +75,21 @@ describe('Order with more than one payment method', () => {
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
             AgruparRecebPage.firstValueInstallment() 
             GeralPagamentoPage.clickGenerateInstallments();  
-            GeralPagamentoPage.carregandoFormaPagamento()
+            GeralPagamentoPage.carregandoFormaPagamento();
             ProcessoRecebPage.main();
-            ParcelasPage.one()
+            ParcelasPage.one();
             GeralPagamentoPage.clickGenerateInstallments();  
-            GeralPagamentoPage.carregandoFormaPagamento()
+            GeralPagamentoPage.carregandoFormaPagamento();
             ProcessoRecebPage.main(); 
-            ParcelasPage.one()
-            AgruparRecebPage.notGroupReleases()
+            ParcelasPage.one();
+            AgruparRecebPage.notGroupReleases();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -101,21 +101,21 @@ describe('Order with more than one payment method', () => {
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
-            AgruparRecebPage.firstValueInstallment()
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
+            AgruparRecebPage.firstValueInstallment();
             GeralPagamentoPage.clickGenerateInstallments();
             GeralPagamentoPage.carregandoFormaPagamento()
             ProcessoRecebPage.main();
-            ParcelasPage.one()
+            ParcelasPage.one();
             GeralPagamentoPage.clickGenerateInstallments();
-            GeralPagamentoPage.carregandoFormaPagamento()
+            GeralPagamentoPage.carregandoFormaPagamento();
             ProcessoRecebPage.main();
-            ParcelasPage.one()
-            AgruparRecebPage.groupReleases()
+            ParcelasPage.one();
+            AgruparRecebPage.groupReleases();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -127,22 +127,22 @@ describe('Order with more than one payment method', () => {
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
-            AgruparRecebPage.firstValueInstallment()
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
+            AgruparRecebPage.firstValueInstallment();
             GeralPagamentoPage.clickGenerateInstallments(); 
-            GeralPagamentoPage.carregandoFormaPagamento()
+            GeralPagamentoPage.carregandoFormaPagamento();
             ProcessoRecebPage.main();
-            ParcelasPage.one()
+            ParcelasPage.one();
             GeralPagamentoPage.clickGenerateInstallments(); 
-            GeralPagamentoPage.carregandoFormaPagamento()
+            GeralPagamentoPage.carregandoFormaPagamento();
             ProcessoRecebPage.main(); 
-            AgruparRecebPage.notGroupReleases()
-            AgruparRecebPage.selectReleasesGroup()
-            AgruparRecebPage.clickGroup()
+            AgruparRecebPage.notGroupReleases();
+            AgruparRecebPage.selectReleasesGroup();
+            AgruparRecebPage.clickGroup();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();

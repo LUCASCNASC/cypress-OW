@@ -1,12 +1,12 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { FinalizarPedidoPage } from '../../../../pages/pedido/finalizar_pedido.js'
-import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { FinalizarPedidoPage } from '../../../../pages/pedido/finalizar_pedido.js';
+import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
 describe('Application with credit proposal', () => {
 
@@ -16,7 +16,7 @@ describe('Application with credit proposal', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })
 
@@ -28,18 +28,18 @@ describe('Application with credit proposal', () => {
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
-            ProcessoRecebPage.proposalCredit()
-            ParcelasPage.one()
+            ProcessoRecebPage.proposalCredit();
+            ParcelasPage.one();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
-            FinalizarPedidoPage.validatePropCreditGenerated()
+            FinalizarPedidoPage.validatePropCreditGenerated();
             cy.validateOrderGenerated();
         })
     })

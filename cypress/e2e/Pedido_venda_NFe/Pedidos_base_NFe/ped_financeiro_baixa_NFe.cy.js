@@ -1,12 +1,12 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
-import { GeralPagamentoPage } from '../../../../pages/pedido/pagamento/geral_pagamento.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { GeralPagamentoPage } from '../../../../pages/pedido/pagamento/geral_pagamento.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
 describe('Order with finances in the low', () => {
 
@@ -16,7 +16,7 @@ describe('Order with finances in the low', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.financePaymentNFe() 
+        ProcessoVendaPage.financePaymentNFe();
         cy.chooseCliente();
     })
 
@@ -28,11 +28,11 @@ describe('Order with finances in the low', () => {
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments() 
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -48,10 +48,10 @@ describe('Order with finances in the low', () => {
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
+            TirarEntrega.freightFirst();
             Product.second();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
@@ -59,8 +59,8 @@ describe('Order with finances in the low', () => {
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightSecond() 
-            AvancarPage.toInstallments() 
+            TirarEntrega.freightSecond();
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
@@ -79,11 +79,11 @@ describe('Order with finances in the low', () => {
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -99,7 +99,7 @@ describe('Order with finances in the low', () => {
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             Product.second();
@@ -110,7 +110,7 @@ describe('Order with finances in the low', () => {
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();

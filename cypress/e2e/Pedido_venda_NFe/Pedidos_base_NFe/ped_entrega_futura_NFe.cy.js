@@ -1,11 +1,11 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/pagento/ParcelasPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/pagento/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
 describe('Future delivery order', () => {
 
@@ -15,7 +15,7 @@ describe('Future delivery order', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.deliveryFutureNFe() 
+        ProcessoVendaPage.deliveryFutureNFe();
         cy.chooseCliente();
     })
 
@@ -27,11 +27,11 @@ describe('Future delivery order', () => {
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main(); 
@@ -47,10 +47,10 @@ describe('Future delivery order', () => {
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
-            clicarOKServVinServico.clickOKServiceLinked()
-            TirarEntrega.freightFirst() 
+            clicarOKServVinServico.clickOKServiceLinked();
+            TirarEntrega.freightFirst();
             Product.second();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
@@ -58,9 +58,9 @@ describe('Future delivery order', () => {
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightSecond() 
-            AvancarPage.clickGenerateInstallments()
-            GeralPagamentoPage.clicarGerarParcelas() 
+            TirarEntrega.freightSecond();
+            AvancarPage.clickGenerateInstallments();
+            GeralPagamentoPage.clicarGerarParcelas();
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main(); 
             ParcelasPage.two();
@@ -78,7 +78,7 @@ describe('Future delivery order', () => {
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
@@ -98,7 +98,7 @@ describe('Future delivery order', () => {
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             Product.second();
@@ -109,7 +109,7 @@ describe('Future delivery order', () => {
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter(); 
-            AvancarPage.toInstallments() 
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main(); 
