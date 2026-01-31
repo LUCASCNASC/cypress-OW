@@ -19,7 +19,7 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina(); 
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })   
 
@@ -35,15 +35,15 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             Service.validateModalServLinked();
             Service.clickOKServiceLinked(); 
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
-            ProcessoRecebPage.futComJurosPrestAbatOrigemPrd()
-            ParcelasPage.for()
-            ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.added() 
+            ProcessoRecebPage.futComJurosPrestAbatOrigemPrd();
+            ParcelasPage.for();
+            ValidateService.okInsurancePrest();
+            ValidadePrestamistaPage.added();
             AvancarPage.final();
-            ValidadePrestamistaPage.pageFinal()
+            ValidadePrestamistaPage.pageFinal();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
         })
@@ -56,7 +56,7 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            ValidateService.garantiaNaoSep()
+            ValidateService.garantiaNaoSep();
             Service.clickOKServiceLinked(); 
             Product.second();
             ValidateBalance.withBalance();
@@ -66,15 +66,15 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             Service.validateModalServLinked();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
-            ProcessoRecebPage.futComJurosPrestAbatOrigemPrd()
-            ParcelasPage.for()
-            ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.added()
+            ProcessoRecebPage.futComJurosPrestAbatOrigemPrd();
+            ParcelasPage.for();
+            ValidateService.okInsurancePrest();
+            ValidadePrestamistaPage.added();
             AvancarPage.final();
-            ValidadePrestamistaPage.pageFinal()
+            ValidadePrestamistaPage.pageFinal();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
         })
@@ -84,78 +84,78 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
 
         it('3.Order: product 1922 0 0 (promo a prazo 171), inclusion 3881, lender 162, 4 installments upon receipt Future with interest', () => {
     
-            Product.termFisrtPrestAbatVF()
+            Product.termFisrtPrestAbatVF();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            PromocaoPage.selectFirstPromoProduct()
-            ProcessoRecebPromoPage.termFutWithFeesPrestAbatVF()
+            cy.clickAddProduc();
+            PromocaoPage.selectFirstPromoProduct();
+            ProcessoRecebPromoPage.termFutWithFeesPrestAbatVF();
             cy.clickAddProduct();
             Service.validateModalServLinked();
             Service.clickOKServiceLinked(); 
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
-            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
-            cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedidosPage.clickEditInstallments()
-            ParcelasPage.for()
-            ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.added() 
+            AvancarPage.toInstallments();
+            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons');
+            cy.wait('@api_icons', { timeout: 40000 });
+            GeralPedidosPage.clickEditInstallments();
+            ParcelasPage.for();
+            ValidateService.okInsurancePrest();
+            ValidadePrestamistaPage.added();
             AvancarPage.final();
-            ValidadePrestamistaPage.pageFinal()
+            ValidadePrestamistaPage.pageFinal();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
         })
 
         it('4.Order: product 1923 0 0 + warranty. Does not separate (promo on term 172 - exempt interest on services), inclusion 3881, lender 162, 4 installments upon receipt. Future with interest', () => {
 
-            Product.termSecondPrestAbatVF()
+            Product.termSecondPrestAbatVF();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            PromocaoPage.selectFirstPromoProduct()
+            cy.clickAddProduc();
+            PromocaoPage.selectFirstPromoProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked();
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
+            ValidateService.servLinked(); ValidateService.addGarantNaoSep();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
-            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
-            cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedidosPage.clickEditInstallments()
-            ParcelasPage.for()
-            ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.added() 
+            AvancarPage.toInstallments();
+            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons');
+            cy.wait('@api_icons', { timeout: 40000 });
+            GeralPedidosPage.clickEditInstallments();
+            ParcelasPage.for();
+            ValidateService.okInsurancePrest();
+            ValidadePrestamistaPage.added();
             AvancarPage.final();
-            ValidadePrestamistaPage.pageFinal()
+            ValidadePrestamistaPage.pageFinal();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
         })
 
         it('5.Order: product 1924 0 0 + warranty. Does not separate (promo on term 173 - exempt interest on warranty), inclusion 3882, lender 162, 4 installments upon receipt Future with interest', () => {
 
-            Product.prazoPrestTercAbatVF()
+            Product.prazoPrestTercAbatVF();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            PromocaoPage.selectFirstPromoProduct()
-            ProcessoRecebPromoPage.termPresentWithFeesPrestAbatVFOS()
+            cy.clickAddProduc();
+            PromocaoPage.selectFirstPromoProduct();
+            ProcessoRecebPromoPage.termPresentWithFeesPrestAbatVFOS();
             cy.clickAddProduct();
             Service.validateModalServLinked();
-            ValidateService.garantiaNaoSep()
+            ValidateService.garantiaNaoSep();
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addGarantNaoSep()
+            ValidateService.servLinked(); ValidateService.addGarantNaoSep();
             AvancarPage.toTransporter();
-            AvancarPage.paraPatoInstallmentsrcelas()
-            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons')
-            cy.wait('@api_icons', { timeout: 40000 })
-            GeralPedidosPage.clickEditInstallments()
-            ParcelasPage.for()
-            ValidateService.okInsurancePrest()
-            ValidadePrestamistaPage.pageFinal() 
+            AvancarPage.paraPatoInstallmentsrcelas();
+            cy.intercept('GET', '/images/icons/chain.svg').as('api_icons');
+            cy.wait('@api_icons', { timeout: 40000 });
+            GeralPedidosPage.clickEditInstallments();
+            ParcelasPage.for();
+            ValidateService.okInsurancePrest();
+            ValidadePrestamistaPage.pageFinal();
             AvancarPage.final();
-            ValidadePrestamistaPage.pageFinal()
+            ValidadePrestamistaPage.pageFinal();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
         })

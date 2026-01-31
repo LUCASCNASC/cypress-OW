@@ -17,7 +17,7 @@ describe('Orders with promotions and interest-free services', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })
 
@@ -25,22 +25,22 @@ describe('Orders with promotions and interest-free services', () => {
 
         it('1.Order with promotion deadline installment (promotion 159): product 1891 0 0 with guarantee (interest-free)', () => {
     
-            Product.firstInstallmentDeadline()
+            Product.firstInstallmentDeadline();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            PromocaoPage.typeServiceFreeValidate()
-            PromocaoPage.selectFirstPromoProduct()
+            cy.clickAddProduc();
+            PromocaoPage.typeServiceFreeValidate();
+            PromocaoPage.selectFirstPromoProduct();
             ProcessoRecebPromoPage.pagPrincipal();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaSepMesmoProc() 
+            Service.garantiaSepMesmoProc();
             Service.clickOKServiceLinked();
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
-            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
-            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
+            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc();
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
+            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista');
+            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 });
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -48,39 +48,39 @@ describe('Orders with promotions and interest-free services', () => {
 
         it('2.Order with promotion deadline with entry + installments (promotion 158): product 1895 0 0 with guarantee (interest-free)', () => {
 
-            Product.secondInstallmentDeadline()
+            Product.secondInstallmentDeadline();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            PromocaoPage.typeServiceFreeValidate()
-            PromocaoPage.selectFirstPromoProduct()
+            cy.clickAddProduc();
+            PromocaoPage.typeServiceFreeValidate();
+            PromocaoPage.selectFirstPromoProduct();
             ProcessoRecebPromoPage.pagPrincipal();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.garantiaSepMesmoProc() 
             Service.clickOKServiceLinked();
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
-            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
-            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepMesmoProc();
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
+            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista');
+            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 });
 
             //Selecionando opções de pagamento de entrada
             cy.get('md-option .md-text')
                 .contains('3861 - T.A. A Receber A Vista')
-                .click({force:true})
+                .click({force:true});
 
             //Selecionando processo de receber entrada
             cy.contains('div.md-text.ng-binding', '3861 - T.A. A Receber A Vista')
                 .should('be.visible')
-                .click({force:true})
+                .click({force:true});
 
             //Clicando no botão PAGAMENTO da entrada
             cy.get('.white > .layout-align-center-center > .md-primary')
                 .should('be.visible')
                 .and('not.be.disabled')
                 .and('contain','Pagamento')
-                .click({force:true})
+                .click({force:true});
 
             AvancarPage.final();
             cy.clickFinalizarPedidoPage(); //RESUMO
@@ -89,50 +89,50 @@ describe('Orders with promotions and interest-free services', () => {
 
         it('3.Order with promotion deadline installment (promotion 161): product 1893 0 0 with moneylender (interest-free)', () => {
 
-            Product.thirdInstallmentDeadline()
+            Product.thirdInstallmentDeadline();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            PromocaoPage.selectFirstPromoProduct()
-            ProcessoRecebPage.withMoneylender()
+            cy.clickAddProduc();
+            PromocaoPage.selectFirstPromoProduct();
+            ProcessoRecebPage.withMoneylender();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
-            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
-            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            PromocaoPage.addPrestamista()
-            ValidadePrestamistaPage.added()
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepMesmoProc()
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
+            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista');
+            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 });
+            PromocaoPage.addPrestamista();
+            ValidadePrestamistaPage.added();
             AvancarPage.final();
-            ValidadePrestamistaPage.pageFinal()
+            ValidadePrestamistaPage.pageFinal();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
         })
 
         it('4.Order with promotion deadline installment (promotion 162): product 1894 0 0 with guarantee (interest-free) and moneylender (with interest)', () => {
     
-            Product.fourthInstallmentDeadline()
+            Product.fourthInstallmentDeadline();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            PromocaoPage.typeServiceFreeValidate()
-            PromocaoPage.selectFirstPromoProduct()
-            ProcessoRecebPage.withMoneylender()
+            cy.clickAddProduc();
+            PromocaoPage.typeServiceFreeValidate();
+            PromocaoPage.selectFirstPromoProduct();
+            ProcessoRecebPage.withMoneylender();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
-            Service.garantiaSepMesmoProc() 
+            Service.garantiaSepMesmoProc();
             Service.clickOKServiceLinked();
-            ValidateService.servLinked() ; ValidateService.AddGarantSepMesmoProc()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
-            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista')
-            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 })
-            PromocaoPage.addPrestamista()
-            ValidadePrestamistaPage.added()
+            ValidateService.servLinked(); ValidateService.AddGarantSepMesmoProc();
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
+            cy.intercept('POST', '/services/v3/pedido_forma_pagamento_lista').as('api_pedido_forma_pagamento_lista');
+            cy.wait('@api_pedido_forma_pagamento_lista', { timeout: 40000 });
+            PromocaoPage.addPrestamista();
+            ValidadePrestamistaPage.added();
             AvancarPage.final();
-            ValidadePrestamistaPage.pageFinal()
+            ValidadePrestamistaPage.pageFinal();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
         })

@@ -15,7 +15,7 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina(); 
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })
 
@@ -26,17 +26,17 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             Product.fisrt();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.duas()
+            ParcelasPage.duas();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -47,7 +47,7 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             Product.fisrt();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
+            cy.clickAddProduc();
             GeralPedidosPage.changeBranchInvoicing()
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
@@ -55,17 +55,17 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             Product.freightSecond() 
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            GeralPedidosPage.changeBranchInvoicing()
+            cy.clickAddProduc();
+            GeralPedidosPage.changeBranchInvoicing();
             cy.clickAddProduct();
             Service.validateModalServLinked();
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.duas()
+            ParcelasPage.duas();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -73,21 +73,21 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
 
         it('3.Remote order: kit 1877 0 0', () => {
 
-            Product.kitRemote()
+            Product.kitRemote();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct(); 
-            cy.clickAddProduc()
-            GeralPedidosPage.changeBranchInvoicing()
-            GeralPedidosPage.compositionKit()
+            cy.clickAddProduc();
+            GeralPedidosPage.changeBranchInvoicing();
+            GeralPedidosPage.compositionKit();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.duas()
+            ParcelasPage.duas();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -98,20 +98,20 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
 
         it('4.Remote order - with balance in CD (branch 1) - should allow making the order - (Remote sale of product without balance in the invoicing branch, but with balance in the invoicing branch CD - with delivery)', () => {
 
-            Product.remoteWithCD()
+            Product.remoteWithCD();
             ValidateBalance.withBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            GeralPedidosPage.changeBranchInvoicing()
+            cy.clickAddProduc();
+            GeralPedidosPage.changeBranchInvoicing();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.duas()
+            ParcelasPage.duas();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -119,11 +119,11 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
 
         it('5.Remote order - without balance in CD (branch 1) - should NOT allow making the order - (Remote sale of product without balance in the invoicing branch, without balance of the invoicing branch CD)', () => {
 
-            Product.remoteWithoutCD()
-            ValidateBalance.withoutBalance() 
+            Product.remoteWithoutCD();
+            ValidateBalance.withoutBalance();
             cy.clickVoltageProduct();
-            cy.clickAddProduc()
-            GeralPedidosPage.changeBranchInvoicing()
+            cy.clickAddProduc();
+            GeralPedidosPage.changeBranchInvoicing();
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada."
             cy.get('[ng-if="semSaldoCD"][style=""] > p')
@@ -131,7 +131,7 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
                 .and('be.visible')
                 .and('have.text','Este produto não possui saldo na filial selecionada.')
                 .invoke('css', 'color') // Obtém a cor do elemento
-                .should('equal', 'rgb(244, 67, 54)')
+                .should('equal', 'rgb(244, 67, 54)');
 
             //Validando mensagem "Este produto não possui saldo na filial selecionada, será permitido apenas a simulação da venda."
             cy.get('[ng-show="(itemGradeSelecionado && itemGradeSelecionado.valor > 0)"] > :nth-child(1) > .mensagem-erro-centralizada > p')
@@ -139,13 +139,13 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
                 .and('be.visible')
                 .and('have.text','Este produto não possui saldo na filial selecionada, será permitido apenas a simulação da venda.')
                 .invoke('css', 'color') // Obtém a cor do elemento
-                .should('equal', 'rgb(244, 67, 54)')  
+                .should('equal', 'rgb(244, 67, 54)');
 
             //Validando botão Adicionar para Simulação
             cy.get('.md-primary.btn-rounded.md-raised.btn-block')
                 .should('exist')
                 .and('not.be.disabled')
-                .and('contain',' Adicionar para Simulação')
+                .and('contain',' Adicionar para Simulação');
         })    
     })
 })

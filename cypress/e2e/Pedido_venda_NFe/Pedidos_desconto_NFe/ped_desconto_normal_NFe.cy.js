@@ -1,12 +1,12 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
-import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js';
 
 describe('Sales order with discount', () => {
 
@@ -16,7 +16,7 @@ describe('Sales order with discount', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })
 
@@ -24,22 +24,22 @@ describe('Sales order with discount', () => {
 
         it('1.Order: product 1912 0 0 with discount Sub (-) / R$', () => {
 
-            Product.discountNumber()
+            Product.discountNumber();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            OrderDiscount.clickButtonDiscount() 
-            OrderDiscount.validateModalSub()
-            OrderDiscount.applyDiscountR$()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
+            OrderDiscount.clickButtonDiscount();
+            OrderDiscount.validateModalSub();
+            OrderDiscount.applyDiscountR$();
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.one()
+            ParcelasPage.one();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -47,22 +47,22 @@ describe('Sales order with discount', () => {
 
         it('2.Order: product 1913 0 0 with discount Sub (-) / % (Percentage)', () => {
 
-            Product.discountPercentage()
+            Product.discountPercentage();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            OrderDiscount.clickButtonDiscount() 
-            OrderDiscount.validateModalSub()
-            OrderDiscount.applyDiscountPencentage()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
+            OrderDiscount.clickButtonDiscount();
+            OrderDiscount.validateModalSub();
+            OrderDiscount.applyDiscountPencentage();
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.one()
+            ParcelasPage.one();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -70,22 +70,22 @@ describe('Sales order with discount', () => {
 
         it('3.Order: product 1914 0 0 with discount Sub (-) / FIXED VALUE', () => {
 
-            Product.discountValueFixed()
+            Product.discountValueFixed();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            OrderDiscount.clickButtonDiscount() 
-            OrderDiscount.validateModalSub()
-            OrderDiscount.applyDiscountVF()
-            TirarEntrega.freightFirst()() 
-            AvancarPage.toInstallments()
+            OrderDiscount.clickButtonDiscount();
+            OrderDiscount.validateModalSub();
+            OrderDiscount.applyDiscountVF();
+            TirarEntrega.freightFirst(); 
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.one()
+            ParcelasPage.one();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();

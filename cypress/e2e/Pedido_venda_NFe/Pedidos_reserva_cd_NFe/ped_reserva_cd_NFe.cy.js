@@ -15,7 +15,7 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina(); 
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })
 
@@ -23,19 +23,19 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
 
         it('1.Order: product 1880 0 0 - (Local sale of product with balance only in CD - without delivery)', () => {
 
-            Product.cdFirst()
+            Product.cdFirst();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()
+            TirarEntrega.freightFirst();
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.duas()
+            ParcelasPage.duas();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -43,14 +43,14 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
 
         it('2.Order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - without delivery)', () => {
 
-            Product.cdFirst()
+            Product.cdFirst();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightFirst() 
+            TirarEntrega.freightFirst();
             Product.second();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
@@ -58,12 +58,12 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
             cy.clickAddProduct();
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
-            TirarEntrega.freightSecond() 
-            AvancarPage.toInstallments()
+            TirarEntrega.freightSecond();
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.duas()
+            ParcelasPage.duas();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -74,7 +74,7 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
 
         it('3.Order: product 1880 0 0 - (Local sale of product with balance only in CD - with delivery)', () => {
             
-            Product.cdFirst()
+            Product.cdFirst();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
@@ -82,11 +82,11 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
-            ParcelasPage.duas()
+            ParcelasPage.duas();
             AvancarPage.final();
             cy.clickFinalizarPedidoPage();
             cy.validateOrderGenerated();
@@ -109,7 +109,7 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
             Service.validateModalServLinked(); 
             Service.clickOKServiceLinked();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment();
             ProcessoRecebPage.main();
