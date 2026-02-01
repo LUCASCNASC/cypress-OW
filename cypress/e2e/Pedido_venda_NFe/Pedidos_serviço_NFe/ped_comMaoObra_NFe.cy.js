@@ -1,11 +1,11 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
-import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js';
 
 describe('Orders with Labor', () => {
 
@@ -28,11 +28,11 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaNaoSep() 
+            Service.garantiaNaoSep(); 
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments() 
+            ValidateService.servLinked(); ValidateService.addMODestNãoSepara();
+            TirarEntrega.freightFirst(); 
+            AvancarPage.toInstallments(); 
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -49,10 +49,10 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaNaoSep()  
+            Service.garantiaNaoSep();  
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
-            TirarEntrega.freightFirst() 
+            ValidateService.servLinked(); ValidateService.addMODestNãoSepara();
+            TirarEntrega.freightFirst(); 
             Product.second();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
@@ -60,8 +60,8 @@ describe('Orders with Labor', () => {
             cy.clickAddProduct();
             Service.validateModalServLinked();  
             Service.clickOKServiceLinked();
-            TirarEntrega.freightSecond() 
-            AvancarPage.toInstallments()
+            TirarEntrega.freightSecond(); 
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -78,11 +78,11 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaSepMesmoProc() 
+            Service.garantiaSepMesmoProc(); 
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments()  
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepMesmoProc();
+            TirarEntrega.freightFirst(); 
+            AvancarPage.toInstallments();  
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -99,9 +99,9 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaSepMesmoProc() 
+            Service.garantiaSepMesmoProc(); 
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepMesmoProc();
             TirarEntrega.freightFirst() 
             Product.second();
             ValidateBalance.withBalance();
@@ -110,8 +110,8 @@ describe('Orders with Labor', () => {
             cy.clickAddProduct();
             Service.validateModalServLinked();  
             Service.clickOKServiceLinked();
-            TirarEntrega.freightSecond() 
-            AvancarPage.toInstallments() 
+            TirarEntrega.freightSecond(); 
+            AvancarPage.toInstallments(); 
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -128,11 +128,11 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaSepTituloProcDif() 
+            Service.garantiaSepTituloProcDif(); 
             Service.clickOKServiceLinked(); 
-            ValidateService.servViservLinkednc() ; ValidateService.addMONaoDestSepProcDif()
-            TirarEntrega.freightFirst() 
-            AvancarPage.toInstallments() 
+            ValidateService.servViservLinkednc(); ValidateService.addMONaoDestSepProcDif();
+            TirarEntrega.freightFirst(); 
+            AvancarPage.toInstallments(); 
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -149,9 +149,9 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaSepTituloProcDif() 
+            Service.garantiaSepTituloProcDif(); 
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepProcDif()
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepProcDif();
             TirarEntrega.freightFirst() 
             Product.second();
             ValidateBalance.withBalance();
@@ -160,8 +160,8 @@ describe('Orders with Labor', () => {
             cy.clickAddProduct();
             Service.validateModalServLinked();  
             Service.clickOKServiceLinked();
-            TirarEntrega.freightSecond() 
-            AvancarPage.toInstallments() 
+            TirarEntrega.freightSecond(); 
+            AvancarPage.toInstallments(); 
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -181,11 +181,11 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaNaoSep()  
+            Service.garantiaNaoSep();  
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
+            ValidateService.servLinked(); ValidateService.addMODestNãoSepara();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -202,9 +202,9 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaNaoSep()  
+            Service.garantiaNaoSep();  
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMODestNãoSepara()
+            ValidateService.servLinked(); ValidateService.addMODestNãoSepara();
             Product.second();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
@@ -213,7 +213,7 @@ describe('Orders with Labor', () => {
             Service.validateModalServLinked();  
             Service.clickOKServiceLinked(); 
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -230,11 +230,11 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaSepMesmoProc() 
+            Service.garantiaSepMesmoProc(); 
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepMesmoProc();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -253,16 +253,16 @@ describe('Orders with Labor', () => {
             cy.clickAddProduct();
             Service.garantiaSepMesmoProc() 
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepMesmoProc()
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepMesmoProc();
             Product.second();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.validateModalServLinked();  - SEGUNDO PRODUTP
+            Service.validateModalServLinked();
             Service.clickOKServiceLinked(); 
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -279,11 +279,11 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaSepTituloProcDif() 
+            Service.garantiaSepTituloProcDif(); 
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepProcDif()
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepProcDif();
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();
@@ -300,9 +300,9 @@ describe('Orders with Labor', () => {
             cy.selectProductSearch();
             cy.clickVoltageProduct();
             cy.clickAddProduct();
-            Service.garantiaSepTituloProcDif() 
+            Service.garantiaSepTituloProcDif(); 
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.addMONaoDestSepProcDif()
+            ValidateService.servLinked(); ValidateService.addMONaoDestSepProcDif();
             Product.second();
             ValidateBalance.withBalance();
             cy.selectProductSearch();
@@ -311,7 +311,7 @@ describe('Orders with Labor', () => {
             Service.validateModalServLinked();  
             Service.clickOKServiceLinked(); 
             AvancarPage.toTransporter();
-            AvancarPage.toInstallments()
+            AvancarPage.toInstallments();
             GeralPagamentoPage.clickGenerateInstallments(); 
             GeralPagamentoPage.loadingFormPayment(); 
             ProcessoRecebPage.main();

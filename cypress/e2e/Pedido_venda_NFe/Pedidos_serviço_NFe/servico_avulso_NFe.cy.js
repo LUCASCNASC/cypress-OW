@@ -1,9 +1,9 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
-import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js';
 
 describe('Sale of individual services', () => {
 
