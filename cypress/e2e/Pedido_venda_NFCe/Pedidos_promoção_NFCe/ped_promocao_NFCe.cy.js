@@ -1,10 +1,10 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { EntregaPage } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { EntregaPage } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js';
 
 describe('Orders with promotional delivery', () => {
 

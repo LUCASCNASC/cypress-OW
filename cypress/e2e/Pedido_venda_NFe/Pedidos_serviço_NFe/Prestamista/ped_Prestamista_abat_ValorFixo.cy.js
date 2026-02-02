@@ -1,14 +1,14 @@
-import { ProcessoVendaPage } from '../../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../../pages/pedido/ProdutoPage.js'
-import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../../pages/pedido/AvancarPage.js'
-import { GeralPagamentoPage } from '../../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../../pages/pedido/ParcelasPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
-import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPromoPage.js'
-import { PromocaoPage } from '../../../../pages/pedido/PromocaoPage.js'
-import { ValidadePrestamistaPage } from '../../../../pages/pedido/ValidadePrestamistaPage.js'
-import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
+import { ProcessoVendaPage } from '../../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../../pages/pedido/ProdutoPage.js';
+import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../../pages/pedido/AvancarPage.js';
+import { GeralPagamentoPage } from '../../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPromoPage.js';
+import { PromocaoPage } from '../../../../pages/pedido/PromocaoPage.js';
+import { ValidadePrestamistaPage } from '../../../../pages/pedido/ValidadePrestamistaPage.js';
+import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js';
 
 describe('Orders with Lender Service Fixed Value Discount (161)', () => {
 
@@ -18,7 +18,7 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina(); 
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })   
 
@@ -118,7 +118,7 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             Service.validateModalServLinked();
             ValidateService.garantiaNaoSep()
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked() ; ValidateService.garantiaNaoSep()
+            ValidateService.servLinked(); ValidateService.garantiaNaoSep();
             AvancarPage.toTransporter();
             AvancarPage.toInstallments();
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons');
@@ -145,7 +145,7 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             Service.validateModalServLinked();
             ValidateService.garantiaNaoSep();
             Service.clickOKServiceLinked(); 
-            ValidateService.servLinked(); ValidateService.garantiaNaoSep(;)
+            ValidateService.servLinked(); ValidateService.garantiaNaoSep();
             AvancarPage.toTransporter();
             AvancarPage.toInstallments();
             cy.intercept('GET', '/images/icons/chain.svg').as('api_icons');
@@ -179,7 +179,7 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
             ProcessoRecebPage.presentMoneyRebVF();
             ParcelasPage.for();
             ValidateService.okInsurancePrest();
-            ValidadePrestamistaPage.added() ;
+            ValidadePrestamistaPage.added();
             AvancarPage.final();
             ValidadePrestamistaPage.pageFinal();
             cy.clickFinalizarPedidoPage();

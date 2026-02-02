@@ -1,11 +1,11 @@
-import { ProcessoVendaPage } from '../../../pages/pedidos/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
-import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/ParcelasPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedidos/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/ParcelasPage.js';
 
 describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 

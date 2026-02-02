@@ -1,13 +1,13 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js'
-import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPagePromoPage.js'
-import { PromocaoPage } from '../../../../pages/pedido/promocao/promocao.js'
-import { ValidadePrestamistaPage } from '../../../pages/pedido/ValidadePrestamistaPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
-import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { TirarEntrega } from '../../../pages/pedido/EntregaPage.js';
+import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPagePromoPage.js';
+import { PromocaoPage } from '../../../../pages/pedido/promocao/promocao.js';
+import { ValidadePrestamistaPage } from '../../../pages/pedido/ValidadePrestamistaPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js';
 
 describe('Orders with promotions and interest-free services', () => {
 

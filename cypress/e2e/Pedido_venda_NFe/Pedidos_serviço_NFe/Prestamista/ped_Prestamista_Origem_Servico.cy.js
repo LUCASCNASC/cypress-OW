@@ -1,14 +1,14 @@
-import { ProcessoVendaPage } from '../../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../../pages/pedido/ProdutoPage.js'
-import { AvancarPage } from '../../../../pages/pedido/AvancarPage.js'
-import { GeralPagamentoPage } from '../../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../../pages/pedido/ParcelasPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
-import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPromoPage.js'
-import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.js'
-import { PromocaoPage } from '../../../../pages/pedido/PromocaoPage.js'
-import { ValidadePrestamistaPage } from '../../../../pages/pedido/ValidadePrestamistaPage.js'
-import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js'
+import { ProcessoVendaPage } from '../../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../../pages/pedido/ProdutoPage.js';
+import { AvancarPage } from '../../../../pages/pedido/AvancarPage.js';
+import { GeralPagamentoPage } from '../../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPromoPage.js';
+import { Service, ValidateService } from '../../../../pages/pedido/ServicosPage.js';
+import { PromocaoPage } from '../../../../pages/pedido/PromocaoPage.js';
+import { ValidadePrestamistaPage } from '../../../../pages/pedido/ValidadePrestamistaPage.js';
+import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js';
 
 
 describe('Orders with Fixed Value Discount Service - Service Origin (162)', () => {

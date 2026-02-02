@@ -1,11 +1,11 @@
-import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js'
-import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js'
-import { Service } from '../../../pages/pedido/ServicosPage.js'
-import { AvancarPage } from '../../../pages/pedido/AvancarPage.js'
-import { EntregaPage } from '../../../pages/pedido/EntregaPage.js'
-import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
-import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js'
-import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js'
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { EntregaPage } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
 describe('Normal order with delivery', () => {
 

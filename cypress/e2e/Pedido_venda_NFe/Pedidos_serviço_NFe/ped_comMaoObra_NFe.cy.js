@@ -15,7 +15,7 @@ describe('Orders with Labor', () => {
         cy.login();
         cy.urlAposLogin();
         cy.tituloPagina();
-        ProcessoVendaPage.NFe() 
+        ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })
 
