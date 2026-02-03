@@ -15,7 +15,7 @@ describe('Future delivery request with delivery', () => {
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina();
+        cy.validateTitlePage();
         ProcessoVendaPage.deliveryFutureNFCe(); 
         cy.chooseCliente();
     })

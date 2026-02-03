@@ -17,7 +17,7 @@ describe('Orders with Lender Service Fixed Value Discount (161)', () => {
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina(); 
+        cy.validateTitlePage(); 
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })   

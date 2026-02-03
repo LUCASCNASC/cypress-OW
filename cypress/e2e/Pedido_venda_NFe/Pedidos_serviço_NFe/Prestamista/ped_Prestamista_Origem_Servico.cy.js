@@ -18,7 +18,7 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina(); 
+        cy.validateTitlePage(); 
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })   

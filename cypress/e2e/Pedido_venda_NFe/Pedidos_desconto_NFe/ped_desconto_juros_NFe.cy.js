@@ -15,7 +15,7 @@ describe('PStandard order with interest discount - parameters 243 and 244 define
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina();
+        cy.validateTitlePage();
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })

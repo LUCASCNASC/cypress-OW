@@ -14,7 +14,7 @@ describe('Orders with Guarantee and Delivery', () => {
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina(); 
+        cy.validateTitlePage(); 
         ProcessoVendaPage.NFCe();
         cy.chooseCliente();
     })   

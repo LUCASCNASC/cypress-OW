@@ -7,7 +7,7 @@ describe('Login happy path - regular user with password enabled', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.urlAposLogin();
-        cy.tituloPagina();
+        cy.validateTitlePage();
         LoginPage.logoEnterpriseLogin();
         LoginPage.iconComputerLogin();
         LoginPage.userTextIcon();

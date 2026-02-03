@@ -22,7 +22,7 @@ Cypress.Commands.add('urlAposLogin', (username, password) => {
 });
 
 //validar título da página após logarmos no pedido web - título da aba do navegador
-Cypress.Commands.add('tituloPagina', (username, password) => {
+Cypress.Commands.add('validateTitlePage', (username, password) => {
   
   cy.title().should('eq', 'Sabium Mobile');
 });
@@ -42,9 +42,4 @@ Cypress.Commands.add('login', () => {
 //Valida URL após login no Pedido Web.
 Cypress.Commands.add('validateUrlAfterLogin', () => {
   cy.url().should('include', '/');
-});
-
-//Valida o título da página após login no Pedido Web.
-Cypress.Commands.add('validatePageTitle', () => {
-  cy.title().should('eq', 'Sabium Mobile');
 });

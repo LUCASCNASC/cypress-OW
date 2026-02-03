@@ -15,7 +15,7 @@ describe('Normal order with delivery', () => {
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina();
+        cy.validateTitlePage();
         ProcessoVendaPage.NFCe();
         cy.chooseCliente();
     })

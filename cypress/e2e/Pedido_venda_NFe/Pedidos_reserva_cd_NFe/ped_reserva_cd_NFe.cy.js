@@ -14,7 +14,7 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina(); 
+        cy.validateTitlePage(); 
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })

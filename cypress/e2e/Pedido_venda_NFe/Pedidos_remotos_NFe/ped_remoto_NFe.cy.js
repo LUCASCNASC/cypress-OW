@@ -14,7 +14,7 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina(); 
+        cy.validateTitlePage(); 
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })

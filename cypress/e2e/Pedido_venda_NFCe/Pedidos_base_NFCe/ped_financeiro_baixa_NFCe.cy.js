@@ -14,7 +14,7 @@ describe('Order with financial details on file with delivery.', () => {
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina();
+        cy.validateTitlePage();
         ProcessoVendaPage.financePaymentNFCe();
         cy.chooseCliente();
     })

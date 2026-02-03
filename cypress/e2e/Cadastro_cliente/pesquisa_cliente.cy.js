@@ -7,7 +7,7 @@ describe('Register customer', () => {
         cy.clearAllSessionStorage();
         cy.login();
         cy.urlAposLogin();
-        cy.tituloPagina();
+        cy.validateTitlePage();
     })
 
     context('Search customer by number', () => {
