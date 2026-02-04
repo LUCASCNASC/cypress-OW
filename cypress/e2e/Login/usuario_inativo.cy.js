@@ -7,8 +7,7 @@ describe('User inative', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.urlAposLogin();
-        cy.validateTitlePage
-        ();
+        cy.validateTitlePage();
         LoginPage.logoEnterpriseLogin();
         LoginPage.iconComputerLogin();
         LoginPage.userTextIcon();
