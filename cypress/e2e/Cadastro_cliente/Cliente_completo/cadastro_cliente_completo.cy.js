@@ -13,14 +13,14 @@ describe('Register complete client', () => {
         cy.login();
         cy.urlAposLogin();
         cy.validateTitlePage();
+        ClienteCompletoPage.clickMenuOpcoes(); 
+        ClienteCompletoPage.clickOpcaoClienteCompleto();
     })
 
     context('Complete customer registration - basic', () => {
 
         it('1.Full customer CPF', () => {
             
-            ClienteCompletoPage.clickMenuOpcoes(); 
-            ClienteCompletoPage.clickOpcaoClienteCompleto();
             PessoaPage.fillCPFCliente();
             PessoaPage.fillNomeCompleto();
             PessoaPage.fillNomeSocial();
@@ -28,15 +28,7 @@ describe('Register complete client', () => {
             PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarCliente();
             ClienteCompletoPage.validateMessageEnderecoObrigatorio();
-            EnderecoPage.clickAbaEndereco();
-            EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.validateEnderecoVazio();
-            EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco();
-            EnderecoPage.fillCEPEndereco();
-            EnderecoPage.fillNumeroEndereco();
-            EnderecoPage.clickSalvarEndereco();
-            EnderecoPage.infoEnderecoAdicionado();
+            EnderecoPage.addEndereco();
             RotaPage.registerRota();
             TelefonePage.registerTelefone();
             ClienteCompletoPage.clickSalvarCliente();
@@ -46,8 +38,6 @@ describe('Register complete client', () => {
 
         it('2.Customer full CPF - required fields message', () => {
     
-            ClienteCompletoPage.clickMenuOpcoes();
-            ClienteCompletoPage.clickOpcaoClienteCompleto();
             ClienteCompletoPage.clickSalvarCliente();
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             PessoaPage.fillCPFCliente();
@@ -57,19 +47,7 @@ describe('Register complete client', () => {
             PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarCliente(); 
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
-            EnderecoPage.clickAbaEndereco(); 
-            EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.tipoEndereco();
-            EnderecoPage.validateEnderecoVazio();
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
-            EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco();
-            EnderecoPage.fillCEPEndereco();
-            EnderecoPage.fillNumeroEndereco();
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
-            EnderecoPage.clickSalvarEndereco();
-            EnderecoPage.infoEnderecoAdicionado();
+            EnderecoPage.addEndereco();
             RotaPage.registerRota();
             TelefonePage.registerTelefone();
             ClienteCompletoPage.validateModalAguardeCarregando();
@@ -77,26 +55,13 @@ describe('Register complete client', () => {
         })  
 
         it('3.Complete customer CNPJ', () => {
-    
-            ClienteCompletoPage.clickMenuOpcoes();
-            ClienteCompletoPage.clickOpcaoClienteCompleto(); 
+  
             PessoaPage.fillCNPJCliente();
             PessoaPage.fillNomeCNPJ();
             PessoaPage.fillNomeFantasiaCliente();
             ClienteCompletoPage.clickSalvarCliente(); 
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
-            EnderecoPage.clickAbaEndereco();
-            EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco();
-            EnderecoPage.validateEnderecoVazio();
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
-            EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco();
-            EnderecoPage.fillCEPEndereco();
-            EnderecoPage.fillNumeroEndereco();
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
-            EnderecoPage.clickSalvarEndereco();
-            EnderecoPage.infoEnderecoAdicionado();
+            EnderecoPage.addEndereco();
             RotaPage.registerRota();
             TelefonePage.registerTelefone();
             ClienteCompletoPage.clickSalvarCliente();
@@ -109,25 +74,13 @@ describe('Register complete client', () => {
 
         it('4.Complete customer CPF - happy path', () => {
 
-            ClienteCompletoPage.clickMenuOpcoes();
-            ClienteCompletoPage.clickOpcaoClienteCompleto(); 
             PessoaPage.fillCPFCliente();
             PessoaPage.fillNomeCompleto();
             PessoaPage.fillNomeSocial();
             PessoaPage.fillDataNascimento();
             PessoaPage.chooseSexoCliente();
             ClienteCompletoPage.clickSalvarCliente();
-            EnderecoPage.clickAbaEndereco();
-            EnderecoPage.clickAdicionarNovoEndereco();
-            EnderecoPage.tipoEndereco();
-            EnderecoPage.validateEnderecoVazio();
-            EnderecoPage.clickAbrirTipoEndereco();
-            EnderecoPage.chooseTipoEndereco();
-            EnderecoPage.fillCEPEndereco();
-            EnderecoPage.fillNumeroEndereco();
-            ClienteCompletoPage.validarBotaoSalvarDesabilitado();
-            EnderecoPage.clickSalvarEndereco();
-            EnderecoPage.infoEnderecoAdicionado();
+            EnderecoPage.addEndereco();
             RotaPage.registerRota();
             TelefonePage.registerTelefone();
             ClienteCompletoPage.clickSalvarCliente();
