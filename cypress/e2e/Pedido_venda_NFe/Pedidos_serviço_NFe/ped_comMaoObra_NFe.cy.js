@@ -13,9 +13,7 @@ describe('Orders with Labor', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
-        cy.validateTitlePage
-        ();
+        cy.validateTitlePage();
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })

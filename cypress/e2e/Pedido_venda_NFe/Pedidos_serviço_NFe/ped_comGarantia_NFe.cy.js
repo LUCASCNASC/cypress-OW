@@ -13,7 +13,6 @@ describe('Orders with Guarantee', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage(); 
         ProcessoVendaPage.NFe(); 
         cy.chooseCliente();

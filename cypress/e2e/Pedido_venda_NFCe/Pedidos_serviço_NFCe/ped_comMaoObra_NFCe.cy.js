@@ -13,7 +13,6 @@ describe('Orders with labor and delivery', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ProcessoVendaPage.NFCe();
         cy.chooseCliente();

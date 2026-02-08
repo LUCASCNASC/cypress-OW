@@ -15,9 +15,7 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
-        cy.validateTitlePage
-        ();
+        cy.validateTitlePage();
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })

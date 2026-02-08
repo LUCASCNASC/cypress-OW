@@ -11,9 +11,7 @@ describe('Register a simple customer', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
-        cy.validateTitlePage
-        ();
+        cy.validateTitlePage();
     })
   
     context('Register simple client', () => {

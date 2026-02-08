@@ -13,7 +13,7 @@ describe('Orders with Warranty and Labor', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
+        
         cy.validateTitlePage(); 
         ProcessoVendaPage.NFe(); 
         cy.chooseCliente();

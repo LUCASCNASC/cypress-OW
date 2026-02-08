@@ -14,9 +14,7 @@ describe('Order with more than one payment method', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
-        cy.validateTitlePage
-        ();
+        cy.validateTitlePage();
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
     })

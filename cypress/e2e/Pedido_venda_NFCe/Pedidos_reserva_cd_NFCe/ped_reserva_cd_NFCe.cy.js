@@ -13,7 +13,6 @@ describe('Order with reservation at the distribution center (with delivery) - Ba
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage(); 
         ProcessoVendaPage.NFCe();
         cy.chooseCliente();

@@ -11,9 +11,7 @@ describe('Register complete client', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
-        cy.validateTitlePage
-        ();
+        cy.validateTitlePage();
     })
 
     context('Complete customer registration - including financial references', () => {

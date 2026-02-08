@@ -6,7 +6,6 @@ describe('Register customer', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
     })
 

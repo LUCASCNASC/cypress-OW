@@ -7,7 +7,6 @@ describe('Attempting a sales order with an out-of-stock product - Stock rule: Pa
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ProcessoVendaPage.NFe();
         cy.chooseCliente();

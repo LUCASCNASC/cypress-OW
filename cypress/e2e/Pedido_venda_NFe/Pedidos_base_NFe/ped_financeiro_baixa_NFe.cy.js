@@ -14,7 +14,6 @@ describe('Order with finances in the low', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ProcessoVendaPage.financePaymentNFe();
         cy.chooseCliente();

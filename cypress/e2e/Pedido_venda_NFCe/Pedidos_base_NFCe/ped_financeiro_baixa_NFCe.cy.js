@@ -13,7 +13,6 @@ describe('Order with financial details on file with delivery.', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ProcessoVendaPage.financePaymentNFCe();
         cy.chooseCliente();

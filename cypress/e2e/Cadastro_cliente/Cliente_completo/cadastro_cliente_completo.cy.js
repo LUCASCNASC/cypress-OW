@@ -11,7 +11,6 @@ describe('Register complete client', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ClienteCompletoPage.clickMenuOpcoes(); 
         ClienteCompletoPage.clickOpcaoClienteCompleto();

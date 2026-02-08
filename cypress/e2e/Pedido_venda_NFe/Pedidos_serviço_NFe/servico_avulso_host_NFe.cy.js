@@ -11,7 +11,6 @@ describe('Sale of individual services Host - 104', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ProcessoVendaPage.saleServiceLoose();
         cy.chooseCliente();

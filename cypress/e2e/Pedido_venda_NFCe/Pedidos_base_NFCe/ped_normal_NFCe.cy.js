@@ -13,7 +13,6 @@ describe('Normal order with delivery', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ProcessoVendaPage.NFCe();
         cy.chooseCliente();

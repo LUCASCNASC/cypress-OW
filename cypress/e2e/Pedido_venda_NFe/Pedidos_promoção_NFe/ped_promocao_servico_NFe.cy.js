@@ -15,7 +15,6 @@ describe('Orders with promotions and interest-free services', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage
         ();
         ProcessoVendaPage.NFe();

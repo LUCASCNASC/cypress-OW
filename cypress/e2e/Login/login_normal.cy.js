@@ -6,7 +6,6 @@ describe('Login happy path - regular user with password enabled', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.clearAllSessionStorage();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         LoginPage.logoEnterpriseLogin();
         LoginPage.iconComputerLogin();

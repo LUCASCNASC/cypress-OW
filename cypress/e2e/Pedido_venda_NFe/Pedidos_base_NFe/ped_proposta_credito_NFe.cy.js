@@ -14,7 +14,6 @@ describe('Application with credit proposal', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ProcessoVendaPage.NFe();
         cy.chooseCliente();

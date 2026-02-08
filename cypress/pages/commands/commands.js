@@ -14,10 +14,8 @@ Cypress.Commands.add('login', (username, password) => {
   cy.get('.ng-scope > .ng-binding').should('contain','Entrando no sistema');
   cy.wait('@api_discount', { timeout: 40000 });
   cy.get('.click-cliente > .informe-o-cliente > .cliente-header').should('contain','Cliente');
-});
 
-//validar url após logarmos no pedido web
-Cypress.Commands.add('urlAposLogin', (username, password) => {
+  //validate url after login
   cy.url().should('include', '/');
 });
 
@@ -25,21 +23,4 @@ Cypress.Commands.add('urlAposLogin', (username, password) => {
 Cypress.Commands.add('validateTitlePage', (username, password) => {
   
   cy.title().should('eq', 'Sabium Mobile');
-});
-
-//Faz login no sistema Pedido Web.
-Cypress.Commands.add('login', () => {
-  cy.visit('/');
-  cy.get('#txtusername').type('sabium.automacao');
-  cy.get('#txtpassword').type('123.automacao');
-  cy.intercept('GET', '/images/icons/discount.svg').as('api_discount');
-  cy.get('.test_btnSalvarCliente').click(); // Botão entrar
-  cy.get('.ng-scope > .ng-binding').should('contain','Entrando no sistema');
-  cy.wait('@api_discount', { timeout: 40000 });
-  cy.get('.click-cliente > .informe-o-cliente > .cliente-header').should('contain','Cliente');
-});
-
-//Valida URL após login no Pedido Web.
-Cypress.Commands.add('validateUrlAfterLogin', () => {
-  cy.url().should('include', '/');
 });

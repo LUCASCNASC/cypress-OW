@@ -14,7 +14,6 @@ describe('Sales order with discount', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage();
         ProcessoVendaPage.NFe();
         cy.chooseCliente();

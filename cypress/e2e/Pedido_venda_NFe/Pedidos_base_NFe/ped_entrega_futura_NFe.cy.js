@@ -13,7 +13,7 @@ describe('Future delivery order', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
+        
         cy.validateTitlePage();
         ProcessoVendaPage.deliveryFutureNFe();
         cy.chooseCliente();

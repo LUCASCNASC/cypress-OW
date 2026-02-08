@@ -12,7 +12,6 @@ describe('Sale of individual services, with product order already downloaded', (
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
         cy.validateTitlePage(); 
         ProcessoVendaPage.saleServiceLoose();
         cy.chooseCliente();

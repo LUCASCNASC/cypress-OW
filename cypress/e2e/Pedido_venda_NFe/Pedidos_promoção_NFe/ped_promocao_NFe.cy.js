@@ -14,7 +14,7 @@ describe('Orders with promotion', () => {
         cy.visit('/');
         cy.clearAllSessionStorage();
         cy.login();
-        cy.urlAposLogin();
+        
         cy.validateTitlePage();
         ProcessoVendaPage.NFe();
         cy.chooseCliente();
