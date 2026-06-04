@@ -1,4 +1,4 @@
-import { ClienteSimplesPage } from '../../pages/cadastro_cliente/ClienteSimplesPage.js';
+import { ClienteSimplesPage } from '../pages/register-client/ClienteSimplesPage.js';
 import { gerarCpf }  from '../../support/gerarDados';
 
 const Numeroalteracao = '113'

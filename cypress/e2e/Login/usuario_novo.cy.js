@@ -1,5 +1,5 @@
 import { LoginPage } from '../../pages/LoginPage.js';
-import users from '../../e2e/users.json';
+import users from '../users.json';
 
 describe('Login with new user', () => {
 
