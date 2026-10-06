@@ -18,9 +18,3 @@ Cypress.Commands.add('login', (username, password) => {
   //validate url after login
   cy.url().should('include', '/');
 });
-
-//validar título da página após logarmos no pedido web - título da aba do navegador
-Cypress.Commands.add('validateTitlePage', (username, password) => {
-  
-  cy.title().should('eq', 'Sabium Mobile');
-});

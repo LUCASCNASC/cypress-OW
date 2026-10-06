@@ -6,7 +6,6 @@ describe('User with expired password', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.clearAllSessionStorage();
-        cy.validateTitlePage();
         LoginPage.logoEnterpriseLogin();
         LoginPage.iconComputerLogin();
         LoginPage.userTextIcon();

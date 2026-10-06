@@ -5,7 +5,6 @@ describe('Login with new user', () => {
 
     beforeEach(() => {
         cy.visit('/');
-        cy.clearAllSessionStorage();
         cy.validateTitlePage();
         LoginPage.logoEnterpriseLogin();
         LoginPage.iconComputerLogin();
