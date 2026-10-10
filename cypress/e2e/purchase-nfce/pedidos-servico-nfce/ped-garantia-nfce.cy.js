@@ -1,0 +1,182 @@
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { EntregaPage } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+
+describe('orders with Guarantee and Delivery', () => {
+
+    beforeEach(() => {
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.validateTitlePage(); 
+        ProcessoVendaPage.NFCe();
+        cy.chooseCliente();
+    })   
+
+    context('with delivery/Process 9890 - happy path', () => {
+
+        it('order: product 1860 0 0 (with Warranty that separates title in the same process)', () => {
+    
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+
+        it('order: product 1860 0 0 (with Warranty that separates title in the same process) and product 1870 0 0 (without service)', () => {
+    
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.garantiaSepMesmoProc() 
+            Service.clickOKServiceLinked(); 
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+
+        it('order: product 1860 0 0 (with Warranty that does not separate title)', () => {
+    
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.garantiaNaoSep();
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery(); 
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+
+        it('order: product 1860 0 0 (with Warranty that does not separate title) and product 1870 0 0 (without service)', () => {
+    
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.garantiaNaoSep();
+            Service.clickOKServiceLinked(); 
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+
+        it('order: product 1860 0 0 (with Warranty that separates title in a different process)', () => {
+    
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.garantiaSepTituloProcDif();
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.escolherTranspochooseTransporterrtadora()
+            AvancarPage.installmentDelivery(); 
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+
+        it('order: product 1860 0 0 (with Warranty that separates title in a different process) and product 1870 0 0 (without service)', () => {
+    
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.garantiaSepTituloProcDif();
+            Service.clickOKServiceLinked(); 
+            Product.second();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduct();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment(); 
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+    })
+})

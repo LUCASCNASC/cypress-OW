@@ -1,0 +1,98 @@
+import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
+import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
+import { Service } from '../../../pages/pedido/ServicosPage.js';
+import { AvancarPage } from '../../../pages/pedido/AvancarPage.js';
+import { EntregaPage } from '../../../pages/pedido/EntregaPage.js';
+import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
+import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
+import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
+
+describe('normal order with delivery', () => {
+
+    beforeEach(() => {
+        cy.visit('/');
+        cy.clearAllSessionStorage();
+        cy.login();
+        cy.validateTitlePage();
+        ProcessoVendaPage.NFCe();
+        cy.chooseCliente();
+    })
+
+    context('with delivery/process 9890 - happy path', () => {
+
+        it('order: product 1860 0 0 - (Local sale of stock item - with delivery)', () => {
+                  
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduc();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+
+        it('order: products 1860 0 0 and 1870 0 0', () => {
+                
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduc();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            Product.second(); 
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduc();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
+            GeralPagamentoPage.clickGenerateInstallments(); 
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.two();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+
+        it('order: product 1860 0 0 - (Sales order with delivery. With down payment + installments.)', () => {
+                  
+            Product.fisrt();
+            ValidateBalance.withBalance();
+            cy.selectProductSearch();
+            cy.clickVoltageProduct();
+            cy.clickAddProduc();
+            Service.validateModalServLinked(); 
+            Service.clickOKServiceLinked();
+            AvancarPage.toTransporter();
+            EntregaPage.modalInconsOnlyTransporter(); 
+            EntregaPage.chooseTransporter();
+            AvancarPage.installmentDelivery();
+            GeralPagamentoPage.chooseEntryFormPayment();
+            GeralPagamentoPage.clickGeneratePayment();
+            GeralPagamentoPage.clickGenerateInstallments();
+            GeralPagamentoPage.loadingFormPayment();
+            ProcessoRecebPage.main();
+            ParcelasPage.one();
+            AvancarPage.final();
+            cy.clickFinalizarPedidoPage();
+            cy.validateOrderGenerated();
+        })
+    })
+})

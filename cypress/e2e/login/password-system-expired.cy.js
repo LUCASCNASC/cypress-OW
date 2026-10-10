@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../users.json';
 
-describe('User with expired password system', () => {
+describe('user with expired password system', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -11,7 +11,7 @@ describe('User with expired password system', () => {
         LoginPage.userTextIcon();
     })
 
-    it('1.Try to Login with user with password expired user', () => {
+    it('try to Login with user with password expired user', () => {
     
         cy.get('#txtusername')
             .should('be.visible')

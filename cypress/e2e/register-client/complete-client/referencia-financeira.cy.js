@@ -1,6 +1,6 @@
 import { ClienteCompletoPage } from '../../../pages/cadastro_cliente/cliente_completo/ClienteCompletoPage.js';
-import { EmpregaticioPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Empregaticio/EmpregaticioPage.js';
 import { PessoaPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Pessoa/PessoaPage.js';
+import { RefFinanceiraPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Referencia/ref_financeira/RefFinanceiraPage.js';
 import { RotaPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Rota/RotaPage.js';
 import { TelefonePage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Telefone/TelefonePage.js';
 import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
@@ -14,7 +14,7 @@ describe('register complete client', () => {
         cy.validateTitlePage();
     })
 
-    context('complete client registration - including Employment', () => {
+    context('complete customer registration - including financial references', () => {
 
         it('complete customer CPF - happy path', () => {
 
@@ -23,9 +23,9 @@ describe('register complete client', () => {
             PessoaPage.fillCPFCliente();
             PessoaPage.fillNomeCompleto();
             PessoaPage.fillNomeSocial();
-            PessoaPage.fillDataNascimento();
+            PessoaPage.dataNascimento()
             PessoaPage.chooseSexoCliente();
-            ClienteCompletoPage.clickSalvarClienteCompleto();
+            ClienteCompletoPage.clickSalvarClienteCompleto()
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
             EnderecoPage.clickAbaEndereco(); 
             EnderecoPage.clickAdicionarNovoEndereco();
@@ -37,13 +37,24 @@ describe('register complete client', () => {
             EnderecoPage.fillNumeroEndereco();
             ClienteCompletoPage.validarBotaoSalvarDesabilitado();
             EnderecoPage.clickSalvarEndereco();
-            EnderecoPage.clickSalvarEndereco();
             EnderecoPage.infoEnderecoAdicionado();
             RotaPage.registerRota();
             TelefonePage.registerTelefone();
-            EmpregaticioPage.clickAbaEmpregaticio();
-            EmpregaticioPage.validateAbaEmpregaticioVazio();
-            EmpregaticioPage.clickAdicionarNovoEmpregaticio();
+            ClienteCompletoPage.ClickAbaReferencias();
+            RefFinanceiraPage.clickEmpty();
+            RefFinanceiraPage.validateAbaEmpty();
+            RefFinanceiraPage.clickAddNew();
+            RefFinanceiraPage.modalEmpty();
+            RefFinanceiraPage.dateStart();
+            RefFinanceiraPage.localExp();
+            RefFinanceiraPage.flatExp();
+            RefFinanceiraPage.valuePrest();
+            RefFinanceiraPage.clicarSalvar();
+            RefFinanceiraPage.messRefFinanceAddedSucess();
+            RefFinanceiraPage.infoRefFinanceAdded();
+            ClienteCompletoPage.clickSalvarClienteCompleto();
+            ClienteCompletoPage.validateModalAguardeCarregando();
+            ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
     })
 })

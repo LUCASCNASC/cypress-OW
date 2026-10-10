@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../users.json';
 
-describe('Login with new user', () => {
+describe('login with new user', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -11,7 +11,7 @@ describe('Login with new user', () => {
         LoginPage.userTextIcon();
     })
 
-    it('1.New user - click Close, without changing the password', () => {
+    it('new user - click Close, without changing the password', () => {
     
         cy.get('#txtusername')
             .should('be.visible')
@@ -168,7 +168,7 @@ describe('Login with new user', () => {
         LoginPage.iconComputerLogin(); 
     })
 
-    it('2.New user - click CONFIRM, change the password', () => {
+    it('new user - click CONFIRM, change the password', () => {
     
         cy.get('#txtusername')
             .should('be.visible')
