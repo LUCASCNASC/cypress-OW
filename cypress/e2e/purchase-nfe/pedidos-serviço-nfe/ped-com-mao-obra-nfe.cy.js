@@ -7,7 +7,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js';
 
-describe('Orders with Labor', () => {
+describe('orders with Labor', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -18,9 +18,9 @@ describe('Orders with Labor', () => {
         cy.chooseCliente();
     })
 
-    context('Without delivery/process 9860 - happy path', () => {
+    context('without delivery/process 9860 - happy path', () => {
 
-        it('1.Order: product 1860 0 0 (with Labor that Highlights and Does Not Separate Title)', () => {
+        it('order: product 1860 0 0 (with Labor that Highlights and Does Not Separate Title)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -41,7 +41,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: product 1860 0 0 (with Labor that Highlights and Does Not Separate Title) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Labor that Highlights and Does Not Separate Title) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -70,7 +70,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Same Process)', () => {
+        it('order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Same Process)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -91,7 +91,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Same Process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Same Process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -120,7 +120,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('5.Order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Different Process)', () => {
+        it('order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Different Process)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -141,7 +141,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('6.Order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Different Process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Different Process) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -171,9 +171,9 @@ describe('Orders with Labor', () => {
         })
     })
 
-    context('With delivery/process 9860 - happy path', () => {
+    context('with delivery/process 9860 - happy path', () => {
 
-        it('7.Order: product 1860 0 0 (with Labor that Highlights and Does Not Separate Title)', () => {
+        it('order: product 1860 0 0 (with Labor that Highlights and Does Not Separate Title)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -194,7 +194,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('8.Order: product 1860 0 0 (with Labor that Highlights and Does Not Separate Title) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Labor that Highlights and Does Not Separate Title) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -222,7 +222,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('9.Order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Same Process)', () => {
+        it('order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Same Process)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -243,7 +243,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('10.Order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Same Process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Same Process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -271,7 +271,7 @@ describe('Orders with Labor', () => {
             cy.validateOrderGenerated();
         })
 
-        it('11.Order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Different Process)', () => {
+        it('order: product 1860 0 0 (with Labor that Does Not Highlight and Separates Title in Different Process)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -292,7 +292,7 @@ describe('Orders with Labor', () => {
             cy.validarPedvalidateOrderGeneratedGerado()
         })
 
-        it('12.Order: product 1860 0 0 (with labor that does not highlight and separate title in a different process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with labor that does not highlight and separate title in a different process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();

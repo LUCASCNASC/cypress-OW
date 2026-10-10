@@ -13,7 +13,7 @@ import { ValidadePrestamistaPage } from '../../../../pages/pedido/ValidadePresta
 import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js';
 
 
-describe('Orders with Lender Service Discount % (158)', () => {
+describe('orders with Lender Service Discount % (158)', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -24,9 +24,9 @@ describe('Orders with Lender Service Discount % (158)', () => {
         cy.chooseCliente();
     })   
 
-    context('Without delivery / Products without promotion - Lender with discount %', () => {
+    context('without delivery / Products without promotion - Lender with discount %', () => {
 
-        it('1.Order: products 1860 0 0 and 1870 0 0, inclusion 3874, lender 158, 4 installments upon receipt Future with interest.', () => {
+        it('order: products 1860 0 0 and 1870 0 0, inclusion 3874, lender 158, 4 installments upon receipt Future with interest.', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -57,7 +57,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1860 0 0 and 1870 0 0, inclusion 3875, lender 158, 4 installments upon receipt Present.', () => {
+        it('order: products 1860 0 0 and 1870 0 0, inclusion 3875, lender 158, 4 installments upon receipt Present.', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -89,9 +89,9 @@ describe('Orders with Lender Service Discount % (158)', () => {
         })
     })
 
-    context('With delivery / Products without promotion - Lender with discount %', () => {
+    context('with delivery / Products without promotion - Lender with discount %', () => {
 
-        it('3.Order: products 1860 0 0 and 1870 0 0, inclusion 3876, lender 158, 4 installments upon receipt Future without interest.', () => {
+        it('order: products 1860 0 0 and 1870 0 0, inclusion 3876, lender 158, 4 installments upon receipt Future without interest.', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -121,7 +121,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: products 1860 0 0 (with warranty, not separate) and 1870 0 0, inclusion 3874, lender 158, 4 installments upon receipt. Future with interest.', () => {
+        it('order: products 1860 0 0 (with warranty, not separate) and 1870 0 0, inclusion 3874, lender 158, 4 installments upon receipt. Future with interest.', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -153,7 +153,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('5.Order: products 1860 0 0 (with warranty does not separate) and 1870 0 0, inclusion 3876, lender 158, 4 installments upon receipt Future without interest.', () => {
+        it('order: products 1860 0 0 (with warranty does not separate) and 1870 0 0, inclusion 3876, lender 158, 4 installments upon receipt Future without interest.', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -185,7 +185,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('6.Order: products 1860 0 0 (with warranty does not separate) and 1870 0 0, inclusion 3875, lender 158, 4 installments upon receipt Present without interest.', () => {
+        it('order: products 1860 0 0 (with warranty does not separate) and 1870 0 0, inclusion 3875, lender 158, 4 installments upon receipt Present without interest.', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -218,9 +218,9 @@ describe('Orders with Lender Service Discount % (158)', () => {
         })
     })
 
-        context('Sem entrega / Produtos com promoção - Prestamista com abatimento %', () => {
+        context('sem entrega / Produtos com promoção - Prestamista com abatimento %', () => {
 
-        it('7.Order: product 1918 0 0 (promotion on credit 167), inclusion 3874, lender 158, 4 installments upon receipt. Future with interest.', () => {
+        it('order: product 1918 0 0 (promotion on credit 167), inclusion 3874, lender 158, 4 installments upon receipt. Future with interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -245,7 +245,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('8.Order: product 1918 0 0 (promotion on credit 167), inclusion 3876, lender 158, 4 installments upon receipt Future without interest.', () => {
+        it('order: product 1918 0 0 (promotion on credit 167), inclusion 3876, lender 158, 4 installments upon receipt Future without interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -270,7 +270,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('9.Order: product 1918 0 0 (promotion on credit 167), with warranty. No separation, inclusion 3876, lender 158, 4 installments upon receipt. Future without interest.', () => {
+        it('order: product 1918 0 0 (promotion on credit 167), with warranty. No separation, inclusion 3876, lender 158, 4 installments upon receipt. Future without interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -297,9 +297,9 @@ describe('Orders with Lender Service Discount % (158)', () => {
         })
     })
 
-    context('With delivery / Products with promotion - Lender with discount %', () => {
+    context('with delivery / Products with promotion - Lender with discount %', () => {
 
-        it('10.Order: product 1919 0 0 (promotion on credit 168), with warranty. Does not separate, inclusion 3876, lender 158, 4 installments upon receipt. Future without interest.', () => {
+        it('order: product 1919 0 0 (promotion on credit 168), with warranty. Does not separate, inclusion 3876, lender 158, 4 installments upon receipt. Future without interest.', () => {
 
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -330,7 +330,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('11.Order: product 1919 0 0 (promo on credit 168), with insurance does not separate, inclusion 3874, lender 158, 4 installments upon receipt Future with interest.', () => {
+        it('order: product 1919 0 0 (promo on credit 168), with insurance does not separate, inclusion 3874, lender 158, 4 installments upon receipt Future with interest.', () => {
 
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -361,7 +361,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('12.Order: product 1920 0 0 (promo on entry 169), with insurance does not separate, inclusion 3876, lender 158, 4 installments upon receipt Future with interest.', () => {
+        it('order: product 1920 0 0 (promo on entry 169), with insurance does not separate, inclusion 3876, lender 158, 4 installments upon receipt Future with interest.', () => {
 
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -389,9 +389,9 @@ describe('Orders with Lender Service Discount % (158)', () => {
         })
     })
 
-    context('Without delivery / Mixed with and without Promotion - Lender with discount %', () => {
+    context('without delivery / Mixed with and without Promotion - Lender with discount %', () => {
 
-        it('13.Order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3874 (other receipt 3860), lender 158, 4 installments on future receipt with interest.', () => {
+        it('order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3874 (other receipt 3860), lender 158, 4 installments on future receipt with interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -428,7 +428,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('14.Order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3874 (other receipt 3874 to be grouped), lender 158, 4 installments on future receipt with interest.', () => {
+        it('order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3874 (other receipt 3874 to be grouped), lender 158, 4 installments on future receipt with interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -469,7 +469,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('15.Order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3860), lender 158, 4 installments upon receipt Future without interest.', () => {
+        it('order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3860), lender 158, 4 installments upon receipt Future without interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -506,7 +506,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('16.Order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3876 group), lender 158, 4 installments on future receipt without interest.', () => {
+        it('order: product 1918 0 0 (promo on credit 167) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3876 group), lender 158, 4 installments on future receipt without interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -549,7 +549,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('17.Order: product 1921 0 0 (promo on credit 170), inclusion 3874, lender 158, 4 installments upon receipt Future with interest.', () => {
+        it('order: product 1921 0 0 (promo on credit 170), inclusion 3874, lender 158, 4 installments upon receipt Future with interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -575,9 +575,9 @@ describe('Orders with Lender Service Discount % (158)', () => {
         })
     })
 
-    context('With delivery / Mixed with and without Promotion - Lender with discount %', () => {
+    context('with delivery / Mixed with and without Promotion - Lender with discount %', () => {
 
-        it('18.Order: product 1918 0 0 (promo on credit 167) (with warranty, not separate) and 1860 0 0 (without promotion), inclusion 3874 (other receipt 3860), lender 158, 4 installments on future receipt with interest.', () => {
+        it('order: product 1918 0 0 (promo on credit 167) (with warranty, not separate) and 1860 0 0 (without promotion), inclusion 3874 (other receipt 3860), lender 158, 4 installments on future receipt with interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -617,7 +617,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('19.Order: product 1918 0 0 (promo on credit 167) (with warranty, do not separate) and 1860 0 0 (without promotion), inclusion 3874 (another receipt 3874 to be grouped), lender 158, 4 installments on future receipt with interest.', () => {
+        it('order: product 1918 0 0 (promo on credit 167) (with warranty, do not separate) and 1860 0 0 (without promotion), inclusion 3874 (another receipt 3874 to be grouped), lender 158, 4 installments on future receipt with interest.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -661,7 +661,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('20.Order: product 1918 0 0 (promo a prazo 167) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3860), lender 158, 4 installments upon receipt Future without interest.', () => {
+        it('order: product 1918 0 0 (promo a prazo 167) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3860), lender 158, 4 installments upon receipt Future without interest.', () => {
 
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();
@@ -701,7 +701,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('21.Order: product 1918 0 0 (promo a prazo 167) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3876 group), lender 158, 4 installments upon receipt Future without interest.', () => {
+        it('order: product 1918 0 0 (promo a prazo 167) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3876 (other receipt 3876 group), lender 158, 4 installments upon receipt Future without interest.', () => {
     
             Product.termInstallmentPrest()
             ValidateBalance.withBalance();
@@ -745,7 +745,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('22.Order: product 1920 0 0 (promo a prazo 169) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3875 (other receipt 3874), lender 158, 4 installments upon receipt Present.', () => {
+        it('order: product 1920 0 0 (promo a prazo 169) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3875 (other receipt 3874), lender 158, 4 installments upon receipt Present.', () => {
 
             Product.termInstallmentPrest()
             ValidateBalance.withBalance();
@@ -786,7 +786,7 @@ describe('Orders with Lender Service Discount % (158)', () => {
             cy.validateOrderGenerated();
         })
 
-        it('23.Order: product 1920 0 0 (promo a prazo 169) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3875 (other receipt 3875 group), lender 158, 4 installments upon receipt Present.', () => {
+        it('order: product 1920 0 0 (promo a prazo 169) (with insurance not separated) and 1860 0 0 (without promotion), inclusion 3875 (other receipt 3875 group), lender 158, 4 installments upon receipt Present.', () => {
     
             Product.termInstallmentPrest();
             ValidateBalance.withBalance();

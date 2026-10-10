@@ -5,7 +5,7 @@ import { RotaPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_R
 import { TelefonePage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Telefone/TelefonePage.js';
 import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
-describe('Register complete client', () => {
+describe('register complete client', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -14,9 +14,9 @@ describe('Register complete client', () => {
         cy.validateTitlePage();
     })
 
-    context('Complete customer registration - including personal references', () => {
+    context('complete customer registration - including personal references', () => {
 
-        it('1.Complete customer CPF - happy path', () => {
+        it('complete customer CPF - happy path', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto();

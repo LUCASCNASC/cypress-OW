@@ -9,7 +9,7 @@ import { ProductExclusiva, ValidateBalance } from '../../../pages/pedido/Produto
 import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js';
 import { Service } from '../../../pages/pedido/ServicosPage.js';
 
-describe('Exclusive Orders - Company parameter 1019 checked', () => {
+describe('exclusive Orders - Company parameter 1019 checked', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -20,9 +20,9 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
         cy.chooseCliente();
     })
 
-    context('Process configuration - Exclusive: 36 = 2; 139 = 6; 552 = 5 days', () => {
+    context('process configuration - Exclusive: 36 = 2; 139 = 6; 552 = 5 days', () => {
 
-        it('1.Order: normal product (with balance and with delivery, 15 days) and a remote kit (2 compositions, without balance and without receiving, 20 days).', () => {
+        it('order: normal product (with balance and with delivery, 15 days) and a remote kit (2 compositions, without balance and without receiving, 20 days).', () => {
 
             ProductExclusiva.firstNormal();
             ValidateBalance.withBalance();
@@ -50,7 +50,7 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: normal product (with balance and with delivery) and a kit with 6 compositions (current date + parameter 552/ 5 days).', () => {
+        it('order: normal product (with balance and with delivery) and a kit with 6 compositions (current date + parameter 552/ 5 days).', () => {
 
             ProductExclusiva.firstNormal();
             ValidateBalance.withBalance();
@@ -78,9 +78,9 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
         })
     })
 
-    context('Process configuration - Exclusive: 36 = 2; 139 = 6; 552 = 5 days', () => {
+    context('process configuration - Exclusive: 36 = 2; 139 = 6; 552 = 5 days', () => {
 
-        it('3.Order: product (without balance and with balance to receive for 10 days, and with delivery), and have an appointment for the forecast date.', () => {
+        it('order: product (without balance and with balance to receive for 10 days, and with delivery), and have an appointment for the forecast date.', () => {
 
             ProductExclusiva.balanceReceive();
             ValidateBalance.withBalance();
@@ -102,7 +102,7 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: product in two lines (one with 5 units to receive and 10 to request purchase), and have an appointment for the forecast date to receive.', () => {
+        it('order: product in two lines (one with 5 units to receive and 10 to request purchase), and have an appointment for the forecast date to receive.', () => {
 
             ProductExclusiva.balanceReceiveTwoLines()
             PedExclusiva.balanceRemoteReceive()
@@ -119,7 +119,7 @@ describe('Exclusive Orders - Company parameter 1019 checked', () => {
             PedExclusiva.increaseAmountSaleTen()
         })
 
-        it('5.Order: normal sale: product 1896 0 0 (without delivery)', () => {
+        it('order: normal sale: product 1896 0 0 (without delivery)', () => {
     
             ProductExclusiva.firstNormal();
             ValidateBalance.withBalance();

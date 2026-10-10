@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { AgruparRecebPage } from '../../../pages/pedido/AgruparRecebPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Order with more than one payment method', () => {
+describe('order with more than one payment method', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('Order with more than one payment method', () => {
         cy.chooseCliente();
     })
 
-    context('No delivery/ process 9860 - happy path', () => {
+    context('no delivery/ process 9860 - happy path', () => {
 
-        it('1.Order: product 1860 0 0 - two payment methods 3871 and 3860', () => {
+        it('order: product 1860 0 0 - two payment methods 3871 and 3860', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -46,7 +46,7 @@ describe('Order with more than one payment method', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: product 1860 0 0 - with entry (3861) and another payment method (3860)', () => {
+        it('order: product 1860 0 0 - with entry (3861) and another payment method (3860)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -68,7 +68,7 @@ describe('Order with more than one payment method', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order: product 1860 0 0 - two payment methods (3860) - click to NOT group', () => {
+        it('order: product 1860 0 0 - two payment methods (3860) - click to NOT group', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -94,7 +94,7 @@ describe('Order with more than one payment method', () => {
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: product 1860 0 0 - two identical payment methods (3860) - click to group YES', () => {
+        it('order: product 1860 0 0 - two identical payment methods (3860) - click to group YES', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -120,7 +120,7 @@ describe('Order with more than one payment method', () => {
             cy.validateOrderGenerated();
         })
 
-        it('5.Order: product 1860 0 0 - two identical payment methods (3860) - click to NOT group, but then group by selecting both.', () => {
+        it('order: product 1860 0 0 - two identical payment methods (3860) - click to NOT group, but then group by selecting both.', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();

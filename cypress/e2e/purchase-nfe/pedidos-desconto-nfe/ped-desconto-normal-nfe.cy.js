@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js';
 
-describe('Sales order with discount', () => {
+describe('sales order with discount', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('Sales order with discount', () => {
         cy.chooseCliente();
     })
 
-    context('Without delivery/ process 9860 - happy path', () => {
+    context('without delivery/ process 9860 - happy path', () => {
 
-        it('1.Order: product 1912 0 0 with discount Sub (-) / R$', () => {
+        it('order: product 1912 0 0 with discount Sub (-) / R$', () => {
 
             Product.discountNumber();
             ValidateBalance.withBalance();
@@ -44,7 +44,7 @@ describe('Sales order with discount', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: product 1913 0 0 with discount Sub (-) / % (Percentage)', () => {
+        it('order: product 1913 0 0 with discount Sub (-) / % (Percentage)', () => {
 
             Product.discountPercentage();
             ValidateBalance.withBalance();
@@ -67,7 +67,7 @@ describe('Sales order with discount', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order: product 1914 0 0 with discount Sub (-) / FIXED VALUE', () => {
+        it('order: product 1914 0 0 with discount Sub (-) / FIXED VALUE', () => {
 
             Product.discountValueFixed();
             ValidateBalance.withBalance();

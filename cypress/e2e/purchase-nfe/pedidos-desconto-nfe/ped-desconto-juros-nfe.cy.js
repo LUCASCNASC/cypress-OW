@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js';
 
-describe('PStandard order with interest discount - parameters 243 and 244 defined in the inclusion process', () => {
+describe('standard order with interest discount - parameters 243 and 244 defined in the inclusion process', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('PStandard order with interest discount - parameters 243 and 244 define
         cy.chooseCliente();
     })
 
-    context('Without delivery/ process 9860 - happy path - inclusion process 3860', () => {
+    context('without delivery/ process 9860 - happy path - inclusion process 3860', () => {
 
-        it('1.Pedido: product 1860 0 0 - round down', () => {
+        it('1.Order: product 1860 0 0 - round down', () => {
 
             Product.roundUpDown();
             ValidateBalance.withBalance();
@@ -45,7 +45,7 @@ describe('PStandard order with interest discount - parameters 243 and 244 define
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1860 0 0 - round up', () => {
+        it('order: products 1860 0 0 - round up', () => {
 
             Product.roundUpDown();
             ValidateBalance.withBalance();

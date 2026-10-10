@@ -8,7 +8,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Application with credit proposal', () => {
+describe('application with credit proposal', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('Application with credit proposal', () => {
         cy.chooseCliente();
     })
 
-    context('No delivery/ process 9860 - happy path', () => {
+    context('no delivery/ process 9860 - happy path', () => {
 
-        it('1.Order: product 1860 0 0 - (Sales order without delivery, with credit proposal.)', () => {
+        it('order: product 1860 0 0 - (Sales order without delivery, with credit proposal.)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();

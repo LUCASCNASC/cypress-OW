@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { EscolherParcelaReceb } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Orders with labor and delivery', () => {
+describe('orders with labor and delivery', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -18,9 +18,9 @@ describe('Orders with labor and delivery', () => {
         cy.chooseCliente();
     })
 
-    context('With delivery/process 9890 - happy path', () => {
+    context('with delivery/process 9890 - happy path', () => {
 
-        it('1.Order: product 1860 0 0 (with Labor that Highlights and does not separate title)', () => {
+        it('order: product 1860 0 0 (with Labor that Highlights and does not separate title)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -43,7 +43,7 @@ describe('Orders with labor and delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: product 1860 0 0 (with Labor that Highlights and does not separate title) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Labor that Highlights and does not separate title) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -73,7 +73,7 @@ describe('Orders with labor and delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order: product 1860 0 0 (with Labor that does not highlight and separates title in the same process)', () => {
+        it('order: product 1860 0 0 (with Labor that does not highlight and separates title in the same process)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -96,7 +96,7 @@ describe('Orders with labor and delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: product 1860 0 0 (with Labor that does not highlight and separates title in the same process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Labor that does not highlight and separates title in the same process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -126,7 +126,7 @@ describe('Orders with labor and delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('5.Order: product 1860 0 0 (with Labor that does not highlight and separates title in a different process)', () => {
+        it('order: product 1860 0 0 (with Labor that does not highlight and separates title in a different process)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -149,7 +149,7 @@ describe('Orders with labor and delivery', () => {
             cy.validateOrderGenerated();
         })   
 
-        it('6.Order: product 1860 0 0 (with Labor that does not highlight and separates title in a different process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Labor that does not highlight and separates title in a different process) and product 1870 0 0 (without service)', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();

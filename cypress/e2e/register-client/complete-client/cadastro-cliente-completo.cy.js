@@ -5,7 +5,7 @@ import { RotaPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_R
 import { TelefonePage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Telefone/TelefonePage.js';
 import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
-describe('Register complete client', () => {
+describe('register complete client', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -16,9 +16,9 @@ describe('Register complete client', () => {
         ClienteCompletoPage.clickOpcaoClienteCompleto();
     })
 
-    context('Complete customer registration - basic', () => {
+    context('complete customer registration - basic', () => {
 
-        it('1.Full customer CPF', () => {
+        it('full customer CPF', () => {
             
             PessoaPage.fillCPFCliente();
             PessoaPage.fillNomeCompleto();
@@ -35,7 +35,7 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso();
         })  
 
-        it('2.Customer full CPF - required fields message', () => {
+        it('customer full CPF - required fields message', () => {
     
             ClienteCompletoPage.clickSalvarCliente();
             ClienteCompletoPage.validateMessageEnderecoObrigatorio(); 
@@ -53,7 +53,7 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso();
         })  
 
-        it('3.Complete customer CNPJ', () => {
+        it('complete customer CNPJ', () => {
   
             PessoaPage.fillCNPJCliente();
             PessoaPage.fillNomeCNPJ();
@@ -69,9 +69,9 @@ describe('Register complete client', () => {
         }) 
     })
 
-    context('Complete customer registration - including attachment after saving the customer registration', () => {
+    context('complete customer registration - including attachment after saving the customer registration', () => {
 
-        it('4.Complete customer CPF - happy path', () => {
+        it('complete customer CPF - happy path', () => {
 
             PessoaPage.fillCPFCliente();
             PessoaPage.fillNomeCompleto();

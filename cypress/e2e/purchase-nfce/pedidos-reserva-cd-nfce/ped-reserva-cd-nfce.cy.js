@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Order with reservation at the distribution center (with delivery) - Balance rule: Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
+describe('order with reservation at the distribution center (with delivery) - Balance rule: Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -18,9 +18,9 @@ describe('Order with reservation at the distribution center (with delivery) - Ba
         cy.chooseCliente();
     })
 
-    context('With delivery/process 9890 - happy path', () => {
+    context('with delivery/process 9890 - happy path', () => {
 
-        it('1.Order: product 1880 0 0 - (Local sale of product with stock only at the distribution center - with delivery)', () => {
+        it('order: product 1880 0 0 - (Local sale of product with stock only at the distribution center - with delivery)', () => {
             
             Product.cdFirst();
             ValidateBalance.withBalance();
@@ -42,7 +42,7 @@ describe('Order with reservation at the distribution center (with delivery) - Ba
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1880 0 0 (CD reservation) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in the CD - with delivery)', () => {
+        it('order: products 1880 0 0 (CD reservation) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in the CD - with delivery)', () => {
             
             Product.fisrt();
             ValidateBalance.withBalance();

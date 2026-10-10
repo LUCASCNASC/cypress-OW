@@ -5,7 +5,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js';
 
-describe('Sale of individual services', () => {
+describe('sale of individual services', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -16,9 +16,9 @@ describe('Sale of individual services', () => {
         cy.chooseCliente();
     })
 
-    context('Process 9888 - happy path', () => {
+    context('process 9888 - happy path', () => {
 
-        it('1.Labor Request - 144 (T.A. MO Does Not Highlight and Separate Different Process)', () => {
+        it('labor Request - 144 (T.A. MO Does Not Highlight and Separate Different Process)', () => {
 
             ServicosAvulsosPage.productServiceLoose();
             ServicosAvulsosPage.chooseServiceSearch();

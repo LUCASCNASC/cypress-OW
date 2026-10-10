@@ -6,7 +6,7 @@ import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { ServicosAvulsosPage } from '../../../pages/pedido/ServicosAvulsosPage.js';
 import { Service, ValidateService } from '../../../pages/pedido/ServicosPage.js';
 
-describe('Sale of individual services, with product order already downloaded', () => {
+describe('sale of individual services, with product order already downloaded', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -17,9 +17,9 @@ describe('Sale of individual services, with product order already downloaded', (
         cy.chooseCliente();
     })
 
-    context('Process 9888 - happy path', () => {
+    context('process 9888 - happy path', () => {
 
-        it('1.Labor Request - 139 (T.A. Guarantee Separates Same Process)', () => {
+        it('labor Request - 139 (T.A. Guarantee Separates Same Process)', () => {
 
             const numero_pedido = '8605'
             

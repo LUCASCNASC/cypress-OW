@@ -6,7 +6,7 @@ import { EntregaPage } from '../../../pages/pedido/EntregaPage.js';
 import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js';
 
-describe('Orders with promotional delivery', () => {
+describe('orders with promotional delivery', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -17,9 +17,9 @@ describe('Orders with promotional delivery', () => {
         cy.chooseCliente();
     })
 
-    context('With delivery / with promotion / process 9890 - happy path', () => {
+    context('with delivery / with promotion / process 9890 - happy path', () => {
 
-        it('1.Order with promotional offer (promotion 152): product 1868 0 0', () => {
+        it('order with promotional offer (promotion 152): product 1868 0 0', () => {
     
             Product.promoMatch();
             ValidateBalance.withBalance();
@@ -45,7 +45,7 @@ describe('Orders with promotional delivery', () => {
             cy.validateOrderGenerated();
         })
     
-        it('2.Order with installment payment promotion with down payment (promotion 150): product 1866 0 0', () => {
+        it('order with installment payment promotion with down payment (promotion 150): product 1866 0 0', () => {
     
             Product.promoDeadlineEntry()
             ValidateBalance.withBalance();
@@ -65,7 +65,7 @@ describe('Orders with promotional delivery', () => {
             cy.contains('.md-select-value', 'Forma de pagamento').click()
         })
 
-        it('3.Order with installment payment promotion (promotion 151): product 1867 0 0', () => {
+        it('order with installment payment promotion (promotion 151): product 1867 0 0', () => {
     
             Product.promoDeadlineInstallment();
             ValidateBalance.withBalance();

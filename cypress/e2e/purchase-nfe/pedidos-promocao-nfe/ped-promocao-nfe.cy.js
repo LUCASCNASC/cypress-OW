@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPromoPage } from '../../../pages/pedido/ProcessoRecebPagePromoPage.js';
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js';
 
-describe('Orders with promotion', () => {
+describe('orders with promotion', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -20,9 +20,9 @@ describe('Orders with promotion', () => {
         cy.chooseCliente();
     })
 
-    context('Without delivery/ with promotion/ process 9860 - happy path', () => {
+    context('without delivery/ with promotion/ process 9860 - happy path', () => {
 
-        it('1.Order with promotion match (promotion 152): product 1868 0 0', () => {
+        it('order with promotion match (promotion 152): product 1868 0 0', () => {
     
             Product.promoMatch();
             ValidateBalance.withBalance();
@@ -42,7 +42,7 @@ describe('Orders with promotion', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order with promotion deadline with entry (promotion 150): product 1866 0 0', () => {
+        it('order with promotion deadline with entry (promotion 150): product 1866 0 0', () => {
 
             Product.promoDeadlineEntry();
             ValidateBalance.withBalance();
@@ -68,7 +68,7 @@ describe('Orders with promotion', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order with promotion deadline installment (promotion 151): product 1867 0 0', () => {
+        it('order with promotion deadline installment (promotion 151): product 1867 0 0', () => {
 
             Product.promoDeadlineInstallment();
             ValidateBalance.withBalance();
@@ -89,9 +89,9 @@ describe('Orders with promotion', () => {
         })
     })
 
-    context('Without delivery/ with promotion and without promotion/ process 9860 - happy path', () => {
+    context('without delivery/ with promotion and without promotion/ process 9860 - happy path', () => {
 
-        it('4.Order with promotion match (promotion 152): product 1868 0 0 and product 1870 0 0 (without promotion)', () => {
+        it('order with promotion match (promotion 152): product 1868 0 0 and product 1870 0 0 (without promotion)', () => {
     
             Product.promoMatch();
             ValidateBalance.withBalance();
@@ -121,7 +121,7 @@ describe('Orders with promotion', () => {
 
         })
 
-        it('5.Order with promotion deadline with entry (promotion 150): product 1866 0 0 and product 1870 0 0 (without promotion)', () => {
+        it('order with promotion deadline with entry (promotion 150): product 1866 0 0 and product 1870 0 0 (without promotion)', () => {
     
             Product.promoDeadlineEntry();
             ValidateBalance.withBalance();
@@ -155,9 +155,9 @@ describe('Orders with promotion', () => {
         })
     })
 
-    context('With delivery / with promotion / process 9860 - happy path', () => {
+    context('with delivery / with promotion / process 9860 - happy path', () => {
 
-        it('6.Order with promotion match (promotion 152): product 1868 0 0', () => {
+        it('order with promotion match (promotion 152): product 1868 0 0', () => {
     
             Product.promoMatch();
             ValidateBalance.withBalance();
@@ -181,7 +181,7 @@ describe('Orders with promotion', () => {
             cy.validateOrderGenerated();
         })
 
-        it('7.Order with promotion deadline with entry (promotion 150): product 1866 0 0', () => {
+        it('order with promotion deadline with entry (promotion 150): product 1866 0 0', () => {
 
             Product.promoDeadlineEntry()
             ValidateBalance.withBalance();
@@ -203,7 +203,7 @@ describe('Orders with promotion', () => {
             ParcelasPage.one()
         })
 
-        it('8.Order with promotion deadline installment (promotion 151): product 1867 0 0', () => {
+        it('order with promotion deadline installment (promotion 151): product 1867 0 0', () => {
     
             Product.promoDeadlineInstallment();
             ValidateBalance.withBalance();
@@ -229,9 +229,9 @@ describe('Orders with promotion', () => {
         })  
     }) 
 
-    context('With delivery/ with promotion and without promotion/ process 9860 - happy path', () => {
+    context('with delivery/ with promotion and without promotion/ process 9860 - happy path', () => {
 
-        it('9.Order with promotion match (promotion 152): product 1868 0 0 and product 1870 0 0 (without promotion)', () => {
+        it('order with promotion match (promotion 152): product 1868 0 0 and product 1870 0 0 (without promotion)', () => {
     
             Product.promoMatch();
             ValidateBalance.withBalance();

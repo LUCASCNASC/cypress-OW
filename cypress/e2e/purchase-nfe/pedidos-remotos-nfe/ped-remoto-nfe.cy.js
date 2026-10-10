@@ -7,7 +7,7 @@ import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js';
 import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js';
 import { ParcelasPage } from '../../../pages/ParcelasPage.js';
 
-describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
+describe('remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -18,9 +18,9 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
         cy.chooseCliente();
     })
 
-    context('Remote order normal', () => {
+    context('remote order normal', () => {
 
-        it('1.Remote order: product 1860 0 0 - (Remote sale of product with balance in the invoicing branch)', () => {
+        it('remote order: product 1860 0 0 - (Remote sale of product with balance in the invoicing branch)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -41,7 +41,7 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             cy.validateOrderGenerated();
         })
 
-        it('2.Remote order: products 1860 0 0 and 1870 0 0', () => {
+        it('remote order: products 1860 0 0 and 1870 0 0', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -70,7 +70,7 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             cy.validateOrderGenerated();
         })
 
-        it('3.Remote order: kit 1877 0 0', () => {
+        it('remote order: kit 1877 0 0', () => {
 
             Product.kitRemote();
             ValidateBalance.withBalance();
@@ -93,9 +93,9 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
         })
     })
 
-    context('Remote order without remote balance, get CD', () => {
+    context('remote order without remote balance, get CD', () => {
 
-        it('4.Remote order - with balance in CD (branch 1) - should allow making the order - (Remote sale of product without balance in the invoicing branch, but with balance in the invoicing branch CD - with delivery)', () => {
+        it('remote order - with balance in CD (branch 1) - should allow making the order - (Remote sale of product without balance in the invoicing branch, but with balance in the invoicing branch CD - with delivery)', () => {
 
             Product.remoteWithCD();
             ValidateBalance.withBalance();
@@ -116,7 +116,7 @@ describe('Remote/process 9860 - Balance rule Parameter 36 = 4 - Parameter 139 = 
             cy.validateOrderGenerated();
         })    
 
-        it('5.Remote order - without balance in CD (branch 1) - should NOT allow making the order - (Remote sale of product without balance in the invoicing branch, without balance of the invoicing branch CD)', () => {
+        it('remote order - without balance in CD (branch 1) - should NOT allow making the order - (Remote sale of product without balance in the invoicing branch, without balance of the invoicing branch CD)', () => {
 
             Product.remoteWithoutCD();
             ValidateBalance.withoutBalance();

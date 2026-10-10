@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Order with financial details on file with delivery.', () => {
+describe('order with financial details on file with delivery.', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -18,9 +18,9 @@ describe('Order with financial details on file with delivery.', () => {
         cy.chooseCliente();
     })
     
-    context('With delivery/process 9892 - happy path', () => {
+    context('with delivery/process 9892 - happy path', () => {
 
-        it('1.Order: product 1860 0 0', () => {
+        it('order: product 1860 0 0', () => {
                       
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -42,7 +42,7 @@ describe('Order with financial details on file with delivery.', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1860 0 0 e 1870 0 0', () => {
+        it('order: products 1860 0 0 e 1870 0 0', () => {
                 
             Product.fisrt();
             ValidateBalance.withBalance();

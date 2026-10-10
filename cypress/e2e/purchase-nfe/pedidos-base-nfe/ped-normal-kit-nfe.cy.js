@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { GeralPedidosPage } from '../../../pages/pedido/GeralPedidosPage.js';
 
-describe('Normal order', () => {
+describe('normal order', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -20,9 +20,9 @@ describe('Normal order', () => {
         cy.chooseCliente();
     })
 
-    context('No delivery/ process 9860 - happy path', () => {
+    context('no delivery/ process 9860 - happy path', () => {
 
-        it('1.Order: kit 1862 0 0', () => {
+        it('order: kit 1862 0 0', () => {
                       
             Product.kitFirst();
             ValidateBalance.withBalance();
@@ -44,9 +44,9 @@ describe('Normal order', () => {
         })
     })
 
-    context('With delivery/ process 9860 - happy path', () => {
+    context('with delivery/ process 9860 - happy path', () => {
 
-        it('2.Order: kit 1862 0 0', () => {
+        it('order: kit 1862 0 0', () => {
               
             Product.kitFirst();
             ValidateBalance.withBalance();

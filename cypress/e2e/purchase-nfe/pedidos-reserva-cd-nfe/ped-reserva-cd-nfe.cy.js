@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
+describe('order with reservation in the CD - Balance rule Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -18,9 +18,9 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
         cy.chooseCliente();
     })
 
-    context('Without delivery/ process 9860 - happy path', () => {
+    context('without delivery/ process 9860 - happy path', () => {
 
-        it('1.Order: product 1880 0 0 - (Local sale of product with balance only in CD - without delivery)', () => {
+        it('order: product 1880 0 0 - (Local sale of product with balance only in CD - without delivery)', () => {
 
             Product.cdFirst();
             ValidateBalance.withBalance();
@@ -40,7 +40,7 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - without delivery)', () => {
+        it('order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - without delivery)', () => {
 
             Product.cdFirst();
             ValidateBalance.withBalance();
@@ -69,9 +69,9 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
         })
     })
 
-    context('With delivery/ process 9860 - happy path', () => {
+    context('with delivery/ process 9860 - happy path', () => {
 
-        it('3.Order: product 1880 0 0 - (Local sale of product with balance only in CD - with delivery)', () => {
+        it('order: product 1880 0 0 - (Local sale of product with balance only in CD - with delivery)', () => {
             
             Product.cdFirst();
             ValidateBalance.withBalance();
@@ -91,7 +91,7 @@ describe('Order with reservation in the CD - Balance rule Parameter 36 = 4 - Par
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - with delivery)', () => {
+        it('order: products 1880 0 0 (reservation CD) and 1870 0 0 (local balance) - (Local sale of 1 product with local balance + 1 product with balance in CD - with delivery)', () => {
             
             Product.fisrt();
             ValidateBalance.withBalance();

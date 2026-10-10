@@ -9,7 +9,7 @@ import { ValidadePrestamistaPage } from '../../../pages/pedido/ValidadePrestamis
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { PromocaoPage } from '../../../pages/pedido/PromocaoPage.js';
 
-describe('Orders with promotions and interest-free services', () => {
+describe('orders with promotions and interest-free services', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -21,9 +21,9 @@ describe('Orders with promotions and interest-free services', () => {
         cy.chooseCliente();
     })
 
-    context('Without delivery/ with promotion/ with service process 9860 - happy path', () => {
+    context('without delivery/ with promotion/ with service process 9860 - happy path', () => {
 
-        it('1.Order with promotion deadline installment (promotion 159): product 1891 0 0 with guarantee (interest-free)', () => {
+        it('order with promotion deadline installment (promotion 159): product 1891 0 0 with guarantee (interest-free)', () => {
     
             Product.firstInstallmentDeadline();
             ValidateBalance.withBalance();
@@ -46,7 +46,7 @@ describe('Orders with promotions and interest-free services', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order with promotion deadline with entry + installments (promotion 158): product 1895 0 0 with guarantee (interest-free)', () => {
+        it('order with promotion deadline with entry + installments (promotion 158): product 1895 0 0 with guarantee (interest-free)', () => {
 
             Product.secondInstallmentDeadline();
             ValidateBalance.withBalance();
@@ -87,7 +87,7 @@ describe('Orders with promotions and interest-free services', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order with promotion deadline installment (promotion 161): product 1893 0 0 with moneylender (interest-free)', () => {
+        it('order with promotion deadline installment (promotion 161): product 1893 0 0 with moneylender (interest-free)', () => {
 
             Product.thirdInstallmentDeadline();
             ValidateBalance.withBalance();
@@ -111,7 +111,7 @@ describe('Orders with promotions and interest-free services', () => {
             cy.validateOrderGenerated();
         })
 
-        it('4.Order with promotion deadline installment (promotion 162): product 1894 0 0 with guarantee (interest-free) and moneylender (with interest)', () => {
+        it('order with promotion deadline installment (promotion 162): product 1894 0 0 with guarantee (interest-free) and moneylender (with interest)', () => {
     
             Product.fourthInstallmentDeadline();
             ValidateBalance.withBalance();

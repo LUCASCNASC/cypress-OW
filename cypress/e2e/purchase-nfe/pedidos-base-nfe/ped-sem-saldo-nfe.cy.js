@@ -1,7 +1,7 @@
 import { ProcessoVendaPage } from '../../../pages/pedido/ProcessoVendaPage.js';
 import { Product, ValidateBalance } from '../../../pages/pedido/ProdutoPage.js';
 
-describe('Attempting a sales order with an out-of-stock product - Stock rule: Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
+describe('attempting a sales order with an out-of-stock product - Stock rule: Parameter 36 = 4 - Parameter 139 = 4 - Trial 653 not configured', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -12,9 +12,9 @@ describe('Attempting a sales order with an out-of-stock product - Stock rule: Pa
         cy.chooseCliente();
     })
 
-        context('Process 9860 - do not allow sale - warning messages should appear when adding a product', () => {
+        context('process 9860 - do not allow sale - warning messages should appear when adding a product', () => {
 
-            it('1.Order: product 1869 0 0 (Local sale of product without balance - no delivery)', () => {
+            it('order: product 1869 0 0 (Local sale of product without balance - no delivery)', () => {
                 
                 Product.withoutBalance();
                 ValidateBalance.withoutBalance();

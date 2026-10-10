@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
 
-describe('Normal order', () => {
+describe('normal order', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('Normal order', () => {
         cy.chooseCliente();
     })
 
-    context('No delivery/ process 9860 - happy path', () => {
+    context('no delivery/ process 9860 - happy path', () => {
 
-        it('1.Order: product 1860 0 0 - (Local sale of product with balance - no delivery)', () => {
+        it('order: product 1860 0 0 - (Local sale of product with balance - no delivery)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -41,7 +41,7 @@ describe('Normal order', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1860 0 0 and 1870 0 0', () => {
+        it('order: products 1860 0 0 and 1870 0 0', () => {
                
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -69,7 +69,7 @@ describe('Normal order', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order: product 1860 0 0 - (Sales order without delivery. With down payment + installments.)', () => {
+        it('order: product 1860 0 0 - (Sales order without delivery. With down payment + installments.)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -92,9 +92,9 @@ describe('Normal order', () => {
         })
     })
 
-    context('With delivery/ process 9860 - happy path', () => {
+    context('with delivery/ process 9860 - happy path', () => {
 
-        it('4.Order: product 1860 0 0 - (Local sale of product with balance - with delivery)', () => {
+        it('order: product 1860 0 0 - (Local sale of product with balance - with delivery)', () => {
                       
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -114,7 +114,7 @@ describe('Normal order', () => {
             cy.validateOrderGenerated();
         })
 
-        it('5.Order: products 1860 0 0 and 1870 0 0', () => {
+        it('order: products 1860 0 0 and 1870 0 0', () => {
                   
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -141,7 +141,7 @@ describe('Normal order', () => {
             cy.validateOrderGenerated();
         })
 
-        it('6.Order: product 1860 0 0 - (Sales order with delivery. With down payment + installments.)', () => {
+        it('order: product 1860 0 0 - (Sales order with delivery. With down payment + installments.)', () => {
                
             Product.fisrt();
             ValidateBalance.withBalance();

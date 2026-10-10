@@ -5,7 +5,7 @@ const Numeroalteracao = '113'
 const CEPalteracao = "87054320"
 const numeroCPF = "117.415.410-18" //usado apenas no teste de adicionar pelo botão na pesquisa de cliente
 
-describe('Register a simple customer', () => {
+describe('register a simple customer', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -14,9 +14,9 @@ describe('Register a simple customer', () => {
         cy.validateTitlePage();
     })
   
-    context('Register simple client', () => {
+    context('register simple client', () => {
 
-        it('1.Simple customer CPF', () => {
+        it('simple customer CPF', () => {
 
             ClienteSimplesPage.clickMenuOpcoes();
             ClienteSimplesPage.optionClientSimple();
@@ -31,7 +31,7 @@ describe('Register a simple customer', () => {
             ClienteSimplesPage.messFirstRegistSaveSucess();
         })  
 
-        it('2.Simple customer CPF - change address immediately after registering', () => {
+        it('simple customer CPF - change address immediately after registering', () => {
     
             ClienteSimplesPage.clickMenuOpcoes();
             ClienteSimplesPage.optionClientSimple();
@@ -74,7 +74,7 @@ describe('Register a simple customer', () => {
             ClienteSimplesPage.messFirstRegistSaveSucess();
         })
 
-        it('3.Simple customer CPF - change date of birth immediately after registering', () => {
+        it('simple customer CPF - change date of birth immediately after registering', () => {
     
             ClienteSimplesPage.clickMenuOpcoes();
             ClienteSimplesPage.optionClientSimple();
@@ -105,7 +105,7 @@ describe('Register a simple customer', () => {
             ClienteSimplesPage.messFirstRegistSaveSucess();
         })  
 
-        it('4.Simple CPF customer - change date of birth (must request a trial)', () => {
+        it('simple CPF customer - change date of birth (must request a trial)', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
     
@@ -173,7 +173,7 @@ describe('Register a simple customer', () => {
             ClienteSimplesPage.messFirstRegistSaveSucess()
         })
 
-        it('5.Simple customer CPF - change gender type', () => {
+        it('simple customer CPF - change gender type', () => {
 
             const cpf = gerarCpf(); // Gera um CPF válido
 
@@ -242,7 +242,7 @@ describe('Register a simple customer', () => {
             ClienteSimplesPage.optionClientSimple()
         })
 
-        it('6.Simple customer CNPJ', () => {
+        it('simple customer CNPJ', () => {
     
             ClienteSimplesPage.clickMenuOpcoes();
             ClienteSimplesPage.optionClientSimple();
@@ -256,7 +256,7 @@ describe('Register a simple customer', () => {
             ClienteSimplesPage.messFirstRegistSaveSucess();
         })
 
-        it('7.Simple Customer CNPJ - Change Address', () => {
+        it('simple Customer CNPJ - Change Address', () => {
 
             ClienteSimplesPage.clickMenuOpcoes();
             ClienteSimplesPage.optionClientSimple();
@@ -299,9 +299,9 @@ describe('Register a simple customer', () => {
         })
     })
 
-    context('Add customer button in customer search', () => {
+    context('add customer button in customer search', () => {
 
-        it('8.Add customer button in customer search', () => {
+        it('add customer button in customer search', () => {
         
             //inserir CPF/CNPJ no campo de cliente para podermos pesquisar pela lupa
             cy.get('.click-cliente > .informe-o-cliente > .cliente-header')

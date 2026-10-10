@@ -7,7 +7,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { Service } from '../../../pages/pedido/ServicosPage.js';
 
-describe('Orders with Warranty and Labor with Delivery', () => {
+describe('orders with Warranty and Labor with Delivery', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -18,9 +18,9 @@ describe('Orders with Warranty and Labor with Delivery', () => {
         cy.chooseCliente();
     })
 
-    context('With delivery/Process 9890 - happy path', () => {
+    context('with delivery/Process 9890 - happy path', () => {
 
-        it('1.Order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that highlights and does not separate)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that highlights and does not separate)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -44,7 +44,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that highlights and does not separate) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that highlights and does not separate) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -75,7 +75,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that does not highlight and separates in the same process)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that does not highlight and separates in the same process)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -99,7 +99,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that does not highlight and separates in the same process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that does not highlight and separates in the same process) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -130,7 +130,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('5.Order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that does not highlight and separates in another process)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that does not highlight and separates in another process)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -154,7 +154,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('6.Order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that does not highlight and separates in another process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates title in the same process and Labor that does not highlight and separates in another process) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -185,7 +185,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('7.Order: product 1860 0 0 (with Warranty that does not separate and Labor that highlights and does not separate)', () => {
+        it('order: product 1860 0 0 (with Warranty that does not separate and Labor that highlights and does not separate)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -209,7 +209,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('8.Order: product 1860 0 0 (with Warranty that does not separate and Labor that highlights and does not separate) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that does not separate and Labor that highlights and does not separate) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -240,7 +240,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('9.Order: product 1860 0 0 (with Warranty that does not separate and Labor that does not highlight and separates in the same process)', () => {
+        it('order: product 1860 0 0 (with Warranty that does not separate and Labor that does not highlight and separates in the same process)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -264,7 +264,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('10.Order: product 1860 0 0 (with Warranty that does not separate and Labor that does not highlight and separates in the same process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that does not separate and Labor that does not highlight and separates in the same process) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -295,7 +295,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('11.Order: product 1860 0 0 (with Warranty that does not separate and Labor that does not highlight and separates in another process)', () => {
+        it('order: product 1860 0 0 (with Warranty that does not separate and Labor that does not highlight and separates in another process)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -319,7 +319,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('12.Order: product 1860 0 0 (with Warranty that does not separate and Labor that does not highlight and separates in another process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that does not separate and Labor that does not highlight and separates in another process) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -350,7 +350,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('13.Order: product 1860 0 0 (with Warranty that separates in a different process and Labor that highlights and does not separate)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates in a different process and Labor that highlights and does not separate)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -374,7 +374,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('14.Order: product 1860 0 0 (with Warranty that separates in a different process and Labor that highlights and does not separate) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates in a different process and Labor that highlights and does not separate) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -404,7 +404,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('15.Order: product 1860 0 0 (with Warranty that separates in a different process and Labor that does not highlight and separates in the same process)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates in a different process and Labor that does not highlight and separates in the same process)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -428,7 +428,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('16.Order: product 1860 0 0 (with Warranty that separates in a different process and Labor that does not highlight and separates in the same process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates in a different process and Labor that does not highlight and separates in the same process) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -459,7 +459,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('17.Order: product 1860 0 0 (with Warranty that separates in a different process and Labor that does not highlight and separates in another process)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates in a different process and Labor that does not highlight and separates in another process)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -483,7 +483,7 @@ describe('Orders with Warranty and Labor with Delivery', () => {
             cy.validateOrderGenerated();
         })  
 
-        it('18.Order: product 1860 0 0 (with Warranty that separates in a different process and Labor that does not highlight and separates in another process) and product 1870 0 0 (without service)', () => {
+        it('order: product 1860 0 0 (with Warranty that separates in a different process and Labor that does not highlight and separates in another process) and product 1870 0 0 (without service)', () => {
 
             Product.fisrt();
             ValidateBalance.withBalance();

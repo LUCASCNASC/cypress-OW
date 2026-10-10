@@ -11,7 +11,7 @@ import { ValidadePrestamistaPage } from '../../../../pages/pedido/ValidadePresta
 import { GeralPedidosPage } from '../../../../pages/pedido/GeralPedidosPage.js';
 
 
-describe('Orders with Fixed Value Discount Service - Service Origin (162)', () => {
+describe('orders with Fixed Value Discount Service - Service Origin (162)', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -22,9 +22,9 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
         cy.chooseCliente();
     })   
 
-    context('With delivery / Products without promotion - Lender with fixed discount - Service Origin (162)', () => {
+    context('with delivery / Products without promotion - Lender with fixed discount - Service Origin (162)', () => {
 
-        it('1.Order: product 1860 0 0, inclusion 3881, lender 162 (99,30), 4 installments upon receipt Future with interest.', () => {
+        it('order: product 1860 0 0, inclusion 3881, lender 162 (99,30), 4 installments upon receipt Future with interest.', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -47,7 +47,7 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: product 1860 0 0 and 1870 0 0, inclusion 3881 and 3860, lender 162 (99,30), 4 installments upon receipt Future with interest.', () => {
+        it('order: product 1860 0 0 and 1870 0 0, inclusion 3881 and 3860, lender 162 (99,30), 4 installments upon receipt Future with interest.', () => {
     
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -79,9 +79,9 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
         })
     })
 
-    context('With delivery / Products with promotion - Lender with fixed discount - Service Origin (162)', () => {
+    context('with delivery / Products with promotion - Lender with fixed discount - Service Origin (162)', () => {
 
-        it('3.Order: product 1922 0 0 (promo a prazo 171), inclusion 3881, lender 162, 4 installments upon receipt Future with interest', () => {
+        it('order: product 1922 0 0 (promo a prazo 171), inclusion 3881, lender 162, 4 installments upon receipt Future with interest', () => {
     
             Product.termFisrtPrestAbatVF();
             ValidateBalance.withBalance();
@@ -106,7 +106,7 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: product 1923 0 0 + warranty. Does not separate (promo on term 172 - exempt interest on services), inclusion 3881, lender 162, 4 installments upon receipt. Future with interest', () => {
+        it('order: product 1923 0 0 + warranty. Does not separate (promo on term 172 - exempt interest on services), inclusion 3881, lender 162, 4 installments upon receipt. Future with interest', () => {
 
             Product.termSecondPrestAbatVF();
             ValidateBalance.withBalance();
@@ -132,7 +132,7 @@ describe('Orders with Fixed Value Discount Service - Service Origin (162)', () =
             cy.validateOrderGenerated();
         })
 
-        it('5.Order: product 1924 0 0 + warranty. Does not separate (promo on term 173 - exempt interest on warranty), inclusion 3882, lender 162, 4 installments upon receipt Future with interest', () => {
+        it('order: product 1924 0 0 + warranty. Does not separate (promo on term 173 - exempt interest on warranty), inclusion 3882, lender 162, 4 installments upon receipt Future with interest', () => {
 
             Product.prazoPrestTercAbatVF();
             ValidateBalance.withBalance();

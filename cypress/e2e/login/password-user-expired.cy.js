@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../users.json';
 
-describe('User with expired password', () => {
+describe('user with expired password', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -11,9 +11,9 @@ describe('User with expired password', () => {
         LoginPage.userTextIcon();
     })
 
-    context('Attempting to log in when the password has already expired', () => {
+    context('attempting to log in when the password has already expired', () => {
 
-        it('1.Try logging in with a user whose password has expired - click YES to update password - click Close password reset', () => {
+        it('try logging in with a user whose password has expired - click YES to update password - click Close password reset', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
@@ -117,7 +117,7 @@ describe('User with expired password', () => {
                 .and('not.have.attr', 'disabled');
         })
 
-        it('2.Try logging in with a user whose password has expired - click DO NOT update password - click Close password reset', () => {
+        it('try logging in with a user whose password has expired - click DO NOT update password - click Close password reset', () => {
 
             cy.get('#txtusername')
                 .should('be.visible')
@@ -231,9 +231,9 @@ describe('User with expired password', () => {
         })
     })
 
-    context('Log in when the password has been changed and there is 1 day left before it expires, as defined in this users group', () => {
+    context('log in when the password has been changed and there is 1 day left before it expires, as defined in this users group', () => {
 
-        it('3.Login - click on DO NOT update password', () => {
+        it('login - click on DO NOT update password', () => {
         
                 cy.get('#txtusername')
                     .should('be.visible')
@@ -265,7 +265,7 @@ describe('User with expired password', () => {
                     .should('be.visible');
         })
         
-        it('4.Login - click YES to update password - click Close password reset', () => {
+        it('login - click YES to update password - click Close password reset', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')
@@ -371,7 +371,7 @@ describe('User with expired password', () => {
                 .and('not.have.attr', 'disabled');
         })
     
-        it('5.Login - click YES to update password - click CONFIRM to reset password', () => {
+        it('login - click YES to update password - click CONFIRM to reset password', () => {
         
             cy.get('#txtusername')
                 .should('be.visible')

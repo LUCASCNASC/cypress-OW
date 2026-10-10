@@ -5,7 +5,7 @@ import { RotaPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_R
 import { TelefonePage } from '../../../pages/cadastro_cliente/cliente_completo/aba_Telefone/TelefonePage.js';
 import { EnderecoPage } from '../../../pages/cadastro_cliente/cliente_completo/aba_endereco/EnderecoPage.js';
 
-describe('Register complete client', () => {
+describe('register complete client', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -14,9 +14,9 @@ describe('Register complete client', () => {
         cy.validateTitlePage();
     })
 
-    context('Complete customer registration - including bank reference.', () => {
+    context('complete customer registration - including bank reference.', () => {
 
-        it('1.Full customer CPF - PIX key type Correct phone number', () => {
+        it('full customer CPF - PIX key type Correct phone number', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto(); 
@@ -67,7 +67,7 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso();
         })  
 
-        it('2.Full customer CPF - PIX key type Correct email', () => {
+        it('full customer CPF - PIX key type Correct email', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto(); 
@@ -118,7 +118,7 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
 
-        it('3.Full customer CPF - PIX key type CPF CNPJ correct', () => {
+        it('full customer CPF - PIX key type CPF CNPJ correct', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto(); 
@@ -169,7 +169,7 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
 
-        it('4.Full customer CPF - PIX key type CPF CNPJ correct', () => {
+        it('fFull customer CPF - PIX key type CPF CNPJ correct', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto(); 
@@ -220,7 +220,7 @@ describe('Register complete client', () => {
             ClienteCompletoPage.validateMessageSalvoSucesso();
         }) 
 
-        it('5.Full customer CPF - validate PIX key type Incorrect phone number', () => {
+        it('full customer CPF - validate PIX key type Incorrect phone number', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto();
@@ -270,7 +270,7 @@ describe('Register complete client', () => {
             GeneralRefBanking.messRefBankingKeyPixPhoneInvalid();
         })  
 
-        it('6.Full customer CPF - validate PIX key type. Incorrect email', () => {
+        it('full customer CPF - validate PIX key type. Incorrect email', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto();
@@ -320,7 +320,7 @@ describe('Register complete client', () => {
             GeneralRefBanking.messRefBankingKeyPixEmailInvalid();
         })  
 
-        it('7.Full customer CPF - validate CPF key type. Incorrect CNPJ', () => {
+        it('full customer CPF - validate CPF key type. Incorrect CNPJ', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto();
@@ -370,7 +370,7 @@ describe('Register complete client', () => {
             GeneralRefBanking.messRefBankingKeyPixCpfCnpjInvalid();
         })  
 
-        it('8.Full customer CPF - validate incorrect random key type', () => {
+        it('full customer CPF - validate incorrect random key type', () => {
 
             ClienteCompletoPage.clickMenuOpcoes();
             ClienteCompletoPage.clickOpcaoClienteCompleto();

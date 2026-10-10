@@ -9,7 +9,7 @@ import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 import { OrderDiscount } from '../../../pages/pedido/PedidoDecontoPage.js';
 import { GeralPedidosPage } from '../../../../pages/pedido/gerais_pedidos.js';
 
-describe('Order for a discounted kit', () => {
+describe('order for a discounted kit', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -20,9 +20,9 @@ describe('Order for a discounted kit', () => {
         cy.chooseCliente();
     })
 
-    context('Without delivery/ process 9862 - happy path', () => {
+    context('without delivery/ process 9862 - happy path', () => {
         
-        it('1.Order: kit 1862 0 0 with discount Sub (-) / FIXED PRICE', () => {
+        it('order: kit 1862 0 0 with discount Sub (-) / FIXED PRICE', () => {
     
             Product.kitDiscount();
             ValidateBalance.withBalance();

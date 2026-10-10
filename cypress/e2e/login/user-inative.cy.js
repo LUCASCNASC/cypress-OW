@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage.js';
 import users from '../users.json';
 
-describe('User inative', () => {
+describe('user inative', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -11,7 +11,7 @@ describe('User inative', () => {
         LoginPage.userTextIcon();
     })
 
-    it('1.Attempting to log in with an inactive user', () => {
+    it('attempting to log in with an inactive user', () => {
     
         cy.get('#txtusername')
             .should('be.visible')

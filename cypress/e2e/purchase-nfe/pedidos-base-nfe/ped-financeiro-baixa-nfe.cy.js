@@ -8,7 +8,7 @@ import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { GeralPagamentoPage } from '../../../../pages/pedido/pagamento/geral_pagamento.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Order with finances in the low', () => {
+describe('order with finances in the low', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('Order with finances in the low', () => {
         cy.chooseCliente();
     })
 
-    context('No delivery/ process 9863 - happy path', () => {
+    context('no delivery/ process 9863 - happy path', () => {
 
-        it('1.Order: product 1860 0 0', () => {
+        it('order: product 1860 0 0', () => {
                  
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -41,7 +41,7 @@ describe('Order with finances in the low', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1860 0 0 and 1870 0 0', () => {
+        it('order: products 1860 0 0 and 1870 0 0', () => {
               
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -70,9 +70,9 @@ describe('Order with finances in the low', () => {
         })
     })
 
-    context('With delivery/ process 9863 - happy path', () => {
+    context('with delivery/ process 9863 - happy path', () => {
 
-        it('3.Order: product 1860 0 0', () => {
+        it('order: product 1860 0 0', () => {
                 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -92,7 +92,7 @@ describe('Order with finances in the low', () => {
             cy.validateOrderGenerated();
         })
 
-        it('4.Order: products 1860 0 0 and 1870 0 0', () => {
+        it('order: products 1860 0 0 and 1870 0 0', () => {
                  
             Product.fisrt();
             ValidateBalance.withBalance();

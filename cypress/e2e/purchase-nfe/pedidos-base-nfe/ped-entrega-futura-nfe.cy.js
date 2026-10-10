@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/pagento/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Future delivery order', () => {
+describe('future delivery order', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('Future delivery order', () => {
         cy.chooseCliente();
     })
 
-    context('No delivery/ process 9862 - happy path', () => {
+    context('no delivery/ process 9862 - happy path', () => {
 
-        it('1.Order: product 1860 0 0', () => {
+        it('order: product 1860 0 0', () => {
                       
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -41,7 +41,7 @@ describe('Future delivery order', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1860 0 0 and 1870 0 0', () => {
+        it('order: products 1860 0 0 and 1870 0 0', () => {
               
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -70,9 +70,9 @@ describe('Future delivery order', () => {
         })
     })
 
-    context('With delivery/ process 9862 - happy path', () => {
+    context('with delivery/ process 9862 - happy path', () => {
 
-        it('3.Order: product 1860 0 0', () => {
+        it('order: product 1860 0 0', () => {
              
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -92,7 +92,7 @@ describe('Future delivery order', () => {
             cy.validateOrderGenerated();
         })    
 
-        it('4.Order: products 1860 0 0 and 1870 0 0', () => {
+        it('order: products 1860 0 0 and 1870 0 0', () => {
                    
             Product.fisrt();
             ValidateBalance.withBalance();

@@ -7,7 +7,7 @@ import { GeralPagamentoPage } from '../../../pages/pedido/GeralPagamentoPage.js'
 import { ParcelasPage } from '../../../pages/pedido/ParcelasPage.js';
 import { ProcessoRecebPage } from '../../../pages/pedido/ProcessoRecebPage.js';
 
-describe('Normal order with delivery', () => {
+describe('normal order with delivery', () => {
 
     beforeEach(() => {
         cy.visit('/');
@@ -18,9 +18,9 @@ describe('Normal order with delivery', () => {
         cy.chooseCliente();
     })
 
-    context('With delivery/process 9890 - happy path', () => {
+    context('with delivery/process 9890 - happy path', () => {
 
-        it('1.Order: product 1860 0 0 - (Local sale of stock item - with delivery)', () => {
+        it('order: product 1860 0 0 - (Local sale of stock item - with delivery)', () => {
                   
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -42,7 +42,7 @@ describe('Normal order with delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('2.Order: products 1860 0 0 and 1870 0 0', () => {
+        it('order: products 1860 0 0 and 1870 0 0', () => {
                 
             Product.fisrt();
             ValidateBalance.withBalance();
@@ -71,7 +71,7 @@ describe('Normal order with delivery', () => {
             cy.validateOrderGenerated();
         })
 
-        it('3.Order: product 1860 0 0 - (Sales order with delivery. With down payment + installments.)', () => {
+        it('order: product 1860 0 0 - (Sales order with delivery. With down payment + installments.)', () => {
                   
             Product.fisrt();
             ValidateBalance.withBalance();
