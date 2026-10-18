@@ -1,25 +1,4 @@
 export class LoginPage {
-  
-  //Valida o logo da empresa.
-  static logoEnterpriseLogin() {
-    cy.get('.logo').should('be.visible');
-  }
-
-  //Valida o ícone do computador.
-  static iconComputerLogin() {
-    cy.get('[ng-click="clienteStatsOpen()"] > .ng-binding')
-      .should('be.visible')
-      .and('not.have.attr', 'disabled');
-  }
-
-  //Valida texto e ícone do user.
-  static userTextIcon() {
-    cy.get('label[for="txtusername"]')
-      .should('be.visible')
-      .and('have.text', 'user');
-      
-    cy.get(':nth-child(3) > .name').should('be.visible');
-  }
 
   //Valida texto e ícone da senha.
   static passwordTextIcon() {
