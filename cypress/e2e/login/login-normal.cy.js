@@ -6,9 +6,6 @@ describe('login happy path - regular user with password enabled', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.clearAllSessionStorage();
-        LoginPage.logoEnterpriseLogin();
-        LoginPage.iconComputerLogin();
-        LoginPage.userTextIcon();
     })
 
     context('user context 1', () => {

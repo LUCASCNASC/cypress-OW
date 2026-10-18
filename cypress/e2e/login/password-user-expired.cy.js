@@ -6,9 +6,6 @@ describe('user with expired password', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.clearAllSessionStorage();
-        LoginPage.logoEnterpriseLogin();
-        LoginPage.iconComputerLogin();
-        LoginPage.userTextIcon();
     })
 
     context('attempting to log in when the password has already expired', () => {

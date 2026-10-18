@@ -6,9 +6,6 @@ describe('user inative', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.clearAllSessionStorage();
-        LoginPage.logoEnterpriseLogin();
-        LoginPage.iconComputerLogin();
-        LoginPage.userTextIcon();
     })
 
     it('attempting to log in with an inactive user', () => {

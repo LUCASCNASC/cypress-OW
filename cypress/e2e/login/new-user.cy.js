@@ -6,9 +6,6 @@ describe('login with new user', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.validateTitlePage();
-        LoginPage.logoEnterpriseLogin();
-        LoginPage.iconComputerLogin();
-        LoginPage.userTextIcon();
     })
 
     it('new user - click Close, without changing the password', () => {
