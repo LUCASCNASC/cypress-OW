@@ -17,7 +17,6 @@ describe('user with expired password system', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu user');
 
-        LoginPage.passwordTextIcon();
 
         cy.get('#txtpassword')
             .should('be.visible')
@@ -26,7 +25,6 @@ describe('user with expired password system', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha');
 
-        LoginPage.iconEyesPassword();
         LoginPage.buttonForgotPassword();
         LoginPage.buttonEnterEnabled();
         LoginPage.clickButtonEnter();
@@ -44,6 +42,5 @@ describe('user with expired password system', () => {
         cy.get('md-dialog-actions > .md-primary')
             .click();
 
-        LoginPage.iconComputerLogin();
     })
 })

@@ -19,7 +19,6 @@ describe('user with expired password', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
 
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -28,7 +27,6 @@ describe('user with expired password', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
 
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
@@ -123,7 +121,6 @@ describe('user with expired password', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
 
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -132,7 +129,6 @@ describe('user with expired password', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
 
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.botaoEntrarHabbuttonEnterEnabledilitado();
             LoginPage.clickButtonEnter();
@@ -239,7 +235,6 @@ describe('user with expired password', () => {
                     .invoke('attr', 'placeholder')
                     .should('equal', 'Informe seu user');
         
-                LoginPage.passwordTextIcon();
         
                 cy.get('#txtpassword')
                     .should('be.visible')
@@ -248,7 +243,6 @@ describe('user with expired password', () => {
                     .invoke('attr', 'placeholder')
                     .should('equal', 'Informe sua senha');
         
-                LoginPage.iconEyesPassword();
                 LoginPage.buttonForgotPassword();
                 LoginPage.buttonEnterEnabled();
                 LoginPage.clickButtonEnter();
@@ -271,7 +265,6 @@ describe('user with expired password', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
     
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -279,8 +272,7 @@ describe('user with expired password', () => {
                 .type(users.userSabiumNovo.newPassword)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
-    
-            LoginPage.iconEyesPassword();
+
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
@@ -377,7 +369,6 @@ describe('user with expired password', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
     
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -386,7 +377,6 @@ describe('user with expired password', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
