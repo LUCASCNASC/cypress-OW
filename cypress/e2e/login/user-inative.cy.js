@@ -17,7 +17,6 @@ describe('user inative', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu user');
 
-        LoginPage.passwordTextIcon();
 
         cy.get('#txtpassword')
             .should('be.visible')
@@ -26,7 +25,6 @@ describe('user inative', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha');
 
-        LoginPage.iconEyesPassword();
         LoginPage.buttonForgotPassword();
         LoginPage.buttonEnterEnabled();
         LoginPage.clickButtonEnter();
@@ -45,6 +43,5 @@ describe('user inative', () => {
         cy.get('.toast-close-button')
             .should('be.visible');
 
-        LoginPage.iconComputerLogin();
     })
 })

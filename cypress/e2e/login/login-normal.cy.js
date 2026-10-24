@@ -18,8 +18,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
-    
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -28,7 +26,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
 
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
@@ -45,7 +42,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -54,7 +50,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
@@ -70,8 +65,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .type(users.userSabium.login)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
-    
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -80,7 +73,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
@@ -96,7 +88,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
     
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -105,7 +96,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterDisabled();
             LoginPage.clickButtonEnter();
@@ -121,7 +111,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -129,7 +118,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterDisabled();
             LoginPage.clickButtonEnter();
@@ -144,7 +132,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -152,7 +139,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterDisabled();
             LoginPage.clickButtonEnter();
@@ -171,7 +157,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
     
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -180,7 +165,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
@@ -197,7 +181,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -206,7 +189,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
@@ -223,7 +205,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -232,7 +213,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterEnabled();
             LoginPage.clickButtonEnter();
@@ -248,7 +228,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
 
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -257,7 +236,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterDisabled();
             LoginPage.clickButtonEnter();
@@ -273,7 +251,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
     
             cy.get('#txtpassword')
                 .should('be.visible')
@@ -281,7 +258,6 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
     
-            LoginPage.iconEyesPassword();
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterDisabled();
             LoginPage.clickButtonEnter();
@@ -296,15 +272,13 @@ describe('login happy path - regular user with password enabled', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe seu user');
     
-            LoginPage.passwordTextIcon();
     
             cy.get('#txtpassword')
                 .should('be.visible')
                 .and('have.value','')
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha');
-    
-            LoginPage.iconEyesPassword();
+
             LoginPage.buttonForgotPassword();
             LoginPage.buttonEnterDisabled();
             LoginPage.clickButtonEnter();

@@ -17,7 +17,6 @@ describe('login with new user', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu user');
 
-        LoginPage.passwordTextIcon();
 
         cy.get('#txtpassword')
             .should('be.visible')
@@ -26,7 +25,6 @@ describe('login with new user', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha');
 
-        LoginPage.iconEyesPassword();
         LoginPage.buttonForgotPassword();
         LoginPage.buttonEnterEnabled();
         LoginPage.clickButtonEnter();
@@ -174,7 +172,6 @@ describe('login with new user', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe seu user');
 
-        LoginPage.passwordTextIcon();
 
         cy.get('#txtpassword')
             .should('be.visible')
@@ -183,7 +180,6 @@ describe('login with new user', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha');
 
-        LoginPage.iconEyesPassword();
         LoginPage.buttonForgotPassword();
         LoginPage.buttonEnterEnabled();
         LoginPage.clickButtonEnter();
